@@ -1,0 +1,23 @@
+set ideajoin
+set hlsearch
+set ignorecase
+set idearefactormode="visual"
+inoremap jj <ESC>
+let mapleader="\<space>"
+map <leader>c <Action>(CompileDirty)
+map <leader>r <Action>(Run)
+map <leader>d <Action>(Debug)
+map <leader>t <Action>(ActivateTerminalToolWindow)
+map <leader>h <Action>(HideActiveWindow)
+map <leader>q <Action>(WebOpenInAction)
+map , <Action>(EditorSelectWord)
+map < <Action>(EditorUnSelectWord)
+map \b <Action>(ToggleLineBreakpoint)
+map \t <Action>(SurroundWith)
+map \m <Action>(ExtractMethod)
+map \n <Action>(Inline)
+map \r <Action>(RenameElement)
+map \g <Action>(Generate)
+
+Plug 'preservim/nerdtree'
+map <leader>e :NERDTree<CR>
