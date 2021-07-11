@@ -17,11 +17,13 @@ set ignorecase
 set nocompatible
 set clipboard=unnamedplus
 set shortmess+=c
+set completeopt=menuone,noselect
 set list
 
 "UI config
 syntax on
 set number
+set relativenumber
 set wrap
 set linebreak
 set hlsearch
@@ -29,6 +31,7 @@ set ruler
 set mouse=a
 set showcmd
 set laststatus=2
+set statusline+=%{get(b:,'gitsigns_status','')}
 set belloff=all
 set termguicolors
 "set noshowmode
@@ -41,19 +44,9 @@ else
   set signcolumn=yes
 endif
 set cursorline
-if !has('nvim')
-    set cursorlineopt=number
-"    let &t_SI.="\e[5 q"
-"    let &t_SR.="\e[4 q"
-"    let &t_EI.="\e[1 q"
-endif
 if has('win32')
     set guifont=Cascadia\ Code\ PL:h10.5
-    if !has('nvim')
-        set guifontwide=黑体:h10.5
-    else
-        set guifontwide=思源雅黑:h11
-    endif
+    set guifontwide=思源雅黑:h11
 endif
 
 "Unicode config
@@ -77,68 +70,43 @@ nnoremap <C-A> :bp!<CR>
 set shortmess=atI
 set langmenu=en_US.UTF-8
 let $LANG= 'en_US.UTF-8'
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-
-"Terminal config
-if !has('nvim')
-    set termwinsize=8x0
-    map <F1> :rightbelow terminal pwsh<CR>
-endif
 
 call plug#begin()
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ryanoasis/vim-devicons'
-"Plug 'michaeljsmith/vim-indent-object'
-"Plug 'Yggdroot/indentLine'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
 
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'hrsh7th/nvim-compe'
-Plug 'sbdchd/neoformat'
-
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
+"UI plugins
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'glepnir/dashboard-nvim'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kdheepak/lazygit.nvim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
-"Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'jiangmiao/auto-pairs'
+"LSP plugins
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'sbdchd/neoformat'
+Plug 'rust-lang/rust.vim'
+
+Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-ts-autotag'
+Plug 'yamatsum/nvim-cursorline'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
-"Plug 'tpope/vim-fugitive'
 call plug#end()
 
 colorscheme dracula
-
-"Startify config
-let g:startify_custom_header = [
-    \' ╭───────────────────────────────────────────────╮ ',
-    \' │                                               │ ',
-    \' │    ███     ███  ████      ███       ███       │ ',
-    \' │   ░░██    ░██  ░░██      ██░██    ░██░██      │ ',
-    \' │    ░██    ░██   ░██     ░██░██    ░██░██      │ ',
-    \' │    ░░██   ██    ░██     ██ ░░██   ██ ░░██     │ ',
-    \' │     ░██  ░██    ░██    ░██  ░██  ░██  ░██     │ ',
-    \' │     ░░██ ██     ░██    ██   ░░██ ██   ░░██    │ ',
-    \' │      ░██░██     ░██   ░██    ░██░██    ░██    │ ',
-    \' │      ░░███      ████  ████   ░░███     ████   │ ',
-    \' │       ░░░      ░░░   ░░░░     ░░░     ░░░░    │ ',
-    \' │                  Customized By Zhang Caiyi.   │ ',
-    \' ╰───────────────────────────────────────────────╯ ',
-    \]
-let g:startify_files_number = 5
-let g:startify_session_autoload = 1
-function! StartifyEntryFormat()
-    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-endfunction
-
-
-"AirLine config
-let g:airline_powerline_fonts = 0
-let g:airline#extensions#tabline#enabled = 0
 
 "VimTeX config
 set conceallevel=1
@@ -254,6 +222,19 @@ nnoremap <leader>n :NvimTreeFindFile<CR>
 highlight NvimTreeFolderIcon guibg=blue
 
 "Dashcoard-nvim config
+let g:dashboard_custom_header = [
+\ '',
+\ '',
+\ '',
+\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+\ '',
+\ '',
+\]
 let g:dashboard_default_executive ='fzf'
 nmap <Leader>ss :<C-u>SessionSave<CR>
 nmap <Leader>sl :<C-u>SessionLoad<CR>
@@ -263,6 +244,52 @@ nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
 nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
 nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
 nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
+
+"Lazygit.nvim config
+" setup mapping to call :LazyGit
+nnoremap <silent> <leader>lg :LazyGit<CR>
+
+"Nvim-compe config
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm({ 'keys': '<CR>', 'select': v:true, }, luaeval("require 'nvim-autopairs'.autopairs_cr()"))
+"inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+
+"Vim-vsnip config
+" NOTE: You can use other key to expand snippet.
+
+" Expand
+imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+
+" Expand or jump
+imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+
+" Jump forward or backward
+imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+" Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
+" See https://github.com/hrsh7th/vim-vsnip/pull/50
+nmap        s   <Plug>(vsnip-select-text)
+xmap        s   <Plug>(vsnip-select-text)
+nmap        S   <Plug>(vsnip-cut-text)
+xmap        S   <Plug>(vsnip-cut-text)
+
+" If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
+let g:vsnip_filetypes = {}
+let g:vsnip_filetypes.javascriptreact = ['javascript']
+let g:vsnip_filetypes.typescriptreact = ['typescript']
+
+"Indent-blankline config
+let g:indent_blankline_use_treesitter = v:true
+let g:indent_blankline_char_list = ['¦']
+let g:indent_blankline_filetype_exclude = ['dashboard', 'nvimtree', 'txt', 'md']
 
 if has('nvim')
     luafile ~/.config/nvim/lua/init.lua
