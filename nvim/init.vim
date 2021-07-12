@@ -10,7 +10,6 @@
 set expandtab
 set softtabstop=4
 set shiftwidth=4
-set autochdir
 set nobackup
 set noswapfile
 set ignorecase
@@ -19,11 +18,12 @@ set clipboard=unnamedplus
 set shortmess+=c
 set completeopt=menuone,noselect
 set list
+set hidden
 
 "UI config
 syntax on
 set number
-set relativenumber
+"set relativenumber
 set wrap
 set linebreak
 set hlsearch
@@ -31,10 +31,9 @@ set ruler
 set mouse=a
 set showcmd
 set laststatus=2
-set statusline+=%{get(b:,'gitsigns_status','')}
+"set statusline+=%{get(b:,'gitsigns_status','')}
 set belloff=all
 set termguicolors
-"set noshowmode
 set wildmenu
 set title
 if has("patch-8.1.1564")
@@ -63,13 +62,19 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 nnoremap <C-Q> :bp! \| bd!#<CR>
-nnoremap <C-S> :bn!<CR>
-nnoremap <C-A> :bp!<CR>
+nnoremap <C-S> :bn<CR>
+nnoremap <C-A> :bp<CR>
 
 "Language config
 set shortmess=atI
 set langmenu=en_US.UTF-8
 let $LANG= 'en_US.UTF-8'
+
+"Vim-Plug config
+if ! filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
+  echo "Downloading junegunn/vim-plug to manage plugins..."
+  silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+endif
 
 call plug#begin()
 Plug 'nvim-lua/popup.nvim'
@@ -82,12 +87,12 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 "LSP plugins
 Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip'
@@ -95,15 +100,19 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'sbdchd/neoformat'
 Plug 'rust-lang/rust.vim'
 
+"Tools plugins
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-project.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'iamcco/markdown-preview.nvim'
+Plug 'lervag/vimtex'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } "Not configured
 
+"Edit plugins
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
-Plug 'yamatsum/nvim-cursorline'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'lervag/vimtex'
 call plug#end()
 
 colorscheme dracula
@@ -141,7 +150,7 @@ let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard'] "empty by default, d
 let g:nvim_tree_quit_on_open = 0 "0 by default, closes the tree when you open a file
 let g:nvim_tree_follow = 1 "0 by default, this option allows the cursor to be updated when entering a buffer
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
-let g:nvim_tree_hide_dotfiles = 0 "0 by default, this option hides files and folders starting with a dot `.`
+let g:nvim_tree_hide_dotfiles = 1 "0 by default, this option hides files and folders starting with a dot `.`
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
@@ -151,7 +160,7 @@ let g:nvim_tree_disable_netrw = 1 "1 by default, disables netrw
 let g:nvim_tree_hijack_netrw = 1 "1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 let g:nvim_tree_add_trailing = 0 "0 by default, append a trailing slash to folder names
 let g:nvim_tree_group_empty = 0 " 0 by default, compact folders that only contain a single folder into one node in the file tree
-let g:nvim_tree_lsp_diagnostics = 1 "0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
+let g:nvim_tree_lsp_diagnostics = 0 "0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
 let g:nvim_tree_disable_window_picker = 1 "0 by default, will disable the window picker.
 let g:nvim_tree_hijack_cursor = 0 "1 by default, when moving cursor in the tree, will position the cursor at the start of the file on the current line
 let g:nvim_tree_icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
@@ -235,7 +244,16 @@ let g:dashboard_custom_header = [
 \ '',
 \ '',
 \]
-let g:dashboard_default_executive ='fzf'
+let g:dashboard_custom_shortcut={
+\ 'last_session'       : 'SPC s l',
+\ 'find_history'       : 'SPC f h',
+\ 'find_file'          : 'SPC f f',
+\ 'new_file'           : 'SPC c n',
+\ 'change_colorscheme' : 'SPC t c',
+\ 'find_word'          : 'SPC f a',
+\ 'book_marks'         : 'SPC f b',
+\ }
+let g:dashboard_default_executive ='telescope'
 nmap <Leader>ss :<C-u>SessionSave<CR>
 nmap <Leader>sl :<C-u>SessionLoad<CR>
 nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
@@ -251,8 +269,7 @@ nnoremap <silent> <leader>lg :LazyGit<CR>
 
 "Nvim-compe config
 inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm({ 'keys': '<CR>', 'select': v:true, }, luaeval("require 'nvim-autopairs'.autopairs_cr()"))
-"inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
+inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"), { 'keys': '<CR>', 'select': v:true, })
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })

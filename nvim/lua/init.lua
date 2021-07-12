@@ -16,7 +16,7 @@ require'nvim-treesitter.configs'.setup {
     },
   },
   indent = {
-    enable = true
+    enable = false
   }
 }
 
@@ -79,7 +79,7 @@ vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
--- Snippet.nvim config
+-- Vim-vsnip config
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true;
 capabilities.textDocument.completion.completionItem.resolveSupport = {
@@ -93,12 +93,22 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 -- Neoformat config
 vim.api.nvim_set_keymap('n', '<leader>F', ':Neoformat<CR>', { noremap = true })
 
+-- Nvim-Lspinstall config
+
+-- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+require'lspinstall'.post_install_hook = function ()
+  setup_servers() -- reload installed servers
+  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+end
 -- Nvim-Lsp config
 require'lspconfig'.clangd.setup{
     capabilities = capabilities;
     on_attach = on_attach,
 }
-require'lspconfig'.pyls.setup{}
+require'lspconfig'.pyls.setup{
+    capabilities = capabilities;
+    on_attach = on_attach,
+}
 require'lspconfig'.vimls.setup{}
 require'lspconfig'.texlab.setup{}
 require'lspconfig'.rust_analyzer.setup{}
@@ -106,7 +116,8 @@ require'lspconfig'.rust_analyzer.setup{}
 -- Nvim-Bufferline config
 require('bufferline').setup {
   options = {
-    numbers = "buffer_iid",
+    -- numbers = "buffer_iid",
+    numbers = "none",
     number_style = "", -- buffer_id at index 1, ordinal at index 2
     mappings = true,
     close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
@@ -216,6 +227,70 @@ require('gitsigns').setup {
   use_decoration_api = true,
   use_internal_diff = true,  -- If luajit is present
 }
+
+-- Nvim-cololizer.lua config
+require'colorizer'.setup()
+
+-- Telescope.nvim config
+require('telescope').setup{
+  defaults = {
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case'
+    },
+    prompt_prefix = "> ",
+    selection_caret = "> ",
+    entry_prefix = "  ",
+    initial_mode = "insert",
+    selection_strategy = "reset",
+    sorting_strategy = "descending",
+    layout_strategy = "horizontal",
+    layout_config = {
+      horizontal = {
+        mirror = false,
+      },
+      vertical = {
+        mirror = false,
+      },
+    },
+    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+    file_ignore_patterns = {},
+    generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
+    winblend = 0,
+    border = {},
+    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+    color_devicons = true,
+    use_less = true,
+    path_display = {},
+    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+    grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+    qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+
+    -- Developer configurations: Not meant for general override
+    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+  },
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = false, -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
+  }
+}
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require('telescope').load_extension('fzf')
+
+-- Telescope-project.nvim
+require'telescope'.load_extension('project')
 
 -- Nvim-autopairs config
 require('nvim-autopairs').setup()
