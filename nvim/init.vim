@@ -71,9 +71,11 @@ set langmenu=en_US.UTF-8
 let $LANG= 'en_US.UTF-8'
 
 "Vim-Plug config
-if ! filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
-  echo "Downloading junegunn/vim-plug to manage plugins..."
-  silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+if has('unix')
+    if ! filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
+        echo "Downloading junegunn/vim-plug to manage plugins..."
+        silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    endif
 endif
 
 call plug#begin()
@@ -89,6 +91,9 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'simrat39/symbols-outline.nvim'
+"Plug 'glepnir/galaxyline.nvim'
+"Plug 'lukas-reineke/indent-blankline.nvim'
 
 "LSP plugins
 Plug 'neovim/nvim-lspconfig'
@@ -222,9 +227,9 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
-nnoremap <leader>e :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
+nnoremap <silent> <leader>e :NvimTreeToggle<CR>
+nnoremap <silent> <leader>r :NvimTreeRefresh<CR>
+nnoremap <silent> <leader>n :NvimTreeFindFile<CR>
 " NvimTreeOpen and NvimTreeClose are also available if you need them
 
 " a list of groups can be found at `:help nvim_tree_highlight`
@@ -308,7 +313,9 @@ let g:indent_blankline_use_treesitter = v:true
 let g:indent_blankline_char_list = ['¦']
 let g:indent_blankline_filetype_exclude = ['dashboard', 'nvimtree', 'txt', 'md']
 
-if has('nvim')
+if has('unix')
     luafile ~/.config/nvim/lua/init.lua
+elseif has('win32')
+    luafile ~/AppData/Local/nvim/lua/init.lua
 endif
 

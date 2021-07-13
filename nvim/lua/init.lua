@@ -109,9 +109,39 @@ require'lspconfig'.pyls.setup{
     capabilities = capabilities;
     on_attach = on_attach,
 }
-require'lspconfig'.vimls.setup{}
-require'lspconfig'.texlab.setup{}
-require'lspconfig'.rust_analyzer.setup{}
+require'lspconfig'.vimls.setup{
+    capabilities = capabilities;
+    on_attach = on_attach,
+}
+require'lspconfig'.texlab.setup{
+    capabilities = capabilities;
+    on_attach = on_attach,
+}
+require'lspconfig'.rust_analyzer.setup{
+    capabilities = capabilities;
+    on_attach = on_attach,
+}
+
+-- Symbols.outline.nvim config
+vim.g.symbols_outline = {
+    highlight_hovered_item = true,
+    show_guides = true,
+    auto_preview = true,
+    position = 'right',
+    show_numbers = false,
+    show_relative_numbers = false,
+    show_symbol_details = true,
+    keymaps = {
+        close = "q",
+        goto_location = "<Cr>",
+        focus_location = "o",
+        hover_symbol = "<C-space>",
+        rename_symbol = "r",
+        code_actions = "a",
+    },
+    lsp_blacklist = {},
+}
+vim.api.nvim_set_keymap('n', '<leader>o', ':SymbolsOutline<CR>', { noremap = true, silent = true })
 
 -- Nvim-Bufferline config
 require('bufferline').setup {
@@ -166,7 +196,7 @@ require('bufferline').setup {
         return true
       end
     end,
-    offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center" }},
+    offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center" }, {filetype = "Outline", text = "Outline", text_align = "center" }},
     show_buffer_icons = true, -- disable filetype icons for buffers
     show_buffer_close_icons = true,
     show_close_icon = true,
