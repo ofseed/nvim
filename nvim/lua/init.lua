@@ -93,34 +93,25 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 -- Neoformat config
 vim.api.nvim_set_keymap('n', '<leader>F', ':Neoformat<CR>', { noremap = true })
 
--- Nvim-Lspinstall config
+-- Nvim-Lsp config
+local function setup_servers()
+  require'lspinstall'.setup()
+  local servers = require'lspinstall'.installed_servers()
+  for _, server in pairs(servers) do
+    require'lspconfig'[server].setup{
+      capabilities = capabilities;
+      on_attach = on_attach,
+    }
+  end
+end
+
+setup_servers()
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
 require'lspinstall'.post_install_hook = function ()
   setup_servers() -- reload installed servers
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
--- Nvim-Lsp config
-require'lspconfig'.clangd.setup{
-    capabilities = capabilities;
-    on_attach = on_attach,
-}
-require'lspconfig'.pyls.setup{
-    capabilities = capabilities;
-    on_attach = on_attach,
-}
-require'lspconfig'.vimls.setup{
-    capabilities = capabilities;
-    on_attach = on_attach,
-}
-require'lspconfig'.texlab.setup{
-    capabilities = capabilities;
-    on_attach = on_attach,
-}
-require'lspconfig'.rust_analyzer.setup{
-    capabilities = capabilities;
-    on_attach = on_attach,
-}
 
 -- Symbols.outline.nvim config
 vim.g.symbols_outline = {
