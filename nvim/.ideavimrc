@@ -2,22 +2,23 @@ set ideajoin
 set hlsearch
 set ignorecase
 set idearefactormode="visual"
-inoremap jj <ESC>
 let mapleader="\<space>"
-map <leader>c <Action>(CompileDirty)
-map <leader>r <Action>(Run)
-map <leader>d <Action>(Debug)
-map <leader>t <Action>(ActivateTerminalToolWindow)
-map <leader>h <Action>(HideActiveWindow)
-map <leader>q <Action>(WebOpenInAction)
-map , <Action>(EditorSelectWord)
-map < <Action>(EditorUnSelectWord)
-map \b <Action>(ToggleLineBreakpoint)
-map \t <Action>(SurroundWith)
-map \m <Action>(ExtractMethod)
-map \n <Action>(Inline)
-map \r <Action>(RenameElement)
-map \g <Action>(Generate)
+inoremap jj <ESC>
+nnoremap <leader><leader> :nohlsearch<CR>
+nnoremap <leader>c <Action>(CompileDirty)
+nnoremap <leader>r <Action>(Run)
+nnoremap <leader>d <Action>(Debug)
+nnoremap <leader>t <Action>(ActivateTerminalToolWindow)
+nnoremap <leader>h <Action>(HideActiveWindow)
+nnoremap <leader>q <Action>(WebOpenInAction)
+nnoremap , <Action>(EditorSelectWord)
+nnoremap < <Action>(EditorUnSelectWord)
+nnoremap \b <Action>(ToggleLineBreakpoint)
+nnoremap \t <Action>(SurroundWith)
+nnoremap \m <Action>(ExtractMethod)
+nnoremap \n <Action>(Inline)
+nnoremap \r <Action>(RenameElement)
+nnoremap \g <Action>(Generate)
 
 Plug 'preservim/nerdtree'
 map <leader>e :NERDTree<CR>
