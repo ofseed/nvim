@@ -1,6 +1,7 @@
 set ideajoin
 set hlsearch
 set ignorecase
+set number
 set relativenumber
 set idearefactormode="visual"
 let mapleader="\<space>"
