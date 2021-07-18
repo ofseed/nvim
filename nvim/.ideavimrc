@@ -1,6 +1,7 @@
 set ideajoin
 set hlsearch
 set ignorecase
+set relativenumber
 set idearefactormode="visual"
 let mapleader="\<space>"
 inoremap jj <ESC>

@@ -23,7 +23,7 @@ set hidden
 "UI config
 syntax on
 set number
-"set relativenumber
+set relativenumber
 set wrap
 set linebreak
 set hlsearch
