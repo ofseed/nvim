@@ -8,7 +8,7 @@ return require('packer').startup(function()
 -- UI Plugins
   use 'kyazdani42/nvim-web-devicons'
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
-  use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons', opt = true}
+  use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
   use {'simrat39/symbols-outline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   use 'glepnir/dashboard-nvim'
   use 'kdheepak/lazygit.nvim'
