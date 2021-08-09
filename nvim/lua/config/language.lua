@@ -1,3 +1,5 @@
+local vim = vim
+
 -- Nvim-Treesitter config
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
@@ -127,7 +129,7 @@ vim.api.nvim_set_keymap("x", "s", "<Plug>(vsnip-cut-text)", { expr = true })
 -- If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
 
 -- Neoformat config
-vim.api.nvim_set_keymap('n', '<leader>F', ':Neoformat<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>F', ':Neoformat<CR>', { noremap = true, silent = true })
 
 -- Nvim-Lsp config
 local function setup_servers()

@@ -1,3 +1,5 @@
+local vim = vim
+
 -- Nvim-Tree config
 vim.g.nvim_tree_side = 'left' -- by default
 vim.g.nvim_tree_width =30 -- by default, can be width_in_columns or 'width_in_percent%'
@@ -95,11 +97,12 @@ vim.g.symbols_outline = {
     show_guides = true,
     auto_preview = true,
     position = 'right',
+    width = 25,
     show_numbers = false,
     show_relative_numbers = false,
     show_symbol_details = true,
-    keymaps = {
-        close = "q",
+    keymaps = { -- These keymaps can be a string or a table for multiple keys
+        close = {"<Esc>", "q"},
         goto_location = "<Cr>",
         focus_location = "o",
         hover_symbol = "<C-space>",
@@ -107,6 +110,35 @@ vim.g.symbols_outline = {
         code_actions = "a",
     },
     lsp_blacklist = {},
+    symbol_blacklist = {},
+    symbols = {
+        File = {icon = "", hl = "TSURI"},
+        Module = {icon = "", hl = "TSNamespace"},
+        Namespace = {icon = "", hl = "TSNamespace"},
+        Package = {icon = "", hl = "TSNamespace"},
+        Class = {icon = "𝓒", hl = "TSType"},
+        Method = {icon = "ƒ", hl = "TSMethod"},
+        Property = {icon = "", hl = "TSMethod"},
+        Field = {icon = "", hl = "TSField"},
+        Constructor = {icon = "", hl = "TSConstructor"},
+        Enum = {icon = "ℰ", hl = "TSType"},
+        Interface = {icon = "ﰮ", hl = "TSType"},
+        Function = {icon = "", hl = "TSFunction"},
+        Variable = {icon = "", hl = "TSConstant"},
+        Constant = {icon = "", hl = "TSConstant"},
+        String = {icon = "𝓐", hl = "TSString"},
+        Number = {icon = "#", hl = "TSNumber"},
+        Boolean = {icon = "⊨", hl = "TSBoolean"},
+        Array = {icon = "", hl = "TSConstant"},
+        Object = {icon = "⦿", hl = "TSType"},
+        Key = {icon = "🔐", hl = "TSType"},
+        Null = {icon = "NULL", hl = "TSType"},
+        EnumMember = {icon = "", hl = "TSField"},
+        Struct = {icon = "𝓢", hl = "TSType"},
+        Event = {icon = "🗲", hl = "TSType"},
+        Operator = {icon = "+", hl = "TSOperator"},
+        TypeParameter = {icon = "𝙏", hl = "TSParameter"}
+    }
 }
 vim.api.nvim_set_keymap('n', '<leader>o', ':SymbolsOutline<CR>', { noremap = true, silent = true })
 
@@ -228,7 +260,6 @@ require('gitsigns').setup {
   keymaps = {
     -- Default keymap options
     noremap = true,
-    buffer = true,
 
     ['n ]c'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
     ['n [c'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
@@ -257,7 +288,6 @@ require('gitsigns').setup {
   update_debounce = 100,
   status_formatter = nil, -- Use default
   word_diff = false,
-  use_decoration_api = true,
   use_internal_diff = true,  -- If luajit is present
 }
 

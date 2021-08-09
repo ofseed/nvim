@@ -13,9 +13,14 @@ return require('packer').startup(function()
   use 'glepnir/dashboard-nvim'
   use 'kdheepak/lazygit.nvim'
   use {'dracula/vim', as = 'dracula'}
-  use 'lewis6991/gitsigns.nvim'
---use 'glepnir/galaxyline.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
+  }
 --use 'lukas-reineke/indent-blankline.nvim'
+--use 'glepnir/galaxyline.nvim'
 
 -- LSP plugins
   use 'neovim/nvim-lspconfig'
@@ -25,7 +30,6 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
   use 'sbdchd/neoformat'
-  use 'rust-lang/rust.vim'
 
 -- Tools plugins
   use {
@@ -35,9 +39,10 @@ return require('packer').startup(function()
 
   use 'nvim-telescope/telescope-project.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use 'lervag/vimtex'
   use 'norcalli/nvim-colorizer.lua'
+  use 'kassio/neoterm'
 
 
 -- Edit plugins
