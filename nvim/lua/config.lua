@@ -17,7 +17,7 @@ vim.o.backup = false
 vim.o.swapfile = false
 vim.o.ignorecase = true
 vim.o.compatible = false
-vim.o.clipboard= 'unnamedplus'
+vim.o.clipboard = 'unnamedplus'
 vim.o.completeopt = "menuone,noselect"
 vim.o.list = true
 vim.o.hidden = true
@@ -53,9 +53,9 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-q>', ':bp! | bd!#<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-s>', ':bn<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-a>', ':bp<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-q>', ':bp! | bd!#<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-s>', ':bn<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-a>', ':bp<CR>', { noremap = true, silent = true })
 
 --Language config
 vim.o.shortmess = "atI"

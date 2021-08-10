@@ -1,5 +1,19 @@
 local vim = vim
 
+require'nvim-web-devicons'.setup {
+ -- your personnal icons can go here (to override)
+ -- DevIcon will be appended to `name`
+ override = {
+  zsh = {
+    icon = "",
+    color = "#428850",
+    name = "Zsh"
+  }
+ };
+ -- globally enable default icons (default to false)
+ -- will get overriden by `get_icons` option
+ default = true;
+}
 -- Nvim-Tree config
 vim.g.nvim_tree_side = 'left' -- by default
 vim.g.nvim_tree_width =30 -- by default, can be width_in_columns or 'width_in_percent%'
@@ -7,7 +21,7 @@ vim.g.nvim_tree_ignore = {} -- by default
 vim.g.nvim_tree_gitignore = 0 -- by default
 vim.g.nvim_tree_auto_open = 1 -- by default, opens the tree when typing `vim $DIR` or `vim`
 vim.g.nvim_tree_auto_close = 1 -- by default, closes the tree when it's the last window
-vim.g.nvim_tree_auto_ignore_ft = { 'startify', 'dashboard'} -- by default, don't auto open tree on specific filetypes.
+vim.g.nvim_tree_auto_ignore_ft = { 'dashboard' } -- by default, don't auto open tree on specific filetypes.
 vim.g.nvim_tree_quit_on_open = 0 -- by default, closes the tree when you open a file
 vim.g.nvim_tree_follow = 1 -- by default, this option allows the cursor to be updated when entering a buffer
 vim.g.nvim_tree_indent_markers = 1 -- by default, this option shows indent markers when folders are open
@@ -294,3 +308,11 @@ require('gitsigns').setup {
 -- Nvim-cololizer.lua config
 require'colorizer'.setup()
 
+-- Minimap.vim config
+vim.g.minimap_width = 10
+vim.g.minimap_auto_start = 0
+vim.g.minimap_auto_start_win_enter = 0
+vim.g.minimap_highlight_search = 0
+vim.g.minimap_highlight_range = 0
+vim.g.minimap_block_filetypes = { 'terminal', 'NvimTree', 'Outline' }
+vim.g.minimap_close_filetypes = { 'dashboard', 'packer', }

@@ -29,8 +29,8 @@ return require('packer').startup(function()
       'nvim-lua/plenary.nvim'
     }
   }
-  --use 'wfxr/minimap.vim'
-  --use 'theHamsta/nvim-dap-virtual-text'
+  use { 'wfxr/minimap.vim', run = ':!cargo install --locked code-minimap'}
+  use 'theHamsta/nvim-dap-virtual-text'
   --use 'lukas-reineke/indent-blankline.nvim'
   --use 'glepnir/galaxyline.nvim'
 
@@ -42,9 +42,13 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
-  --use 'ray-x/lsp_signature.nvim'
-  --use 'folke/trouble.nvim'
+  use 'ray-x/lsp_signature.nvim'
+  use {
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+  }
   use 'sbdchd/neoformat'
+  --use 'simrat39/rust-tools.nvim'
 
 -- Tools plugins
   use {
@@ -56,21 +60,20 @@ return require('packer').startup(function()
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use 'lervag/vimtex'
   use 'norcalli/nvim-colorizer.lua'
-  use 'kassio/neoterm'
-  --use 'sindrets/diffview.nvim'
-  --use 'akinsho/nvim-toggleterm.lua'
-  --use 'mfussenegger/nvim-dap'
-  --use 'Pocco81/DAPInstall.nvim'
-  --use 'romgrk/nvim-treesitter-context'
+  use 'sindrets/diffview.nvim'
+  use 'akinsho/nvim-toggleterm.lua'
+  use 'mfussenegger/nvim-dap'
+  use 'Pocco81/DAPInstall.nvim'
+  use 'romgrk/nvim-treesitter-context'
 
 
 -- Edit plugins
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'junegunn/goyo.vim'
-  --use 'tpope/vim-surround'
-  --use 'terrortylor/nvim-comment' 
+  use 'terrortylor/nvim-comment' 
+  use {'turbio/bracey.vim', run = 'npm install --prefix server'}
+  use 'ethanholz/nvim-lastplace'
   --use 'rafamadriz/friendly-snippets'
-  --use 'turbio/bracey.vim'
-  --use 'ethanholz/nvim-lastplace'
+  --use 'tpope/vim-surround'
 end)
