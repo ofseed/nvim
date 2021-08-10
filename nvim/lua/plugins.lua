@@ -5,7 +5,7 @@ return require('packer').startup(function()
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
 
--- UI Plugins
+-- Interface Plugins
   use 'kyazdani42/nvim-web-devicons'
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
   --[[
@@ -34,7 +34,7 @@ return require('packer').startup(function()
   --use 'lukas-reineke/indent-blankline.nvim'
   --use 'glepnir/galaxyline.nvim'
 
--- LSP plugins
+-- Language plugins
   use 'neovim/nvim-lspconfig'
   use 'kabouzeid/nvim-lspinstall'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -51,6 +51,12 @@ return require('packer').startup(function()
   --use 'simrat39/rust-tools.nvim'
 
 -- Tools plugins
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
+  use 'junegunn/goyo.vim'
+  use 'terrortylor/nvim-comment' 
+  use {'turbio/bracey.vim', run = 'npm install --prefix server'}
+  use 'ethanholz/nvim-lastplace'
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
@@ -65,15 +71,6 @@ return require('packer').startup(function()
   use 'mfussenegger/nvim-dap'
   use 'Pocco81/DAPInstall.nvim'
   use 'romgrk/nvim-treesitter-context'
-
-
--- Edit plugins
-  use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
-  use 'junegunn/goyo.vim'
-  use 'terrortylor/nvim-comment' 
-  use {'turbio/bracey.vim', run = 'npm install --prefix server'}
-  use 'ethanholz/nvim-lastplace'
   --use 'rafamadriz/friendly-snippets'
   --use 'tpope/vim-surround'
 end)
