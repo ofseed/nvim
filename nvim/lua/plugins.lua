@@ -7,19 +7,13 @@ return require('packer').startup(function()
 
 -- Interface Plugins
   use 'kyazdani42/nvim-web-devicons'
-  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
-  -- use 'lukas-reineke/indent-blankline.nvim'
-  -- use 'vim-airline/vim-airline'
-  --[[
-
   use {
-    'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
+    'glepnir/galaxyline.nvim',
+      branch = 'main',
+      config = function() require'config/statusline' end,
+      requires = {'kyazdani42/nvim-web-devicons'}
   }
-
-  An instead of bufferline.nvim
-
-  ]]--
+  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
   use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
   use {'simrat39/symbols-outline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   use 'glepnir/dashboard-nvim'
@@ -34,7 +28,6 @@ return require('packer').startup(function()
   use { 'wfxr/minimap.vim', run = ':!cargo install --locked code-minimap'}
   use 'theHamsta/nvim-dap-virtual-text'
   --use 'lukas-reineke/indent-blankline.nvim'
-  --use 'glepnir/galaxyline.nvim'
 
 -- Language plugins
   use 'neovim/nvim-lspconfig'

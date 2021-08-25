@@ -143,7 +143,7 @@ require'lsp_signature'.setup({
                    -- to view the hiding contents
   max_width = 120, -- max_width of signature floating_window, line will be wrapped if exceed max_width
   handler_opts = {
-    border = "none"   -- double, single, shadow, none
+    border = "single"   -- double, single, shadow, none
   },
   extra_trigger_chars = {}, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
   -- deprecate !!
@@ -205,6 +205,12 @@ require'trouble'.setup{
 }
 
 vim.api.nvim_set_keymap("n", "<leader>t", ":TroubleToggle<CR>", { noremap = true , silent = true })
+
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+for type, icon in pairs(signs) do
+  local hl = "LspDiagnosticsSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
 
 -- Nvim-dap config
 -- TODO
