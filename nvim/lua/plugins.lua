@@ -48,7 +48,7 @@ return require('packer').startup(function()
 -- Tools plugins
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
-  use 'junegunn/goyo.vim'
+  use 'folke/zen-mode.nvim'
   use 'terrortylor/nvim-comment' 
   use {'turbio/bracey.vim', run = 'npm install --prefix server'}
   use 'ethanholz/nvim-lastplace'
@@ -66,6 +66,5 @@ return require('packer').startup(function()
   use 'mfussenegger/nvim-dap'
   use 'Pocco81/DAPInstall.nvim'
   use 'romgrk/nvim-treesitter-context'
-  --use 'rafamadriz/friendly-snippets'
-  --use 'tpope/vim-surround'
+  use 'tpope/vim-surround'
 end)
