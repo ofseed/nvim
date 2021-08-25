@@ -206,6 +206,12 @@ require'trouble'.setup{
 
 vim.api.nvim_set_keymap("n", "<leader>t", ":TroubleToggle<CR>", { noremap = true , silent = true })
 
+-- Nvim-dap config
+-- TODO
+
+-- DAPInstall config
+-- TODO
+
 -- Nvim-Lsp config
 local function setup_servers()
   require'lspinstall'.setup()

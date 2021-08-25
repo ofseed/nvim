@@ -8,8 +8,10 @@ return require('packer').startup(function()
 -- Interface Plugins
   use 'kyazdani42/nvim-web-devicons'
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+  -- use 'lukas-reineke/indent-blankline.nvim'
+  -- use 'vim-airline/vim-airline'
   --[[
-  
+
   use {
     'romgrk/barbar.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}

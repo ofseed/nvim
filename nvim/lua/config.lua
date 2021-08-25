@@ -17,7 +17,6 @@ vim.o.backup = false
 vim.o.swapfile = false
 vim.o.ignorecase = true
 vim.o.compatible = false
-vim.o.clipboard = 'unnamedplus'
 vim.o.completeopt = "menuone,noselect"
 vim.o.list = true
 vim.o.hidden = true
@@ -69,3 +68,8 @@ require('config.language')
 require('config.interface')
 require('config.tools')
 
+-- Fcitx5 auto switch
+-- vim.api.nvim_command("autocmd InsertLeave * :silent !fcitx5-remote -c")
+-- vim.api.nvim_command("autocmd BufCreate *  :silent !fcitx5-remote -c") 
+-- vim.api.nvim_command("autocmd BufEnter *  :silent !fcitx5-remote -c")
+-- vim.api.nvim_command("autocmd BufLeave *  :silent !fcitx5-remote -c")

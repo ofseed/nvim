@@ -162,10 +162,8 @@ vim.g.spaceline_seperate_style = 'none'
 -- Nvim-Bufferline config
 require('bufferline').setup {
   options = {
-    -- numbers = "buffer_iid",
-    numbers = "none",
-    number_style = "", -- buffer_id at index 1, ordinal at index 2
-    mappings = true,
+    numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both",
+    number_style = "", -- "superscript" | "" | { "none", "subscript" }, -- buffer_id at index 1, ordinal at index 2
     close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
@@ -192,7 +190,7 @@ require('bufferline').setup {
     max_name_length = 18,
     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
     tab_size = 18,
-    diagnostics = "nvim_lsp",
+    diagnostics = "nvim_lsp", -- false | "nvim_lsp",
     diagnostics_indicator = function(count, level, diagnostics_dict, context)
       return "("..count..")"
     end,
@@ -213,17 +211,20 @@ require('bufferline').setup {
       end
     end,
     offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center" }, {filetype = "Outline", text = "Outline", text_align = "center" }},
-    show_buffer_icons = true, -- disable filetype icons for buffers
-    show_buffer_close_icons = true,
-    show_close_icon = true,
-    show_tab_indicators = true,
+    show_buffer_icons = true, -- true | false, -- disable filetype icons for buffers
+    show_buffer_close_icons = true, -- true | false,
+    show_close_icon = true, -- true | false,
+    show_tab_indicators = true, -- true | false,
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     -- can also be a table containing 2 custom separators
     -- [focused and unfocused]. eg: { '|', '|' }
-    separator_style = 'thin',
-    enforce_regular_tabs = false,
-    always_show_bufferline = true,
-    sort_by = 'id'
+    separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' },
+    enforce_regular_tabs = false, -- false | true,
+    always_show_bufferline = true, -- true | false,
+    sort_by = 'id', -- 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
+    -- add custom logic
+    --   return buffer_a.modified > buffer_b.modified
+    -- end
   }
 }
 
@@ -296,8 +297,10 @@ require('gitsigns').setup {
     follow_files = true
   },
   current_line_blame = false,
-  current_line_blame_delay = 1000,
-  current_line_blame_position = 'eol',
+  current_line_blame_opts = {
+    delay = 1000,
+    virt_text_pos = 'eol'
+  },
   sign_priority = 6,
   update_debounce = 100,
   status_formatter = nil, -- Use default
@@ -307,6 +310,15 @@ require('gitsigns').setup {
 
 -- Nvim-cololizer.lua config
 require'colorizer'.setup()
+
+
+-- Nvim-dap-virtual-text
+-- virtual text deactivated (default)
+vim.g.dap_virtual_text = true
+-- show virtual text for current frame (recommended)
+vim.g.dap_virtual_text = true
+-- request variable values for all frames (experimental)
+vim.g.dap_virtual_text = 'all frames'
 
 -- Minimap.vim config
 vim.g.minimap_width = 10
