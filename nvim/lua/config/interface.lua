@@ -163,7 +163,6 @@ vim.g.spaceline_seperate_style = 'none'
 require('bufferline').setup {
   options = {
     numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both",
-    number_style = "", -- "superscript" | "" | { "none", "subscript" }, -- buffer_id at index 1, ordinal at index 2
     close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
@@ -310,15 +309,6 @@ require('gitsigns').setup {
 
 -- Nvim-cololizer.lua config
 require'colorizer'.setup()
-
-
--- Nvim-dap-virtual-text
--- virtual text deactivated (default)
-vim.g.dap_virtual_text = true
--- show virtual text for current frame (recommended)
-vim.g.dap_virtual_text = true
--- request variable values for all frames (experimental)
-vim.g.dap_virtual_text = 'all frames'
 
 -- Minimap.vim config
 vim.g.minimap_width = 10
