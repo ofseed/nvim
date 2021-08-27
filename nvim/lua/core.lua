@@ -62,12 +62,7 @@ vim.o.langmenu = "en_US.UTF-8"
 
 -- Colorscheme config
 vim.g.colors_name = 'dracula'
-
-require('plugins')
-require('config.language')
-require('config.interface')
-require('config.tools')
-
+-- require'config.language.nvim-treesitter'
 -- Fcitx5 auto switch
 -- vim.api.nvim_command("autocmd InsertLeave * :silent !fcitx5-remote -c")
 -- vim.api.nvim_command("autocmd BufCreate *  :silent !fcitx5-remote -c") 

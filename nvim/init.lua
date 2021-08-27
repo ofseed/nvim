@@ -1,1 +1,2 @@
-require('config')
+require('core')
+require('language')
