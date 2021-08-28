@@ -1,3 +1,5 @@
+local vim = vim
+
 require('bufferline').setup {
   options = {
     numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both",
@@ -50,7 +52,7 @@ require('bufferline').setup {
     offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center" }, {filetype = "Outline", text = "Outline", text_align = "center" }},
     show_buffer_icons = true, -- true | false, -- disable filetype icons for buffers
     show_buffer_close_icons = true, -- true | false,
-    show_close_icon = true, -- true | false,
+    show_close_icon = false, -- true | false,
     show_tab_indicators = true, -- true | false,
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     -- can also be a table containing 2 custom separators
