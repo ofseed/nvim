@@ -2,7 +2,7 @@ local vim = vim
 
 require("notify").setup({
   -- Animation style (see below for details)
-  stages = "fade_in_slide_out",
+  stages = "fade",
 
   -- Default timeout for notifications
   timeout = 5000,

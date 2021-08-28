@@ -1,3 +1,3 @@
 require('core')
 require('plugins')
-require('language')
+require('lsp')

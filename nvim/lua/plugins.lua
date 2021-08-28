@@ -4,7 +4,6 @@ require('packer').startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
 
---[[
 -- Interface Plugins
   use {
     'glepnir/galaxyline.nvim',
@@ -13,7 +12,6 @@ require('packer').startup(function(use)
     requires = {'kyazdani42/nvim-web-devicons'}
   }
 
-]]--
   use {
     'akinsho/nvim-bufferline.lua',
     config = function() require'config.interface.nvim-bufferline' end,
@@ -67,21 +65,7 @@ require('packer').startup(function(use)
   }
 
   use {'dracula/vim', as = 'dracula'}
-  use {'theHamsta/nvim-dap-virtual-text'}
   use {'kyazdani42/nvim-web-devicons'}
-
--- Language plugins
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',}
-  use {'neovim/nvim-lspconfig',}
-  use {'kabouzeid/nvim-lspinstall'}
-  use {'nvim-treesitter/nvim-treesitter-refactor'}
-  use {'hrsh7th/nvim-cmp', requires = 'hrsh7th/cmp-buffer'}
-  use {'hrsh7th/cmp-buffer'}
-  use {'hrsh7th/cmp-nvim-lsp'}
-  use {'saadparwaiz1/cmp_luasnip'}
-  use {'L3MON4D3/LuaSnip'}
-  use {'sbdchd/neoformat'}
-  use {'ray-x/lsp_signature.nvim'}
 
 -- Tools plugins
   use {
@@ -149,7 +133,39 @@ require('packer').startup(function(use)
 
   use {'tpope/vim-surround'}
   use {'turbio/bracey.vim', run = 'npm install --prefix server'}
-  use {'mfussenegger/nvim-dap'}
+
+-- Language plugins
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function () require'config.language.nvim-treesitter' end
+  }
+  use {'nvim-treesitter/nvim-treesitter-refactor'}
+
+  use {
+    'sbdchd/neoformat',
+    config = function () require'config.language.neoformat' end
+  }
+
+  use {
+    'ray-x/lsp_signature.nvim',
+    config = function () require'config.language.lsp_signature' end
+  }
+
+  use {
+    'mfussenegger/nvim-dap',
+    config = function () require'config.language.nvim-dap' end
+  }
   use {'Pocco81/DAPInstall.nvim'}
+  use {'theHamsta/nvim-dap-virtual-text'}
+
+  use {'neovim/nvim-lspconfig'}
+  use {'kabouzeid/nvim-lspinstall'}
+  use {'hrsh7th/nvim-cmp', requires = 'hrsh7th/cmp-buffer'}
+  use {'hrsh7th/cmp-buffer'}
+  use {'saadparwaiz1/cmp_luasnip'}
+  use {'L3MON4D3/LuaSnip'}
 
 end)
+
+vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
