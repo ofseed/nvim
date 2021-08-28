@@ -1,10 +1,10 @@
-vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
+require('packer').startup(function(use)
 
-return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
 
+--[[
 -- Interface Plugins
   use {
     'glepnir/galaxyline.nvim',
@@ -13,6 +13,7 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons'}
   }
 
+]]--
   use {
     'akinsho/nvim-bufferline.lua',
     config = function() require'config.interface.nvim-bufferline' end,
@@ -56,8 +57,13 @@ return require('packer').startup(function()
 
   use {
     'folke/trouble.nvim',
-    config = require'config.interface.trouble',
+    config = function () require'config.interface.trouble' end,
     requires = 'kyazdani42/nvim-web-devicons',
+  }
+
+  use {
+    'rcarriga/nvim-notify',
+    config = function () require'config.interface.nvim-notify' end
   }
 
   use {'dracula/vim', as = 'dracula'}
@@ -65,16 +71,8 @@ return require('packer').startup(function()
   use {'kyazdani42/nvim-web-devicons'}
 
 -- Language plugins
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    config = function () require'config.language.nvim-treesitter' end
-  }
-
-  use {
-    'neovim/nvim-lspconfig',
-    config = function () require'config.language.nvim-lspconfig' end
-  }
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',}
+  use {'neovim/nvim-lspconfig',}
   use {'kabouzeid/nvim-lspinstall'}
   use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'hrsh7th/nvim-cmp', requires = 'hrsh7th/cmp-buffer'}
