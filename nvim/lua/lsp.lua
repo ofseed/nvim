@@ -68,6 +68,10 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'buffer' },
+    { name = 'path' },
+    { name = 'calc' },
+    { name = 'nvim_lua' }
   },
 }
 
@@ -76,7 +80,7 @@ local function setup_servers()
   require'lspinstall'.setup()
   local servers = require'lspinstall'.installed_servers()
   for _, server in pairs(servers) do
-    require'lspconfig'[server].setup{
+    nvim_lsp[server].setup{
       capabilities = capabilities;
       on_attach = on_attach,
     }
