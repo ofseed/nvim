@@ -154,6 +154,7 @@ require('packer').startup(function(use)
     'mfussenegger/nvim-dap',
     config = function () require'config.language.nvim-dap' end
   }
+  use {"rcarriga/nvim-dap-ui"}
   use {'Pocco81/DAPInstall.nvim'}
   use {'theHamsta/nvim-dap-virtual-text'}
 
