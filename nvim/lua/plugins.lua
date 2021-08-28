@@ -70,9 +70,7 @@ require('packer').startup(function(use)
 -- Tools plugins
   use {
     'windwp/nvim-autopairs',
-    config = function ()
-        require'nvim-autopairs'.setup()
-    end
+    config = function () require'config.tools.nvim-autopairs' end
   }
 
   use {
