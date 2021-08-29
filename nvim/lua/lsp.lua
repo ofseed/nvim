@@ -25,6 +25,11 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
   },
 }
 
+-- Add on_attach functions
+local function on_attach(client)
+  require'illuminate'.on_attach(client)
+end
+
 -- Nvim-lspinstall config
 local function setup_servers()
   require'lspinstall'.setup()

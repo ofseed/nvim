@@ -16,7 +16,6 @@ require('packer').startup(function(use)
   -- todo-comments.nvim
   -- vim-markdown
   -- startuptime.vim
-  -- vim-illuminate
   -- nvim-terminal
   -- rnvimr
   -- vim-matchup
@@ -105,6 +104,10 @@ require('packer').startup(function(use)
   use {
     'windwp/nvim-ts-autotag',
     config = function () require'config.tools.nvim-ts-autotag' end
+  }
+
+  use {
+    'RRethy/vim-illuminate'
   }
 
   use {
