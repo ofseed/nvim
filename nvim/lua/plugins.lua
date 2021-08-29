@@ -14,8 +14,6 @@ require('packer').startup(function(use)
   -- project.nvim
   -- which-key.nvim
   -- todo-comments.nvim
-  -- vim-markdown
-  -- startuptime.vim
   -- nvim-terminal
   -- rnvimr
   -- vim-matchup
@@ -165,7 +163,9 @@ require('packer').startup(function(use)
   use {'tpope/vim-repeat'}
   use {'tpope/vim-surround'}
   use {'ellisonleao/glow.nvim'}
+  use {'plasticboy/vim-markdown'}
   use {'turbio/bracey.vim', run = 'npm install --prefix server'}
+  use {'tweekmonster/startuptime.vim'}
 
 -- Language plugins
   use {
