@@ -1,5 +1,24 @@
 require('packer').startup(function(use)
 
+  -- TODO:
+  -- Optimize startup speed
+  -- Refactor to plugin config files for unified style
+  -- More telescope extensions
+  --
+  -- Plugins considering to be added:
+  --
+  -- which-key.nvim
+  -- todo-comments.nvim
+  -- indnet-blankline.nvim
+  -- glow.nvim
+  -- vim-markdown
+  -- startuptime.vim
+  -- vim-illuminate
+  -- nvim-terminal
+  --
+  -- hop.nvim
+  -- lightspeed.nvim
+
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'

@@ -61,7 +61,7 @@ vim.o.shortmess = "atI"
 vim.o.langmenu = "en_US.UTF-8"
 
 -- Colorscheme config
-vim.g.colors_name = 'dracula'
+vim.g.colors_name = 'tokyonight'
 
 -- Fcitx5 auto switch
 vim.api.nvim_command("autocmd InsertLeave * :silent !fcitx5-remote -c")
