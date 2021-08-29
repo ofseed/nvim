@@ -4,9 +4,14 @@ require('packer').startup(function(use)
   -- Optimize startup speed
   -- Refactor to plugin config files for unified style
   -- More telescope extensions
+  -- Learn about quickfix feature (
+  -- Plugins may useful:
+  -- nvim-bqf
+  -- )
   --
   -- Plugins considering to be added:
   --
+  -- project.nvim
   -- which-key.nvim
   -- todo-comments.nvim
   -- glow.nvim
@@ -14,6 +19,10 @@ require('packer').startup(function(use)
   -- startuptime.vim
   -- vim-illuminate
   -- nvim-terminal
+  -- rnvimr
+  -- vim-matchup
+  -- repeat.vim
+  -- goto-preview
   --
   -- hop.nvim
   -- lightspeed.nvim
@@ -83,8 +92,7 @@ require('packer').startup(function(use)
 
   use {
     'lukas-reineke/indent-blankline.nvim',
-    config = function ()
-        require'config.interface.indent-blankline'
+    config = function () require'config.interface.indent-blankline'
     end
   }
 
