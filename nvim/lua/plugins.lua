@@ -4,6 +4,7 @@ require('packer').startup(function(use)
   -- Optimize startup speed
   -- Refactor to plugin config files for unified style
   -- More telescope extensions
+  -- Considering whether remove neoformat
   -- Learn about quickfix feature (
   -- Plugins may useful:
   -- nvim-bqf
