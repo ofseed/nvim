@@ -9,7 +9,6 @@ require('packer').startup(function(use)
   --
   -- which-key.nvim
   -- todo-comments.nvim
-  -- indnet-blankline.nvim
   -- glow.nvim
   -- vim-markdown
   -- startuptime.vim
@@ -80,6 +79,13 @@ require('packer').startup(function(use)
   use {
     'rcarriga/nvim-notify',
     config = function () require'config.interface.nvim-notify' end
+  }
+
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function ()
+        require'config.interface.indent-blankline'
+    end
   }
 
   use {'dracula/vim', as = 'dracula'}
