@@ -62,9 +62,6 @@ vim.o.langmenu = "en_US.UTF-8"
 
 -- Colorscheme config
 vim.g.colors_name = 'dracula'
--- require'config.language.nvim-treesitter'
+
 -- Fcitx5 auto switch
--- vim.api.nvim_command("autocmd InsertLeave * :silent !fcitx5-remote -c")
--- vim.api.nvim_command("autocmd BufCreate *  :silent !fcitx5-remote -c") 
--- vim.api.nvim_command("autocmd BufEnter *  :silent !fcitx5-remote -c")
--- vim.api.nvim_command("autocmd BufLeave *  :silent !fcitx5-remote -c")
+vim.api.nvim_command("autocmd InsertLeave * :silent !fcitx5-remote -c")
