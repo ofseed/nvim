@@ -96,12 +96,12 @@ require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
-      'nvim-lua/popup.nvim',
-      'nvim-lua/plenary.nvim'
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+      {'nvim-telescope/telescope-project.nvim'},
+      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     }
   }
-  use {'nvim-telescope/telescope-project.nvim'}
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   use {
     'iamcco/markdown-preview.nvim',
@@ -136,9 +136,11 @@ require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = function () require'config.language.nvim-treesitter' end
+    config = function () require'config.language.nvim-treesitter' end,
+    requires = {
+      {'nvim-treesitter/nvim-treesitter-refactor'}
+    }
   }
-  use {'nvim-treesitter/nvim-treesitter-refactor'}
 
   use {
     'sbdchd/neoformat',
@@ -152,22 +154,31 @@ require('packer').startup(function(use)
 
   use {
     'mfussenegger/nvim-dap',
-    config = function () require'config.language.nvim-dap' end
+    config = function () require'config.language.nvim-dap' end,
+    requires = {
+      {"rcarriga/nvim-dap-ui"},
+      {'Pocco81/DAPInstall.nvim'},
+      {'theHamsta/nvim-dap-virtual-text'}
+    }
   }
-  use {"rcarriga/nvim-dap-ui"}
-  use {'Pocco81/DAPInstall.nvim'}
-  use {'theHamsta/nvim-dap-virtual-text'}
+
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function () require'config.language.nvim-cmp' end,
+    requires = {
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'hrsh7th/cmp-calc'},
+      {'hrsh7th/cmp-nvim-lua'}
+    }
+  }
+  use {'saadparwaiz1/cmp_luasnip'}
+  use {'L3MON4D3/LuaSnip'}
 
   use {'neovim/nvim-lspconfig'}
   use {'kabouzeid/nvim-lspinstall'}
-  use {'hrsh7th/nvim-cmp', requires = 'hrsh7th/cmp-buffer'}
-  use {'hrsh7th/cmp-nvim-lsp'}
-  use {'hrsh7th/cmp-buffer'}
-  use {'hrsh7th/cmp-path'}
-  use {'hrsh7th/cmp-calc'}
-  use {'hrsh7th/cmp-nvim-lua'}
-  use {'saadparwaiz1/cmp_luasnip'}
-  use {'L3MON4D3/LuaSnip'}
 
 end)
 
