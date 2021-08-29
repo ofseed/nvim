@@ -14,9 +14,9 @@ require('packer').startup(function(use)
   --
   -- project.nvim
   -- which-key.nvim
+  --
   -- nvim-terminal
   -- rnvimr
-  -- vim-matchup
   -- goto-preview
   --
   -- hop.nvim
@@ -167,6 +167,7 @@ require('packer').startup(function(use)
 
   use {'tpope/vim-repeat'}
   use {'tpope/vim-surround'}
+  use {'andymass/vim-matchup'}
   use {'ellisonleao/glow.nvim'}
   use {'plasticboy/vim-markdown'}
   use {'turbio/bracey.vim', run = 'npm install --prefix server'}
