@@ -13,7 +13,6 @@ require('packer').startup(function(use)
   --
   -- project.nvim
   -- which-key.nvim
-  -- todo-comments.nvim
   -- nvim-terminal
   -- rnvimr
   -- vim-matchup
@@ -79,6 +78,11 @@ require('packer').startup(function(use)
   }
 
   use {
+    'folke/todo-comments.nvim',
+    config = function () require'config.interface.todo-comments' end
+  }
+
+  use {
     'rcarriga/nvim-notify',
     config = function () require'config.interface.nvim-notify' end
   }
@@ -87,6 +91,11 @@ require('packer').startup(function(use)
     'lukas-reineke/indent-blankline.nvim',
     config = function () require'config.interface.indent-blankline'
     end
+  }
+
+  use {
+    'folke/zen-mode.nvim',
+    config = function () require'config.interface.zen-mode' end
   }
 
   use {'dracula/vim', as = 'dracula'}
@@ -106,11 +115,6 @@ require('packer').startup(function(use)
 
   use {
     'RRethy/vim-illuminate'
-  }
-
-  use {
-    'folke/zen-mode.nvim',
-    config = function () require'config.tools.zen-mode' end
   }
 
   use {
