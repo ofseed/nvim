@@ -6,15 +6,14 @@ require('packer').startup(function(use)
 
 -- Interface Plugins
   use {
-    'glepnir/galaxyline.nvim',
-    branch = 'main',
-    config = function() require'config.interface.galaxyline' end,
+    'akinsho/nvim-bufferline.lua',
+    config = function() require'config.interface.nvim-bufferline' end,
     requires = {'kyazdani42/nvim-web-devicons'}
   }
 
   use {
-    'akinsho/nvim-bufferline.lua',
-    config = function() require'config.interface.nvim-bufferline' end,
+    'hoob3rt/lualine.nvim',
+    config = function () require'config.interface.lualine' end,
     requires = {'kyazdani42/nvim-web-devicons'}
   }
 
@@ -65,7 +64,7 @@ require('packer').startup(function(use)
   }
 
   use {'dracula/vim', as = 'dracula'}
-  use {'kyazdani42/nvim-web-devicons'}
+  use {'folke/tokyonight.nvim'}
 
 -- Tools plugins
   use {
@@ -99,7 +98,8 @@ require('packer').startup(function(use)
       {'nvim-lua/popup.nvim'},
       {'nvim-lua/plenary.nvim'},
       {'nvim-telescope/telescope-project.nvim'},
-      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      {'nvim-telescope/telescope-packer.nvim'}
     }
   }
 
@@ -171,7 +171,8 @@ require('packer').startup(function(use)
       {'hrsh7th/cmp-buffer'},
       {'hrsh7th/cmp-path'},
       {'hrsh7th/cmp-calc'},
-      {'hrsh7th/cmp-nvim-lua'}
+      {'hrsh7th/cmp-nvim-lua'},
+      {'kdheepak/cmp-latex-symbols'}
     }
   }
   use {'saadparwaiz1/cmp_luasnip'}
