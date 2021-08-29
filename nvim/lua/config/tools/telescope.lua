@@ -61,6 +61,6 @@ telescope.setup{
 -- load_extension, somewhere after setup function:
 
 for i = 1, #extensions do
-    telescope.load_extension(extensions[i])
+  telescope.load_extension(extensions[i])
 end
 

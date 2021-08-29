@@ -14,14 +14,12 @@ require('packer').startup(function(use)
   -- project.nvim
   -- which-key.nvim
   -- todo-comments.nvim
-  -- glow.nvim
   -- vim-markdown
   -- startuptime.vim
   -- vim-illuminate
   -- nvim-terminal
   -- rnvimr
   -- vim-matchup
-  -- repeat.vim
   -- goto-preview
   --
   -- hop.nvim
@@ -74,9 +72,7 @@ require('packer').startup(function(use)
 
   use {
     'romgrk/nvim-treesitter-context',
-    config = function ()
-        require'config.interface.nvim-treesitter-context'
-    end
+    config = function () require'config.interface.nvim-treesitter-context' end
   }
 
   use {
@@ -163,7 +159,9 @@ require('packer').startup(function(use)
     config = function () require'config.tools.lazygit' end
   }
 
+  use {'tpope/vim-repeat'}
   use {'tpope/vim-surround'}
+  use {'ellisonleao/glow.nvim'}
   use {'turbio/bracey.vim', run = 'npm install --prefix server'}
 
 -- Language plugins
