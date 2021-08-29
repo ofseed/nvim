@@ -95,12 +95,12 @@ require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim',
+    config = function () require'config.tools.telescope' end,
     requires = {
       {'nvim-lua/popup.nvim'},
       {'nvim-lua/plenary.nvim'},
       {'nvim-telescope/telescope-project.nvim'},
       {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-      {'nvim-telescope/telescope-packer.nvim'}
     }
   }
 
