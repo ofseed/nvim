@@ -1,5 +1,7 @@
+local vim = vim
+
 require('lualine').setup {
   options = {
-    theme = 'dracula'
+    theme = vim.g.colors_name
   }
 }

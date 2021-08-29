@@ -65,6 +65,7 @@ require('packer').startup(function(use)
 
   use {'dracula/vim', as = 'dracula'}
   use {'folke/tokyonight.nvim'}
+  use {'arcticicestudio/nord-vim'}
 
 -- Tools plugins
   use {
