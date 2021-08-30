@@ -1,6 +1,7 @@
 local vim = vim
+local toggleterm = require'toggleterm'
 
-require("toggleterm").setup{
+toggleterm.setup{
   -- size can be a number or function which is passed the current terminal
   size = function(term)
     if term.direction == "horizontal" then

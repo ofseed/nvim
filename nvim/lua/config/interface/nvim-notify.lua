@@ -1,6 +1,7 @@
 local vim = vim
+local notify = require'notify'
 
-require("notify").setup({
+notify.setup({
   -- Animation style (see below for details)
   stages = "fade",
 
@@ -19,4 +20,5 @@ require("notify").setup({
     TRACE = "✎",
   },
 })
-vim.notify = require("notify")
+
+vim.notify = notify

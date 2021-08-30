@@ -1,6 +1,7 @@
 local vim = vim
+local lualine = require'lualine'
 
-require('lualine').setup {
+lualine.setup {
   options = {
     theme = vim.g.colors_name,
     disabled_filetypes = {

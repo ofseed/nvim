@@ -1,6 +1,7 @@
 local vim = vim
+local bufferline = require'bufferline'
 
-require('bufferline').setup {
+bufferline.setup {
   options = {
     numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both",
     close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"

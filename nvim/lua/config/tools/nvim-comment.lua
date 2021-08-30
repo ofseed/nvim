@@ -1,4 +1,6 @@
-require('nvim_comment').setup {
+local comment =  require'nvim_comment'
+
+comment.setup {
   -- Linters prefer comment and line to have a space in between markers
   marker_padding = true,
   -- should comment out empty or whitespace only lines

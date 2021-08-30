@@ -1,4 +1,6 @@
-require'nvim-treesitter.configs'.setup {
+local treesitter = require'nvim-treesitter.configs'
+
+treesitter.setup {
   ensure_installed = "maintained",
   ignore_install = {},
   highlight = {
@@ -24,5 +26,8 @@ require'nvim-treesitter.configs'.setup {
           smart_rename = "grr"
       }
     }
+  },
+  autotag = {
+    enable = true
   }
 }

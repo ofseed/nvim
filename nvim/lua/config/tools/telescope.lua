@@ -63,4 +63,3 @@ telescope.setup{
 for i = 1, #extensions do
   telescope.load_extension(extensions[i])
 end
-

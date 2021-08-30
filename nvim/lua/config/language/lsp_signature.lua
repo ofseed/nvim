@@ -1,4 +1,6 @@
-require'lsp_signature'.setup({
+local signature = require'lsp_signature'
+
+signature.setup({
   bind = true, -- This is mandatory, otherwise border config won't get registered.
                -- If you want to hook lspsaga or other signature handler, pls set to false
   doc_lines = 2, -- will show two lines of comment/doc(if there are more than two lines in doc, will be truncated);
@@ -33,4 +35,3 @@ require'lsp_signature'.setup({
 })
 
 vim.api.nvim_set_keymap("n", ",r", ":lua require'dap'.repl.open()", { noremap = true, silent = true })
-

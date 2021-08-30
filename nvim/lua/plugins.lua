@@ -1,8 +1,10 @@
-require('packer').startup(function(use)
+local vim = vim
+local packer = require'packer'
+
+packer.startup(function (use)
 
   -- TODO:
   -- Optimize startup speed
-  -- Refactor to plugin config files for unified style
   -- More telescope extensions
   -- Considering whether remove neoformat
   -- Learn about quickfix feature (
@@ -29,26 +31,26 @@ require('packer').startup(function(use)
 -- Interface Plugins
   use {
     'akinsho/nvim-bufferline.lua',
-    config = function() require'config.interface.nvim-bufferline' end,
-    requires = {'kyazdani42/nvim-web-devicons'}
+    config = function () require'config.interface.nvim-bufferline' end,
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
   use {
     'hoob3rt/lualine.nvim',
     config = function () require'config.interface.lualine' end,
-    requires = {'kyazdani42/nvim-web-devicons'}
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
   use {
     'kyazdani42/nvim-tree.lua',
-    config = function() require'config.interface.nvim-tree' end,
-    requires = 'kyazdani42/nvim-web-devicons'
+    config = function () require'config.interface.nvim-tree' end,
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
   use {
     'simrat39/symbols-outline.nvim',
     config = function () require'config.interface.symbols-outline' end,
-    requires = 'kyazdani42/nvim-web-devicons'
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
   use {
@@ -99,9 +101,9 @@ require('packer').startup(function(use)
     config = function () require'config.interface.zen-mode' end
   }
 
-  use {'dracula/vim', as = 'dracula'}
-  use {'folke/tokyonight.nvim'}
-  use {'arcticicestudio/nord-vim'}
+  use { 'dracula/vim' , as = 'dracula' }
+  use { 'folke/tokyonight.nvim' }
+  use { 'arcticicestudio/nord-vim' }
 
 -- Tools plugins
   use {
@@ -132,10 +134,10 @@ require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     config = function () require'config.tools.telescope' end,
     requires = {
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'},
-      {'nvim-telescope/telescope-project.nvim'},
-      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-project.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     }
   }
 
@@ -165,13 +167,13 @@ require('packer').startup(function(use)
     config = function () require'config.tools.lazygit' end
   }
 
-  use {'tpope/vim-repeat'}
-  use {'tpope/vim-surround'}
-  use {'andymass/vim-matchup'}
-  use {'ellisonleao/glow.nvim'}
-  use {'plasticboy/vim-markdown'}
-  use {'turbio/bracey.vim', run = 'npm install --prefix server'}
-  use {'tweekmonster/startuptime.vim'}
+  use { 'tpope/vim-repeat' }
+  use { 'tpope/vim-surround' }
+  use { 'andymass/vim-matchup' }
+  use { 'ellisonleao/glow.nvim' }
+  use { 'plasticboy/vim-markdown' }
+  use { 'turbio/bracey.vim', run = 'npm install --prefix server' }
+  use { 'tweekmonster/startuptime.vim' }
 
 -- Language plugins
   use {
@@ -179,7 +181,7 @@ require('packer').startup(function(use)
     run = ':TSUpdate',
     config = function () require'config.language.nvim-treesitter' end,
     requires = {
-      {'nvim-treesitter/nvim-treesitter-refactor'}
+      { 'nvim-treesitter/nvim-treesitter-refactor' }
     }
   }
 
@@ -197,9 +199,9 @@ require('packer').startup(function(use)
     'mfussenegger/nvim-dap',
     config = function () require'config.language.nvim-dap' end,
     requires = {
-      {"rcarriga/nvim-dap-ui"},
-      {'Pocco81/DAPInstall.nvim'},
-      {'theHamsta/nvim-dap-virtual-text'}
+      { "rcarriga/nvim-dap-ui" },
+      { 'Pocco81/DAPInstall.nvim' },
+      { 'theHamsta/nvim-dap-virtual-text' }
     }
   }
 
@@ -207,20 +209,20 @@ require('packer').startup(function(use)
     'hrsh7th/nvim-cmp',
     config = function () require'config.language.nvim-cmp' end,
     requires = {
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'hrsh7th/cmp-calc'},
-      {'hrsh7th/cmp-nvim-lua'},
-      {'kdheepak/cmp-latex-symbols'}
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'hrsh7th/cmp-calc' },
+      { 'hrsh7th/cmp-nvim-lua' },
+      { 'kdheepak/cmp-latex-symbols' }
     }
   }
-  use {'saadparwaiz1/cmp_luasnip'}
-  use {'L3MON4D3/LuaSnip'}
+  use { 'saadparwaiz1/cmp_luasnip' }
+  use { 'L3MON4D3/LuaSnip' }
 
-  use {'neovim/nvim-lspconfig'}
-  use {'kabouzeid/nvim-lspinstall'}
+  use { 'neovim/nvim-lspconfig' }
+  use { 'kabouzeid/nvim-lspinstall' }
 
 end)
 
