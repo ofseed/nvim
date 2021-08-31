@@ -15,12 +15,6 @@ packer.startup(function (use)
   --
   -- Plugins considering to be added:
   --
-  -- project.nvim
-  --
-  -- nvim-terminal
-  -- rnvimr
-  -- goto-preview
-  --
   -- hop.nvim
   -- lightspeed.nvim
 
@@ -144,6 +138,11 @@ packer.startup(function (use)
       { 'nvim-telescope/telescope-project.nvim' },
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     }
+  }
+
+  use {
+    'ahmendkhalf/project.nvim',
+    config = function () require'config.tools.project' end
   }
 
   use {
