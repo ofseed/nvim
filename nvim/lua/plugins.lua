@@ -4,6 +4,7 @@ local packer = require'packer'
 packer.startup(function (use)
 
   -- TODO:
+  -- Add autopair rules about markdown-tex and django templete
   -- Optimize startup speed
   -- More telescope extensions
   -- Considering whether remove neoformat
@@ -15,7 +16,6 @@ packer.startup(function (use)
   -- Plugins considering to be added:
   --
   -- project.nvim
-  -- which-key.nvim
   --
   -- nvim-terminal
   -- rnvimr
@@ -56,6 +56,11 @@ packer.startup(function (use)
   use {
     'glepnir/dashboard-nvim',
     config = function () require'config.interface.dashboard-nvim' end,
+  }
+
+  use {
+    'folke/which-key.nvim',
+    config = function () require'config.interface.which-key' end
   }
 
   use {
