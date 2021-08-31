@@ -6,17 +6,13 @@ packer.startup(function (use)
   -- TODO:
   -- Add autopair rules about markdown-tex and django templete
   -- Optimize startup speed
-  -- More telescope extensions
+  -- More telescope extensions and configurations
+  -- Configurations about project.nvim hop.nvim and lightspeed.nvim
   -- Considering whether remove neoformat
   -- Learn about quickfix feature (
   -- Plugins may useful:
   -- nvim-bqf
   -- )
-  --
-  -- Plugins considering to be added:
-  --
-  -- hop.nvim
-  -- lightspeed.nvim
 
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/popup.nvim'
@@ -130,18 +126,35 @@ packer.startup(function (use)
   }
 
   use {
+    'phaazon/hop.nvim',
+    config = function () require'config.tools.hop' end,
+    as = 'hop',
+  }
+
+  use {
+    'ggandor/lightspeed.nvim',
+    config = function ()
+      require'config.tools.lightspeed'
+    end
+  }
+
+  use {
     'nvim-telescope/telescope.nvim',
     config = function () require'config.tools.telescope' end,
     requires = {
       { 'nvim-lua/popup.nvim' },
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-project.nvim' },
+      { 'nvim-telescope/telescope-hop.nvim' },
+      { 'nvim-telescope/telescope-dap.nvim' },
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      { 'nvim-telescope/telescope-frecency.nvim' , require = 'tami5/sql.nvim'},
+      { 'nvim-telescope/telescope-media-files.nvim' }
     }
   }
 
   use {
-    'ahmendkhalf/project.nvim',
+    'ahmedkhalf/project.nvim',
     config = function () require'config.tools.project' end
   }
 
