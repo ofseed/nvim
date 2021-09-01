@@ -31,7 +31,6 @@ signature.setup({
   padding = '', -- character to pad on left and right of signature can be ' ', or '|'  etc
 
   shadow_blend = 36, -- if you using shadow as border use this set the opacity
-  shadow_guibg = 'Black' -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
+  shadow_guibg = 'Black', -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
+  toggle_key = '<C-q>' -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
 })
-
-vim.api.nvim_set_keymap("n", ",r", ":lua require'dap'.repl.open()", { noremap = true, silent = true })

@@ -131,12 +131,12 @@ packer.startup(function (use)
     as = 'hop',
   }
 
-  use {
-    'ggandor/lightspeed.nvim',
-    config = function ()
-      require'config.tools.lightspeed'
-    end
-  }
+  -- use {
+  --   'ggandor/lightspeed.nvim',
+  --   config = function ()
+  --     require'config.tools.lightspeed'
+  --   end
+  -- }
 
   use {
     'nvim-telescope/telescope.nvim',
@@ -186,7 +186,6 @@ packer.startup(function (use)
 
   use { 'tpope/vim-repeat' }
   use { 'tpope/vim-surround' }
-  use { 'andymass/vim-matchup' }
   use { 'ellisonleao/glow.nvim' }
   use { 'plasticboy/vim-markdown' }
   use { 'turbio/bracey.vim', run = 'npm install --prefix server' }
