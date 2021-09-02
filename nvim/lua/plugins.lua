@@ -206,6 +206,11 @@ packer.startup(function (use)
     config = function () require'config.language.neoformat' end
   }
 
+  -- use {
+  --   'glepnir/lspsaga.nvim',
+  --   config = function () require'config.language.lspsaga' end
+  -- }
+
   use {
     'ray-x/lsp_signature.nvim',
     config = function () require'config.language.lsp_signature' end
