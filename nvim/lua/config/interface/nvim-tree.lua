@@ -81,11 +81,6 @@ vim.g.nvim_tree_icons = {
    }
 }
 
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
-vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { silent = true })
-vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeFindFile<CR>', { silent = true })
--- NvimTreeOpen and NvimTreeClose are also available if you need them
-
 -- a list of groups can be found at `:help nvim_tree_highlight`
 vim.cmd('highlight NvimTreeFolderIcon guibg=blue')
 

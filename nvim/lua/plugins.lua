@@ -4,15 +4,9 @@ local packer = require'packer'
 packer.startup(function (use)
 
   -- TODO:
-  -- Add autopair rules about markdown-tex and django templete
-  -- Optimize startup speed
+  -- Optimize startup speed for plugins with dependencies
   -- More telescope extensions and configurations
-  -- Configurations about project.nvim hop.nvim and lightspeed.nvim
-  -- Considering whether remove neoformat
-  -- Learn about quickfix feature (
-  -- Plugins may useful:
-  -- nvim-bqf
-  -- )
+  -- Configurations about project.nvim hop.nvim
 
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/popup.nvim'
@@ -22,25 +16,33 @@ packer.startup(function (use)
   use {
     'akinsho/nvim-bufferline.lua',
     config = function () require'config.interface.nvim-bufferline' end,
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    opt = true,
+    event = 'VimEnter'
   }
 
   use {
     'hoob3rt/lualine.nvim',
     config = function () require'config.interface.lualine' end,
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    opt = true,
+    event = 'VimEnter'
   }
 
   use {
     'kyazdani42/nvim-tree.lua',
     config = function () require'config.interface.nvim-tree' end,
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    opt = true,
+    cmd = { 'NvimTreeToggle' }
   }
 
   use {
     'simrat39/symbols-outline.nvim',
     config = function () require'config.interface.symbols-outline' end,
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    opt = true,
+    cmd = { 'SymbolsOutline' }
   }
 
   use {
@@ -50,50 +52,63 @@ packer.startup(function (use)
 
   use {
     'folke/which-key.nvim',
-    config = function () require'config.interface.which-key' end
+    config = function () require'config.interface.which-key' end,
+    opt = true,
+    event = 'VimEnter'
   }
 
   use {
     'lewis6991/gitsigns.nvim',
     config = function () require'config.interface.gitsigns' end,
-    requires = 'nvim-lua/plenary.nvim'
+    requires = 'nvim-lua/plenary.nvim',
+    opt = true,
+    event = 'VimEnter'
   }
 
   use {
     'norcalli/nvim-colorizer.lua',
-    config = function () require'colorizer'.setup() end
+    config = function () require'colorizer'.setup() end,
+    opt = true,
+    event = 'VimEnter'
   }
 
   use {
     'romgrk/nvim-treesitter-context',
-    config = function () require'config.interface.nvim-treesitter-context' end
+    config = function () require'config.interface.nvim-treesitter-context' end,
+    opt = true,
+    event = 'VimEnter'
   }
 
   use {
     'folke/trouble.nvim',
     config = function () require'config.interface.trouble' end,
     requires = 'kyazdani42/nvim-web-devicons',
+    opt = true,
+    cmd = { 'TroubleToggle' }
   }
 
   use {
     'folke/todo-comments.nvim',
-    config = function () require'config.interface.todo-comments' end
+    config = function () require'config.interface.todo-comments' end,
+    opt = true,
+    event = 'VimEnter'
+  }
+
+  use {
+    'folke/zen-mode.nvim',
+    config = function () require'config.interface.zen-mode' end,
+    opt = true,
+    cmd = { 'ZenMode' }
+  }
+
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function () require'config.interface.indent-blankline' end,
   }
 
   use {
     'rcarriga/nvim-notify',
     config = function () require'config.interface.nvim-notify' end
-  }
-
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function () require'config.interface.indent-blankline'
-    end
-  }
-
-  use {
-    'folke/zen-mode.nvim',
-    config = function () require'config.interface.zen-mode' end
   }
 
   use { 'dracula/vim' , as = 'dracula' }
@@ -103,40 +118,38 @@ packer.startup(function (use)
 -- Tools plugins
   use {
     'windwp/nvim-autopairs',
-    config = function () require'config.tools.nvim-autopairs' end
+    config = function () require'config.tools.nvim-autopairs' end,
+    opt = true,
+    event = 'InsertEnter'
   }
 
   use {
     'windwp/nvim-ts-autotag',
-    config = function () require'config.tools.nvim-ts-autotag' end
+    config = function () require'config.tools.nvim-ts-autotag' end,
+    opt = true,
+    event = 'InsertEnter'
   }
 
   use {
-    'RRethy/vim-illuminate'
+    'RRethy/vim-illuminate',
+    opt = true,
+    event = 'VimEnter'
   }
 
   use {
     'terrortylor/nvim-comment',
-    config = function () require'config.tools.nvim-comment' end
-  }
-
-  use {
-    'ethanholz/nvim-lastplace',
-    config = function () require'config.tools.nvim-lastplace' end
+    config = function () require'config.tools.nvim-comment' end,
+    opt = true,
+    event = 'VimEnter'
   }
 
   use {
     'phaazon/hop.nvim',
     config = function () require'config.tools.hop' end,
     as = 'hop',
+    opt = true,
+    event = 'VimEnter'
   }
-
-  -- use {
-  --   'ggandor/lightspeed.nvim',
-  --   config = function ()
-  --     require'config.tools.lightspeed'
-  --   end
-  -- }
 
   use {
     'nvim-telescope/telescope.nvim',
@@ -155,41 +168,78 @@ packer.startup(function (use)
 
   use {
     'ahmedkhalf/project.nvim',
-    config = function () require'config.tools.project' end
+    config = function () require'config.tools.project' end,
+    opt = true,
+    event = 'VimEnter'
   }
 
   use {
     'iamcco/markdown-preview.nvim',
     config = function () require'config.tools.markdown-preview' end,
-    run = 'cd app && yarn install'
+    run = 'cd app && yarn install',
+    opt = true,
+    ft = { 'markdown' }
   }
 
   use {
     'lervag/vimtex',
-    config = function () require'config.tools.vimtex' end
+    config = function () require'config.tools.vimtex' end,
+    opt = true,
+    ft = { 'tex' }
   }
 
   use {
     'sindrets/diffview.nvim',
-    config = function () require'config.tools.diffview' end
+    config = function () require'config.tools.diffview' end,
+    opt = true,
+    cmd = { 'DiffviewOpen', 'DiffviewFileHistory' }
   }
 
   use {
     'akinsho/nvim-toggleterm.lua',
-    config = function () require'config.tools.nvim-toggleterm' end
+    config = function () require'config.tools.nvim-toggleterm' end,
+    opt = true,
+    event = 'VimEnter'
+  }
+
+  use {
+    'plasticboy/vim-markdown',
+    opt = true,
+    ft = { 'markdown' }
+  }
+
+  use { 'turbio/bracey.vim',
+    run = 'npm install --prefix server',
+    opt = true,
+    cmd = { 'Bracey' }
+  }
+
+  use {
+    'tweekmonster/startuptime.vim',
+    opt = true,
+    cmd = { 'StartupTime' }
+  }
+
+  use {
+    'tpope/vim-repeat',
+    opt = true,
+    event = 'VimEnter'
+  }
+
+  use {
+    'tpope/vim-surround',
+    opt = true,
+    event = 'VimEnter'
+  }
+
+  use {
+    'ethanholz/nvim-lastplace',
+    config = function () require'config.tools.nvim-lastplace' end,
   }
 
   use {
     'kdheepak/lazygit.nvim',
-    config = function () require'config.tools.lazygit' end
   }
-
-  use { 'tpope/vim-repeat' }
-  use { 'tpope/vim-surround' }
-  use { 'ellisonleao/glow.nvim' }
-  use { 'plasticboy/vim-markdown' }
-  use { 'turbio/bracey.vim', run = 'npm install --prefix server' }
-  use { 'tweekmonster/startuptime.vim' }
 
 -- Language plugins
   use {
@@ -203,17 +253,15 @@ packer.startup(function (use)
 
   use {
     'sbdchd/neoformat',
-    config = function () require'config.language.neoformat' end
+    opt = true,
+    cmd = { 'Neoformat' }
   }
-
-  -- use {
-  --   'glepnir/lspsaga.nvim',
-  --   config = function () require'config.language.lspsaga' end
-  -- }
 
   use {
     'ray-x/lsp_signature.nvim',
-    config = function () require'config.language.lsp_signature' end
+    config = function () require'config.language.lsp_signature' end,
+    opt = true,
+    event = 'InsertEnter'
   }
 
   use {
