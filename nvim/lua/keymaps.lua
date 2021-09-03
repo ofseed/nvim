@@ -1,7 +1,5 @@
 local vim = vim
 
-vim.api.nvim_set_keymap('n', '<leader>lg', ':LazyGit<CR>', { noremap = true, silent = true })
-
 -- For lazy loading:
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true,  silent = true })
 

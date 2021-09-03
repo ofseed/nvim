@@ -237,10 +237,6 @@ packer.startup(function (use)
     config = function () require'config.tools.nvim-lastplace' end,
   }
 
-  use {
-    'kdheepak/lazygit.nvim',
-  }
-
 -- Language plugins
   use {
     'nvim-treesitter/nvim-treesitter',
