@@ -217,7 +217,6 @@ return packer.startup(function (use)
   use {
     'ray-x/lsp_signature.nvim',
     config = function () require'config.language.lsp_signature' end,
-    event = 'InsertEnter'
   }
 
   use {

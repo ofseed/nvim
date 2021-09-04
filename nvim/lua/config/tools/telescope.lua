@@ -1,7 +1,7 @@
 local telescope = require'telescope'
 local extensions = {
-    'fzf',
-    'project',
+  'fzf',
+  'project',
 }
 
 telescope.setup{

@@ -1,4 +1,4 @@
 require('core')
-require('plugins')
 require('lsp')
+require('plugins')
 require('keymaps')
