@@ -257,6 +257,5 @@ return packer.startup(function (use)
   use { 'nvim-treesitter/nvim-treesitter-refactor' }
 
   use { 'neovim/nvim-lspconfig' }
-  use { 'kabouzeid/nvim-lspinstall' }
 
 end)

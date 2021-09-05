@@ -1,5 +1,20 @@
 local vim = vim
-local nvim_lsp = require'lspconfig'
+local lsp = require'lspconfig'
+local servers = {
+  'clangd',
+  'sumneko_lua',
+  'vimls',
+  'pyright',
+  'rust_analyzer',
+  'gopls',
+  'html',
+  'cssls',
+  'jsonls',
+  'vuels',
+  'tailwindcss',
+  'texlab',
+  'yamlls'
+}
 
 local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
 for type, icon in pairs(signs) do
@@ -24,6 +39,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     'additionalTextEdits',
   },
 }
+
 local on_attach = function(client, bufnr)
 
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -57,22 +73,14 @@ local on_attach = function(client, bufnr)
   require'illuminate'.on_attach(client)
 
 end
--- Nvim-lspinstall config
-local function setup_servers()
-  require'lspinstall'.setup()
-  local servers = require'lspinstall'.installed_servers()
-  for _, server in pairs(servers) do
-    nvim_lsp[server].setup{
-      capabilities = capabilities;
-      on_attach = on_attach,
-    }
-  end
+
+for _, server in ipairs(servers) do
+  lsp[server].setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
 end
 
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require'lspinstall'.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
+lsp.sumneko_lua.setup {
+  cmd = { 'lua-language-server' }
+}
