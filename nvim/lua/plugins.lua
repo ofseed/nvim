@@ -105,8 +105,8 @@ return packer.startup(function (use)
   }
 
   use { 'folke/tokyonight.nvim' }
-  use { 'dracula/vim' , as = 'dracula' , opt = true }
-  use { 'arcticicestudio/nord-vim', opt = true  }
+  use { 'dracula/vim' , as = 'dracula', disable = true }
+  use { 'arcticicestudio/nord-vim', disable = true }
 
 -- Tools plugins
   use {
@@ -185,8 +185,10 @@ return packer.startup(function (use)
     ft = { 'markdown' }
   }
 
-  use { 'turbio/bracey.vim',
+  use {
+    'turbio/bracey.vim',
     run = 'npm install --prefix server',
+    config = function () require'config.tools.bracey' end,
     cmd = { 'Bracey' }
   }
 

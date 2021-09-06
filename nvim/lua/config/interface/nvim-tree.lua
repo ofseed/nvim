@@ -1,7 +1,7 @@
 local vim = vim
 
 vim.g.nvim_tree_side = 'left'
-vim.g.nvim_tree_width =30 -- can be width_in_columns or 'width_in_percent%'
+vim.g.nvim_tree_width = 30 -- can be width_in_columns or 'width_in_percent%'
 vim.g.nvim_tree_ignore = {}
 vim.g.nvim_tree_gitignore = 0
 vim.g.nvim_tree_auto_open = 1 -- opens the tree when typing `vim $DIR` or `vim`
@@ -16,7 +16,7 @@ vim.g.nvim_tree_highlight_opened_files = 1 -- will enable folder and file icon h
 vim.g.nvim_tree_root_folder_modifier = ':~' -- See :help filename-modifiers for more options
 vim.g.nvim_tree_tab_open = 1 -- will open the tree when entering a new tab and the tree was previously open
 vim.g.nvim_tree_auto_resize = 0 -- will resize the tree to its saved width when opening a file
-vim.g.nvim_tree_disable_netrw = 1 -- disables netrw
+vim.g.nvim_tree_disable_netrw = 0 -- disables netrw
 vim.g.nvim_tree_hijack_netrw = 1 -- prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 vim.g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
 vim.g.nvim_tree_group_empty = 0 --  compact folders that only contain a single folder into one node in the file tree

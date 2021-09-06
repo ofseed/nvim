@@ -1,3 +1,4 @@
+local vim = vim
 local treesitter = require'nvim-treesitter.configs'
 
 treesitter.setup {
@@ -8,6 +9,7 @@ treesitter.setup {
     disable = {},
   },
   incremental_selection = {
+    disable = { 'html' },
     enable = true,
     keymaps = {
       init_selection = "gnn",
@@ -31,3 +33,6 @@ treesitter.setup {
     enable = true
   }
 }
+
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
