@@ -19,6 +19,7 @@ return packer.startup(function (use)
 
   -- TODO:
   -- More telescope extensions and configurations
+  -- Keymap settings
   -- Configurations about project.nvim hop.nvim
 
   use { 'wbthomason/packer.nvim' }
@@ -66,9 +67,9 @@ return packer.startup(function (use)
     requires = 'nvim-lua/plenary.nvim',
   }
 
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = function () require'colorizer'.setup() end,
+   use {
+    'RRethy/vim-hexokinase',
+    run = 'make hexokinase'
   }
 
   use {
