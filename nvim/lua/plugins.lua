@@ -223,6 +223,11 @@ return packer.startup(function (use)
   }
 
   use {
+    'onsails/lspkind-nvim',
+    config = function () require 'config.language.lspkind' end,
+  }
+
+  use {
     'mfussenegger/nvim-dap',
     config = function () require'config.language.nvim-dap' end,
     requires = {
@@ -234,17 +239,16 @@ return packer.startup(function (use)
 
   use {
     'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
     config = function () require'config.language.nvim-cmp' end,
     requires = {
-      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-calc', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
-      { 'kdheepak/cmp-latex-symbols', after = 'nvim-cmp' },
-      { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' }
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'hrsh7th/cmp-calc' },
+      { 'hrsh7th/cmp-nvim-lua' },
+      { 'kdheepak/cmp-latex-symbols' },
+      { 'saadparwaiz1/cmp_luasnip' }
     }
   }
 

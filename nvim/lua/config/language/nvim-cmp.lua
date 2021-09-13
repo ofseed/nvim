@@ -1,6 +1,35 @@
 local vim = vim
 local luasnip = require'luasnip'
 local cmp = require'cmp'
+local lspkind = require'lspkind'
+
+local my_symbols = {
+  Text = '',
+  Method = '',
+  Function = '',
+  Constructor = '',
+  Field = '',
+  Variable = "",
+  Class = '',
+  Interface = 'ﰮ',
+  Module = '',
+  Property = '',
+  Unit = '',
+  Value = '',
+  Enum = '',
+  Keyword = '',
+  Snippet = '﬌',
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = '',
+  Constant = "",
+  Struct = '',
+  Event = '',
+  Operator = 'ﬦ',
+  TypeParameter = '',
+}
 
 cmp.setup {
   snippet = {
@@ -46,4 +75,10 @@ cmp.setup {
     { name = 'nvim_lua' },
     { name = 'latex_symbols'}
   },
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.kind = string.format("%s %s", my_symbols[vim_item.kind], vim_item.kind)
+      return vim_item
+    end
+  }
 }
