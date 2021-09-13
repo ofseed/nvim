@@ -20,7 +20,7 @@ return packer.startup(function (use)
   -- TODO:
   -- More telescope extensions and configurations
   -- Keymap settings
-  -- Configurations about project.nvim hop.nvim
+  -- Configurations about hop.nvim
 
   use { 'wbthomason/packer.nvim' }
 

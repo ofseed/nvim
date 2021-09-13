@@ -1,12 +1,12 @@
 local vim = vim
 local notify = require'notify'
 
-notify.setup({
+notify.setup {
   -- Animation style (see below for details)
   stages = "fade",
 
   -- Default timeout for notifications
-  timeout = 5000,
+  timeout = 1000,
 
   -- For stages that change opacity this is treated as the highlight behind the window
   background_colour = "Normal",
@@ -19,6 +19,6 @@ notify.setup({
     DEBUG = "",
     TRACE = "✎",
   },
-})
+}
 
 vim.notify = notify

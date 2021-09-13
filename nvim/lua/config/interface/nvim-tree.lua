@@ -101,7 +101,7 @@ vim.g.nvim_tree_bindings = {
   { key = "K",                            cb = tree_cb("first_sibling") },
   { key = "J",                            cb = tree_cb("last_sibling") },
   { key = "I",                            cb = tree_cb("toggle_ignored") },
-  { key = "H",                            cb = tree_cb("toggle_dotfiles") },
+  { key = "<C-h>",                            cb = tree_cb("toggle_dotfiles") },
   { key = "R",                            cb = tree_cb("refresh") },
   { key = "a",                            cb = tree_cb("create") },
   { key = "d",                            cb = tree_cb("remove") },
