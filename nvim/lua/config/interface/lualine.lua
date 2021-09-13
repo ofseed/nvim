@@ -7,8 +7,8 @@ lualine.setup {
     disabled_filetypes = {
       'dashboard'
     },
-    section_separators = {'', ''},
-    component_separators = {'', ''}
+    section_separators = '',
+    component_separators = '│'
   },
   extensions = {
     'nvim-tree',
