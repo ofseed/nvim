@@ -20,7 +20,6 @@ return packer.startup(function (use)
   -- TODO:
   -- More telescope extensions and configurations
   -- Keymap settings
-  -- Configurations about hop.nvim
 
   use { 'wbthomason/packer.nvim' }
 
@@ -113,7 +112,6 @@ return packer.startup(function (use)
   use {
     'windwp/nvim-autopairs',
     config = function () require'config.tools.nvim-autopairs' end,
-    after = 'nvim-cmp'
   }
 
   use {
@@ -129,12 +127,6 @@ return packer.startup(function (use)
   use {
     'terrortylor/nvim-comment',
     config = function () require'config.tools.nvim-comment' end,
-  }
-
-  use {
-    'phaazon/hop.nvim',
-    config = function () require'config.tools.hop' end,
-    as = 'hop',
   }
 
   use {
