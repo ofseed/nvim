@@ -18,7 +18,6 @@ vim.cmd([[
 return packer.startup(function (use)
 
   -- TODO:
-  -- More telescope extensions and configurations
   -- Keymap settings
 
   use { 'wbthomason/packer.nvim' }
@@ -136,10 +135,9 @@ return packer.startup(function (use)
       { 'nvim-lua/popup.nvim' },
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-project.nvim' },
-      { 'nvim-telescope/telescope-hop.nvim' },
       { 'nvim-telescope/telescope-dap.nvim' },
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-      { 'nvim-telescope/telescope-frecency.nvim' , require = 'tami5/sql.nvim' },
+      { 'nvim-telescope/telescope-frecency.nvim' , requires = 'tami5/sql.nvim' },
       { 'nvim-telescope/telescope-media-files.nvim' }
     }
   }
