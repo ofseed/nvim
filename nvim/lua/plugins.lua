@@ -131,6 +131,11 @@ return packer.startup(function (use)
   }
 
   use {
+    'mfussenegger/nvim-ts-hint-textobject',
+    config = function () require'config.tools.nvim-ts-hint-textobject' end
+  }
+
+  use {
     'nvim-telescope/telescope.nvim',
     config = function () require'config.tools.telescope' end,
     requires = {
@@ -191,16 +196,16 @@ return packer.startup(function (use)
   }
 
   use {
+    'ethanholz/nvim-lastplace',
+    config = function () require'config.tools.nvim-lastplace' end,
+  }
+
+  use {
     'tpope/vim-repeat',
   }
 
   use {
     'tpope/vim-surround',
-  }
-
-  use {
-    'ethanholz/nvim-lastplace',
-    config = function () require'config.tools.nvim-lastplace' end,
   }
 
 -- Language plugins
@@ -254,6 +259,15 @@ return packer.startup(function (use)
     config = function () require'config.language.nvim-treesitter' end
   }
   use { 'nvim-treesitter/nvim-treesitter-refactor' }
+
+  use {
+    'simrat39/rust-tools.nvim',
+    config = function () require'config.language.rust-tools' end
+  }
+
+  use {
+    'mfussenegger/nvim-jdtls'
+  }
 
   use { 'neovim/nvim-lspconfig' }
 
