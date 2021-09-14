@@ -1,3 +1,4 @@
+local vim = vim
 local telescope = require'telescope'
 local extensions = {
   'fzf',
@@ -60,7 +61,7 @@ telescope.setup{
     media_files = {
       -- filetypes whitelist
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-      filetypes =  {"png", "jpg", "mp4", "webm", "pdf"},
+      filetypes =  {"png", "jpg", "mp4", "webm"},
       find_cwd = "rg"
     }
   }
@@ -71,3 +72,13 @@ telescope.setup{
 for i = 1, #extensions do
   telescope.load_extension(extensions[i])
 end
+
+vim.api.nvim_set_keymap('n', '<leader>ff', "<cmd>lua require'telescope.builtin'.find_files()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fg', "<cmd>lua require'telescope.builtin'.live_grep()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>f?', "<cmd>lua require'telescope.builtin'.help_tags()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fh', "<cmd>lua require'telescope.builtin'.oldfiles()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fb', "<cmd>lua require'telescope.builtin'.marks()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fc', "<cmd>lua require'telescope.builtin'.colorscheme()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fp', "<cmd>lua require'telescope'.extensions.project.project()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fF', "<cmd>lua require'telescope'.extensions.frecency.frecency()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fm', "<cmd>lua require'telescope'.extensions.media_files.media_files()<CR>", {noremap = true, silent = true})

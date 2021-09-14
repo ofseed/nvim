@@ -17,9 +17,6 @@ vim.cmd([[
 
 return packer.startup(function (use)
 
-  -- TODO:
-  -- Keymap settings
-
   use { 'wbthomason/packer.nvim' }
 
 -- Interface Plugins
@@ -91,6 +88,11 @@ return packer.startup(function (use)
     'folke/zen-mode.nvim',
     config = function () require'config.interface.zen-mode' end,
     cmd = { 'ZenMode' }
+  }
+
+  use {
+    "folke/twilight.nvim",
+    config = function() require'config.interface.twilight' end
   }
 
   use {
