@@ -61,6 +61,8 @@ vim.o.shortmess = "atI"
 vim.o.langmenu = "en_US.UTF-8"
 
 -- Colorscheme config
+vim.g.tokyonight_transparent = false
+vim.g.tokyonight_sidebars = {'Outline', 'packer'}
 vim.g.colors_name = 'tokyonight'
 
 -- Fcitx5 auto switch

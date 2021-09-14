@@ -79,6 +79,6 @@ vim.api.nvim_set_keymap('n', '<leader>f?', "<cmd>lua require'telescope.builtin'.
 vim.api.nvim_set_keymap('n', '<leader>fh', "<cmd>lua require'telescope.builtin'.oldfiles()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fb', "<cmd>lua require'telescope.builtin'.marks()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fc', "<cmd>lua require'telescope.builtin'.colorscheme()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>fp', "<cmd>lua require'telescope'.extensions.project.project()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fp', "<cmd>lua require'telescope'.extensions.project.project{}<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fF', "<cmd>lua require'telescope'.extensions.frecency.frecency()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fm', "<cmd>lua require'telescope'.extensions.media_files.media_files()<CR>", {noremap = true, silent = true})
