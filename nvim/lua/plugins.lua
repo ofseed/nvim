@@ -68,11 +68,6 @@ return packer.startup(function (use)
   }
 
   use {
-    'romgrk/nvim-treesitter-context',
-    config = function () require'config.interface.nvim-treesitter-context' end,
-  }
-
-  use {
     'folke/trouble.nvim',
     config = function () require'config.interface.trouble' end,
     requires = 'kyazdani42/nvim-web-devicons',
