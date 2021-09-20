@@ -112,8 +112,6 @@ return packer.startup(function (use)
 
   use {
     'windwp/nvim-ts-autotag',
-    config = function () require'config.tools.nvim-ts-autotag' end,
-    event = 'InsertEnter'
   }
 
   use {

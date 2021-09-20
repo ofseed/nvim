@@ -10,13 +10,20 @@ local servers = {
   'html',
   'cssls',
   'tsserver',
-  'jsonls',
-  'vuels',
+  -- 'jsonls',
+  'volar',
   'tailwindcss',
   'texlab',
   'yamlls',
   'cmake'
 }
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  underline = true,
+  update_in_insert = false,
+  virtual_text = { spacing = 5, prefix = "●" , severity_limit = 'Warning' },
+  severity_sort = true,
+})
 
 local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
 for type, icon in pairs(signs) do
