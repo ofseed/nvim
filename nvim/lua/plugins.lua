@@ -218,6 +218,12 @@ return packer.startup(function (use)
   }
 
   use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function () require'config.language.null-ls' end,
+    requires = 'nvim-lua/plenary.nvim',
+  }
+
+  use {
     'mfussenegger/nvim-dap',
     config = function () require'config.language.nvim-dap' end,
     requires = {
@@ -260,7 +266,7 @@ return packer.startup(function (use)
   }
 
   use {
-    'mfussenegger/nvim-jdtls'
+    'rafamadriz/friendly-snippets'
   }
 
   use { 'neovim/nvim-lspconfig' }

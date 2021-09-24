@@ -30,3 +30,5 @@ nnoremap \g <Action>(Generate)
 
 Plug 'preservim/nerdtree'
 map <leader>e :NERDTree<CR>
+
+autocmd InsertLeave * :silent !fcitx5-remote -c
