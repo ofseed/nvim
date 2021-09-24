@@ -203,11 +203,6 @@ return packer.startup(function (use)
 
 -- Language plugins
   use {
-    'sbdchd/neoformat',
-    cmd = { 'Neoformat' }
-  }
-
-  use {
     'ray-x/lsp_signature.nvim',
     config = function () require'config.language.lsp_signature' end,
   }
@@ -220,7 +215,10 @@ return packer.startup(function (use)
   use {
     'jose-elias-alvarez/null-ls.nvim',
     config = function () require'config.language.null-ls' end,
-    requires = 'nvim-lua/plenary.nvim',
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'neovim/nvim-lspconfig' }
+    }
   }
 
   use {
