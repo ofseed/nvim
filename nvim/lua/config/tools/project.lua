@@ -1,5 +1,5 @@
 local vim = vim
-local project = require'project_nvim'
+local project = require "project_nvim"
 
 project.setup {
   -- Manual mode doesn't automatically change your root directory, so you have
@@ -14,7 +14,7 @@ project.setup {
 
   -- All the patterns used to detect root dir, when **"pattern"** is in
   -- detection_methods
-  patterns = { ".git", "=src", "Makefile", "CMakeLists.txt" , "package.json" },
+  patterns = { ".git", "=src", "Makefile", "CMakeLists.txt", "package.json" },
 
   -- Table of lsp clients to ignore by name
   -- eg: { "efm", ... }
@@ -29,7 +29,7 @@ project.setup {
 
   -- Path where project.nvim will store the project history for use in
   -- telescope
-  datapath = vim.fn.stdpath("data"),
+  datapath = vim.fn.stdpath "data",
 }
 
 -- For nvim-tree support

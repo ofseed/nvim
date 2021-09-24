@@ -1,16 +1,16 @@
 local vim = vim
-local lualine = require'lualine'
+local lualine = require "lualine"
 
 lualine.setup {
   options = {
     theme = vim.g.colors_name,
     disabled_filetypes = {
-      'dashboard'
+      "dashboard",
     },
-    section_separators = '',
-    component_separators = '│'
+    section_separators = "",
+    component_separators = "│",
   },
   extensions = {
-    'nvim-tree',
-  }
+    "nvim-tree",
+  },
 }

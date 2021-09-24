@@ -1,5 +1,5 @@
 local vim = vim
-local notify = require'notify'
+local notify = require "notify"
 
 notify.setup {
   -- Animation style (see below for details)

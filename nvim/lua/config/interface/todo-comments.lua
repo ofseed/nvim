@@ -1,4 +1,4 @@
-local comments = require'todo-comments'
+local comments = require "todo-comments"
 
 comments.setup {
   signs = true, -- show icons in the signs column

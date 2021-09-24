@@ -1,4 +1,4 @@
-local comment =  require'nvim_comment'
+local comment = require "nvim_comment"
 
 comment.setup {
   -- Linters prefer comment and line to have a space in between markers
@@ -12,5 +12,5 @@ comment.setup {
   -- Visual/Operator mapping left hand side
   operator_mapping = "gc",
   -- Hook function to call before commenting takes place
-  hook = nil
+  hook = nil,
 }

@@ -5,7 +5,8 @@
 " Vim and Neovim on different platforms
 " according to my personal preferences.
 " *
-]]--
+]]
+--
 
 local vim = vim
 
@@ -26,35 +27,35 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.wrap = true
 vim.o.linebreak = true
-vim.o.showbreak = '>>'
+vim.o.showbreak = ">>"
 vim.o.hlsearch = true
 vim.o.ruler = true
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 vim.o.showcmd = true
-vim.o.laststatus=2
-vim.o.belloff= 'all'
+vim.o.laststatus = 2
+vim.o.belloff = "all"
 vim.o.termguicolors = true
 vim.o.wildmenu = true
 vim.o.title = true
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn = "yes"
 vim.o.cursorline = true
-vim.o.conceallevel=1
+vim.o.conceallevel = 1
 
 -- Unicode config
-vim.o.encoding = 'utf-8'
-vim.o.fileencodings = 'utf-8,gbk2312,gbk,gb18030,cp936'
+vim.o.encoding = "utf-8"
+vim.o.fileencodings = "utf-8,gbk2312,gbk,gb18030,cp936"
 
 -- Keymap config
 vim.g.mapleader = " "
-vim.api.nvim_set_keymap('n', '<leader><leader>', ':nohlsearch<CR>', { noremap= true, silent = true})
-vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true})
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true})
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true})
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true})
-vim.api.nvim_set_keymap('n', '<C-q>', ':bp! | bd!#<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-s>', ':bn<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-a>', ':bp<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader><leader>", ":nohlsearch<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "jj", "<ESC>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-q>", ":bp! | bd!#<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-s>", ":bn<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-a>", ":bp<CR>", { noremap = true, silent = true })
 
 --Language config
 vim.o.shortmess = "atI"
@@ -62,8 +63,8 @@ vim.o.langmenu = "en_US.UTF-8"
 
 -- Colorscheme config
 vim.g.tokyonight_transparent = false
-vim.g.tokyonight_sidebars = {'Outline', 'packer'}
-vim.g.colors_name = 'tokyonight'
+vim.g.tokyonight_sidebars = { "Outline", "packer" }
+vim.g.colors_name = "tokyonight"
 
 -- Fcitx5 auto switch
-vim.api.nvim_command("autocmd InsertLeave * :silent !fcitx5-remote -c")
+vim.api.nvim_command "autocmd InsertLeave * :silent !fcitx5-remote -c"

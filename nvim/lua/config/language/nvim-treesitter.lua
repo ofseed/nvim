@@ -1,5 +1,5 @@
 local vim = vim
-local treesitter = require'nvim-treesitter.configs'
+local treesitter = require "nvim-treesitter.configs"
 
 treesitter.setup {
   ensure_installed = "maintained",
@@ -9,7 +9,7 @@ treesitter.setup {
     disable = {},
   },
   incremental_selection = {
-    disable = { 'html' },
+    disable = { "html" },
     enable = true,
     keymaps = {
       init_selection = "gnn",
@@ -19,21 +19,21 @@ treesitter.setup {
     },
   },
   indent = {
-    enable = false
+    enable = false,
   },
   refactor = {
     smart_rename = {
-      enable = true;
+      enable = true,
       keymaps = {
-          smart_rename = "grr"
-      }
-    }
+        smart_rename = "grr",
+      },
+    },
   },
   autotag = {
-    enable = true
-  }
+    enable = true,
+  },
 }
 
 vim.o.foldenable = false
-vim.o.foldmethod = 'expr'
-vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"

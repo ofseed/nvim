@@ -1,4 +1,4 @@
-local lspkind = require'lspkind'
+local lspkind = require "lspkind"
 
 lspkind.init {
   -- enables text annotations
@@ -11,36 +11,36 @@ lspkind.init {
   -- 'codicons' for codicon preset (requires vscode-codicons font)
   --
   -- default: 'default'
-  preset = 'default',
+  preset = "default",
 
   -- override preset symbols
   --
   -- default: {}
   symbol_map = {
-    Text = '',
-    Method = '',
-    Function = '',
-    Constructor = '',
-    Field = '',
-    Variable = '',
-    Class = '',
-    Interface = 'ﰮ',
-    Module = '',
-    Property = '',
-    Unit = '',
-    Value = '',
-    Enum = '',
-    Keyword = '',
-    Snippet = '﬌',
-    Color = '',
-    File = '',
-    Reference = '',
-    Folder = '',
-    EnumMember = '',
-    Constant = '',
-    Struct = '',
-    Event = '',
-    Operator = 'ﬦ',
-    TypeParameter = '',
-  }
+    Text = "",
+    Method = "",
+    Function = "",
+    Constructor = "",
+    Field = "",
+    Variable = "",
+    Class = "",
+    Interface = "ﰮ",
+    Module = "",
+    Property = "",
+    Unit = "",
+    Value = "",
+    Enum = "",
+    Keyword = "",
+    Snippet = "﬌",
+    Color = "",
+    File = "",
+    Reference = "",
+    Folder = "",
+    EnumMember = "",
+    Constant = "",
+    Struct = "",
+    Event = "",
+    Operator = "ﬦ",
+    TypeParameter = "",
+  },
 }

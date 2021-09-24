@@ -1,4 +1,4 @@
-require('core')
-require('lsp')
-require('plugins')
-require('keymaps')
+require "core"
+require "lsp"
+require "plugins"
+require "keymaps"

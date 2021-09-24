@@ -1,21 +1,21 @@
 local vim = vim
-local dap = require('dap')
+local dap = require "dap"
 dap.adapters.lldb = {
-  type = 'executable',
-  command = '/usr/bin/lldb-vscode', -- adjust as needed
-  name = "lldb"
+  type = "executable",
+  command = "/usr/bin/lldb-vscode", -- adjust as needed
+  name = "lldb",
 }
 
-local dap = require('dap')
+local dap = require "dap"
 dap.configurations.cpp = {
   {
     name = "Launch",
     type = "lldb",
     request = "launch",
     program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
-    cwd = '${workspaceFolder}',
+    cwd = "${workspaceFolder}",
     stopOnEntry = false,
     args = {},
 
@@ -33,7 +33,6 @@ dap.configurations.cpp = {
   },
 }
 
-
 -- If you want to use this for rust and c, add something like this:
 
 dap.configurations.c = dap.configurations.cpp
@@ -50,18 +49,18 @@ vim.g.dap_virtual_text = true
 -- show virtual text for current frame (recommended)
 vim.g.dap_virtual_text = true
 -- request variable values for all frames (experimental)
-vim.g.dap_virtual_text = 'all frames'
+vim.g.dap_virtual_text = "all frames"
 
 -- DAPInstall config
-local dap_install = require("dap-install")
+local dap_install = require "dap-install"
 
-dap_install.setup({
-  installation_path = vim.fn.stdpath("data") .. "/dapinstall/",
+dap_install.setup {
+  installation_path = vim.fn.stdpath "data" .. "/dapinstall/",
   verbosely_call_debuggers = false,
-})
+}
 
 -- Nvim-dap-ui config
-require"dapui".setup {
+require("dapui").setup {
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
     -- Use a table to apply multiple mappings

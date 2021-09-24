@@ -1,7 +1,7 @@
 local vim = vim
-local toggleterm = require'toggleterm'
+local toggleterm = require "toggleterm"
 
-toggleterm.setup{
+toggleterm.setup {
   -- size can be a number or function which is passed the current terminal
   size = function(term)
     if term.direction == "horizontal" then
@@ -16,11 +16,11 @@ toggleterm.setup{
   hide_numbers = true, -- hide the number column in toggleterm buffers
   shade_filetypes = {},
   shade_terminals = true,
-  shading_factor = '1', -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
+  shading_factor = "1", -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
   start_in_insert = true,
   insert_mappings = true, -- whether or not the open mapping applies in insert mode
   persist_size = true,
-  direction = 'float', -- 'vertical' | 'horizontal' | 'window' | 'float',
+  direction = "float", -- 'vertical' | 'horizontal' | 'window' | 'float',
   close_on_exit = true, -- close the terminal window when the process exits
   shell = vim.o.shell, -- change the default shell
   -- This field is only relevant if direction is set to 'float'
@@ -29,32 +29,32 @@ toggleterm.setup{
     -- see :h nvim_win_open for details on borders however
     -- the 'curved' border is a custom border type
     -- not natively supported but implemented in this plugin.
-    border = 'curved', -- 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
+    border = "curved", -- 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
     width = 100,
     height = 40,
     winblend = 3,
     highlights = {
       border = "Normal",
       background = "Normal",
-    }
-  }
+    },
+  },
 }
 
-local Terminal  = require'toggleterm.terminal'.Terminal
+local Terminal = require("toggleterm.terminal").Terminal
 
 -- For lazygit
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
 
 function _lazygit_toggle()
   lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 
-local glow = Terminal:new({ cmd = "glow", hidden = true })
+local glow = Terminal:new { cmd = "glow", hidden = true }
 
 function _glow_toggle()
   glow:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gl", "<cmd>lua _glow_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>gl", "<cmd>lua _glow_toggle()<CR>", { noremap = true, silent = true })
