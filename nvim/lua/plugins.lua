@@ -287,8 +287,13 @@ return packer.startup(function(use)
       require "config.language.nvim-dap"
     end,
     requires = {
+      {
+        "rcarriga/nvim-dap-ui",
+        config = function()
+          require "config.language.nvim-dap-ui"
+        end,
+      },
       { "mfussenegger/nvim-dap-python" },
-      { "rcarriga/nvim-dap-ui" },
       { "Pocco81/DAPInstall.nvim" },
       { "theHamsta/nvim-dap-virtual-text" },
     },
