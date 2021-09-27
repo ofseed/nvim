@@ -41,7 +41,6 @@ return packer.startup(function(use)
       require "config.interface.nvim-tree"
     end,
     requires = { "kyazdani42/nvim-web-devicons" },
-    cmd = { "NvimTreeToggle" },
   }
 
   use {
