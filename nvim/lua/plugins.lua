@@ -170,7 +170,6 @@ return packer.startup(function(use)
       { "nvim-lua/popup.nvim" },
       { "nvim-lua/plenary.nvim" },
       { "nvim-telescope/telescope-project.nvim" },
-      { "nvim-telescope/telescope-dap.nvim" },
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
       { "nvim-telescope/telescope-frecency.nvim", requires = "tami5/sql.nvim" },
       { "nvim-telescope/telescope-media-files.nvim" },
@@ -280,24 +279,6 @@ return packer.startup(function(use)
     requires = {
       { "nvim-lua/plenary.nvim" },
       { "neovim/nvim-lspconfig" },
-    },
-  }
-
-  use {
-    "mfussenegger/nvim-dap",
-    config = function()
-      require "config.language.nvim-dap"
-    end,
-    requires = {
-      {
-        "rcarriga/nvim-dap-ui",
-        config = function()
-          require "config.language.nvim-dap-ui"
-        end,
-      },
-      { "mfussenegger/nvim-dap-python" },
-      { "Pocco81/DAPInstall.nvim" },
-      { "theHamsta/nvim-dap-virtual-text" },
     },
   }
 
