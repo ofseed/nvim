@@ -21,4 +21,6 @@ notify.setup {
   },
 }
 
-vim.notify = notify
+if not vim.g.started_by_firenvim then
+  vim.notify = notify
+end

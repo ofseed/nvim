@@ -6,7 +6,6 @@ ls.config {
     ls.builtins.formatting.stylua,
     ls.builtins.formatting.prettier,
     ls.builtins.diagnostics.write_good,
-    ls.builtins.code_actions.gitsigns,
     ls.builtins.diagnostics.codespell,
   },
 }
