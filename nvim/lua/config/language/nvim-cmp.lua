@@ -2,34 +2,7 @@ local vim = vim
 local luasnip = require "luasnip"
 local cmp = require "cmp"
 local lspkind = require "lspkind"
-
-local my_symbols = {
-  Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "",
-  Interface = "ﰮ",
-  Module = "",
-  Property = "",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "﬌",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "ﬦ",
-  TypeParameter = "",
-}
+local my_symbols = require "assets.lsp-symbols"
 
 cmp.setup {
   snippet = {
