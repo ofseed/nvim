@@ -42,16 +42,24 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
     { name = "calc" },
-    { name = "nvim_lua" },
     { name = "latex_symbols" },
   },
   formatting = {
     format = function(entry, vim_item)
       vim_item.kind = string.format("%s %s", my_symbols[vim_item.kind], vim_item.kind)
+      vim_item.menu = ({
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[NVIM]",
+        luasnip = "[SNIP]",
+        buffer = "[BUF]",
+        calc = "[CALC]",
+        latex_symbols = "[TEX]",
+      })[entry.source.name]
       return vim_item
     end,
   },
