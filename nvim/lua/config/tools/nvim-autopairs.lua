@@ -1,5 +1,6 @@
 local autopairs = require "nvim-autopairs"
 local rule = require "nvim-autopairs.rule"
+local ts_conds = require "nvim-autopairs.ts-conds"
 
 autopairs.setup {
   check_ts = true,
@@ -14,12 +15,11 @@ require("nvim-treesitter.configs").setup {
   autopairs = { enable = true },
 }
 
-local ts_conds = require "nvim-autopairs.ts-conds"
-
--- press % => %% is only inside comment or string
 autopairs.add_rules {
-  rule("%", "%", "lua"):with_pair(ts_conds.is_ts_node { "string", "comment" }),
-  rule("$", "$", "lua"):with_pair(ts_conds.is_not_ts_node { "function" }),
+  rule("{ ", " ", "html"),
+  rule("{ ", " ", "htmldjango"),
+  rule("{%", "%", "htmldjango"),
+  rule("{% ", " ", "htmldjango"),
 }
 
 require("nvim-autopairs.completion.cmp").setup {

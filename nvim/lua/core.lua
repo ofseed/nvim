@@ -4,7 +4,6 @@
 " file is to unify the experience of using
 " Vim and Neovim on different platforms
 " according to my personal preferences.
-" *
 ]]
 --
 
