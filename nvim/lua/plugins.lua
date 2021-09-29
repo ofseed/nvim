@@ -137,10 +137,6 @@ return packer.startup(function(use)
   }
 
   use {
-    "windwp/nvim-ts-autotag",
-  }
-
-  use {
     "RRethy/vim-illuminate",
     config = function()
       require "config.tools.vim-illuminate"
@@ -309,8 +305,12 @@ return packer.startup(function(use)
     config = function()
       require "config.language.nvim-treesitter"
     end,
+    requires = {
+      { "nvim-treesitter/nvim-treesitter-refactor" },
+      { "windwp/nvim-ts-autotag" },
+      { "JoosepAlviste/nvim-ts-context-commentstring" },
+    },
   }
-  use { "nvim-treesitter/nvim-treesitter-refactor" }
 
   use {
     "simrat39/rust-tools.nvim",
