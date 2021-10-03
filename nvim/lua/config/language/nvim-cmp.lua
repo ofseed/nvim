@@ -43,7 +43,7 @@ cmp.setup {
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    { name = "luasnip" },
+    -- { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
     { name = "calc" },
@@ -55,7 +55,7 @@ cmp.setup {
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         nvim_lua = "[NVIM]",
-        luasnip = "[SNIP]",
+        -- luasnip = "[SNIP]",
         buffer = "[BUF]",
         calc = "[CALC]",
         latex_symbols = "[TEX]",
