@@ -5,6 +5,7 @@ local extensions = {
   "project",
   "frecency",
   "media_files",
+  "notify"
 }
 
 telescope.setup {
@@ -125,5 +126,11 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>fm",
   "<cmd>lua require'telescope'.extensions.media_files.media_files()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>nt",
+  "<cmd>lua require'telescope'.extensions.notify.notify()<CR>",
   { noremap = true, silent = true }
 )
