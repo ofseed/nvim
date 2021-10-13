@@ -16,6 +16,9 @@ vim.cmd [[
 ]]
 
 return packer.startup(function(use)
+
+  -- TODO: Considering add diagnostics.nvim
+
   use { "wbthomason/packer.nvim" }
 
   -- Interface Plugins
