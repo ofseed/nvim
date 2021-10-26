@@ -62,6 +62,7 @@ vim.o.langmenu = "en_US.UTF-8"
 
 -- Colorscheme config
 vim.g.tokyonight_transparent = false
+vim.g.tokyonight_style = "storm"
 vim.g.tokyonight_sidebars = { "Outline", "packer" }
 vim.g.colors_name = "tokyonight"
 

@@ -2,7 +2,7 @@ local vim = vim
 local tree = require "nvim-tree"
 
 vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" } --empty by default
-vim.g.nvim_tree_gitignore = 1 -- 0 by default
+vim.g.nvim_tree_gitignore = 0 -- 0 by default
 vim.g.nvim_tree_quit_on_open = 0 -- 0 by default, closes the tree when you open a file
 vim.g.nvim_tree_indent_markers = 1 -- 0 by default, this option shows indent markers when folders are open
 vim.g.nvim_tree_hide_dotfiles = 1 -- 0 by default, this option hides files and folders starting with a dot `.`
@@ -102,10 +102,10 @@ tree.setup {
   -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
   update_focused_file = {
     -- enables the feature
-    enable = false,
+    enable = true,
     -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
     -- only relevant when `update_focused_file.enable` is true
-    update_cwd = false,
+    update_cwd = true,
     -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
     -- only relevant when `update_focused_file.update_cwd` is true and `update_focused_file.enable` is true
     ignore_list = {},

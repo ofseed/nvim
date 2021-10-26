@@ -16,9 +16,6 @@ vim.cmd [[
 ]]
 
 return packer.startup(function(use)
-
-  -- TODO: Considering add diagnostics.nvim
-
   use { "wbthomason/packer.nvim" }
 
   -- Interface Plugins
@@ -128,6 +125,7 @@ return packer.startup(function(use)
   }
 
   use { "folke/tokyonight.nvim" }
+  use { "shaunsingh/solarized.nvim", disable = true }
   use { "dracula/vim", as = "dracula", disable = true }
   use { "arcticicestudio/nord-vim", disable = true }
 

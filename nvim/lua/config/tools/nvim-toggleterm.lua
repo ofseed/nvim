@@ -32,7 +32,7 @@ toggleterm.setup {
     border = "curved", -- 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
     width = 100,
     height = 40,
-    winblend = 3,
+    winblend = 8,
     highlights = {
       border = "Normal",
       background = "Normal",

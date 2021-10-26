@@ -1,6 +1,5 @@
 local autopairs = require "nvim-autopairs"
 local rule = require "nvim-autopairs.rule"
-local ts_conds = require "nvim-autopairs.ts-conds"
 
 autopairs.setup {
   check_ts = true,
