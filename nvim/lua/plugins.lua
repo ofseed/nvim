@@ -108,7 +108,7 @@ return packer.startup(function(use)
     config = function()
       require "config.interface.twilight"
     end,
-    cmd = { "ZenMode", "Twilight"}
+    cmd = { "ZenMode", "Twilight" },
   }
 
   use {
@@ -127,8 +127,8 @@ return packer.startup(function(use)
 
   use { "folke/tokyonight.nvim" }
   -- use { "shaunsingh/solarized.nvim" }
+  -- use { "shaunsingh/nord.nvim"}
   -- use { "dracula/vim", as = "dracula" }
-  -- use { "arcticicestudio/nord-vim" }
 
   -- Tools plugins
   use {
@@ -290,6 +290,7 @@ return packer.startup(function(use)
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-path" },
+      { "hrsh7th/cmp-cmdline" },
       { "hrsh7th/cmp-calc" },
       { "hrsh7th/cmp-nvim-lua" },
       { "kdheepak/cmp-latex-symbols" },
@@ -322,12 +323,16 @@ return packer.startup(function(use)
     config = function()
       require "config.language.rust-tools"
     end,
-    ft = { "rust" }
+    ft = { "rust" },
   }
 
   use {
     "rafamadriz/friendly-snippets",
   }
+
+  -- use {
+  --   "williamboman/nvim-lsp-installer"
+  -- }
 
   use { "neovim/nvim-lspconfig" }
 end)

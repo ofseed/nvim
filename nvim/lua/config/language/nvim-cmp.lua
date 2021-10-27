@@ -51,7 +51,22 @@ cmp.setup {
   formatting = {
     format = lspkind.cmp_format { with_text = false, maxwidth = 50 },
   },
-  experimental= {
-    ghost_text = true
-  }
+  experimental = {
+    ghost_text = true,
+  },
 }
+
+--[[
+cmp.setup.cmdline(":", {
+  sources = {
+    { name = "cmdline" },
+    { name = "path" },
+  },
+})
+
+cmp.setup.cmdline("/", {
+  sources = {
+    { name = "buffer" },
+  },
+})
+--]]
