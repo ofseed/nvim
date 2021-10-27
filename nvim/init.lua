@@ -63,4 +63,7 @@ vim.g.colors_name = "tokyonight"
 -- Fcitx5 auto switch
 vim.api.nvim_command "autocmd InsertLeave * :silent !fcitx5-remote -c"
 
+-- Use filetype.nvim instead of filetype
+vim.g.did_load_filetypes = 1
+
 require "init"

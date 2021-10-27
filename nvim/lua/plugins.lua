@@ -108,6 +108,7 @@ return packer.startup(function(use)
     config = function()
       require "config.interface.twilight"
     end,
+    cmd = { "ZenMode", "Twilight"}
   }
 
   use {
@@ -234,13 +235,6 @@ return packer.startup(function(use)
   }
 
   use {
-    "glacambre/firenvim",
-    run = function()
-      vim.fn["firenvim#install"](0)
-    end,
-  }
-
-  use {
     "tweekmonster/startuptime.vim",
     cmd = { "StartupTime" },
   }
@@ -328,6 +322,7 @@ return packer.startup(function(use)
     config = function()
       require "config.language.rust-tools"
     end,
+    ft = { "rust" }
   }
 
   use {
