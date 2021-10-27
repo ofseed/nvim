@@ -131,6 +131,13 @@ return packer.startup(function(use)
 
   -- Tools plugins
   use {
+    "nathom/filetype.nvim",
+    config = function()
+      require "config.tools.filetype"
+    end,
+  }
+
+  use {
     "windwp/nvim-autopairs",
     config = function()
       require "config.tools.nvim-autopairs"
