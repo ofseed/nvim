@@ -125,9 +125,9 @@ return packer.startup(function(use)
   }
 
   use { "folke/tokyonight.nvim" }
-  use { "shaunsingh/solarized.nvim", disable = true }
-  use { "dracula/vim", as = "dracula", disable = true }
-  use { "arcticicestudio/nord-vim", disable = true }
+  -- use { "shaunsingh/solarized.nvim" }
+  -- use { "dracula/vim", as = "dracula" }
+  -- use { "arcticicestudio/nord-vim" }
 
   -- Tools plugins
   use {

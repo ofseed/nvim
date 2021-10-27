@@ -32,4 +32,5 @@ signature.setup {
   shadow_blend = 36, -- if you using shadow as border use this set the opacity
   shadow_guibg = "Black", -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
   toggle_key = "<C-k>", -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
+  -- FIXME: <C-k> is a conflict keymap
 }
