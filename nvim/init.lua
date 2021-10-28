@@ -58,7 +58,7 @@ vim.o.langmenu = "en_US.UTF-8"
 vim.g.tokyonight_transparent = false
 vim.g.tokyonight_style = "storm"
 vim.g.tokyonight_sidebars = { "Outline", "packer" }
-vim.g.colors_name = "tokyonight"
+vim.cmd[[colorscheme tokyonight]]
 
 -- Fcitx5 auto switch
 vim.api.nvim_command "autocmd InsertLeave * :silent !fcitx5-remote -c"

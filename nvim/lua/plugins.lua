@@ -331,8 +331,13 @@ return packer.startup(function(use)
   }
 
   -- use {
-  --   "williamboman/nvim-lsp-installer"
+  --   "williamboman/nvim-lsp-installer",
+  --   config = function()
+  --     require "config.language.nvim-lsp-installer"
+  --   end,
   -- }
 
   use { "neovim/nvim-lspconfig" }
+
+  use { "github/copilot.vim" }
 end)
