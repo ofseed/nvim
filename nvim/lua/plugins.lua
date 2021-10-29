@@ -326,16 +326,9 @@ return packer.startup(function(use)
     ft = { "rust" },
   }
 
-  use {
-    "rafamadriz/friendly-snippets",
-  }
+  use { "rafamadriz/friendly-snippets" }
 
-  -- use {
-  --   "williamboman/nvim-lsp-installer",
-  --   config = function()
-  --     require "config.language.nvim-lsp-installer"
-  --   end,
-  -- }
+  use { "williamboman/nvim-lsp-installer" }
 
   use { "neovim/nvim-lspconfig" }
 

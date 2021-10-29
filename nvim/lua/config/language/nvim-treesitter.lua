@@ -9,8 +9,7 @@ treesitter.setup {
     disable = {},
   },
   incremental_selection = {
-    disable = { "html" },
-    enable = true,
+    enable = false,
     keymaps = {
       init_selection = "gnn",
       node_incremental = "grn",
@@ -19,7 +18,7 @@ treesitter.setup {
     },
   },
   indent = {
-    enable = false,
+    enable = true,
   },
   refactor = {
     smart_rename = {

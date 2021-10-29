@@ -1,22 +1,7 @@
 local vim = vim
 local lsp = require "lspconfig"
-local servers = {
-  "clangd",
-  "sumneko_lua",
-  "vimls",
-  "pyright",
-  "rust_analyzer",
-  "gopls",
-  "html",
-  "cssls",
-  "tsserver",
-  -- 'jsonls',
-  "volar",
-  "tailwindcss",
-  "texlab",
-  "yamlls",
-  "cmake",
-}
+local installer = require "nvim-lsp-installer"
+local servers = require "nvim-lsp-installer.servers"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,
@@ -71,15 +56,12 @@ local on_attach = function(client, bufnr)
   require("illuminate").on_attach(client)
 end
 
-for _, server in ipairs(servers) do
-  lsp[server].setup {
+installer.on_server_ready(function(server)
+  local opts = {
     capabilities = capabilities,
     on_attach = on_attach,
   }
-end
 
-lsp.sumneko_lua.setup {
-  cmd = { "lua-language-server" },
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
+  server:setup(opts)
+  vim.cmd [[ do User LspAttachBuffers ]]
+end)
