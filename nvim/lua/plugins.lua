@@ -126,11 +126,13 @@ return packer.startup(function(use)
   }
 
   use { "folke/tokyonight.nvim" }
-  -- use { "shaunsingh/solarized.nvim" }
-  -- use { "shaunsingh/nord.nvim"}
-  -- use { "dracula/vim", as = "dracula" }
+  use { "shaunsingh/solarized.nvim", opt = true }
+  use { "shaunsingh/nord.nvim", opt = true }
+  use { "dracula/vim", as = "dracula", opt = true }
 
   -- Tools plugins
+  -- use { "kristijanhusak/orgmode.nvim" }
+
   use {
     "nathom/filetype.nvim",
     config = function()
