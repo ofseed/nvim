@@ -12,15 +12,18 @@ cmp.setup {
   mapping = {
     ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
+    ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ["<C-e>"] = cmp.mapping {
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    },
     ["<CR>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ["<Tab>"] = function(fallback)
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
@@ -28,8 +31,11 @@ cmp.setup {
       else
         fallback()
       end
-    end,
-    ["<S-Tab>"] = function(fallback)
+    end, {
+      "i",
+      "c",
+    }),
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
@@ -37,7 +43,10 @@ cmp.setup {
       else
         fallback()
       end
-    end,
+    end, {
+      "i",
+      "c",
+    }),
   },
   sources = {
     { name = "nvim_lsp" },
@@ -53,12 +62,12 @@ cmp.setup {
   },
 }
 
---[[
 cmp.setup.cmdline(":", {
-  sources = {
-    { name = "cmdline" },
+  sources = cmp.config.sources({
     { name = "path" },
-  },
+  }, {
+    { name = "cmdline" },
+  }),
 })
 
 cmp.setup.cmdline("/", {
@@ -66,4 +75,3 @@ cmp.setup.cmdline("/", {
     { name = "buffer" },
   },
 })
---]]
