@@ -65,4 +65,5 @@ vim.cmd [[colorscheme tokyonight]]
 -- Fcitx5 auto switch
 vim.api.nvim_command "autocmd InsertLeave * :silent !fcitx5-remote -c"
 
+require("impatient").enable_profile()
 require "init"
