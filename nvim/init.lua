@@ -17,7 +17,7 @@ vim.o.backup = false
 vim.o.swapfile = false
 vim.o.ignorecase = true
 vim.o.compatible = false
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = "menu,menuone,noselect"
 vim.o.list = true
 vim.o.hidden = true
 
@@ -47,6 +47,8 @@ vim.o.fileencodings = "utf-8,gbk2312,gbk,gb18030,cp936"
 -- Keymap config
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", "<leader><leader>", ":nohlsearch<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("c", "<C-p>", "<Up>", {})
+vim.api.nvim_set_keymap("c", "<C-n>", "<Down>", {})
 vim.api.nvim_set_keymap("n", "<Tab>", ":bn<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":bp<CR>", { noremap = true, silent = true })
 
@@ -58,7 +60,7 @@ vim.o.langmenu = "en_US.UTF-8"
 vim.g.tokyonight_transparent = false
 vim.g.tokyonight_style = "storm"
 vim.g.tokyonight_sidebars = { "Outline", "packer" }
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd [[colorscheme tokyonight]]
 
 -- Fcitx5 auto switch
 vim.api.nvim_command "autocmd InsertLeave * :silent !fcitx5-remote -c"
