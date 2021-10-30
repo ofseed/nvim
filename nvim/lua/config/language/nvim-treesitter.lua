@@ -18,7 +18,7 @@ treesitter.setup {
     },
   },
   indent = {
-    enable = true,
+    enable = false,
   },
   refactor = {
     smart_rename = {

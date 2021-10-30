@@ -59,6 +59,10 @@ return packer.startup(function(use)
     end,
   }
 
+  -- use {
+  --   "goolord/alpha-nvim",
+  -- }
+
   use {
     "folke/which-key.nvim",
     config = function()
@@ -125,7 +129,10 @@ return packer.startup(function(use)
     end,
   }
 
+  use { "dstein64/nvim-scrollview" }
+
   use { "folke/tokyonight.nvim" }
+  use { "navarasu/onedark.nvim", opt = true }
   use { "shaunsingh/solarized.nvim", opt = true }
   use { "shaunsingh/nord.nvim", opt = true }
   use { "dracula/vim", as = "dracula", opt = true }
@@ -200,6 +207,14 @@ return packer.startup(function(use)
   }
 
   use {
+    "jbyuki/nabla.nvim",
+    config = function()
+      require "config.tools.nabla"
+    end,
+    ft = { "tex", "markdown" },
+  }
+
+  use {
     "lervag/vimtex",
     config = function()
       require "config.tools.vimtex"
@@ -268,6 +283,13 @@ return packer.startup(function(use)
     "onsails/lspkind-nvim",
     config = function()
       require "config.language.lspkind"
+    end,
+  }
+
+  use {
+    "lewis6991/spellsitter.nvim",
+    config = function()
+      require "config.language.spellsitter"
     end,
   }
 

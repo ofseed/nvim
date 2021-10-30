@@ -36,7 +36,7 @@ tools.setup {
       -- autoSetHints both are true.
       only_current_line_autocmd = "CursorHold",
 
-      -- wheter to show parameter hints with the inlay hints or not
+      -- whether to show parameter hints with the inlay hints or not
       show_parameter_hints = true,
 
       -- prefix for parameter hints
@@ -101,4 +101,13 @@ tools.setup {
   -- these override the defaults set by rust-tools.nvim
   -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
   server = {}, -- rust-analyer options
+
+  -- debugging stuff
+  -- dap = {
+  --   adapter = {
+  --     type = "executable",
+  --     command = "lldb-vscode",
+  --     name = "rt_lldb",
+  --   },
+  -- },
 }
