@@ -49,8 +49,6 @@ vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", "<leader><leader>", ":nohlsearch<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("c", "<C-p>", "<Up>", {})
 vim.api.nvim_set_keymap("c", "<C-n>", "<Down>", {})
-vim.api.nvim_set_keymap("n", "<Tab>", ":bn<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<S-Tab>", ":bp<CR>", { noremap = true, silent = true })
 
 --Language config
 vim.o.shortmess = "atI"

@@ -268,13 +268,11 @@ return packer.startup {
       end,
     }
 
-    use {
-      "tpope/vim-repeat",
-    }
+    use { "tpope/vim-unimpaired" }
 
-    use {
-      "tpope/vim-surround",
-    }
+    use { "tpope/vim-repeat" }
+
+    use { "tpope/vim-surround" }
 
     -- Language plugins
     use {
