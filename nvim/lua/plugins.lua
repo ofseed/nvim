@@ -80,8 +80,10 @@ return packer.startup {
     }
 
     use {
-      "RRethy/vim-hexokinase",
-      run = "make hexokinase",
+      "norcalli/nvim-colorizer.lua",
+      config = function()
+        require "config.interface.nvim-colorizer"
+      end,
     }
 
     use {
