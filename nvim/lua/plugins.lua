@@ -133,10 +133,10 @@ return packer.startup {
     use { "dstein64/nvim-scrollview" }
 
     use { "folke/tokyonight.nvim" }
-    use { "navarasu/onedark.nvim", opt = true }
-    use { "shaunsingh/solarized.nvim", opt = true }
-    use { "shaunsingh/nord.nvim", opt = true }
-    use { "dracula/vim", as = "dracula", opt = true }
+    use { "navarasu/onedark.nvim" }
+    use { "shaunsingh/solarized.nvim" }
+    use { "shaunsingh/nord.nvim" }
+    use { "Mofiqul/dracula.nvim" }
 
     -- Tools plugins
     -- use { "kristijanhusak/orgmode.nvim" }
@@ -225,6 +225,13 @@ return packer.startup {
         require "config.tools.vimtex"
       end,
       ft = { "tex" },
+    }
+
+    use {
+      "vuki656/package-info.nvim",
+      config = function()
+        require "config.tools.package-info"
+      end,
     }
 
     use {
