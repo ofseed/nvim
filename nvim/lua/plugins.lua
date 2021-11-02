@@ -167,9 +167,9 @@ return packer.startup {
     }
 
     use {
-      "terrortylor/nvim-comment",
+      "b3nj5m1n/kommentary",
       config = function()
-        require "config.tools.nvim-comment"
+        require "config.tools.kommentary"
       end,
     }
 
