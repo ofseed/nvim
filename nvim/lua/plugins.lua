@@ -232,6 +232,8 @@ return packer.startup {
       config = function()
         require "config.tools.package-info"
       end,
+      requires = "MunifTanjim/nui.nvim",
+      ft = { "json" },
     }
 
     use {
