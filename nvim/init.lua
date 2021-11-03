@@ -4,8 +4,7 @@
 " file is to unify the experience of using
 " Vim and Neovim on different platforms
 " according to my personal preferences.
-]]
---
+--]]
 
 local vim = vim
 
@@ -22,6 +21,7 @@ vim.o.compatible = false
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.list = true
 vim.o.hidden = true
+vim.cmd [[set includeexpr=substitute(v:fname,'\\.','/','g')]]
 
 -- UI config
 vim.o.number = true
