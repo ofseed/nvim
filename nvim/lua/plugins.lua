@@ -319,7 +319,7 @@ return packer.startup {
     }
 
     use {
-      "hrsh7th/nvim-cmp",
+      "~/Documents/GitHub/nvim-cmp",
       config = function()
         require "config.language.nvim-cmp"
       end,
@@ -334,7 +334,6 @@ return packer.startup {
         { "kdheepak/cmp-latex-symbols" },
         { "saadparwaiz1/cmp_luasnip" },
       },
-      commit = "e8cb695",
     }
 
     use {
