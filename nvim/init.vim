@@ -69,3 +69,15 @@ require "init"
 require "packer_compiled"
 EOF
 endif
+
+" Ideavim config
+if has("ide")
+set ideamarks
+set ideajoin
+set NERDTree
+set surround
+set commentary
+
+map <leader>e :NERDTree<CR>
+nnoremap <leader>F <Action>(ReformatCode)
+endif
