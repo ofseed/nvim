@@ -80,4 +80,7 @@ set commentary
 
 map <leader>e :NERDTree<CR>
 nnoremap <leader>F <Action>(ReformatCode)
+
+sethandler <C-W> n-v:ide i:vim
+sethandler <C-U> a:vim
 endif

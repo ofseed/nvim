@@ -300,12 +300,12 @@ return packer.startup {
       end,
     }
 
-    use {
-      "lewis6991/spellsitter.nvim",
-      config = function()
-        require "config.language.spellsitter"
-      end,
-    }
+    -- use {
+    --   "lewis6991/spellsitter.nvim",
+    --   config = function()
+    --     require "config.language.spellsitter"
+    --   end,
+    -- }
 
     use {
       "jose-elias-alvarez/null-ls.nvim",
@@ -334,6 +334,7 @@ return packer.startup {
         { "kdheepak/cmp-latex-symbols" },
         { "saadparwaiz1/cmp_luasnip" },
       },
+      commit = "e8cb695",
     }
 
     use {
