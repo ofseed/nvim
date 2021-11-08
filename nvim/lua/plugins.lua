@@ -141,7 +141,12 @@ return packer.startup {
     use { "Mofiqul/dracula.nvim" }
 
     -- Tools plugins
-    -- use { "kristijanhusak/orgmode.nvim" }
+    use {
+      "kristijanhusak/orgmode.nvim",
+      config = function()
+        require "config.tools.orgmode"
+      end,
+    }
 
     use {
       "nathom/filetype.nvim",

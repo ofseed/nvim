@@ -56,6 +56,7 @@ cmp.setup {
     { name = "path" },
     { name = "calc" },
     { name = "latex_symbols" },
+    { name = "orgmode" },
   },
   formatting = {
     format = lspkind.cmp_format { with_text = false, maxwidth = 50 },
