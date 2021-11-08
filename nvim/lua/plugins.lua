@@ -156,12 +156,9 @@ return packer.startup {
     use { "Mofiqul/dracula.nvim" }
 
     -- Tools plugins
-    use {
-      "kristijanhusak/orgmode.nvim",
-      config = function()
-        require "config.tools.orgmode"
-      end,
-    }
+    -- use {
+    --   "LionC/nest.nvim",
+    -- }
 
     use {
       "nathom/filetype.nvim",
@@ -172,6 +169,13 @@ return packer.startup {
 
     use {
       "lewis6991/impatient.nvim",
+    }
+
+    use {
+      "luukvbaal/stabilize.nvim",
+      config = function()
+        require "config.tools.stabilize"
+      end,
     }
 
     use {
@@ -199,6 +203,13 @@ return packer.startup {
       "mfussenegger/nvim-ts-hint-textobject",
       config = function()
         require "config.tools.nvim-ts-hint-textobject"
+      end,
+    }
+
+    use {
+      "kristijanhusak/orgmode.nvim",
+      config = function()
+        require "config.tools.orgmode"
       end,
     }
 
