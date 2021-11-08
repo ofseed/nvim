@@ -37,6 +37,14 @@ return packer.startup {
     }
 
     use {
+      "SmiteshP/nvim-gps",
+      config = function()
+        require "config.interface.nvim-gps"
+      end,
+      requires = "nvim-treesitter/nvim-treesitter",
+    }
+
+    use {
       "kyazdani42/nvim-tree.lua",
       config = function()
         require "config.interface.nvim-tree"
