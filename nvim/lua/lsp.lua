@@ -1,7 +1,5 @@
 local vim = vim
-local lsp = require "lspconfig"
 local installer = require "nvim-lsp-installer"
-local servers = require "nvim-lsp-installer.servers"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,
@@ -61,6 +59,21 @@ installer.on_server_ready(function(server)
     capabilities = capabilities,
     on_attach = on_attach,
   }
+
+  if server.name == "sumneko_lua" then
+    opts.settings = {
+      Lua = {
+        runtime = {
+          version = "LuaJIT",
+        },
+        diagnostics = {
+          globals = {
+            vim = true,
+          },
+        },
+      },
+    }
+  end
 
   server:setup(opts)
   vim.cmd [[ do User LspAttachBuffers ]]
