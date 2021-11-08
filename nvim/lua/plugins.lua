@@ -140,6 +140,13 @@ return packer.startup {
       end,
     }
 
+    use {
+      "edluffy/specs.nvim",
+      config = function()
+        require "config.interface.specs"
+      end,
+    }
+
     use { "dstein64/nvim-scrollview" }
 
     use { "folke/tokyonight.nvim" }
