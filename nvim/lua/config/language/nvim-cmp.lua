@@ -16,7 +16,7 @@ cmp.setup {
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-e>"] = cmp.mapping {
-      i = cmp.mapping.abort(),
+      i = cmp.mapping.close(),
       c = cmp.mapping.close(),
     },
     ["<CR>"] = cmp.mapping.confirm {

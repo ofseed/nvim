@@ -300,12 +300,12 @@ return packer.startup {
       end,
     }
 
-    -- use {
-    --   "lewis6991/spellsitter.nvim",
-    --   config = function()
-    --     require "config.language.spellsitter"
-    --   end,
-    -- }
+    use {
+      "lewis6991/spellsitter.nvim",
+      config = function()
+        require "config.language.spellsitter"
+      end,
+    }
 
     use {
       "jose-elias-alvarez/null-ls.nvim",

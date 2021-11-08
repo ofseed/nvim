@@ -82,7 +82,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>fg",
+  "<leader>fw",
   "<cmd>lua require'telescope.builtin'.live_grep()<CR>",
   { noremap = true, silent = true }
 )
