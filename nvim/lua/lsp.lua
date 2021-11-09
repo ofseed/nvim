@@ -17,6 +17,7 @@ end
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities.textDocument.codeLens = true
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...)
@@ -52,7 +53,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<space>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
   -- require("illuminate").on_attach(client)
-  require("virtualtypes").on_attach(client)
+  -- require("virtualtypes").on_attach(client)
 end
 
 installer.on_server_ready(function(server)

@@ -96,6 +96,7 @@ return packer.startup {
 
     use {
       "jubnzv/virtual-types.nvim",
+      disable = true,
     }
 
     use {
