@@ -95,6 +95,14 @@ return packer.startup {
     }
 
     use {
+      "jubnzv/virtual-types.nvim",
+    }
+
+    use {
+      "kevinhwang91/nvim-hlslens",
+    }
+
+    use {
       "folke/trouble.nvim",
       config = function()
         require "config.interface.trouble"

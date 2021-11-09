@@ -51,7 +51,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
   buf_set_keymap("n", "<space>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
-  require("illuminate").on_attach(client)
+  -- require("illuminate").on_attach(client)
+  require("virtualtypes").on_attach(client)
 end
 
 installer.on_server_ready(function(server)
