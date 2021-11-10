@@ -188,6 +188,7 @@ return packer.startup {
       config = function()
         require "config.tools.stabilize"
       end,
+      disable = true,
     }
 
     use {
@@ -410,6 +411,15 @@ return packer.startup {
         require "config.language.rust-tools"
       end,
       ft = { "rust" },
+    }
+
+    use {
+      "mfussenegger/nvim-jdtls",
+      config = function()
+        require "config.language.jdtls"
+      end,
+      ft = { "java" },
+      disable = true,
     }
 
     use { "rafamadriz/friendly-snippets" }
