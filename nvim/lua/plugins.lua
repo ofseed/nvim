@@ -101,6 +101,9 @@ return packer.startup {
 
     use {
       "kevinhwang91/nvim-hlslens",
+      config = function()
+        require "config.interface.nvim-hlslens"
+      end,
     }
 
     use {
