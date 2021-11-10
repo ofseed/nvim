@@ -337,6 +337,18 @@ return packer.startup {
     }
 
     use {
+      "weilbith/nvim-code-action-menu",
+      cmd = { "CodeActionMenu" },
+    }
+
+    use {
+      "kosayoda/nvim-lightbulb",
+      config = function()
+        require "config.language.nvim-lightbulb"
+      end,
+    }
+
+    use {
       "onsails/lspkind-nvim",
       config = function()
         require "config.language.lspkind"
