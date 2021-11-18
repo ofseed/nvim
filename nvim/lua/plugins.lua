@@ -224,6 +224,7 @@ return packer.startup {
       config = function()
         require "config.tools.orgmode"
       end,
+      disable = true,
     }
 
     use {
