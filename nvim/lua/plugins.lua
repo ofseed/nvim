@@ -167,11 +167,6 @@ return packer.startup {
     use { "shaunsingh/nord.nvim" }
     use { "Mofiqul/dracula.nvim" }
 
-    -- Tools plugins
-    -- use {
-    --   "LionC/nest.nvim",
-    -- }
-
     use {
       "nathom/filetype.nvim",
       config = function()
@@ -181,6 +176,11 @@ return packer.startup {
 
     use {
       "lewis6991/impatient.nvim",
+    }
+
+    use {
+      "LionC/nest.nvim",
+      disable = true,
     }
 
     use {
@@ -368,7 +368,7 @@ return packer.startup {
     }
 
     use {
-      "~/Documents/GitHub/nvim-cmp",
+      "hrsh7th/nvim-cmp",
       config = function()
         require "config.language.nvim-cmp"
       end,
@@ -416,7 +416,7 @@ return packer.startup {
     use {
       "mfussenegger/nvim-jdtls",
       config = function()
-        require "config.language.jdtls"
+        require "config.language.nvim-jdtls"
       end,
       ft = { "java" },
       disable = true,
@@ -428,7 +428,10 @@ return packer.startup {
 
     use { "neovim/nvim-lspconfig" }
 
-    use { "github/copilot.vim" }
+    use {
+      "github/copilot.vim",
+      disable = true,
+    }
   end,
   config = {
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",

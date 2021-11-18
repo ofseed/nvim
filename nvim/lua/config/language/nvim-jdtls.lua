@@ -1,9 +1,9 @@
 local jdtls = require "jdtls"
 
-require("jdtls").start_or_attach {
+local config = {
   -- The command that starts the language server
   cmd = {
-    "/usr/bin/java",
+    "/usr/bin/jdtls",
     "-Dosgi.bundles.defaultStartLevel=4",
     -- ADD REMAINING OPTIONS FROM https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line !
   },
@@ -12,3 +12,5 @@ require("jdtls").start_or_attach {
   -- One dedicated LSP server & client will be started per unique root_dir
   root_dir = require("jdtls.setup").find_root { ".git", "mvnw", "gradlew" },
 }
+
+jdtls.start_or_attach(config)
