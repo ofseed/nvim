@@ -73,6 +73,17 @@ return packer.startup {
     -- }
 
     use {
+      "VonHeikemen/fine-cmdline.nvim",
+      config = function()
+        require "config.interface.fine-cmdline"
+      end,
+      requires = {
+        { "MunifTanjim/nui.nvim" },
+      },
+      disable = true,
+    }
+
+    use {
       "folke/which-key.nvim",
       config = function()
         require "config.interface.which-key"
