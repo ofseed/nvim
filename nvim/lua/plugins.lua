@@ -62,15 +62,21 @@ return packer.startup {
     }
 
     use {
+      "stevearc/aerial.nvim",
+      disable = true,
+    }
+
+    use {
       "glepnir/dashboard-nvim",
       config = function()
         require "config.interface.dashboard-nvim"
       end,
     }
 
-    -- use {
-    --   "goolord/alpha-nvim",
-    -- }
+    use {
+      "goolord/alpha-nvim",
+      disable = true,
+    }
 
     use {
       "VonHeikemen/fine-cmdline.nvim",
