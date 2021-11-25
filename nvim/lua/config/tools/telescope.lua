@@ -5,7 +5,8 @@ local extensions = {
   "project",
   "frecency",
   "media_files",
-  "notify"
+  "notify",
+  "ui-select",
 }
 
 telescope.setup {
@@ -64,6 +65,11 @@ telescope.setup {
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
       filetypes = { "png", "jpg", "mp4", "webm" },
       find_cwd = "rg",
+    },
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        -- even more opts
+      },
     },
   },
 }

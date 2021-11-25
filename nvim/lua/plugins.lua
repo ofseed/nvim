@@ -250,6 +250,7 @@ return packer.startup {
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
         { "nvim-telescope/telescope-frecency.nvim", requires = "tami5/sql.nvim" },
         { "nvim-telescope/telescope-media-files.nvim" },
+        { "nvim-telescope/telescope-ui-select.nvim" },
       },
     }
 
