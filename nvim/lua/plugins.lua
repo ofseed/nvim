@@ -431,7 +431,9 @@ return packer.startup {
 
     use {
       "github/copilot.vim",
-      disable = true,
+      config = function()
+        require "config.language.copilot"
+      end,
     }
   end,
   config = {
