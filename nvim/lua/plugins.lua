@@ -449,6 +449,11 @@ return packer.startup {
       disable = true,
     }
 
+    use {
+      "rafcamlet/nvim-luapad",
+      disable = true,
+    }
+
     use { "rafamadriz/friendly-snippets" }
 
     use { "williamboman/nvim-lsp-installer" }
