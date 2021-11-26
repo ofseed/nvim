@@ -90,6 +90,13 @@ return packer.startup {
     }
 
     use {
+      "chentau/marks.nvim",
+      config = function()
+        require "config.interface.marks"
+      end,
+    }
+
+    use {
       "folke/which-key.nvim",
       config = function()
         require "config.interface.which-key"
