@@ -36,13 +36,14 @@ set wildmenu
 set title
 set signcolumn=yes
 set cursorline
+set cursorlineopt=number
 set conceallevel=1
 
 " Unicode config
 set encoding=utf-8
 set fileencodings=utf-8,gbk2312,gbk,gb18030,cp936
 
-" Keymap config
+" Keymapping config
 let mapleader=" "
 nnoremap <silent> <leader><leader> :nohlsearch<CR>
 cmap <C-p> <Up>
