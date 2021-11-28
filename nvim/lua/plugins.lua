@@ -402,6 +402,7 @@ return packer.startup {
         { "hrsh7th/cmp-nvim-lua" },
         { "kdheepak/cmp-latex-symbols" },
         { "saadparwaiz1/cmp_luasnip" },
+        { "lukas-reineke/cmp-under-comparator" },
       },
     }
 
