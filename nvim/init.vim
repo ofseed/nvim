@@ -61,7 +61,7 @@ if has("nvim")
 " Colorscheme config
 let g:tokyonight_transparent = 0
 let g:tokyonight_style = 'storm'
-let g:tokyonight_sidebars = [ "outline", "packer" ]
+let g:tokyonight_sidebars = [ "Outline", "packer" ]
 colorscheme tokyonight
 
 " Binary config
