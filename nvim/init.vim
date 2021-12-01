@@ -56,8 +56,12 @@ set langmenu=en_US.UTF-8
 " Fcitx5 auto switch
 autocmd InsertLeave * :silent !fcitx5-remote -c
 
+" SQLite3 config
+let g:sqlite_clib_path = 'C:\Program Files\SQLite\sqlite3.dll'
+
 " Neovim config
 if has("nvim")
+
 " Colorscheme config
 let g:tokyonight_transparent = 0
 let g:tokyonight_style = 'storm'
