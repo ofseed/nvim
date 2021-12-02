@@ -57,7 +57,9 @@ set langmenu=en_US.UTF-8
 autocmd InsertLeave * :silent !fcitx5-remote -c
 
 " SQLite3 config
-let g:sqlite_clib_path = 'C:\Program Files\SQLite\sqlite3.dll'
+if has('win32')
+  let g:sqlite_clib_path = 'C:\Program Files\SQLite\sqlite3.dll'
+endif
 
 " Neovim config
 if has("nvim")
