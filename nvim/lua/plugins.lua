@@ -112,6 +112,11 @@ return packer.startup {
     }
 
     use {
+      "kevinhwang91/nvim-bqf",
+      disable = true,
+    }
+
+    use {
       "folke/todo-comments.nvim",
       config = function()
         require "config.interface.todo-comments"
@@ -164,10 +169,11 @@ return packer.startup {
     use { "folke/tokyonight.nvim" }
     use { "navarasu/onedark.nvim" }
     use { "Mofiqul/vscode.nvim" }
+    use { "Mofiqul/dracula.nvim" }
     use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     use { "shaunsingh/solarized.nvim" }
+    use { "shaunsingh/moonlight.nvim" }
     use { "shaunsingh/nord.nvim" }
-    use { "Mofiqul/dracula.nvim" }
 
     -- Tools Plugins
     use {
@@ -305,6 +311,16 @@ return packer.startup {
     use {
       "plasticboy/vim-markdown",
       ft = { "markdown" },
+    }
+
+    use {
+      "dhruvasagar/vim-table-mode",
+      disable = true,
+    }
+
+    use {
+      "pwntester/octo.nvim",
+      disable = true,
     }
 
     use {
