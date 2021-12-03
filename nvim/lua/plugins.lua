@@ -316,6 +316,16 @@ return packer.startup {
     }
 
     use {
+      "Shatur/neovim-session-manager",
+      config = function()
+        require "config.tools.neovim-session-manager"
+      end,
+      requires = {
+        { "nvim-lua/plenary.nvim" },
+      },
+    }
+
+    use {
       "ethanholz/nvim-lastplace",
       config = function()
         require "config.tools.nvim-lastplace"

@@ -6,6 +6,7 @@ local extensions = {
   "frecency",
   "media_files",
   "notify",
+  "sessions",
   "ui-select",
 }
 
@@ -88,7 +89,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>fw",
+  "<leader>fg",
   "<cmd>lua require'telescope.builtin'.live_grep()<CR>",
   { noremap = true, silent = true }
 )
@@ -124,7 +125,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>fF",
+  "<leader>fr",
   "<cmd>lua require'telescope'.extensions.frecency.frecency()<CR>",
   { noremap = true, silent = true }
 )
@@ -138,5 +139,11 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>nt",
   "<cmd>lua require'telescope'.extensions.notify.notify()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fs",
+  "<cmd>lua require'telescope'.extensions.sessions.sessions()<CR>",
   { noremap = true, silent = true }
 )
