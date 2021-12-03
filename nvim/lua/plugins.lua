@@ -169,6 +169,7 @@ return packer.startup {
     use { "shaunsingh/nord.nvim" }
     use { "Mofiqul/dracula.nvim" }
 
+    -- Tools Plugins
     use {
       "nathom/filetype.nvim",
       config = function()
