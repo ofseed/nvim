@@ -62,31 +62,10 @@ return packer.startup {
     }
 
     use {
-      "stevearc/aerial.nvim",
-      disable = true,
-    }
-
-    use {
-      "glepnir/dashboard-nvim",
-      config = function()
-        require "config.interface.dashboard-nvim"
-      end,
-    }
-
-    use {
       "goolord/alpha-nvim",
-      disable = true,
-    }
-
-    use {
-      "VonHeikemen/fine-cmdline.nvim",
       config = function()
-        require "config.interface.fine-cmdline"
+        require "config.interface.alpha-nvim"
       end,
-      requires = {
-        { "MunifTanjim/nui.nvim" },
-      },
-      disable = true,
     }
 
     use {
@@ -176,7 +155,11 @@ return packer.startup {
       end,
     }
 
-    use { "dstein64/nvim-scrollview" }
+    use {
+      "dstein64/nvim-scrollview",
+      disable = true,
+      -- Disable because https://github.com/dstein64/nvim-scrollview/issues/10 is not fixed
+    }
 
     use { "folke/tokyonight.nvim" }
     use { "navarasu/onedark.nvim" }
@@ -195,11 +178,6 @@ return packer.startup {
 
     use {
       "lewis6991/impatient.nvim",
-    }
-
-    use {
-      "LionC/nest.nvim",
-      disable = true,
     }
 
     use {
@@ -375,6 +353,7 @@ return packer.startup {
       config = function()
         require "config.language.spellsitter"
       end,
+      disable = true,
     }
 
     use {

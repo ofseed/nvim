@@ -11,7 +11,7 @@ lualine.setup {
   options = {
     theme = vim.g.colors_name,
     disabled_filetypes = {
-      "dashboard",
+      "alpha",
     },
     section_separators = "",
     component_separators = "│",
