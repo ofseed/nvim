@@ -218,10 +218,15 @@ return packer.startup {
     }
 
     use {
-      "kristijanhusak/orgmode.nvim",
+      "nvim-orgmode/orgmode",
       config = function()
         require "config.tools.orgmode"
       end,
+      disable = true,
+    }
+
+    use {
+      "akinsho/org-bullets.nvim",
       disable = true,
     }
 
