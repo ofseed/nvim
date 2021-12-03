@@ -180,6 +180,8 @@ return packer.startup {
 
     use { "folke/tokyonight.nvim" }
     use { "navarasu/onedark.nvim" }
+    use { "Mofiqul/vscode.nvim" }
+    use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     use { "shaunsingh/solarized.nvim" }
     use { "shaunsingh/nord.nvim" }
     use { "Mofiqul/dracula.nvim" }
