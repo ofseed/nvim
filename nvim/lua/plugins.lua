@@ -162,8 +162,7 @@ return packer.startup {
 
     use {
       "dstein64/nvim-scrollview",
-      disable = true,
-      -- Disable because https://github.com/dstein64/nvim-scrollview/issues/10 is not fixed
+      -- https://github.com/dstein64/nvim-scrollview/issues/10 is not fixed
     }
 
     use { "folke/tokyonight.nvim" }
@@ -320,7 +319,6 @@ return packer.startup {
 
     use {
       "pwntester/octo.nvim",
-      disable = true,
     }
 
     use {
