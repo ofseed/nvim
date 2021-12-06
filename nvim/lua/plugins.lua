@@ -474,6 +474,26 @@ return packer.startup {
         require "config.language.copilot"
       end,
     }
+
+    use {
+      "mfussenegger/nvim-dap",
+      disable = true,
+    }
+
+    use {
+      "mfussenegger/nvim-dap-python",
+      disable = true,
+    }
+
+    use {
+      "rcarriga/nvim-dap-ui",
+      disable = true,
+    }
+
+    use {
+      "Pocco81/DAPInstall.nvim",
+      disable = true,
+    }
   end,
   config = {
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
