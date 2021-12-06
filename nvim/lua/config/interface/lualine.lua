@@ -19,6 +19,6 @@ lualine.setup {
   extensions = {
     "nvim-tree",
     "toggleterm",
-    "symbols-outline"
+    "symbols-outline",
   },
 }

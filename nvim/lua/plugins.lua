@@ -161,9 +161,11 @@ return packer.startup {
     }
 
     use {
-      "dstein64/nvim-scrollview",
-      -- https://github.com/dstein64/nvim-scrollview/issues/10 is not fixed
+      "edluffy/hologram.nvim",
+      disable = true,
     }
+
+    use { "dstein64/nvim-scrollview" }
 
     use { "folke/tokyonight.nvim" }
     use { "EdenEast/nightfox.nvim" }
@@ -377,6 +379,8 @@ return packer.startup {
     use {
       "weilbith/nvim-code-action-menu",
       cmd = { "CodeActionMenu" },
+      disable = true,
+      -- Disable for https://github.com/weilbith/nvim-code-action-menu/issues/32
     }
 
     use {
@@ -478,6 +482,11 @@ return packer.startup {
       config = function()
         require "config.language.copilot"
       end,
+    }
+
+    use {
+      "michaelb/sniprun",
+      disable = true,
     }
 
     use {
