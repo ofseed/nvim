@@ -309,7 +309,7 @@ return packer.startup {
       config = function()
         require "config.tools.diffview"
       end,
-      cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+      cmd = { "Neogit", "DiffviewOpen", "DiffviewFileHistory" },
     }
 
     use {
@@ -325,13 +325,6 @@ return packer.startup {
     }
 
     use { "dhruvasagar/vim-table-mode" }
-
-    use {
-      "pwntester/octo.nvim",
-      config = function()
-        require "config.tools.octo"
-      end,
-    }
 
     use {
       "turbio/bracey.vim",
@@ -364,7 +357,24 @@ return packer.startup {
       end,
     }
 
-    use { "tpope/vim-fugitive" }
+    use {
+      "TimUntersberger/neogit",
+      config = function()
+        require "config.tools.neogit"
+      end,
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "sindrets/diffview.nvim",
+      },
+      cmd = { "Neogit" },
+    }
+
+    use {
+      "pwntester/octo.nvim",
+      config = function()
+        require "config.tools.octo"
+      end,
+    }
 
     use { "tpope/vim-unimpaired" }
 
