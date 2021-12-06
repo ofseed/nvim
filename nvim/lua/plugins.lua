@@ -147,6 +147,13 @@ return packer.startup {
     }
 
     use {
+      "lukas-reineke/headlines.nvim",
+      config = function()
+        require "config.interface.headlines"
+      end,
+    }
+
+    use {
       "rcarriga/nvim-notify",
       config = function()
         require "config.interface.nvim-notify"
@@ -317,10 +324,7 @@ return packer.startup {
       ft = { "markdown" },
     }
 
-    use {
-      "dhruvasagar/vim-table-mode",
-      disable = true,
-    }
+    use { "dhruvasagar/vim-table-mode" }
 
     use {
       "pwntester/octo.nvim",
