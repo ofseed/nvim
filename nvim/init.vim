@@ -38,6 +38,7 @@ set signcolumn=yes
 set cursorline
 set cursorlineopt=number
 set conceallevel=1
+set scrolloff=1
 
 " Unicode config
 set encoding=utf-8

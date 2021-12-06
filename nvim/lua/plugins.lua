@@ -355,6 +355,8 @@ return packer.startup {
       end,
     }
 
+    use { "tpope/vim-fugitive" }
+
     use { "tpope/vim-unimpaired" }
 
     use { "tpope/vim-repeat" }
