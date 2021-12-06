@@ -319,6 +319,9 @@ return packer.startup {
 
     use {
       "pwntester/octo.nvim",
+      config = function()
+        require "config.tools.octo"
+      end,
     }
 
     use {
