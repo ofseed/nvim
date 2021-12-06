@@ -70,6 +70,10 @@ let g:tokyonight_transparent = 0
 let g:tokyonight_style = 'storm'
 let g:tokyonight_sidebars = [ "Outline", "packer" ]
 let g:vscode_style = 'dark'
+let g:gruvbox_transparent_bg = 0
+let g:gruvbox_underline = 0
+let g:gruvbox_invert_selection = 0
+let g:github_sidebars = [ "Outline", "packer" ]
 colorscheme tokyonight
 
 " Binary config
