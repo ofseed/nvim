@@ -358,6 +358,16 @@ return packer.startup {
     }
 
     use {
+      "tpope/vim-dadbod",
+      disable = true,
+    }
+
+    use {
+      "kristijanhusak/vim-dadbod-ui",
+      disable = true,
+    }
+
+    use {
       "TimUntersberger/neogit",
       config = function()
         require "config.tools.neogit"
