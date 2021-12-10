@@ -60,12 +60,19 @@ autocmd BufNewFile,BufRead .clang-tidy set filetype=yaml
 " Fcitx5 auto switch
 autocmd InsertLeave * :silent !fcitx5-remote -c
 
-" SQLite3 config
-if has('win32')
-  let g:sqlite_clib_path = 'C:\Program Files\SQLite\sqlite3.dll'
-endif
+" Binary config
+augroup Binary
+  au!
+  au BufReadPre  *.bin let &bin=1
+  au BufReadPost *.bin if &bin | %!xxd
+  au BufReadPost *.bin set ft=xxd | endif
+  au BufWritePre *.bin if &bin | %!xxd -r
+  au BufWritePre *.bin endif
+  au BufWritePost *.bin if &bin | %!xxd
+  au BufWritePost *.bin set nomod | endif
+augroup END
 
-" Neovim config
+" Neovim config begin
 if has("nvim")
 
 " Colorscheme config
@@ -79,17 +86,10 @@ let g:gruvbox_invert_selection = 0
 let g:github_sidebars = [ "Outline", "packer" ]
 colorscheme tokyonight
 
-" Binary config
-augroup Binary
-  au!
-  au BufReadPre  *.bin let &bin=1
-  au BufReadPost *.bin if &bin | %!xxd
-  au BufReadPost *.bin set ft=xxd | endif
-  au BufWritePre *.bin if &bin | %!xxd -r
-  au BufWritePre *.bin endif
-  au BufWritePost *.bin if &bin | %!xxd
-  au BufWritePost *.bin set nomod | endif
-augroup END
+" SQLite3 config
+if has('win32')
+  let g:sqlite_clib_path = 'C:\Program Files\SQLite\sqlite3.dll'
+endif
 
 lua << EOF
 require("impatient").enable_profile()
@@ -97,8 +97,9 @@ require "init"
 require "packer_compiled"
 EOF
 endif
+" Neovim config end
 
-" Ideavim config
+" Ideavim config begin
 if has("ide")
 set ideamarks
 set ideajoin
@@ -112,3 +113,4 @@ nnoremap <leader>F <Action>(ReformatCode)
 sethandler <C-W> n-v:ide i:vim
 sethandler <C-U> a:vim
 endif
+" Ideavim config end
