@@ -54,6 +54,9 @@ cmap <C-n> <Down>
 set shortmess=tI
 set langmenu=en_US.UTF-8
 
+" Filetype config
+autocmd BufNewFile,BufRead .clang-tidy set filetype=yaml
+
 " Fcitx5 auto switch
 autocmd InsertLeave * :silent !fcitx5-remote -c
 
