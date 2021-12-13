@@ -1,11 +1,10 @@
 local ls = require "null-ls"
-local lsp = require "lspconfig"
 
-ls.config {
+ls.setup {
   sources = {
     ls.builtins.formatting.stylua,
-    ls.builtins.formatting.prettier,
+    ls.builtins.completion.spell,
+    ls.builtins.formatting.codespell,
     ls.builtins.diagnostics.codespell,
   },
 }
-lsp["null-ls"].setup {}
