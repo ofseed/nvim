@@ -21,7 +21,7 @@ vim.g.nvim_tree_window_picker_exclude = {
 -- Dictionary of buffer option names mapped to a list of option values that
 -- indicates to the window picker that the buffer's window should not be
 -- selectable.
--- vim.g.nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } -- List of filenames that gets highlighted with NvimTreeSpecialFile
+vim.g.nvim_tree_special_files = { ["README.md"] = 1, ["Makefile"] = 1, ["MAKEFILE"] = 1 } -- List of filenames that gets highlighted with NvimTreeSpecialFile
 vim.g.nvim_tree_show_icons = {
   git = 1,
   folders = 0,
@@ -70,23 +70,20 @@ vim.g.nvim_tree_icons = {
 vim.api.nvim_command "highlight NvimTreeFolderIcon guibg=blue"
 
 -- following options are the default
-tree.setup {
-  -- disables netrw completely
+-- each of these are documented in `:help nvim-tree.OPTION_NAME`
+require("nvim-tree").setup {
   disable_netrw = true,
-  -- hijack netrw window on startup
   hijack_netrw = true,
-  -- open the tree when running this setup function
-  open_on_setup = true,
-  -- will not open on setup if the filetype is in this list
+  open_on_setup = false,
   ignore_ft_on_setup = {},
-  -- closes neovim automatically when the tree is the last **WINDOW** in the view
   auto_close = false,
-  -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
   open_on_tab = false,
-  -- hijack the cursor in the tree to put it at the start of the filename
-  hijack_cursor = true,
-  -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
-  update_cwd = true,
+  hijack_cursor = false,
+  update_cwd = false,
+  update_to_buf_dir = {
+    enable = true,
+    auto_open = true,
+  },
   diagnostics = {
     enable = false,
     icons = {
@@ -96,50 +93,41 @@ tree.setup {
       error = "",
     },
   },
-  -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
   update_focused_file = {
-    -- enables the feature
-    enable = true,
-    -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
-    -- only relevant when `update_focused_file.enable` is true
-    update_cwd = true,
-    -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
-    -- only relevant when `update_focused_file.update_cwd` is true and `update_focused_file.enable` is true
+    enable = false,
+    update_cwd = false,
     ignore_list = {},
   },
-  -- configuration options for the system open command (`s` in the tree by default)
   system_open = {
-    -- the command to run this, leaving nil should work in most cases
     cmd = nil,
-    -- the command arguments as a list
     args = {},
   },
-
-  fliters = {
-    dotfiles = true,
-    custom = {}, --empty by default
+  filters = {
+    dotfiles = false,
+    custom = {},
   },
-
   git = {
     enable = true,
-    ignore = false,
+    ignore = true,
     timeout = 500,
   },
-
   view = {
-    -- width of the window, can be either a number (columns) or a string in `%`
     width = 30,
-    -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
+    height = 30,
+    hide_root_folder = false,
     side = "left",
-    -- if true the tree will resize itself after opening a file
-    auto_resize = true,
+    auto_resize = false,
     mappings = {
-      -- custom only false will merge the list with the default mappings
-      -- if true, it will only use your list to set the mappings
       custom_only = false,
-      -- list of mappings to set on the tree manually
       list = {},
     },
+    number = false,
+    relativenumber = false,
+    signcolumn = "yes",
+  },
+  trash = {
+    cmd = "trash",
+    require_confirm = true,
   },
 }
 
