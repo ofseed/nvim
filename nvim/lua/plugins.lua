@@ -37,6 +37,10 @@ return packer.startup {
     }
 
     use {
+      "arkav/lualine-lsp-progress",
+    }
+
+    use {
       "SmiteshP/nvim-gps",
       config = function()
         require "config.interface.nvim-gps"
