@@ -8,6 +8,7 @@ local extensions = {
   "notify",
   "sessions",
   "ui-select",
+  "dap",
 }
 
 telescope.setup {
@@ -145,5 +146,35 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>fs",
   "<cmd>lua require'telescope'.extensions.sessions.sessions()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fde",
+  "<cmd>lua require'telescope'.extensions.dap.commands()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fdc",
+  "<cmd>lua require'telescope'.extensions.dap.configurations()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fdb",
+  "<cmd>lua require'telescope'.extensions.dap.list_breakpoints()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fdv",
+  "<cmd>lua require'telescope'.extensions.dap.variables()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fdf",
+  "<cmd>lua require'telescope'.extensions.dap.frames()<CR>",
   { noremap = true, silent = true }
 )
