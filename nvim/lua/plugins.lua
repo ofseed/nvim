@@ -73,6 +73,7 @@ return packer.startup {
       config = function()
         require "config.interface.marks"
       end,
+      disable = true,
     }
 
     use {
@@ -515,21 +516,31 @@ return packer.startup {
 
     use {
       "mfussenegger/nvim-dap",
-      disable = true,
+      config = function()
+        require "config.language.nvim-dap"
+      end,
     }
 
     use {
-      "mfussenegger/nvim-dap-python",
-      disable = true,
+      "theHamsta/nvim-dap-virtual-text",
+      config = function()
+        require "config.language.nvim-dap-virtual-text"
+      end,
     }
 
     use {
       "rcarriga/nvim-dap-ui",
-      disable = true,
+      config = function()
+        require "config.language.nvim-dap-ui"
+      end,
     }
 
     use {
       "Pocco81/DAPInstall.nvim",
+    }
+
+    use {
+      "mfussenegger/nvim-dap-python",
       disable = true,
     }
   end,
