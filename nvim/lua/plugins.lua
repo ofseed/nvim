@@ -480,23 +480,6 @@ return packer.startup {
     }
 
     use {
-      "simrat39/rust-tools.nvim",
-      config = function()
-        require "config.language.rust-tools"
-      end,
-      ft = { "rust" },
-    }
-
-    use {
-      "mfussenegger/nvim-jdtls",
-      config = function()
-        require "config.language.nvim-jdtls"
-      end,
-      ft = { "java" },
-      disable = true,
-    }
-
-    use {
       "rafcamlet/nvim-luapad",
       disable = true,
     }
@@ -546,7 +529,26 @@ return packer.startup {
 
     use {
       "mfussenegger/nvim-dap-python",
+      config = function()
+        require "config.language.nvim-dap-python"
+      end,
+    }
+
+    use {
+      "mfussenegger/nvim-jdtls",
+      config = function()
+        require "config.language.nvim-jdtls"
+      end,
+      ft = { "java" },
       disable = true,
+    }
+
+    use {
+      "simrat39/rust-tools.nvim",
+      config = function()
+        require "config.language.rust-tools"
+      end,
+      ft = { "rust" },
     }
   end,
   config = {
