@@ -544,6 +544,13 @@ return packer.startup {
     }
 
     use {
+      "Shatur/neovim-cmake",
+      config = function()
+        require "config.language.neovim-cmake"
+      end,
+    }
+
+    use {
       "simrat39/rust-tools.nvim",
       config = function()
         require "config.language.rust-tools"

@@ -142,6 +142,7 @@ vim.api.nvim_set_keymap(
   "<cmd>lua require'telescope'.extensions.sessions.sessions()<CR>",
   { noremap = true, silent = true }
 )
+
 vim.api.nvim_set_keymap(
   "n",
   "<leader>fde",
@@ -170,5 +171,24 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>fdf",
   "<cmd>lua require'telescope'.extensions.dap.frames()<CR>",
+  { noremap = true, silent = true }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fcb",
+  "<cmd>lua require'telescope'.extensions.cmake.select_build_type()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fct",
+  "<cmd>lua require'telescope'.extensions.cmake.select_target()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fcc",
+  "<cmd>lua require'telescope'.extensions.cmake.create_project()<CR>",
   { noremap = true, silent = true }
 )
