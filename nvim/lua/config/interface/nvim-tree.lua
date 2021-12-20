@@ -71,7 +71,7 @@ vim.api.nvim_command "highlight NvimTreeFolderIcon guibg=blue"
 
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-require("nvim-tree").setup {
+tree.setup {
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,
@@ -79,7 +79,7 @@ require("nvim-tree").setup {
   auto_close = false,
   open_on_tab = false,
   hijack_cursor = false,
-  update_cwd = false,
+  update_cwd = true,
   update_to_buf_dir = {
     enable = true,
     auto_open = true,
@@ -94,8 +94,8 @@ require("nvim-tree").setup {
     },
   },
   update_focused_file = {
-    enable = false,
-    update_cwd = false,
+    enable = true,
+    update_cwd = true,
     ignore_list = {},
   },
   system_open = {
