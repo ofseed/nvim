@@ -14,7 +14,7 @@ project.setup {
 
   -- All the patterns used to detect root dir, when **"pattern"** is in
   -- detection_methods
-  patterns = { ".git", "=src", "Makefile", "CMakeLists.txt", "package.json" },
+  patterns = { ".git", "Makefile", "CMakeLists.txt", "package.json" },
 
   -- Table of lsp clients to ignore by name
   -- eg: { "efm", ... }
