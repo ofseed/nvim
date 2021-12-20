@@ -114,12 +114,6 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>fc",
-  "<cmd>lua require'telescope.builtin'.colorscheme()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
   "<leader>fp",
   "<cmd>lua require'telescope'.extensions.project.project{}<CR>",
   { noremap = true, silent = true }
