@@ -56,6 +56,23 @@ end
 
 vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 
+-- For tig
+local tig = Terminal:new {
+  cmd = "tig",
+  dir = "git_dir",
+  direction = "float",
+  float_opts = {
+    border = "curved",
+  },
+}
+
+function _tig_toggle()
+  tig:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>tg", "<cmd>lua _tig_toggle()<CR>", { noremap = true, silent = true })
+
+-- For glow
 local glow = Terminal:new { cmd = "glow", direction = "float", float_opts = {
   border = "curved",
 } }
