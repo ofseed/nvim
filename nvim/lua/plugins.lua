@@ -173,6 +173,13 @@ return packer.startup {
     }
 
     use {
+      "romgrk/nvim-treesitter-context",
+      config = function()
+        require "config.interface.nvim-treesitter-context"
+      end,
+    }
+
+    use {
       "edluffy/hologram.nvim",
       disable = true,
     }
