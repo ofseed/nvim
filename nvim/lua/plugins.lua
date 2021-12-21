@@ -251,12 +251,10 @@ return packer.startup {
       config = function()
         require "config.tools.orgmode"
       end,
-      disable = true,
     }
 
     use {
       "akinsho/org-bullets.nvim",
-      disable = true,
     }
 
     use {
