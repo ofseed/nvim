@@ -33,3 +33,5 @@ notify.setup {
     TRACE = "✎",
   },
 }
+
+vim.notify = notify
