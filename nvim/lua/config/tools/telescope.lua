@@ -9,6 +9,7 @@ local extensions = {
   "sessions",
   "ui-select",
   "dap",
+  "cmake",
 }
 
 telescope.setup {
@@ -132,7 +133,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>nt",
+  "<leader>fn",
   "<cmd>lua require'telescope'.extensions.notify.notify()<CR>",
   { noremap = true, silent = true }
 )
