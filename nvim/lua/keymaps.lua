@@ -1,5 +1,7 @@
 local vim = vim
 
+vim.api.nvim_set_keymap("n", "<leader>db", ":DBUIToggle<CR>", { noremap = true, silent = true })
+
 -- For lazy loading:
 vim.api.nvim_set_keymap("n", "<leader>lo", ":SymbolsOutline<CR>", { noremap = true, silent = true })
 

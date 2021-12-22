@@ -370,12 +370,10 @@ return packer.startup {
 
     use {
       "tpope/vim-dadbod",
-      disable = true,
     }
 
     use {
       "kristijanhusak/vim-dadbod-ui",
-      disable = true,
     }
 
     use {
