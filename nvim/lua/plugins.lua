@@ -555,10 +555,6 @@ return packer.startup {
 
     use {
       "simrat39/rust-tools.nvim",
-      config = function()
-        require "config.language.rust-tools"
-      end,
-      ft = { "rust" },
     }
   end,
   config = {

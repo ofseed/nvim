@@ -17,7 +17,7 @@ end
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-capabilities.textDocument.codeLens = true
+-- capabilities.textDocument.codeLens = true
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...)
@@ -77,6 +77,17 @@ installer.on_server_ready(function(server)
     }
   end
 
+  if server.name == "rust_analyzer" then
+    -- Initialize the LSP via rust-tools instead
+    require("rust-tools").setup {
+      -- The "server" property provided in rust-tools setup function are the
+      -- settings rust-tools will provide to lspconfig during init.
+      -- We merge the necessary settings from nvim-lsp-installer (server:get_default_options())
+      -- with the user's own settings (opts).
+      server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
+    }
+    server:attach_buffers()
+  end
+
   server:setup(opts)
-  vim.cmd [[ do User LspAttachBuffers ]]
 end)
