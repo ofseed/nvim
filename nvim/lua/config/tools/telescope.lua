@@ -2,6 +2,7 @@ local vim = vim
 local telescope = require "telescope"
 local extensions = {
   "fzf",
+  "file_browser",
   "project",
   "frecency",
   "media_files",
@@ -63,6 +64,9 @@ telescope.setup {
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       -- the default case_mode is "smart_case"
     },
+    file_browser = {
+      theme = "ivy",
+    },
     media_files = {
       -- filetypes whitelist
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
@@ -112,6 +116,12 @@ vim.api.nvim_set_keymap(
   "<leader>fb",
   "<cmd>lua require'telescope.builtin'.marks()<CR>",
   { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>fe",
+  "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+  { noremap = true }
 )
 vim.api.nvim_set_keymap(
   "n",
