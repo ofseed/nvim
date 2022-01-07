@@ -118,7 +118,9 @@ return packer.startup {
 
     use {
       "kevinhwang91/nvim-bqf",
-      disable = true,
+      config = function()
+        require "config.interface.nvim-bqf"
+      end,
     }
 
     use {
