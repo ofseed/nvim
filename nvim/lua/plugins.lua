@@ -400,6 +400,10 @@ return packer.startup {
       end,
     }
 
+    use {
+      "roxma/vim-tmux-clipboard",
+    }
+
     use { "tpope/vim-unimpaired" }
 
     use { "tpope/vim-repeat" }
