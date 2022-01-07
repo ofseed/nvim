@@ -240,6 +240,10 @@ return packer.startup {
     }
 
     use {
+      "kevinhwang91/vim-ibus-sw",
+    }
+
+    use {
       "mfussenegger/nvim-ts-hint-textobject",
       config = function()
         require "config.tools.nvim-ts-hint-textobject"
