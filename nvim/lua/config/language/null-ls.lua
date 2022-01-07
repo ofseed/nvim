@@ -5,6 +5,6 @@ ls.setup {
     ls.builtins.formatting.prettier,
     ls.builtins.formatting.stylua,
     ls.builtins.formatting.autopep8,
-    ls.builtins.diagnostics.codespell,
+    -- ls.builtins.diagnostics.codespell,
   },
 }
