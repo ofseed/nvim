@@ -19,4 +19,6 @@ autopairs.add_rules {
   rule("{ ", " ", "htmldjango"),
   rule("{%", "%", "htmldjango"),
   rule("{% ", " ", "htmldjango"),
+  rule("{ ", " ", "lua"),
+  rule("{ ", " ", "lua"),
 }
