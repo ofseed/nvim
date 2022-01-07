@@ -5,7 +5,7 @@ vim.api.nvim_set_keymap("n", "<leader>db", ":DBUIToggle<CR>", { noremap = true, 
 -- For lazy loading:
 vim.api.nvim_set_keymap("n", "<leader>lo", ":SymbolsOutline<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<leader>tt", ":TroubleToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tb", ":TroubleToggle<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>zm", ":ZenMode<CR>", { noremap = true, silent = true })
 
