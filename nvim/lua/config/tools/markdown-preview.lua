@@ -33,7 +33,7 @@ vim.g.mkdp_open_ip = ""
 
 -- specify browser to open preview page
 -- default: ''
-vim.g.mkdp_browser = "chromium"
+vim.g.mkdp_browser = "microsoft-edge"
 
 -- set to 1, echo preview page url in command line when open preview page
 -- default is 0
