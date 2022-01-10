@@ -82,3 +82,5 @@ function _glow_toggle()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>gl", "<cmd>lua _glow_toggle()<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-N>", { noremap = true, silent = true })
