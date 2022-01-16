@@ -49,6 +49,15 @@ return packer.startup {
     }
 
     use {
+      "sidebar-nvim/sidebar.nvim",
+      config = function()
+        require "config.interface.sidebar"
+      end,
+      requires = { "sidebar-nvim/sections-dap" },
+      disable = true,
+    }
+
+    use {
       "kyazdani42/nvim-tree.lua",
       config = function()
         require "config.interface.nvim-tree"

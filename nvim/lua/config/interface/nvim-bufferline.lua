@@ -55,6 +55,7 @@ bufferline.setup {
       { filetype = "Outline", text = "Outline", text_align = "center" },
       { filetype = "packer", text = "Plugin Manager", text_align = "center" },
       { filetype = "dbui", text = "Database Manager", text_align = "center" },
+      { filetype = "SidebarNvim", text = "Sidebar", text_align = "center" },
     },
     show_buffer_icons = true, -- true | false, -- disable filetype icons for buffers
     show_buffer_close_icons = true, -- true | false,
