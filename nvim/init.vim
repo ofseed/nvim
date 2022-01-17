@@ -51,7 +51,6 @@ cmap <C-p> <Up>
 cmap <C-n> <Down>
 
 " Language config
-set shortmess=tI
 set langmenu=en_US.UTF-8
 
 " Filetype config
