@@ -36,5 +36,3 @@ vim.g.indent_blankline_context_patterns = {
   "import_statement",
   "operation_type",
 }
--- HACK: work-around for https://github.com/lukas-reineke/indent-blankline.nvim/issues/59
-vim.wo.colorcolumn = "99999"
