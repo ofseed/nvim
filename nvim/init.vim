@@ -50,9 +50,6 @@ nnoremap <silent> <leader><leader> :nohlsearch<CR>
 cmap <C-p> <Up>
 cmap <C-n> <Down>
 
-" Language config
-set langmenu=en_US.UTF-8
-
 " Filetype config
 autocmd BufNewFile,BufRead .clang-tidy set filetype=yaml
 
