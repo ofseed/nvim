@@ -87,7 +87,7 @@ installer.on_server_ready(function(server)
       server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
     }
     server:attach_buffers()
+  else
+    server:setup(opts)
   end
-
-  server:setup(opts)
 end)
