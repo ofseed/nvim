@@ -10,5 +10,5 @@ manager.setup {
   autosave_ignore_not_normal = true, -- Plugin will not save a session when no writable and listed buffers are opened.
 }
 
-vim.api.nvim_set_keymap("n", "<leader>ss", ":SaveSession<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>sl", ":LoadLastSession<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ss", ":SessionManager save_current_session<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>sl", ":SessionManager load_last_session<CR>", { noremap = true, silent = true })
