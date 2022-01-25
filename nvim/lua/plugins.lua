@@ -152,7 +152,7 @@ return packer.startup {
       config = function()
         require "config.interface.twilight"
       end,
-      cmd = { "ZenMode", "Twilight" },
+      cmd = { "Twilight" },
     }
 
     use {
