@@ -541,6 +541,9 @@ return packer.startup {
 
     use {
       "Pocco81/DAPInstall.nvim",
+      config = function()
+        require "config.language.dap-install"
+      end,
     }
 
     use {
