@@ -37,15 +37,18 @@ return packer.startup {
     }
 
     use {
-      "arkav/lualine-lsp-progress",
-    }
-
-    use {
       "SmiteshP/nvim-gps",
       config = function()
         require "config.interface.nvim-gps"
       end,
       requires = "nvim-treesitter/nvim-treesitter",
+    }
+
+    use {
+      "j-hui/fidget.nvim",
+      config = function()
+        require "config.interface.fidget"
+      end,
     }
 
     use {

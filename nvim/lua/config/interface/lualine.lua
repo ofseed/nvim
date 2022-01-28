@@ -5,7 +5,6 @@ local gps = require "nvim-gps"
 lualine.setup {
   sections = {
     lualine_c = {
-      "lsp_progress",
       { gps.get_location, cond = gps.is_available },
     },
   },
