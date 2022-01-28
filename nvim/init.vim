@@ -45,6 +45,7 @@ set encoding=utf-8
 set fileencodings=utf-8,gbk2312,gbk,gb18030,cp936
 
 " Keymapping config
+set pastetoggle=<F2>
 let mapleader=" "
 nnoremap <silent> <leader><leader> :nohlsearch<CR>
 cmap <C-p> <Up>
