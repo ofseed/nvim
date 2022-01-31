@@ -78,6 +78,15 @@ return packer.startup {
     }
 
     use {
+      "stevearc/aerial.nvim",
+      config = function()
+        require "config.interface.aerial"
+      end,
+      cmd = { "AerialToggle" },
+      disable = true,
+    }
+
+    use {
       "goolord/alpha-nvim",
       config = function()
         require "config.interface.alpha-nvim"

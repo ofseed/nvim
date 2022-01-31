@@ -53,6 +53,7 @@ bufferline.setup {
     offsets = {
       { filetype = "NvimTree", text = "File Explorer", text_align = "center" },
       { filetype = "Outline", text = "Outline", text_align = "center" },
+      { filetype = "aerial", text = "Outline", text_align = "center" },
       { filetype = "packer", text = "Plugin Manager", text_align = "center" },
       { filetype = "dbui", text = "Database Manager", text_align = "center" },
       { filetype = "SidebarNvim", text = "Sidebar", text_align = "center" },
