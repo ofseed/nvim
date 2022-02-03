@@ -21,7 +21,6 @@ set includeexpr=substitute(v:fname,'\\.','/','g')
 
 " UI config
 set number
-set relativenumber
 set wrap
 set linebreak
 set showbreak=>>
@@ -47,7 +46,7 @@ set fileencodings=utf-8,gbk2312,gbk,gb18030,cp936
 " Keymapping config
 set pastetoggle=<F2>
 let mapleader=" "
-nnoremap <silent> <leader><leader> :nohlsearch<CR>
+nnoremap <silent> <BS> :nohlsearch<CR>
 cmap <C-p> <Up>
 cmap <C-n> <Down>
 
