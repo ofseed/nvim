@@ -113,7 +113,15 @@ installer.on_server_ready(function(server)
       -- settings rust-tools will provide to lspconfig during init.
       -- We merge the necessary settings from nvim-lsp-installer (server:get_default_options())
       -- with the user's own settings (opts).
-      server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
+      server = vim.tbl_deep_extend("force", server:get_default_options(), opts, {
+        settings = {
+          ["rust-analyzer"] = {
+            checkOnSave = {
+              command = "clippy",
+            },
+          },
+        },
+      }),
     }
     server:attach_buffers()
   else
