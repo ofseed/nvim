@@ -193,6 +193,15 @@ return packer.startup {
       config = function()
         require "config.interface.nvim-treesitter-context"
       end,
+      disable = true,
+    }
+
+    use {
+      "sunjon/Shade.nvim",
+      config = function()
+        require "config.interface.shade"
+      end,
+      disable = true,
     }
 
     use {
