@@ -429,6 +429,8 @@ return packer.startup {
       "roxma/vim-tmux-clipboard",
     }
 
+    use { "psliwka/vim-smoothie" }
+
     use { "easymotion/vim-easymotion" }
 
     use { "tpope/vim-unimpaired" }
