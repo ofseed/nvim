@@ -295,6 +295,7 @@ return packer.startup {
         { "nvim-lua/popup.nvim" },
         { "nvim-lua/plenary.nvim" },
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+        { "nvim-telescope/telescope-hop.nvim" },
         { "nvim-telescope/telescope-project.nvim" },
         { "nvim-telescope/telescope-file-browser.nvim" },
         { "nvim-telescope/telescope-frecency.nvim", requires = "tami5/sql.nvim" },
