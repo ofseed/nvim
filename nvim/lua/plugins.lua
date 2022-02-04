@@ -94,6 +94,16 @@ return packer.startup {
     }
 
     use {
+      "winston0410/range-highlight.nvim",
+      config = function()
+        require("range-highlight").setup {}
+      end,
+      requires = {
+        "winston0410/cmd-parser.nvim",
+      },
+    }
+
+    use {
       "chentau/marks.nvim",
       config = function()
         require "config.interface.marks"
