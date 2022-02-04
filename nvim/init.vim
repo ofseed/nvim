@@ -106,9 +106,11 @@ endif
 if has("ide")
 set ideamarks
 set ideajoin
-set NERDTree
-set surround
-set commentary
+
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 map <leader>e :NERDTree<CR>
 nnoremap <leader>F <Action>(ReformatCode)
