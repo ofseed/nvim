@@ -75,6 +75,7 @@ return packer.startup {
       end,
       requires = { "kyazdani42/nvim-web-devicons" },
       cmd = { "SymbolsOutline" },
+      disable = true,
     }
 
     use {
@@ -83,7 +84,6 @@ return packer.startup {
         require "config.interface.aerial"
       end,
       cmd = { "AerialToggle" },
-      disable = true,
     }
 
     use {
@@ -196,6 +196,8 @@ return packer.startup {
       config = function()
         require "config.interface.specs"
       end,
+      disable = true,
+      -- Disable because it's conflicting with the chinese text
     }
 
     use {
@@ -203,7 +205,6 @@ return packer.startup {
       config = function()
         require "config.interface.nvim-treesitter-context"
       end,
-      disable = true,
     }
 
     use {
@@ -462,7 +463,6 @@ return packer.startup {
       "weilbith/nvim-code-action-menu",
       cmd = { "CodeActionMenu" },
       disable = true,
-      -- Disable for https://github.com/weilbith/nvim-code-action-menu/issues/32
     }
 
     use {
