@@ -441,6 +441,14 @@ return packer.startup {
       "roxma/vim-tmux-clipboard",
     }
 
+    use {
+      "michaelb/sniprun",
+      config = function()
+        require "config.tools.sniprun"
+      end,
+      run = "bash install.sh",
+    }
+
     use { "psliwka/vim-smoothie" }
 
     use { "easymotion/vim-easymotion" }
@@ -548,11 +556,6 @@ return packer.startup {
       config = function()
         require "config.language.copilot"
       end,
-    }
-
-    use {
-      "michaelb/sniprun",
-      disable = true,
     }
 
     use {
