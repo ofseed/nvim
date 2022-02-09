@@ -606,6 +606,10 @@ return packer.startup {
     }
 
     use {
+      "p00f/clangd_extensions.nvim",
+    }
+
+    use {
       "simrat39/rust-tools.nvim",
     }
   end,
