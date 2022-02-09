@@ -31,6 +31,9 @@ treesitter.setup {
   autotag = {
     enable = true,
   },
+  endwise = {
+    enable = true,
+  },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
