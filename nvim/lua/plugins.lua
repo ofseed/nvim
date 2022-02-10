@@ -451,7 +451,12 @@ return packer.startup {
 
     use { "psliwka/vim-smoothie" }
 
-    use { "easymotion/vim-easymotion" }
+    use {
+      "phaazon/hop.nvim",
+      config = function()
+        require "config.tools.hop"
+      end,
+    }
 
     use { "tpope/vim-unimpaired" }
 
