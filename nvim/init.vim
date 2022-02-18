@@ -77,48 +77,45 @@ augroup END
 
 " Neovim config begin
 if has("nvim")
+  " Colorscheme config
+  let g:tokyonight_transparent = 0
+  let g:tokyonight_style = 'storm'
+  let g:tokyonight_sidebars = [ "Outline", "packer" ]
+  let g:vscode_style = 'dark'
+  let g:gruvbox_transparent_bg = 0
+  let g:gruvbox_underline = 0
+  let g:gruvbox_invert_selection = 0
+  let g:github_sidebars = [ "Outline", "packer" ]
+  colorscheme tokyonight
 
-" Colorscheme config
-let g:tokyonight_transparent = 0
-let g:tokyonight_style = 'storm'
-let g:tokyonight_sidebars = [ "Outline", "packer" ]
-let g:vscode_style = 'dark'
-let g:gruvbox_transparent_bg = 0
-let g:gruvbox_underline = 0
-let g:gruvbox_invert_selection = 0
-let g:github_sidebars = [ "Outline", "packer" ]
-colorscheme tokyonight
+  " SQLite3 config
+  if has('win32')
+    let g:sqlite_clib_path = 'C:\Program Files\SQLite\sqlite3.dll'
+  endif
 
-" SQLite3 config
-if has('win32')
-  let g:sqlite_clib_path = 'C:\Program Files\SQLite\sqlite3.dll'
-endif
-
-lua << EOF
-require("impatient").enable_profile()
-require "init"
-require "packer_compiled"
+  lua << EOF
+  require("impatient").enable_profile()
+  require "init"
+  require "packer_compiled"
 EOF
 else
-map s <Plug>(easymotion-prefix)
-map <leader><leader> <Plug>(easymotion-prefix)
+  map s <Plug>(easymotion-prefix)
+  map <leader><leader> <Plug>(easymotion-prefix)
 endif
-" Neovim config end
 
 " Ideavim config begin
 if has("ide")
-set ideamarks
-set ideajoin
+  set ideamarks
+  set ideajoin
 
-Plug 'easymotion/vim-easymotion'
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'preservim/nerdtree'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-commentary'
 
-map <leader>e :NERDTree<CR>
-nnoremap <leader>F <Action>(ReformatCode)
+  map <leader>e :NERDTree<CR>
+  nnoremap <leader>F <Action>(ReformatCode)
 
-sethandler <C-W> n-v:ide i:vim
-sethandler <C-U> a:vim
+  sethandler <C-W> n-v:ide i:vim
+  sethandler <C-U> a:vim
 endif
-" Ideavim config end
