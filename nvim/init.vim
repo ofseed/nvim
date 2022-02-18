@@ -99,6 +99,9 @@ require("impatient").enable_profile()
 require "init"
 require "packer_compiled"
 EOF
+else
+map s <Plug>(easymotion-prefix)
+map <leader><leader> <Plug>(easymotion-prefix)
 endif
 " Neovim config end
 
