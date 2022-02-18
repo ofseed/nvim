@@ -85,3 +85,7 @@ cmp.setup.cmdline("/", {
     { name = "buffer" },
   },
 })
+
+vim.cmd [[
+autocmd FileType toml lua require('cmp').setup.buffer { sources = { { name = 'crates' } } }
+]]

@@ -358,6 +358,15 @@ return packer.startup {
     }
 
     use {
+      "Saecki/crates.nvim",
+      event = { "BufRead Cargo.toml" },
+      requires = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require "config.tools.crates"
+      end,
+    }
+
+    use {
       "sindrets/diffview.nvim",
       config = function()
         require "config.tools.diffview"
