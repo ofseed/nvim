@@ -20,5 +20,3 @@ vim.api.nvim_set_keymap("n", "<leader>dvo", ":DiffviewOpen<CR>", { noremap = tru
 vim.api.nvim_set_keymap("n", "<leader>dvf", ":DiffviewFileHistory<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>dvc", ":DiffviewClose<CR>", { noremap = true, silent = true })
-
--- vim.api.nvim_set_keymap("n", "<leader>ca", ":CodeActionMenu<CR>", { noremap = true, silent = true })
