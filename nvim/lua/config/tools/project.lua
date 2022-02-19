@@ -1,5 +1,8 @@
 local vim = vim
-local project = require "project_nvim"
+local ok, project = pcall(require, "project_nvim")
+if not ok then
+  return
+end
 
 project.setup {
   -- Manual mode doesn't automatically change your root directory, so you have

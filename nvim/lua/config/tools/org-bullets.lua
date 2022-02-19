@@ -1,7 +1,10 @@
-local bullets = require "org-bullets"
+local ok, bullets = pcall(require, "org-bullets")
+if not ok then
+  return
+end
 
 bullets.setup {
-  symbols = { "◉", "○", "✸", "✿" }
+  symbols = { "◉", "○", "✸", "✿" },
   -- or a function that receives the defaults and returns a list
   -- symbols = function(default_list)
   --   table.insert(default_list, "♥")

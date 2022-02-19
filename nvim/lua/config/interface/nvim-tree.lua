@@ -1,5 +1,8 @@
 local vim = vim
-local tree = require "nvim-tree"
+local ok, tree = pcall(require, "nvim-tree")
+if not ok then
+  return
+end
 
 vim.g.nvim_tree_quit_on_open = 0 -- 0 by default, closes the tree when you open a file
 vim.g.nvim_tree_indent_markers = 1 -- 0 by default, this option shows indent markers when folders are open

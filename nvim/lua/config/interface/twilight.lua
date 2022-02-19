@@ -1,4 +1,8 @@
-local twilight = require "twilight"
+local ok, twilight = pcall(require, "twilight")
+if not ok then
+  return
+end
+
 twilight.setup {
   dimming = {
     alpha = 0.25, -- amount of dimming

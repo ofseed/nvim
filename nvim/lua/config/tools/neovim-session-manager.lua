@@ -1,4 +1,8 @@
-local manager = require "session_manager"
+local ok, manager = pcall(require, "session_manager")
+if not ok then
+  return
+end
+
 local Path = require "plenary.path"
 
 manager.setup {

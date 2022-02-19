@@ -1,4 +1,8 @@
-local orgmode = require "orgmode"
+local ok, orgmode = pcall(require, "orgmode")
+if not ok then
+  return
+end
+
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 local treesitter_config = require "nvim-treesitter.configs"
 -- init.lua

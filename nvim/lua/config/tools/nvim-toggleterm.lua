@@ -1,5 +1,8 @@
 local vim = vim
-local toggleterm = require "toggleterm"
+local ok, toggleterm = pcall(require, "toggleterm")
+if not ok then
+  return
+end
 
 toggleterm.setup {
   -- size can be a number or function which is passed the current terminal

@@ -1,5 +1,10 @@
-local cmake = require "cmake"
+local ok, cmake = pcall(require, "cmake")
+if not ok then
+  return
+end
+
 local path = require "plenary.path"
+
 local script_path = path:new(debug.getinfo(1).source:sub(2))
 
 cmake.setup {

@@ -1,4 +1,7 @@
-local marks = require "marks"
+local ok, marks = pcall(require, "marks")
+if not ok then
+  return
+end
 
 marks.setup {
   -- whether to map keybinds or not. default true

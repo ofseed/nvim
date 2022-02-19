@@ -1,4 +1,7 @@
-local ls = require "null-ls"
+local ok, ls = pcall(require, "null-ls")
+if not ok then
+  return
+end
 
 ls.setup {
   sources = {

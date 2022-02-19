@@ -1,4 +1,7 @@
-local jdtls = require "jdtls"
+local ok, jdtls = pcall(require, "jdtls")
+if not ok then
+  return
+end
 
 local config = {
   -- The command that starts the language server

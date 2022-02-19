@@ -1,4 +1,7 @@
-local stabilize = require "stabilize"
+local ok, stabilize = pcall(require, "stabilize")
+if not ok then
+  return
+end
 
 stabilize.setup {
   force = true, -- stabilize window even when current cursor position will be hidden behind new window

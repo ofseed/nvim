@@ -1,4 +1,7 @@
-local comments = require "todo-comments"
+local ok, comments = pcall(require, "todo-comments")
+if not ok then
+  return
+end
 
 comments.setup {
   signs = true, -- show icons in the signs column

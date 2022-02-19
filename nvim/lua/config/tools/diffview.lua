@@ -1,4 +1,8 @@
-local diffview = require "diffview"
+local ok, diffview = pcall(require, "diffview")
+if not ok then
+  return
+end
+
 local callback = require("diffview.config").diffview_callback
 
 diffview.setup {

@@ -1,5 +1,8 @@
 local vim = vim
-local info = require "package-info"
+local ok, info = pcall(require, "package-info")
+if not ok then
+  return
+end
 
 info.setup {
   colors = {

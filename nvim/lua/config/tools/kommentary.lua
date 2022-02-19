@@ -1,4 +1,7 @@
-local config = require "kommentary.config"
+local ok, config = pcall(require, "kommentary.config")
+if not ok then
+  return
+end
 
 config.configure_language("default", {
   prefer_single_line_comments = true,

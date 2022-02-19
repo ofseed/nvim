@@ -1,5 +1,8 @@
 local vim = vim
-local notify = require "notify"
+local ok, notify = pcall(require, "notify")
+if not ok then
+  return
+end
 
 notify.setup {
   -- Animation style (see below for details)

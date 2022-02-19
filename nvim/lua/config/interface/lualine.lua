@@ -1,6 +1,12 @@
 local vim = vim
-local lualine = require "lualine"
-local gps = require "nvim-gps"
+local ok, lualine = pcall(require, "lualine")
+if not ok then
+  return
+end
+local ok, gps = pcall(require, "nvim-gps")
+if not ok then
+  return
+end
 
 lualine.setup {
   sections = {

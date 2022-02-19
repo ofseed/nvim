@@ -1,4 +1,7 @@
-local specs = require "specs"
+local ok, specs = pcall(require, "specs")
+if not ok then
+  return
+end
 
 specs.setup {
   show_jumps = true,

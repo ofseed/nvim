@@ -1,4 +1,7 @@
-local gps = require "nvim-gps"
+local ok, gps = pcall(require, "nvim-gps")
+if not ok then
+  return
+end
 
 gps.setup {
   icons = {
@@ -6,7 +9,7 @@ gps.setup {
     ["function-name"] = " ", -- Functions
     ["method-name"] = " ", -- Methods (functions inside class-like objects)
     ["container-name"] = "⛶ ", -- Containers (example: lua tables)
-    ["tag-name"] = " ",         -- Tags (example: html tags)
+    ["tag-name"] = " ", -- Tags (example: html tags)
   },
   -- Add custom configuration per language or
   -- Disable the plugin for a language

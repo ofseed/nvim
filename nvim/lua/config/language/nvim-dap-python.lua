@@ -1,4 +1,7 @@
-local python = require "dap-python"
+local ok, python = pcall(require, "dap-python")
+if not ok then
+  return
+end
 
 python.setup "/usr/bin/python3"
 

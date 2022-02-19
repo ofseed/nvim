@@ -1,4 +1,7 @@
-local sniprun = require "sniprun"
+local ok, sniprun = pcall(require, "sniprun")
+if not ok then
+  return
+end
 
 sniprun.setup {
   selected_interpreters = {}, --# use those instead of the default for the current filetype

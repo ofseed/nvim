@@ -1,4 +1,7 @@
-local key = require "which-key"
+local ok, key = pcall(require, "which-key")
+if not ok then
+  return
+end
 
 key.setup {
   plugins = {

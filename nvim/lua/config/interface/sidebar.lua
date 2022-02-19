@@ -1,4 +1,7 @@
-local sidebar = require "sidebar-nvim"
+local ok, sidebar = pcall(require, "sidebar-nvim")
+if not ok then
+  return
+end
 
 sidebar.setup {
   disable_default_keybindings = 0,

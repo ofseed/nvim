@@ -1,5 +1,8 @@
 local vim = vim
-local bufferline = require "bufferline"
+local ok, bufferline = pcall(require, "bufferline")
+if not ok then
+  return
+end
 
 bufferline.setup {
   options = {

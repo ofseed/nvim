@@ -1,3 +1,8 @@
+local ok, crates = pcall(require, "crates")
+if not ok then
+  return
+end
+
 require("crates").setup {
   smart_insert = true,
   insert_closing_quote = true,

@@ -1,4 +1,7 @@
-local text = require "nvim-dap-virtual-text"
+local ok, text = pcall(require, "nvim-dap-virtual-text")
+if not ok then
+  return
+end
 
 require("nvim-dap-virtual-text").setup {
   enabled = true, -- enable this plugin (the default)

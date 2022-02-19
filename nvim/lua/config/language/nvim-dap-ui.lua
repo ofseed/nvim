@@ -1,4 +1,9 @@
-require("dapui").setup {
+local ok, dapui = pcall(require, "dapui")
+if not ok then
+  return
+end
+
+dapui.setup {
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
     -- Use a table to apply multiple mappings

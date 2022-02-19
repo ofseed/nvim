@@ -1,4 +1,7 @@
-local context = require "treesitter-context"
+local ok, context = pcall(require, "treesitter-context")
+if not ok then
+  return
+end
 
 context.setup {
   enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
