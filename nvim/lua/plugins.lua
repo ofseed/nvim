@@ -280,7 +280,7 @@ return packer.startup {
     }
 
     use {
-      "mfussenegger/nvim-ts-hint-textobject",
+      "mfussenegger/nvim-treehopper",
       config = function()
         require "config.tools.nvim-ts-hint-textobject"
       end,
