@@ -69,6 +69,11 @@ return packer.startup {
     }
 
     use {
+      "nvim-neo-tree/neo-tree.nvim",
+      disable = true,
+    }
+
+    use {
       "simrat39/symbols-outline.nvim",
       config = function()
         require "config.interface.symbols-outline"
@@ -145,6 +150,11 @@ return packer.startup {
       end,
       requires = "kyazdani42/nvim-web-devicons",
       cmd = { "TroubleToggle" },
+    }
+
+    use {
+      "onsails/diaglist.nvim",
+      disable = true,
     }
 
     use {
@@ -389,6 +399,11 @@ return packer.startup {
     use { "dhruvasagar/vim-table-mode" }
 
     use {
+      "ekickx/clipboard-image.nvim",
+      disable = true,
+    }
+
+    use {
       "turbio/bracey.vim",
       run = "npm install --prefix server",
       config = function()
@@ -499,6 +514,11 @@ return packer.startup {
       config = function()
         require "config.language.spellsitter"
       end,
+      disable = true,
+    }
+
+    use {
+      "brymer-meneses/grammar-guard.nvim",
       disable = true,
     }
 
@@ -622,6 +642,21 @@ return packer.startup {
       config = function()
         require "config.language.neovim-cmake"
       end,
+    }
+
+    use {
+      "nanotee/sqls.nvim",
+      disable = true,
+    }
+
+    use {
+      "akinsho/flutter-tools.nvim",
+      disable = true,
+    }
+
+    use {
+      "jose-elias-alvarez/nvim-lsp-ts-utils",
+      disable = true,
     }
 
     use {
