@@ -550,6 +550,7 @@ return packer.startup {
         { "nvim-treesitter/nvim-treesitter-refactor" },
         { "windwp/nvim-ts-autotag" },
         { "RRethy/nvim-treesitter-endwise" },
+        { "RRethy/nvim-treesitter-textsubjects", disable = true },
         { "JoosepAlviste/nvim-ts-context-commentstring" },
       },
     }
