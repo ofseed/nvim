@@ -292,7 +292,7 @@ return packer.startup {
     use {
       "mfussenegger/nvim-treehopper",
       config = function()
-        require "config.tools.nvim-ts-hint-textobject"
+        require "config.tools.nvim-treehopper"
       end,
     }
 
