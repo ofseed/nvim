@@ -37,6 +37,10 @@ return packer.startup {
     }
 
     use {
+      "1478zhcy/lualine-copilot",
+    }
+
+    use {
       "SmiteshP/nvim-gps",
       config = function()
         require "config.interface.nvim-gps"

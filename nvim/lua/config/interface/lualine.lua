@@ -13,6 +13,12 @@ lualine.setup {
     lualine_c = {
       { gps.get_location, cond = gps.is_available },
     },
+    lualine_x = {
+      "copilot",
+      "filetype",
+      "fileformat",
+      "encoding",
+    },
   },
   options = {
     theme = vim.g.colors_name,
