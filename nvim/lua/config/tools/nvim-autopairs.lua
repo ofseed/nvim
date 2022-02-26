@@ -3,7 +3,7 @@ if not ok then
   return
 end
 
-local rule = require "nvim-autopairs.rule"
+local Rule = require "nvim-autopairs.rule"
 
 autopairs.setup {
   check_ts = true,
@@ -19,10 +19,7 @@ require("nvim-treesitter.configs").setup {
 }
 
 autopairs.add_rules {
-  rule("{ ", " ", "html"),
-  rule("{ ", " ", "htmldjango"),
-  rule("{%", "%", "htmldjango"),
-  rule("{% ", " ", "htmldjango"),
-  rule("{ ", " ", "lua"),
-  rule("{ ", " ", "lua"),
+  Rule("{ ", " ", "-vim"),
+  Rule("{%", "%", "htmldjango"),
+  Rule("{% ", " ", "htmldjango"),
 }
