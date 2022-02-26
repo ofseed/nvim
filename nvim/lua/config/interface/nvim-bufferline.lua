@@ -6,7 +6,7 @@ end
 
 bufferline.setup {
   options = {
-    numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both",
+    numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
     close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
@@ -33,12 +33,13 @@ bufferline.setup {
     max_name_length = 18,
     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
     tab_size = 18,
-    diagnostics = "nvim_lsp", -- false | "nvim_lsp",
+    diagnostics = "nvim_lsp", -- false | "nvim_lsp" | "coc",
+    diagnostics_update_in_insert = false,
     diagnostics_indicator = function(count, level, diagnostics_dict, context)
       return "(" .. count .. ")"
     end,
     -- NOTE: this will be called a lot so don't do any heavy processing here
-    custom_filter = function(buf_number)
+    custom_filter = function(buf_number, buf_numbers)
       -- filter out filetypes you don't want to see
       if vim.bo[buf_number].filetype ~= "<i-dont-want-to-see-this>" then
         return true
@@ -50,6 +51,10 @@ bufferline.setup {
       -- filter out based on arbitrary rules
       -- e.g. filter out vim wiki buffer from tabline in your work repo
       if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
+        return true
+      end
+      -- filter out by it's index number in list (don't show first buffer)
+      if buf_numbers[1] ~= buf_number then
         return true
       end
     end,
