@@ -15,6 +15,32 @@ if not ok then
 end
 
 cmp.setup {
+  window = {
+    completion = {
+      border = {
+        "╭",
+        "─",
+        "╮",
+        "│",
+        "╯",
+        "─",
+        "╰",
+        "│",
+      },
+    },
+    documentation = {
+      border = {
+        "╭",
+        "─",
+        "╮",
+        "│",
+        "╯",
+        "─",
+        "╰",
+        "│",
+      },
+    },
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
