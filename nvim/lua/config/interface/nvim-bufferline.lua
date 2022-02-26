@@ -82,3 +82,19 @@ bufferline.setup {
     -- end
   },
 }
+
+vim.api.nvim_set_keymap("n", "]b", "<cmd>BufferLineCycleNext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "[b", "<cmd>BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gb", "<cmd>BufferLinePick<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-1>", "<Cmd>BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-2>", "<Cmd>BufferLineGoToBuffer 2<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-3>", "<Cmd>BufferLineGoToBuffer 3<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-4>", "<Cmd>BufferLineGoToBuffer 4<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-5>", "<Cmd>BufferLineGoToBuffer 5<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-6>", "<Cmd>BufferLineGoToBuffer 6<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-7>", "<Cmd>BufferLineGoToBuffer 7<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-8>", "<Cmd>BufferLineGoToBuffer 8<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-9>", "<Cmd>BufferLineGoToBuffer 9<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>be", "<cmd>BufferLineSortByExtension<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bd", "<cmd>BufferLineSortByDirectory<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bt", "<cmd>BufferLineSortByTabs<CR>", { noremap = true, silent = true })
