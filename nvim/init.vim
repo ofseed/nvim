@@ -80,7 +80,7 @@ if has("nvim")
   " Colorscheme config
   let g:tokyonight_transparent = 0
   let g:tokyonight_style = 'storm'
-  let g:tokyonight_sidebars = [ "Outline", "packer" ]
+  let g:tokyonight_sidebars = [ "Outline", "packer", "aerial" ]
   let g:vscode_style = 'dark'
   let g:gruvbox_transparent_bg = 0
   let g:gruvbox_underline = 0
