@@ -21,7 +21,7 @@ project.setup {
 
   -- Table of lsp clients to ignore by name
   -- eg: { "efm", ... }
-  ignore_lsp = {},
+  ignore_lsp = { "null-ls" },
 
   -- Show hidden files in telescope
   show_hidden = false,
