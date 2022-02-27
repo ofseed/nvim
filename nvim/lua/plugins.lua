@@ -555,6 +555,7 @@ return packer.startup {
         { "hrsh7th/cmp-nvim-lua" },
         { "kdheepak/cmp-latex-symbols" },
         { "saadparwaiz1/cmp_luasnip" },
+        { "kristijanhusak/vim-dadbod-completion" },
         { "lukas-reineke/cmp-under-comparator" },
       },
     }

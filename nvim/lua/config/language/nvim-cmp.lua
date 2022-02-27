@@ -125,4 +125,5 @@ cmp.setup.cmdline("/", {
 
 vim.cmd [[
 autocmd FileType toml lua require('cmp').setup.buffer { sources = { { name = 'crates' } } }
+autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
 ]]
