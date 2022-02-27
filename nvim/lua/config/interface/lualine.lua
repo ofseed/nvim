@@ -8,6 +8,10 @@ if not ok then
   return
 end
 
+local function shiftwidth()
+  return "SW:" .. vim.o.shiftwidth
+end
+
 lualine.setup {
   sections = {
     lualine_c = {
@@ -16,8 +20,9 @@ lualine.setup {
     lualine_x = {
       "copilot",
       "filetype",
-      "fileformat",
+      shiftwidth,
       "encoding",
+      "fileformat",
     },
   },
   options = {
