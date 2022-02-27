@@ -83,9 +83,9 @@ cmp.setup {
     }),
   },
   sources = {
+    { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
     { name = "calc" },
