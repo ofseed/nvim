@@ -93,7 +93,7 @@ cmp.setup {
     { name = "orgmode" },
   },
   formatting = {
-    format = lspkind.cmp_format { with_text = false, maxwidth = 50 },
+    format = lspkind.cmp_format { mode = "symbol", maxwidth = 50 },
   },
   sorting = {
     comparators = {
@@ -124,6 +124,6 @@ cmp.setup.cmdline("/", {
 })
 
 vim.cmd [[
-autocmd FileType toml lua require('cmp').setup.buffer { sources = { { name = 'crates' } } }
-autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+autocmd FileType toml lua require("cmp").setup.buffer { sources = { { name = "crates" } } }
+autocmd FileType sql,mysql,plsql lua require("cmp").setup.buffer { sources = {  { name = "vim-dadbod-completion" } } }
 ]]
