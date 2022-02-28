@@ -1,3 +1,4 @@
+---@diagnostic disable: different-requires
 local vim = vim
 local packer = require "packer"
 
