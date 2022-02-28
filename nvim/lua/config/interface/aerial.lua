@@ -123,7 +123,7 @@ aerial.setup {
   -- min_width and max_width can be a list of mixed types.
   -- max_value = {40, 0.2} means "the lesser of 40 columns or 20% of total"
   max_width = { 40, 0.2 },
-  width = nil,
+  width = 30,
   min_width = 10,
 
   -- Set default symbol icons to use patched font icons (see https://www.nerdfonts.com/)
