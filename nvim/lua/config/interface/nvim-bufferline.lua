@@ -95,6 +95,8 @@ vim.api.nvim_set_keymap("n", "<M-6>", "<Cmd>BufferLineGoToBuffer 6<CR>", { norem
 vim.api.nvim_set_keymap("n", "<M-7>", "<Cmd>BufferLineGoToBuffer 7<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<M-8>", "<Cmd>BufferLineGoToBuffer 8<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<M-9>", "<Cmd>BufferLineGoToBuffer 9<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>be", "<cmd>BufferLineSortByExtension<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>bd", "<cmd>BufferLineSortByDirectory<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>bt", "<cmd>BufferLineSortByTabs<CR>", { noremap = true, silent = true })
+-- TODO: conflict with nvim-dap
+vim.api.nvim_set_keymap("n", "<leader>bc", "<cmd>BufferLinePickClose<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bse", "<cmd>BufferLineSortByExtension<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bsd", "<cmd>BufferLineSortByDirectory<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bst", "<cmd>BufferLineSortByTabs<CR>", { noremap = true, silent = true })
