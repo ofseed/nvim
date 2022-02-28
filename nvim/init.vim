@@ -79,7 +79,9 @@ augroup END
 if has("nvim")
   " Colorscheme config
   let g:tokyonight_transparent = 0
+  let g:tokyonight_day_brightness = 0.3
   let g:tokyonight_style = 'storm'
+  let g:tokyonight_lualine_bold = v:true
   let g:tokyonight_sidebars = [ "Outline", "packer", "aerial" ]
   let g:vscode_style = 'dark'
   let g:gruvbox_transparent_bg = 0
