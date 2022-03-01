@@ -23,12 +23,16 @@ project.setup {
   -- eg: { "efm", ... }
   ignore_lsp = { "null-ls" },
 
+  -- Don't calculate root dir on specific directories
+  -- Ex: { "~/.cargo/*", ... }
+  exclude_dirs = {},
+
   -- Show hidden files in telescope
   show_hidden = false,
 
   -- When set to false, you will get a message when project.nvim changes your
   -- directory.
-  silent_chdir = false,
+  silent_chdir = true,
 
   -- Path where project.nvim will store the project history for use in
   -- telescope
