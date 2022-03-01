@@ -20,8 +20,12 @@ local function diff_source()
   end
 end
 
-local function shiftwidth()
-  return "SW:" .. vim.o.shiftwidth
+local function indent()
+  if vim.o.expandtab then
+    return "SW:" .. vim.o.shiftwidth
+  else
+    return "TS:" .. vim.o.tabstop
+  end
 end
 
 lualine.setup {
@@ -37,7 +41,7 @@ lualine.setup {
     lualine_x = {
       "copilot",
       "filetype",
-      shiftwidth,
+      indent,
       "encoding",
       "fileformat",
     },
