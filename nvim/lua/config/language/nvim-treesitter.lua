@@ -22,7 +22,7 @@ treesitter.setup {
   },
   refactor = {
     smart_rename = {
-      enable = true,
+      enable = false,
       keymaps = {
         smart_rename = "grr",
       },
