@@ -46,7 +46,6 @@ lualine.setup {
     theme = vim.g.colors_name,
     disabled_filetypes = {
       "alpha",
-      "aerial",
     },
     section_separators = "",
     component_separators = "│",
@@ -55,5 +54,6 @@ lualine.setup {
     "nvim-tree",
     "toggleterm",
     "symbols-outline",
+    "aerial",
   },
 }
