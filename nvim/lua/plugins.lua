@@ -577,6 +577,7 @@ return packer.startup {
       requires = {
         { "nvim-treesitter/nvim-treesitter-refactor" },
         { "windwp/nvim-ts-autotag" },
+        { "p00f/nvim-ts-rainbow" },
         { "RRethy/nvim-treesitter-endwise" },
         { "RRethy/nvim-treesitter-textsubjects", disable = true },
         { "JoosepAlviste/nvim-ts-context-commentstring" },
