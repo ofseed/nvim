@@ -88,7 +88,7 @@ if has("nvim")
   let g:gruvbox_underline = 0
   let g:gruvbox_invert_selection = 0
   let g:github_sidebars = [ "Outline", "packer" ]
-  colorscheme tokyonight
+  colorscheme nightfox
 
   " SQLite3 config
   if has('win32')
