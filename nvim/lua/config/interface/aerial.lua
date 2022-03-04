@@ -122,9 +122,9 @@ aerial.setup {
   -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
   -- min_width and max_width can be a list of mixed types.
   -- max_value = {40, 0.2} means "the lesser of 40 columns or 20% of total"
-  max_width = { 40, 0.2 },
-  width = 30,
-  min_width = 10,
+  max_width = nil,
+  width = nil,
+  min_width = { 25, 0.2 },
 
   -- Set default symbol icons to use patched font icons (see https://www.nerdfonts.com/)
   -- "auto" will set it to true if nvim-web-devicons or lspkind-nvim is installed.
