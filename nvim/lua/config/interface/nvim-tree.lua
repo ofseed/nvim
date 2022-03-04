@@ -110,25 +110,7 @@ tree.setup {
   view = {
     width = function()
       local columns = vim.go.columns
-      if columns <= 125 then
-        return 25
-      elseif columns <= 150 then
-        return 30
-      elseif columns <= 175 then
-        return 35
-      elseif columns <= 200 then
-        return 40
-      elseif columns <= 225 then
-        return 45
-      elseif columns <= 250 then
-        return 50
-      elseif columns <= 275 then
-        return 55
-      elseif columns <= 300 then
-        return 60
-      else
-        return 65
-      end
+      return math.floor(columns * 0.2)
     end,
     height = 30,
     hide_root_folder = false,
