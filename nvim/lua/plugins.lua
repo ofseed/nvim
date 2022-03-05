@@ -409,15 +409,6 @@ return packer.startup {
     }
 
     use {
-      "turbio/bracey.vim",
-      run = "npm install --prefix server",
-      config = function()
-        require "config.tools.bracey"
-      end,
-      cmd = { "Bracey" },
-    }
-
-    use {
       "dstein64/vim-startuptime",
       cmd = { "StartupTime" },
     }
