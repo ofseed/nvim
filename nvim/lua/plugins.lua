@@ -332,6 +332,17 @@ return packer.startup {
     }
 
     use {
+      "bennypowers/nvim-regexplainer",
+      config = function()
+        require "config.tools.nvim-regexplainer"
+      end,
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+      },
+    }
+
+    use {
       "ahmedkhalf/project.nvim",
       config = function()
         require "config.tools.project"
