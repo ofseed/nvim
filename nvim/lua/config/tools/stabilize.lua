@@ -1,5 +1,6 @@
 local ok, stabilize = pcall(require, "stabilize")
 if not ok then
+  vim.notify "Could not load stabilize"
   return
 end
 

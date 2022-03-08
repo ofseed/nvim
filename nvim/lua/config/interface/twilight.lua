@@ -1,5 +1,6 @@
 local ok, twilight = pcall(require, "twilight")
 if not ok then
+  vim.notify "Could not load twilight"
   return
 end
 

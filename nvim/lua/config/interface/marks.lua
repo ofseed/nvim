@@ -1,5 +1,6 @@
 local ok, marks = pcall(require, "marks")
 if not ok then
+  vim.notify "Could not load marks"
   return
 end
 

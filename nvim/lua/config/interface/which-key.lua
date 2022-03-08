@@ -1,5 +1,6 @@
 local ok, key = pcall(require, "which-key")
 if not ok then
+  vim.notify "Could not load which-key"
   return
 end
 

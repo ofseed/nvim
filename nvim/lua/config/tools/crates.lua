@@ -1,5 +1,6 @@
 local ok, crates = pcall(require, "crates")
 if not ok then
+  vim.notify "Could not load crates"
   return
 end
 

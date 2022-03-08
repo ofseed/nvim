@@ -1,5 +1,6 @@
 local ok, aerial = pcall(require, "aerial")
 if not ok then
+  vim.notify "Could not load aerial"
   return
 end
 

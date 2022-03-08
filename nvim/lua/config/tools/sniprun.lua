@@ -1,5 +1,6 @@
 local ok, sniprun = pcall(require, "sniprun")
 if not ok then
+  vim.notify "Could not load sniprun"
   return
 end
 

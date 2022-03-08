@@ -1,16 +1,19 @@
 local vim = vim
 local ok, cmp = pcall(require, "cmp")
 if not ok then
+  vim.notify "Could not load cmp"
   return
 end
 
 local ok, luasnip = pcall(require, "luasnip")
 if not ok then
+  vim.notify "Could not load luasnip"
   return
 end
 
 local ok, lspkind = pcall(require, "lspkind")
 if not ok then
+  vim.notify "Could not load lspkind"
   return
 end
 

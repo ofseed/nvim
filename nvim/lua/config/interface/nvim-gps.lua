@@ -1,5 +1,6 @@
 local ok, gps = pcall(require, "nvim-gps")
 if not ok then
+  vim.notify "Could not load gps"
   return
 end
 

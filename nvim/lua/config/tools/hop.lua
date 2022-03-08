@@ -1,5 +1,6 @@
 local ok, hop = pcall(require, "hop")
 if not ok then
+  vim.notify "Could not load hop"
   return
 end
 

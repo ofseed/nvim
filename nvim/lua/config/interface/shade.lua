@@ -1,5 +1,6 @@
 local ok, shade = pcall(require, "shade")
 if not ok then
+  vim.notify "Could not load shade"
   return
 end
 

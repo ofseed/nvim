@@ -1,5 +1,6 @@
 local ok, zen = pcall(require, "zen-mode")
 if not ok then
+  vim.notify "Could not load zen-mode"
   return
 end
 

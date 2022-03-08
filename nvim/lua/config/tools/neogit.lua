@@ -1,5 +1,6 @@
 local ok, neogit = pcall(require, "neogit")
 if not ok then
+  vim.notify "Could not load neogit"
   return
 end
 

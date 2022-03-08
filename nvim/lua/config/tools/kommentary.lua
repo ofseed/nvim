@@ -1,13 +1,14 @@
-local ok, config = pcall(require, "kommentary.config")
+local ok, kommentary = pcall(require, "kommentary.config")
 if not ok then
+  vim.notify "Could not load Kommentary"
   return
 end
 
-config.configure_language("default", {
+kommentary.configure_language("default", {
   prefer_single_line_comments = true,
 })
 
-config.configure_language("html", {
+kommentary.configure_language("html", {
   single_line_comment_string = "auto",
   multi_line_comment_strings = "auto",
   hook_function = function()
@@ -15,7 +16,7 @@ config.configure_language("html", {
   end,
 })
 
-config.configure_language("vue", {
+kommentary.configure_language("vue", {
   single_line_comment_string = "auto",
   multi_line_comment_strings = "auto",
   hook_function = function()

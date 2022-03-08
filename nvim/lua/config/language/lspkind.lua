@@ -1,5 +1,6 @@
 local ok, lspkind = pcall(require, "lspkind")
 if not ok then
+  vim.notify "Could not load lspkind"
   return
 end
 

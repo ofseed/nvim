@@ -1,5 +1,6 @@
 local ok, orgmode = pcall(require, "orgmode")
 if not ok then
+  vim.notify "Could not load orgmode"
   return
 end
 

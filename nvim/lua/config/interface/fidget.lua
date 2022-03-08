@@ -1,5 +1,6 @@
 local ok, fidget = pcall(require, "fidget")
 if not ok then
+  vim.notify "Could not load fidget"
   return
 end
 

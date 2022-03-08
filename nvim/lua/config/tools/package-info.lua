@@ -1,6 +1,7 @@
 local vim = vim
 local ok, info = pcall(require, "package-info")
 if not ok then
+  vim.notify "Could not load package info"
   return
 end
 

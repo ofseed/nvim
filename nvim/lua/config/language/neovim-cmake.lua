@@ -1,5 +1,6 @@
 local ok, cmake = pcall(require, "cmake")
 if not ok then
+  vim.notify "Could not load cmake"
   return
 end
 

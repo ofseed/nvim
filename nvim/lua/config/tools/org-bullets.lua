@@ -1,5 +1,6 @@
 local ok, bullets = pcall(require, "org-bullets")
 if not ok then
+  vim.notify "Could not load org bullets"
   return
 end
 

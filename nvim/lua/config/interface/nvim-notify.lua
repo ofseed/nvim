@@ -1,6 +1,7 @@
 local vim = vim
 local ok, notify = pcall(require, "notify")
 if not ok then
+  vim.notify "Could not load notify"
   return
 end
 

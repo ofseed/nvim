@@ -1,5 +1,6 @@
 local ok, octo = pcall(require, "octo")
 if not ok then
+  vim.notify "Could not load octo"
   return
 end
 

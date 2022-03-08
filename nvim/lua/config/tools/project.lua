@@ -1,6 +1,7 @@
 local vim = vim
 local ok, project = pcall(require, "project_nvim")
 if not ok then
+  vim.notify "Could not load project"
   return
 end
 

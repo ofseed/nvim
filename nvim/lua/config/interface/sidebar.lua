@@ -1,5 +1,6 @@
 local ok, sidebar = pcall(require, "sidebar-nvim")
 if not ok then
+  vim.notify "Could not load sidebar"
   return
 end
 

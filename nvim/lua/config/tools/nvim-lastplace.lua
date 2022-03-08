@@ -1,5 +1,6 @@
 local ok, lastplace = pcall(require, "nvim-lastplace")
 if not ok then
+  vim.notify "Could not load lastplace"
   return
 end
 

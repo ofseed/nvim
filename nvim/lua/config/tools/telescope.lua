@@ -1,6 +1,7 @@
 local vim = vim
 local ok, telescope = pcall(require, "telescope")
 if not ok then
+  vim.notify "Could not load telescope"
   return
 end
 

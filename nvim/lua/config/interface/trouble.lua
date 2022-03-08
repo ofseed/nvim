@@ -1,6 +1,6 @@
-local vim = vim
 local ok, trouble = pcall(require, "trouble")
 if not ok then
+  vim.notify "Could not load trouble"
   return
 end
 

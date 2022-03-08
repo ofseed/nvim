@@ -1,5 +1,6 @@
 local ok, context = pcall(require, "treesitter-context")
 if not ok then
+  vim.notify "Could not load treesitter-context"
   return
 end
 

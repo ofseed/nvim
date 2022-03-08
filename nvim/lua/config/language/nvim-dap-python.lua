@@ -1,5 +1,6 @@
 local ok, python = pcall(require, "dap-python")
 if not ok then
+  vim.notify "Could not load dap python"
   return
 end
 

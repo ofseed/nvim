@@ -1,6 +1,7 @@
 local vim = vim
 local ok, tree = pcall(require, "nvim-tree")
 if not ok then
+  vim.notify "Could not load tree"
   return
 end
 

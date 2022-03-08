@@ -1,5 +1,6 @@
 local ok, jdtls = pcall(require, "jdtls")
 if not ok then
+  vim.notify "Could not load jdtls"
   return
 end
 

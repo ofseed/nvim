@@ -1,5 +1,6 @@
 local ok, signature = pcall(require, "lsp_signature")
 if not ok then
+  vim.notify "Could not load lsp signature"
   return
 end
 
