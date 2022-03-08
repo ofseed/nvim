@@ -8,7 +8,7 @@ ls.setup {
   sources = {
     ls.builtins.formatting.prettier,
     ls.builtins.formatting.stylua,
-    ls.builtins.formatting.autopep8,
+    ls.builtins.formatting.black,
     -- ls.builtins.diagnostics.codespell,
   },
 }
