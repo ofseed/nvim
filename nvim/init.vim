@@ -8,6 +8,8 @@
 set expandtab
 set softtabstop=2
 set shiftwidth=2
+set smarttab
+set backspace=indent,eol,start
 set nobackup
 set noswapfile
 set ignorecase
@@ -38,6 +40,8 @@ set cursorline
 set cursorlineopt=number
 set conceallevel=1
 set scrolloff=1
+set sidescrolloff=5
+set display+=lastline,msgsep
 
 " Unicode config
 set encoding=utf-8
