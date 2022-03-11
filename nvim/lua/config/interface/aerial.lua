@@ -58,6 +58,9 @@ aerial.setup {
   -- Highlight the closest symbol if the cursor is not exactly on one.
   highlight_closest = true,
 
+  -- Highlight the symbol in the source buffer when cursor is in the aerial win
+  highlight_on_hover = true,
+
   -- When jumping to a symbol, highlight the line for this many ms.
   -- Set to false to disable
   highlight_on_jump = 300,
@@ -67,7 +70,7 @@ aerial.setup {
   -- default collapsed icon. The default icon set is determined by the
   -- "nerd_font" option below.
   -- If you have lspkind-nvim installed, aerial will use it for icons.
-  icons = {},
+  -- icons = {},
 
   -- Control which windows and buffers aerial should ignore.
   -- If close_behavior is "global", focusing an ignored window/buffer will
@@ -122,7 +125,7 @@ aerial.setup {
   -- These control the width of the aerial window.
   -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
   -- min_width and max_width can be a list of mixed types.
-  -- max_value = {40, 0.2} means "the lesser of 40 columns or 20% of total"
+  -- max_width = {40, 0.2} means "the lesser of 40 columns or 20% of total"
   max_width = nil,
   width = nil,
   min_width = { 25, 0.2 },
@@ -181,7 +184,7 @@ aerial.setup {
     -- These control the height of the floating window.
     -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
     -- min_height and max_height can be a list of mixed types.
-    -- min_value = {8, 0.1} means "the greater of 8 rows or 10% of total"
+    -- min_height = {8, 0.1} means "the greater of 8 rows or 10% of total"
     max_height = 0.9,
     height = nil,
     min_height = { 8, 0.1 },
