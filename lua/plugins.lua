@@ -38,7 +38,7 @@ return packer.startup {
     }
 
     use {
-      "1478zhcy/lualine-copilot",
+      "ofseed/lualine-copilot",
     }
 
     use {
