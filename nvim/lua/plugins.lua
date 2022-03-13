@@ -270,6 +270,11 @@ return packer.startup {
     }
 
     use {
+      "t9md/vim-choosewin",
+      disable = true,
+    }
+
+    use {
       "windwp/nvim-autopairs",
       config = function()
         require "config.tools.nvim-autopairs"
@@ -459,6 +464,11 @@ return packer.startup {
         "sindrets/diffview.nvim",
       },
       cmd = { "Neogit" },
+    }
+
+    use {
+      "akinsho/git-conflict.nvim",
+      disable = true,
     }
 
     use {
