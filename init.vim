@@ -1,4 +1,4 @@
-" Created by 1478zhcy on January 13, 2021.
+" Created by Yi Ming on January 13, 2021.
 " The purpose of writing this configuration
 " file is to unify the experience of using
 " Vim and Neovim on different platforms
