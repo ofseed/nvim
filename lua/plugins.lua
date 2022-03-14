@@ -217,6 +217,20 @@ return packer.startup {
     }
 
     use {
+      "folke/trouble.nvim",
+      config = function()
+        require "config.interface.trouble"
+      end,
+      requires = "kyazdani42/nvim-web-devicons",
+      cmd = { "TroubleToggle" },
+    }
+
+    use {
+      "onsails/diaglist.nvim",
+      disable = true,
+    }
+
+    use {
       "goolord/alpha-nvim",
       config = function()
         require "config.interface.alpha-nvim"
@@ -470,7 +484,7 @@ return packer.startup {
     use {
       "nvim-telescope/telescope.nvim",
       config = function()
-        require "config.tools.telescope"
+        require "efficiency.telescope"
       end,
       requires = {
         { "nvim-lua/popup.nvim" },
@@ -489,14 +503,14 @@ return packer.startup {
     use {
       "phaazon/hop.nvim",
       config = function()
-        require "config.tools.hop"
+        require "efficiency.hop"
       end,
     }
 
     use {
       "mfussenegger/nvim-treehopper",
       config = function()
-        require "config.tools.nvim-treehopper"
+        require "efficiency.treehopper"
       end,
     }
 
@@ -507,32 +521,18 @@ return packer.startup {
     use {
       "ethanholz/nvim-lastplace",
       config = function()
-        require "config.tools.nvim-lastplace"
+        require "efficiency.lastplace"
       end,
     }
 
     use {
       "Shatur/neovim-session-manager",
       config = function()
-        require "config.tools.neovim-session-manager"
+        require "efficiency.session-manager"
       end,
       requires = {
         { "nvim-lua/plenary.nvim" },
       },
-    }
-
-    use {
-      "folke/trouble.nvim",
-      config = function()
-        require "config.interface.trouble"
-      end,
-      requires = "kyazdani42/nvim-web-devicons",
-      cmd = { "TroubleToggle" },
-    }
-
-    use {
-      "onsails/diaglist.nvim",
-      disable = true,
     }
 
     use {
@@ -675,7 +675,6 @@ return packer.startup {
         require "config.language.dap-install"
       end,
     }
-
   end,
 
   config = {
