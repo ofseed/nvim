@@ -111,7 +111,7 @@ return packer.startup {
     use {
       "L3MON4D3/LuaSnip",
       config = function()
-        require "edit.snip"
+        require "edit.luasnip"
       end,
     }
 
@@ -159,7 +159,7 @@ return packer.startup {
     use {
       "akinsho/nvim-bufferline.lua",
       config = function()
-        require "config.interface.nvim-bufferline"
+        require "interface.bufferline"
       end,
       requires = { "kyazdani42/nvim-web-devicons" },
     }
@@ -167,16 +167,13 @@ return packer.startup {
     use {
       "nvim-lualine/lualine.nvim",
       config = function()
-        require "config.interface.lualine"
+        require "interface.lualine"
       end,
       requires = {
         { "kyazdani42/nvim-web-devicons" },
         { "ofseed/lualine-copilot" },
         {
           "SmiteshP/nvim-gps",
-          config = function()
-            require "config.interface.nvim-gps"
-          end,
           requires = "nvim-treesitter/nvim-treesitter",
         },
       },
@@ -185,28 +182,28 @@ return packer.startup {
     use {
       "RRethy/vim-illuminate",
       config = function()
-        require "config.tools.vim-illuminate"
+        require "interface.illuminate"
       end,
     }
 
     use {
       "lukas-reineke/indent-blankline.nvim",
       config = function()
-        require "config.interface.indent-blankline"
+        require "interface.indent-blankline"
       end,
     }
 
     use {
       "ray-x/lsp_signature.nvim",
       config = function()
-        require "config.language.lsp_signature"
+        require "interface.lsp_signature"
       end,
     }
 
     use {
       "onsails/lspkind-nvim",
       config = function()
-        require "config.language.lspkind"
+        require "interface.lspkind"
       end,
     }
 
@@ -217,51 +214,37 @@ return packer.startup {
     }
 
     use {
-      "folke/trouble.nvim",
-      config = function()
-        require "config.interface.trouble"
-      end,
-      requires = "kyazdani42/nvim-web-devicons",
-      cmd = { "TroubleToggle" },
-    }
-
-    use {
-      "onsails/diaglist.nvim",
-      disable = true,
-    }
-
-    use {
       "goolord/alpha-nvim",
       config = function()
-        require "config.interface.alpha-nvim"
+        require "interface.alpha"
       end,
     }
 
     use {
       "j-hui/fidget.nvim",
       config = function()
-        require "config.interface.fidget"
+        require "interface.fidget"
       end,
     }
 
     use {
       "rcarriga/nvim-notify",
       config = function()
-        require "config.interface.nvim-notify"
+        require "interface.notify"
       end,
     }
 
     use {
       "romgrk/nvim-treesitter-context",
       config = function()
-        require "config.interface.nvim-treesitter-context"
+        require "interface.treesitter-context"
       end,
     }
 
     use {
       "norcalli/nvim-colorizer.lua",
       config = function()
-        require "config.interface.nvim-colorizer"
+        require "interface.colorizer"
       end,
     }
 
@@ -270,21 +253,21 @@ return packer.startup {
     use {
       "kevinhwang91/nvim-bqf",
       config = function()
-        require "config.interface.nvim-bqf"
+        require "interface.bqf"
       end,
     }
 
     use {
       "folke/todo-comments.nvim",
       config = function()
-        require "config.interface.todo-comments"
+        require "interface.todo-comments"
       end,
     }
 
     use {
       "folke/zen-mode.nvim",
       config = function()
-        require "config.interface.zen-mode"
+        require "interface.zen-mode"
       end,
       cmd = { "ZenMode" },
     }
@@ -292,7 +275,7 @@ return packer.startup {
     use {
       "folke/twilight.nvim",
       config = function()
-        require "config.interface.twilight"
+        require "interface.twilight"
       end,
       cmd = { "Twilight" },
     }
@@ -300,7 +283,7 @@ return packer.startup {
     use {
       "winston0410/range-highlight.nvim",
       config = function()
-        require("range-highlight").setup {}
+        require "interface.range-highlight"
       end,
       requires = {
         "winston0410/cmd-parser.nvim",
@@ -312,7 +295,7 @@ return packer.startup {
     use {
       "edluffy/specs.nvim",
       config = function()
-        require "config.interface.specs"
+        require "interface.specs"
       end,
       disable = true,
       -- Disable because it's conflicting with the chinese text
@@ -321,7 +304,7 @@ return packer.startup {
     use {
       "chentau/marks.nvim",
       config = function()
-        require "config.interface.marks"
+        require "interface.marks"
       end,
       disable = true,
     }
@@ -340,7 +323,7 @@ return packer.startup {
     use {
       "bennypowers/nvim-regexplainer",
       config = function()
-        require "config.tools.nvim-regexplainer"
+        require "interface.regexplainer"
       end,
       requires = {
         "nvim-lua/plenary.nvim",
@@ -351,7 +334,7 @@ return packer.startup {
     use {
       "sunjon/Shade.nvim",
       config = function()
-        require "config.interface.shade"
+        require "interface.shade"
       end,
       disable = true,
       -- Disable because conflict with other floating window plugins
@@ -360,7 +343,7 @@ return packer.startup {
     use {
       "luukvbaal/stabilize.nvim",
       config = function()
-        require "config.tools.stabilize"
+        require "interface.stabilize"
       end,
       disable = true,
     }
@@ -403,10 +386,24 @@ return packer.startup {
     use {
       "simrat39/symbols-outline.nvim",
       config = function()
-        require "tool.outline"
+        require "tool.symbols-outline"
       end,
       requires = { "kyazdani42/nvim-web-devicons" },
       cmd = { "SymbolsOutline" },
+      disable = true,
+    }
+
+    use {
+      "folke/trouble.nvim",
+      config = function()
+        require "tool.trouble"
+      end,
+      requires = "kyazdani42/nvim-web-devicons",
+      cmd = { "TroubleToggle" },
+    }
+
+    use {
+      "onsails/diaglist.nvim",
       disable = true,
     }
 
@@ -478,7 +475,12 @@ return packer.startup {
       end,
     }
 
-    use { "akinsho/org-bullets.nvim" }
+    use {
+      "akinsho/org-bullets.nvim",
+      config = function()
+        require "tool.org-bullets"
+      end,
+    }
 
     -- Efficiency Improvement
     use {
