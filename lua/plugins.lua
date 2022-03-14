@@ -640,7 +640,7 @@ return packer.startup {
     use {
       "michaelb/sniprun",
       config = function()
-        require "config.tools.sniprun"
+        require "debug.sniprun"
       end,
       run = "bash install.sh",
     }
@@ -653,28 +653,28 @@ return packer.startup {
     use {
       "mfussenegger/nvim-dap",
       config = function()
-        require "config.language.nvim-dap"
+        require "debug.dap"
       end,
     }
 
     use {
       "theHamsta/nvim-dap-virtual-text",
       config = function()
-        require "config.language.nvim-dap-virtual-text"
+        require "debug.dap-virtual-text"
       end,
     }
 
     use {
       "rcarriga/nvim-dap-ui",
       config = function()
-        require "config.language.nvim-dap-ui"
+        require "debug.dap-ui"
       end,
     }
 
     use {
       "Pocco81/DAPInstall.nvim",
       config = function()
-        require "config.language.dap-install"
+        require "debug.dap-install"
       end,
     }
   end,
