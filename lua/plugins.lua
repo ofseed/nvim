@@ -29,6 +29,8 @@ return packer.startup {
       requires = {
         { "williamboman/nvim-lsp-installer" },
         { "hrsh7th/nvim-cmp" },
+        { "simrat39/rust-tools.nvim" },
+        { "p00f/clangd_extensions.nvim" },
       },
     }
 
@@ -339,6 +341,14 @@ return packer.startup {
     }
 
     use {
+      "jbyuki/nabla.nvim",
+      config = function()
+        require "interface.nabla"
+      end,
+      ft = { "tex", "markdown" },
+    }
+
+    use {
       "sunjon/Shade.nvim",
       config = function()
         require "interface.shade"
@@ -450,13 +460,6 @@ return packer.startup {
     }
 
     use {
-      "pwntester/octo.nvim",
-      config = function()
-        require "tool.octo"
-      end,
-    }
-
-    use {
       "sindrets/diffview.nvim",
       config = function()
         require "tool.diffview"
@@ -467,6 +470,40 @@ return packer.startup {
     use {
       "akinsho/git-conflict.nvim",
       disable = true,
+    }
+
+    use {
+      "iamcco/markdown-preview.nvim",
+      config = function()
+        require "tool.markdown-preview"
+      end,
+      run = "cd app && yarn install",
+      ft = { "markdown" },
+    }
+
+    use {
+      "Saecki/crates.nvim",
+      event = { "BufRead Cargo.toml" },
+      requires = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require "config.tools.crates"
+      end,
+    }
+
+    use {
+      "vuki656/package-info.nvim",
+      config = function()
+        require "tool.package-info"
+      end,
+      requires = "MunifTanjim/nui.nvim",
+      ft = { "json" },
+    }
+
+    use {
+      "pwntester/octo.nvim",
+      config = function()
+        require "tool.octo"
+      end,
     }
 
     use {
@@ -553,96 +590,6 @@ return packer.startup {
       disable = true,
     }
 
-    -- Language Specific
-    use {
-      "simrat39/rust-tools.nvim",
-    }
-
-    use {
-      "Saecki/crates.nvim",
-      event = { "BufRead Cargo.toml" },
-      requires = { "nvim-lua/plenary.nvim" },
-      config = function()
-        require "config.tools.crates"
-      end,
-    }
-
-    use {
-      "p00f/clangd_extensions.nvim",
-    }
-
-    use {
-      "Shatur/neovim-cmake",
-      config = function()
-        require "config.language.neovim-cmake"
-      end,
-    }
-
-    use {
-      "mfussenegger/nvim-jdtls",
-      config = function()
-        require "config.language.nvim-jdtls"
-      end,
-      ft = { "java" },
-      disable = true,
-    }
-
-    use {
-      "mfussenegger/nvim-dap-python",
-      config = function()
-        require "config.language.nvim-dap-python"
-      end,
-    }
-
-    use {
-      "akinsho/flutter-tools.nvim",
-      disable = true,
-    }
-
-    use {
-      "jose-elias-alvarez/nvim-lsp-ts-utils",
-      disable = true,
-    }
-
-    use {
-      "vuki656/package-info.nvim",
-      config = function()
-        require "config.tools.package-info"
-      end,
-      requires = "MunifTanjim/nui.nvim",
-      ft = { "json" },
-    }
-
-    use {
-      "lervag/vimtex",
-      config = function()
-        require "config.tools.vimtex"
-      end,
-      ft = { "tex" },
-    }
-
-    use {
-      "jbyuki/nabla.nvim",
-      config = function()
-        require "config.tools.nabla"
-      end,
-      ft = { "tex", "markdown" },
-    }
-
-    use {
-      "plasticboy/vim-markdown",
-      ft = { "markdown" },
-    }
-
-    use {
-      "iamcco/markdown-preview.nvim",
-      config = function()
-        require "config.tools.markdown-preview"
-      end,
-      run = "cd app && yarn install",
-      ft = { "markdown" },
-    }
-
     -- Debug And Run
     use {
       "michaelb/sniprun",
@@ -683,6 +630,53 @@ return packer.startup {
       config = function()
         require "debug.dap-install"
       end,
+    }
+
+    use {
+      "mfussenegger/nvim-dap-python",
+      config = function()
+        require "debug.dap-python"
+      end,
+    }
+
+    use {
+      "Shatur/neovim-cmake",
+      config = function()
+        require "debug.cmake"
+      end,
+    }
+
+    -- Language Specific
+    use {
+      "lervag/vimtex",
+      config = function()
+        require "language.tex"
+      end,
+      ft = { "tex" },
+    }
+
+    use {
+      "plasticboy/vim-markdown",
+      ft = { "markdown" },
+    }
+
+    use {
+      "mfussenegger/nvim-jdtls",
+      config = function()
+        require "language.jdtls"
+      end,
+      ft = { "java" },
+      disable = true,
+    }
+
+    use {
+      "akinsho/flutter-tools.nvim",
+      disable = true,
+    }
+
+    use {
+      "jose-elias-alvarez/nvim-lsp-ts-utils",
+      disable = true,
     }
   end,
 
