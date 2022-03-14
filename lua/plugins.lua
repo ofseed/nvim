@@ -381,7 +381,7 @@ return packer.startup {
     use {
       "kyazdani42/nvim-tree.lua",
       config = function()
-        require "config.interface.nvim-tree"
+        require "tool.tree"
       end,
       requires = { "kyazdani42/nvim-web-devicons" },
     }
@@ -403,7 +403,7 @@ return packer.startup {
     use {
       "simrat39/symbols-outline.nvim",
       config = function()
-        require "config.interface.symbols-outline"
+        require "tool.outline"
       end,
       requires = { "kyazdani42/nvim-web-devicons" },
       cmd = { "SymbolsOutline" },
@@ -413,14 +413,14 @@ return packer.startup {
     use {
       "akinsho/nvim-toggleterm.lua",
       config = function()
-        require "config.tools.nvim-toggleterm"
+        require "tool.toggleterm"
       end,
     }
 
     use {
       "stevearc/aerial.nvim",
       config = function()
-        require "config.interface.aerial"
+        require "tool.aerial"
       end,
       cmd = { "AerialToggle" },
     }
@@ -428,7 +428,7 @@ return packer.startup {
     use {
       "lewis6991/gitsigns.nvim",
       config = function()
-        require "config.interface.gitsigns"
+        require "tool.gitsigns"
       end,
       requires = "nvim-lua/plenary.nvim",
     }
@@ -436,7 +436,7 @@ return packer.startup {
     use {
       "TimUntersberger/neogit",
       config = function()
-        require "config.tools.neogit"
+        require "tool.neogit"
       end,
       requires = {
         "nvim-lua/plenary.nvim",
@@ -448,14 +448,14 @@ return packer.startup {
     use {
       "pwntester/octo.nvim",
       config = function()
-        require "config.tools.octo"
+        require "tool.octo"
       end,
     }
 
     use {
       "sindrets/diffview.nvim",
       config = function()
-        require "config.tools.diffview"
+        require "tool.diffview"
       end,
       cmd = { "DiffviewOpen", "DiffviewFileHistory" },
     }
@@ -474,7 +474,7 @@ return packer.startup {
     use {
       "nvim-orgmode/orgmode",
       config = function()
-        require "config.tools.orgmode"
+        require "tool.orgmode"
       end,
     }
 
