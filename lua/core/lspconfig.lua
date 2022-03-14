@@ -1,5 +1,15 @@
 local vim = vim
-local installer = require "nvim-lsp-installer"
+local ok, installer = pcall(require, "nvim-lsp-installer")
+if not ok then
+  vim.notify "Could not load lsp-installer"
+  return
+end
+
+local ok, cmp = pcall(require, "cmp_nvim_lsp")
+if not ok then
+  vim.notify "Could not load nvim-cmp"
+  return
+end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,

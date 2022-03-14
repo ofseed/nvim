@@ -21,14 +21,21 @@ return packer.startup {
     -- Core
     use { "wbthomason/packer.nvim" }
 
-    use { "neovim/nvim-lspconfig" }
-
-    use { "williamboman/nvim-lsp-installer" }
+    use {
+      "neovim/nvim-lspconfig",
+      config = function()
+        require "core.lspconfig"
+      end,
+      requires = {
+        { "williamboman/nvim-lsp-installer" },
+        { "hrsh7th/nvim-cmp" },
+      },
+    }
 
     use {
       "jose-elias-alvarez/null-ls.nvim",
       config = function()
-        require "config.language.null-ls"
+        require "core.null-ls"
       end,
       requires = {
         { "nvim-lua/plenary.nvim" },
@@ -39,7 +46,7 @@ return packer.startup {
     use {
       "ahmedkhalf/project.nvim",
       config = function()
-        require "config.tools.project"
+        require "core.project"
       end,
     }
 
@@ -49,7 +56,7 @@ return packer.startup {
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
       config = function()
-        require "config.language.nvim-treesitter"
+        require "core.treesitter"
       end,
       requires = {
         { "nvim-treesitter/nvim-treesitter-refactor" },
@@ -66,7 +73,7 @@ return packer.startup {
     use {
       "folke/which-key.nvim",
       config = function()
-        require "config.interface.which-key"
+        require "core.which-key"
       end,
     }
 
@@ -75,7 +82,7 @@ return packer.startup {
     use {
       "nathom/filetype.nvim",
       config = function()
-        require "config.tools.filetype"
+        require "core.filetype"
       end,
     }
 
