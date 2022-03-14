@@ -83,14 +83,14 @@ return packer.startup {
     use {
       "github/copilot.vim",
       config = function()
-        require "config.language.copilot"
+        require "edit.copilot"
       end,
     }
 
     use {
       "hrsh7th/nvim-cmp",
       config = function()
-        require "config.language.nvim-cmp"
+        require "edit.cmp"
       end,
       requires = {
         { "hrsh7th/cmp-buffer" },
@@ -111,7 +111,7 @@ return packer.startup {
     use {
       "L3MON4D3/LuaSnip",
       config = function()
-        require "config.language.luasnip"
+        require "edit.snip"
       end,
     }
 
@@ -120,7 +120,7 @@ return packer.startup {
     use {
       "b3nj5m1n/kommentary",
       config = function()
-        require "config.tools.kommentary"
+        require "edit.kommentary"
       end,
     }
 
@@ -131,7 +131,7 @@ return packer.startup {
     use {
       "lewis6991/spellsitter.nvim",
       config = function()
-        require "config.language.spellsitter"
+        require "edit.spellsitter"
       end,
       disable = true,
     }
@@ -144,7 +144,7 @@ return packer.startup {
     use {
       "windwp/nvim-autopairs",
       config = function()
-        require "config.tools.nvim-autopairs"
+        require "edit.autopairs"
       end,
     }
 
