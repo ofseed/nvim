@@ -1,4 +1,7 @@
-require("impatient").enable_profile()
+local ok, impatient = pcall(require, "impatient")
+if ok then
+  impatient.enable_profile()
+end
 
 vim.g.tokyonight_transparent = 0
 vim.g.tokyonight_day_brightness = 0.3
@@ -10,13 +13,16 @@ vim.g.gruvbox_transparent_bg = 0
 vim.g.gruvbox_underline = 0
 vim.g.gruvbox_invert_selection = 0
 vim.g.github_sidebars = { "Outline", "packer" }
-require("nightfox").setup {
-  styles = {
-    comments = "italic",
-  },
-}
+local ok, nightfox = pcall(require, "nightfox")
+if ok then
+  nightfox.setup {
+    styles = {
+      comments = "italic",
+    },
+  }
+end
 
-vim.cmd "colorscheme nightfox"
+vim.cmd "silent! colorscheme nightfox"
 
 if vim.fn.has "win32" == 1 then
   vim.g.sqlite_clib_path = "C:\\Program Files\\SQLite\\sqlite3.dll"
@@ -24,4 +30,9 @@ end
 
 require "plugins"
 require "keymaps"
+
+local ok, packer_compiled = pcall(require, "packer_compiled")
+if not ok then
+  vim.cmd "PackerSync"
+end
 require "packer_compiled"
