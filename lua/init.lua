@@ -10,6 +10,11 @@ vim.g.gruvbox_transparent_bg = 0
 vim.g.gruvbox_underline = 0
 vim.g.gruvbox_invert_selection = 0
 vim.g.github_sidebars = { "Outline", "packer" }
+require("nightfox").setup {
+  styles = {
+    comments = "italic",
+  },
+}
 
 vim.cmd "colorscheme nightfox"
 
