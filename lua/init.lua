@@ -32,7 +32,8 @@ require "plugins"
 require "keymaps"
 
 local ok, packer_compiled = pcall(require, "packer_compiled")
-if not ok then
+if ok then
+  require "packer_compiled"
+else
   vim.cmd "PackerSync"
 end
-require "packer_compiled"
