@@ -508,13 +508,17 @@ return packer.startup {
       config = function()
         require "tool.octo"
       end,
+      cmd = { "Octo" },
     }
 
     use {
       "tpope/vim-dadbod",
     }
 
-    use { "kristijanhusak/vim-dadbod-ui" }
+    use {
+      "kristijanhusak/vim-dadbod-ui",
+      cmd = { "DBUIToggle" },
+    }
 
     use {
       "nvim-orgmode/orgmode",
