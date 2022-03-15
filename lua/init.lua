@@ -24,16 +24,10 @@ end
 
 vim.cmd "silent! colorscheme nightfox"
 
-if vim.fn.has "win32" == 1 then
-  vim.g.sqlite_clib_path = "C:\\Program Files\\SQLite\\sqlite3.dll"
-end
-
 require "plugins"
 require "keymaps"
 
 local ok, packer_compiled = pcall(require, "packer_compiled")
-if ok then
-  require "packer_compiled"
-else
+if not ok then
   vim.cmd "PackerSync"
 end
