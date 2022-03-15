@@ -10,7 +10,6 @@ local extensions = {
   "hop",
   "file_browser",
   "project",
-  "frecency",
   "media_files",
   "notify",
   "ui-select",
