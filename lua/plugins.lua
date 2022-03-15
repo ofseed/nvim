@@ -369,17 +369,23 @@ return packer.startup {
       disable = true,
     }
 
-    use { "folke/tokyonight.nvim" }
-    use { "EdenEast/nightfox.nvim" }
-    use { "navarasu/onedark.nvim" }
-    use { "Mofiqul/vscode.nvim" }
-    use { "Mofiqul/dracula.nvim" }
-    use { "projekt0n/github-nvim-theme" }
-    use { "tanvirtin/monokai.nvim" }
-    use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
-    use { "shaunsingh/solarized.nvim" }
-    use { "shaunsingh/moonlight.nvim" }
-    use { "shaunsingh/nord.nvim" }
+    use {
+      "EdenEast/nightfox.nvim",
+      -- "folke/tokyonight.nvim",
+      -- "navarasu/onedark.nvim",
+      -- "Mofiqul/vscode.nvim",
+      -- "Mofiqul/dracula.nvim",
+      -- "projekt0n/github-nvim-theme",
+      -- "tanvirtin/monokai.nvim",
+      -- "ellisonleao/gruvbox.nvim",
+      -- "shaunsingh/solarized.nvim",
+      -- "shaunsingh/moonlight.nvim",
+      -- "shaunsingh/nord.nvim",
+      config = function()
+        require "interface.colorscheme"
+      end,
+      -- requires = { "rktjmp/lush.nvim" }, -- required by gruvbox
+    }
 
     -- Tool Integration
     use {
