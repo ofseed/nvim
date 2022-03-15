@@ -157,7 +157,10 @@ return packer.startup {
       end,
     }
 
-    use { "dhruvasagar/vim-table-mode" }
+    use {
+      "dhruvasagar/vim-table-mode",
+      ft = { "markdown", "org" },
+    }
 
     use {
       "ekickx/clipboard-image.nvim",
@@ -486,8 +489,9 @@ return packer.startup {
       event = { "BufRead Cargo.toml" },
       requires = { "nvim-lua/plenary.nvim" },
       config = function()
-        require "config.tools.crates"
+        require "tool.crates"
       end,
+      ft = { "Cargo.toml", "Cargo.lock" },
     }
 
     use {
@@ -496,7 +500,7 @@ return packer.startup {
         require "tool.package-info"
       end,
       requires = "MunifTanjim/nui.nvim",
-      ft = { "json" },
+      ft = { "package.json", "package-lock.json" },
     }
 
     use {
@@ -524,6 +528,7 @@ return packer.startup {
       config = function()
         require "tool.org-bullets"
       end,
+      ft = { "org" },
     }
 
     -- Efficiency Improvement
@@ -637,6 +642,7 @@ return packer.startup {
       config = function()
         require "debug.dap-python"
       end,
+      ft = { "python" },
     }
 
     use {
@@ -644,6 +650,7 @@ return packer.startup {
       config = function()
         require "debug.cmake"
       end,
+      ft = { "c", "cpp", "cmake" },
     }
 
     -- Language Specific
