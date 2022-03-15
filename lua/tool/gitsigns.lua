@@ -38,6 +38,8 @@ gitsigns.setup {
     -- Text objects
     ["o ih"] = ":<C-U>Gitsigns select_hunk<CR>",
     ["x ih"] = ":<C-U>Gitsigns select_hunk<CR>",
+    ["o ah"] = ":<C-U>Gitsigns select_hunk<CR>",
+    ["x ah"] = ":<C-U>Gitsigns select_hunk<CR>",
   },
   watch_gitdir = {
     interval = 1000,
