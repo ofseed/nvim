@@ -1,10 +1,4 @@
-" Created by Yi Ming on January 13, 2021.
-" The purpose of writing this configuration
-" file is to unify the experience of using
-" Vim and Neovim on different platforms
-" according to my personal preferences.
-
-" Edit config
+" Edit
 set expandtab
 set softtabstop=2
 set shiftwidth=2
@@ -21,7 +15,7 @@ set list
 set hidden
 set includeexpr=substitute(v:fname,'\\.','/','g')
 
-" UI config
+" Interface
 set number
 set wrap
 set linebreak
@@ -43,24 +37,24 @@ set scrolloff=1
 set sidescrolloff=5
 set display+=lastline,msgsep
 
-" Unicode config
+" Encoding
 set encoding=utf-8
 set fileencodings=utf-8,gbk2312,gbk,gb18030,cp936
 
-" Keymapping config
+" Keymapping
 set pastetoggle=<F2>
 let mapleader=" "
 nnoremap <silent> <BS> :nohlsearch<CR>
 cmap <C-p> <Up>
 cmap <C-n> <Down>
 
-" Filetype config
+" Filetype
 autocmd BufNewFile,BufRead .clang-tidy set filetype=yaml
 
 " Fcitx5 auto switch
 autocmd InsertLeave * :silent !fcitx5-remote -c
 
-" Binary config
+" Binary
 augroup Binary
   au!
   au BufReadPre  *.bin let &bin=1
@@ -72,14 +66,14 @@ augroup Binary
   au BufWritePost *.bin set nomod | endif
 augroup END
 
-" Cursor config
+" Cursor
 augroup ResetNvimCursor
   autocmd!
   autocmd VimEnter,VimResume * set guicursor=n-v-c-sm:block-blinkon100,i-ci-ve:ver25-blinkon100,r-cr-o:hor20-blinkon100
   autocmd VimLeave,VimSuspend * set guicursor=a:ver25-blinkon100
 augroup END
 
-" Neovim config
+" Neovim
 if has("nvim")
   lua require "init"
 else
@@ -87,7 +81,7 @@ else
   map <leader><leader> <Plug>(easymotion-prefix)
 endif
 
-" Ideavim config
+" Ideavim
 if has("ide")
   set ideamarks
   set ideajoin

@@ -1,6 +1,6 @@
 local vim = vim
 
--- For lazy loading:
+-- Keybindings are only used for lazy loaded plugins
 vim.api.nvim_set_keymap("n", "<leader>db", ":DBUIToggle<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>lo", ":SymbolsOutline<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>a", ":AerialToggle<CR>", { noremap = true, silent = true })

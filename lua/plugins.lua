@@ -1,6 +1,7 @@
 ---@diagnostic disable: different-requires
 local vim = vim
 
+-- Automatically download packer.nvim if it doesn't exist
 local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -8,8 +9,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd "packadd packer.nvim"
 end
 
-local packer = require "packer"
-
+-- Automatically run :PackerCompile after every time this file is changed
 vim.cmd [[
   augroup packer_user_config
     autocmd!
@@ -17,6 +17,9 @@ vim.cmd [[
   augroup end
 ]]
 
+local packer = require "packer"
+
+-- Use packer.nvim to manage all of the plugins
 return packer.startup {
   function(use)
     -- Core
