@@ -2,8 +2,7 @@
 set mouse=a
 
 if exists(':GuiFont')
-    " Use GuiFont! to ignore font errors
-    GuiFont! CaskaydiaCove Nerd Font:h:11
+    GuiFont Cascadia Code
 endif
 
 if exists(':GuiTabline')

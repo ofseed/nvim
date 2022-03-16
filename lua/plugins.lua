@@ -381,10 +381,11 @@ return packer.startup {
       -- "shaunsingh/solarized.nvim",
       -- "shaunsingh/moonlight.nvim",
       -- "shaunsingh/nord.nvim",
+      commit = "d83145614e8082b24a001643f1c6c00c0ea9aaef", -- After this commit, the color scheme has changed a lot
       config = function()
         require "interface.colorscheme"
       end,
-      -- requires = { "rktjmp/lush.nvim" }, -- required by gruvbox
+      -- requires = { "rktjmp/lush.nvim" }, -- Required by gruvbox
     }
 
     -- Tool Integration
