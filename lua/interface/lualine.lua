@@ -1,4 +1,3 @@
-local vim = vim
 local ok, lualine = pcall(require, "lualine")
 if not ok then
   vim.notify "Could not load lualine"

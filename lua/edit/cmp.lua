@@ -1,4 +1,3 @@
-local vim = vim
 local ok, cmp = pcall(require, "cmp")
 if not ok then
   vim.notify "Could not load cmp"

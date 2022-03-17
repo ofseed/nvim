@@ -1,4 +1,3 @@
-local vim = vim
 local ok, treesitter = pcall(require, "nvim-treesitter.configs")
 if not ok then
   vim.notify "Could not load treesitter"

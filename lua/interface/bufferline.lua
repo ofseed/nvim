@@ -1,4 +1,3 @@
-local vim = vim
 local ok, bufferline = pcall(require, "bufferline")
 if not ok then
   vim.notify "Could not load bufferline"

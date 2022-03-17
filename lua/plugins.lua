@@ -1,6 +1,4 @@
 ---@diagnostic disable: different-requires
-local vim = vim
-
 -- Automatically download packer.nvim if it doesn't exist
 local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"

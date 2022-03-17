@@ -1,4 +1,3 @@
-local vim = vim
 local ok, installer = pcall(require, "nvim-lsp-installer")
 if not ok then
   vim.notify "Could not load lsp-installer"
