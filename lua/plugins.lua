@@ -396,6 +396,7 @@ return packer.startup {
         require "interface.colorscheme"
       end,
       -- requires = { "rktjmp/lush.nvim" }, -- Required by gruvbox
+      after = "nvim-tree.lua", -- Nvim-tree needs to be loaded before colorschemes
     }
 
     -- Tool Integration
