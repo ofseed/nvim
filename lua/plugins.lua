@@ -201,6 +201,13 @@ return packer.startup {
     }
 
     use {
+      "m-demare/hlargs.nvim",
+      config = function()
+        require "interface.hlargs"
+      end,
+    }
+
+    use {
       "lukas-reineke/indent-blankline.nvim",
       config = function()
         require "interface.indent-blankline"
