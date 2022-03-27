@@ -81,6 +81,11 @@ return packer.startup {
       end,
     }
 
+    use {
+      "b0o/mapx.nvim",
+      disable = true,
+    }
+
     use { "lewis6991/impatient.nvim" }
 
     use {
@@ -334,7 +339,6 @@ return packer.startup {
       config = function()
         require "interface.marks"
       end,
-      disable = true,
     }
 
     use {

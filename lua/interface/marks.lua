@@ -22,11 +22,13 @@ marks.setup {
   -- can be either a table with all/none of the keys, or a single number, in which case
   -- the priority applies to all marks.
   -- default 10.
-  sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
+  sign_priority = { lower = 10, upper = 15, builtin = 5, bookmark = 20 },
   -- disables mark tracking for specific filetypes. default {}
   excluded_filetypes = {
     "NvimTree",
     "Outline",
+    "DressingInput",
+    "NeogitCommitMessage",
   },
   -- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
   -- sign/virttext. Bookmarks can be used to group together positions and quickly move
