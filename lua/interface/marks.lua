@@ -29,6 +29,8 @@ marks.setup {
     "Outline",
     "DressingInput",
     "NeogitCommitMessage",
+    "NeogitNotification",
+    "NeogitStatus",
     "registers",
   },
   -- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
