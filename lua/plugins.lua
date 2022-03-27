@@ -341,6 +341,8 @@ return packer.startup {
       end,
     }
 
+    use { "tversteeg/registers.nvim" }
+
     use {
       "edluffy/hologram.nvim",
       disable = true,
