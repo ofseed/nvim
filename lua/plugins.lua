@@ -215,6 +215,13 @@ return packer.startup {
     }
 
     use {
+      "stevearc/dressing.nvim",
+      config = function()
+        require "interface.dressing"
+      end,
+    }
+
+    use {
       "ray-x/lsp_signature.nvim",
       config = function()
         require "interface.lsp_signature"
@@ -568,7 +575,6 @@ return packer.startup {
         { "nvim-telescope/telescope-project.nvim" },
         { "nvim-telescope/telescope-file-browser.nvim" },
         { "nvim-telescope/telescope-media-files.nvim" },
-        { "nvim-telescope/telescope-ui-select.nvim" },
         { "nvim-telescope/telescope-dap.nvim" },
       },
     }
