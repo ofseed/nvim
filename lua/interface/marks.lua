@@ -25,6 +25,7 @@ marks.setup {
   sign_priority = { lower = 10, upper = 15, builtin = 5, bookmark = 20 },
   -- disables mark tracking for specific filetypes. default {}
   excluded_filetypes = {
+    "",
     "NvimTree",
     "Outline",
     "DressingInput",
