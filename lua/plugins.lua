@@ -341,7 +341,11 @@ return packer.startup {
       end,
     }
 
-    use { "tversteeg/registers.nvim" }
+    use {
+      "tversteeg/registers.nvim",
+      disable = true,
+      -- Behaves strangely when used with text objects
+    }
 
     use {
       "edluffy/hologram.nvim",
