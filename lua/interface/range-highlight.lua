@@ -1,6 +1,7 @@
 local ok, highlight = pcall(require, "range-highlight")
 if not ok then
   vim.notify "Could not load range-highlight"
+  return
 end
 
 highlight.setup {
