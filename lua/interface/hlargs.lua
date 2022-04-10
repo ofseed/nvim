@@ -5,7 +5,7 @@ if not ok then
 end
 
 hlargs.setup {
-  color = "#ef9062",
+  color = "#F5E0DC", -- #F5E0DC for catppuccin colorscheme
   excluded_filetypes = {},
   paint_arg_declarations = true,
   paint_arg_usages = true,
