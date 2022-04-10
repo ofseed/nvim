@@ -5,7 +5,7 @@ if not ok then
 end
 
 treesitter.setup {
-  ensure_installed = "maintained",
+  ensure_installed = "all",
   ignore_install = {},
   highlight = {
     enable = true,
