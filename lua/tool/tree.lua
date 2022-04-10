@@ -58,19 +58,36 @@ vim.api.nvim_command "highlight NvimTreeFolderIcon guibg=blue"
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 tree.setup {
-  disable_netrw = true,
-  hijack_netrw = true,
-  open_on_setup = false,
-  ignore_buffer_on_setup = false,
-  ignore_ft_on_setup = {},
   auto_reload_on_write = true,
-  open_on_tab = false,
+  disable_netrw = true,
   hide_root_folder = false,
   hijack_cursor = false,
-  update_cwd = true,
+  hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
+  ignore_buffer_on_setup = false,
+  open_on_setup = false,
   open_on_setup_file = false,
+  open_on_tab = false,
   sort_by = "name",
+  update_cwd = true,
+  view = {
+    width = function()
+      local columns = vim.go.columns
+      return math.floor(columns * 0.2) > 25 and math.floor(columns * 0.2) or 25
+    end,
+    height = 30,
+    side = "left",
+    preserve_window_proportions = false,
+    number = false,
+    relativenumber = false,
+    signcolumn = "yes",
+    mappings = {
+      custom_only = false,
+      list = {
+        -- user mappings go here
+      },
+    },
+  },
   renderer = {
     indent_markers = {
       enable = false,
@@ -85,6 +102,16 @@ tree.setup {
     enable = true,
     auto_open = true,
   },
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+    ignore_list = {},
+  },
+  ignore_ft_on_setup = {},
+  system_open = {
+    cmd = nil,
+    args = {},
+  },
   diagnostics = {
     enable = false,
     show_on_dirs = false,
@@ -95,15 +122,6 @@ tree.setup {
       error = "",
     },
   },
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
-    ignore_list = {},
-  },
-  system_open = {
-    cmd = nil,
-    args = {},
-  },
   filters = {
     dotfiles = false,
     custom = {},
@@ -113,26 +131,6 @@ tree.setup {
     enable = true,
     ignore = false,
     timeout = 500,
-  },
-  view = {
-    width = function()
-      local columns = vim.go.columns
-      return math.floor(columns * 0.2) > 25 and math.floor(columns * 0.2) or 25
-    end,
-    height = 30,
-    side = "left",
-    preserve_window_proportions = false,
-    mappings = {
-      custom_only = false,
-      list = {},
-    },
-    number = false,
-    relativenumber = false,
-    signcolumn = "yes",
-  },
-  trash = {
-    cmd = "trash",
-    require_confirm = true,
   },
   actions = {
     use_system_clipboard = true,
@@ -152,6 +150,10 @@ tree.setup {
         },
       },
     },
+  },
+  trash = {
+    cmd = "trash",
+    require_confirm = true,
   },
   log = {
     enable = false,
