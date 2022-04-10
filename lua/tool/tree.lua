@@ -4,7 +4,6 @@ if not ok then
   return
 end
 
-vim.g.nvim_tree_indent_markers = 1 -- 0 by default, this option shows indent markers when folders are open
 vim.g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
 vim.g.nvim_tree_highlight_opened_files = 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
 vim.g.nvim_tree_root_folder_modifier = ":~" -- This is the default. See :help filename-modifiers for more options
@@ -51,12 +50,6 @@ vim.g.nvim_tree_icons = {
     symlink = "",
     symlink_open = "",
   },
-  lsp = {
-    hint = "",
-    info = "",
-    warning = "",
-    error = "",
-  },
 }
 
 -- a list of groups can be found at `:help nvim_tree_highlight`
@@ -70,18 +63,31 @@ tree.setup {
   open_on_setup = false,
   ignore_buffer_on_setup = false,
   ignore_ft_on_setup = {},
-  auto_close = false,
   auto_reload_on_write = true,
   open_on_tab = false,
+  hide_root_folder = false,
   hijack_cursor = false,
   update_cwd = true,
   hijack_unnamed_buffer_when_opening = false,
+  open_on_setup_file = false,
+  sort_by = "name",
+  renderer = {
+    indent_markers = {
+      enable = false,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
+    },
+  },
   hijack_directories = {
     enable = true,
     auto_open = true,
   },
   diagnostics = {
     enable = false,
+    show_on_dirs = false,
     icons = {
       hint = "",
       info = "",
@@ -101,6 +107,7 @@ tree.setup {
   filters = {
     dotfiles = false,
     custom = {},
+    exclude = {},
   },
   git = {
     enable = true,
@@ -113,7 +120,6 @@ tree.setup {
       return math.floor(columns * 0.2) > 25 and math.floor(columns * 0.2) or 25
     end,
     height = 30,
-    hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
     mappings = {
@@ -129,6 +135,7 @@ tree.setup {
     require_confirm = true,
   },
   actions = {
+    use_system_clipboard = true,
     change_dir = {
       enable = true,
       global = false,
@@ -144,6 +151,17 @@ tree.setup {
           buftype = { "nofile", "terminal", "help" },
         },
       },
+    },
+  },
+  log = {
+    enable = false,
+    truncate = false,
+    types = {
+      all = false,
+      config = false,
+      copy_paste = false,
+      git = false,
+      profile = false,
     },
   },
 }
