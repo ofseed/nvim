@@ -95,7 +95,20 @@ cmp.setup {
     { name = "orgmode" },
   },
   formatting = {
-    format = lspkind.cmp_format { mode = "symbol", maxwidth = 50 },
+    format = lspkind.cmp_format {
+      mode = "symbol",
+      maxwidth = 50,
+      menu = {
+        luasnip = "[SNP]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[VIM]",
+        buffer = "[BUF]",
+        path = "[PTH]",
+        calc = "[CLC]",
+        latex_symbols = "[TEX]",
+        orgmode = "[ORG]",
+      },
+    },
   },
   sorting = {
     comparators = {
