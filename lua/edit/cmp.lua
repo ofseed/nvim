@@ -109,6 +109,11 @@ cmp.setup {
         orgmode = "[ORG]",
       },
     },
+    fields = {
+      "kind",
+      "abbr",
+      "menu",
+    },
   },
   sorting = {
     comparators = {
