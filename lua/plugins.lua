@@ -293,6 +293,14 @@ return packer.startup {
     }
 
     use {
+      "kevinhwang91/nvim-fFHighlight",
+      config = function()
+        require "interface.ffhighlight"
+      end,
+      after = { "catppuccin" },
+    }
+
+    use {
       "folke/todo-comments.nvim",
       config = function()
         require "interface.todo-comments"
