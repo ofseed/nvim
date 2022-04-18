@@ -98,6 +98,37 @@ if has("ide")
   nmap <leader>e :NERDTree<CR>
   nmap <leader>F <Action>(ReformatCode)
 
-  sethandler <C-W> n-v:ide i:vim
+  sethandler <C-2> a:vim
+  sethandler <C-S-2> a:vim
+  sethandler <C-6> a:vim
+  sethandler <C-S-6> a:vim
+  sethandler <C-;> a:vim
+  sethandler <C-S-;> a:vim
+  sethandler <C-A> a:vim
+  sethandler <C-B> a:vim
+  sethandler <C-C> a:vim
+  sethandler <C-D> a:vim
+  sethandler <C-E> a:vim
+  sethandler <C-F> a:vim
+  sethandler <C-G> a:vim
+  sethandler <C-H> a:vim
+  sethandler <C-I> a:vim
+  sethandler <C-J> a:ide
+  sethandler <C-K> a:vim
+  sethandler <C-L> a:vim
+  sethandler <C-M> a:vim
+  sethandler <C-N> a:vim
+  sethandler <C-O> a:vim
+  sethandler <C-P> a:vim
+  sethandler <C-Q> a:vim
+  sethandler <C-R> a:vim
+  sethandler <C-S> a:vim
+  sethandler <C-T> a:vim
   sethandler <C-U> a:vim
+  sethandler <C-V> a:vim
+  sethandler <C-W> n-v:ide i:vim
+  sethandler <C-X> a:vim
+  sethandler <C-Y> a:vim
+  sethandler <C-[> a:vim
+  sethandler <C-]> a:vim
 endif
