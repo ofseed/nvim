@@ -95,8 +95,8 @@ if has("ide")
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
 
-  map <leader>e :NERDTree<CR>
-  nnoremap <leader>F <Action>(ReformatCode)
+  nmap <leader>e :NERDTree<CR>
+  nmap <leader>F <Action>(ReformatCode)
 
   sethandler <C-W> n-v:ide i:vim
   sethandler <C-U> a:vim
