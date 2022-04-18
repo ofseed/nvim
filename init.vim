@@ -95,8 +95,18 @@ if has("ide")
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
 
-  nmap <leader>e :NERDTree<CR>
+  nmap [b :bp<CR>
+  nmap ]b :bn<CR>
+  nmap <leader>ff <Action>(GotoFile)
   nmap <leader>F <Action>(ReformatCode)
+  nmap <leader>rn <Action>(RenameElement)
+  nmap <leader>ca <Action>(ShowIntentionActions)
+  nmap <leader>b <Action>(ToggleLineBreakpoint)
+
+  nmap <leader>a <Action>(ActivateStructureToolWindow)
+  nmap <C-\> <Action>(ActivateTerminalToolWindow)
+
+  nmap <leader>e :NERDTree<CR>
 
   sethandler <C-2> a:vim
   sethandler <C-S-2> a:vim
@@ -126,7 +136,7 @@ if has("ide")
   sethandler <C-T> a:vim
   sethandler <C-U> a:vim
   sethandler <C-V> a:vim
-  sethandler <C-W> n-v:ide i:vim
+  sethandler <C-W> a:vim
   sethandler <C-X> a:vim
   sethandler <C-Y> a:vim
   sethandler <C-[> a:vim
