@@ -679,10 +679,9 @@ return packer.startup {
     }
 
     use {
-      "Pocco81/DAPInstall.nvim",
-      config = function()
-        require "debug.dap-install"
-      end,
+      "Pocco81/dap-buddy.nvim",
+      run = "make",
+      disable = true,
     }
 
     use {
