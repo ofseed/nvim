@@ -4,7 +4,7 @@ if not ok then
   return
 end
 
-lspkind.setup {
+lspkind.init {
   -- DEPRECATED (use mode instead): enables text annotations
   --
   -- default: true
