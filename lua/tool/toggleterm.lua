@@ -53,11 +53,9 @@ local lazygit = Terminal:new {
   },
 }
 
-function _lazygit_toggle()
+vim.keymap.set("n", "<leader>lg", function()
   lazygit:toggle()
-end
-
-vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+end)
 
 -- For tig
 local tig = Terminal:new {
@@ -69,21 +67,25 @@ local tig = Terminal:new {
   },
 }
 
-function _tig_toggle()
+vim.keymap.set("n", "<leader>tg", function()
   tig:toggle()
-end
-
-vim.api.nvim_set_keymap("n", "<leader>tg", "<cmd>lua _tig_toggle()<CR>", { noremap = true, silent = true })
+end)
 
 -- For glow
-local glow = Terminal:new { cmd = "glow", direction = "float", float_opts = {
-  border = "curved",
-} }
+local glow = Terminal:new {
+  cmd = "glow",
+  direction = "float",
+  float_opts = {
+    border = "curved",
+  },
+}
 
 function _glow_toggle()
   glow:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gl", "<cmd>lua _glow_toggle()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gl", function()
+  glow:toggle()
+end)
 
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-N>", { noremap = true, silent = true })
