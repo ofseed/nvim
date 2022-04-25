@@ -80,10 +80,6 @@ local glow = Terminal:new {
   },
 }
 
-function _glow_toggle()
-  glow:toggle()
-end
-
 vim.keymap.set("n", "<leader>gl", function()
   glow:toggle()
 end)
