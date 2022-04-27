@@ -51,7 +51,5 @@ treesitter.setup {
   },
 }
 
-vim.o.foldenable = true
-vim.o.foldlevelstart = 10
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"

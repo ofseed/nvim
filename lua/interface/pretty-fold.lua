@@ -78,3 +78,6 @@ preview.setup {
   -- For explanation see: :help nvim_open_win()
   border = "rounded",
 }
+
+vim.o.foldenable = true
+vim.o.foldlevelstart = 99
