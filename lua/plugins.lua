@@ -206,6 +206,14 @@ return packer.startup {
     }
 
     use {
+      "anuvyklack/pretty-fold.nvim",
+      config = function()
+        require "interface.pretty-fold"
+      end,
+      branch = "nightly", -- WARNING: Using nightly branch
+    }
+
+    use {
       "m-demare/hlargs.nvim",
       config = function()
         require "interface.hlargs"
