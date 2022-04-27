@@ -4,4 +4,4 @@ if not ok then
   return
 end
 
-vim.api.nvim_set_keymap("n", "<leader>p", ":lua require'nabla'.popup()<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>p", ":lua require'nabla'.popup()<CR>")

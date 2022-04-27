@@ -89,4 +89,4 @@ vim.g.mkdp_page_title = "「${name}」"
 -- these filetypes will have MarkdownPreview... commands
 vim.g.mkdp_filetypes = { "markdown" }
 
-vim.api.nvim_set_keymap("n", "<leader>md", ":MarkdownPreviewToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>md", ":MarkdownPreviewToggle<CR>")

@@ -72,7 +72,4 @@ gitsigns.setup {
   },
 }
 
-vim.api.nvim_set_keymap("n", "<leader>lb", ":Gitsigns toggle_current_line_blame<CR>", {
-  noremap = true,
-  silent = true,
-})
+vim.keymap.set("n", "<leader>lb", ":Gitsigns toggle_current_line_blame<CR>")

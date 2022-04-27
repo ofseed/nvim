@@ -84,4 +84,4 @@ vim.keymap.set("n", "<leader>gl", function()
   glow:toggle()
 end)
 
-vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-N>", { noremap = true, silent = true })
+vim.keymap.set("t", "<Esc>", "<C-\\><C-N>")

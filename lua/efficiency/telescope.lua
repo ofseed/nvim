@@ -129,94 +129,18 @@ for i = 1, #extensions do
   telescope.load_extension(extensions[i])
 end
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ff",
-  "<cmd>lua require'telescope.builtin'.find_files()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fg",
-  "<cmd>lua require'telescope.builtin'.live_grep()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>f?",
-  "<cmd>lua require'telescope.builtin'.help_tags()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fh",
-  "<cmd>lua require'telescope.builtin'.oldfiles()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fb",
-  "<cmd>lua require'telescope.builtin'.marks()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<space>fe",
-  "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
-  { noremap = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fp",
-  "<cmd>lua require'telescope'.extensions.project.project{}<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fr",
-  "<cmd>lua require'telescope'.extensions.frecency.frecency()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fm",
-  "<cmd>lua require'telescope'.extensions.media_files.media_files()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fn",
-  "<cmd>lua require'telescope'.extensions.notify.notify()<CR>",
-  { noremap = true, silent = true }
-)
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fde",
-  "<cmd>lua require'telescope'.extensions.dap.commands()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fdc",
-  "<cmd>lua require'telescope'.extensions.dap.configurations()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fdb",
-  "<cmd>lua require'telescope'.extensions.dap.list_breakpoints()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fdv",
-  "<cmd>lua require'telescope'.extensions.dap.variables()<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fdf",
-  "<cmd>lua require'telescope'.extensions.dap.frames()<CR>",
-  { noremap = true, silent = true }
-)
+vim.keymap.set("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files()<CR>")
+vim.keymap.set("n", "<leader>fg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>")
+vim.keymap.set("n", "<leader>f?", "<cmd>lua require'telescope.builtin'.help_tags()<CR>")
+vim.keymap.set("n", "<leader>fh", "<cmd>lua require'telescope.builtin'.oldfiles()<CR>")
+vim.keymap.set("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.marks()<CR>")
+vim.keymap.set("n", "<space>fe", "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>")
+vim.keymap.set("n", "<leader>fp", "<cmd>lua require'telescope'.extensions.project.project{}<CR>")
+vim.keymap.set("n", "<leader>fr", "<cmd>lua require'telescope'.extensions.frecency.frecency()<CR>")
+vim.keymap.set("n", "<leader>fm", "<cmd>lua require'telescope'.extensions.media_files.media_files()<CR>")
+vim.keymap.set("n", "<leader>fn", "<cmd>lua require'telescope'.extensions.notify.notify()<CR>")
+vim.keymap.set("n", "<leader>fde", "<cmd>lua require'telescope'.extensions.dap.commands()<CR>")
+vim.keymap.set("n", "<leader>fdc", "<cmd>lua require'telescope'.extensions.dap.configurations()<CR>")
+vim.keymap.set("n", "<leader>fdb", "<cmd>lua require'telescope'.extensions.dap.list_breakpoints()<CR>")
+vim.keymap.set("n", "<leader>fdv", "<cmd>lua require'telescope'.extensions.dap.variables()<CR>")
+vim.keymap.set("n", "<leader>fdf", "<cmd>lua require'telescope'.extensions.dap.frames()<CR>")

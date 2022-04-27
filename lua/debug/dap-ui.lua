@@ -45,4 +45,4 @@ dapui.setup {
   windows = { indent = 1 },
 }
 
-vim.api.nvim_set_keymap("n", "<leader>du", ":lua require'dapui'.toggle()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>du", ":lua require'dapui'.toggle()<CR>")

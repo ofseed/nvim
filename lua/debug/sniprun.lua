@@ -59,4 +59,4 @@ sniprun.setup {
   live_mode_toggle = "off", --# live mode toggle, see Usage - Running for more info
 }
 
-vim.api.nvim_set_keymap("v", "<leader>r", "<Plug>SnipRun", { silent = true })
+vim.keymap.set("v", "<leader>r", "<Plug>SnipRun")
