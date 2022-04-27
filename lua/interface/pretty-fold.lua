@@ -26,7 +26,7 @@ fold.setup {
       end,
     },
   },
-  fill_char = "•",
+  fill_char = " ",
 
   remove_fold_markers = true,
 
@@ -50,16 +50,6 @@ fold.setup {
   add_close_pattern = true, -- true, 'last_line' or false
 
   matchup_patterns = {
-    { "{", "}" },
-    { "%(", ")" }, -- % to escape lua pattern char
-    { "%[", "]" }, -- % to escape lua pattern char
-  },
-
-  ft_ignore = { "neorg" },
-}
-
-fold.ft_setup("lua", {
-  matchup_patterns = {
     { "^%s*do$", "end" }, -- do ... end blocks
     { "^%s*do%s", "end" }, -- do ... end blocks with comment
     { "^%s*if", "end" }, -- if ... end
@@ -69,7 +59,9 @@ fold.ft_setup("lua", {
     { "%(", ")" }, -- % to escape lua pattern char
     { "%[", "]" }, -- % to escape lua pattern char
   },
-})
+
+  ft_ignore = { "neorg" },
+}
 
 preview.setup {
   key = "l", -- 'h', 'l' or nil (if you would like to set your own keybinding)

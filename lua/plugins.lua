@@ -210,7 +210,6 @@ return packer.startup {
       config = function()
         require "interface.pretty-fold"
       end,
-      branch = "nightly", -- WARNING: Using nightly branch
     }
 
     use {
