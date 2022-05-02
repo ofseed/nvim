@@ -44,17 +44,16 @@ gps.setup {
     -- ["bash"] = false, -- disables nvim-gps for bash
     -- ["go"] = false,   -- disables nvim-gps for golang
     -- ["ruby"] = {
-    --	separator = '|', -- Overrides default separator with '|'
-    --	icons = {
-    --		-- Default icons not specified in the lang config
-    --		-- will fallback to the default value
-    --		-- "container-name" will fallback to default because it's not set
-    --		["function-name"] = '',    -- to ensure empty values, set an empty string
-    --		["tag-name"] = ''
-    --		["class-name"] = '::',
-    --		["method-name"] = '#',
-    --	}
-    --}
+    -- separator = '|', -- Overrides default separator with '|'
+    -- icons = {
+    --   -- Default icons not specified in the lang config
+    --   -- will fallback to the default value
+    --   -- "container-name" will fallback to default because it's not set
+    --   ["function-name"] = '',    -- to ensure empty values, set an empty string
+    --   ["tag-name"] = '',
+    --   ["class-name"] = '::',
+    --   ["method-name"] = '#',
+    -- }
   },
   separator = " > ",
   -- limit for amount of context shown
