@@ -319,6 +319,7 @@ return packer.startup {
         require "interface.ffhighlight"
       end,
       after = { "catppuccin" },
+      disable = true,
     }
 
     use {
