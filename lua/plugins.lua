@@ -174,6 +174,18 @@ return packer.startup {
       disable = true,
     }
 
+    use {
+      "ThePrimeagen/refactoring.nvim",
+      config = function()
+        require "edit.refactoring"
+      end,
+      requires = {
+        { "nvim-lua/plenary.nvim" },
+        { "nvim-treesitter/nvim-treesitter" },
+      },
+      disable = true,
+    }
+
     -- Interface Extension
     use {
       "akinsho/nvim-bufferline.lua",
