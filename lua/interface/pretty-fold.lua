@@ -50,11 +50,6 @@ fold.setup {
   add_close_pattern = true, -- true, 'last_line' or false
 
   matchup_patterns = {
-    { "^%s*do$", "end" }, -- do ... end blocks
-    { "^%s*do%s", "end" }, -- do ... end blocks with comment
-    { "^%s*if", "end" }, -- if ... end
-    { "^%s*for", "end" }, -- for
-    { "function%s*%(", "end" }, -- 'function(' or 'function ('
     { "{", "}" },
     { "%(", ")" }, -- % to escape lua pattern char
     { "%[", "]" }, -- % to escape lua pattern char
@@ -63,8 +58,21 @@ fold.setup {
   ft_ignore = { "neorg" },
 }
 
+fold.ft_setup("lua", {
+  fill_char = " ",
+  matchup_patterns = {
+    { "^%s*do$", "end" }, -- do ... end blocks
+    { "^%s*if", "end" }, -- if ... end
+    { "^%s*for", "end" }, -- for
+    { "function%s*%(", "end" }, -- 'function( or 'function (''
+    { "{", "}" },
+    { "%(", ")" }, -- % to escape lua pattern char
+    { "%[", "]" }, -- % to escape lua pattern char
+  },
+})
+
 preview.setup {
-  key = "l", -- 'h', 'l' or nil (if you would like to set your own keybinding)
+  default_keybindings = true, -- Set to false to disable default keybindings
 
   -- 'none', "single", "double", "rounded", "solid", 'shadow' or table
   -- For explanation see: :help nvim_open_win()
