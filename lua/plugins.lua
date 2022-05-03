@@ -491,15 +491,6 @@ return packer.startup {
     }
 
     use {
-      "folke/trouble.nvim",
-      config = function()
-        require "tool.trouble"
-      end,
-      requires = "kyazdani42/nvim-web-devicons",
-      cmd = { "TroubleToggle" },
-    }
-
-    use {
       "onsails/diaglist.nvim",
       disable = true,
     }
