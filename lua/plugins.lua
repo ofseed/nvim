@@ -375,6 +375,9 @@ return packer.startup {
 
     use {
       "tversteeg/registers.nvim",
+      config = function()
+        require "interface.registers"
+      end,
       disable = true,
       -- Behaves strangely when used with text objects
     }
