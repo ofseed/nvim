@@ -59,6 +59,11 @@ if ok then
         show_root = false,
         transparent_panel = false,
       },
+      neotree = {
+        enabled = true,
+        show_root = false,
+        transparent_panel = false,
+      },
       which_key = true,
       indent_blankline = {
         enabled = true,

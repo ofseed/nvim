@@ -93,6 +93,7 @@ lualine.setup {
   },
   extensions = {
     "nvim-tree",
+    "neo-tree",
     "toggleterm",
     "symbols-outline",
     "aerial",
