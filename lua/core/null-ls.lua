@@ -9,6 +9,7 @@ ls.setup {
     ls.builtins.formatting.prettier,
     ls.builtins.formatting.stylua,
     ls.builtins.formatting.black,
+    -- ls.builtins.diagnostics.pylint,
     -- ls.builtins.diagnostics.codespell,
   },
 }
