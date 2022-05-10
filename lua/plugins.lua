@@ -580,6 +580,15 @@ return packer.startup {
         require "tool.octo"
       end,
       cmd = { "Octo" },
+      disable = true,
+    }
+
+    use {
+      "ldelossa/gh.nvim",
+      config = function()
+        require "tool.gh"
+      end,
+      requires = "ldelossa/litee.nvim",
     }
 
     use {
