@@ -307,6 +307,11 @@ return packer.startup {
     use { "dstein64/nvim-scrollview" }
 
     use {
+      "lewis6991/satellite.nvim",
+      disable = true,
+    }
+
+    use {
       "kevinhwang91/nvim-bqf",
       config = function()
         require "interface.bqf"
