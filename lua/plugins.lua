@@ -294,8 +294,7 @@ return packer.startup {
     }
 
     use {
-      -- Actively maintained fork of romgrk/nvim-treesitter-context
-      "lewis6991/nvim-treesitter-context",
+      "nvim-treesitter/nvim-treesitter-context",
       config = function()
         require "interface.treesitter-context"
       end,
