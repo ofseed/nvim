@@ -84,6 +84,8 @@ return packer.startup {
     use {
       "b0o/mapx.nvim",
       disable = true,
+      -- Plugin organize keymaps
+      -- Disable because lots of refactorings needs to be done
     }
 
     use { "lewis6991/impatient.nvim" }
@@ -184,6 +186,8 @@ return packer.startup {
         { "nvim-treesitter/nvim-treesitter" },
       },
       disable = true,
+      -- Plugin surpporting refactorings
+      -- Disable because it needs neovim nightly
     }
 
     -- Interface Extension
@@ -309,6 +313,9 @@ return packer.startup {
     use {
       "lewis6991/satellite.nvim",
       disable = true,
+      -- A substitue for nvim-scrollview
+      -- which support search results, lsp diagnostics and git hunks
+      -- Disable because it's work in progress
     }
 
     use {
@@ -325,6 +332,8 @@ return packer.startup {
       end,
       after = { "catppuccin" },
       disable = true,
+      -- Plugin show inline search highlight
+      -- Disable because it's not very useful
     }
 
     use {
@@ -486,6 +495,8 @@ return packer.startup {
         "MunifTanjim/nui.nvim",
       },
       disable = true,
+      -- Subtitute for nvim-tree
+      -- Disable because few colorschemes support it
     }
 
     use {
@@ -496,6 +507,8 @@ return packer.startup {
       requires = { "kyazdani42/nvim-web-devicons" },
       cmd = { "SymbolsOutline" },
       disable = true,
+      -- Subtitute for aerial.nvim
+      -- Disable because better to use aerial.nvim
     }
 
     use {
@@ -586,6 +599,8 @@ return packer.startup {
       end,
       cmd = { "Octo" },
       disable = true,
+      -- Subtitute for gh.nvim
+      -- Disable because better to use gh.nvim
     }
 
     use {
