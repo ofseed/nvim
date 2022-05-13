@@ -380,7 +380,7 @@ return packer.startup {
     }
 
     use {
-      "chentau/marks.nvim",
+      "chentoast/marks.nvim",
       config = function()
         require "interface.marks"
       end,
