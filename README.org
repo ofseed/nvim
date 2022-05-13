@@ -1,0 +1,48 @@
+#+title: Nvim
+#+author: Yi Ming
+
+My personal Neovim configuration.
+
+* Table of Contents :toc:
+- [[#directory-structure][Directory Structure]]
+
+* Directory Structure
+#+begin_src screen
+├── lua
+│   ├── core
+│   │   ├── lspconfig.lua
+│   │   ├── treesitter.lua
+│   │   └── 4 unlisted
+│   ├── debug
+│   │   ├── dap.lua
+│   │   ├── dap-ui.lua
+│   │   └── 4 unlisted
+│   ├── edit
+│   │   ├── cmp.lua
+│   │   ├── copilot.lua
+│   │   └── 5 unlisted
+│   ├── efficiency
+│   │   ├── session-manager.lua
+│   │   ├── telescope.lua
+│   │   └── 3 unlisted
+│   ├── interface
+│   │   ├── bufferline.lua
+│   │   ├── lualine.lua
+│   │   └── 26 unlisted
+│   ├── language
+│   │   ├── jdtls.lua
+│   │   └── tex.lua
+│   ├── tool
+│   │   ├── gitsigns.lua
+│   │   ├── tree.lua
+│   │   └── 15 unlisted
+│   ├── keymaps.lua
+│   ├── plugins.lua
+│   └── init.lua
+├── .gitignore
+├── LICENSE
+├── stylua.toml
+├── README.org
+├── ginit.vim
+└── init.vim
+#+end_src
