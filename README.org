@@ -1,7 +1,9 @@
 #+title: Nvim
 #+author: Yi Ming
 
-My personal Neovim configuration.
+My personal Neovim configuration, which keeps the structure simple and
+straightforward by logically distributing the configuration into various
+directories. Aims to be highly customizable and have no hacks.
 
 * Table of Contents :toc:
 - [[#directory-structure][Directory Structure]]
@@ -12,36 +14,36 @@ My personal Neovim configuration.
 │   ├── core
 │   │   ├── lspconfig.lua
 │   │   ├── treesitter.lua
-│   │   └── 4 unlisted
+│   │   └── ...
 │   ├── debug
 │   │   ├── dap.lua
 │   │   ├── dap-ui.lua
-│   │   └── 4 unlisted
+│   │   └── ...
 │   ├── edit
 │   │   ├── cmp.lua
 │   │   ├── copilot.lua
-│   │   └── 5 unlisted
+│   │   └── ...
 │   ├── efficiency
 │   │   ├── session-manager.lua
 │   │   ├── telescope.lua
-│   │   └── 3 unlisted
+│   │   └── ...
 │   ├── interface
 │   │   ├── bufferline.lua
 │   │   ├── lualine.lua
-│   │   └── 26 unlisted
+│   │   └── ...
 │   ├── language
 │   │   ├── jdtls.lua
 │   │   └── tex.lua
 │   ├── tool
 │   │   ├── gitsigns.lua
 │   │   ├── tree.lua
-│   │   └── 15 unlisted
+│   │   └── ...
 │   ├── keymaps.lua
 │   ├── plugins.lua
 │   └── init.lua
 ├── .gitignore
-├── LICENSE
 ├── stylua.toml
+├── LICENSE
 ├── README.org
 ├── ginit.vim
 └── init.vim
