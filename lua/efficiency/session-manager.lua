@@ -19,5 +19,5 @@ manager.setup {
   autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
 }
 
-vim.keymap.set("n", "<leader>ss", ":SessionManager save_current_session<CR>")
-vim.keymap.set("n", "<leader>sl", ":SessionManager load_last_session<CR>")
+vim.keymap.set("n", "<leader>ss", ":SessionManager save_current_session<CR>", { silent = true })
+vim.keymap.set("n", "<leader>sl", ":SessionManager load_last_session<CR>", { silent = true })
