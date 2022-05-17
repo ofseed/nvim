@@ -21,6 +21,11 @@ The reason to use init.vim instead of init.lua is to maintain support
 for classic Vim or Vim emulators such as IdeaVim, VSCodeVim, or FakeVim
 that partially support VimScript.
 
+This configuration contains more than 100 plugins, but the configuration
+of each plugin is placed in a separate file, and these files are
+classified into different modules according to the function of the
+plugin and placed in different folders.
+
 The configuration structure is as shown in the figure below.
 #+begin_src screen
                   │                             ┌──────────────────┐
