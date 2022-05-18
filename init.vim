@@ -17,7 +17,7 @@ set includeexpr=substitute(v:fname,'\\.','/','g')
 
 " Interface
 set number
-set wrap
+set nowrap
 set linebreak
 set showbreak=>>
 set hlsearch
