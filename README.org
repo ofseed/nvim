@@ -26,30 +26,35 @@ of each plugin is placed in a separate file, and these files are
 classified into different modules according to the function of the
 plugin and placed in different folders.
 
+In addition, all configuration options and keymaps for each plugin
+are listed in their respective files, making it easy to adjust
+individual options without having to look up the manual.
+
 The configuration structure is as shown in the figure below.
+
 #+begin_src screen
                   │                             ┌──────────────────┐
                       Lua Space                 │ Core Module      │
-                  │                             │ ┌─────────────┐  │
-                                                │ │lspconfig.lua│  │
-                  │     ┌───────────┐           │ └─────────────┘  │
-                        │keymaps.lua│    ┌─────►│                  │
-                  │     └───────────┘    │      │ ┌──────────────┐ │
-                       Keymap for lazy   │      │ │treesitter.lua│ │
-                  │    loading plugins   │      │ └──────────────┘ │
+                  │                             │ ┌──────────────┐ │
+                                                │ │lspconfig.lua │ │
+                  │    ┌───────────┐            │ └──────────────┘ │
+                       │keymaps.lua│     ┌─────►│                  │
+                  │    └───────────┘     │      │ ┌──────────────┐ │
+                      Keymap for lazy    │      │ │treesitter.lua│ │
+                  │   loading plugins    │      │ └──────────────┘ │
                              ▲           │      │                  │
                   │          │           │      │  ...other files  │
                              │           │      └──────────────────┘
-    ┌────────┐    │      ┌───┴────┐      │
-    │init.vim├──────────►│init.lua│      │      ┌──────────────────┐
-    └────────┘    │      └────────┘      │      │ Interface Module │
+   ┌──────────┐   │    ┌─────┴────┐      │
+   │ init.vim ├───────►│ init.lua │      │      ┌──────────────────┐
+   └──────────┘   │    └──────────┘      │      │ Interface Module │
 Entry, Vim common   All Neovim-specific  │      │ ┌──────────────┐ │
   configuration   │    configuration     │      │ │bufferline.lua│ │
                              │           │      │ └──────────────┘ │
                   │          │           │      │                  │
-                             ▼           │      │ ┌───────────┐    │
-                  │    ┌───────────┐     │      │ │lualine.lua│    │
-                       │plugins.lua├─────┼─────►│ └───────────┘    │
+                             ▼           │      │ ┌──────────────┐ │
+                  │    ┌───────────┐     │      │ │ lualine.lua  │ │
+                       │plugins.lua├─────┼─────►│ └──────────────┘ │
                   │    └───────────┘     │      │                  │
                      Plugin management,  │      │  ...other files  │
                   │ calling each module  │      └──────────────────┘
