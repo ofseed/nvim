@@ -116,7 +116,7 @@ tree.setup {
     args = {},
   },
   diagnostics = {
-    enable = false,
+    enable = true,
     show_on_dirs = false,
     icons = {
       hint = "",
