@@ -118,6 +118,14 @@ installer.on_server_ready(function(server)
   if server.name == "clangd" then
     require("clangd_extensions").setup {
       server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
+      extensions = {
+        memory_usage = {
+          border = "rounded",
+        },
+        symbol_info = {
+          border = "rounded",
+        },
+      },
     }
     server:attach_buffers()
   elseif server.name == "rust_analyzer" then
