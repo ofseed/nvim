@@ -85,7 +85,7 @@ lualine.setup {
   },
   options = {
     icons_enabled = true,
-    theme = vim.g.colors_name,
+    theme = 'auto',
     disabled_filetypes = {
       "alpha",
     },
