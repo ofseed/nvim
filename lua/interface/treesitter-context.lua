@@ -6,7 +6,6 @@ end
 
 context.setup {
   enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-  throttle = true, -- Throttles plugin updates (may improve performance)
   max_lines = 1, -- How many lines the window should span. Values <= 0 mean no limit.
   patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
     -- For all filetypes
@@ -29,4 +28,15 @@ context.setup {
     --       'impl_item',
     --   },
   },
+  exact_patterns = {
+    -- Example for a specific filetype with Lua patterns
+    -- Treat patterns.rust as a Lua pattern (i.e "^impl_item$" will
+    -- exactly match "impl_item" only)
+    -- rust = true,
+  },
+
+  -- [!] The options below are exposed but shouldn't require your attention,
+  --     you can safely ignore them.
+
+  zindex = 20, -- The Z-index of the context window
 }
