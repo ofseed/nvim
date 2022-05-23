@@ -782,6 +782,11 @@ return packer.startup {
     }
 
     use {
+      "jakewvincent/mkdnflow.nvim",
+      disable = true,
+    }
+
+    use {
       "mfussenegger/nvim-jdtls",
       config = function()
         require "language.jdtls"
