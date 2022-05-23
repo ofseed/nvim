@@ -370,6 +370,7 @@ return packer.startup {
 
     use {
       "psliwka/vim-smoothie",
+      disable = true,
       -- When moving the cursor quickly while smoothie animation is playing,
       -- the cursor will be stuck in the middle of the screen.
       -- Try to get rid of dependency on moving animations.
