@@ -84,10 +84,13 @@ lualine.setup {
     },
   },
   options = {
+    icons_enabled = true,
     theme = vim.g.colors_name,
     disabled_filetypes = {
       "alpha",
     },
+    always_divide_middle = true,
+    globalstatus = false,
     section_separators = "",
     component_separators = "│",
   },
