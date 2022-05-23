@@ -152,11 +152,13 @@ return packer.startup {
         require "edit.spellsitter"
       end,
       disable = true,
+      -- Spell check is less needed at this time
     }
 
     use {
       "brymer-meneses/grammar-guard.nvim",
       disable = true,
+      -- Now grammar check is provided by ltex languages server
     }
 
     use {
@@ -270,6 +272,7 @@ return packer.startup {
       "weilbith/nvim-code-action-menu",
       cmd = { "CodeActionMenu" },
       disable = true,
+      -- Disable because it not stable
     }
 
     use {
