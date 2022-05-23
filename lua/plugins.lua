@@ -311,6 +311,9 @@ return packer.startup {
 
     use {
       "lewis6991/satellite.nvim",
+      config = function()
+        require "interface.satellite"
+      end,
       disable = true,
       -- A substitue for nvim-scrollview
       -- which support search results, lsp diagnostics and git hunks
