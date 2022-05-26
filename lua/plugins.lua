@@ -807,6 +807,9 @@ return packer.startup {
   end,
 
   config = {
+    display = {
+      prompt_border = "rounded"
+    },
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
   },
 }
