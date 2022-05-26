@@ -622,6 +622,8 @@ return packer.startup {
         require "tool.gh"
       end,
       requires = "ldelossa/litee.nvim",
+      disable = true,
+      -- Deeply slow down startup time
     }
 
     use {
