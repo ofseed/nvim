@@ -28,10 +28,17 @@ if ok then
     term_colors = false,
     styles = {
       comments = "italic",
+      conditionals = "italic",
+      loops = "NONE",
       functions = "italic",
       keywords = "italic,bold",
       strings = "NONE",
       variables = "NONE",
+      numbers = "NONE",
+      booleans = "NONE",
+      properties = "NONE",
+      types = "NONE",
+      operators = "NONE",
     },
     integrations = {
       treesitter = true,
