@@ -26,6 +26,7 @@ marks.setup {
   -- disables mark tracking for specific filetypes. default {}
   excluded_filetypes = {
     "",
+    "null-ls-info",
     "lspinfo",
     "NvimTree",
     "Outline",
