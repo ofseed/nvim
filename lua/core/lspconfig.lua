@@ -100,21 +100,6 @@ installer.on_server_ready(function(server)
     on_attach = on_attach,
   }
 
-  if server.name == "sumneko_lua" then
-    opts.settings = {
-      Lua = {
-        runtime = {
-          version = "LuaJIT",
-        },
-        diagnostics = {
-          globals = {
-            vim = true,
-          },
-        },
-      },
-    }
-  end
-
   if server.name == "clangd" then
     require("clangd_extensions").setup {
       server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
