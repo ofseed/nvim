@@ -33,6 +33,7 @@ return packer.startup {
         { "hrsh7th/nvim-cmp" },
         { "simrat39/rust-tools.nvim" },
         { "p00f/clangd_extensions.nvim" },
+        { "nanotee/sqls.nvim", disable = true },
       },
     }
 
