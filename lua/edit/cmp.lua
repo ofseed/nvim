@@ -24,28 +24,10 @@ end
 cmp.setup {
   window = {
     completion = {
-      border = {
-        "╭",
-        "─",
-        "╮",
-        "│",
-        "╯",
-        "─",
-        "╰",
-        "│",
-      },
+      border = "rounded",
     },
     documentation = {
-      border = {
-        "╭",
-        "─",
-        "╮",
-        "│",
-        "╯",
-        "─",
-        "╰",
-        "│",
-      },
+      border = "rounded",
     },
   },
   snippet = {
