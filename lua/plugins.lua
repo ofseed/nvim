@@ -28,13 +28,14 @@ return packer.startup {
       config = function()
         require "core.lspconfig"
       end,
-      requires = {
-        { "williamboman/nvim-lsp-installer" },
-        { "hrsh7th/nvim-cmp" },
-        { "simrat39/rust-tools.nvim" },
-        { "p00f/clangd_extensions.nvim" },
-        { "nanotee/sqls.nvim", disable = true },
-      },
+      after = { "nvim-lsp-installer" },
+    }
+
+    use {
+      "williamboman/nvim-lsp-installer",
+      config = function()
+        require "core.lsp-installer"
+      end,
     }
 
     use {
@@ -788,6 +789,22 @@ return packer.startup {
     }
 
     use {
+      "p00f/clangd_extensions.nvim",
+      config = function()
+        require "language.clangd_extensions"
+      end,
+      after = { "nvim-lsp-installer" },
+    }
+
+    use {
+      "simrat39/rust-tools.nvim",
+      config = function()
+        require "language.rust-tools"
+      end,
+      after = { "nvim-lsp-installer" },
+    }
+
+    use {
       "mfussenegger/nvim-jdtls",
       config = function()
         require "language.jdtls"
@@ -804,6 +821,12 @@ return packer.startup {
     use {
       "jose-elias-alvarez/nvim-lsp-ts-utils",
       disable = true,
+    }
+
+    use {
+      "nanotee/sqls.nvim",
+      disable = true,
+      after = { "nvim-lsp-installer" },
     }
   end,
 
