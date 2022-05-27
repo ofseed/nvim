@@ -9,3 +9,10 @@ vim.g.Illuminate_ftblacklist = {
   "org",
   "orghelp",
 }
+
+vim.keymap.set("n", "<M-n>", function()
+  require("illuminate").next_reference { wrap = true }
+end)
+vim.keymap.set("n", "<M-p>", function()
+  require("illuminate").next_reference { reverse = true, wrap = true }
+end)
