@@ -44,7 +44,6 @@ local server = require "server"
 
 local servers = {
   -- Vim
-  "sumneko_lua",
   "vimls",
 
   -- Markup Languages
@@ -66,3 +65,11 @@ local servers = {
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup(server)
 end
+
+lspconfig.sumneko_lua.setup {
+  on_attach = function(client, bufnr)
+    server.on_attach(client, bufnr)
+    client.resolved_capabilities.document_formatting = false
+  end,
+  capabilities = server.capabilities,
+}
