@@ -588,12 +588,11 @@ return packer.startup {
 
     use {
       "Saecki/crates.nvim",
-      event = { "BufRead Cargo.toml" },
-      requires = { "nvim-lua/plenary.nvim" },
       config = function()
         require "tool.crates"
       end,
-      ft = { "Cargo.toml", "Cargo.lock" },
+      requires = { "nvim-lua/plenary.nvim" },
+      event = { "BufRead Cargo.toml" },
     }
 
     use {
@@ -602,7 +601,10 @@ return packer.startup {
         require "tool.package-info"
       end,
       requires = "MunifTanjim/nui.nvim",
-      ft = { "package.json", "package-lock.json" },
+      event = {
+        "BufRead package.json",
+        "BufRead package-lock.json",
+      },
     }
 
     use {
