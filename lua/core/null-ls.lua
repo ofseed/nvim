@@ -10,7 +10,7 @@ ls.setup {
     ls.builtins.formatting.stylua,
     ls.builtins.formatting.black,
     ls.builtins.formatting.isort,
-    ls.builtins.diagnostics.pylint,
+    -- ls.builtins.diagnostics.pylint,
     -- ls.builtins.diagnostics.codespell,
   },
 }
