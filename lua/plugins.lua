@@ -1,3 +1,4 @@
+-- vim:foldmethod=marker
 ---@diagnostic disable: different-requires
 -- Automatically download packer.nvim if it doesn't exist
 local fn = vim.fn
@@ -20,7 +21,7 @@ local packer = require "packer"
 -- Use packer.nvim to manage all of the plugins
 return packer.startup {
   function(use)
-    -- Core
+    -- Core {{{
     use { "wbthomason/packer.nvim" }
 
     use {
@@ -98,8 +99,9 @@ return packer.startup {
         require "core.filetype"
       end,
     }
+    -- }}}
 
-    -- Text Editing
+    -- Text Editing {{{
     use {
       "github/copilot.vim",
       config = function()
@@ -193,8 +195,9 @@ return packer.startup {
       -- Plugin surpporting refactorings
       -- Disable because it needs neovim nightly
     }
+    -- }}}
 
-    -- Interface Extension
+    -- Interface Extension {{{
     use {
       "akinsho/nvim-bufferline.lua",
       config = function()
@@ -475,8 +478,9 @@ return packer.startup {
       -- requires = { "rktjmp/lush.nvim" }, -- Required by gruvbox
       after = "nvim-tree.lua", -- Nvim-tree needs to be loaded before colorschemes
     }
+    -- }}}
 
-    -- Tool Integration
+    -- Tool Integration {{{
     use {
       "kyazdani42/nvim-tree.lua",
       config = function()
@@ -651,8 +655,9 @@ return packer.startup {
       end,
       ft = { "org" },
     }
+    -- }}}
 
-    -- Efficiency Improvement
+    -- Efficiency Improvement {{{
     use {
       "nvim-telescope/telescope.nvim",
       config = function()
@@ -713,8 +718,9 @@ return packer.startup {
       "t9md/vim-choosewin",
       disable = true,
     }
+    -- }}}
 
-    -- Debug And Run
+    -- Debug And Run {{{
     use {
       "michaelb/sniprun",
       config = function()
@@ -830,6 +836,7 @@ return packer.startup {
       disable = true,
       after = { "nvim-lsp-installer" },
     }
+    -- }}}
   end,
 
   config = {
