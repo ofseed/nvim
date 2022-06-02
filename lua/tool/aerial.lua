@@ -29,6 +29,9 @@ aerial.setup {
   -- Disable aerial on files with this many lines
   disable_max_lines = 10000,
 
+  -- Disable aerial on files this size or larger (in bytes)
+  disable_max_size = 2000000, -- Default 2MB
+
   -- A list of all symbols to display. Set to false to display all symbols.
   -- This can be a filetype map (see :help aerial-filetype-map)
   -- To see all available values, see :help SymbolKind
@@ -69,8 +72,9 @@ aerial.setup {
   -- icon when the tree is collapsed at that symbol, or "Collapsed" to specify a
   -- default collapsed icon. The default icon set is determined by the
   -- "nerd_font" option below.
-  -- If you have lspkind-nvim installed, aerial will use it for icons.
-  -- icons = {},
+  -- If you have lspkind-nvim installed, it will be the default icon set.
+  -- This can be a filetype map (see :help aerial-filetype-map)
+  icons = {},
 
   -- Control which windows and buffers aerial should ignore.
   -- If close_behavior is "global", focusing an ignored window/buffer will
@@ -138,6 +142,10 @@ aerial.setup {
   -- Useful for setting keymaps. Takes a single `bufnr` argument.
   on_attach = nil,
 
+  -- Call this function when aerial first sets symbols on a buffer.
+  -- Takes a single `bufnr` argument.
+  on_first_symbols = nil,
+
   -- Automatically open aerial when entering supported buffers.
   -- This can be a function (see :help aerial-open-automatic)
   open_automatic = false,
@@ -203,6 +211,10 @@ aerial.setup {
 
     -- Set to false to not update the symbols when there are LSP errors
     update_when_errors = true,
+
+    -- How long to wait (in ms) after a buffer change before updating
+    -- Only used when diagnostics_trigger_update = false
+    update_delay = 300,
   },
 
   treesitter = {
