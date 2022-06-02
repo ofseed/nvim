@@ -5,6 +5,11 @@ if not ok then
   vim.notify "Could not load illuminate"
 end
 
+local ok, aerial = pcall(require, "aerial")
+if not ok then
+  vim.notify "Could not load aerial"
+end
+
 local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not ok then
   vim.notify "Could not load nvim-cmp"
@@ -41,6 +46,7 @@ M.on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
   illuminate.on_attach(client)
+  aerial.on_attach(client)
   -- require("virtualtypes").on_attach(client)
 end
 
