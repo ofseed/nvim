@@ -93,6 +93,7 @@ if ok then
       symbols_outline = true,
     },
   }
+  vim.g.catppuccin_flavour = "mocha"
 end
 
 vim.cmd "colorscheme catppuccin"
