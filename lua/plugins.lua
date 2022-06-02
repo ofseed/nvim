@@ -198,6 +198,9 @@ return packer.startup {
     -- }}}
 
     -- Interface Extension {{{
+    use { "stevearc/stickybuf.nvim" }
+    -- Enable untill https://github.com/neovim/neovim/issues/12517 is open
+
     use {
       "akinsho/nvim-bufferline.lua",
       config = function()
