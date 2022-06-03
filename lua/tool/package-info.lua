@@ -26,10 +26,10 @@ info.setup {
   package_manager = "yarn",
 }
 
-vim.keymap.set("n", "<Leader>js", require("package-info").show, { desc = "Show package versions" })
-vim.keymap.set("n", "<Leader>jc", require("package-info").hide, { desc = "Hide package versions" })
-vim.keymap.set("n", "<Leader>ju", require("package-info").update, { desc = "Update package on line" })
-vim.keymap.set("n", "<Leader>jd", require("package-info").delete, { desc = "Delete package on line" })
-vim.keymap.set("n", "<Leader>ji", require("package-info").install, { desc = "Install a new package" })
-vim.keymap.set("n", "<Leader>jr", require("package-info").reinstall, { desc = "Reinstall dependencies" })
-vim.keymap.set( "n", "<Leader>jp", require("package-info").change_version, { desc = "Install a different package version" })
+vim.keymap.set("n", "<Leader><Leader>s", require("package-info").show, { desc = "Show package versions" })
+vim.keymap.set("n", "<Leader><Leader>c", require("package-info").hide, { desc = "Hide package versions" })
+vim.keymap.set("n", "<Leader><Leader>u", require("package-info").update, { desc = "Update package on line" })
+vim.keymap.set("n", "<Leader><Leader>d", require("package-info").delete, { desc = "Delete package on line" })
+vim.keymap.set("n", "<Leader><Leader>i", require("package-info").install, { desc = "Install a new package" })
+vim.keymap.set("n", "<Leader><Leader>r", require("package-info").reinstall, { desc = "Reinstall dependencies" })
+vim.keymap.set( "n", "<Leader><Leader>p", require("package-info").change_version, { desc = "Install a different package version" })
