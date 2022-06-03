@@ -67,8 +67,8 @@ gitsigns.setup {
     end, { buffer = bufnr, expr = true, desc = "Change" })
 
     -- Actions
-    vim.keymap.set({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<CR>", { buffer = bufnr, desc = "Stage hunk" })
-    vim.keymap.set({ "n", "v" }, "<leader>gr", ":Gitsigns reset_hunk<CR>", { buffer = bufnr, desc = "Reset hunk" })
+    vim.keymap.set({ "n", "v" }, "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", { buffer = bufnr, desc = "Stage hunk" })
+    vim.keymap.set({ "n", "v" }, "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", { buffer = bufnr, desc = "Reset hunk" })
     vim.keymap.set("n", "<leader>gu", gitsigns.undo_stage_hunk, { buffer = bufnr, desc = "Undo stage hunk" })
     vim.keymap.set("n", "<leader>gS", gitsigns.stage_buffer, { buffer = bufnr, desc = "Stage buffer" })
     vim.keymap.set("n", "<leader>gR", gitsigns.reset_buffer, { buffer = bufnr, desc = "Reset buffer" })
@@ -81,8 +81,8 @@ gitsigns.setup {
     vim.keymap.set("n", "<leader>tb", gitsigns.toggle_current_line_blame, { buffer = bufnr, desc = "Line Blame" })
 
     -- Text object
-    vim.keymap.set({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+    vim.keymap.set({ "o", "x" }, "ih", "<cmd><C-U>Gitsigns select_hunk<CR>")
   end,
 }
 
-vim.keymap.set("n", "<leader>lb", ":Gitsigns toggle_current_line_blame<CR>")
+vim.keymap.set("n", "<leader>lb", "<cmd>Gitsigns toggle_current_line_blame<CR>")
