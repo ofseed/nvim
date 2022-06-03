@@ -85,6 +85,12 @@ return packer.startup {
     }
 
     use {
+      "linty-org/key-menu.nvim",
+      disable = true,
+      -- Alternative to which-key.nvim
+    }
+
+    use {
       "b0o/mapx.nvim",
       disable = true,
       -- Plugin organize keymaps
