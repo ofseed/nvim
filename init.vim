@@ -44,7 +44,6 @@ set fileencodings=utf-8,gbk2312,gbk,gb18030,cp936
 " Keymapping
 set pastetoggle=<F2>
 let mapleader=" "
-nnoremap <silent> <BS> :nohlsearch<CR>
 cmap <C-p> <Up>
 cmap <C-n> <Down>
 
