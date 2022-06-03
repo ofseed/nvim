@@ -7,9 +7,33 @@ end
 local server = require "server"
 
 extensions.setup {
-  server = server,
-    -- options to pass to nvim-lspconfig
-    -- i.e. the arguments to require("lspconfig").clangd.setup({})
+  server = {
+    capabilities = server.capabilities,
+    on_attach = function(client, bufnr)
+      server.on_attach(client, bufnr)
+      vim.keymap.set("n", "<leader><leader>t", "<cmd>ClangdAST<CR>", { buffer = bufnr, desc = "Show AST" })
+      vim.keymap.set(
+        "n",
+        "<leader><leader><leader>",
+        "<cmd>ClangdSwitchSourceHeader<CR>",
+        { buffer = bufnr, desc = "Switch between source and header" }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader><leader>h",
+        "<cmd>ClangdTypeHierarchy<CR>",
+        { buffer = bufnr, desc = "Show type hierarchy" }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader><leader>m",
+        "<cmd>ClangdMemoryUsage<CR>",
+        { buffer = bufnr, desc = "Clangd memory usage" }
+      )
+    end,
+  },
+  -- options to pass to nvim-lspconfig
+  -- i.e. the arguments to require("lspconfig").clangd.setup({})
   extensions = {
     -- defaults:
     -- Automatically set inlay hints (type hints)
