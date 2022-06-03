@@ -643,11 +643,13 @@ return packer.startup {
 
     use {
       "tpope/vim-dadbod",
+      disable = true,
     }
 
     use {
       "kristijanhusak/vim-dadbod-ui",
       cmd = { "DBUIToggle" },
+      disable = true,
     }
 
     use {
@@ -762,6 +764,7 @@ return packer.startup {
       config = function()
         require "debug.dap-ui"
       end,
+      cmd = { "DBUIToggle" },
     }
 
     use {
