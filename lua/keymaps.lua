@@ -1,5 +1,5 @@
 -- Keybindings are only used for lazy loaded plugins
-vim.keymap.set("n", "<leader>db", "<Cmd>DBUIToggle<CR>")
+vim.keymap.set("n", "<leader>db", "<Cmd>DBUIToggle<CR>", { desc = "Toggle UI" })
 vim.keymap.set("n", "<leader>lo", "<Cmd>SymbolsOutline<CR>")
 vim.keymap.set("n", "<leader>a", "<Cmd>AerialToggle<CR>")
 vim.keymap.set("n", "<leader>tb", "<Cmd>TroubleToggle<CR>")
