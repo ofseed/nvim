@@ -6,6 +6,6 @@ end
 
 dap.setup "/usr/bin/python3"
 
-vim.keymap.set("n", "<leader>dn", require("dap-python").test_method)
-vim.keymap.set("n", "<leader>df", require("dap-python").test_class)
-vim.keymap.set("v", "<leader>ds", require("dap-python").debug_selection)
+vim.keymap.set("n", "<leader>dn", require("dap-python").test_method, { desc = "Test method" })
+vim.keymap.set("n", "<leader>df", require("dap-python").test_class, { desc = "Test class" })
+vim.keymap.set("v", "<leader>ds", require("dap-python").debug_selection, { desc = "Debug selection" })
