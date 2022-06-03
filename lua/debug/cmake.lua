@@ -4,6 +4,12 @@ if not ok then
   return
 end
 
+local ok, key = pcall(require, "which-key")
+if not ok then
+  vim.notify "Could not load which-key"
+  return
+end
+
 local path = require "plenary.path"
 
 local script_path = path:new(debug.getinfo(1).source:sub(2))
@@ -25,3 +31,46 @@ cmake.setup {
   }, -- DAP configuration. By default configured to work with `lldb-vscode`.
   dap_open_command = require("dap").repl.open, -- Command to run after starting DAP session. You can set it to `false` if you don't want to open anything or `require('dapui').open` if you are using https://github.com/rcarriga/nvim-dap-ui
 }
+
+local function on_attach()
+  vim.keymap.set("n", "<leader><leader>c", "<cmd>CMake configure<CR>", { buffer = true, desc = "CMake configure" })
+  vim.keymap.set("n", "<leader><leader>q", "<cmd>CMake cancel<CR>", { buffer = true, desc = "CMake cancel" })
+  vim.keymap.set("n", "<leader><leader>r", "<cmd>CMake run<CR>", { buffer = true, desc = "CMake run" })
+  vim.keymap.set("n", "<leader><leader>d", "<cmd>CMake debug<CR>", { buffer = true, desc = "CMake debug" })
+  vim.keymap.set("n", "<leader><leader>bb", "<cmd>CMake build<CR>", { buffer = true, desc = "CMake build target" })
+  vim.keymap.set("n", "<leader><leader>ba", "<cmd>CMake build_all<CR>", { buffer = true, desc = "CMake build all" })
+  vim.keymap.set(
+    "n",
+    "<leader><leader>br",
+    "<cmd>CMake build_and_run<CR>",
+    { buffer = 0, desc = "CMake build and run" }
+  )
+  vim.keymap.set(
+    "n",
+    "<leader><leader>bd",
+    "<cmd>CMake build_and_debug<CR>",
+    { buffer = 0, desc = "CMake build and debug" }
+  )
+
+  vim.keymap.set(
+    "n",
+    "<leader><leader>st",
+    "<cmd>CMake select_target<CR>",
+    { buffer = 0, desc = "CMake select target" }
+  )
+  vim.keymap.set(
+    "n",
+    "<leader><leader>sb",
+    "<cmd>CMake select_build_type<CR>",
+    { buffer = 0, desc = "CMake select build type" }
+  )
+  key.register({
+    ["<leader><leader>b"] = { name = "+build" },
+    ["<leader><leader>s"] = { name = "+select" },
+  }, { buffer = 0 })
+end
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "*.c", "*.cpp", "*.h", "CMakeLists.txt" },
+  callback = on_attach,
+})
