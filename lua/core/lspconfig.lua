@@ -56,6 +56,7 @@ local servers = {
   "html",
   "cssls",
   "tsserver",
+  "eslint",
   "volar",
 
   "cmake",
