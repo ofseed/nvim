@@ -26,23 +26,10 @@ info.setup {
   package_manager = "yarn",
 }
 
--- Show package versions
-vim.keymap.set("n", "<leader>ns", ":lua require('package-info').show()<CR>")
-
--- Hide package versions
-vim.keymap.set("n", "<leader>nc", ":lua require('package-info').hide()<CR>")
-
--- Update package on line
-vim.keymap.set( "n", "<leader>nu", ":lua require('package-info').update()<CR>")
-
--- Delete package on line
-vim.keymap.set( "n", "<leader>nd", ":lua require('package-info').delete()<CR>")
-
--- Install a new package
-vim.keymap.set( "n", "<leader>ni", ":lua require('package-info').install()<CR>")
-
--- Reinstall dependencies
-vim.keymap.set( "n", "<leader>nr", ":lua require('package-info').reinstall()<CR>")
-
--- Install a different package version
-vim.keymap.set( "n", "<leader>np", ":lua require('package-info').change_version()<CR>")
+vim.keymap.set("n", "<Leader>js", require("package-info").show, { desc = "Show package versions" })
+vim.keymap.set("n", "<Leader>jc", require("package-info").hide, { desc = "Hide package versions" })
+vim.keymap.set("n", "<Leader>ju", require("package-info").update, { desc = "Update package on line" })
+vim.keymap.set("n", "<Leader>jd", require("package-info").delete, { desc = "Delete package on line" })
+vim.keymap.set("n", "<Leader>ji", require("package-info").install, { desc = "Install a new package" })
+vim.keymap.set("n", "<Leader>jr", require("package-info").reinstall, { desc = "Reinstall dependencies" })
+vim.keymap.set( "n", "<Leader>jp", require("package-info").change_version, { desc = "Install a different package version" })
