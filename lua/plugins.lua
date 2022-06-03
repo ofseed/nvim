@@ -657,6 +657,8 @@ return packer.startup {
       config = function()
         require "tool.orgmode"
       end,
+      disable = true,
+      -- Need reconfigre, especially keymaps
     }
 
     use {
@@ -665,6 +667,8 @@ return packer.startup {
         require "tool.org-bullets"
       end,
       ft = { "org" },
+      diable = true,
+      -- Disable with orgmode
     }
     -- }}}
 
