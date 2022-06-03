@@ -12,7 +12,7 @@ vim.g.Illuminate_ftblacklist = {
 
 vim.keymap.set("n", "<M-n>", function()
   require("illuminate").next_reference { wrap = true }
-end)
+end, { desc = "Next reference" })
 vim.keymap.set("n", "<M-p>", function()
   require("illuminate").next_reference { reverse = true, wrap = true }
-end)
+end, { desc = "Prev reference" })
