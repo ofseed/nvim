@@ -37,33 +37,35 @@ local function on_attach()
   vim.keymap.set("n", "<leader><leader>q", "<cmd>CMake cancel<CR>", { buffer = true, desc = "CMake cancel" })
   vim.keymap.set("n", "<leader><leader>r", "<cmd>CMake run<CR>", { buffer = true, desc = "CMake run" })
   vim.keymap.set("n", "<leader><leader>d", "<cmd>CMake debug<CR>", { buffer = true, desc = "CMake debug" })
-  vim.keymap.set("n", "<leader><leader>bb", "<cmd>CMake build<CR>", { buffer = true, desc = "CMake build target" })
-  vim.keymap.set("n", "<leader><leader>ba", "<cmd>CMake build_all<CR>", { buffer = true, desc = "CMake build all" })
+
+  vim.keymap.set("n", "<leader><leader>bb", "<cmd>CMake build<CR>", { buffer = true, desc = "Build target" })
+  vim.keymap.set("n", "<leader><leader>ba", "<cmd>CMake build_all<CR>", { buffer = true, desc = "Build all" })
   vim.keymap.set(
     "n",
     "<leader><leader>br",
     "<cmd>CMake build_and_run<CR>",
-    { buffer = 0, desc = "CMake build and run" }
+    { buffer = 0, desc = "Build and run" }
   )
   vim.keymap.set(
     "n",
     "<leader><leader>bd",
     "<cmd>CMake build_and_debug<CR>",
-    { buffer = 0, desc = "CMake build and debug" }
+    { buffer = 0, desc = "Build and debug" }
   )
 
   vim.keymap.set(
     "n",
     "<leader><leader>st",
     "<cmd>CMake select_target<CR>",
-    { buffer = 0, desc = "CMake select target" }
+    { buffer = 0, desc = "Target" }
   )
   vim.keymap.set(
     "n",
     "<leader><leader>sb",
     "<cmd>CMake select_build_type<CR>",
-    { buffer = 0, desc = "CMake select build type" }
+    { buffer = 0, desc = "Build type" }
   )
+
   key.register({
     ["<leader><leader>b"] = { name = "+build" },
     ["<leader><leader>s"] = { name = "+select" },
