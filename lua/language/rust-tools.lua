@@ -4,6 +4,12 @@ if not ok then
   return
 end
 
+local ok, key = pcall(require, "which-key")
+if not ok then
+  vim.notify "Could not load which-key"
+  return
+end
+
 local server = require "server"
 
 tools.setup {
@@ -176,7 +182,30 @@ tools.setup {
   -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
   server = {
     capabilities = server.capabilities,
-    on_attach = server.on_attach,
+    on_attach = function(client, bufnr)
+      server.on_attach(client, bufnr)
+      vim.keymap.set("n", "J", "<cmd>RustJoinLines<CR>", { desc = "Join lines" })
+
+      vim.keymap.set("n", "<leader><leader>r", "<cmd>RustRunnables<CR>", { desc = "Runnables" })
+      vim.keymap.set("n", "<leader><leader>d", "<cmd>RustDebuggables<CR>", { desc = "Debugables" })
+      vim.keymap.set("n", "<leader><leader>R", "<cmd>RustReloadWorkspace<CR>", { desc = "Reload workspace" })
+
+      vim.keymap.set("n", "<leader><leader>k", "<cmd>RustMoveItemUp<CR>", { desc = "Move item up" })
+      vim.keymap.set("n", "<leader><leader>j", "<cmd>RustMoveItemDown<CR>", { desc = "Move item down" })
+
+      vim.keymap.set("n", "<leader><leader>oc", "<cmd>RustOpenCargo<CR>", { desc = "Cargo" })
+      vim.keymap.set("n", "<leader><leader>od", "<cmd>RustOpenExternalDocs<CR>", { desc = "External docs" })
+      vim.keymap.set("n", "<leader><leader>og", "<cmd>RustViewCrateGraph<CR>", { desc = "Crate graph" })
+
+      vim.keymap.set("n", "<leader><leader>ei", "<cmd>RustEmitIr<CR>", { desc = "IR" })
+      vim.keymap.set("n", "<leader><leader>ea", "<cmd>RustEmitAsm<CR>", { desc = "ASM" })
+
+      key.register({
+        ["<leader><leader>m"] = { name = "+move" },
+        ["<leader><leader>o"] = { name = "+open" },
+        ["<leader><leader>e"] = { name = "+emit" },
+      }, { buffer = bufnr })
+    end,
     settings = {
       ["rust-analyzer"] = {
         checkOnSave = {
