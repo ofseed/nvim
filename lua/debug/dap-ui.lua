@@ -44,3 +44,5 @@ dapui.setup {
   },
   windows = { indent = 1 },
 }
+
+vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "Toggle UI" })

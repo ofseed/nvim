@@ -768,7 +768,6 @@ return packer.startup {
       config = function()
         require "debug.dap-ui"
       end,
-      cmd = { "DBUIToggle" },
     }
 
     use {
