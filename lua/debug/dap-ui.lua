@@ -13,7 +13,11 @@ dapui.setup {
     remove = "d",
     edit = "e",
     repl = "r",
+    toggle = "t",
   },
+  -- Expand lines larger than the window
+  -- Requires >= 0.7
+  expand_lines = vim.fn.has "nvim-0.7",
   sidebar = {
     -- You can change the order of elements in the sidebar
     elements = {
@@ -30,7 +34,7 @@ dapui.setup {
     position = "left", -- Can be "left", "right", "top", "bottom"
   },
   tray = {
-    elements = { "repl" },
+    elements = { "repl", "console" },
     size = 10,
     position = "bottom", -- Can be "left", "right", "top", "bottom"
   },
@@ -43,6 +47,9 @@ dapui.setup {
     },
   },
   windows = { indent = 1 },
+  render = {
+    max_type_length = nil, -- Can be integer or nil.
+  },
 }
 
 vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "Toggle UI" })
