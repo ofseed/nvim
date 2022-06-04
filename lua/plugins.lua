@@ -846,8 +846,10 @@ return packer.startup {
     }
 
     use {
-      "jose-elias-alvarez/nvim-lsp-ts-utils",
-      disable = true,
+      "jose-elias-alvarez/typescript.nvim",
+      config = function()
+        require "language.typescript"
+      end,
     }
 
     use {

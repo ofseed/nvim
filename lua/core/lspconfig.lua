@@ -55,7 +55,6 @@ local servers = {
   -- Web Languages
   "html",
   "cssls",
-  "tsserver",
   "eslint",
   "volar",
 
