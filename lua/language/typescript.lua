@@ -16,22 +16,22 @@ typescript.setup {
       vim.keymap.set(
         "n",
         "<leader><leader>i",
-        typescript.addMissingImports,
+        typescript.actions.addMissingImports,
         { buffer = bufnr, desc = "Add missing imports" }
       )
       vim.keymap.set(
         "n",
         "<leader><leader>o",
-        typescript.organizeImports,
+        typescript.actions.organizeImports,
         { buffer = bufnr, desc = "Organize imports" }
       )
       vim.keymap.set(
         "n",
         "<leader><leader>r",
-        typescript.removeUnused,
+        typescript.actions.removeUnused,
         { buffer = bufnr, desc = "Remove unused variables" }
       )
-      vim.keymap.set("n", "<leader><leader>f", typescript.fixAll, { buffer = bufnr, desc = "Fix all" })
+      vim.keymap.set("n", "<leader><leader>f", typescript.actions.fixAll, { buffer = bufnr, desc = "Fix all" })
     end,
   },
 }

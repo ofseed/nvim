@@ -850,6 +850,7 @@ return packer.startup {
       config = function()
         require "language.typescript"
       end,
+      after = { "nvim-lsp-installer" },
     }
 
     use {
