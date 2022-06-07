@@ -747,6 +747,16 @@ return packer.startup {
     }
 
     use {
+      "rcarriga/neotest",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+        "antoinemadec/FixCursorHold.nvim",
+      },
+      disable = true,
+    }
+
+    use {
       "rafcamlet/nvim-luapad",
       disable = true,
     }
