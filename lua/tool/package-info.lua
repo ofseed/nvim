@@ -23,7 +23,7 @@ info.setup {
   -- The plugin will try to auto-detect the package manager based on
   -- `yarn.lock` or `package-lock.json`. If none are found it will use the
   -- provided one, if nothing is provided it will use `yarn`
-  package_manager = "yarn",
+  package_manager = "npm",
 }
 
 vim.keymap.set("n", "<Leader><Leader>s", require("package-info").show, { desc = "Show package versions" })
