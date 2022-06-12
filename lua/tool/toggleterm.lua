@@ -4,12 +4,6 @@ if not ok then
   return
 end
 
-local ok, key = pcall(require, "which-key")
-if not ok then
-  vim.notify "Could not load which-key"
-  return
-end
-
 toggleterm.setup {
   -- size can be a number or function which is passed the current terminal
   size = function(term)
@@ -19,7 +13,7 @@ toggleterm.setup {
       return vim.o.columns * 0.4
     end
   end,
-  open_mapping = [[<leader>tt]],
+  open_mapping = [[<C-\>]],
   hide_numbers = true, -- hide the number column in toggleterm buffers
   shade_filetypes = {},
   shade_terminals = true,
@@ -48,7 +42,3 @@ toggleterm.setup {
 }
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-N>")
-
-key.register {
-  ["<leader>tt"] = "Terminal",
-}
