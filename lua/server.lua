@@ -1,5 +1,11 @@
 local M = {}
 
+local ok, navic = pcall(require, "nvim-navic")
+if not ok then
+  vim.notify "Could not load navic"
+  return
+end
+
 local ok, illuminate = pcall(require, "illuminate")
 if not ok then
   vim.notify "Could not load illuminate"
@@ -60,6 +66,7 @@ M.on_attach = function(client, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, { buffer = bufnr, desc = "List workspace folders" })
 
+  navic.attach(client, bufnr)
   illuminate.on_attach(client)
   aerial.on_attach(client)
   -- require("virtualtypes").on_attach(client)

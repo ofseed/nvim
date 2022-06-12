@@ -227,11 +227,14 @@ return packer.startup {
       requires = {
         { "kyazdani42/nvim-web-devicons" },
         { "ofseed/lualine-copilot" },
-        {
-          "SmiteshP/nvim-gps",
-          requires = "nvim-treesitter/nvim-treesitter",
-        },
       },
+    }
+
+    use {
+      "SmiteshP/nvim-navic",
+      config = function()
+        require "interface.navic"
+      end,
     }
 
     use {
