@@ -30,6 +30,7 @@ marks.setup {
     "lspinfo",
     "NvimTree",
     "Outline",
+    "notify",
     "neo-tree",
     "neo-tree-popup",
     "DressingInput",
