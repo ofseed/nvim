@@ -598,6 +598,13 @@ return packer.startup {
     }
 
     use {
+      "aserowy/tmux.nvim",
+      config = function()
+        require "tool.tmux"
+      end,
+    }
+
+    use {
       "iamcco/markdown-preview.nvim",
       config = function()
         require "tool.markdown-preview"
@@ -708,8 +715,6 @@ return packer.startup {
         require "efficiency.treehopper"
       end,
     }
-
-    use { "roxma/vim-tmux-clipboard" }
 
     use { "kevinhwang91/vim-ibus-sw" }
 
