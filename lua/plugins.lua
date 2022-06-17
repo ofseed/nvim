@@ -262,6 +262,13 @@ return packer.startup {
     }
 
     use {
+      "zbirenbaum/neodim",
+      config = function()
+        require "interface.dim"
+      end,
+    }
+
+    use {
       "lukas-reineke/indent-blankline.nvim",
       config = function()
         require "interface.indent-blankline"
