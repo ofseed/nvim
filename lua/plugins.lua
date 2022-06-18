@@ -566,7 +566,6 @@ return packer.startup {
       config = function()
         require "tool.aerial"
       end,
-      cmd = { "AerialToggle" },
     }
 
     use {
