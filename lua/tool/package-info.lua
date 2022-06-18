@@ -31,5 +31,4 @@ vim.keymap.set("n", "<Leader><Leader>c", require("package-info").hide, { desc = 
 vim.keymap.set("n", "<Leader><Leader>u", require("package-info").update, { desc = "Update package on line" })
 vim.keymap.set("n", "<Leader><Leader>d", require("package-info").delete, { desc = "Delete package on line" })
 vim.keymap.set("n", "<Leader><Leader>i", require("package-info").install, { desc = "Install a new package" })
-vim.keymap.set("n", "<Leader><Leader>r", require("package-info").reinstall, { desc = "Reinstall dependencies" })
 vim.keymap.set( "n", "<Leader><Leader>p", require("package-info").change_version, { desc = "Install a different package version" })
