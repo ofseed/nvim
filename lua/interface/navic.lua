@@ -1,4 +1,7 @@
 local ok, navic = pcall(require, "nvim-navic")
+if not ok then
+  vim.notify "Could not load navic"
+end
 
 navic.setup {
   icons = {
