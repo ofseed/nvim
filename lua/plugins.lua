@@ -287,6 +287,8 @@ return packer.startup {
       config = function()
         require "interface.lsp_signature"
       end,
+      disable = true,
+      -- Disable because the window position is misaligned
     }
 
     use {
@@ -422,6 +424,8 @@ return packer.startup {
       config = function()
         require "interface.marks"
       end,
+      disable = true,
+      -- Disable causes the value of v:oldfiles to be messed up
     }
 
     use {
