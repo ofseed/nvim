@@ -287,8 +287,6 @@ return packer.startup {
       config = function()
         require "interface.lsp_signature"
       end,
-      disable = true,
-      -- Disable because the window position is misaligned
     }
 
     use {
