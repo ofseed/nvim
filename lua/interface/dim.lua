@@ -4,16 +4,16 @@ if not ok then
   return
 end
 
-vim.diagnostic.config {
-  virtual_text = {
-    prefix = "",
-    format = function(diagnostic)
-      return require("neodim").ignore_vtext(diagnostic)
-    end,
+dim.setup {
+  alpha = 0.75,
+  blend_color = "#000000",
+  update_in_insert = {
+    enable = true,
+    delay = 100,
   },
-  signs = true,
-  underline = false,
-  update_in_insert = false,
+  hide = {
+    virtual_text = true,
+    signs = true,
+    underline = true,
+  },
 }
-
-dim.setup {}
