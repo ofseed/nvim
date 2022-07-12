@@ -690,6 +690,12 @@ return packer.startup {
       diable = true,
       -- Disable with orgmode
     }
+
+    use {
+      "lalitmee/browse.nvim",
+      requires = { "nvim-telescope/telescope.nvim" },
+      disable = true,
+    }
     -- }}}
 
     -- Efficiency Improvement {{{
@@ -747,6 +753,12 @@ return packer.startup {
       "dstein64/vim-startuptime",
       cmd = { "StartupTime" },
     }
+
+    use {
+      "sindrets/winshift.nvim",
+      disable = true,
+    }
+
     use {
       "t9md/vim-choosewin",
       disable = true,
