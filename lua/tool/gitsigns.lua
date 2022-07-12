@@ -84,5 +84,3 @@ gitsigns.setup {
     vim.keymap.set({ "o", "x" }, "ih", "<cmd><C-U>Gitsigns select_hunk<CR>")
   end,
 }
-
-vim.keymap.set("n", "<leader>lb", "<cmd>Gitsigns toggle_current_line_blame<CR>")
