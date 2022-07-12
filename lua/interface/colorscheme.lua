@@ -57,6 +57,7 @@ if ok then
           information = "underline",
         },
       },
+      coc_nvim = false,
       lsp_trouble = false,
       cmp = true,
       lsp_saga = false,
@@ -91,6 +92,7 @@ if ok then
       notify = true,
       telekasten = true,
       symbols_outline = true,
+      mini = false,
     },
   }
   vim.g.catppuccin_flavour = "mocha"
