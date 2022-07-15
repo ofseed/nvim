@@ -6,6 +6,7 @@ end
 
 bufferline.setup {
   options = {
+    mode = "buffers", -- set to "tabs" to only show tabpages instead
     numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
     close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
@@ -35,6 +36,7 @@ bufferline.setup {
     tab_size = 18,
     diagnostics = "nvim_lsp", -- false | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
+    -- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
     diagnostics_indicator = function(count, level, diagnostics_dict, context)
       return "(" .. count .. ")"
     end,
@@ -67,8 +69,10 @@ bufferline.setup {
       { filetype = "dbui", text = "Database Manager", text_align = "center" },
       { filetype = "SidebarNvim", text = "Sidebar", text_align = "center" },
     },
+    color_icons = true, --- true | false, -- whether or not to add the filetype icon highlights
     show_buffer_icons = true, -- true | false, -- disable filetype icons for buffers
     show_buffer_close_icons = true, -- true | false,
+    show_buffer_default_icon = true, -- true | false, -- whether or not an unrecognised filetype should show a default icon
     show_close_icon = false, -- true | false,
     show_tab_indicators = true, -- true | false,
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
