@@ -561,6 +561,7 @@ return packer.startup {
       config = function()
         require "tool.toggleterm"
       end,
+      tag = "v2.*",
     }
 
     use {
