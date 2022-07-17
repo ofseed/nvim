@@ -1,3 +1,4 @@
+-- Default LSP server settigns
 local M = {}
 
 local ok, navic = pcall(require, "nvim-navic")
