@@ -730,6 +730,7 @@ return packer.startup {
       config = function()
         require "efficiency.hop"
       end,
+      branch = "v2",
     }
 
     use {
