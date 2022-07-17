@@ -100,7 +100,7 @@ if ok then
       ts_rainbow = true,
       hop = true,
       notify = true,
-      telekasten = true,
+      telekasten = false,
       symbols_outline = true,
       mini = false,
     },
