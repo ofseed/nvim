@@ -31,9 +31,9 @@ bufferline.setup {
         return vim.fn.fnamemodify(buf.name, ":t:r")
       end
     end,
-    max_name_length = 18,
-    max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
-    tab_size = 18,
+    max_name_length = 24,
+    max_prefix_length = 20, -- prefix used when a buffer is de-duplicated
+    tab_size = 24,
     diagnostics = "nvim_lsp", -- false | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
     -- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
