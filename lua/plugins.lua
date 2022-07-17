@@ -386,14 +386,6 @@ return packer.startup {
     }
 
     use {
-      "folke/twilight.nvim",
-      config = function()
-        require "interface.twilight"
-      end,
-      cmd = { "Twilight" },
-    }
-
-    use {
       "winston0410/range-highlight.nvim",
       config = function()
         require "interface.range-highlight"
