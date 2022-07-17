@@ -64,5 +64,6 @@ lualine.setup {
     "toggleterm",
     "symbols-outline",
     "aerial",
+    "nvim-dap-ui",
   },
 }
