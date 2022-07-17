@@ -27,7 +27,7 @@ diffview.setup {
     },
     win_config = { -- See ':h diffview-config-win_config'
       position = "left",
-      width = 35,
+      width = math.floor(vim.go.columns * 0.2) > 25 and math.floor(vim.go.columns * 0.2) or 25,
     },
   },
   file_history_panel = {
