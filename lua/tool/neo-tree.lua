@@ -12,6 +12,15 @@ tree.setup {
   popup_border_style = "rounded",
   enable_git_status = true,
   enable_diagnostics = true,
+  sort_case_insensitive = false, -- used when sorting files and directories in the tree
+  sort_function = nil, -- use a custom function for sorting files and directories in the tree
+  -- sort_function = function (a,b)
+  --       if a.type == b.type then
+  --           return a.path > b.path
+  --       else
+  --           return a.type > b.type
+  --       end
+  --   end , -- this sorts files and directories descendantly
   default_component_configs = {
     container = {
       enable_character_fade = true,
@@ -88,6 +97,8 @@ tree.setup {
       ["t"] = "open_tabnew",
       ["w"] = "open_with_window_picker",
       ["C"] = "close_node",
+      ["z"] = "close_all_nodes",
+      --["Z"] = "expand_all_nodes",
       ["a"] = {
         "add",
         -- some commands may take optional config options, see `:h neo-tree-mappings` for details
@@ -95,14 +106,20 @@ tree.setup {
           show_path = "none", -- "none", "relative", "absolute"
         },
       },
-      ["A"] = "add_directory", -- also accepts the config.show_path option.
+      ["A"] = "add_directory", -- also accepts the optional config.show_path option like "add".
       ["d"] = "delete",
       ["r"] = "rename",
       ["y"] = "copy_to_clipboard",
       ["x"] = "cut_to_clipboard",
       ["p"] = "paste_from_clipboard",
-      ["c"] = "copy", -- takes text input for destination
-      ["m"] = "move", -- takes text input for destination
+      ["c"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
+      -- ["c"] = {
+      --  "copy",
+      --  config = {
+      --    show_path = "none" -- "none", "relative", "absolute"
+      --  }
+      --}
+      ["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
       ["q"] = "close_window",
       ["R"] = "refresh",
       ["?"] = "show_help",
@@ -116,8 +133,6 @@ tree.setup {
       hide_gitignored = true,
       hide_hidden = true, -- only works on Windows for hidden files/directories
       hide_by_name = {
-        ".DS_Store",
-        "thumbs.db",
         --"node_modules"
       },
       hide_by_pattern = { -- uses glob style patterns
@@ -130,6 +145,7 @@ tree.setup {
     },
     follow_current_file = true, -- This will find and focus the file in the active buffer every
     -- time the current file is changed while the tree is open.
+    group_empty_dirs = false, -- when true, empty folders will be grouped together
     hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
     -- in whatever position is specified in window.position
     -- "open_current",  -- netrw disabled, opening a directory opens within the
@@ -143,12 +159,18 @@ tree.setup {
         ["."] = "set_root",
         ["H"] = "toggle_hidden",
         ["/"] = "fuzzy_finder",
+        ["D"] = "fuzzy_finder_directory",
         ["f"] = "filter_on_submit",
         ["<c-x>"] = "clear_filter",
+        ["[g"] = "prev_git_modified",
+        ["]g"] = "next_git_modified",
       },
     },
   },
   buffers = {
+    follow_current_file = true, -- This will find and focus the file in the active buffer every
+    -- time the current file is changed while the tree is open.
+    group_empty_dirs = true, -- when true, empty folders will be grouped together
     show_unloaded = true,
     window = {
       mappings = {
@@ -174,4 +196,4 @@ tree.setup {
   },
 }
 
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>")
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "File Explorer" })
