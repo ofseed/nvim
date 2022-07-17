@@ -719,7 +719,6 @@ return packer.startup {
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
         { "nvim-telescope/telescope-hop.nvim" },
         { "nvim-telescope/telescope-project.nvim" },
-        { "nvim-telescope/telescope-file-browser.nvim" },
         { "nvim-telescope/telescope-media-files.nvim" },
         { "nvim-telescope/telescope-dap.nvim" },
       },

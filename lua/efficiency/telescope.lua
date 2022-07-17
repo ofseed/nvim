@@ -119,9 +119,6 @@ telescope.setup {
       -- jump to entry where hoop loop was started from
       reset_selection = true,
     },
-    file_browser = {
-      theme = "ivy",
-    },
     media_files = {
       -- filetypes whitelist
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
@@ -142,7 +139,6 @@ vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc
 vim.keymap.set("n", "<leader>f?", require("telescope.builtin").help_tags, { desc = "Help tags" })
 vim.keymap.set("n", "<leader>fh", require("telescope.builtin").oldfiles, { desc = "Old files" })
 vim.keymap.set("n", "<leader>fb", require("telescope.builtin").marks, { desc = "Marks" })
-vim.keymap.set("n", "<leader>fe", require("telescope").extensions.file_browser.file_browser, { desc = "File browser" })
 vim.keymap.set("n", "<leader>fp", require("telescope").extensions.project.project, { desc = "Project" })
 vim.keymap.set("n", "<leader>fm", require("telescope").extensions.media_files.media_files, { desc = "Media files" })
 vim.keymap.set("n", "<leader>fn", require("telescope").extensions.notify.notify, { desc = "Notify" })
