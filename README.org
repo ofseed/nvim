@@ -5,6 +5,8 @@ My personal Neovim configuration, which keeps the structure simple and
 straightforward by logically distributing the configuration into various
 directories. Aims to be highly customizable and have no hacks.
 
+[[https://user-images.githubusercontent.com/61115159/179394575-3ac8fbb5-323b-45fb-9ed8-24f875788464.png]]
+
 * Table of Contents :toc:
 - [[#introduction][Introduction]]
 - [[#directory-structure][Directory Structure]]
