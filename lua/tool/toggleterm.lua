@@ -42,3 +42,4 @@ toggleterm.setup {
 }
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-N>")
+vim.keymap.set("n", "<leader>tt", "<Cmd>ToggleTermToggleAll<CR>", { desc = "All Terminal" })
