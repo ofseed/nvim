@@ -365,7 +365,6 @@ return packer.startup {
       config = function()
         require "interface.ffhighlight"
       end,
-      after = { "catppuccin" },
       disable = true,
       -- Plugin show inline search highlight
       -- Disable because it's not very useful
