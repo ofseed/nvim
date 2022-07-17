@@ -537,6 +537,7 @@ return packer.startup {
         "nvim-lua/plenary.nvim",
         "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
+        "s1n7ax/nvim-window-picker",
       },
     }
 
@@ -569,6 +570,14 @@ return packer.startup {
       "stevearc/aerial.nvim",
       config = function()
         require "tool.aerial"
+      end,
+    }
+
+    use {
+      "s1n7ax/nvim-window-picker",
+      tag = "v1.*",
+      config = function()
+        require "tool.window-picker"
       end,
     }
 
@@ -762,10 +771,6 @@ return packer.startup {
       disable = true,
     }
 
-    use {
-      "t9md/vim-choosewin",
-      disable = true,
-    }
     -- }}}
 
     -- Debug And Run {{{
