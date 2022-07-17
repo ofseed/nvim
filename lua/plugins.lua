@@ -143,7 +143,10 @@ return packer.startup {
       end,
     }
 
-    use { "rafamadriz/friendly-snippets" }
+    use {
+      "rafamadriz/friendly-snippets",
+      disable = true,
+    }
 
     use {
       "b3nj5m1n/kommentary",
