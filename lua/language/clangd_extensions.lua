@@ -4,7 +4,7 @@ if not ok then
   return
 end
 
-local server = require "server"
+local server = require "language.server"
 
 extensions.setup {
   server = {

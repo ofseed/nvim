@@ -10,7 +10,7 @@ if not ok then
   return
 end
 
-local server = require "server"
+local server = require "language.server"
 
 tools.setup {
   tools = { -- rust-tools options
