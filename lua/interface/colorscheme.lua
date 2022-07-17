@@ -80,7 +80,7 @@ if ok then
         transparent_panel = false,
       },
       neotree = {
-        enabled = true,
+        enabled = false,
         show_root = true,
         transparent_panel = false,
       },

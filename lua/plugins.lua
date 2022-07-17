@@ -501,7 +501,6 @@ return packer.startup {
         require "interface.colorscheme"
       end,
       -- requires = { "rktjmp/lush.nvim" }, -- Required by gruvbox
-      after = "nvim-tree.lua", -- Nvim-tree needs to be loaded before colorschemes
     }
     -- }}}
 
@@ -512,6 +511,7 @@ return packer.startup {
         require "tool.tree"
       end,
       requires = { "kyazdani42/nvim-web-devicons" },
+      disable = true,
     }
 
     use {
@@ -534,9 +534,6 @@ return packer.startup {
         "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
       },
-      disable = true,
-      -- Subtitute for nvim-tree
-      -- Disable because few colorschemes support it
     }
 
     use {
@@ -715,6 +712,7 @@ return packer.startup {
         { "nvim-telescope/telescope-media-files.nvim" },
         { "nvim-telescope/telescope-dap.nvim" },
       },
+      branch = "0.1.x",
     }
 
     use {
