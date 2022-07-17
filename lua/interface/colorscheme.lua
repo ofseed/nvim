@@ -32,7 +32,7 @@ if ok then
     transparent_background = false,
     term_colors = false,
     compile = {
-      enabled = false,
+      enabled = true,
       path = vim.fn.stdpath "cache" .. "/catppuccin",
       suffix = "_compiled",
     },
@@ -105,6 +105,17 @@ if ok then
       mini = false,
     },
   }
+
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "PackerCompileDone",
+    callback = function()
+      vim.cmd "CatppuccinCompile"
+      vim.defer_fn(function()
+        vim.cmd "colorscheme catppuccin"
+      end, 50) -- Debounced for live reloading
+    end,
+  })
+
   vim.g.catppuccin_flavour = "mocha"
 end
 

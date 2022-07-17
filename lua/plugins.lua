@@ -503,6 +503,7 @@ return packer.startup {
       config = function()
         require "interface.colorscheme"
       end,
+      run = "CatppuccinCompile",
       -- requires = { "rktjmp/lush.nvim" }, -- Required by gruvbox
     }
     -- }}}
