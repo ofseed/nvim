@@ -7,7 +7,6 @@ end
 local extensions = {
   "fzf",
   "hop",
-  "file_browser",
   "project",
   "media_files",
   "notify",
