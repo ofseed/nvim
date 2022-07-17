@@ -116,6 +116,11 @@ if ok then
     end,
   })
 
+  vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = "colorscheme.lua",
+    command = "source <afile> | CatppuccinCompile",
+  })
+
   vim.g.catppuccin_flavour = "mocha"
 end
 
