@@ -260,7 +260,6 @@ return packer.startup {
       config = function()
         require "interface.hlargs"
       end,
-      after = { "catppuccin" },
       -- hlargs should be loaded after colorscheme
     }
 
