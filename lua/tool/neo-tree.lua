@@ -87,6 +87,7 @@ tree.setup {
       -- },
       ["<2-LeftMouse>"] = "open",
       ["<cr>"] = "open",
+      ["o"] = "open",
       ["S"] = "open_split",
       ["s"] = "open_vsplit",
       -- ["S"] = "split_with_window_picker",
