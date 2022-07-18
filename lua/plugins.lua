@@ -29,6 +29,7 @@ return packer.startup {
       config = function()
         require "core.lspconfig"
       end,
+      requires = { "mason.nvim" },
     }
 
     use {

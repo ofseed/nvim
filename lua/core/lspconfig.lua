@@ -4,6 +4,12 @@ if not ok then
   return
 end
 
+local ok, mason = pcall(require, "mason-lspconfig")
+if not ok then
+  vim.notify "Could not load mason-lspconfig"
+  return
+end
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,
   update_in_insert = false,
@@ -40,36 +46,22 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-local server = require "language.server"
+local default = require "language.server"
 
-local servers = {
-  -- Vim
-  "vimls",
+mason.setup()
 
-  -- Markup Languages
-  "jsonls",
-  "taplo",
-  "lemminx",
-  "ltex",
-
-  -- Web Languages
-  "html",
-  "cssls",
-  "eslint",
-  "volar",
-
-  "cmake",
-  "pyright",
-}
-
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup(server)
-end
-
-lspconfig.sumneko_lua.setup {
-  on_attach = function(client, bufnr)
-    server.on_attach(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
+mason.setup_handlers {
+  function(server)
+    lspconfig[server].setup(default)
   end,
-  capabilities = server.capabilities,
+
+  sumneko_lua = function()
+    lspconfig.sumneko_lua.setup {
+      on_attach = function(client, bufnr)
+        default.on_attach(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+      end,
+      capabilities = default.capabilities,
+    }
+  end,
 }
