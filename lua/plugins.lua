@@ -29,13 +29,12 @@ return packer.startup {
       config = function()
         require "core.lspconfig"
       end,
-      after = { "nvim-lsp-installer" },
     }
 
     use {
-      "williamboman/nvim-lsp-installer",
+      "williamboman/mason.nvim",
       config = function()
-        require "core.lsp-installer"
+        require "core.mason"
       end,
     }
 
@@ -854,7 +853,6 @@ return packer.startup {
       config = function()
         require "language.clangd_extensions"
       end,
-      after = { "nvim-lsp-installer" },
     }
 
     use {
@@ -862,7 +860,6 @@ return packer.startup {
       config = function()
         require "language.rust-tools"
       end,
-      after = { "nvim-lsp-installer" },
     }
 
     use {
@@ -884,13 +881,11 @@ return packer.startup {
       config = function()
         require "language.typescript"
       end,
-      after = { "nvim-lsp-installer" },
     }
 
     use {
       "nanotee/sqls.nvim",
       disable = true,
-      after = { "nvim-lsp-installer" },
     }
     -- }}}
   end,
