@@ -24,7 +24,7 @@ if not ok then
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.offsetEncoding = "utf-8"
+
 -- Add additional capabilities supported by nvim-cmp
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 -- capabilities.textDocument.codeLens = true
