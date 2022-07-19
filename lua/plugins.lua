@@ -829,8 +829,9 @@ return packer.startup {
       end,
       ft = { "c", "cpp", "cmake" },
     }
+    -- }}}
 
-    -- Language Specific
+    -- Language Specific {{{
     use {
       "lervag/vimtex",
       config = function()
