@@ -234,6 +234,10 @@ tools.setup {
 
   -- debugging stuff
   dap = {
-    adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+    adapter = {
+      type = "executable",
+      command = "lldb-vscode",
+      name = "rt_lldb",
+    },
   },
 }
