@@ -10,7 +10,7 @@ if not ok then
   return
 end
 
-local server = require "language.server"
+local default = require "language.default"
 
 tools.setup {
   tools = { -- rust-tools options
@@ -181,9 +181,9 @@ tools.setup {
   -- these override the defaults set by rust-tools.nvim
   -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
   server = {
-    capabilities = server.capabilities,
+    capabilities = default.capabilities,
     on_attach = function(client, bufnr)
-      server.on_attach(client, bufnr)
+      default.on_attach(client, bufnr)
       vim.keymap.set("n", "J", "<cmd>RustJoinLines<CR>", { buffer = bufnr, desc = "Join lines" })
 
       vim.keymap.set("n", "<leader><leader>r", "<cmd>RustRunnables<CR>", { buffer = bufnr, desc = "Runnables" })

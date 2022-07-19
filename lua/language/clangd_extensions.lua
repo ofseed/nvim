@@ -4,13 +4,13 @@ if not ok then
   return
 end
 
-local server = require "language.server"
+local default = require "language.default"
 
 extensions.setup {
   server = {
-    capabilities = server.capabilities,
+    capabilities = default.capabilities,
     on_attach = function(client, bufnr)
-      server.on_attach(client, bufnr)
+      default.on_attach(client, bufnr)
       vim.keymap.set("n", "<leader><leader>t", "<cmd>ClangdAST<CR>", { buffer = bufnr, desc = "Show AST" })
       vim.keymap.set(
         "n",

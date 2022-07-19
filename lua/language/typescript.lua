@@ -4,15 +4,15 @@ if not ok then
   return
 end
 
-local server = require "language.server"
+local default = require "language.default"
 
 typescript.setup {
   disable_commands = false, -- prevent the plugin from creating Vim commands
   debug = false, -- enable debug logging for commands
   server = { -- pass options to lspconfig's setup method
-    capabilities = server.capabilities,
+    capabilities = default.capabilities,
     on_attach = function(client, bufnr)
-      server.on_attach(client, bufnr)
+      default.on_attach(client, bufnr)
       vim.keymap.set(
         "n",
         "<leader><leader>i",
