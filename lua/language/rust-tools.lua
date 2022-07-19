@@ -12,6 +12,10 @@ end
 
 local default = require "language.default"
 
+local extension_path = vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/"
+local codelldb_path = extension_path .. "adapter/codelldb"
+local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
+
 tools.setup {
   tools = { -- rust-tools options
     -- automatically set inlay hints (type hints)
@@ -230,10 +234,6 @@ tools.setup {
 
   -- debugging stuff
   dap = {
-    adapter = {
-      type = "executable",
-      command = "lldb-vscode",
-      name = "rt_lldb",
-    },
+    adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
   },
 }
