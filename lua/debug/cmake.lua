@@ -26,8 +26,9 @@ cmake.setup {
   quickfix_height = 10, -- Height of the opened quickfix.
   quickfix_only_on_error = false, -- Open quickfix window only if target build failed.
   dap_configuration = {
-    type = "lldb",
+    type = "codelldb",
     request = "launch",
+    stopOnEntry = true,
   }, -- DAP configuration. By default configured to work with `lldb-vscode`.
   dap_open_command = require("dap").repl.open, -- Command to run after starting DAP session. You can set it to `false` if you don't want to open anything or `require('dapui').open` if you are using https://github.com/rcarriga/nvim-dap-ui
 }
@@ -40,31 +41,11 @@ local function on_attach()
 
   vim.keymap.set("n", "<leader><leader>bb", "<cmd>CMake build<CR>", { buffer = true, desc = "Build target" })
   vim.keymap.set("n", "<leader><leader>ba", "<cmd>CMake build_all<CR>", { buffer = true, desc = "Build all" })
-  vim.keymap.set(
-    "n",
-    "<leader><leader>br",
-    "<cmd>CMake build_and_run<CR>",
-    { buffer = 0, desc = "Build and run" }
-  )
-  vim.keymap.set(
-    "n",
-    "<leader><leader>bd",
-    "<cmd>CMake build_and_debug<CR>",
-    { buffer = 0, desc = "Build and debug" }
-  )
+  vim.keymap.set("n", "<leader><leader>br", "<cmd>CMake build_and_run<CR>", { buffer = 0, desc = "Build and run" })
+  vim.keymap.set("n", "<leader><leader>bd", "<cmd>CMake build_and_debug<CR>", { buffer = 0, desc = "Build and debug" })
 
-  vim.keymap.set(
-    "n",
-    "<leader><leader>st",
-    "<cmd>CMake select_target<CR>",
-    { buffer = 0, desc = "Target" }
-  )
-  vim.keymap.set(
-    "n",
-    "<leader><leader>sb",
-    "<cmd>CMake select_build_type<CR>",
-    { buffer = 0, desc = "Build type" }
-  )
+  vim.keymap.set("n", "<leader><leader>st", "<cmd>CMake select_target<CR>", { buffer = 0, desc = "Target" })
+  vim.keymap.set("n", "<leader><leader>sb", "<cmd>CMake select_build_type<CR>", { buffer = 0, desc = "Build type" })
 
   key.register({
     ["<leader><leader>b"] = { name = "+build" },

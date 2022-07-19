@@ -6,9 +6,12 @@ end
 
 local default = require "language.default"
 
+local capabilities = default.capabilities
+capabilities.offsetEncoding = "utf-8"
+
 extensions.setup {
   server = {
-    capabilities = default.capabilities,
+    capabilities = capabilities,
     on_attach = function(client, bufnr)
       default.on_attach(client, bufnr)
       vim.keymap.set("n", "<leader><leader>t", "<cmd>ClangdAST<CR>", { buffer = bufnr, desc = "Show AST" })

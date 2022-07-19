@@ -4,36 +4,22 @@ if not ok then
   return
 end
 
-dap.adapters.lldb = {
-  type = "executable",
-  command = "/usr/bin/lldb-vscode", -- adjust as needed, must be absolute path
-  name = "lldb",
+dap.adapters.codelldb = {
+  type = "server",
+  port = "13123", -- 💀 Use the port printed out or specified with `--port`
+  executable = {
+    command = vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/adapter/codelldb",
+    args = { "--port", "13123" },
+  },
 }
 
 dap.configurations.cpp = {
   {
-    name = "Launch",
-    type = "lldb",
+    name = "Launch file",
+    type = "codelldb",
     request = "launch",
-    program = function()
-      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-    end,
+    program = "${fileDirname}/${fileBasenameNoExtension}",
     cwd = "${workspaceFolder}",
-    stopOnEntry = false,
-    args = {},
-
-    -- 💀
-    -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
-    --
-    --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-    --
-    -- Otherwise you might get the following error:
-    --
-    --    Error on launch: Failed to attach to the target process
-    --
-    -- But you should be aware of the implications:
-    -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-    -- runInTerminal = false,
   },
 }
 
