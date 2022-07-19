@@ -55,6 +55,10 @@ mason.setup_handlers {
     lspconfig[server].setup(default)
   end,
 
+  clangd = function(server) end,
+  rust_analyzer = function(server) end,
+  tsserver = function(server) end,
+
   sumneko_lua = function()
     lspconfig.sumneko_lua.setup {
       on_attach = function(client, bufnr)
