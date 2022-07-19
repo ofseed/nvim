@@ -58,6 +58,7 @@ mason.setup_handlers {
   clangd = function(server) end,
   rust_analyzer = function(server) end,
   tsserver = function(server) end,
+  jsonls = function(server) end,
 
   sumneko_lua = function()
     lspconfig.sumneko_lua.setup {

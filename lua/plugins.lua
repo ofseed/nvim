@@ -886,6 +886,13 @@ return packer.startup {
     }
 
     use {
+      "b0o/SchemaStore.nvim",
+      config = function()
+        require "language.schema-store"
+      end,
+    }
+
+    use {
       "nanotee/sqls.nvim",
       disable = true,
     }
