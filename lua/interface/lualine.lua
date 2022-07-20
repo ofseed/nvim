@@ -55,8 +55,8 @@ lualine.setup {
     },
     always_divide_middle = true,
     globalstatus = false,
-    section_separators = "",
-    component_separators = "│",
+    section_separators = { left = "", right = "" },
+    component_separators = { left = "", right = "" },
   },
   extensions = {
     "nvim-tree",
