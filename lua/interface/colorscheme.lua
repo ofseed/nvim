@@ -110,9 +110,6 @@ if ok then
     pattern = "PackerCompileDone",
     callback = function()
       vim.cmd "CatppuccinCompile"
-      vim.defer_fn(function()
-        vim.cmd "colorscheme catppuccin"
-      end, 50) -- Debounced for live reloading
     end,
   })
 
