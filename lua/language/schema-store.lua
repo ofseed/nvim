@@ -17,6 +17,9 @@ lspconfig.jsonls.setup {
       validate = { enable = true },
     },
   },
-  on_attach = default.on_attach,
+  on_attach = function(client, bufnr)
+    default.on_attach(client, bufnr)
+    client.resolved_capabilities.document_formatting = false
+  end,
   capabilities = default.capabilities,
 }
