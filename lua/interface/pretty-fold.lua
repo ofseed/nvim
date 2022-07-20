@@ -4,12 +4,6 @@ if not ok then
   return
 end
 
-local ok, preview = pcall(require, "pretty-fold.preview")
-if not ok then
-  vim.notify "Could not load pretty-fold.preview"
-  return
-end
-
 fold.setup {
   sections = {
     left = {
@@ -70,14 +64,6 @@ fold.ft_setup("lua", {
     { "%[", "]" }, -- % to escape lua pattern char
   },
 })
-
-preview.setup {
-  default_keybindings = true, -- Set to false to disable default keybindings
-
-  -- 'none', "single", "double", "rounded", "solid", 'shadow' or table
-  -- For explanation see: :help nvim_open_win()
-  border = "rounded",
-}
 
 vim.o.foldenable = true
 vim.o.foldlevelstart = 99

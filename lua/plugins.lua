@@ -256,6 +256,13 @@ return packer.startup {
     }
 
     use {
+      "anuvyklack/fold-preview.nvim",
+      config = function()
+        require "interface.fold-preview"
+      end,
+    }
+
+    use {
       "m-demare/hlargs.nvim",
       config = function()
         require "interface.hlargs"
