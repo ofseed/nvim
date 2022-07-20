@@ -86,6 +86,9 @@ telescope.setup {
     find_files = {
       theme = "ivy",
     },
+    oldfiles = {
+      theme = "ivy",
+    },
     live_grep = {
       theme = "dropdown",
     },
