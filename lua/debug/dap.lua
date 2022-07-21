@@ -6,10 +6,10 @@ end
 
 dap.adapters.codelldb = {
   type = "server",
-  port = "13123", -- 💀 Use the port printed out or specified with `--port`
+  port = "${port}", -- 💀 Use the port printed out or specified with `--port`
   executable = {
     command = vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/adapter/codelldb",
-    args = { "--port", "13123" },
+    args = { "--port", "${port}" },
   },
 }
 
