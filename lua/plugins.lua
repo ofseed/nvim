@@ -871,6 +871,7 @@ return packer.startup {
       config = function()
         require "language.rust-tools"
       end,
+      branch = "modularize_and_inlay_rewrite",
     }
 
     use {
