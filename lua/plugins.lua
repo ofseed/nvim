@@ -30,6 +30,7 @@ return packer.startup {
         require "core.lspconfig"
       end,
       requires = { "mason.nvim" },
+      after = "mason.nvim",
     }
 
     use {
