@@ -10,13 +10,18 @@ if not ok then
   return
 end
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  underline = true,
-  update_in_insert = false,
-  virtual_text = { spacing = 5, prefix = "●", severity_limit = "Warning" },
+-- Set diagnostic options
+vim.diagnostic.config {
+  virtual_text = {
+    spacing = 5,
+    prefix = "●",
+    severity = vim.diagnostic.severity.WARN,
+  },
+  update_in_insert = true,
   severity_sort = true,
-})
+}
 
+-- Set diagnostic icons
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
