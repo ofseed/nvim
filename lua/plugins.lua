@@ -106,6 +106,11 @@ return packer.startup {
         require "core.filetype"
       end,
     }
+
+    use {
+      "ii14/emmylua-nvim",
+      opt = true,
+    }
     -- }}}
 
     -- Text Editing {{{
@@ -129,7 +134,6 @@ return packer.startup {
         { "hrsh7th/cmp-path" },
         { "hrsh7th/cmp-cmdline" },
         { "hrsh7th/cmp-calc" },
-        { "hrsh7th/cmp-nvim-lua" },
         { "kdheepak/cmp-latex-symbols" },
         { "saadparwaiz1/cmp_luasnip" },
         { "kristijanhusak/vim-dadbod-completion" },

@@ -5,5 +5,10 @@
   },
   "diagnostics": {
     "globals": [ "vim" ]
+  },
+  "workspace": {
+    "library": [
+      "$HOME/.local/share/nvim/site/pack/packer/opt/emmylua-nvim"
+    ]
   }
 }
