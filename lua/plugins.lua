@@ -29,7 +29,7 @@ return packer.startup {
       config = function()
         require "core.lspconfig"
       end,
-      requires = { "mason.nvim" },
+      requires = { "williamboman/mason-lspconfig.nvim" },
       after = "mason.nvim",
     }
 
