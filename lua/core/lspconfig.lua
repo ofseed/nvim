@@ -13,11 +13,14 @@ end
 -- Set diagnostic options
 vim.diagnostic.config {
   virtual_text = {
-    spacing = 5,
+    spacing = 4,
     prefix = "●",
     severity = vim.diagnostic.severity.WARN,
   },
-  update_in_insert = true,
+  float = {
+    severity_sort = true,
+    source = "if_many",
+  },
   severity_sort = true,
 }
 
