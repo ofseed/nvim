@@ -726,6 +726,7 @@ return packer.startup {
         { "nvim-telescope/telescope-project.nvim" },
         { "nvim-telescope/telescope-media-files.nvim" },
         { "nvim-telescope/telescope-dap.nvim" },
+        { "benfowler/telescope-luasnip.nvim" },
       },
       branch = "0.1.x",
     }

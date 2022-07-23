@@ -11,6 +11,7 @@ local extensions = {
   "media_files",
   "notify",
   "dap",
+  "luasnip",
 }
 
 -- Hot-reloaded function for telescope-hop
@@ -149,3 +150,4 @@ vim.keymap.set("n", "<leader>fdc", require("telescope").extensions.dap.configura
 vim.keymap.set("n", "<leader>fdb", require("telescope").extensions.dap.list_breakpoints, { desc = "Breakpoints" })
 vim.keymap.set("n", "<leader>fdv", require("telescope").extensions.dap.variables, { desc = "Variables" })
 vim.keymap.set("n", "<leader>fdf", require("telescope").extensions.dap.frames, { desc = "Frames" })
+vim.keymap.set("n", "<leader>fs", require("telescope").extensions.luasnip.luasnip, { desc = "Snippets" })
