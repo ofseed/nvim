@@ -150,7 +150,6 @@ return packer.startup {
 
     use {
       "rafamadriz/friendly-snippets",
-      disable = true,
     }
 
     use {
