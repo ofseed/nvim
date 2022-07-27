@@ -4,7 +4,7 @@ if not ok then
   return
 end
 
-dap.setup "/usr/bin/python3"
+dap.setup(vim.fn.stdpath "data" .. "/mason/packages/debugpy/venv/bin/python")
 
 vim.keymap.set("n", "<leader>dn", require("dap-python").test_method, { desc = "Test method" })
 vim.keymap.set("n", "<leader>df", require("dap-python").test_class, { desc = "Test class" })
