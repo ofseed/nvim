@@ -37,7 +37,7 @@ dapui.setup {
     },
     {
       elements = {
-        "repl",
+        -- "repl",
         "console",
       },
       size = 10,
