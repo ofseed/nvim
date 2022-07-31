@@ -59,6 +59,7 @@ lualine.setup {
     component_separators = { left = "", right = "" },
   },
   extensions = {
+    "man",
     "nvim-tree",
     "neo-tree",
     "toggleterm",
