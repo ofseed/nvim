@@ -71,7 +71,7 @@ M.on_attach = function(client, bufnr)
 
   navic.attach(client, bufnr)
   illuminate.on_attach(client)
-  aerial.on_attach(client)
+  aerial.on_attach(client, bufnr)
   -- require("virtualtypes").on_attach(client)
 end
 
