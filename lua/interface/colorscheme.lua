@@ -73,16 +73,17 @@ if ok then
       lsp_saga = false,
       gitgutter = false,
       gitsigns = true,
+      leap = false,
       telescope = true,
-      nvimtree = {
-        enabled = true,
-        show_root = true,
-        transparent_panel = false,
-      },
+      nvimtree = false,
       neotree = {
         enabled = false,
         show_root = true,
         transparent_panel = false,
+      },
+      dap = {
+        enabled = false,
+        enable_ui = false,
       },
       which_key = true,
       indent_blankline = {
@@ -94,7 +95,11 @@ if ok then
       vim_sneak = false,
       fern = false,
       barbar = false,
-      bufferline = true,
+      bufferline = {
+        enabled = true,
+        italics = true,
+        bolds = true,
+      },
       markdown = true,
       lightspeed = false,
       ts_rainbow = true,
@@ -103,7 +108,14 @@ if ok then
       telekasten = false,
       symbols_outline = true,
       mini = false,
+      aerial = false,
+      vimwiki = true,
+      beacon = true,
+      navic = true,
+      overseer = false,
     },
+    color_overrides = {},
+    highlight_overrides = {},
   }
 
   vim.api.nvim_create_autocmd("User", {
