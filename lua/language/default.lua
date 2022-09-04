@@ -20,9 +20,14 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+-- Enable LSP folddingRange capability
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
+
 -- Add additional capabilities supported by nvim-cmp
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
--- capabilities.textDocument.codeLens = true
 
 M.on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>

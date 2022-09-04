@@ -252,6 +252,14 @@ return packer.startup {
     }
 
     use {
+      "kevinhwang91/nvim-ufo",
+      config = function()
+        require "interface.ufo"
+      end,
+      requires = "kevinhwang91/promise-async",
+    }
+
+    use {
       "anuvyklack/pretty-fold.nvim",
       config = function()
         require "interface.pretty-fold"
