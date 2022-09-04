@@ -10,6 +10,12 @@ if not ok then
   return
 end
 
+local ok, color = pcall(require, "document-color")
+if not ok then
+  vim.notify "Could not load document-color"
+  return
+end
+
 -- Set diagnostic options
 vim.diagnostic.config {
   virtual_text = {
@@ -75,6 +81,22 @@ mason.setup_handlers {
         client.resolved_capabilities.document_formatting = false
       end,
       capabilities = default.capabilities,
+    }
+  end,
+
+  tailwindcss = function()
+    local capabilities = default.capabilities
+
+    capabilities.textDocument.colorProvider = {
+      dynamicRegistration = false,
+    }
+
+    lspconfig.tailwindcss.setup {
+      on_attach = function(client, bufnr)
+        default.on_attach(client, bufnr)
+        color.buf_attach(bufnr)
+      end,
+      capabilities = capabilities,
     }
   end,
 }

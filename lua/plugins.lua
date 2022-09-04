@@ -311,6 +311,14 @@ return packer.startup {
     }
 
     use {
+      "mrshmllow/document-color.nvim",
+      config = function()
+        require "interface.document-color"
+      end,
+      --TODO: https://github.com/neovim/neovim/pull/9496
+    }
+
+    use {
       "goolord/alpha-nvim",
       config = function()
         require "interface.alpha"
