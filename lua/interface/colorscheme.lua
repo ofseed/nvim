@@ -73,17 +73,16 @@ if ok then
       lsp_saga = false,
       gitgutter = false,
       gitsigns = true,
-      leap = false,
       telescope = true,
       nvimtree = false,
+      dap = {
+        enabled = false,
+        enable_ui = false,
+      },
       neotree = {
         enabled = false,
         show_root = true,
         transparent_panel = false,
-      },
-      dap = {
-        enabled = false,
-        enable_ui = false,
       },
       which_key = true,
       indent_blankline = {
@@ -95,13 +94,9 @@ if ok then
       vim_sneak = false,
       fern = false,
       barbar = false,
-      bufferline = {
-        enabled = true,
-        italics = true,
-        bolds = true,
-      },
       markdown = true,
       lightspeed = false,
+      leap = false,
       ts_rainbow = true,
       hop = true,
       notify = true,
@@ -111,8 +106,13 @@ if ok then
       aerial = false,
       vimwiki = true,
       beacon = true,
-      navic = true,
+      navic = {
+        enabled = true,
+        custom_bg = "NONE",
+      },
       overseer = false,
+      fidget = false,
+      treesitter_context = false,
     },
     color_overrides = {},
     highlight_overrides = {},
@@ -130,7 +130,7 @@ if ok then
     command = "source <afile> | CatppuccinCompile",
   })
 
-  vim.g.catppuccin_flavour = "mocha"
+  vim.g.catppuccin_flavour = "latte"
 end
 
 vim.cmd "colorscheme catppuccin"
