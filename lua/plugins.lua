@@ -260,21 +260,6 @@ return packer.startup {
     }
 
     use {
-      "anuvyklack/pretty-fold.nvim",
-      config = function()
-        require "interface.pretty-fold"
-      end,
-      requires = { "anuvyklack/nvim-keymap-amend" },
-    }
-
-    use {
-      "anuvyklack/fold-preview.nvim",
-      config = function()
-        require "interface.fold-preview"
-      end,
-    }
-
-    use {
       "m-demare/hlargs.nvim",
       config = function()
         require "interface.hlargs"
