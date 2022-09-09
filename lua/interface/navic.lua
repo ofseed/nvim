@@ -3,6 +3,8 @@ if not ok then
   vim.notify "Could not load navic"
 end
 
+vim.g.navic_silence = true
+
 navic.setup {
   icons = {
     File = " ",
