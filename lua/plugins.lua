@@ -519,7 +519,6 @@ return packer.startup {
         require "tool.tree"
       end,
       requires = { "kyazdani42/nvim-web-devicons" },
-      disable = true,
     }
 
     use {
@@ -543,6 +542,7 @@ return packer.startup {
         "MunifTanjim/nui.nvim",
         "s1n7ax/nvim-window-picker",
       },
+      disable = true,
     }
 
     use {

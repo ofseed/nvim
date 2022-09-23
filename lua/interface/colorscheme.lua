@@ -51,7 +51,7 @@ if ok then
       operators = {},
     },
     integrations = {
-      aerial = false,
+      aerial = true,
       barbar = false,
       beacon = false,
       cmp = true,
@@ -71,7 +71,7 @@ if ok then
       mini = false,
       neogit = true,
       notify = true,
-      nvimtree = false,
+      nvimtree = true,
       overseer = false,
       pounce = false,
       symbols_outline = false,

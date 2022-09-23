@@ -15,16 +15,24 @@ tree.setup {
   open_on_setup = false,
   open_on_setup_file = false,
   open_on_tab = false,
+  focus_empty_on_setup = false,
+  ignore_buf_on_tab_change = {},
   sort_by = "name",
-  update_cwd = true,
+  root_dirs = {},
+  prefer_startup_root = false,
+  sync_root_with_cwd = true,
   reload_on_bufenter = false,
   respect_buf_cwd = true,
+  on_attach = "disable",
+  remove_keymaps = false,
+  select_prompts = false,
   view = {
+    adaptive_size = false,
+    centralize_selection = false,
     width = function()
       local columns = vim.go.columns
       return math.floor(columns * 0.2) > 25 and math.floor(columns * 0.2) or 25
     end,
-    height = 30,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
@@ -37,18 +45,34 @@ tree.setup {
         -- user mappings go here
       },
     },
+    float = {
+      enable = false,
+      open_win_config = {
+        relative = "editor",
+        border = "rounded",
+        width = 30,
+        height = 30,
+        row = 1,
+        col = 1,
+      },
+    },
   },
   renderer = {
     add_trailing = false,
     group_empty = false,
     highlight_git = false,
+    full_name = false,
     highlight_opened_files = "none",
     root_folder_modifier = ":~",
+    indent_width = 2,
     indent_markers = {
       enable = true,
+      inline_arrows = true,
       icons = {
         corner = "└",
         edge = "│",
+        item = "│",
+        bottom = "─",
         none = " ",
       },
     },
@@ -66,6 +90,7 @@ tree.setup {
       glyphs = {
         default = "",
         symlink = "",
+        bookmark = "",
         folder = {
           arrow_closed = "",
           arrow_open = "",
@@ -88,6 +113,7 @@ tree.setup {
       },
     },
     special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+    symlink_destination = true,
   },
   hijack_directories = {
     enable = true,
@@ -95,7 +121,7 @@ tree.setup {
   },
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_root = true,
     ignore_list = {},
   },
   ignore_ft_on_setup = {},
@@ -106,6 +132,7 @@ tree.setup {
   diagnostics = {
     enable = true,
     show_on_dirs = false,
+    debounce_delay = 50,
     icons = {
       hint = "",
       info = "",
@@ -118,9 +145,14 @@ tree.setup {
     custom = {},
     exclude = {},
   },
+  filesystem_watchers = {
+    enable = true,
+    debounce_delay = 50,
+  },
   git = {
     enable = true,
     ignore = false,
+    show_on_dirs = true,
     timeout = 500,
   },
   actions = {
@@ -129,6 +161,19 @@ tree.setup {
       enable = true,
       global = false,
       restrict_above_cwd = false,
+    },
+    expand_all = {
+      max_folder_discovery = 300,
+      exclude = {},
+    },
+    file_popup = {
+      open_win_config = {
+        col = 1,
+        row = 1,
+        relative = "cursor",
+        border = "shadow",
+        style = "minimal",
+      },
     },
     open_file = {
       quit_on_open = false,
@@ -142,9 +187,12 @@ tree.setup {
         },
       },
     },
+    remove_file = {
+      close_window = true,
+    },
   },
   trash = {
-    cmd = "trash",
+    cmd = "gio trash",
     require_confirm = true,
   },
   live_filter = {
@@ -158,9 +206,11 @@ tree.setup {
       all = false,
       config = false,
       copy_paste = false,
+      dev = false,
       diagnostics = false,
       git = false,
       profile = false,
+      watcher = false,
     },
   },
 }
