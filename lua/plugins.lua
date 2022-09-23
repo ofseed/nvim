@@ -711,6 +711,14 @@ return packer.startup {
       requires = { "nvim-telescope/telescope.nvim" },
       disable = true,
     }
+
+    use {
+      "rest-nvim/rest.nvim",
+      config = function()
+        require "tool.rest"
+      end,
+      ft = { "http" },
+    }
     -- }}}
 
     -- Efficiency Improvement {{{
