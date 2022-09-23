@@ -134,7 +134,7 @@ if ok then
     command = "source <afile> | CatppuccinCompile",
   })
 
-  vim.g.catppuccin_flavour = "latte"
+  vim.g.catppuccin_flavour = "mocha"
 end
 
 vim.cmd "colorscheme catppuccin"
