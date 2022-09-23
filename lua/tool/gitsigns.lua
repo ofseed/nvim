@@ -85,11 +85,3 @@ gitsigns.setup {
     vim.keymap.set({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
   end,
 }
-
-vim.cmd [[
-hi link GitSignsChangeLn DiffText
-hi link GitSignsAddInline GitSignsAddLn
-hi link GitSignsDeleteInline GitSignsDeleteLn
-hi link GitSignsChangeInline GitSignsChangeLn
-hi link GitSignsDeleteLn DiffDelete
-]]
