@@ -6,8 +6,9 @@ end
 
 local default = require "language.default"
 
-local capabilities = default.capabilities
-capabilities.offsetEncoding = "utf-8"
+local capabilities = vim.tbl_extend("force", default.capabilities, {
+  offsetEncoding = "utf-8",
+})
 
 extensions.setup {
   server = {
