@@ -15,7 +15,7 @@ gitsigns.setup {
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
   numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
   linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
-  word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+  word_diff = true, -- Toggle with `:Gitsigns toggle_word_diff`
   watch_gitdir = {
     interval = 1000,
     follow_files = true,
@@ -85,3 +85,11 @@ gitsigns.setup {
     vim.keymap.set({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>")
   end,
 }
+
+vim.cmd [[
+hi link GitSignsChangeLn DiffText
+hi link GitSignsAddInline GitSignsAddLn
+hi link GitSignsDeleteInline GitSignsDeleteLn
+hi link GitSignsChangeInline GitSignsChangeLn
+hi link GitSignsDeleteLn DiffDelete
+]]
