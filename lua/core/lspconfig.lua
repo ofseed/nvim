@@ -84,6 +84,20 @@ mason.setup_handlers {
     }
   end,
 
+  pyright = function()
+    lspconfig.pyright.setup {
+      on_attach = default.on_attach,
+      capabilities = default.capabilities,
+      settings = {
+        python = {
+          analysis = {
+            typeCheckingMode = "off",
+          },
+        },
+      },
+    }
+  end,
+
   tailwindcss = function()
     local capabilities = default.capabilities
 
