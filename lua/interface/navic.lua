@@ -39,3 +39,5 @@ navic.setup {
   depth_limit = 0,
   depth_limit_indicator = "..",
 }
+
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"

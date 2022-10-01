@@ -4,12 +4,6 @@ if not ok then
   return
 end
 
-local ok, navic = pcall(require, "nvim-navic")
-if not ok then
-  vim.notify "Could not load navic"
-  return
-end
-
 local function diff_source()
   local gitsigns = vim.b.gitsigns_status_dict
   if gitsigns then
@@ -35,9 +29,6 @@ lualine.setup {
       { "b:gitsigns_head", icon = "" },
       { "diff", source = diff_source },
       "diagnostics",
-    },
-    lualine_c = {
-      { navic.get_location, cond = navic.is_available },
     },
     lualine_x = {
       "copilot",
