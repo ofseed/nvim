@@ -20,17 +20,28 @@ fidget.setup {
     fidget_decay = 2000, -- how long to keep around empty fidget, in ms
     task_decay = 1000, -- how long to keep around completed task, in ms
   },
+  window = {
+    relative = "win", -- where to anchor, either "win" or "editor"
+    blend = 100, -- &winblend for the window
+    zindex = nil, -- the zindex value for the window
+  },
   fmt = {
     leftpad = true, -- right-justify text in fidget box
     stack_upwards = true, -- list of tasks grows upwards
-    fidget = function(fidget_name, spinner) -- function to format fidget title
+    max_width = 0, -- maximum width of the fidget box
+    -- function to format fidget title
+    fidget = function(fidget_name, spinner)
       return string.format("%s %s", spinner, fidget_name)
     end,
-    task = function(task_name, message, percentage) -- function to format each task line
+    -- function to format each task line
+    task = function(task_name, message, percentage)
       return string.format("%s%s [%s]", message, percentage and string.format(" (%s%%)", percentage) or "", task_name)
     end,
   },
+  sources = { -- Sources to configure
+  },
   debug = {
     logging = false, -- whether to enable logging, for debugging
+    strict = false, -- whether to interpret LSP strictly
   },
 }
