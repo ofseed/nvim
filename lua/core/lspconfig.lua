@@ -78,7 +78,7 @@ mason.setup_handlers {
     lspconfig.sumneko_lua.setup {
       on_attach = function(client, bufnr)
         default.on_attach(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
       end,
       capabilities = default.capabilities,
     }

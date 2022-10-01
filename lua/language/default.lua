@@ -46,12 +46,14 @@ M.on_attach = function(client, bufnr)
   vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { buffer = bufnr, desc = "Implementation" })
   vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, desc = "References" })
 
-  vim.keymap.set("n", "<leader>F", vim.lsp.buf.formatting, { buffer = bufnr, desc = "Format document" })
-
   vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, { buffer = bufnr, desc = "Rename" })
   vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code action" })
   vim.keymap.set("n", "<leader>ll", vim.diagnostic.setloclist, { buffer = bufnr, desc = "Diagnostic list" })
   vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { buffer = bufnr, desc = "Diagnostic float" })
+
+  vim.keymap.set("n", "<leader>F", function()
+    vim.lsp.buf.format { async = true }
+  end, { buffer = bufnr, desc = "Format document" })
 
   vim.keymap.set(
     "n",
