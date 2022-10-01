@@ -345,6 +345,7 @@ return packer.startup {
       config = function()
         require "interface.treesitter-context"
       end,
+      disable = true, -- Disable because it is not using LSP, navic instead
     }
 
     use {
