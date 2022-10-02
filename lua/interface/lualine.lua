@@ -4,6 +4,11 @@ if not ok then
   return
 end
 
+local ok, navic = pcall(require, "nvim-navic")
+if not ok then
+  vim.notify "Could not load navic"
+end
+
 local function diff_source()
   local gitsigns = vim.b.gitsigns_status_dict
   if gitsigns then
@@ -23,6 +28,10 @@ local function indent()
   end
 end
 
+local function is_file()
+  return vim.bo.buftype ~= "nofile"
+end
+
 lualine.setup {
   sections = {
     lualine_b = {
@@ -36,6 +45,19 @@ lualine.setup {
       indent,
       "encoding",
       "fileformat",
+    },
+  },
+  winbar = {
+    lualine_b = {
+      { "filename", cond = is_file },
+    },
+    lualine_c = {
+      { navic.get_location, cond = navic.is_available },
+    },
+  },
+  inactive_winbar = {
+    lualine_b = {
+      { "filename", cond = is_file },
     },
   },
   options = {
