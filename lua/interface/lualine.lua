@@ -21,14 +21,42 @@ local function is_file()
   return vim.bo.buftype ~= "nofile"
 end
 
+local function lsp()
+  local clients = vim.lsp.buf_get_clients()
+  if #clients == 0 then
+    return ""
+  end
+  local names = {}
+  local ignored = { "null-ls", "copilot" }
+  for _, client in ipairs(clients) do
+    if not vim.tbl_contains(ignored, client.name) then
+      table.insert(names, client.name)
+    end
+  end
+  local msg = table.concat(names, ", ")
+  if msg == "" then
+    return ""
+  else
+    return " " .. msg
+  end
+end
+
 lualine.setup {
   sections = {
+    lualine_c = {
+      lsp,
+    },
     lualine_x = {
       "copilot",
       "filetype",
       indent,
       "encoding",
       "fileformat",
+    },
+  },
+  inactive_sections = {
+    lualine_c = {
+      lsp,
     },
   },
   winbar = {
