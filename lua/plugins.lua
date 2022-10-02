@@ -160,9 +160,12 @@ return packer.startup {
       end,
     }
 
-    use { "tpope/vim-surround" }
-
-    use { "tpope/vim-repeat" }
+    use {
+      "kylechui/nvim-surround",
+      config = function()
+        require "edit.surround"
+      end,
+    }
 
     use {
       "lewis6991/spellsitter.nvim",
