@@ -19,7 +19,7 @@ lspconfig.jsonls.setup {
   },
   on_attach = function(client, bufnr)
     default.on_attach(client, bufnr)
-    client.server_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
   end,
   capabilities = default.capabilities,
 }
