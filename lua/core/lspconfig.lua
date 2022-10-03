@@ -84,6 +84,16 @@ mason.setup_handlers {
     }
   end,
 
+  volar = function()
+    lspconfig.volar.setup {
+      on_attach = function(client, bufnr)
+        default.on_attach(client, bufnr)
+        client.server_capabilities.documentFormattingProvider = false
+      end,
+      capabilities = default.capabilities,
+    }
+  end,
+
   pyright = function()
     lspconfig.pyright.setup {
       on_attach = default.on_attach,
