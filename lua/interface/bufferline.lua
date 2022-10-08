@@ -47,17 +47,7 @@ bufferline.setup {
       return "(" .. count .. ")"
     end,
     -- NOTE: this will be called a lot so don't do any heavy processing here
-    custom_filter = function(buf_number, buf_numbers)
-      -- Show buffers if they are in the current tabpage
-      if vim.tbl_contains(vim.fn.tabpagebuflist(), buf_number) then
-        return true
-      end
-
-      -- Show buffers if they are modified
-      if vim.bo[buf_number].modified then
-        return true
-      end
-    end,
+    custom_filter = nil,
     offsets = {
       { filetype = "NvimTree", text = "File Explorer", text_align = "center", saperator = true },
       { filetype = "Outline", text = "Outline", text_align = "center", saperator = true },
