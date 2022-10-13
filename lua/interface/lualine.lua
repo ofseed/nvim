@@ -76,7 +76,13 @@ lualine.setup {
     icons_enabled = true,
     theme = "auto",
     disabled_filetypes = {
-      "alpha",
+      statusline = {
+        "alpha",
+      },
+      winbar = {
+        "toggleterm",
+        "dap-repl",
+      },
     },
     always_divide_middle = true,
     globalstatus = false,
