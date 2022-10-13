@@ -264,6 +264,13 @@ return packer.startup {
     }
 
     use {
+      "kevinhwang91/nvim-hlslens",
+      config = function()
+        require "interface.hlslens"
+      end,
+    }
+
+    use {
       "m-demare/hlargs.nvim",
       config = function()
         require "interface.hlargs"
