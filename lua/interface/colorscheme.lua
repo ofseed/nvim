@@ -67,6 +67,7 @@ if ok then
       lightspeed = false,
       lsp_saga = false,
       lsp_trouble = false,
+      mason = true,
       markdown = true,
       mini = false,
       neogit = true,
