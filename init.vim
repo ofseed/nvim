@@ -47,9 +47,6 @@ let mapleader=" "
 cmap <C-p> <Up>
 cmap <C-n> <Down>
 
-" Filetype
-autocmd BufNewFile,BufRead .clang-tidy set filetype=yaml
-
 " Fcitx5 auto switch
 " Every time exit insert mode, automatically close fcitx5
 autocmd InsertLeave * :silent !fcitx5-remote -c
