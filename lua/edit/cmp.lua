@@ -25,6 +25,7 @@ cmp.setup {
   window = {
     completion = {
       border = "rounded",
+      col_offset = -3,
     },
     documentation = {
       border = "rounded",
