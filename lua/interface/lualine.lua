@@ -91,6 +91,7 @@ lualine.setup {
   },
   extensions = {
     "man",
+    "quickfix",
     "nvim-tree",
     "neo-tree",
     "toggleterm",
