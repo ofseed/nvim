@@ -753,6 +753,7 @@ return packer.startup {
         { "nvim-lua/popup.nvim" },
         { "nvim-lua/plenary.nvim" },
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+        { "nvim-telescope/telescope-live-grep-args.nvim" },
         { "nvim-telescope/telescope-hop.nvim" },
         { "nvim-telescope/telescope-project.nvim" },
         { "nvim-telescope/telescope-media-files.nvim" },

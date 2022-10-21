@@ -6,6 +6,7 @@ end
 
 local extensions = {
   "fzf",
+  "live_grep_args",
   "hop",
   "project",
   "media_files",
@@ -102,6 +103,9 @@ telescope.setup {
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       -- the default case_mode is "smart_case"
     },
+    live_grep_args = {
+      theme = "dropdown",
+    },
     hop = {
       -- the shown `keys` are the defaults, no need to set `keys` if defaults work for you ;)
       -- keys = {
@@ -138,10 +142,10 @@ for i = 1, #extensions do
 end
 
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Find files" })
-vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live grep" })
 vim.keymap.set("n", "<leader>f?", require("telescope.builtin").help_tags, { desc = "Help tags" })
 vim.keymap.set("n", "<leader>fh", require("telescope.builtin").oldfiles, { desc = "Old files" })
 vim.keymap.set("n", "<leader>fb", require("telescope.builtin").marks, { desc = "Marks" })
+vim.keymap.set("n", "<leader>fg", require("telescope").extensions.live_grep_args.live_grep_args, { desc = "Live grep" })
 vim.keymap.set("n", "<leader>fp", require("telescope").extensions.project.project, { desc = "Project" })
 vim.keymap.set("n", "<leader>fm", require("telescope").extensions.media_files.media_files, { desc = "Media files" })
 vim.keymap.set("n", "<leader>fn", require("telescope").extensions.notify.notify, { desc = "Notify" })
