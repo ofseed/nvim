@@ -1,3 +1,11 @@
+local ok, hlslens = pcall(require, "hlslens")
+if not ok then
+  vim.notify "Could not load hlslens"
+  return
+end
+
+hlslens.setup {}
+
 vim.keymap.set(
   "n",
   "n",
