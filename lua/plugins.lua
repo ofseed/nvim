@@ -306,6 +306,8 @@ return packer.startup {
       config = function()
         require "interface.lsp_signature"
       end,
+      disable = true,
+      -- Unknow reason causes unknown errors
     }
 
     use {
@@ -587,6 +589,14 @@ return packer.startup {
       config = function()
         require "tool.aerial"
       end,
+    }
+
+    use {
+      "gorbit99/codewindow.nvim",
+      config = function()
+        require "tool.codewindow"
+      end,
+      disable = true,
     }
 
     use {
