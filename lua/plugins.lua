@@ -724,7 +724,7 @@ return packer.startup {
         require "tool.org-bullets"
       end,
       ft = { "org" },
-      diable = true,
+      disable = true,
       -- Disable with orgmode
     }
 
