@@ -208,6 +208,7 @@ tools.setup {
       ["rust-analyzer"] = {
         checkOnSave = {
           command = "clippy",
+          allTargets = false,
         },
       },
     },
