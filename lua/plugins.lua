@@ -341,14 +341,6 @@ return packer.startup {
     }
 
     use {
-      "mrshmllow/document-color.nvim",
-      config = function()
-        require "interface.document-color"
-      end,
-      --TODO: https://github.com/neovim/neovim/pull/9496
-    }
-
-    use {
       "goolord/alpha-nvim",
       config = function()
         require "interface.alpha"
@@ -375,13 +367,6 @@ return packer.startup {
         require "interface.treesitter-context"
       end,
       disable = true, -- Disable because it is not using LSP, navic instead
-    }
-
-    use {
-      "norcalli/nvim-colorizer.lua",
-      config = function()
-        require "interface.colorizer"
-      end,
     }
 
     use { "dstein64/nvim-scrollview" }
