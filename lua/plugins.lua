@@ -650,6 +650,10 @@ return packer.startup {
     }
 
     use {
+      "tpope/vim-fugitive",
+    }
+
+    use {
       "aserowy/tmux.nvim",
       config = function()
         require "tool.tmux"
