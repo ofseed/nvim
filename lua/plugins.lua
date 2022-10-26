@@ -536,7 +536,7 @@ return packer.startup {
 
     -- Tool Integration {{{
     use {
-      "kyazdani42/nvim-tree.lua",
+      "nvim-tree/nvim-tree.lua",
       config = function()
         require "tool.tree"
       end,
