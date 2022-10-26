@@ -369,6 +369,13 @@ return packer.startup {
       disable = true, -- Disable because it is not using LSP, navic instead
     }
 
+    use {
+      "uga-rosa/ccc.nvim",
+      config = function()
+        require "interface.ccc"
+      end,
+    }
+
     use { "dstein64/nvim-scrollview" }
 
     use {
