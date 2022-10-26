@@ -14,12 +14,9 @@ noice.setup {
       -- view: (default is cmdline view)
       -- opts: any options passed to the view
       -- icon_hl_group: optional hl_group for the icon
-      cmdline = { pattern = "^:", icon = "", lang = "vim" },
-      search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
-      search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
-      filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
-      lua = { pattern = "^:%s*lua%s+", icon = "", lang = "lua" },
-      help = { pattern = "^:%s*h%s+", icon = "" },
+      cmdline = { pattern = "^:", icon = " :", lang = "vim" },
+      search_down = { kind = "search", pattern = "^/", icon = " /", lang = "regex" },
+      search_up = { kind = "search", pattern = "^%?", icon = " ?", lang = "regex" },
       input = {}, -- Used by input()
       -- lua = false, -- to disable a format, set to `false`
     },
@@ -35,7 +32,7 @@ noice.setup {
     view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
   },
   popupmenu = {
-    enabled = true, -- enables the Noice popupmenu UI
+    enabled = false, -- enables the Noice popupmenu UI
     backend = "nui", -- backend to use to show regular cmdline completions
     -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
     kind_icons = {}, -- set to `false` to disable icons
@@ -56,7 +53,7 @@ noice.setup {
     view = "notify",
   },
   lsp_progress = {
-    enabled = true,
+    enabled = false,
     -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
     -- See the section on formatting for more details on how to customize.
     format = "lsp_progress",
