@@ -633,8 +633,6 @@ return packer.startup {
         "sindrets/diffview.nvim",
       },
       cmd = { "Neogit" },
-      commit = "691cf89f59ed887809db7854b670cdb944dc9559",
-      -- FIXME: https://github.com/TimUntersberger/neogit/issues/379
     }
 
     use {
