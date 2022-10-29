@@ -67,3 +67,6 @@ noice.setup {
   status = {}, --- @see section on statusline components
   format = {}, --- @see section on formatting
 }
+
+vim.g.sleuth_noice_heuristics = 0
+-- https://github.com/folke/noice.nvim/issues/139
