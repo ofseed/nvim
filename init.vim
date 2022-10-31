@@ -73,6 +73,8 @@ augroup END
 "   autocmd VimLeave,VimSuspend * set guicursor=a:ver25-blinkon100
 " augroup END
 
+colorscheme desert
+
 " Neovim
 if has("nvim")
   lua require "init"

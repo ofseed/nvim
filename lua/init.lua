@@ -18,7 +18,6 @@ end
 
 -- Load colorscheme after plugins are loaded
 -- Only the configuration started the second time takes effect for the bufferline
-vim.cmd "colorscheme desert" -- Best of buit-in colorschemes
 vim.cmd "colorscheme catppuccin"
 
 -- set custom hilight after colorscheme is loaded
