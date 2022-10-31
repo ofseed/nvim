@@ -5,6 +5,7 @@ if ok then
   impatient.enable_profile()
 end
 
+require "hilight"
 require "plugins"
 require "keymaps"
 
