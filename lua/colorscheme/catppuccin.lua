@@ -104,15 +104,8 @@ catppuccin.setup {
   highlight_overrides = {},
 }
 
-vim.api.nvim_create_autocmd("User", {
-  pattern = "PackerCompileDone",
-  callback = function()
-    vim.cmd "CatppuccinCompile"
-  end,
-})
-
 vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "colorscheme.lua",
+  pattern = "catppuccin.lua",
   command = "source <afile> | CatppuccinCompile",
 })
 
