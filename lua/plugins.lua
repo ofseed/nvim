@@ -513,7 +513,7 @@ return packer.startup {
 
     use {
       -- "EdenEast/nightfox.nvim",
-      "catppuccin/nvim",
+      -- "catppuccin/nvim",
       -- "folke/tokyonight.nvim",
       -- "navarasu/onedark.nvim",
       -- "Mofiqul/vscode.nvim",
@@ -525,12 +525,23 @@ return packer.startup {
       -- "shaunsingh/moonlight.nvim",
       -- "shaunsingh/nord.nvim",
       -- commit = "d83145614e8082b24a001643f1c6c00c0ea9aaef", -- After this commit, nightfox has changed a lot
+      -- as = "catppuccin",
+      -- config = function()
+      --   require "interface.colorscheme"
+      -- end,
+      -- run = ":CatppuccinCompile",
+      -- requires = { "rktjmp/lush.nvim" }, -- Required by gruvbox
+    }
+    -- }}}
+
+    -- {{{ Colorscheme
+    use {
+      "catppuccin/nvim",
       as = "catppuccin",
       config = function()
-        require "interface.colorscheme"
+        require "colorscheme.catppuccin"
       end,
       run = ":CatppuccinCompile",
-      -- requires = { "rktjmp/lush.nvim" }, -- Required by gruvbox
     }
     -- }}}
 
