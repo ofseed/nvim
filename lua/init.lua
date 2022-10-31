@@ -16,3 +16,8 @@ local ok, packer_compiled = pcall(require, "packer_compiled")
 if not ok then
   vim.cmd "PackerSync"
 end
+
+-- Load colorscheme after plugins are loaded
+-- Only the configuration started the second time takes effect for the bufferline
+vim.cmd "colorscheme desert" -- Best of buit-in colorschemes
+vim.cmd "colorscheme catppuccin"

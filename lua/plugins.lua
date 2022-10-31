@@ -243,7 +243,6 @@ return packer.startup {
         require "interface.bufferline"
       end,
       requires = { "kyazdani42/nvim-web-devicons" },
-      after = { "catppuccin" },
     }
 
     use {
