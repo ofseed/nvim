@@ -510,28 +510,6 @@ return packer.startup {
       end,
       disable = true,
     }
-
-    use {
-      -- "EdenEast/nightfox.nvim",
-      -- "catppuccin/nvim",
-      -- "folke/tokyonight.nvim",
-      -- "navarasu/onedark.nvim",
-      -- "Mofiqul/vscode.nvim",
-      -- "Mofiqul/dracula.nvim",
-      -- "projekt0n/github-nvim-theme",
-      -- "tanvirtin/monokai.nvim",
-      -- "ellisonleao/gruvbox.nvim",
-      -- "shaunsingh/solarized.nvim",
-      -- "shaunsingh/moonlight.nvim",
-      -- "shaunsingh/nord.nvim",
-      -- commit = "d83145614e8082b24a001643f1c6c00c0ea9aaef", -- After this commit, nightfox has changed a lot
-      -- as = "catppuccin",
-      -- config = function()
-      --   require "interface.colorscheme"
-      -- end,
-      -- run = ":CatppuccinCompile",
-      -- requires = { "rktjmp/lush.nvim" }, -- Required by gruvbox
-    }
     -- }}}
 
     -- {{{ Colorscheme
