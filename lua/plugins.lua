@@ -543,6 +543,20 @@ return packer.startup {
       end,
       run = ":CatppuccinCompile",
     }
+
+    use {
+      "folke/tokyonight.nvim",
+      config = function()
+        require "colorscheme.tokyonight"
+      end,
+    }
+
+    use {
+      "ellisonleao/gruvbox.nvim",
+      config = function()
+        require "colorscheme.gruvbox"
+      end,
+    }
     -- }}}
 
     -- Tool Integration {{{
