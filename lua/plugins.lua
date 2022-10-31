@@ -552,6 +552,14 @@ return packer.startup {
     }
 
     use {
+      "rose-pine/neovim",
+      as = "rose-pine",
+      config = function()
+        require "colorscheme.rose-pine"
+      end,
+    }
+
+    use {
       "navarasu/onedark.nvim",
       config = function()
         require "colorscheme.onedark"
