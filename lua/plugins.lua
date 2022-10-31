@@ -552,6 +552,13 @@ return packer.startup {
     }
 
     use {
+      "navarasu/onedark.nvim",
+      config = function()
+        require "colorscheme.onedark"
+      end,
+    }
+
+    use {
       "ellisonleao/gruvbox.nvim",
       config = function()
         require "colorscheme.gruvbox"
