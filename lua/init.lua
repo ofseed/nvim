@@ -5,7 +5,6 @@ if ok then
   impatient.enable_profile()
 end
 
-require "hilight"
 require "plugins"
 require "keymaps"
 
@@ -21,3 +20,6 @@ end
 -- Only the configuration started the second time takes effect for the bufferline
 vim.cmd "colorscheme desert" -- Best of buit-in colorschemes
 vim.cmd "colorscheme catppuccin"
+
+-- set custom hilight after colorscheme is loaded
+require "hilight"
