@@ -4,12 +4,6 @@ if not ok then
   return
 end
 
-local ok, catppuccin = pcall(require, "catppuccin.groups.integrations.bufferline")
-if not ok then
-  vim.notify "Could not load catppuccin"
-  return
-end
-
 bufferline.setup {
   options = {
     mode = "buffers", -- set to "tabs" to only show tabpages instead
@@ -74,7 +68,6 @@ bufferline.setup {
     -- add custom logic
     --   return buffer_a.modified > buffer_b.modified
     -- end
-    highlights = catppuccin.get(),
   },
 }
 
