@@ -897,6 +897,7 @@ return packer.startup {
       ft = { "python" },
     }
 
+    -- TODO: Deprecated
     use {
       "Shatur/neovim-cmake",
       config = function()
