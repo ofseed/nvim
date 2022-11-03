@@ -725,6 +725,8 @@ return packer.startup {
         require "tool.gh"
       end,
       requires = "ldelossa/litee.nvim",
+      disable = true,
+      -- Disable since it could not work properly
     }
 
     use {
