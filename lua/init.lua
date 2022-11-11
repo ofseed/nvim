@@ -18,7 +18,7 @@ end
 
 -- Load colorscheme after plugins are loaded
 -- Only the configuration started the second time takes effect for the bufferline
-vim.cmd "colorscheme catppuccin"
+vim.cmd "silent! colorscheme catppuccin"
 
 -- set custom hilight after colorscheme is loaded
 require "hilight"
