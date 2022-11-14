@@ -7,6 +7,7 @@ end
 
 require "plugins"
 require "keymaps"
+require "hilight"
 
 -- For the use of impatient.nvim, packer_compiled.lua needs to be
 -- in the lua/ directory instead of the default.
@@ -19,6 +20,3 @@ end
 -- Load colorscheme after plugins are loaded
 -- Only the configuration started the second time takes effect for the bufferline
 vim.cmd "silent! colorscheme catppuccin"
-
--- set custom hilight after colorscheme is loaded
-require "hilight"
