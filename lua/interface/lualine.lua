@@ -45,11 +45,6 @@ lualine.setup {
       "fileformat",
     },
   },
-  inactive_sections = {
-    lualine_c = {
-      lsp,
-    },
-  },
   options = {
     icons_enabled = true,
     theme = "auto",
