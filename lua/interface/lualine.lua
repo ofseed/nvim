@@ -4,21 +4,12 @@ if not ok then
   return
 end
 
-local ok, navic = pcall(require, "nvim-navic")
-if not ok then
-  vim.notify "Could not load navic"
-end
-
 local function indent()
   if vim.o.expandtab then
     return "SW:" .. vim.o.shiftwidth
   else
     return "TS:" .. vim.o.tabstop
   end
-end
-
-local function is_file()
-  return vim.bo.buftype ~= "nofile"
 end
 
 local function lsp()
@@ -59,29 +50,12 @@ lualine.setup {
       lsp,
     },
   },
-  winbar = {
-    lualine_b = {
-      { "filename", cond = is_file },
-    },
-    lualine_c = {
-      { navic.get_location, cond = navic.is_available },
-    },
-  },
-  inactive_winbar = {
-    lualine_b = {
-      { "filename", cond = is_file },
-    },
-  },
   options = {
     icons_enabled = true,
     theme = "auto",
     disabled_filetypes = {
       statusline = {
         "alpha",
-      },
-      winbar = {
-        "toggleterm",
-        "dap-repl",
       },
     },
     always_divide_middle = true,
