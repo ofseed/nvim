@@ -60,8 +60,8 @@ lualine.setup {
     },
     always_divide_middle = true,
     globalstatus = false,
-    section_separators = { left = "", right = "" },
-    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+    component_separators = { left = "│", right = "│" },
   },
   extensions = {
     "man",
