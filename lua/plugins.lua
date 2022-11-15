@@ -264,6 +264,18 @@ return packer.startup {
     }
 
     use {
+      "utilyre/barbecue.nvim",
+      config = function()
+        require "interface.barbecue"
+      end,
+      requires = {
+        "neovim/nvim-lspconfig",
+        "smiteshp/nvim-navic",
+        "kyazdani42/nvim-web-devicons",
+      },
+    }
+
+    use {
       "RRethy/vim-illuminate",
       config = function()
         require "interface.illuminate"
