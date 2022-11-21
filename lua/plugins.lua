@@ -784,6 +784,15 @@ return packer.startup {
       end,
       ft = { "http" },
     }
+
+    use {
+      "martineausimon/nvim-lilypond-suite",
+      requires = { "MunifTanjim/nui.nvim" },
+      config = function()
+        require "tool.lilypond-suite"
+      end,
+      ft = { "lilypond" },
+    }
     -- }}}
 
     -- Efficiency Improvement {{{
