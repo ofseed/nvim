@@ -7,7 +7,6 @@ end
 
 require "plugins"
 require "keymaps"
-require "hilight"
 
 -- For the use of impatient.nvim, packer_compiled.lua needs to be
 -- in the lua/ directory instead of the default.
