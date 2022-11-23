@@ -51,6 +51,7 @@ bufferline.setup {
       { filetype = "dbui", text = "Database Manager", text_align = "center", saperator = true },
       { filetype = "SidebarNvim", text = "Sidebar", text_align = "center", saperator = true },
       { filetype = "httpResult", text = "Http Result", text_align = "center", saperator = true },
+      { filetype = "OverseerList", text = "Tasks", text_align = "center", saperator = true },
     },
     color_icons = true, --- true | false, -- whether or not to add the filetype icon highlights
     show_buffer_icons = true, -- true | false, -- disable filetype icons for buffers

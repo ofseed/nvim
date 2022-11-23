@@ -98,6 +98,7 @@ key.register {
       name = "+lsp",
       ["w"] = { name = "+workspace" },
     },
+    ["o"] = { name = "+tasks" },
     ["d"] = { name = "+debug" },
     ["t"] = { name = "+toggle" },
     ["h"] = { name = "+hop" },
