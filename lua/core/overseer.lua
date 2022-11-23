@@ -8,7 +8,7 @@ overseer.setup {
   -- Default task strategy
   strategy = "terminal",
   -- Template modules to load
-  templates = { "builtin" },
+  templates = { "builtin", "cpp" },
   -- When true, tries to detect a green color from your colorscheme to use for success highlight
   auto_detect_success_color = true,
   -- Patch nvim-dap to support preLaunchTask and postDebugTask
