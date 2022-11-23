@@ -58,8 +58,6 @@ return packer.startup {
       end,
     }
 
-    use { "tpope/vim-sleuth" }
-
     use {
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
@@ -77,6 +75,8 @@ return packer.startup {
     }
 
     use { "tpope/vim-unimpaired" }
+
+    use { "tpope/vim-sleuth" }
 
     use {
       "folke/which-key.nvim",
