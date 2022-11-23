@@ -38,6 +38,7 @@ lualine.setup {
       lsp,
     },
     lualine_x = {
+      "overseer",
       "copilot",
       "filetype",
       indent,
