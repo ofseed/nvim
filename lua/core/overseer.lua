@@ -190,5 +190,9 @@ overseer.setup {
   },
 }
 
-vim.keymap.set("n", "<leader>or", "<cmd>OverseerRun<CR>", { desc = "Run" })
-vim.keymap.set("n", "<leader>ot", "<cmd>OverseerToggle<CR>", { desc = "Toggle" })
+vim.keymap.set("n", "<leader>rr", "<cmd>OverseerRun<CR>", { desc = "Run" })
+vim.keymap.set("n", "<leader>rl", "<cmd>OverseerToggle<CR>", { desc = "List" })
+vim.keymap.set("n", "<leader>rn", "<cmd>OverseerBuild<CR>", { desc = "New" })
+vim.keymap.set("n", "<leader>ra", "<cmd>OverseerTaskAction<CR>", { desc = "Action" })
+vim.keymap.set("n", "<leader>ri", "<cmd>OverseerInfo<CR>", { desc = "Action" })
+vim.keymap.set("n", "<leader>rc", "<cmd>OverseerClearCache<CR>", { desc = "Clear cache" })
