@@ -919,15 +919,6 @@ return packer.startup {
       end,
       ft = { "python" },
     }
-
-    -- TODO: Deprecated
-    use {
-      "Shatur/neovim-cmake",
-      config = function()
-        require "debug.cmake"
-      end,
-      ft = { "c", "cpp", "cmake" },
-    }
     -- }}}
 
     -- Language Specific {{{
