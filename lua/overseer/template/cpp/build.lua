@@ -24,7 +24,6 @@ return {
       name = "Build " .. filename,
       components = {
         { "on_output_quickfix", open_on_match = true },
-        "unique",
         "default",
       },
     }

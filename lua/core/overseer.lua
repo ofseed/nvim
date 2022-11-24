@@ -144,6 +144,7 @@ overseer.setup {
       "on_exit_set_status",
       "on_complete_notify",
       "on_complete_dispose",
+      "unique",
     },
     -- Tasks from tasks.json use these components
     default_vscode = {
