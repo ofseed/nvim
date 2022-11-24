@@ -22,7 +22,7 @@ barbecue.setup {
   exclude_filetypes = { "toggleterm" },
 
   ---returns a string to be shown at the end of winbar
-  ---@type fun(bufnr: number): number|string
+  ---@type fun(bufnr: number): string
   custom_section = function(bufnr)
     return ""
   end,
@@ -48,15 +48,10 @@ barbecue.setup {
     ---`false` to disable
     ---@type false|string
     modified = false,
-
-    ---context placeholder for the root node
-    ---`false` to disable
-    ---@type false|string
-    default_context = "…",
   },
 
   ---icons for different context entry kinds
-  ---@type table<string, string>
+  ---@type table<string, false|string>
   kinds = {
     File = "",
     Package = "",
