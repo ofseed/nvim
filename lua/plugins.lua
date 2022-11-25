@@ -76,9 +76,9 @@ return packer.startup {
 
     use {
       "stevearc/overseer.nvim",
-      config = function ()
+      config = function()
         require "core.overseer"
-      end
+      end,
     }
 
     use { "tpope/vim-unimpaired" }
