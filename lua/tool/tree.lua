@@ -14,9 +14,6 @@ tree.setup {
   ignore_buffer_on_setup = false,
   open_on_setup = false,
   open_on_setup_file = false,
-  open_on_tab = false,
-  focus_empty_on_setup = false,
-  ignore_buf_on_tab_change = {},
   sort_by = "name",
   root_dirs = {},
   prefer_startup_root = false,
@@ -47,6 +44,7 @@ tree.setup {
     },
     float = {
       enable = false,
+      quit_on_focus_loss = true,
       open_win_config = {
         relative = "editor",
         border = "rounded",
@@ -63,7 +61,7 @@ tree.setup {
     highlight_git = false,
     full_name = false,
     highlight_opened_files = "none",
-    root_folder_modifier = ":~",
+    root_folder_label = ":~:s?$?/..?",
     indent_width = 2,
     indent_markers = {
       enable = true,
@@ -133,6 +131,10 @@ tree.setup {
     enable = true,
     show_on_dirs = false,
     debounce_delay = 50,
+    severity = {
+      min = vim.diagnostic.severity.HINT,
+      max = vim.diagnostic.severity.ERROR,
+    },
     icons = {
       hint = "",
       info = "",
@@ -148,6 +150,7 @@ tree.setup {
   filesystem_watchers = {
     enable = true,
     debounce_delay = 50,
+    ignore_dirs = {},
   },
   git = {
     enable = true,
@@ -198,6 +201,16 @@ tree.setup {
   live_filter = {
     prefix = "[FILTER]: ",
     always_show_folders = true,
+  },
+  tab = {
+    sync = {
+      open = false,
+      close = false,
+      ignore = {},
+    },
+  },
+  notify = {
+    threshold = vim.log.levels.INFO,
   },
   log = {
     enable = false,
