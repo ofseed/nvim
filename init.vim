@@ -6,6 +6,7 @@ set smarttab
 set backspace=indent,eol,start
 set nobackup
 set swapfile
+set undofile
 set ignorecase
 set smartcase
 set autoindent
