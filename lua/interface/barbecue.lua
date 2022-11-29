@@ -21,11 +21,17 @@ barbecue.setup {
   ---@type string[]
   exclude_filetypes = { "toggleterm" },
 
-  ---returns a string to be shown at the end of winbar
-  ---@type fun(bufnr: number): string
-  custom_section = function(bufnr)
-    return ""
-  end,
+  truncation = {
+    ---whether winbar truncation is enabled
+    ---`false` to gain a little performance
+    ---@type boolean
+    enabled = true,
+
+    ---`simple` starts truncating from the beginning until it fits
+    ---`keep_basename` is the same as `simple` but skips basename
+    ---@type "simple"|"keep_basename"
+    method = "keep_basename",
+  },
 
   modifiers = {
     ---filename modifiers applied to dirname
@@ -37,17 +43,25 @@ barbecue.setup {
     basename = "",
   },
 
-  ---icons used by barbecue
-  ---@type table<string, string>
-  symbols = {
-    ---entry separator
-    ---@type string
-    separator = "",
+  ---returns a string to be shown at the end of winbar
+  ---@type fun(bufnr: number): string
+  custom_section = function(bufnr)
+    return ""
+  end,
 
+  symbols = {
     ---modification indicator
     ---`false` to disable
     ---@type false|string
     modified = false,
+
+    ---truncation indicator
+    ---@type string
+    ellipsis = "…",
+
+    ---entry separator
+    ---@type string
+    separator = "",
   },
 
   ---icons for different context entry kinds
