@@ -687,6 +687,14 @@ return packer.startup {
     }
 
     use {
+      "ruifm/gitlinker.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require "tool.gitlinker"
+      end,
+    }
+
+    use {
       "tpope/vim-fugitive",
     }
 
