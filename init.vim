@@ -37,7 +37,7 @@ set conceallevel=1
 set scrolloff=1
 set sidescrolloff=5
 set display+=lastline,msgsep
-set fillchars+=diff:/
+set fillchars+=diff:╱
 
 " Encoding
 set encoding=utf-8
