@@ -9,6 +9,7 @@ blankline.setup {
   -- use_treesitter = true,
   -- use_treesitter_scope = true,
   filetype_exclude = {
+    "help",
     "OverseerForm",
   },
 }
