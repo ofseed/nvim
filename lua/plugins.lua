@@ -1007,6 +1007,10 @@ return packer.startup {
       "nanotee/sqls.nvim",
       disable = true,
     }
+
+    use {
+      "fladson/vim-kitty",
+    }
     -- }}}
   end,
 
