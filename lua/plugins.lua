@@ -682,7 +682,11 @@ return packer.startup {
       config = function()
         require "tool.diffview"
       end,
-      cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+      cmd = {
+        "DiffviewOpen",
+        "DiffviewFileHistory",
+        "Neogit", -- Setup diffview for neogit
+      },
     }
 
     use {
