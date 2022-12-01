@@ -453,6 +453,8 @@ return packer.startup {
       requires = {
         "winston0410/cmd-parser.nvim",
       },
+      disable = true,
+      -- It adds a `CmdlineChange` event causes noice.nvim stuck neovim
     }
 
     use {
