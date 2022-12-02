@@ -34,7 +34,7 @@ set signcolumn=yes
 set cursorline
 set cursorlineopt=number
 set conceallevel=1
-set scrolloff=1
+set scrolloff=2
 set sidescrolloff=5
 set display+=lastline,msgsep
 set fillchars+=diff:╱
