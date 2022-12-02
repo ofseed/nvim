@@ -711,6 +711,13 @@ return packer.startup {
     }
 
     use {
+      "simnalamburt/vim-mundo",
+      config = function()
+        require "tool.mundo"
+      end,
+    }
+
+    use {
       "aserowy/tmux.nvim",
       config = function()
         require "tool.tmux"

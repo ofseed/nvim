@@ -68,5 +68,6 @@ lualine.setup {
     "symbols-outline",
     "aerial",
     "nvim-dap-ui",
+    "mundo",
   },
 }
