@@ -867,6 +867,13 @@ return packer.startup {
     use { "kevinhwang91/vim-ibus-sw" }
 
     use {
+      "Pocco81/auto-save.nvim",
+      config = function()
+        require "efficiency.auto-save"
+      end,
+    }
+
+    use {
       "ethanholz/nvim-lastplace",
       config = function()
         require "efficiency.lastplace"
