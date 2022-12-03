@@ -6,7 +6,7 @@ end
 
 overseer.setup {
   -- Default task strategy
-  strategy = "terminal",
+  strategy = "toggleterm",
   -- Template modules to load
   templates = { "builtin", "cpp" },
   -- When true, tries to detect a green color from your colorscheme to use for success highlight
