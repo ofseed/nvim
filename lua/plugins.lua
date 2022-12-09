@@ -157,7 +157,7 @@ return packer.startup {
     use {
       "L3MON4D3/LuaSnip",
       config = function()
-        require "edit.luasnip"
+        require "edit.snip"
       end,
     }
 
