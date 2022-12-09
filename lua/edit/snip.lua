@@ -4,9 +4,21 @@ if not ok then
   return
 end
 
-snip.config.set_config {
-  history = true,
-  updateevents = "TextChanged,TextChangedI",
+local types = require "luasnip.util.types"
+
+snip.config.setup {
+  ext_opts = {
+    [types.choiceNode] = {
+      active = {
+        virt_text = { { "●", "DiagnosticWarn" } },
+      },
+    },
+    [types.insertNode] = {
+      active = {
+        virt_text = { { "●", "DiagnosticInfo" } },
+      },
+    },
+  },
 }
 
 require("luasnip.loaders.from_vscode").lazy_load()
