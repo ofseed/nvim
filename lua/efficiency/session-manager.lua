@@ -34,9 +34,15 @@ manager.setup {
 vim.api.nvim_create_autocmd("User", {
   pattern = "SessionSavePre",
   callback = function()
-    vim.notify "test"
+    local task_name = get_cwd_as_name()
+
+    -- Remove the task if it exists
+    if vim.tbl_contains(overseer.list_task_bundles(), task_name) then
+      overseer.delete_task_bundle(task_name)
+    end
+
     overseer.save_task_bundle(
-      get_cwd_as_name(),
+      task_name,
       -- Passing nil will use config.opts.save_task_opts. You can call list_tasks() explicitly and
       -- pass in the results if you want to save specific tasks.
       nil,
