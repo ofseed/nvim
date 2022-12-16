@@ -75,6 +75,14 @@ mason.setup_handlers {
         client.server_capabilities.documentFormattingProvider = false
       end,
       capabilities = default.capabilities,
+      settings = {
+        Lua = {
+          completion = {
+            postfix = ".",
+            workspaceWord = false,
+          },
+        },
+      },
     }
   end,
 
