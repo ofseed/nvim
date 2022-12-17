@@ -304,14 +304,6 @@ return packer.startup {
     }
 
     use {
-      "kevinhwang91/nvim-hlslens",
-      config = function()
-        require "interface.hlslens"
-      end,
-      disable = true,
-    }
-
-    use {
       "m-demare/hlargs.nvim",
       config = function()
         require "interface.hlargs"
@@ -386,14 +378,6 @@ return packer.startup {
     }
 
     use {
-      "nvim-treesitter/nvim-treesitter-context",
-      config = function()
-        require "interface.treesitter-context"
-      end,
-      disable = true, -- Disable because it is not using LSP, navic instead
-    }
-
-    use {
       "uga-rosa/ccc.nvim",
       config = function()
         require "interface.ccc"
@@ -446,18 +430,6 @@ return packer.startup {
     }
 
     use {
-      "winston0410/range-highlight.nvim",
-      config = function()
-        require "interface.range-highlight"
-      end,
-      requires = {
-        "winston0410/cmd-parser.nvim",
-      },
-      disable = true,
-      -- It adds a `CmdlineChange` event causes noice.nvim stuck neovim
-    }
-
-    use {
       "psliwka/vim-smoothie",
       disable = true,
       -- Try to get rid of dependency on moving animations.
@@ -493,12 +465,6 @@ return packer.startup {
     use {
       "edluffy/hologram.nvim",
       disable = true,
-    }
-
-    use {
-      "jubnzv/virtual-types.nvim",
-      disable = true,
-      -- Disable because few languages sever support it
     }
 
     use {
