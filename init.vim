@@ -75,7 +75,7 @@ augroup END
 "   autocmd VimLeave,VimSuspend * set guicursor=a:ver25-blinkon100
 " augroup END
 
-colorscheme desert
+colorscheme habamax
 
 " Neovim
 if has("nvim")
