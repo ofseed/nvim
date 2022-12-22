@@ -91,7 +91,6 @@ cmp.setup {
     },
     { name = "path" },
     { name = "calc" },
-    { name = "latex_symbols" },
     { name = "orgmode" },
   },
   formatting = {

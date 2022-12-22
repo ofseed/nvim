@@ -140,7 +140,6 @@ lazy.setup({
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-cmdline" },
       { "hrsh7th/cmp-calc" },
-      { "kdheepak/cmp-latex-symbols" },
       { "saadparwaiz1/cmp_luasnip" },
       { "kristijanhusak/vim-dadbod-completion" },
       { "lukas-reineke/cmp-under-comparator" },
