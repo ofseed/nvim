@@ -227,5 +227,3 @@ tree.setup {
     },
   },
 }
-
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "File Explorer" })
