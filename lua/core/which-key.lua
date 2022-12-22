@@ -101,6 +101,7 @@ key.register {
     ["r"] = { name = "+tasks" },
     ["d"] = { name = "+debug" },
     ["t"] = { name = "+toggle" },
+    ["o"] = { name = "+open" },
     ["h"] = { name = "+hop" },
   },
 }

@@ -8,3 +8,5 @@ mason.setup {
     border = "rounded",
   },
 }
+
+vim.keymap.set("n", "<leader>om", "<Cmd>Mason<CR>", { silent = true, desc = "Package manager" })

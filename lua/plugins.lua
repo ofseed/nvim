@@ -1085,3 +1085,5 @@ lazy.setup({
     skip_if_doc_exists = true,
   },
 })
+
+vim.keymap.set("n", "<leader>ol", "<Cmd>Lazy<CR>", { silent = true, desc = "Plugin manager" })
