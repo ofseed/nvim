@@ -4,6 +4,12 @@ if not ok then
   return
 end
 
+local ok, lazy_status = pcall(require, "lazy.status")
+if not ok then
+  vim.notify "Could not load lazy.status"
+  return
+end
+
 local function indent()
   if vim.o.expandtab then
     return "SW:" .. vim.o.shiftwidth
@@ -38,6 +44,11 @@ lualine.setup {
       lsp,
     },
     lualine_x = {
+      {
+        lazy_status.updates,
+        cond = lazy_status.has_updates,
+        color = { fg = "#ff9e64" },
+      },
       "overseer",
       "copilot",
       "filetype",
