@@ -1004,7 +1004,7 @@ lazy.setup({
   },
   dev = {
     -- directory where you store your local plugin projects
-    path = "~/projects",
+    path = "~/Documents/code/nvim",
     ---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
     patterns = {}, -- For example {"folke"}
   },
@@ -1018,7 +1018,7 @@ lazy.setup({
     -- a number <1 is a percentage., >1 is a fixed size
     size = { width = 0.8, height = 0.8 },
     -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
-    border = "none",
+    border = "rounded",
     icons = {
       cmd = " ",
       config = "",
