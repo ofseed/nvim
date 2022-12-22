@@ -97,7 +97,7 @@ lazy.setup({
     "b0o/mapx.nvim",
     enabled = false,
     -- Plugin organize keymaps
-    -- Disable beca, lots of refactorings needs to be done
+    -- Disable because lots of refactorings needs to be done
   },
 
   {
@@ -216,7 +216,7 @@ lazy.setup({
     },
     enabled = false,
     -- Plugin surpporting refactorings
-    -- Disable beca, it needs neovim nightly
+    -- Disable because it needs neovim nightly
   },
   -- }}}
 
@@ -237,8 +237,8 @@ lazy.setup({
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
       -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to , the notification view.
-      --   If not available, we , `mini` as the fallback
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     },
   },
@@ -332,7 +332,7 @@ lazy.setup({
       require "interface.lsp_signature"
     end,
     enabled = false,
-    -- Unknow reason ca,s unknown errors
+    -- Unknow reason causes unknown errors
   },
 
   {
@@ -346,7 +346,7 @@ lazy.setup({
     "weilbith/nvim-code-action-menu",
     cmd = { "CodeActionMenu" },
     enabled = false,
-    -- Disable beca, it not stable
+    -- Disable because it not stable
   },
 
   {
@@ -386,8 +386,8 @@ lazy.setup({
     end,
     enabled = false,
     -- A substitue for nvim-scrollview
-    -- which support search results, lsp diagnostics and git hunks
-    -- Disable beca, it's work in progress
+    -- which support search resultsuse lsp diagnostics and git hunks
+    -- Disable because it's work in progress
   },
 
   {
@@ -404,7 +404,7 @@ lazy.setup({
     end,
     enabled = false,
     -- Plugin show inline search highlight
-    -- Disable beca, it's not very ,ful
+    -- Disable because it's not very useful
   },
 
   {
@@ -434,7 +434,7 @@ lazy.setup({
       require "interface.specs"
     end,
     enabled = false,
-    -- Disable beca, it's conflicting with the chinese text
+    -- Disable because it's conflicting with the chinese text
   },
 
   {
@@ -443,7 +443,7 @@ lazy.setup({
       require "interface.marks"
     end,
     enabled = false,
-    -- Disable ca,s the value of v:oldfiles to be messed up
+    -- Disable causes the value of v:oldfiles to be messed up
   },
 
   {
@@ -452,7 +452,7 @@ lazy.setup({
       require "interface.registers"
     end,
     enabled = false,
-    -- Behaves strangely when ,d with text objects
+    -- Behaves strangely when used with text objects
   },
 
   {
@@ -485,7 +485,7 @@ lazy.setup({
       require "interface.shade"
     end,
     enabled = false,
-    -- Disable beca, conflict with other floating window plugins
+    -- Disable because conflict with other floating window plugins
   },
 
   {
@@ -579,7 +579,7 @@ lazy.setup({
     cmd = { "SymbolsOutline" },
     enabled = false,
     -- Subtitute for aerial.nvim
-    -- Disable beca, better to , aerial.nvim
+    -- Disable because better to , aerial.nvim
   },
 
   {
