@@ -958,6 +958,14 @@ lazy.setup({
     config = function()
       require "language.clangd_extensions"
     end,
+    ft = {
+      "c",
+      "cpp",
+      "objc",
+      "objcpp",
+      "cuda",
+      "proto",
+    },
   },
 
   {
@@ -965,6 +973,9 @@ lazy.setup({
     config = function()
       require "language.rust-tools"
     end,
+    ft = {
+      "rust",
+    },
   },
 
   {
@@ -986,6 +997,14 @@ lazy.setup({
     config = function()
       require "language.typescript"
     end,
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "javascript.jsx",
+      "typescript",
+      "typescriptreact",
+      "typescript.tsx",
+    },
   },
 
   {
@@ -993,6 +1012,10 @@ lazy.setup({
     config = function()
       require "language.schema-store"
     end,
+    ft = {
+      "json",
+      "jsonc",
+    },
   },
 
   {
