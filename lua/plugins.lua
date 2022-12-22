@@ -419,7 +419,9 @@ lazy.setup({
     config = function()
       require "interface.zen-mode"
     end,
-    cmd = { "ZenMode" },
+    keys = {
+      { "<leader>tz", "<Cmd>ZenMode<CR>", { desc = "Zen Mode" } },
+    },
   },
 
   {
@@ -600,6 +602,9 @@ lazy.setup({
     config = function()
       require "tool.aerial"
     end,
+    keys = {
+      { "<leader>a", "<Cmd>AerialToggle<CR>", { desc = "Outline" } },
+    },
   },
 
   {
@@ -635,7 +640,9 @@ lazy.setup({
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",
     },
-    cmd = { "Neogit" },
+    keys = {
+      { "<leader>gg", "<Cmd>Neogit<CR>", { desc = "Open Neogit" } },
+    },
   },
 
   {
