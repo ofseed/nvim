@@ -100,7 +100,11 @@ lazy.setup({
     -- Disable beca, lots of refactorings needs to be done
   },
 
-  { "lewis6991/impatient.nvim" },
+  {
+    "lewis6991/impatient.nvim",
+    enabled = false,
+    -- Lazy does all of that and more
+  },
 
   {
     "nathom/filetype.nvim",
