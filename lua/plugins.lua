@@ -470,6 +470,8 @@ lazy.setup({
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
     },
+    enabled = false,
+    -- Not very useful now
   },
 
   {
