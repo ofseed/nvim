@@ -634,6 +634,13 @@ lazy.setup({
   },
 
   {
+    "akinsho/git-conflict.nvim",
+    config = function()
+      require "tool.git-conflict"
+    end,
+  },
+
+  {
     "TimUntersberger/neogit",
     config = function()
       require "tool.neogit"
@@ -657,13 +664,6 @@ lazy.setup({
       { "<leader>gdc", "<Cmd>DiffviewClose<CR>", desc = "Close" },
       { "<leader>gdh", "<Cmd>DiffviewFileHistory<CR>", desc = "Open History" },
     },
-  },
-
-  {
-    "akinsho/git-conflict.nvim",
-    config = function()
-      require "tool.git-conflict"
-    end,
   },
 
   {
