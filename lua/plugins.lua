@@ -76,7 +76,10 @@ lazy.setup({
     end,
   },
 
-  { "tpope/vim-unimpaired" },
+  {
+    "tpope/vim-unimpaired",
+    event = "VeryLazy",
+  },
 
   { "tpope/vim-sleuth" },
 
