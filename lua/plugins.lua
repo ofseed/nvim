@@ -419,7 +419,7 @@ lazy.setup({
       require "interface.zen-mode"
     end,
     keys = {
-      { "<leader>tz", "<Cmd>ZenMode<CR>", { desc = "Zen Mode" } },
+      { "<leader>tz", "<Cmd>ZenMode<CR>", desc = "Zen Mode" },
     },
   },
 
@@ -548,7 +548,7 @@ lazy.setup({
     end,
     dependencies = { "kyazdani42/nvim-web-devicons" },
     keys = {
-      { "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "File Explorer" } },
+      { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" },
     },
   },
 
@@ -607,7 +607,7 @@ lazy.setup({
       require "tool.aerial"
     end,
     keys = {
-      { "<leader>a", "<Cmd>AerialToggle<CR>", { desc = "Outline" } },
+      { "<leader>a", "<Cmd>AerialToggle<CR>", desc = "Outline" },
     },
   },
 
@@ -645,7 +645,7 @@ lazy.setup({
       "sindrets/diffview.nvim",
     },
     keys = {
-      { "<leader>gg", "<Cmd>Neogit<CR>", { desc = "Open Neogit" } },
+      { "<leader>gg", "<Cmd>Neogit<CR>", desc = "Open Neogit" },
     },
   },
 
@@ -655,9 +655,9 @@ lazy.setup({
       require "tool.diffview"
     end,
     keys = {
-      { "<leader>gdo", "<Cmd>DiffviewOpen<CR>", { desc = "Open" } },
-      { "<leader>gdc", "<Cmd>DiffviewClose<CR>", { desc = "Close" } },
-      { "<leader>gdh", "<Cmd>DiffviewFileHistory<CR>", { desc = "Open History" } },
+      { "<leader>gdo", "<Cmd>DiffviewOpen<CR>", desc = "Open" },
+      { "<leader>gdc", "<Cmd>DiffviewClose<CR>", desc = "Close" },
+      { "<leader>gdh", "<Cmd>DiffviewFileHistory<CR>", desc = "Open History" },
     },
   },
 
