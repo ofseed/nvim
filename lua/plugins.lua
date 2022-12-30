@@ -267,13 +267,6 @@ lazy.setup({
   },
 
   {
-    "SmiteshP/nvim-navic",
-    config = function()
-      require "interface.navic"
-    end,
-  },
-
-  {
     "utilyre/barbecue.nvim",
     config = function()
       require "interface.barbecue"
