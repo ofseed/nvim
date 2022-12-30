@@ -165,6 +165,7 @@ lazy.setup({
     config = function()
       require "edit.kommentary"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -172,6 +173,7 @@ lazy.setup({
     config = function()
       require "edit.surround"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -194,6 +196,7 @@ lazy.setup({
     config = function()
       require "edit.autopairs"
     end,
+    event = "VeryLazy",
   },
 
   {
