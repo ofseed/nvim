@@ -683,6 +683,9 @@ lazy.setup({
     config = function()
       require "tool.mundo"
     end,
+    keys = {
+      { "<leader>u", "<Cmd>MundoToggle<CR>", desc = "Undo Tree" },
+    },
   },
 
   {
