@@ -79,6 +79,8 @@ colorscheme habamax
 
 " Neovim
 if has("nvim")
+  aunmenu PopUp.How-to\ disable\ mouse
+  aunmenu PopUp.-1-
   lua require "init"
 else
   map s <Plug>(easymotion-prefix)
