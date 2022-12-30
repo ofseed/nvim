@@ -144,6 +144,7 @@ lazy.setup({
       { "kristijanhusak/vim-dadbod-completion" },
       { "lukas-reineke/cmp-under-comparator" },
     },
+    event = "VeryLazy",
   },
 
   {
@@ -151,6 +152,7 @@ lazy.setup({
     config = function()
       require "edit.snip"
     end,
+    event = "VeryLazy",
   },
 
   {
