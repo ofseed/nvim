@@ -21,18 +21,6 @@ barbecue.setup {
   ---@type string[]
   exclude_filetypes = { "toggleterm" },
 
-  truncation = {
-    ---whether winbar truncation is enabled
-    ---`false` to gain a little performance
-    ---@type boolean
-    enabled = true,
-
-    ---`simple` starts truncating from the beginning until it fits
-    ---`keep_basename` is the same as `simple` but skips basename
-    ---@type "simple"|"keep_basename"
-    method = "keep_basename",
-  },
-
   modifiers = {
     ---filename modifiers applied to dirname
     ---@type string
@@ -49,11 +37,19 @@ barbecue.setup {
     return ""
   end,
 
+  ---theme to be used which should be located under `barbecue.theme` module
+  ---`auto` defaults to your current colorscheme
+  ---@type "auto"|string|barbecue.Theme
+  theme = "auto",
+
+  ---whether to replace file icon with the modified symbol when buffer is modified
+  ---@type boolean
+  show_modified = false,
+
   symbols = {
     ---modification indicator
-    ---`false` to disable
-    ---@type false|string
-    modified = false,
+    ---@type string
+    modified = "●",
 
     ---truncation indicator
     ---@type string
@@ -65,34 +61,34 @@ barbecue.setup {
   },
 
   ---icons for different context entry kinds
-  ---@type table<string, false|string>
+  ---`false` to disable kind icons
+  ---@type table<string, string>|false
   kinds = {
     File = "",
-    Package = "",
     Module = "",
     Namespace = "",
-    Macro = "",
+    Package = "",
     Class = "",
-    Constructor = "",
-    Field = "",
-    Property = "",
     Method = "",
-    Struct = "",
-    Event = "",
-    Interface = "",
+    Property = "",
+    Field = "",
+    Constructor = "",
     Enum = "",
-    EnumMember = "",
-    Constant = "",
+    Interface = "",
     Function = "",
-    TypeParameter = "",
     Variable = "",
-    Operator = "",
-    Null = "",
-    Boolean = "",
-    Number = "",
+    Constant = "",
     String = "",
-    Key = "",
+    Number = "",
+    Boolean = "",
     Array = "",
     Object = "",
+    Key = "",
+    Null = "",
+    EnumMember = "",
+    Struct = "",
+    Event = "",
+    Operator = "",
+    TypeParameter = "",
   },
 }
