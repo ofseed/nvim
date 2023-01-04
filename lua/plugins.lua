@@ -1027,7 +1027,10 @@ lazy.setup({
     enabled = false,
   },
 
-  { "fladson/vim-kitty" },
+  {
+    "fladson/vim-kitty",
+    event = { "BufRead kitty.conf" },
+  },
   -- }}}
 }, {
   root = vim.fn.stdpath "data" .. "/lazy", -- directory where plugins will be installed
