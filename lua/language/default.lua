@@ -1,12 +1,6 @@
 -- Default LSP server settigns
 local M = {}
 
-local ok, navic = pcall(require, "nvim-navic")
-if not ok then
-  vim.notify "Could not load navic"
-  return
-end
-
 local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not ok then
   vim.notify "Could not load nvim-cmp"
@@ -64,7 +58,6 @@ M.on_attach = function(client, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, { buffer = bufnr, desc = "List workspace folders" })
 
-  navic.attach(client, bufnr)
   -- require("virtualtypes").on_attach(client)
 end
 
