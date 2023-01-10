@@ -282,6 +282,12 @@ lazy.setup({
   },
 
   {
+    "luukvbaal/statuscol.nvim",
+    enabled = false,
+    -- Requires neovim 0.9
+  },
+
+  {
     "RRethy/vim-illuminate",
     config = function()
       require "interface.illuminate"
