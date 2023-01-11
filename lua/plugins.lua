@@ -998,6 +998,17 @@ lazy.setup({
   },
 
   {
+    "ray-x/go.nvim",
+    config = function()
+      require "language.go"
+    end,
+    dependencies = {
+      "ray-x/guihua.lua",
+    },
+    ft = { "go" },
+  },
+
+  {
     "akinsho/flutter-tools.nvim",
     enabled = false,
   },
