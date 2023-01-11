@@ -10,9 +10,15 @@ if not ok then
   return
 end
 
+local ok, mason = pcall(require, "mason-registry")
+if not ok then
+  vim.notify "Could not load mason-registry"
+  return
+end
+
 local default = require "language.default"
 
-local extension_path = vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/"
+local extension_path = mason.get_package("codelldb"):get_install_path() .. "/extension/"
 local codelldb_path = extension_path .. "adapter/codelldb"
 local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
 

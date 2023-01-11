@@ -4,11 +4,17 @@ if not ok then
   return
 end
 
+local ok, mason = pcall(require, "mason-registry")
+if not ok then
+  vim.notify "Could not load mason-registry"
+  return
+end
+
 dap.adapters.codelldb = {
   type = "server",
   port = "${port}", -- 💀 Use the port printed out or specified with `--port`
   executable = {
-    command = vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/adapter/codelldb",
+    command = mason.get_package("codelldb"):get_install_path() .. "/extension/adapter/codelldb",
     args = { "--port", "${port}" },
   },
 }
