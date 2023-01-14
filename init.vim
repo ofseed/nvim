@@ -49,6 +49,9 @@ let mapleader=" "
 cmap <C-p> <Up>
 cmap <C-n> <Down>
 
+" Filetype specific
+autocmd FileType go setlocal tabstop=4 shiftwidth=4 noexpandtab
+
 " Fcitx5 auto switch
 " Every time exit insert mode, automatically close fcitx5
 autocmd InsertLeave * :silent !fcitx5-remote -c
