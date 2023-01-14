@@ -71,6 +71,9 @@ catppuccin.setup {
       enabled = true,
       enable_ui = true,
     },
+    barbecue = {
+      dim_dirname = true,
+    },
     indent_blankline = {
       enabled = true,
       colored_indent_levels = false,
