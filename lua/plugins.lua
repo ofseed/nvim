@@ -827,6 +827,7 @@ lazy.setup({
       { "benfowler/telescope-luasnip.nvim" },
     },
     branch = "0.1.x",
+    event = "VeryLazy",
   },
 
   {
