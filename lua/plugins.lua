@@ -533,6 +533,13 @@ lazy.setup({
   },
 
   {
+    "EdenEast/nightfox.nvim",
+    config = function()
+      require "colorscheme.nightfox"
+    end,
+  },
+
+  {
     "navarasu/onedark.nvim",
     config = function()
       require "colorscheme.onedark"
