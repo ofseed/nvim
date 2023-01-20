@@ -60,6 +60,7 @@ lazy.setup({
       require "core.treesitter"
     end,
     dependencies = {
+      { "nvim-treesitter/nvim-treesitter-textobjects" },
       { "nvim-treesitter/nvim-treesitter-refactor" },
       { "windwp/nvim-ts-autotag" },
       { "p00f/nvim-ts-rainbow" },
