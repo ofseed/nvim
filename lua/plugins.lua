@@ -691,6 +691,10 @@ lazy.setup({
   },
 
   {
+    "rbong/vim-flog",
+  },
+
+  {
     "simnalamburt/vim-mundo",
     config = function()
       require "tool.mundo"
