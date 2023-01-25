@@ -12,5 +12,6 @@ ls.setup {
     ls.builtins.formatting.isort,
     -- ls.builtins.diagnostics.pylint,
     -- ls.builtins.diagnostics.codespell,
+    ls.builtins.formatting.shfmt,
   },
 }
