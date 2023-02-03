@@ -58,16 +58,16 @@ autocmd InsertLeave * :silent !fcitx5-remote -c
 
 " Binary
 " Enter binary mode when editing a file with postfix 'bin'
-augroup Binary
-  autocmd!
-  autocmd BufReadPre  *.bin let &bin=1
-  autocmd BufReadPost *.bin if &bin | %!xxd
-  autocmd BufReadPost *.bin set filetype=xxd | endif
-  autocmd BufWritePre *.bin if &bin | %!xxd -r
-  autocmd BufWritePre *.bin endif
-  autocmd BufWritePost *.bin if &bin | %!xxd
-  autocmd BufWritePost *.bin set nomod | endif
-augroup END
+" augroup Binary
+"   autocmd!
+"   autocmd BufReadPre  *.bin let &bin=1
+"   autocmd BufReadPost *.bin if &bin | %!xxd
+"   autocmd BufReadPost *.bin set filetype=xxd | endif
+"   autocmd BufWritePre *.bin if &bin | %!xxd -r
+"   autocmd BufWritePre *.bin endif
+"   autocmd BufWritePost *.bin if &bin | %!xxd
+"   autocmd BufWritePost *.bin set nomod | endif
+" augroup END
 
 " Cursor
 " Set cursor shape to beam instead of block,
