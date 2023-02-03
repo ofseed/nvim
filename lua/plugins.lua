@@ -890,6 +890,10 @@ lazy.setup({
     enabled = false,
   },
 
+  {
+    "jcdickinson/wpm.nvim",
+    enabled = false,
+  },
   -- }}}
 
   -- Debug And Run {{{
