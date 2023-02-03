@@ -17,11 +17,6 @@ except for =s=, the source-level equivalent of =cl=, =s= is used as
 the [[https://github.com/easymotion/vim-easymotion#default-bindings][easymotion-prefix]](In fact the functionality of easymotion is
 provided by a plugin called [[https://github.com/phaazon/hop.nvim][hop.nvim]]).
 
-Except for the entry file init.vim, all configuration is done by Lua.
-The reason to use init.vim instead of init.lua is to maintain support
-for classic Vim or Vim emulators such as IdeaVim, VSCodeVim, or FakeVim
-that partially support VimScript.
-
 This configuration contains more than 100 plugins, but the configuration
 of each plugin is placed in a separate file, and these files are
 classified into different modules according to the function of the
@@ -35,7 +30,7 @@ The configuration structure is as shown in the figure below.
 
 #+begin_src screen
                   │                             ┌──────────────────┐
-                      Lua Space                 │ Core Module      │
+nvim/                 nvim/lua                  │ Core Module      │
                   │                             │ ┌──────────────┐ │
                                                 │ │lspconfig.lua │ │
                   │    ┌───────────┐            │ └──────────────┘ │
@@ -47,9 +42,9 @@ The configuration structure is as shown in the figure below.
                   │          │           │      │  ...other files  │
                              │           │      └──────────────────┘
    ┌──────────┐   │    ┌─────┴────┐      │
-   │ init.vim ├───────►│ init.lua │      │      ┌──────────────────┐
+   │ init.lua ├───────►│ init.lua │      │      ┌──────────────────┐
    └──────────┘   │    └──────────┘      │      │ Interface Module │
-Entry, Vim common   All Neovim-specific  │      │ ┌──────────────┐ │
+  Neovim common        Neovim extra      │      │ ┌──────────────┐ │
   configuration   │    configuration     │      │ │bufferline.lua│ │
                              │           │      │ └──────────────┘ │
                   │          │           │      │                  │
@@ -97,11 +92,10 @@ Entry, Vim common   All Neovim-specific  │      │ ┌───────�
 │   │   └── ...
 │   ├── plugins.lua # Plugin management
 │   ├── keymaps.lua # Keymap for lazy loading plugins
-│   └── init.lua # All Neovim-specific configuration
+│   └── init.lua # Neovim extra configuration
 ├── .gitignore
 ├── stylua.toml
 ├── LICENSE
 ├── README.org
-├── ginit.vim # Neovim-qt configuration
-└── init.vim # Vim common configuration
+└── init.lua # Neovim common configuration
 #+end_src
