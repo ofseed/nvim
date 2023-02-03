@@ -1,41 +1,37 @@
-vim.cmd[[
-" Edit
-set expandtab
-set softtabstop=2
-set shiftwidth=2
-set undofile
-set ignorecase
-set smartcase
-set completeopt=menu,menuone,noselect
-set list
-set hidden
-set includeexpr=substitute(v:fname,'\\.','/','g')
+-- Edit
+vim.o.expandtab = true
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.undofile = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.completeopt = "menu,menuone,noselect"
+vim.o.list = true
+vim.o.hidden = true
+vim.o.includeexpr = "substitute(v:fname,'\\.','/','g')"
 
-" Interface
-set number
-set nowrap
-set linebreak
-set showbreak=>>
-set mouse=a
-set termguicolors
-set title
-set signcolumn=yes
-set cursorline
-set cursorlineopt=number
-set conceallevel=1
-set scrolloff=2
-set sidescrolloff=5
-set fillchars+=diff:╱
+-- Interface
+vim.o.number = true
+vim.o.wrap = false
+vim.o.linebreak = true
+vim.o.showbreak = ">>"
+vim.o.mouse = "a"
+vim.o.termguicolors = true
+vim.o.title = true
+vim.o.signcolumn = "yes"
+vim.o.cursorline = true
+vim.o.cursorlineopt = "number"
+vim.o.conceallevel = 1
+vim.o.scrolloff = 2
+vim.o.sidescrolloff = 5
+vim.o.fillchars = "diff:╱"
 
-" Keymapping
-set pastetoggle=<F2>
-let mapleader=" "
-cmap <C-p> <Up>
-cmap <C-n> <Down>
-
-colorscheme habamax
-
-aunmenu PopUp.How-to\ disable\ mouse
-aunmenu PopUp.-1-
-lua require "init"
-]]
+-- Keymapping
+vim.o.pastetoggle = "<F2>"
+vim.g.mapleader = " "
+vim.keymap.set("c", "<C-p>", "<Up>")
+vim.keymap.set("c", "<C-n>", "<Down>")
+vim.cmd [[colorscheme habamax]]
+vim.cmd [[aunmenu PopUp.How-to\ disable\ mouse]]
+vim.cmd [[aunmenu PopUp.-1-]]
+require "init"
