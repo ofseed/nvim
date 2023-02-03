@@ -7,6 +7,12 @@ if not ok then
   return
 end
 
+local ok, ufo = pcall(require, "ufo")
+if not ok then
+  vim.notify "Could not load ufo"
+  return
+end
+
 -- Add additional capabilities supported by nvim-cmp
 M.capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -19,7 +25,14 @@ M.capabilities.textDocument.foldingRange = {
 M.set_keymap = function(bufnr)
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, desc = "LSP: Hover" })
+  vim.keymap.set("n", "K", function()
+    local winid = ufo.peekFoldedLinesUnderCursor()
+    if not winid then
+      -- choose one of coc.nvim and nvim lsp
+      -- vim.fn.CocActionAsync "definitionHover" -- coc.nvim
+      vim.lsp.buf.hover()
+    end
+  end, { buffer = bufnr, desc = "LSP: Hover" })
   vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { buffer = bufnr, desc = "LSP: Signature help" })
 
   vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { buffer = bufnr, desc = "Diagnostic" })
