@@ -78,7 +78,7 @@ go.setup {
   gocoverage_sign = "█",
   sign_priority = 5, -- change to a higher number to override other signs
   dap_debug = true, -- set to false to disable dap
-  dap_debug_keymap = true, -- true: use keymap for debugger defined in go/dap.lua
+  dap_debug_keymap = false, -- true: use keymap for debugger defined in go/dap.lua
   -- false: do not use keymap in go/dap.lua.  you must define your own.
   -- windows: use visual studio keymap
   dap_debug_gui = true, -- set to true to enable dap gui, highly recommend
