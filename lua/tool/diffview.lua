@@ -6,6 +6,8 @@ end
 
 local actions = require "diffview.actions"
 
+vim.o.fillchars = "diff:╱"
+
 diffview.setup {
   diff_binaries = false, -- Show diffs for binaries
   enhanced_diff_hl = true, -- See ':h diffview-config-enhanced_diff_hl'

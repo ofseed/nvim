@@ -5,7 +5,6 @@ vim.o.shiftwidth = 2
 vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.completeopt = "menu,menuone,noselect"
 vim.o.list = true
 vim.o.includeexpr = "substitute(v:fname,'\\.','/','g')"
 
@@ -23,7 +22,6 @@ vim.o.cursorlineopt = "number"
 vim.o.conceallevel = 1
 vim.o.scrolloff = 2
 vim.o.sidescrolloff = 5
-vim.o.fillchars = "diff:╱"
 vim.o.pumblend = 12
 
 -- Keymapping
