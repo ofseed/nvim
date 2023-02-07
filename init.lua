@@ -7,7 +7,6 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.list = true
-vim.o.hidden = true
 vim.o.includeexpr = "substitute(v:fname,'\\.','/','g')"
 
 -- Interface
