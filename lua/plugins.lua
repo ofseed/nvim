@@ -550,6 +550,10 @@ lazy.setup({
   },
 
   {
+    "nyoom-engineering/oxocarbon.nvim",
+  },
+
+  {
     "ellisonleao/gruvbox.nvim",
     config = function()
       require "colorscheme.gruvbox"
