@@ -888,6 +888,13 @@ lazy.setup({
   },
 
   {
+    "monaqa/dial.nvim",
+    config = function()
+      require "efficiency.dial"
+    end,
+  },
+
+  {
     "dstein64/vim-startuptime",
     cmd = { "StartupTime" },
   },
