@@ -61,3 +61,14 @@ illuminate.configure {
 
 vim.keymap.set("n", "<M-n>", illuminate.goto_next_reference, { desc = "Next reference" })
 vim.keymap.set("n", "<M-p>", illuminate.goto_prev_reference, { desc = "Prev reference" })
+
+-- Highlight on yank
+-- conflict with vim-illuminate
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+  pattern = { "*" },
+  callback = function()
+    illuminate.pause()
+    vim.highlight.on_yank()
+    illuminate.resume()
+  end,
+})

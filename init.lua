@@ -40,14 +40,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
--- Highlight on yank
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-  pattern = { "*" },
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
 vim.cmd [[colorscheme habamax]]
 vim.cmd [[aunmenu PopUp.How-to\ disable\ mouse]]
 vim.cmd [[aunmenu PopUp.-1-]]
