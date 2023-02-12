@@ -69,8 +69,8 @@ mason.setup_handlers {
   tsserver = function(server) end,
   jsonls = function(server) end,
 
-  sumneko_lua = function()
-    lspconfig.sumneko_lua.setup {
+  lua_ls = function()
+    lspconfig.lua_ls.setup {
       on_attach = function(client, bufnr)
         default.on_attach(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
