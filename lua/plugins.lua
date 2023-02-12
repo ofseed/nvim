@@ -559,6 +559,10 @@ lazy.setup({
       require "colorscheme.gruvbox"
     end,
   },
+
+  {
+    "LunarVim/horizon.nvim",
+  },
   -- }}}
 
   -- Tool Integration {{{
