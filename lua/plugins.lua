@@ -664,6 +664,17 @@ lazy.setup({
   },
 
   {
+    "kevinhwang91/nvim-fundo",
+    requires = "kevinhwang91/promise-async",
+    run = function()
+      require("fundo").install()
+    end,
+    config = function()
+      require "tool.fundo"
+    end,
+  },
+
+  {
     "aserowy/tmux.nvim",
     config = function()
       require "tool.tmux"
