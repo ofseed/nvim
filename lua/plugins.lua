@@ -183,15 +183,6 @@ lazy.setup({
   },
 
   {
-    "lewis6991/spellsitter.nvim",
-    config = function()
-      require "edit.spellsitter"
-    end,
-    enabled = false,
-    -- Spell check is less needed at this time
-  },
-
-  {
     "brymer-meneses/grammar-guard.nvim",
     enabled = false,
     -- Now grammar check is provided by ltex languages server
@@ -407,16 +398,6 @@ lazy.setup({
   },
 
   {
-    "kevinhwang91/nvim-fFHighlight",
-    config = function()
-      require "interface.ffhighlight"
-    end,
-    enabled = false,
-    -- Plugin show inline search highlight
-    -- Disable because it's not very useful
-  },
-
-  {
     "folke/todo-comments.nvim",
     config = function()
       require "interface.todo-comments"
@@ -431,12 +412,6 @@ lazy.setup({
     keys = {
       { "<leader>tz", "<Cmd>ZenMode<CR>", desc = "Zen Mode" },
     },
-  },
-
-  {
-    "psliwka/vim-smoothie",
-    enabled = false,
-    -- Try to get rid of dependency on moving animations.
   },
 
   {
@@ -455,15 +430,6 @@ lazy.setup({
     end,
     enabled = false,
     -- Disable causes the value of v:oldfiles to be messed up
-  },
-
-  {
-    "tversteeg/registers.nvim",
-    config = function()
-      require "interface.registers"
-    end,
-    enabled = false,
-    -- Behaves strangely when used with text objects
   },
 
   {
@@ -499,14 +465,6 @@ lazy.setup({
     end,
     enabled = false,
     -- Disable because conflict with other floating window plugins
-  },
-
-  {
-    "luukvbaal/stabilize.nvim",
-    config = function()
-      require "interface.stabilize"
-    end,
-    enabled = false,
   },
   -- }}}
 
@@ -578,15 +536,6 @@ lazy.setup({
   },
 
   {
-    "sidebar-nvim/sidebar.nvim",
-    config = function()
-      require "config.interface.sidebar"
-    end,
-    dependencies = { "sidebar-nvim/sections-dap" },
-    enabled = false,
-  },
-
-  {
     "nvim-neo-tree/neo-tree.nvim",
     config = function()
       require "tool.neo-tree"
@@ -611,11 +560,6 @@ lazy.setup({
     enabled = false,
     -- Subtitute for aerial.nvim
     -- Disable because better to , aerial.nvim
-  },
-
-  {
-    "onsails/diaglist.nvim",
-    enabled = false,
   },
 
   {
@@ -961,12 +905,6 @@ lazy.setup({
     config = function()
       require "debug.dap-ui"
     end,
-  },
-
-  {
-    "Pocco81/dap-buddy.nvim",
-    build = "make",
-    enabled = false,
   },
 
   {
