@@ -15,22 +15,22 @@ extensions.setup {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
       default.on_attach(client, bufnr)
-      vim.keymap.set("n", "<leader><leader>t", "<cmd>ClangdAST<CR>", { buffer = bufnr, desc = "Show AST" })
+      vim.keymap.set("n", "<localleader>t", "<cmd>ClangdAST<CR>", { buffer = bufnr, desc = "Show AST" })
       vim.keymap.set(
         "n",
-        "<leader><leader><leader>",
+        "<localleader><leader>",
         "<cmd>ClangdSwitchSourceHeader<CR>",
         { buffer = bufnr, desc = "Switch between source and header" }
       )
       vim.keymap.set(
         "n",
-        "<leader><leader>h",
+        "<localleader>h",
         "<cmd>ClangdTypeHierarchy<CR>",
         { buffer = bufnr, desc = "Show type hierarchy" }
       )
       vim.keymap.set(
         "n",
-        "<leader><leader>m",
+        "<localleader>m",
         "<cmd>ClangdMemoryUsage<CR>",
         { buffer = bufnr, desc = "Clangd memory usage" }
       )

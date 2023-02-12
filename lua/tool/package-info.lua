@@ -26,9 +26,9 @@ info.setup {
   package_manager = "npm",
 }
 
-vim.keymap.set("n", "<Leader><Leader>s", require("package-info").show, { desc = "Show package versions" })
-vim.keymap.set("n", "<Leader><Leader>c", require("package-info").hide, { desc = "Hide package versions" })
-vim.keymap.set("n", "<Leader><Leader>u", require("package-info").update, { desc = "Update package on line" })
-vim.keymap.set("n", "<Leader><Leader>d", require("package-info").delete, { desc = "Delete package on line" })
-vim.keymap.set("n", "<Leader><Leader>i", require("package-info").install, { desc = "Install a new package" })
-vim.keymap.set( "n", "<Leader><Leader>p", require("package-info").change_version, { desc = "Install a different package version" })
+vim.keymap.set("n", "<localleader>s", require("package-info").show, { desc = "Show package versions" })
+vim.keymap.set("n", "<localleader>c", require("package-info").hide, { desc = "Hide package versions" })
+vim.keymap.set("n", "<localleader>u", require("package-info").update, { desc = "Update package on line" })
+vim.keymap.set("n", "<localleader>d", require("package-info").delete, { desc = "Delete package on line" })
+vim.keymap.set("n", "<localleader>i", require("package-info").install, { desc = "Install a new package" })
+vim.keymap.set( "n", "<localleader>p", require("package-info").change_version, { desc = "Install a different package version" })

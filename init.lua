@@ -28,6 +28,7 @@ vim.o.pumblend = 12
 -- Keymapping
 vim.o.pastetoggle = "<F2>"
 vim.g.mapleader = " "
+vim.g.maplocalleader = "  "
 vim.keymap.set("c", "<C-p>", "<Up>")
 vim.keymap.set("c", "<C-n>", "<Down>")
 

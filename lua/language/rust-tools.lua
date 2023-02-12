@@ -180,34 +180,34 @@ tools.setup {
       vim.keymap.set("n", "K", "<cmd>RustHoverActions<CR>", { buffer = bufnr, desc = "Rust: Hover" })
       vim.keymap.set("n", "<leader>la", "<cmd>RustCodeAction<CR>", { buffer = bufnr, desc = "Code action" })
 
-      vim.keymap.set("n", "<leader><leader>r", "<cmd>RustRunnables<CR>", { buffer = bufnr, desc = "Runnables" })
-      vim.keymap.set("n", "<leader><leader>d", "<cmd>RustDebuggables<CR>", { buffer = bufnr, desc = "Debugables" })
+      vim.keymap.set("n", "<localleader>r", "<cmd>RustRunnables<CR>", { buffer = bufnr, desc = "Runnables" })
+      vim.keymap.set("n", "<localleader>d", "<cmd>RustDebuggables<CR>", { buffer = bufnr, desc = "Debugables" })
       vim.keymap.set(
         "n",
-        "<leader><leader>R",
+        "<localleader>R",
         "<cmd>RustReloadWorkspace<CR>",
         { buffer = bufnr, desc = "Reload workspace" }
       )
 
-      vim.keymap.set("n", "<leader><leader>k", "<cmd>RustMoveItemUp<CR>", { buffer = bufnr, desc = "Move item up" })
-      vim.keymap.set("n", "<leader><leader>j", "<cmd>RustMoveItemDown<CR>", { buffer = bufnr, desc = "Move item down" })
+      vim.keymap.set("n", "<localleader>k", "<cmd>RustMoveItemUp<CR>", { buffer = bufnr, desc = "Move item up" })
+      vim.keymap.set("n", "<localleader>j", "<cmd>RustMoveItemDown<CR>", { buffer = bufnr, desc = "Move item down" })
 
-      vim.keymap.set("n", "<leader><leader>oc", "<cmd>RustOpenCargo<CR>", { buffer = bufnr, desc = "Cargo" })
-      vim.keymap.set("n", "<leader><leader>og", "<cmd>RustViewCrateGraph<CR>", { buffer = bufnr, desc = "Crate graph" })
+      vim.keymap.set("n", "<localleader>oc", "<cmd>RustOpenCargo<CR>", { buffer = bufnr, desc = "Cargo" })
+      vim.keymap.set("n", "<localleader>og", "<cmd>RustViewCrateGraph<CR>", { buffer = bufnr, desc = "Crate graph" })
       vim.keymap.set(
         "n",
-        "<leader><leader>od",
+        "<localleader>od",
         "<cmd>RustOpenExternalDocs<CR>",
         { buffer = bufnr, desc = "External docs" }
       )
 
-      vim.keymap.set("n", "<leader><leader>ei", "<cmd>RustEmitIr<CR>", { buffer = bufnr, desc = "IR" })
-      vim.keymap.set("n", "<leader><leader>ea", "<cmd>RustEmitAsm<CR>", { buffer = bufnr, desc = "ASM" })
+      vim.keymap.set("n", "<localleader>ei", "<cmd>RustEmitIr<CR>", { buffer = bufnr, desc = "IR" })
+      vim.keymap.set("n", "<localleader>ea", "<cmd>RustEmitAsm<CR>", { buffer = bufnr, desc = "ASM" })
 
       key.register({
-        ["<leader><leader>m"] = { name = "+move" },
-        ["<leader><leader>o"] = { name = "+open" },
-        ["<leader><leader>e"] = { name = "+emit" },
+        ["<localleader>m"] = { name = "+move" },
+        ["<localleader>o"] = { name = "+open" },
+        ["<localleader>e"] = { name = "+emit" },
       }, { buffer = bufnr })
     end,
     settings = {

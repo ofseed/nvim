@@ -38,6 +38,6 @@ rest.setup {
   yank_dry_run = true,
 }
 
-vim.keymap.set("n", "<leader><leader>r", "<Plug>RestNvim<CR>", { silent = true, desc = "Rest" })
-vim.keymap.set("n", "<leader><leader>p", "<Plug>RestNvimPreview<CR>", { silent = true, desc = "Rest preview" })
-vim.keymap.set("n", "<leader><leader>l", "<Plug>RestNvimLast<CR>", { silent = true, desc = "Rest last" })
+vim.keymap.set("n", "<localleader>r", "<Plug>RestNvim<CR>", { silent = true, desc = "Rest" })
+vim.keymap.set("n", "<localleader>p", "<Plug>RestNvimPreview<CR>", { silent = true, desc = "Rest preview" })
+vim.keymap.set("n", "<localleader>l", "<Plug>RestNvimLast<CR>", { silent = true, desc = "Rest last" })
