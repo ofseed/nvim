@@ -977,7 +977,7 @@ lazy.setup({
     dependencies = {
       "ray-x/guihua.lua",
     },
-    ft = { "go" },
+    ft = { "go", "gomod" },
   },
 
   {
