@@ -6,8 +6,7 @@ end
 
 tree.setup {
   auto_reload_on_write = true,
-  create_in_closed_folder = false,
-  disable_netrw = true,
+  disable_netrw = false,
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
@@ -24,8 +23,9 @@ tree.setup {
   remove_keymaps = false,
   select_prompts = false,
   view = {
-    adaptive_size = false,
     centralize_selection = false,
+    cursorline = true,
+    debounce_delay = 15,
     width = function()
       local columns = vim.go.columns
       return math.floor(columns * 0.2) > 25 and math.floor(columns * 0.2) or 25
@@ -61,6 +61,7 @@ tree.setup {
     highlight_git = false,
     full_name = false,
     highlight_opened_files = "none",
+    highlight_modified = "none",
     root_folder_label = ":~:s?$?/..?",
     indent_width = 2,
     indent_markers = {
@@ -77,6 +78,7 @@ tree.setup {
     icons = {
       webdev_colors = true,
       git_placement = "before",
+      modified_placement = "after",
       padding = " ",
       symlink_arrow = " ➛ ",
       show = {
@@ -84,11 +86,13 @@ tree.setup {
         folder = true,
         folder_arrow = false,
         git = true,
+        modified = true,
       },
       glyphs = {
         default = "",
         symlink = "",
         bookmark = "",
+        modified = "●",
         folder = {
           arrow_closed = "",
           arrow_open = "",
@@ -130,6 +134,7 @@ tree.setup {
   diagnostics = {
     enable = true,
     show_on_dirs = false,
+    show_on_open_dirs = true,
     debounce_delay = 50,
     severity = {
       min = vim.diagnostic.severity.HINT,
@@ -144,6 +149,8 @@ tree.setup {
   },
   filters = {
     dotfiles = false,
+    git_clean = false,
+    no_buffer = false,
     custom = {},
     exclude = {},
   },
@@ -156,7 +163,13 @@ tree.setup {
     enable = true,
     ignore = false,
     show_on_dirs = true,
-    timeout = 500,
+    show_on_open_dirs = true,
+    timeout = 400,
+  },
+  modified = {
+    enable = false,
+    show_on_dirs = true,
+    show_on_open_dirs = true,
   },
   actions = {
     use_system_clipboard = true,
@@ -183,6 +196,7 @@ tree.setup {
       resize_window = false,
       window_picker = {
         enable = true,
+        picker = "default",
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
         exclude = {
           filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
@@ -196,7 +210,6 @@ tree.setup {
   },
   trash = {
     cmd = "gio trash",
-    require_confirm = true,
   },
   live_filter = {
     prefix = "[FILTER]: ",
@@ -211,6 +224,12 @@ tree.setup {
   },
   notify = {
     threshold = vim.log.levels.INFO,
+  },
+  ui = {
+    confirm = {
+      remove = true,
+      trash = true,
+    },
   },
   log = {
     enable = false,
