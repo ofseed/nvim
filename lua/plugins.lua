@@ -672,6 +672,7 @@ lazy.setup({
     config = function()
       require "tool.fundo"
     end,
+    enabled = false,
   },
 
   {
