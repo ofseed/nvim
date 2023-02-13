@@ -10,9 +10,12 @@ if not ok then
   return
 end
 
+local default = require "language.default"
+
 local config = {
   cmd = { mason.get_package("jdtls"):get_install_path() .. "/bin/jdtls" },
   root_dir = require("jdtls.setup").find_root { ".git", "mvnw", "gradlew" },
+  on_attach = default.on_attach,
 }
 
 jdtls.start_or_attach(config)
