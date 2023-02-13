@@ -4,16 +4,14 @@ if not ok then
   return
 end
 
-local config = {
-  -- The command that starts the language server
-  cmd = {
-    "/usr/bin/jdtls",
-    "-Dosgi.bundles.defaultStartLevel=4",
-    -- ADD REMAINING OPTIONS FROM https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line !
-  },
+local ok, mason = pcall(require, "mason-registry")
+if not ok then
+  vim.notify "Could not load mason-registry"
+  return
+end
 
-  -- This is the default if not provided, you can remove it. Or adjust as needed.
-  -- One dedicated LSP server & client will be started per unique root_dir
+local config = {
+  cmd = { mason.get_package("jdtls"):get_install_path() .. "/bin/jdtls" },
   root_dir = require("jdtls.setup").find_root { ".git", "mvnw", "gradlew" },
 }
 

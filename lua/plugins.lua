@@ -977,7 +977,6 @@ lazy.setup({
       require "language.jdtls"
     end,
     ft = { "java" },
-    enabled = false,
   },
 
   {

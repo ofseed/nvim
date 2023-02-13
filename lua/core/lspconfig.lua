@@ -66,6 +66,7 @@ mason.setup_handlers {
   clangd = function(server) end,
   rust_analyzer = function(server) end,
   gopls = function(server) end,
+  jdtls = function(server) end,
   tsserver = function(server) end,
   jsonls = function(server) end,
 
