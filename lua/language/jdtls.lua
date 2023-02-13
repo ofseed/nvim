@@ -18,4 +18,9 @@ local config = {
   on_attach = default.on_attach,
 }
 
-jdtls.start_or_attach(config)
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = "java",
+  callback = function()
+    jdtls.start_or_attach(config)
+  end,
+})
