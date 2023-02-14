@@ -919,6 +919,9 @@ lazy.setup({
     config = function()
       require "debug.dap-ui"
     end,
+    requires = {
+      "mfussenegger/nvim-dap",
+    },
     event = "VeryLazy",
   },
 
