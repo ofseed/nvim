@@ -903,6 +903,7 @@ lazy.setup({
     config = function()
       require "debug.dap"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -910,6 +911,7 @@ lazy.setup({
     config = function()
       require "debug.dap-virtual-text"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -917,6 +919,7 @@ lazy.setup({
     config = function()
       require "debug.dap-ui"
     end,
+    event = "VeryLazy",
   },
 
   {
