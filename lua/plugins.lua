@@ -630,11 +630,6 @@ lazy.setup({
     config = function()
       require "tool.diffview"
     end,
-    keys = {
-      { "<leader>gdo", "<Cmd>DiffviewOpen<CR>", desc = "Open" },
-      { "<leader>gdc", "<Cmd>DiffviewClose<CR>", desc = "Close" },
-      { "<leader>gdh", "<Cmd>DiffviewFileHistory<CR>", desc = "Open History" },
-    },
   },
 
   {
