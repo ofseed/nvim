@@ -5,69 +5,140 @@ if not ok then
 end
 
 barbecue.setup {
-  ---whether to attach navic to language servers automatically
+  ---Whether to attach navic to language servers automatically.
+  ---
   ---@type boolean
   attach_navic = true,
 
-  ---whether to create winbar updater autocmd
+  ---Whether to create winbar updater autocmd.
+  ---
   ---@type boolean
   create_autocmd = true,
 
-  ---buftypes to enable winbar in
+  ---Buftypes to enable winbar in.
+  ---
   ---@type string[]
   include_buftypes = { "" },
 
-  ---filetypes not to enable winbar in
+  ---Filetypes not to enable winbar in.
+  ---
   ---@type string[]
-  exclude_filetypes = { "toggleterm" },
+  exclude_filetypes = { "gitcommit", "toggleterm" },
 
   modifiers = {
-    ---filename modifiers applied to dirname
+    ---Filename modifiers applied to dirname.
+    ---
+    ---See: `:help filename-modifiers`
+    ---
     ---@type string
     dirname = ":~:.",
 
-    ---filename modifiers applied to basename
+    ---Filename modifiers applied to basename.
+    ---
+    ---See: `:help filename-modifiers`
+    ---
     ---@type string
     basename = "",
   },
 
-  ---returns a string to be shown at the end of winbar
-  ---@type fun(bufnr: number): string
-  custom_section = function(bufnr)
-    return ""
-  end,
+  ---Whether to display path to file.
+  ---
+  ---@type boolean
+  show_dirname = true,
 
-  ---theme to be used which should be located under `barbecue.theme` module
-  ---`auto` defaults to your current colorscheme
-  ---@type "auto"|string|barbecue.Theme
-  theme = "auto",
+  ---Whether to display file name.
+  ---
+  ---@type boolean
+  show_basename = true,
 
-  ---whether to replace file icon with the modified symbol when buffer is modified
+  ---Whether to replace file icon with the modified symbol when buffer is
+  ---modified.
+  ---
   ---@type boolean
   show_modified = false,
 
+  ---Get modified status of file.
+  ---
+  ---NOTE: This can be used to get file modified status from SCM (e.g. git)
+  ---
+  ---@type fun(bufnr: number): boolean
+  modified = function(bufnr)
+    return vim.bo[bufnr].modified
+  end,
+
+  ---Whether to show/use navic in the winbar.
+  ---
+  ---@type boolean
+  show_navic = true,
+
+  ---Get leading custom section contents.
+  ---
+  ---NOTE: This function shouldn't do any expensive actions as it is run on each
+  ---render.
+  ---
+  ---@type fun(bufnr: number): barbecue.Config.custom_section
+  lead_custom_section = function()
+    return " "
+  end,
+
+  ---@alias barbecue.Config.custom_section
+  ---|string # Literal string.
+  ---|{ [1]: string, [2]: string? }[] # List-like table of `[text, highlight?]` tuples in which `highlight` is optional.
+  ---
+  ---Get custom section contents.
+  ---
+  ---NOTE: This function shouldn't do any expensive actions as it is run on each
+  ---render.
+  ---
+  ---@type fun(bufnr: number): barbecue.Config.custom_section
+  custom_section = function()
+    return " "
+  end,
+
+  ---@alias barbecue.Config.theme
+  ---|'"auto"' # Use your current colorscheme's theme or generate a theme based on it.
+  ---|string # Theme located under `barbecue.theme` module.
+  ---|barbecue.Theme # Same as '"auto"' but override it with the given table.
+  ---
+  ---Theme to be used for generating highlight groups dynamically.
+  ---
+  ---@type barbecue.Config.theme
+  theme = "auto",
+
+  ---Whether context text should follow its icon's color.
+  ---
+  ---@type boolean
+  context_follow_icon_color = false,
+
   symbols = {
-    ---modification indicator
+    ---Modification indicator.
+    ---
     ---@type string
     modified = "●",
 
-    ---truncation indicator
+    ---Truncation indicator.
+    ---
     ---@type string
     ellipsis = "…",
 
-    ---entry separator
+    ---Entry separator.
+    ---
     ---@type string
     separator = "",
   },
 
-  ---icons for different context entry kinds
-  ---`false` to disable kind icons
-  ---@type table<string, string>|false
+  ---@alias barbecue.Config.kinds
+  ---|false # Disable kind icons.
+  ---|table<string, string> # Type to icon mapping.
+  ---
+  ---Icons for different context entry kinds.
+  ---
+  ---@type barbecue.Config.kinds
   kinds = {
-    File = "",
+    File = "",
     Module = "",
     Namespace = "",
-    Package = "",
+    Package = "",
     Class = "",
     Method = "",
     Property = "",
@@ -78,13 +149,13 @@ barbecue.setup {
     Function = "",
     Variable = "",
     Constant = "",
-    String = "",
+    String = "",
     Number = "",
     Boolean = "",
     Array = "",
-    Object = "",
-    Key = "",
-    Null = "",
+    Object = "",
+    Key = "",
+    Null = "",
     EnumMember = "",
     Struct = "",
     Event = "",
