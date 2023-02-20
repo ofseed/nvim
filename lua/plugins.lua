@@ -752,8 +752,6 @@ lazy.setup({
       require "tool.org-bullets"
     end,
     ft = { "org" },
-    enabled = false,
-    -- Disable with orgmode
   },
 
   {
