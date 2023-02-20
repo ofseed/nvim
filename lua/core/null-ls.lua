@@ -4,6 +4,12 @@ if not ok then
   return
 end
 
+local os, mason = pcall(require, "mason-null-ls")
+
+mason.setup {
+  automatic_setup = true,
+}
+
 ls.setup {
   sources = {
     ls.builtins.formatting.prettier,
