@@ -1178,5 +1178,3 @@ lazy.setup({
   },
   state = vim.fn.stdpath "state" .. "/lazy/state.json", -- state info for checker and other things
 })
-
-vim.keymap.set("n", "<leader>ol", "<Cmd>Lazy<CR>", { silent = true, desc = "Plugin manager" })
