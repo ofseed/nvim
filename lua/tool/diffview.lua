@@ -127,6 +127,8 @@ diffview.setup {
       { "n", "<leader>cb", actions.conflict_choose "base", { desc = "Choose the BASE version of a conflict" } },
       { "n", "<leader>ca", actions.conflict_choose "all", { desc = "Choose all the versions of a conflict" } },
       { "n", "dx", actions.conflict_choose "none", { desc = "Delete the conflict region" } },
+      { "n", "q", diffview.close, { desc = "Close diffview" } },
+      { "n", "<esc>", diffview.close, { desc = "Close diffview" } },
     },
     diff1 = {
       -- Mappings in single window diff layouts
@@ -213,6 +215,8 @@ diffview.setup {
       { "n", "[x", actions.prev_conflict, { desc = "Go to the previous conflict" } },
       { "n", "]x", actions.next_conflict, { desc = "Go to the next conflict" } },
       { "n", "g?", actions.help "file_panel", { desc = "Open the help panel" } },
+      { "n", "q", diffview.close, { desc = "Close diffview" } },
+      { "n", "<esc>", diffview.close, { desc = "Close diffview" } },
     },
     file_history_panel = {
       { "n", "g!", actions.options, { desc = "Open the option panel" } },
@@ -274,6 +278,8 @@ diffview.setup {
       { "n", "<leader>b", actions.toggle_files, { desc = "Toggle the file panel" } },
       { "n", "g<C-x>", actions.cycle_layout, { desc = "Cycle available layouts" } },
       { "n", "g?", actions.help "file_history_panel", { desc = "Open the help panel" } },
+      { "n", "q", diffview.close, { desc = "Close diffview" } },
+      { "n", "<esc>", diffview.close, { desc = "Close diffview" } },
     },
     option_panel = {
       { "n", "<tab>", actions.select_entry, { desc = "Change the current option" } },
