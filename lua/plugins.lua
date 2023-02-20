@@ -744,8 +744,6 @@ lazy.setup({
     config = function()
       require "tool.orgmode"
     end,
-    enabled = false,
-    -- Need reconfigre, especially keymaps
   },
 
   {
