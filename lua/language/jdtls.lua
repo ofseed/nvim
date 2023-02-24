@@ -34,6 +34,11 @@ local config = {
 
   on_attach = function(client, bufnr)
     default.on_attach(client, bufnr)
+    -- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
+    -- you make during a debug session immediately.
+    -- Remove the option if you do not want that.
+    -- You can use the `JdtHotcodeReplace` command to trigger it manually
+    jdtls.setup_dap { hotcodereplace = "auto" }
     require("jdtls.setup").add_commands()
   end,
 
@@ -45,7 +50,13 @@ local config = {
   --
   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
   init_options = {
-    bundles = {},
+    bundles = {
+      vim.fn.glob(
+        mason.get_package("java-debug-adapter"):get_install_path()
+          .. "/extension/server/com.microsoft.java.debug.plugin-*.jar",
+        1
+      ),
+    },
   },
 }
 
