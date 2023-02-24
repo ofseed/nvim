@@ -32,7 +32,10 @@ local config = {
 
   capabilities = default.capabilities,
 
-  on_attach = default.on_attach,
+  on_attach = function(client, bufnr)
+    default.on_attach(client, bufnr)
+    require("jdtls.setup").add_commands()
+  end,
 
   -- Language server `initializationOptions`
   -- You need to extend the `bundles` with paths to jar files
