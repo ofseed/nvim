@@ -306,6 +306,13 @@ lazy.setup({
   },
 
   {
+    "lvimuser/lsp-inlayhints.nvim",
+    config = function()
+      require "interface.lsp-inlayhints"
+    end,
+  },
+
+  {
     "zbirenbaum/neodim",
     config = function()
       require "interface.dim"
