@@ -933,6 +933,11 @@ lazy.setup({
     end,
     ft = { "python" },
   },
+
+  {
+    "Civitasv/cmake-tools.nvim",
+    enabled = false,
+  },
   -- }}}
 
   -- Language Specific {{{
