@@ -27,7 +27,13 @@ local config = {
   -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
   -- for a list of options
   settings = {
-    java = {},
+    java = {
+      inlayHints = {
+        parameterNames = {
+          enabled = "all",
+        },
+      },
+    },
   },
 
   capabilities = default.capabilities,

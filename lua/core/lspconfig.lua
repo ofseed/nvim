@@ -79,6 +79,10 @@ mason.setup_handlers {
       capabilities = default.capabilities,
       settings = {
         Lua = {
+          hint = {
+            enable = true,
+            setType = true,
+          },
           completion = {
             postfix = ".",
             showWord = "Disable",
