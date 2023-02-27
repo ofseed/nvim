@@ -10,14 +10,17 @@ mason.setup {
   automatic_setup = true,
 }
 
+mason.setup_handlers {
+  function(source_name, methods)
+    -- all sources with no handler get passed here
+
+    -- To keep the original functionality of `automatic_setup = true`,
+    -- please add the below.
+    require "mason-null-ls.automatic_setup"(source_name, methods)
+  end,
+}
+
 ls.setup {
-  sources = {
-    ls.builtins.formatting.prettier,
-    ls.builtins.formatting.stylua,
-    ls.builtins.formatting.black,
-    ls.builtins.formatting.isort,
-    -- ls.builtins.diagnostics.pylint,
-    -- ls.builtins.diagnostics.codespell,
-    ls.builtins.formatting.shfmt,
-  },
+  border = "rounded",
+  fallback_severity = vim.diagnostic.severity.INFO,
 }
