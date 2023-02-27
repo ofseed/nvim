@@ -902,6 +902,9 @@ lazy.setup({
       require "debug.dap"
     end,
     event = "VeryLazy",
+    dependencies = {
+      "jay-babu/mason-nvim-dap.nvim",
+    },
   },
 
   {

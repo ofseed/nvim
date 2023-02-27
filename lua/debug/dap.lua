@@ -4,30 +4,26 @@ if not ok then
   return
 end
 
-local ok, mason = pcall(require, "mason-registry")
+local ok, mason = pcall(require, "mason-nvim-dap")
 if not ok then
-  vim.notify "Could not load mason-registry"
+  vim.notify "Could not load mason-nvim-dap"
   return
 end
 
-dap.adapters.codelldb = {
-  type = "server",
-  port = "${port}", -- 💀 Use the port printed out or specified with `--port`
-  executable = {
-    command = mason.get_package("codelldb"):get_install_path() .. "/extension/adapter/codelldb",
-    args = { "--port", "${port}" },
+mason.setup {
+  automatic_setup = {
+    -- modifies the default configurations table
+    -- pass in a function or a list to override with
+    -- the same can be done for adapters and filetypes
+    configurations = function(default)
+      default.python = nil
+
+      return default
+    end,
   },
 }
 
-dap.configurations.cpp = {
-  {
-    name = "Launch file",
-    type = "codelldb",
-    request = "launch",
-    program = "${fileDirname}/${fileBasenameNoExtension}",
-    cwd = "${workspaceFolder}",
-  },
-}
+mason.setup_handlers()
 
 -- If you want to use this for Rust and C, add something like this:
 
