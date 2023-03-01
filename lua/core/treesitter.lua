@@ -64,14 +64,6 @@ treesitter.setup {
       include_surrounding_whitespace = true,
     },
   },
-  refactor = {
-    smart_rename = {
-      enable = false,
-      keymaps = {
-        smart_rename = "grr",
-      },
-    },
-  },
   autotag = {
     enable = true,
   },

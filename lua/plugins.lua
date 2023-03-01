@@ -61,7 +61,6 @@ lazy.setup({
     end,
     dependencies = {
       { "nvim-treesitter/nvim-treesitter-textobjects" },
-      { "nvim-treesitter/nvim-treesitter-refactor" },
       { "windwp/nvim-ts-autotag" },
       { "mrjones2014/nvim-ts-rainbow" },
       { "RRethy/nvim-treesitter-endwise" },
