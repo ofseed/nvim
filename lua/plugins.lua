@@ -116,6 +116,10 @@ lazy.setup({
     "ii14/emmylua-nvim",
     lazy = true,
   },
+
+  {
+    "editorconfig/editorconfig-vim",
+  },
   -- }}}
 
   -- Text Editing {{{
