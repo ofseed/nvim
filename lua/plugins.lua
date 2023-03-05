@@ -438,8 +438,6 @@ lazy.setup({
     config = function()
       require "interface.marks"
     end,
-    enabled = false,
-    -- Disable causes the value of v:oldfiles to be messed up
   },
 
   {
