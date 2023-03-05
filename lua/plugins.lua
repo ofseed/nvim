@@ -341,8 +341,6 @@ lazy.setup({
     config = function()
       require "interface.lsp_signature"
     end,
-    enabled = false,
-    -- Unknow reason causes unknown errors
   },
 
   {
