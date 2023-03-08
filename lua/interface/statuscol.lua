@@ -15,12 +15,12 @@ statuscol.setup {
   -- Default segments (fold -> sign -> line number + separator)
   segments = {
     { text = { "%C" }, click = "v:lua.ScFa" },
-    { text = { "%s" }, click = "v:lua.ScSa" },
     {
-      text = { builtin.lnumfunc, " " },
+      text = { builtin.lnumfunc },
       condition = { true, builtin.not_empty },
       click = "v:lua.ScLa",
     },
+    { text = { "%s" }, click = "v:lua.ScSa" },
   },
   clickhandlers = {
     Lnum = builtin.lnum_click,
