@@ -9,7 +9,7 @@ vim.o.list = true
 vim.o.includeexpr = "substitute(v:fname,'\\.','/','g')"
 
 -- Interface
--- vim.o.splitkeep = "screen" -- For neovim 0.9
+vim.o.splitkeep = "screen"
 vim.o.number = true
 vim.o.wrap = false
 vim.o.linebreak = true
