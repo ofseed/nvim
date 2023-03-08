@@ -280,8 +280,9 @@ lazy.setup({
 
   {
     "luukvbaal/statuscol.nvim",
-    enabled = false,
-    -- Requires neovim 0.9
+    config = function()
+      require "interface.statuscol"
+    end,
   },
 
   {
