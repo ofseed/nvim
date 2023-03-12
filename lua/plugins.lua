@@ -400,6 +400,13 @@ lazy.setup({
   },
 
   {
+    "utilyre/sentiment.nvim",
+    config = function()
+      require "interface.sentiment"
+    end,
+  },
+
+  {
     "kevinhwang91/nvim-bqf",
     config = function()
       require "interface.bqf"
@@ -1173,7 +1180,7 @@ lazy.setup({
       disabled_plugins = {
         -- "gzip",
         -- "matchit",
-        -- "matchparen",
+        "matchparen",
         -- "netrwPlugin",
         -- "tarPlugin",
         -- "tohtml",
