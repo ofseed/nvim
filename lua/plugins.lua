@@ -879,6 +879,13 @@ lazy.setup({
   },
 
   {
+    "willothy/flatten.nvim",
+    config = function()
+      require "efficiency.flatten"
+    end,
+  },
+
+  {
     "jcdickinson/wpm.nvim",
     enabled = false,
   },
