@@ -84,6 +84,9 @@ mason.setup_handlers {
             setType = true,
             arrayIndex = "Disable",
           },
+          codelens = {
+            enable = true,
+          },
           completion = {
             postfix = ".",
             showWord = "Disable",

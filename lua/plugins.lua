@@ -313,6 +313,15 @@ lazy.setup({
   },
 
   {
+    "VidocqH/lsp-lens.nvim",
+    config = function()
+      require "interface.lsp-lens"
+    end,
+    enabled = false,
+    -- Not stable
+  },
+
+  {
     "zbirenbaum/neodim",
     config = function()
       require "interface.dim"
