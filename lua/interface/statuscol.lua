@@ -16,11 +16,18 @@ statuscol.setup {
   segments = {
     { text = { "%C" }, click = "v:lua.ScFa" },
     {
+      sign = { name = { ".*" }, maxwidth = 1 },
+      click = "v:lua.ScSa",
+    },
+    {
       text = { builtin.lnumfunc },
       condition = { true, builtin.not_empty },
       click = "v:lua.ScLa",
     },
-    { text = { "%s" }, click = "v:lua.ScSa" },
+    {
+      sign = { name = { "GitSigns" }, maxwidth = 1, colwidth = 1 },
+      click = "v:lua.ScSa",
+    },
   },
   clickhandlers = {
     Lnum = builtin.lnum_click,
