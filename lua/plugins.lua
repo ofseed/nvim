@@ -660,6 +660,10 @@ lazy.setup({
   },
 
   {
+    "Rawnly/gist.nvim",
+  },
+
+  {
     "tpope/vim-fugitive",
   },
 
