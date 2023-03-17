@@ -389,6 +389,14 @@ lazy.setup({
     config = function()
       require "interface.ccc"
     end,
+    enabled = false,
+  },
+
+  {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require "interface.colorizer"
+    end,
   },
 
   { "dstein64/nvim-scrollview" },
