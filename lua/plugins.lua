@@ -918,6 +918,7 @@ lazy.setup({
       require "debug.sniprun"
     end,
     build = "bash install.sh",
+    event = "VeryLazy",
   },
 
   {
