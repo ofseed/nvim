@@ -879,7 +879,6 @@ lazy.setup({
     config = function()
       require "efficiency.lastplace"
     end,
-    event = "VeryLazy",
   },
 
   {
