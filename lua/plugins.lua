@@ -26,6 +26,7 @@ lazy.setup({
     end,
     dependencies = { "williamboman/mason-lspconfig.nvim" },
     after = "mason.nvim",
+    event = "VeryLazy",
   },
 
   {
@@ -33,6 +34,7 @@ lazy.setup({
     config = function()
       require "core.mason"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -44,6 +46,7 @@ lazy.setup({
       { "nvim-lua/plenary.nvim" },
       { "jay-babu/mason-null-ls.nvim" },
     },
+    event = "VeryLazy",
   },
 
   {
@@ -51,6 +54,7 @@ lazy.setup({
     config = function()
       require "core.project"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -67,6 +71,7 @@ lazy.setup({
       { "RRethy/nvim-treesitter-textsubjects", enabled = false },
       { "JoosepAlviste/nvim-ts-context-commentstring" },
     },
+    event = "VeryLazy",
   },
 
   {
@@ -74,15 +79,20 @@ lazy.setup({
     config = function()
       require "core.overseer"
     end,
+    event = "VeryLazy",
   },
 
-  { "tpope/vim-sleuth" },
+  {
+    "tpope/vim-sleuth",
+    event = "VeryLazy",
+  },
 
   {
     "folke/which-key.nvim",
     config = function()
       require "core.which-key"
     end,
+    event = "VeryLazy",
   },
 
   {
