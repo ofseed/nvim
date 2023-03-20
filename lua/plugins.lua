@@ -836,6 +836,7 @@ lazy.setup({
       require "efficiency.hop"
     end,
     branch = "v2",
+    event = "VeryLazy",
   },
 
   {
@@ -843,9 +844,13 @@ lazy.setup({
     config = function()
       require "efficiency.treehopper"
     end,
+    event = "VeryLazy",
   },
 
-  { "kevinhwang91/vim-ibus-sw" },
+  {
+    "kevinhwang91/vim-ibus-sw",
+    event = "VeryLazy",
+  },
 
   {
     "Pocco81/auto-save.nvim",
@@ -861,6 +866,7 @@ lazy.setup({
     config = function()
       require "efficiency.lastplace"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -871,6 +877,7 @@ lazy.setup({
     dependencies = {
       { "nvim-lua/plenary.nvim" },
     },
+    event = "VeryLazy",
   },
 
   {
@@ -878,6 +885,7 @@ lazy.setup({
     config = function()
       require "efficiency.dial"
     end,
+    event = "VeryLazy",
   },
 
   {
