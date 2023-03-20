@@ -660,7 +660,7 @@ lazy.setup({
       require "tool.gitsigns"
     end,
     dependencies = "nvim-lua/plenary.nvim",
-    event = "VeryLazy",
+    -- Lasy load cause error
   },
 
   {
