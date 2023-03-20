@@ -287,6 +287,7 @@ lazy.setup({
     config = function()
       require "interface.illuminate"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -295,6 +296,7 @@ lazy.setup({
       require "interface.ufo"
     end,
     dependencies = "kevinhwang91/promise-async",
+    event = "VeryLazy",
   },
 
   {
@@ -304,6 +306,7 @@ lazy.setup({
     end,
     after = "catppuccin",
     -- hlargs should be loaded after colorscheme
+    event = "VeryLazy",
   },
 
   {
@@ -311,6 +314,7 @@ lazy.setup({
     config = function()
       require "interface.lsp-inlayhints"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -327,6 +331,7 @@ lazy.setup({
     config = function()
       require "interface.dim"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -334,6 +339,7 @@ lazy.setup({
     config = function()
       require "interface.indent-blankline"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -341,6 +347,7 @@ lazy.setup({
     config = function()
       require "interface.dressing"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -348,6 +355,7 @@ lazy.setup({
     config = function()
       require "interface.lsp_signature"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -355,6 +363,7 @@ lazy.setup({
     config = function()
       require "interface.lspkind"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -376,6 +385,7 @@ lazy.setup({
     config = function()
       require "interface.fidget"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -398,9 +408,13 @@ lazy.setup({
     config = function()
       require "interface.colorizer"
     end,
+    event = "VeryLazy",
   },
 
-  { "dstein64/nvim-scrollview" },
+  {
+    "dstein64/nvim-scrollview",
+    event = "VeryLazy",
+  },
 
   {
     "lewis6991/satellite.nvim",
@@ -418,6 +432,7 @@ lazy.setup({
     config = function()
       require "interface.sentiment"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -425,6 +440,7 @@ lazy.setup({
     config = function()
       require "interface.bqf"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -432,6 +448,7 @@ lazy.setup({
     config = function()
       require "interface.todo-comments"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -458,6 +475,7 @@ lazy.setup({
     config = function()
       require "interface.marks"
     end,
+    event = "VeryLazy",
   },
 
   {
