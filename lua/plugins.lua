@@ -595,6 +595,7 @@ lazy.setup({
       require "tool.toggleterm"
     end,
     version = "v2.*",
+    event = "VeryLazy",
   },
 
   {
@@ -621,6 +622,7 @@ lazy.setup({
     config = function()
       require "tool.window-picker"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -629,6 +631,7 @@ lazy.setup({
       require "tool.gitsigns"
     end,
     dependencies = "nvim-lua/plenary.nvim",
+    event = "VeryLazy",
   },
 
   {
@@ -636,6 +639,7 @@ lazy.setup({
     config = function()
       require "tool.git-conflict"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -657,6 +661,7 @@ lazy.setup({
     config = function()
       require "tool.diffview"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -665,18 +670,22 @@ lazy.setup({
     config = function()
       require "tool.gitlinker"
     end,
+    event = "VeryLazy",
   },
 
   {
     "Rawnly/gist.nvim",
+    event = "VeryLazy",
   },
 
   {
     "tpope/vim-fugitive",
+    event = "VeryLazy",
   },
 
   {
     "rbong/vim-flog",
+    event = "VeryLazy",
   },
 
   {
@@ -687,6 +696,7 @@ lazy.setup({
     keys = {
       { "<leader>u", "<Cmd>MundoToggle<CR>", desc = "Undo Tree" },
     },
+    event = "VeryLazy",
   },
 
   {
@@ -706,6 +716,7 @@ lazy.setup({
     config = function()
       require "tool.tmux"
     end,
+    event = "VeryLazy",
   },
 
   {
@@ -775,6 +786,7 @@ lazy.setup({
     config = function()
       require "tool.orgmode"
     end,
+    event = "VeryLazy",
   },
 
   {
