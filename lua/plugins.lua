@@ -123,6 +123,7 @@ lazy.setup({
     config = function()
       require "edit.copilot"
     end,
+    event = "VeryLazy",
   },
 
   {
