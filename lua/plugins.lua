@@ -638,6 +638,14 @@ lazy.setup({
   },
 
   {
+    "SmiteshP/nvim-navbuddy",
+    config = function()
+      require "tool.navbuddy"
+    end,
+    event = "VeryLazy",
+  },
+
+  {
     "gorbit99/codewindow.nvim",
     config = function()
       require "tool.codewindow"
