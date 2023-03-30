@@ -119,6 +119,8 @@ lazy.setup({
     config = function()
       require "core.filetype"
     end,
+    enabled = false,
+    -- Cause error when opening some files
   },
 
   {
