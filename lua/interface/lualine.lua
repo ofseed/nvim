@@ -80,5 +80,6 @@ lualine.setup {
     "aerial",
     "nvim-dap-ui",
     "mundo",
+    "lazy",
   },
 }
