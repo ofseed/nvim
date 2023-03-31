@@ -1095,7 +1095,13 @@ lazy.setup({
 
   {
     "akinsho/flutter-tools.nvim",
-    enabled = false,
+    config = function()
+      require "language.flutter-tools"
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    ft = { "dart" },
   },
 
   {
