@@ -120,4 +120,16 @@ mason.setup_handlers {
       },
     }
   end,
+
+  yamlls = function ()
+    lspconfig.yamlls.setup {
+      on_attach = default.on_attach,
+      capabilities = default.capabilities,
+      settings = {
+        yaml = {
+          keyOrdering = false,
+        }
+      }
+    }
+  end
 }
