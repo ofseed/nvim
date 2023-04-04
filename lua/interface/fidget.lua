@@ -24,6 +24,7 @@ fidget.setup {
     relative = "win", -- where to anchor, either "win" or "editor"
     blend = 100, -- &winblend for the window
     zindex = nil, -- the zindex value for the window
+    border = "none", -- style of border for the fidget window
   },
   fmt = {
     leftpad = true, -- right-justify text in fidget box
@@ -39,6 +40,9 @@ fidget.setup {
     end,
   },
   sources = { -- Sources to configure
+    -- * = { -- Name of source
+    --   ignore = false, -- Ignore notifications from this source
+    -- },
   },
   debug = {
     logging = false, -- whether to enable logging, for debugging
