@@ -109,21 +109,6 @@ lazy.setup({
   },
 
   {
-    "lewis6991/impatient.nvim",
-    enabled = false,
-    -- Lazy does all of that and more
-  },
-
-  {
-    "nathom/filetype.nvim",
-    config = function()
-      require "core.filetype"
-    end,
-    enabled = false,
-    -- Cause error when opening some files
-  },
-
-  {
     "ii14/emmylua-nvim",
     lazy = true,
   },
