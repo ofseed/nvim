@@ -10,8 +10,9 @@ navbuddy.setup {
     border = "rounded", -- "rounded", "double", "solid", "none"
     -- or an array with eight chars building up the border in a clockwise fashion
     -- starting with the top-left corner. eg: { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" }.
-    size = "60%",
-    position = "50%",
+    size = "60%", -- Or table format example: { height = "40%", width = "100%"}
+    position = "50%", -- Or table format example: { row = "100%", col = "0%"}
+    scrolloff = nil, -- scrolloff value within navbuddy window
     sections = {
       left = {
         size = "20%",
@@ -25,6 +26,8 @@ navbuddy.setup {
         -- No size option for right most section. It fills to
         -- remaining area.
         border = nil,
+        preview = "leaf", -- Right section can show previews too.
+        -- Options: "leaf", "always" or "never"
       },
     },
   },
@@ -56,6 +59,10 @@ navbuddy.setup {
     Operator = " ",
     TypeParameter = " ",
   },
+  use_default_mappings = true, -- If set to false, only mappings set
+  -- by user are set. Else default
+  -- mappings are used for keys
+  -- that are not set by user
   mappings = {
     ["<esc>"] = actions.close, -- Close and cursor to original location
     ["q"] = actions.close,
@@ -65,6 +72,7 @@ navbuddy.setup {
 
     ["h"] = actions.parent, -- Move to left panel
     ["l"] = actions.children, -- Move to right panel
+    ["0"] = actions.root, -- Move to first panel
 
     ["v"] = actions.visual_name, -- Visual selection of name
     ["V"] = actions.visual_scope, -- Visual selection of scope
@@ -89,6 +97,9 @@ navbuddy.setup {
 
     ["<enter>"] = actions.select, -- Goto selected symbol
     ["o"] = actions.select,
+
+    ["J"] = actions.move_down, -- Move focused node down
+    ["K"] = actions.move_up, -- Move focused node up
   },
   lsp = {
     auto_attach = true, -- If set to true, you don't need to manually use attach function
@@ -97,6 +108,8 @@ navbuddy.setup {
   source_buffer = {
     follow_node = true, -- Keep the current node in focus on the source buffer
     highlight = true, -- Highlight the currently focused node
+    reorient = "smart", -- "smart", "top", "mid" or "none"
+    scrolloff = nil, -- scrolloff value when navbuddy is open
   },
 }
 
