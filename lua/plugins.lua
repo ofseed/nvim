@@ -329,6 +329,9 @@ lazy.setup({
       require "interface.dim"
     end,
     event = "VeryLazy",
+    enabled = false,
+    -- `DiagnosticUnnecessary` and `DiagnosticDeprecated`
+    -- now is provided by neovim
   },
 
   {
