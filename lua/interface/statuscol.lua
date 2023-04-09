@@ -6,7 +6,6 @@ end
 local builtin = require "statuscol.builtin"
 
 statuscol.setup {
-  bt_ignore = { "nofile" },
   segments = {
     { text = { "%C" }, click = "v:lua.ScFa" },
     {
