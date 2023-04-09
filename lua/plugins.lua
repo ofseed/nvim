@@ -304,6 +304,8 @@ lazy.setup({
     after = "catppuccin",
     -- hlargs should be loaded after colorscheme
     event = "VeryLazy",
+    enabled = false,
+    -- Similar feature is provided by semantic token
   },
 
   {
