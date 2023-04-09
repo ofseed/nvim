@@ -10,21 +10,7 @@ if not ok then
   return
 end
 
-mason.setup {
-  automatic_setup = {
-    -- modifies the default configurations table
-    -- pass in a function or a list to override with
-    -- the same can be done for adapters and filetypes
-    configurations = function(default)
-      default.python = nil
-
-      return default
-    end,
-  },
-}
-
-mason.setup_handlers()
-
+mason.setup {}
 -- If you want to use this for Rust and C, add something like this:
 
 dap.configurations.c = dap.configurations.cpp
