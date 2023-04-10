@@ -297,18 +297,6 @@ lazy.setup({
   },
 
   {
-    "m-demare/hlargs.nvim",
-    config = function()
-      require "interface.hlargs"
-    end,
-    after = "catppuccin",
-    -- hlargs should be loaded after colorscheme
-    event = "VeryLazy",
-    enabled = false,
-    -- Similar feature is provided by semantic token
-  },
-
-  {
     "lvimuser/lsp-inlayhints.nvim",
     config = function()
       require "interface.lsp-inlayhints"
@@ -323,17 +311,6 @@ lazy.setup({
     end,
     enabled = false,
     -- Not stable
-  },
-
-  {
-    "zbirenbaum/neodim",
-    config = function()
-      require "interface.dim"
-    end,
-    event = "VeryLazy",
-    enabled = false,
-    -- `DiagnosticUnnecessary` and `DiagnosticDeprecated`
-    -- now is provided by neovim
   },
 
   {
