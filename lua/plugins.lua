@@ -393,6 +393,7 @@ lazy.setup({
   {
     "dstein64/nvim-scrollview",
     event = "VeryLazy",
+    enabled = false,
   },
 
   {
@@ -400,7 +401,6 @@ lazy.setup({
     config = function()
       require "interface.satellite"
     end,
-    enabled = false,
     -- A substitue for nvim-scrollview
     -- which support search resultsuse lsp diagnostics and git hunks
     -- Disable because it's work in progress
