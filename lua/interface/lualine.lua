@@ -51,7 +51,6 @@ lualine.setup {
       },
       "overseer",
       "copilot",
-      "filetype",
       indent,
       "encoding",
       "fileformat",
