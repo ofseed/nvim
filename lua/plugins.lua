@@ -898,6 +898,14 @@ lazy.setup({
   },
 
   {
+    "chrisgrieser/nvim-spider",
+    config = function()
+      require "efficiency.spider"
+    end,
+    event = "VeryLazy",
+  },
+
+  {
     "monaqa/dial.nvim",
     config = function()
       require "efficiency.dial"
