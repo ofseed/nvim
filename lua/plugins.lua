@@ -504,6 +504,13 @@ lazy.setup({
   },
 
   {
+    "akinsho/horizon.nvim",
+    config = function()
+      require "colorscheme.horizon"
+    end,
+  },
+
+  {
     "folke/tokyonight.nvim",
     config = function()
       require "colorscheme.tokyonight"
@@ -541,10 +548,6 @@ lazy.setup({
     config = function()
       require "colorscheme.gruvbox"
     end,
-  },
-
-  {
-    "LunarVim/horizon.nvim",
   },
   -- }}}
 
