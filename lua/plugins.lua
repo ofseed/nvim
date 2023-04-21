@@ -907,6 +907,8 @@ lazy.setup({
       require "efficiency.spider"
     end,
     event = "VeryLazy",
+    enabled = false,
+    -- Disable because it conflicts with chinese characters
   },
 
   {
