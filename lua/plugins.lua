@@ -246,6 +246,7 @@ lazy.setup({
     config = function()
       require "interface.bufferline"
     end,
+    version = "*",
     dependencies = { "kyazdani42/nvim-web-devicons" },
   },
 
@@ -595,7 +596,7 @@ lazy.setup({
     config = function()
       require "tool.toggleterm"
     end,
-    version = "v2.*",
+    version = "*",
     event = "VeryLazy",
   },
 
@@ -627,7 +628,7 @@ lazy.setup({
 
   {
     "s1n7ax/nvim-window-picker",
-    version = "v1.*",
+    version = "*",
     config = function()
       require "tool.window-picker"
     end,
