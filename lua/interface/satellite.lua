@@ -23,7 +23,7 @@ satellite.setup {
       enable = true,
       signs = { -- can only be a single character (multibyte is okay)
         add = "│",
-        change = "~",
+        change = "│",
         delete = "-",
       },
     },
