@@ -1,5 +1,10 @@
 local ok, tools = pcall(require, "flutter-tools")
 
+if not ok then
+  vim.notify "Could not load flutter-tools"
+  return
+end
+
 local default = require "language.default"
 
 tools.setup {
