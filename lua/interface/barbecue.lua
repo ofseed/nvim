@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 barbecue.setup {
   ---Whether to attach navic to language servers automatically.
   ---
@@ -134,32 +136,5 @@ barbecue.setup {
   ---Icons for different context entry kinds.
   ---
   ---@type barbecue.Config.kinds
-  kinds = {
-    File = "",
-    Module = "",
-    Namespace = "",
-    Package = "",
-    Class = "",
-    Method = "",
-    Property = "",
-    Field = "",
-    Constructor = "",
-    Enum = "",
-    Interface = "",
-    Function = "",
-    Variable = "",
-    Constant = "",
-    String = "",
-    Number = "",
-    Boolean = "",
-    Array = "",
-    Object = "",
-    Key = "",
-    Null = "",
-    EnumMember = "",
-    Struct = "",
-    Event = "",
-    Operator = "",
-    TypeParameter = "",
-  },
+  kinds = custom.icons.kind,
 }

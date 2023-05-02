@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 lspkind.init {
   -- DEPRECATED (use mode instead): enables text annotations
   --
@@ -25,31 +27,5 @@ lspkind.init {
   -- override preset symbols
   --
   -- default: {}
-  symbol_map = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "",
-    Interface = "ﰮ",
-    Module = "",
-    Property = "",
-    Unit = "",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
-    Event = "",
-    Operator = "ﬦ",
-    TypeParameter = "",
-  },
+  symbol_map = custom.icons.kind,
 }
