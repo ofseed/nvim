@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 tree.setup {
   auto_reload_on_write = true,
   disable_netrw = false,
@@ -44,7 +46,7 @@ tree.setup {
       quit_on_focus_loss = true,
       open_win_config = {
         relative = "editor",
-        border = "rounded",
+        border = custom.border,
         width = 30,
         height = 30,
         row = 1,

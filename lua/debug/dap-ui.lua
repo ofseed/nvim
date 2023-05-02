@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 dapui.setup {
   controls = {
     element = "repl",
@@ -22,7 +24,7 @@ dapui.setup {
   element_mappings = {},
   expand_lines = true,
   floating = {
-    border = "single",
+    border = custom.border,
     mappings = {
       close = { "q", "<Esc>" },
     },

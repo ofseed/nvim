@@ -5,9 +5,11 @@ end
 
 local actions = require "nvim-navbuddy.actions"
 
+local custom = require "custom"
+
 navbuddy.setup {
   window = {
-    border = "rounded", -- "rounded", "double", "solid", "none"
+    border = custom.border, -- "rounded", "double", "solid", "none"
     -- or an array with eight chars building up the border in a clockwise fashion
     -- starting with the top-left corner. eg: { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" }.
     size = "60%", -- Or table format example: { height = "40%", width = "100%"}

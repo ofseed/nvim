@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 toggleterm.setup {
   -- size can be a number or function which is passed the current terminal
   size = function(term)
@@ -40,7 +42,7 @@ toggleterm.setup {
     -- see :h nvim_open_win for details on borders however
     -- the 'curved' border is a custom border type
     -- not natively supported but implemented in this plugin.
-    border = "curved", -- 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
+    border = custom.border, -- 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
     -- like `size`, width and height can be a number or function which is passed the current terminal
     width = 100,
     height = 40,

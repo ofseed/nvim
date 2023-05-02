@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 signature.setup {
   debug = false, -- set to true to enable debug logging
   log_path = vim.fn.stdpath "cache" .. "/lsp_signature.log", -- log dir when debug is on
@@ -40,7 +42,7 @@ signature.setup {
   hint_scheme = "String",
   hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
   handler_opts = {
-    border = "rounded", -- double, rounded, single, shadow, none, or a table of borders
+    border = custom.border, -- double, rounded, single, shadow, none, or a table of borders
   },
 
   always_trigger = false, -- sometime show signature on new line or in middle of parameter can be confusing, set it to false for #58

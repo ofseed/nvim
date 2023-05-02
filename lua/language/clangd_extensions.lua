@@ -6,6 +6,8 @@ end
 
 local default = require "language.default"
 
+local custom = require "custom"
+
 local capabilities = vim.tbl_extend("force", default.capabilities, {
   offsetEncoding = "utf-8",
 })
@@ -98,10 +100,10 @@ extensions.setup {
         detail = "Comment",
       },
       memory_usage = {
-        border = "none",
+        border = custom.border,
       },
       symbol_info = {
-        border = "none",
+        border = custom.border,
       },
     },
   },

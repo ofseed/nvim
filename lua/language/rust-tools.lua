@@ -18,6 +18,8 @@ end
 
 local default = require "language.default"
 
+local custom = require "custom"
+
 local extension_path = mason.get_package("codelldb"):get_install_path() .. "/extension/"
 local codelldb_path = extension_path .. "adapter/codelldb"
 local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
@@ -75,16 +77,7 @@ tools.setup {
 
       -- the border that is used for the hover window
       -- see vim.api.nvim_open_win()
-      border = {
-        { "╭", "FloatBorder" },
-        { "─", "FloatBorder" },
-        { "╮", "FloatBorder" },
-        { "│", "FloatBorder" },
-        { "╯", "FloatBorder" },
-        { "─", "FloatBorder" },
-        { "╰", "FloatBorder" },
-        { "│", "FloatBorder" },
-      },
+      border = custom.border,
 
       -- whether the hover action window gets automatically focused
       -- default: false

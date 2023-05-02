@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 gitsigns.setup {
   signs = {
     add = { hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
@@ -36,7 +38,7 @@ gitsigns.setup {
   max_file_length = 40000, -- Disable if file is longer than this (in lines)
   preview_config = {
     -- Options passed to nvim_open_win
-    border = "rounded",
+    border = custom.border,
     style = "minimal",
     relative = "cursor",
     row = 0,

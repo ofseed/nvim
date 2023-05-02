@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 overseer.setup {
   -- Default task strategy
   strategy = "toggleterm",
@@ -56,7 +58,7 @@ overseer.setup {
   -- Configure the floating window used for task templates that require input
   -- and the floating window used for editing tasks
   form = {
-    border = "rounded",
+    border = custom.border,
     zindex = 40,
     -- Dimensions can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
     -- min_X and max_X can be a single value or a list of mixed integer/float types.
@@ -110,7 +112,7 @@ overseer.setup {
   },
   -- Configure the floating window used for confirmation prompts
   confirm = {
-    border = "rounded",
+    border = custom.border,
     zindex = 40,
     -- Dimensions can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
     -- min_X and max_X can be a single value or a list of mixed integer/float types.
@@ -129,7 +131,7 @@ overseer.setup {
   task_win = {
     -- How much space to leave around the floating window
     padding = 2,
-    border = "rounded",
+    border = custom.border,
     -- Set any window options here (e.g. winhighlight)
     win_opts = {
       winblend = 10,

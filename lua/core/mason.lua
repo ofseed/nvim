@@ -3,8 +3,10 @@ if not ok then
   vim.notify "Could not load mason"
 end
 
+local custom = require "custom"
+
 mason.setup {
   ui = {
-    border = "rounded",
+    border = custom.border,
   },
 }

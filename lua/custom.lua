@@ -1,5 +1,7 @@
 local M = {}
 
+M.border = "rounded"
+
 M.icons = {
   kind = {
     Array = "",

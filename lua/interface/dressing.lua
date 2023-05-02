@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 dressing.setup {
   input = {
     -- Set to false to disable the vim.ui.input implementation
@@ -23,7 +25,7 @@ dressing.setup {
 
     -- These are passed to nvim_open_win
     anchor = "SW",
-    border = "rounded",
+    border = custom.border,
     -- 'editor' and 'win' will default to being centered
     relative = "cursor",
 
@@ -122,7 +124,7 @@ dressing.setup {
     builtin = {
       -- These are passed to nvim_open_win
       anchor = "NW",
-      border = "rounded",
+      border = custom.border,
       -- 'editor' and 'win' will default to being centered
       relative = "editor",
 

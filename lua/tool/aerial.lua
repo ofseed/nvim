@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 aerial.setup {
   -- Priority list of preferred backends for aerial.
   -- This can be a filetype map (see :help aerial-filetype-map)
@@ -187,7 +189,7 @@ aerial.setup {
   -- Options for opening aerial in a floating win
   float = {
     -- Controls border appearance. Passed to nvim_open_win
-    border = "rounded",
+    border = custom.border,
 
     -- Determines location of floating window
     --   cursor - Opens float on top of the cursor

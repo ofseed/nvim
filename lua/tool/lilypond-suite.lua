@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 lilypond.setup {
   lilypond = {
     mappings = {
@@ -57,7 +59,7 @@ lilypond.setup {
       col = "99%",
       width = "37",
       height = "1",
-      border_style = "single",
+      border_style = custom.border,
       winhighlight = "Normal:Normal,FloatBorder:Normal",
     },
   },
