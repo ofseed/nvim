@@ -8,6 +8,12 @@ M.width = function()
 end
 
 M.icons = {
+  diagnostic = {
+    Error = " ",
+    Warn = " ",
+    Hint = " ",
+    Info = " ",
+  },
   kind = {
     Array = "",
     Boolean = "",
