@@ -74,10 +74,7 @@ tree.setup {
   },
   window = {
     position = "left",
-    width = function()
-      local columns = vim.go.columns
-      return math.floor(columns * 0.2) > 25 and math.floor(columns * 0.2) or 25
-    end,
+    width = custom.width,
     mapping_options = {
       noremap = true,
       nowait = true,
