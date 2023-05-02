@@ -1,19 +1,23 @@
 local M = {}
 
+-- Border style of floating windows
 M.border = "rounded"
 
+-- Width of side windows
 M.width = function()
   local columns = vim.go.columns
   return math.floor(columns * 0.2) > 25 and math.floor(columns * 0.2) or 25
 end
 
 M.icons = {
+  -- LSP diagnostic
   diagnostic = {
     Error = " ",
     Warn = " ",
     Hint = " ",
     Info = " ",
   },
+  -- LSP kinds
   kind = {
     Array = "",
     Boolean = "",
