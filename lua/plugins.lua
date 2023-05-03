@@ -28,7 +28,6 @@ lazy.setup({
     end,
     dependencies = { "williamboman/mason-lspconfig.nvim" },
     after = "mason.nvim",
-    event = "VeryLazy",
   },
 
   {
