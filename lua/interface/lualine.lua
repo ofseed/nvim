@@ -10,6 +10,8 @@ if not ok then
   return
 end
 
+local custom = require "custom"
+
 local function indent()
   if vim.o.expandtab then
     return "SW:" .. vim.o.shiftwidth
@@ -40,6 +42,14 @@ end
 
 lualine.setup {
   sections = {
+    lualine_b = {
+      "branch",
+      "diff",
+      {
+        "diagnostics",
+        symbols = custom.icons.diagnostic,
+      },
+    },
     lualine_c = {
       lsp,
     },

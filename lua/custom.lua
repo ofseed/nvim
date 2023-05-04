@@ -12,10 +12,10 @@ end
 M.icons = {
   -- LSP diagnostic
   diagnostic = {
-    Error = " ",
-    Warn = " ",
-    Hint = " ",
-    Info = " ",
+    error = " ",
+    warn = " ",
+    hint = " ",
+    info = " ",
   },
   -- LSP kinds
   kind = {

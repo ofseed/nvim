@@ -26,9 +26,13 @@ vim.diagnostic.config {
   severity_sort = true,
 }
 
+function firstToUpper(str)
+  return (str:gsub("^%l", string.upper))
+end
+
 -- Set diagnostic icons
 for type, icon in pairs(custom.icons.diagnostic) do
-  local hl = "DiagnosticSign" .. type
+  local hl = "DiagnosticSign" .. firstToUpper(type)
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
