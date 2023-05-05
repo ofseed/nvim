@@ -42,14 +42,6 @@ end
 
 lualine.setup {
   sections = {
-    lualine_b = {
-      "branch",
-      "diff",
-      {
-        "diagnostics",
-        symbols = custom.icons.diagnostic,
-      },
-    },
     lualine_c = {
       lsp,
     },
