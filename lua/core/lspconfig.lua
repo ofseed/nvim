@@ -26,7 +26,7 @@ vim.diagnostic.config {
   severity_sort = true,
 }
 
-function firstToUpper(str)
+local function firstToUpper(str)
   return (str:gsub("^%l", string.upper))
 end
 
