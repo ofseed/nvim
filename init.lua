@@ -24,6 +24,7 @@ vim.o.conceallevel = 1
 vim.o.scrolloff = 2
 vim.o.sidescrolloff = 5
 vim.o.pumblend = 12
+vim.o.fillchars = "diff:╱"
 
 -- Keymapping
 vim.g.mapleader = " "
