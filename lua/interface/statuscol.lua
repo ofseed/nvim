@@ -18,7 +18,7 @@ statuscol.setup {
       click = "v:lua.ScLa",
     },
     {
-      sign = { name = { "GitSigns" }, maxwidth = 1, colwidth = 1 },
+      sign = { name = { "GitSigns" }, maxwidth = 1, colwidth = 1, wrap = true },
       click = "v:lua.ScSa",
     },
   },
