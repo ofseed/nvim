@@ -535,6 +535,13 @@ lazy.setup({
   },
 
   {
+    "projekt0n/github-nvim-theme",
+    config = function()
+      require "colorscheme.github"
+    end,
+  },
+
+  {
     "navarasu/onedark.nvim",
     config = function()
       require "colorscheme.onedark"
