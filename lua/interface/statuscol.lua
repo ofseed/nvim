@@ -7,7 +7,6 @@ local builtin = require "statuscol.builtin"
 
 statuscol.setup {
   segments = {
-    { text = { "%C" }, click = "v:lua.ScFa" },
     {
       sign = { name = { ".*" } },
       click = "v:lua.ScSa",
@@ -21,5 +20,6 @@ statuscol.setup {
       sign = { name = { "GitSigns" }, colwidth = 1, wrap = true },
       click = "v:lua.ScSa",
     },
+    { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
   },
 }
