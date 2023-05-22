@@ -9,7 +9,7 @@ statuscol.setup {
   segments = {
     { text = { "%C" }, click = "v:lua.ScFa" },
     {
-      sign = { name = { ".*" }, maxwidth = 1 },
+      sign = { name = { ".*" } },
       click = "v:lua.ScSa",
     },
     {
@@ -18,7 +18,7 @@ statuscol.setup {
       click = "v:lua.ScLa",
     },
     {
-      sign = { name = { "GitSigns" }, maxwidth = 1, colwidth = 1, wrap = true },
+      sign = { name = { "GitSigns" }, colwidth = 1, wrap = true },
       click = "v:lua.ScSa",
     },
   },
