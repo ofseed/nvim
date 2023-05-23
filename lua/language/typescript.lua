@@ -12,6 +12,9 @@ typescript.setup {
   server = { -- pass options to lspconfig's setup method
     capabilities = default.capabilities,
     on_attach = function(client, bufnr)
+
+      client.server_capabilities.documentFormattingProvider = false
+
       default.on_attach(client, bufnr)
       vim.keymap.set(
         "n",
