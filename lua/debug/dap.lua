@@ -11,7 +11,9 @@ if not ok then
 end
 
 mason.setup {
-  handlers = {},
+  handlers = {
+    python = function(config) end,
+  },
 }
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError" })
