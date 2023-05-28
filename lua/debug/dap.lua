@@ -18,8 +18,8 @@ dap.configurations.rust = dap.configurations.cpp
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError" })
 vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticInfo" })
-vim.fn.sign_define("DapStopped", { text = "", texthl = "Constant" })
-vim.fn.sign_define("DapBreakpointRejected", { text = "" })
+vim.fn.sign_define("DapStopped", { text = "", texthl = "Constant" })
+vim.fn.sign_define("DapBreakpointRejected", { text = "" })
 
 vim.keymap.set("n", "<F5>", require("dap").continue, { desc = "Debug: Continue" })
 vim.keymap.set("n", "<F10>", require("dap").step_over, { desc = "Debug: Step over" })
