@@ -10,11 +10,9 @@ if not ok then
   return
 end
 
-mason.setup {}
--- If you want to use this for Rust and C, add something like this:
-
-dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+mason.setup {
+  handlers = {},
+}
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError" })
 vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticInfo" })
