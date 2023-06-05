@@ -624,6 +624,11 @@ lazy.setup({
       require "tool.navbuddy"
     end,
     event = "VeryLazy",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+      "MunifTanjim/nui.nvim",
+    },
   },
 
   {
