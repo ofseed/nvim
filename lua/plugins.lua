@@ -304,6 +304,7 @@ lazy.setup({
       require "interface.lsp-inlayhints"
     end,
     event = "VeryLazy",
+    branch = "anticonceal",
   },
 
   {
