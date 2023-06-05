@@ -145,6 +145,7 @@ vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { des
 vim.keymap.set("n", "<leader>f?", require("telescope.builtin").help_tags, { desc = "Help tags" })
 vim.keymap.set("n", "<leader>fh", require("telescope.builtin").oldfiles, { desc = "Old files" })
 vim.keymap.set("n", "<leader>fb", require("telescope.builtin").marks, { desc = "Marks" })
+vim.keymap.set("n", "<leader>fs", require("telescope.builtin").lsp_document_symbols, { desc = "Symbols" })
 vim.keymap.set("n", "<leader>fc", require("telescope.builtin").colorscheme, { desc = "Colorscheme" })
 vim.keymap.set("n", "<leader>fg", require("telescope").extensions.live_grep_args.live_grep_args, { desc = "Live grep" })
 vim.keymap.set("n", "<leader>fp", require("telescope").extensions.project.project, { desc = "Project" })
@@ -155,4 +156,3 @@ vim.keymap.set("n", "<leader>fdc", require("telescope").extensions.dap.configura
 vim.keymap.set("n", "<leader>fdb", require("telescope").extensions.dap.list_breakpoints, { desc = "Breakpoints" })
 vim.keymap.set("n", "<leader>fdv", require("telescope").extensions.dap.variables, { desc = "Variables" })
 vim.keymap.set("n", "<leader>fdf", require("telescope").extensions.dap.frames, { desc = "Frames" })
-vim.keymap.set("n", "<leader>fs", require("telescope").extensions.luasnip.luasnip, { desc = "Snippets" })
