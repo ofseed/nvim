@@ -368,6 +368,7 @@ lazy.setup({
       require "interface.fidget"
     end,
     event = "VeryLazy",
+    branch = "legacy",
   },
 
   {
