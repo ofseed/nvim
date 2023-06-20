@@ -146,6 +146,7 @@ vim.keymap.set("n", "<leader>f?", require("telescope.builtin").help_tags, { desc
 vim.keymap.set("n", "<leader>fh", require("telescope.builtin").oldfiles, { desc = "Old files" })
 vim.keymap.set("n", "<leader>fb", require("telescope.builtin").marks, { desc = "Marks" })
 vim.keymap.set("n", "<leader>fs", require("telescope.builtin").lsp_document_symbols, { desc = "Symbols" })
+vim.keymap.set("n", "<leader>fS", require("telescope.builtin").lsp_workspace_symbols, { desc = "Symbols" })
 vim.keymap.set("n", "<leader>fc", require("telescope.builtin").colorscheme, { desc = "Colorscheme" })
 vim.keymap.set("n", "<leader>fg", require("telescope").extensions.live_grep_args.live_grep_args, { desc = "Live grep" })
 vim.keymap.set("n", "<leader>fp", require("telescope").extensions.project.project, { desc = "Project" })
