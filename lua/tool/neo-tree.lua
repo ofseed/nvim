@@ -44,6 +44,9 @@ tree.setup {
   },
   window = {
     width = custom.width,
+    mappings = {
+      ["<space>"] = "none",
+    },
   },
 }
 
