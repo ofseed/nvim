@@ -67,7 +67,7 @@ bufferline.setup {
     offsets = {
       { filetype = "NvimTree", text = "File Explorer", text_align = "center", saperator = true },
       { filetype = "Outline", text = "Outline", text_align = "center", saperator = true },
-      { filetype = "neo-tree", text = "File Explorer", text_align = "center", saperator = true },
+      { filetype = "neo-tree", text = "Explorer", text_align = "center", saperator = true },
       { filetype = "aerial", text = "Outline", text_align = "center", saperator = true },
       { filetype = "packer", text = "Plugin Manager", text_align = "center", saperator = true },
       { filetype = "dbui", text = "Database Manager", text_align = "center", saperator = true },
