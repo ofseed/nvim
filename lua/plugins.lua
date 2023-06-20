@@ -572,6 +572,7 @@ lazy.setup({
     keys = {
       { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" },
     },
+    enabled = false
   },
 
   {
@@ -586,7 +587,6 @@ lazy.setup({
       "MunifTanjim/nui.nvim",
       "s1n7ax/nvim-window-picker",
     },
-    enabled = false,
   },
 
   {
