@@ -305,6 +305,8 @@ lazy.setup({
     end,
     event = "VeryLazy",
     branch = "anticonceal",
+    -- Inlay hints now provided by nvim-lsp
+    enabled = false,
   },
 
   {
