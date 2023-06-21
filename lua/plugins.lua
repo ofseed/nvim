@@ -574,7 +574,7 @@ lazy.setup({
     keys = {
       { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" },
     },
-    enabled = false
+    enabled = false,
   },
 
   {
