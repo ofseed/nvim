@@ -35,7 +35,6 @@ lazy.setup({
     config = function()
       require "core.mason"
     end,
-    event = "VeryLazy",
   },
 
   {
