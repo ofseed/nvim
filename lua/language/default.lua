@@ -73,7 +73,9 @@ M.on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-  vim.lsp.buf.inlay_hint(bufnr, true)
+  if client.server_capabilities.inlayHintProvider ~= nil then
+    vim.lsp.buf.inlay_hint(bufnr, true)
+  end
 
   M.set_keymap(bufnr)
 end
