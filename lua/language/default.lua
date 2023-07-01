@@ -74,7 +74,7 @@ M.on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
   if client.server_capabilities.inlayHintProvider ~= nil then
-    vim.lsp.buf.inlay_hint(bufnr, true)
+    vim.lsp.inlay_hint(bufnr, true)
   end
 
   M.set_keymap(bufnr)
