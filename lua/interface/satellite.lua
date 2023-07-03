@@ -11,6 +11,9 @@ satellite.setup {
   excluded_filetypes = {},
   width = 2,
   handlers = {
+    cursor = {
+      enable = true,
+    },
     search = {
       enable = true,
     },
