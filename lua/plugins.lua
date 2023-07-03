@@ -669,7 +669,7 @@ lazy.setup({
   },
 
   {
-    "TimUntersberger/neogit",
+    "NeogitOrg/neogit",
     config = function()
       require "tool.neogit"
     end,
