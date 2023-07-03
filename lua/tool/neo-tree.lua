@@ -48,6 +48,9 @@ tree.setup {
       ["<space>"] = "none",
     },
   },
+  filesystem = {
+    group_empty_dirs = true,
+  },
 }
 
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "File Explorer" })
