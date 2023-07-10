@@ -873,6 +873,7 @@ lazy.setup({
     build = function()
       vim.fn["fzf#install"]()
     end,
+    event = "VeryLazy",
   },
 
   {
