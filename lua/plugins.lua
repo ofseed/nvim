@@ -869,6 +869,13 @@ lazy.setup({
   },
 
   {
+    "junegunn/fzf",
+    build = function()
+      vim.fn["fzf#install"]()
+    end,
+  },
+
+  {
     "phaazon/hop.nvim",
     config = function()
       require "efficiency.hop"
