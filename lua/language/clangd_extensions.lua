@@ -44,11 +44,11 @@ extensions.setup {
     -- defaults:
     -- Automatically set inlay hints (type hints)
     autoSetHints = false,
-    -- Whether to show hover actions inside the hover window
-    -- This overrides the default hover handler
-    hover_with_actions = true,
     -- These apply to the default ClangdSetInlayHints command
     inlay_hints = {
+      inline = vim.fn.has "nvim-0.10" == 1,
+      -- Options other than `highlight' and `priority' only work
+      -- if `inline' is disabled
       -- Only show inlay hints for the current line
       only_current_line = false,
       -- Event which triggers a refersh of the inlay hints.
@@ -77,6 +77,7 @@ extensions.setup {
       priority = 100,
     },
     ast = {
+      -- These are unicode, should be available in any font
       role_icons = {
         type = "",
         declaration = "",
@@ -99,12 +100,12 @@ extensions.setup {
       highlights = {
         detail = "Comment",
       },
-      memory_usage = {
-        border = custom.border,
-      },
-      symbol_info = {
-        border = custom.border,
-      },
+    },
+    memory_usage = {
+      border = custom.border,
+    },
+    symbol_info = {
+      border = custom.border,
     },
   },
 }
