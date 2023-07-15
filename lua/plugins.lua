@@ -883,6 +883,16 @@ lazy.setup({
     end,
     branch = "v2",
     event = "VeryLazy",
+    enabled = false,
+    -- Replace with flash
+  },
+
+  {
+    "folke/flash.nvim",
+    config = function()
+      require "efficiency.flash"
+    end,
+    event = "VeryLazy",
   },
 
   {
