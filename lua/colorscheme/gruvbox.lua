@@ -1,10 +1,4 @@
-local ok, gruvbox = pcall(require, "gruvbox")
-if not ok then
-  vim.notify "Could not load gruvbox"
-  return
-end
-
-gruvbox.setup {
+local opts = {
   undercurl = true,
   underline = true,
   bold = true,
@@ -25,4 +19,9 @@ gruvbox.setup {
   overrides = {},
   dim_inactive = false,
   transparent_mode = false,
+}
+
+return {
+  "ellisonleao/gruvbox.nvim",
+  opts = opts,
 }

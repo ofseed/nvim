@@ -17,7 +17,10 @@ local lazy = require "lazy"
 
 local custom = require "custom"
 
-lazy.setup("plugins", {
+lazy.setup({
+  { import = "colorscheme" },
+  { import = "plugins" },
+}, {
   root = vim.fn.stdpath "data" .. "/lazy", -- directory where plugins will be installed
   defaults = {
     lazy = false, -- should plugins be lazy-loaded?

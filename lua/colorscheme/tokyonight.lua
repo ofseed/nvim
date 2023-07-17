@@ -1,10 +1,4 @@
-local ok, tokyonight = pcall(require, "tokyonight")
-if not ok then
-  vim.notify "Could not load tokyonight"
-  return
-end
-
-tokyonight.setup {
+local opts = {
   -- your configuration comes here
   -- or leave it empty to use the default settings
   style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
@@ -35,4 +29,9 @@ tokyonight.setup {
   --- You can override specific highlights to use other groups or a hex color
   --- function will be called with a Highlights and ColorScheme table
   on_highlights = function(highlights, colors) end,
+}
+
+return {
+  "folke/tokyonight.nvim",
+  opts = opts,
 }

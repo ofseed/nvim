@@ -1,10 +1,4 @@
-local ok, github = pcall(require, "github-theme")
-if not ok then
-  vim.notify "Could not load github theme"
-  return
-end
-
-github.setup {
+local opts = {
   options = {
     -- Compiled file's destination location
     compile_path = vim.fn.stdpath "cache" .. "/github-theme",
@@ -46,4 +40,11 @@ github.setup {
   palettes = {},
   specs = {},
   groups = {},
+}
+
+return {
+  "projekt0n/github-nvim-theme",
+  config = function()
+    require("github-theme").setup(opts)
+  end,
 }

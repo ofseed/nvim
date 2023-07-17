@@ -1,10 +1,4 @@
-local ok, rose_pine = pcall(require, "rose-pine")
-if not ok then
-  vim.notify "Could not load rose-pine"
-  return
-end
-
-rose_pine.setup {
+local opts = {
   --- @usage 'main' | 'moon'
   dark_variant = "main",
   bold_vert_split = false,
@@ -43,4 +37,10 @@ rose_pine.setup {
   highlight_groups = {
     ColorColumn = { bg = "rose" },
   },
+}
+
+return {
+  "rose-pine/neovim",
+  name = "rose-pine",
+  opts = opts,
 }

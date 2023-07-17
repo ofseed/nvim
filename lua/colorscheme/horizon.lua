@@ -1,6 +1,4 @@
-local ok, horizon = pcall(require, "horizon")
-
-horizon.setup {
+local opts = {
   plugins = {
     cmp = true,
     indent_blankline = true,
@@ -17,4 +15,9 @@ horizon.setup {
     navic = true,
     quickscope = false,
   },
+}
+
+return {
+  "akinsho/horizon.nvim",
+  opts = opts,
 }

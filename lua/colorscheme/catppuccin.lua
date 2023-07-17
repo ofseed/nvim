@@ -1,10 +1,4 @@
-local ok, catppuccin = pcall(require, "catppuccin")
-if not ok then
-  vim.notify "Could not load catppuccin"
-  return
-end
-
-catppuccin.setup {
+local opts = {
   dim_inactive = {
     enabled = false,
     shade = "dark",
@@ -113,3 +107,10 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 vim.g.catppuccin_flavour = "mocha"
+
+return {
+  "catppuccin/nvim",
+  name = "catppuccin",
+  opts = opts,
+  build = ":CatppuccinCompile",
+}

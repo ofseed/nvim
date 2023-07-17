@@ -1,9 +1,4 @@
-local ok, nightfox = pcall(require, "nightfox")
-if not ok then
-  vim.notify "Could not load nightfox"
-end
-
-nightfox.setup {
+local opts = {
   options = {
     -- Compiled file's destination location
     compile_path = vim.fn.stdpath "cache" .. "/nightfox",
@@ -36,4 +31,9 @@ nightfox.setup {
   palettes = {},
   specs = {},
   groups = {},
+}
+
+return {
+  "EdenEast/nightfox.nvim",
+  opts = opts,
 }

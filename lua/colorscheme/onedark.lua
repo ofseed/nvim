@@ -1,10 +1,4 @@
-local ok, onedark = pcall(require, "onedark")
-if not ok then
-  vim.notify "Could not load onedark"
-  return
-end
-
-onedark.setup {
+local opts = {
   -- Main options --
   style = "dark", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
   transparent = false, -- Show/hide background
@@ -42,4 +36,9 @@ onedark.setup {
     undercurl = true, -- use undercurl instead of underline for diagnostics
     background = true, -- use background color for virtual text
   },
+}
+
+return {
+  "navarasu/onedark.nvim",
+  opts = opts,
 }
