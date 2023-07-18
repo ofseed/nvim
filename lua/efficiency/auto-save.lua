@@ -1,10 +1,4 @@
-local ok, save = pcall(require, "auto-save")
-if not ok then
-  vim.notify "Could not load auto-save"
-  return
-end
-
-save.setup {
+local opts = {
   enabled = false, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
   execution_message = {
     message = function() -- message to print on save
@@ -36,4 +30,12 @@ save.setup {
   },
 }
 
-vim.keymap.set("n", "<leader>ts", ":ASToggle<CR>", { silent = true, desc = "Toggle auto save" })
+return {
+  "Pocco81/auto-save.nvim",
+  -- Disable because it could not be enabled manually
+  enabled = false,
+  opts = opts,
+  keys = {
+    { "n", "<leader>ts", ":ASToggle<CR>", silent = true, desc = "Toggle auto save" },
+  },
+}

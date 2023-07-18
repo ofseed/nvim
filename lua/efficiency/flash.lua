@@ -1,7 +1,5 @@
-local ok, flash = pcall(require, "flash")
-if not ok then
-  vim.notify "Could not load flash"
-  return
-end
-
-flash.setup {}
+return {
+  "folke/flash.nvim",
+  opts = true,
+  event = "VeryLazy",
+}

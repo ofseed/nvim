@@ -1,14 +1,8 @@
-local ok, manager = pcall(require, "session_manager")
-if not ok then
-  vim.notify "Could not load session manager"
-  return
-end
+local config = function()
 
-local ok, overseer = pcall(require, "overseer")
-if not ok then
-  vim.notify "Could not load overseer"
-  return
-end
+local manager = require "session_manager"
+
+local overseer = require "overseer"
 
 local Path = require "plenary.path"
 
@@ -58,8 +52,20 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
-vim.keymap.set("n", "<leader>ss", "<cmd>SessionManager load_session<CR>", { desc = "Load selected" })
-vim.keymap.set("n", "<leader>sl", "<cmd>SessionManager load_last_session<CR>", { desc = "Load last" })
-vim.keymap.set("n", "<leader>sd", "<cmd>SessionManager delete_session<CR>", { desc = "Delete" })
-vim.keymap.set("n", "<leader>scs", "<cmd>SessionManager save_current_session<CR>", { desc = "Save" })
-vim.keymap.set("n", "<leader>scl", "<cmd>SessionManager load_current_dir_session<CR>", { desc = "Load" })
+end
+
+return {
+  "Shatur/neovim-session-manager",
+  event = "VeryLazy",
+  dependencies = {
+    { "nvim-lua/plenary.nvim" },
+  },
+  config = config,
+  keys = {
+    { "<leader>ss", "<cmd>SessionManager load_session<CR>", desc = "Load selected" },
+    { "<leader>sl", "<cmd>SessionManager load_last_session<CR>", desc = "Load last" },
+    { "<leader>sd", "<cmd>SessionManager delete_session<CR>", desc = "Delete" },
+    { "<leader>scs", "<cmd>SessionManager save_current_session<CR>", desc = "Save" },
+    { "<leader>scl", "<cmd>SessionManager load_current_dir_session<CR>", desc = "Load" },
+  }
+}

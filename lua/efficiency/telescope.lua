@@ -1,8 +1,6 @@
-local ok, telescope = pcall(require, "telescope")
-if not ok then
-  vim.notify "Could not load telescope"
-  return
-end
+local config = function()
+
+local telescope = require "telescope"
 
 local extensions = {
   "fzf",
@@ -141,19 +139,39 @@ for i = 1, #extensions do
   telescope.load_extension(extensions[i])
 end
 
-vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Find files" })
-vim.keymap.set("n", "<leader>f?", require("telescope.builtin").help_tags, { desc = "Help tags" })
-vim.keymap.set("n", "<leader>fh", require("telescope.builtin").oldfiles, { desc = "Old files" })
-vim.keymap.set("n", "<leader>fb", require("telescope.builtin").marks, { desc = "Marks" })
-vim.keymap.set("n", "<leader>fs", require("telescope.builtin").lsp_document_symbols, { desc = "Symbols" })
-vim.keymap.set("n", "<leader>fS", require("telescope.builtin").lsp_workspace_symbols, { desc = "Symbols" })
-vim.keymap.set("n", "<leader>fc", require("telescope.builtin").colorscheme, { desc = "Colorscheme" })
-vim.keymap.set("n", "<leader>fg", require("telescope").extensions.live_grep_args.live_grep_args, { desc = "Live grep" })
-vim.keymap.set("n", "<leader>fp", require("telescope").extensions.project.project, { desc = "Project" })
-vim.keymap.set("n", "<leader>fm", require("telescope").extensions.media_files.media_files, { desc = "Media files" })
-vim.keymap.set("n", "<leader>fn", require("telescope").extensions.notify.notify, { desc = "Notify" })
-vim.keymap.set("n", "<leader>fde", require("telescope").extensions.dap.commands, { desc = "Commands" })
-vim.keymap.set("n", "<leader>fdc", require("telescope").extensions.dap.configurations, { desc = "Configurations" })
-vim.keymap.set("n", "<leader>fdb", require("telescope").extensions.dap.list_breakpoints, { desc = "Breakpoints" })
-vim.keymap.set("n", "<leader>fdv", require("telescope").extensions.dap.variables, { desc = "Variables" })
-vim.keymap.set("n", "<leader>fdf", require("telescope").extensions.dap.frames, { desc = "Frames" })
+end
+
+return {
+  "nvim-telescope/telescope.nvim",
+  branch = "0.1.x",
+  dependencies = {
+    { "nvim-lua/popup.nvim" },
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    { "nvim-telescope/telescope-live-grep-args.nvim" },
+    { "nvim-telescope/telescope-hop.nvim" },
+    { "nvim-telescope/telescope-project.nvim" },
+    { "nvim-telescope/telescope-media-files.nvim" },
+    { "nvim-telescope/telescope-dap.nvim" },
+    { "benfowler/telescope-luasnip.nvim" },
+  },
+  config = config,
+  keys = {
+    { "<leader>ff", function () require("telescope.builtin").find_files() end, { desc = "Find files" } },
+    { "<leader>f?", function () require("telescope.builtin").help_tags() end, { desc = "Help tags" } },
+    { "<leader>fh", function () require("telescope.builtin").oldfiles() end, { desc = "Old files" } },
+    { "<leader>fb", function () require("telescope.builtin").marks() end, { desc = "Marks" } },
+    { "<leader>fs", function () require("telescope.builtin").lsp_document_symbols() end, { desc = "Symbols" } },
+    { "<leader>fS", function () require("telescope.builtin").lsp_workspace_symbols() end, { desc = "Symbols" } },
+    { "<leader>fc", function () require("telescope.builtin").colorscheme() end, { desc = "Colorscheme" } },
+    { "<leader>fg", function () require("telescope").extensions.live_grep_args.live_grep_args() end, { desc = "Live grep" } },
+    { "<leader>fp", function () require("telescope").extensions.project.project() end, { desc = "Project" } },
+    { "<leader>fm", function () require("telescope").extensions.media_files.media_files() end, { desc = "Media files" } },
+    { "<leader>fn", function () require("telescope").extensions.notify.notify() end, { desc = "Notify" } },
+    { "<leader>fde", function () require("telescope").extensions.dap.commands() end, { desc = "Commands" } },
+    { "<leader>fdc", function () require("telescope").extensions.dap.configurations() end, { desc = "Configurations" } },
+    { "<leader>fdb", function () require("telescope").extensions.dap.list_breakpoints() end, { desc = "Breakpoints" } },
+    { "<leader>fdv", function () require("telescope").extensions.dap.variables() end, { desc = "Variables" } },
+    { "<leader>fdf", function () require("telescope").extensions.dap.frames() end, { desc = "Frames" } },
+  }
+}
