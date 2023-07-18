@@ -22,6 +22,7 @@ lazy.setup({
   { import = "edit" },
   { import = "efficiency" },
   { import = "interface" },
+  { import = "mason" },
   { import = "tool" },
   { import = "plugins" },
 }, {

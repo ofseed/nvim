@@ -1,16 +1,4 @@
-local ok, dap = pcall(require, "dap")
-if not ok then
-  vim.notify "Could not load dap"
-  return
-end
-
-local ok, mason = pcall(require, "mason-nvim-dap")
-if not ok then
-  vim.notify "Could not load mason-nvim-dap"
-  return
-end
-
-mason.setup {
+local opts = {
   handlers = {
     python = function(config) end,
   },
@@ -21,17 +9,78 @@ vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticInfo" })
 vim.fn.sign_define("DapStopped", { text = "", texthl = "Constant" })
 vim.fn.sign_define("DapBreakpointRejected", { text = "" })
 
-vim.keymap.set("n", "<F5>", require("dap").continue, { desc = "Debug: Continue" })
-vim.keymap.set("n", "<F10>", require("dap").step_over, { desc = "Debug: Step over" })
-vim.keymap.set("n", "<F11>", require("dap").step_into, { desc = "Debug: Step into" })
-vim.keymap.set("n", "<F12>", require("dap").step_out, { desc = "Debug: Step out" })
-vim.keymap.set("n", "<F9>", require("dap").toggle_breakpoint, { desc = "Debug: Toggle breakpoint" })
+return {
+  "jay-babu/mason-nvim-dap.nvim",
+  event = "VeryLazy",
+  dependencies = {
+    "mfussenegger/nvim-dap",
+  },
+  after = "mason.nvim",
+  opts = opts,
+  keys = {
+    {
+      "<F5>",
+      function()
+        require("dap").continue()
+      end,
+      { desc = "Debug: Continue" },
+    },
+    {
+      "<F10>",
+      function()
+        require("dap").step_over()
+      end,
+      { desc = "Debug: Step over" },
+    },
+    {
+      "<F11>",
+      function()
+        require("dap").step_into()
+      end,
+      { desc = "Debug: Step into" },
+    },
+    {
+      "<F12>",
+      function()
+        require("dap").step_out()
+      end,
+      { desc = "Debug: Step out" },
+    },
+    {
+      "<F9>",
+      function()
+        require("dap").toggle_breakpoint()
+      end,
+      { desc = "Debug: Toggle breakpoint" },
+    },
 
-vim.keymap.set("n", "<leader>db", function()
-  require("dap").set_breakpoint(vim.fn.input "Breakpoint condition: ")
-end, { desc = "Set breakpoint" })
-vim.keymap.set("n", "<leader>lp", function()
-  require("dap").set_breakpoint(nil, nil, vim.fn.input "Log point message: ")
-end, { desc = "Set log point" })
-vim.keymap.set("n", "<leader>dr", require("dap").repl.toggle, { desc = "Toggle REPL" })
-vim.keymap.set("n", "<leader>dl", require("dap").run_last, { desc = "Run last" })
+    {
+      "<leader>db",
+      function()
+        require("dap").set_breakpoint(vim.fn.input "Breakpoint condition: ")
+      end,
+      { desc = "Set breakpoint" },
+    },
+    {
+      "<leader>lp",
+      function()
+        require("dap").set_breakpoint(nil, nil, vim.fn.input "Log point message: ")
+      end,
+      { desc = "Set log point" },
+    },
+    {
+      "<leader>dr",
+      function()
+        require("dap").repl.toggle()
+      end,
+      { desc = "Toggle REPL" },
+    },
+    {
+      "<leader>dl",
+      function()
+        require("dap").run_last()
+      end,
+      { desc = "Run last" },
+    },
+  },
+}

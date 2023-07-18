@@ -4,34 +4,6 @@
 return {
   -- Core {{{
   {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "core.lspconfig"
-    end,
-    dependencies = { "williamboman/mason-lspconfig.nvim" },
-    after = "mason.nvim",
-  },
-
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require "core.mason"
-    end,
-  },
-
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-      require "core.null-ls"
-    end,
-    dependencies = {
-      { "nvim-lua/plenary.nvim" },
-      { "jay-babu/mason-null-ls.nvim" },
-    },
-    event = "VeryLazy",
-  },
-
-  {
     "ahmedkhalf/project.nvim",
     config = function()
       require "core.project"
@@ -119,17 +91,6 @@ return {
   {
     "rafcamlet/nvim-luapad",
     enabled = false,
-  },
-
-  {
-    "mfussenegger/nvim-dap",
-    config = function()
-      require "debug.dap"
-    end,
-    event = "VeryLazy",
-    dependencies = {
-      "jay-babu/mason-nvim-dap.nvim",
-    },
   },
 
   {

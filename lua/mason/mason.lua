@@ -1,12 +1,12 @@
-local ok, mason = pcall(require, "mason")
-if not ok then
-  vim.notify "Could not load mason"
-end
-
 local custom = require "custom"
 
-mason.setup {
+local opts = {
   ui = {
     border = custom.border,
   },
+}
+
+return {
+  "williamboman/mason.nvim",
+  opts = opts,
 }
