@@ -1,20 +1,10 @@
-local ok, cmp = pcall(require, "cmp")
-if not ok then
-  vim.notify "Could not load cmp"
-  return
-end
+local config = function()
 
-local ok, luasnip = pcall(require, "luasnip")
-if not ok then
-  vim.notify "Could not load luasnip"
-  return
-end
+local cmp = require "cmp"
 
-local ok, lspkind = pcall(require, "lspkind")
-if not ok then
-  vim.notify "Could not load lspkind"
-  return
-end
+local luasnip = require "luasnip"
+
+local lspkind = require "lspkind"
 
 local custom = require "custom"
 
@@ -150,3 +140,23 @@ vim.cmd [[
 autocmd FileType toml lua require("cmp").setup.buffer { sources = { { name = "crates" } } }
 autocmd FileType sql,mysql,plsql lua require("cmp").setup.buffer { sources = {  { name = "vim-dadbod-completion" } } }
 ]]
+
+end
+
+return {
+  "hrsh7th/nvim-cmp",
+  event = "VeryLazy",
+  dependencies = {
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-nvim-lsp-signature-help" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-cmdline" },
+    { "hrsh7th/cmp-calc" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "kristijanhusak/vim-dadbod-completion" },
+    { "lukas-reineke/cmp-under-comparator" },
+  },
+  config = config,
+}

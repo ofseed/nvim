@@ -1,10 +1,4 @@
-local ok, comment = pcall(require, "Comment")
-if not ok then
-  vim.notify "Could not load comment"
-  return
-end
-
-comment.setup {
+local opts = {
   ---Add a space b/w comment and the line
   padding = true,
   ---Whether the cursor should stay at its position
@@ -46,4 +40,10 @@ comment.setup {
   pre_hook = nil,
   ---Function to call after (un)comment
   post_hook = nil,
+}
+
+return {
+  "numToStr/Comment.nvim",
+  event = "VeryLazy",
+  opts = opts,
 }

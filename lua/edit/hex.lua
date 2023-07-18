@@ -1,10 +1,4 @@
-local ok, hex = pcall(require, "hex")
-if not ok then
-  vim.notify "Could not load hex"
-  return
-end
-
-hex.setup {
+local opts = {
 
   -- cli command used to dump hex data
   dump_cmd = "xxd -g 1 -u",
@@ -23,4 +17,9 @@ hex.setup {
     -- logic that determines if a buffer contains binary data or not
     -- must return a bool
   end,
+}
+
+return {
+  "RaafatTurki/hex.nvim",
+  opts = opts,
 }
