@@ -1,12 +1,6 @@
-local ok, overseer = pcall(require, "overseer")
-if not ok then
-  vim.notify "Could not load overseer"
-  return
-end
-
 local custom = require "custom"
 
-overseer.setup {
+local opts = {
   -- Default task strategy
   strategy = "toggleterm",
   -- Template modules to load
@@ -193,9 +187,16 @@ overseer.setup {
   },
 }
 
-vim.keymap.set("n", "<leader>rr", "<cmd>OverseerRun<CR>", { desc = "Run" })
-vim.keymap.set("n", "<leader>rl", "<cmd>OverseerToggle<CR>", { desc = "List" })
-vim.keymap.set("n", "<leader>rn", "<cmd>OverseerBuild<CR>", { desc = "New" })
-vim.keymap.set("n", "<leader>ra", "<cmd>OverseerTaskAction<CR>", { desc = "Action" })
-vim.keymap.set("n", "<leader>ri", "<cmd>OverseerInfo<CR>", { desc = "Info" })
-vim.keymap.set("n", "<leader>rc", "<cmd>OverseerClearCache<CR>", { desc = "Clear cache" })
+return {
+  "stevearc/overseer.nvim",
+  event = "VeryLazy",
+  opts = opts,
+  keys = {
+    { "<leader>rr", "<cmd>OverseerRun<CR>", desc = "Run" },
+    { "<leader>rl", "<cmd>OverseerToggle<CR>", desc = "List" },
+    { "<leader>rn", "<cmd>OverseerBuild<CR>", desc = "New" },
+    { "<leader>ra", "<cmd>OverseerTaskAction<CR>", desc = "Action" },
+    { "<leader>ri", "<cmd>OverseerInfo<CR>", desc = "Info" },
+    { "<leader>rc", "<cmd>OverseerClearCache<CR>", desc = "Clear cache" },
+  },
+}

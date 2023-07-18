@@ -1,10 +1,4 @@
-local ok, project = pcall(require, "project_nvim")
-if not ok then
-  vim.notify "Could not load project"
-  return
-end
-
-project.setup {
+local opts = {
   -- Manual mode doesn't automatically change your root directory, so you have
   -- the option to manually do so using `:ProjectRoot` command.
   manual_mode = false,
@@ -37,4 +31,12 @@ project.setup {
   -- Path where project.nvim will store the project history for use in
   -- telescope
   datapath = vim.fn.stdpath "data",
+}
+
+return {
+  "ahmedkhalf/project.nvim",
+  event = "VeryLazy",
+  config = function()
+    require("project_nvim").setup(opts)
+  end,
 }

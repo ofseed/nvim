@@ -1,12 +1,6 @@
-local ok, key = pcall(require, "which-key")
-if not ok then
-  vim.notify "Could not load which-key"
-  return
-end
-
 local custom = require "custom"
 
-key.setup {
+local opts = {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
     registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -72,38 +66,45 @@ key.setup {
   },
 }
 
-key.register {
-  ["s"] = { name = "+hop" },
-  ["["] = { name = "+prev" },
-  ["]"] = { name = "+next" },
-  ["g"] = { name = "+goto" },
-  ["<leader>"] = {
-    name = "+<leader>",
-    ["<leader>"] = { name = "+<localleader>" },
-    ["f"] = {
-      name = "+find",
-      ["d"] = { name = "+debug" },
-    },
-    ["g"] = {
-      name = "+git",
-      ["d"] = { name = "+diffview" },
-    },
-    ["s"] = {
-      name = "+session",
-      ["c"] = { name = "+current" },
-    },
-    ["b"] = {
-      name = "+buffer",
-      ["s"] = { name = "+sort" },
-    },
-    ["l"] = {
-      name = "+lsp",
-      ["w"] = { name = "+workspace" },
-    },
-    ["r"] = { name = "+tasks" },
-    ["d"] = { name = "+debug" },
-    ["t"] = { name = "+toggle" },
-    ["o"] = { name = "+org" },
-    ["h"] = { name = "+hop" },
-  },
+return {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  config = function()
+    require("which-key").setup(opts)
+    require("which-key").register {
+      ["s"] = { name = "+hop" },
+      ["["] = { name = "+prev" },
+      ["]"] = { name = "+next" },
+      ["g"] = { name = "+goto" },
+      ["<leader>"] = {
+        name = "+<leader>",
+        ["<leader>"] = { name = "+<localleader>" },
+        ["f"] = {
+          name = "+find",
+          ["d"] = { name = "+debug" },
+        },
+        ["g"] = {
+          name = "+git",
+          ["d"] = { name = "+diffview" },
+        },
+        ["s"] = {
+          name = "+session",
+          ["c"] = { name = "+current" },
+        },
+        ["b"] = {
+          name = "+buffer",
+          ["s"] = { name = "+sort" },
+        },
+        ["l"] = {
+          name = "+lsp",
+          ["w"] = { name = "+workspace" },
+        },
+        ["r"] = { name = "+tasks" },
+        ["d"] = { name = "+debug" },
+        ["t"] = { name = "+toggle" },
+        ["o"] = { name = "+org" },
+        ["h"] = { name = "+hop" },
+      },
+    }
+  end,
 }

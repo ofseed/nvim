@@ -1,10 +1,4 @@
-local ok, treesitter = pcall(require, "nvim-treesitter.configs")
-if not ok then
-  vim.notify "Could not load treesitter"
-  return
-end
-
-treesitter.setup {
+local opts = {
   ensure_installed = "all",
   sync_install = false,
   ignore_install = {},
@@ -82,4 +76,22 @@ treesitter.setup {
     enable = true,
     enable_autocmd = false,
   },
+}
+
+return {
+  "nvim-treesitter/nvim-treesitter",
+  event = "VeryLazy",
+  dependencies = {
+    { "nvim-treesitter/nvim-treesitter-textobjects" },
+    { "windwp/nvim-ts-autotag" },
+    { "mrjones2014/nvim-ts-rainbow", enabled = false },
+    { "RRethy/nvim-treesitter-endwise" },
+    { "RRethy/nvim-treesitter-textsubjects", enabled = false },
+    { "JoosepAlviste/nvim-ts-context-commentstring" },
+  },
+  build = ":TSUpdate",
+  opts = opts,
+  config = function()
+    require("nvim-treesitter.configs").setup(opts)
+  end,
 }
