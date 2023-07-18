@@ -37,9 +37,9 @@ return {
   "rest-nvim/rest.nvim",
   ft = { "http" },
   opts = opts,
-  keys = {
-    { "n", "<localleader>r", "<Plug>RestNvim<CR>", silent = true, desc = "Rest" },
-    { "n", "<localleader>p", "<Plug>RestNvimPreview<CR>", silent = true, desc = "Rest preview" },
-    { "n", "<localleader>l", "<Plug>RestNvimLast<CR>", silent = true, desc = "Rest last" },
-  },
+  config = function()
+    vim.keymap.set { "<localleader>r", "<Plug>RestNvim<CR>", { silent = true, desc = "Rest" } }
+    vim.keymap.set { "<localleader>p", "<Plug>RestNvimPreview<CR>", { silent = true, desc = "Rest preview" } }
+    vim.keymap.set { "<localleader>l", "<Plug>RestNvimLast<CR>", { silent = true, desc = "Rest last" } }
+  end,
 }
