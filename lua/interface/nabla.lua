@@ -1,7 +1,9 @@
-local ok, nabla = pcall(require, "nabla")
-if not ok then
-  vim.notify "Could not load nabla"
-  return
-end
-
-vim.keymap.set("n", "<leader>p", ":lua require'nabla'.popup()<CR>")
+return {
+  "jbyuki/nabla.nvim",
+  ft = { "tex", "markdown" },
+  config = function()
+    vim.keymap.set("n", "<leader>p", function()
+      require("nabla").popup()
+    end)
+  end,
+}

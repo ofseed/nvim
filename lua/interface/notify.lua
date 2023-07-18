@@ -1,10 +1,4 @@
-local ok, notify = pcall(require, "notify")
-if not ok then
-  vim.notify "Could not load notify"
-  return
-end
-
-notify.setup {
+local opts = {
   background_colour = "Normal",
   fps = 30,
   icons = {
@@ -22,4 +16,11 @@ notify.setup {
   top_down = true,
 }
 
-vim.notify = notify
+return {
+  "rcarriga/nvim-notify",
+  config = function()
+    local notify = require "notify"
+    notify.setup(opts)
+    vim.notify = notify
+  end,
+}

@@ -1,12 +1,6 @@
-local ok, lspkind = pcall(require, "lspkind")
-if not ok then
-  vim.notify "Could not load lspkind"
-  return
-end
-
 local custom = require "custom"
 
-lspkind.init {
+local opts = {
   -- DEPRECATED (use mode instead): enables text annotations
   --
   -- default: true
@@ -28,4 +22,11 @@ lspkind.init {
   --
   -- default: {}
   symbol_map = custom.icons.kind,
+}
+return {
+  "onsails/lspkind-nvim",
+  event = "VeryLazy",
+  config = function()
+    require("lspkind").init(opts)
+  end,
 }

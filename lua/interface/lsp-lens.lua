@@ -1,9 +1,4 @@
-local ok, lens = pcall(require, "lsp-lens")
-if not ok then
-  vim.notify "Could not load lsp-lens"
-end
-
-lens.setup {
+local opts = {
   enable = true,
   include_declaration = false, -- Reference include declaration
   sections = { -- Enable / Disable specific request
@@ -11,4 +6,11 @@ lens.setup {
     references = true,
     implementation = true,
   },
+}
+
+return {
+  "VidocqH/lsp-lens.nvim",
+  -- Not stable
+  enabled = false,
+  opts = opts,
 }

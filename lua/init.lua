@@ -21,6 +21,7 @@ lazy.setup({
   { import = "colorscheme" },
   { import = "edit" },
   { import = "efficiency" },
+  { import = "interface" },
   { import = "tool" },
   { import = "plugins" },
 }, {

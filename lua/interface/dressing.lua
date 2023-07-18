@@ -1,12 +1,6 @@
-local ok, dressing = pcall(require, "dressing")
-if not ok then
-  vim.notify "Could not load dressing"
-  return
-end
-
 local custom = require "custom"
 
-dressing.setup {
+local opts = {
   input = {
     -- Set to false to disable the vim.ui.input implementation
     enabled = true,
@@ -164,4 +158,10 @@ dressing.setup {
     -- see :help dressing_get_config
     get_config = nil,
   },
+}
+
+return {
+  "stevearc/dressing.nvim",
+  event = "VeryLazy",
+  opts = opts,
 }

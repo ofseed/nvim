@@ -1,16 +1,4 @@
-local ok, lualine = pcall(require, "lualine")
-if not ok then
-  vim.notify "Could not load lualine"
-  return
-end
-
-local ok, lazy_status = pcall(require, "lazy.status")
-if not ok then
-  vim.notify "Could not load lazy.status"
-  return
-end
-
-local custom = require "custom"
+local lazy_status = require "lazy.status"
 
 local function indent()
   if vim.o.expandtab then
@@ -40,7 +28,7 @@ local function lsp()
   end
 end
 
-lualine.setup {
+local opts = {
   sections = {
     lualine_c = {
       lsp,
@@ -83,4 +71,13 @@ lualine.setup {
     "mundo",
     "lazy",
   },
+}
+
+return {
+  "nvim-lualine/lualine.nvim",
+  dependencies = {
+    { "kyazdani42/nvim-web-devicons" },
+    { "ofseed/lualine-copilot" },
+  },
+  opts = opts,
 }

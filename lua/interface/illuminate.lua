@@ -1,9 +1,4 @@
-local ok, illuminate = pcall(require, "illuminate")
-if not ok then
-  vim.notify "Could not load illuminate"
-end
-
-illuminate.configure {
+local opts = {
   -- providers: provider used to get references in the buffer, ordered by priority
   providers = {
     "lsp",
@@ -59,16 +54,37 @@ illuminate.configure {
   min_count_to_highlight = 1,
 }
 
-vim.keymap.set("n", "<M-n>", illuminate.goto_next_reference, { desc = "Next reference" })
-vim.keymap.set("n", "<M-p>", illuminate.goto_prev_reference, { desc = "Prev reference" })
-
--- Highlight on yank
--- conflict with vim-illuminate
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-  pattern = { "*" },
-  callback = function()
-    illuminate.pause()
-    vim.highlight.on_yank()
-    illuminate.resume()
+return {
+  "RRethy/vim-illuminate",
+  event = "VeryLazy",
+  config = function()
+    local illuminate = require "illuminate"
+    illuminate.configure(opts)
+    -- Highlight on yank
+    -- conflict with vim-illuminate
+    vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+      pattern = { "*" },
+      callback = function()
+        illuminate.pause()
+        vim.highlight.on_yank()
+        illuminate.resume()
+      end,
+    })
   end,
-})
+  keys = {
+    {
+      "<M-n>",
+      function()
+        require("illuminate").goto_next_reference()
+      end,
+      { desc = "Next reference" },
+    },
+    {
+      "<M-p>",
+      function()
+        require("illuminate").goto_prev_reference()
+      end,
+      { desc = "Prev reference" },
+    },
+  },
+}

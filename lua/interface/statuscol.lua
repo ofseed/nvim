@@ -1,7 +1,6 @@
-local ok, statuscol = pcall(require, "statuscol")
-if not ok then
-  vim.notify "Could not load statuscol"
-end
+local config = function()
+
+local statuscol = require "statuscol"
 
 local builtin = require "statuscol.builtin"
 
@@ -22,4 +21,11 @@ statuscol.setup {
     },
     { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
   },
+}
+
+end
+
+return {
+  "luukvbaal/statuscol.nvim",
+  config = config,
 }

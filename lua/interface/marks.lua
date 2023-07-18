@@ -1,10 +1,4 @@
-local ok, marks = pcall(require, "marks")
-if not ok then
-  vim.notify "Could not load marks"
-  return
-end
-
-marks.setup {
+local opts = {
   -- whether to map keybinds or not. default true
   default_mappings = true,
   -- which builtin marks to show. default {}
@@ -52,4 +46,10 @@ marks.setup {
     annotate = false,
   },
   mappings = {},
+}
+
+return {
+  "chentoast/marks.nvim",
+  event = "VeryLazy",
+  opts = opts,
 }

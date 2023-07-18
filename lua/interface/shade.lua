@@ -1,10 +1,4 @@
-local ok, shade = pcall(require, "shade")
-if not ok then
-  vim.notify "Could not load shade"
-  return
-end
-
-shade.setup {
+local opts = {
   overlay_opacity = 50,
   opacity_step = 1,
   keys = {
@@ -12,4 +6,11 @@ shade.setup {
     brightness_down = "<C-Down>",
     toggle = "<Leader>s",
   },
+}
+
+return {
+  "sunjon/Shade.nvim",
+  -- Disable because conflict with other floating window plugins
+  enabled = false,
+  opts = opts,
 }

@@ -1,10 +1,4 @@
-local ok, colorizer = pcall(require, "colorizer")
-if not ok then
-  vim.notify "Could not load colorizer"
-  return
-end
-
-colorizer.setup {
+local opts = {
   filetypes = { "*" },
   user_default_options = {
     RGB = true, -- #RGB hex codes
@@ -30,4 +24,10 @@ colorizer.setup {
   },
   -- all the sub-options of filetypes apply to buftypes
   buftypes = {},
+}
+
+return {
+  "NvChad/nvim-colorizer.lua",
+  event = "VeryLazy",
+  opts = opts,
 }

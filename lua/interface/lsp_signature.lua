@@ -1,12 +1,6 @@
-local ok, signature = pcall(require, "lsp_signature")
-if not ok then
-  vim.notify "Could not load lsp signature"
-  return
-end
-
 local custom = require "custom"
 
-signature.setup {
+local opts = {
   debug = false, -- set to true to enable debug logging
   log_path = vim.fn.stdpath "cache" .. "/lsp_signature.log", -- log dir when debug is on
   -- default is  ~/.cache/nvim/lsp_signature.log
@@ -61,4 +55,10 @@ signature.setup {
 
   select_signature_key = nil, -- cycle to next signature, e.g. '<M-n>' function overloading
   move_cursor_key = nil, -- imap, use nvim_set_current_win to move cursor between current win and floating
+}
+
+return {
+  "ray-x/lsp_signature.nvim",
+  event = "VeryLazy",
+  opts = opts,
 }

@@ -1,10 +1,4 @@
-local ok, fidget = pcall(require, "fidget")
-if not ok then
-  vim.notify "Could not load fidget"
-  return
-end
-
-fidget.setup {
+local opts = {
   text = {
     spinner = "pipe", -- animation shown when tasks are ongoing
     done = "✔", -- character shown when all tasks are complete
@@ -48,4 +42,11 @@ fidget.setup {
     logging = false, -- whether to enable logging, for debugging
     strict = false, -- whether to interpret LSP strictly
   },
+}
+
+return {
+  "j-hui/fidget.nvim",
+  branch = "legacy",
+  event = "VeryLazy",
+  opts = opts,
 }

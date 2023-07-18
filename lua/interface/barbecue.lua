@@ -1,12 +1,6 @@
-local ok, barbecue = pcall(require, "barbecue")
-if not ok then
-  vim.notify "Could not load barbecue"
-  return
-end
-
 local custom = require "custom"
 
-barbecue.setup {
+local opts = {
   ---Whether to attach navic to language servers automatically.
   ---
   ---@type boolean
@@ -137,4 +131,14 @@ barbecue.setup {
   ---
   ---@type barbecue.Config.kinds
   kinds = custom.icons.kind,
+}
+
+return {
+  "utilyre/barbecue.nvim",
+  dependencies = {
+    "neovim/nvim-lspconfig",
+    "SmiteshP/nvim-navic",
+    "kyazdani42/nvim-web-devicons",
+  },
+  opts = opts,
 }

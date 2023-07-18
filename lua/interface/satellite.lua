@@ -1,10 +1,4 @@
-local ok, satellite = pcall(require, "satellite")
-if not ok then
-  vim.notify "Could not load satellite"
-  return
-end
-
-satellite.setup {
+local opts = {
   current_only = false,
   winblend = 50,
   zindex = 40,
@@ -35,4 +29,12 @@ satellite.setup {
       show_builtins = false, -- shows the builtin marks like [ ] < >
     },
   },
+}
+
+return {
+  -- A substitue for nvim-scrollview
+  -- which support search resultsuse lsp diagnostics and git hunks
+  -- Disable because it's work in progress
+  "lewis6991/satellite.nvim",
+  opts = opts,
 }

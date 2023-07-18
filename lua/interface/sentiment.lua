@@ -1,9 +1,4 @@
-local ok, sentiment = pcall(require, "sentiment")
-if not ok then
-  vim.notify "COuld not load sentiment"
-end
-
-sentiment.setup {
+local opts = {
   ---Dictionary to check whether a buftype should be included.
   ---
   ---@type table<string, boolean>
@@ -34,4 +29,10 @@ sentiment.setup {
     { "{", "}" },
     { "[", "]" },
   },
+}
+
+return {
+  "utilyre/sentiment.nvim",
+  event = "VeryLazy",
+  opts = opts,
 }

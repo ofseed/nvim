@@ -1,10 +1,4 @@
-local ok, noice = pcall(require, "noice")
-if not ok then
-  vim.notify "Could not load noice"
-  return
-end
-
-noice.setup {
+local opts = {
   cmdline = {
     enabled = true, -- enables the Noice cmdline UI
     view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
@@ -148,20 +142,6 @@ noice.setup {
       },
     },
   },
-  markdown = {
-    hover = {
-      ["|(%S-)|"] = vim.cmd.help, -- vim help links
-      ["%[.-%]%((%S-)%)"] = require("noice.util").open, -- markdown links
-    },
-    highlights = {
-      ["|%S-|"] = "@text.reference",
-      ["@%S+"] = "@parameter",
-      ["^%s*(Parameters:)"] = "@text.title",
-      ["^%s*(Return:)"] = "@text.title",
-      ["^%s*(See also:)"] = "@text.title",
-      ["{%S-}"] = "@parameter",
-    },
-  },
   health = {
     checker = true, -- Disable if you don't want health checks to run
   },
@@ -185,4 +165,17 @@ noice.setup {
   routes = {}, --- @see section on routes
   status = {}, --- @see section on statusline components
   format = {}, --- @see section on formatting
+}
+
+return {
+  "folke/noice.nvim",
+  dependencies = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+  },
+  opts = opts,
 }

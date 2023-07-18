@@ -1,10 +1,4 @@
-local ok, regexplainer = pcall(require, "regexplainer")
-if not ok then
-  vim.notify "Could not load regexplainer"
-  return
-end
-
-regexplainer.setup {
+local opts = {
   -- 'narrative'
   mode = "narrative", -- TODO: 'ascii', 'graphical'
 
@@ -24,4 +18,15 @@ regexplainer.setup {
   narrative = {
     separator = "\n",
   },
+}
+
+return {
+  "bennypowers/nvim-regexplainer",
+  -- Not very useful now
+  enabled = false,
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+  },
+  opts = opts,
 }
