@@ -1,12 +1,6 @@
-local ok, tree = pcall(require, "nvim-tree")
-if not ok then
-  vim.notify "Could not load tree"
-  return
-end
-
 local custom = require "custom"
 
-tree.setup {
+local opts = {
   auto_reload_on_write = true,
   disable_netrw = false,
   hijack_cursor = false,
@@ -244,5 +238,15 @@ tree.setup {
       profile = false,
       watcher = false,
     },
+  },
+}
+
+return {
+  "nvim-tree/nvim-tree.lua",
+  enabled = false,
+  dependencies = { "kyazdani42/nvim-web-devicons" },
+  opts = opts,
+  keys = {
+    { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" },
   },
 }

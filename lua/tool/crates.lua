@@ -1,10 +1,4 @@
-local ok, crates = pcall(require, "crates")
-if not ok then
-  vim.notify "Could not load crates"
-  return
-end
-
-require("crates").setup {
+local opts = {
   smart_insert = true,
   insert_closing_quote = true,
   avoid_prerelease = true,
@@ -136,4 +130,11 @@ require("crates").setup {
     enabled = false,
     name = "Crates",
   },
+}
+
+return {
+  "Saecki/crates.nvim",
+  event = { "BufRead Cargo.toml" },
+  dependencies = { "nvim-lua/plenary.nvim" },
+  opts = opts,
 }

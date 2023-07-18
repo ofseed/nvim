@@ -1,10 +1,4 @@
-local ok, picker = pcall(require, "window-picker")
-if not ok then
-  vim.notify "Could not load window-picker"
-  return
-end
-
-picker.setup {
+local opts = {
   -- when there is only one window available to pick from, use that window
   -- without prompting the user to select
   autoselect_one = true,
@@ -65,12 +59,26 @@ picker.setup {
   other_win_hl_color = "#44cc41",
 }
 
-vim.keymap.set("n", "<C-W>w", function()
-  local window_id = picker.pick_window() or vim.api.nvim_get_current_win()
-  vim.api.nvim_set_current_win(window_id)
-end, { desc = "Pick a window" })
-
-vim.keymap.set("n", "<C-W><C-W>", function()
-  local window_id = picker.pick_window() or vim.api.nvim_get_current_win()
-  vim.api.nvim_set_current_win(window_id)
-end, { desc = "Pick a window" })
+return {
+  "s1n7ax/nvim-window-picker",
+  version = "*",
+  opts = opts,
+  keys = {
+    {
+      "<C-W>w",
+      function()
+        local window_id = require("window-picker").pick_window() or vim.api.nvim_get_current_win()
+        vim.api.nvim_set_current_win(window_id)
+      end,
+      desc = "Pick a window",
+    },
+    {
+      "<C-W><C-W>",
+      function()
+        local window_id = require("window-picker").pick_window() or vim.api.nvim_get_current_win()
+        vim.api.nvim_set_current_win(window_id)
+      end,
+      desc = "Pick a window",
+    },
+  },
+}

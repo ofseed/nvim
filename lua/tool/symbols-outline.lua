@@ -1,10 +1,4 @@
-local ok, outline = pcall(require, "symbols-outline")
-if not ok then
-  vim.notify "Could not load symbols-outline"
-  return 0
-end
-
-outline.setup {
+local opts = {
   highlight_hovered_item = true,
   show_guides = true,
   auto_preview = true,
@@ -64,4 +58,14 @@ outline.setup {
     Operator = { icon = "+", hl = "TSOperator" },
     TypeParameter = { icon = "𝙏", hl = "TSParameter" },
   },
+}
+
+return {
+  "simrat39/symbols-outline.nvim",
+  opts = opts,
+  dependencies = { "kyazdani42/nvim-web-devicons" },
+  cmd = { "SymbolsOutline" },
+  enabled = false,
+  -- Subtitute for aerial.nvim
+  -- Disable because better to , aerial.nvim
 }

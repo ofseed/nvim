@@ -1,10 +1,4 @@
-local ok, octo = pcall(require, "octo")
-if not ok then
-  vim.notify "Could not load octo"
-  return
-end
-
-octo.setup {
+local opts = {
   default_remote = { "upstream", "origin" }, -- order to try remotes
   reaction_viewer_hint_icon = "", -- marker for user reactions
   user_icon = " ", -- user icon
@@ -128,4 +122,13 @@ octo.setup {
       toggle_viewed = "<leader><space>", -- toggle viewer viewed state
     },
   },
+}
+
+return {
+  "pwntester/octo.nvim",
+  enabled = false,
+  cmd = { "Octo" },
+  -- Subtitute for gh.nvim
+  -- Disable beca, better to , gh.nvim
+  opts = opts,
 }

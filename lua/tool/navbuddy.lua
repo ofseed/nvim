@@ -1,7 +1,5 @@
-local ok, navbuddy = pcall(require, "nvim-navbuddy")
-if not ok then
-  vim.notify "Could not load navbuddy"
-end
+local config = function ()
+local navbuddy = require "nvim-navbuddy"
 
 local actions = require "nvim-navbuddy.actions"
 
@@ -144,3 +142,16 @@ navbuddy.setup {
 }
 
 vim.keymap.set("n", "<leader>n", navbuddy.open, { desc = "Navigator" })
+
+end
+
+return {
+  "SmiteshP/nvim-navbuddy",
+  event = "VeryLazy",
+  dependencies = {
+    "neovim/nvim-lspconfig",
+    "SmiteshP/nvim-navic",
+    "MunifTanjim/nui.nvim",
+  },
+  config = config,
+}

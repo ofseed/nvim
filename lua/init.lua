@@ -19,6 +19,7 @@ local custom = require "custom"
 
 lazy.setup({
   { import = "colorscheme" },
+  { import = "tool" },
   { import = "plugins" },
 }, {
   root = vim.fn.stdpath "data" .. "/lazy", -- directory where plugins will be installed

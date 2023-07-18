@@ -1,12 +1,6 @@
-local ok, tree = pcall(require, "neo-tree")
-if not ok then
-  vim.notify "Could not load tree"
-  return
-end
-
 local custom = require "custom"
 
-tree.setup {
+local opts = {
   source_selector = {
     winbar = true,
     sources = {
@@ -53,4 +47,17 @@ tree.setup {
   },
 }
 
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "File Explorer" })
+return {
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v2.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+    "MunifTanjim/nui.nvim",
+    "s1n7ax/nvim-window-picker",
+  },
+  opts = opts,
+  keys = {
+    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File Explorer" },
+  },
+}

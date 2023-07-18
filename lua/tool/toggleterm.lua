@@ -1,12 +1,6 @@
-local ok, toggleterm = pcall(require, "toggleterm")
-if not ok then
-  vim.notify "Could not load toggleterm"
-  return
-end
-
 local custom = require "custom"
 
-toggleterm.setup {
+local opts = {
   -- size can be a number or function which is passed the current terminal
   size = function(term)
     if term.direction == "horizontal" then
@@ -56,5 +50,13 @@ toggleterm.setup {
   },
 }
 
-vim.keymap.set("t", "<Esc>", "<C-\\><C-N>")
-vim.keymap.set("n", "<leader>tt", "<Cmd>ToggleTermToggleAll<CR>", { desc = "All Terminal" })
+return {
+  "akinsho/nvim-toggleterm.lua",
+  version = "*",
+  event = "VeryLazy",
+  opts = opts,
+  keys = {
+    { "<Esc>", "<C-\\><C-N>", mode = "t" },
+    { "<leader>tt", "<Cmd>ToggleTermToggleAll<CR>", mode = "n", desc = "All Terminal" },
+  },
+}

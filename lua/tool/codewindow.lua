@@ -1,10 +1,4 @@
-local ok, codewindow = pcall(require, "codewindow")
-if not ok then
-  vim.notify "Could not load codewindow"
-  return
-end
-
-codewindow.setup {
+local opts = {
   minimap_width = 20, -- The width of the text part of the minimap
   width_multiplier = 4, -- How many characters one dot represents
   use_lsp = true, -- Use the builtin LSP to show errors and warnings
@@ -15,4 +9,11 @@ codewindow.setup {
   active_in_terminals = false, -- Should the minimap activate for terminal buffers
 }
 
-codewindow.apply_default_keybinds()
+return {
+  "gorbit99/codewindow.nvim",
+  enabled = false,
+  opts = opts,
+  config = function()
+    require("codewindow").apply_default_keybinds()
+  end,
+}

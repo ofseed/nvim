@@ -1,10 +1,4 @@
-local ok, info = pcall(require, "package-info")
-if not ok then
-  vim.notify "Could not load package info"
-  return
-end
-
-info.setup {
+local opts = {
   colors = {
     up_to_date = "#3C4048", -- Text color for up to date package virtual text
     outdated = "#d19a66", -- Text color for outdated package virtual text
@@ -26,9 +20,56 @@ info.setup {
   package_manager = "npm",
 }
 
-vim.keymap.set("n", "<localleader>s", require("package-info").show, { desc = "Show package versions" })
-vim.keymap.set("n", "<localleader>c", require("package-info").hide, { desc = "Hide package versions" })
-vim.keymap.set("n", "<localleader>u", require("package-info").update, { desc = "Update package on line" })
-vim.keymap.set("n", "<localleader>d", require("package-info").delete, { desc = "Delete package on line" })
-vim.keymap.set("n", "<localleader>i", require("package-info").install, { desc = "Install a new package" })
-vim.keymap.set( "n", "<localleader>p", require("package-info").change_version, { desc = "Install a different package version" })
+return {
+  "vuki656/package-info.nvim",
+  event = {
+    "BufRead package.json",
+    "BufRead package-lock.json",
+  },
+  dependencies = "MunifTanjim/nui.nvim",
+  opts = opts,
+  keys = {
+    {
+      "<localleader>s",
+      function()
+        require("package-info").show()
+      end,
+      desc = "Show package versions",
+    },
+    {
+      "<localleader>c",
+      function()
+        require("package-info").hide()
+      end,
+      desc = "Hide package versions",
+    },
+    {
+      "<localleader>u",
+      function()
+        require("package-info").update()
+      end,
+      desc = "Update package on line",
+    },
+    {
+      "<localleader>d",
+      function()
+        require("package-info").delete()
+      end,
+      desc = "Delete package on line",
+    },
+    {
+      "<localleader>i",
+      function()
+        require("package-info").install()
+      end,
+      desc = "Install a new package",
+    },
+    {
+      "<localleader>p",
+      function()
+        require("package-info").change_version()
+      end,
+      desc = "Install a different package version",
+    },
+  },
+}

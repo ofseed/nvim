@@ -1,12 +1,6 @@
-local ok, aerial = pcall(require, "aerial")
-if not ok then
-  vim.notify "Could not load aerial"
-  return
-end
-
 local custom = require "custom"
 
-aerial.setup {
+local opts = {
   -- Priority list of preferred backends for aerial.
   -- This can be a filetype map (see :help aerial-filetype-map)
   backends = { "lsp", "treesitter", "markdown" },
@@ -233,5 +227,13 @@ aerial.setup {
   markdown = {
     -- How long to wait (in ms) after a buffer change before updating
     update_delay = 300,
+  },
+}
+
+return {
+  "stevearc/aerial.nvim",
+  opts = opts,
+  keys = {
+    { "<leader>a", "<Cmd>AerialToggle<CR>", desc = "Outline" },
   },
 }

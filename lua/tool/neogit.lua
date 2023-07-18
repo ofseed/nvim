@@ -1,10 +1,4 @@
-local ok, neogit = pcall(require, "neogit")
-if not ok then
-  vim.notify "Could not load neogit"
-  return
-end
-
-neogit.setup {
+local opts = {
   disable_signs = false,
   disable_hint = false,
   disable_context_highlighting = false,
@@ -79,5 +73,17 @@ neogit.setup {
       -- Removes the default mapping of "s"
       -- ["s"] = "",
     },
+  },
+}
+
+return {
+  "NeogitOrg/neogit",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "sindrets/diffview.nvim",
+  },
+  opts = opts,
+  keys = {
+    { "<leader>gg", "<Cmd>Neogit<CR>", desc = "Open Neogit" },
   },
 }

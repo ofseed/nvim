@@ -1,8 +1,6 @@
-local ok, gitsigns = pcall(require, "gitsigns")
-if not ok then
-  vim.notify "Could not load gitsigns"
-  return
-end
+local config = function ()
+
+local gitsigns = require "gitsigns"
 
 local custom = require "custom"
 
@@ -99,3 +97,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { link = "DiffDelete" })
   end,
 })
+
+end
+
+return {
+  "lewis6991/gitsigns.nvim",
+  dependencies = "nvim-lua/plenary.nvim",
+  config = config,
+  -- Lasy load cause error
+}

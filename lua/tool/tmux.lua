@@ -1,10 +1,4 @@
-local ok, tmux = pcall(require, "tmux")
-if not ok then
-  vim.notify "Could not load tmux"
-  return
-end
-
-tmux.setup {
+local opts = {
   copy_sync = {
     -- enables copy sync and overwrites all register actions to
     -- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
@@ -56,4 +50,10 @@ tmux.setup {
     -- sets resize steps for y axis
     resize_step_y = 1,
   },
+}
+
+return {
+  "aserowy/tmux.nvim",
+  opts = opts,
+  event = "VeryLazy",
 }

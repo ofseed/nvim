@@ -1,8 +1,6 @@
-local ok, diffview = pcall(require, "diffview")
-if not ok then
-  vim.notify "Could not load diffview"
-  return
-end
+local config = function ()
+
+local diffview = require "diffview"
 
 local actions = require "diffview.actions"
 
@@ -291,6 +289,15 @@ diffview.setup {
   },
 }
 
-vim.keymap.set("n", "<leader>gdo", "<Cmd>DiffviewOpen<CR>", { desc = "Open" })
-vim.keymap.set("n", "<leader>gdc", "<Cmd>DiffviewClose<CR>", { desc = "Close" })
-vim.keymap.set("n", "<leader>gdh", "<Cmd>DiffviewFileHistory<CR>", { desc = "Open History" })
+end
+
+return {
+  "sindrets/diffview.nvim",
+  event = "VeryLazy",
+  config = config,
+  keys = {
+    { "<leader>gdo", "<Cmd>DiffviewOpen<CR>", desc = "Open" },
+    { "<leader>gdc", "<Cmd>DiffviewClose<CR>", desc = "Close" },
+    { "<leader>gdh", "<Cmd>DiffviewFileHistory<CR>", desc = "Open History" },
+  },
+}

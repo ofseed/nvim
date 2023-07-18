@@ -1,9 +1,4 @@
-local ok, rest = pcall(require, "rest-nvim")
-if not ok then
-  vim.notify "Could not load rest-nvim"
-end
-
-rest.setup {
+opts = {
   -- Open request results in a horizontal split
   result_split_horizontal = false,
   -- Keep the http file buffer above|left when split horizontal|vertical
@@ -38,6 +33,13 @@ rest.setup {
   yank_dry_run = true,
 }
 
-vim.keymap.set("n", "<localleader>r", "<Plug>RestNvim<CR>", { silent = true, desc = "Rest" })
-vim.keymap.set("n", "<localleader>p", "<Plug>RestNvimPreview<CR>", { silent = true, desc = "Rest preview" })
-vim.keymap.set("n", "<localleader>l", "<Plug>RestNvimLast<CR>", { silent = true, desc = "Rest last" })
+return {
+  "rest-nvim/rest.nvim",
+  ft = { "http" },
+  opts = opts,
+  keys = {
+    { "n", "<localleader>r", "<Plug>RestNvim<CR>", silent = true, desc = "Rest" },
+    { "n", "<localleader>p", "<Plug>RestNvimPreview<CR>", silent = true, desc = "Rest preview" },
+    { "n", "<localleader>l", "<Plug>RestNvimLast<CR>", silent = true, desc = "Rest last" },
+  },
+}

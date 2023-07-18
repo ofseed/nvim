@@ -1,8 +1,6 @@
-local ok, gitlinker = pcall(require, "gitlinker")
-if not ok then
-  vim.notify "Could not load gitlinker"
-  return
-end
+local config = function ()
+
+local gitlinker = require "gitlinker"
 
 local hosts = require "gitlinker.hosts"
 
@@ -31,4 +29,13 @@ gitlinker.setup {
   },
   -- default mapping to call url generation with action_callback
   mappings = "<leader>gy",
+}
+
+end
+
+return {
+  "ruifm/gitlinker.nvim",
+  dependencies = "nvim-lua/plenary.nvim",
+  event = "VeryLazy",
+  config = config,
 }

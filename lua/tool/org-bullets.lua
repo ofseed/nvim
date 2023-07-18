@@ -1,10 +1,4 @@
-local ok, bullets = pcall(require, "org-bullets")
-if not ok then
-  vim.notify "Could not load org bullets"
-  return
-end
-
-bullets.setup {
+local opts = {
   concealcursor = false, -- If false then when the cursor is on a line underlying characters are visible
   symbols = {
     -- list symbol
@@ -22,4 +16,10 @@ bullets.setup {
       todo = { "˟", "OrgTODO" },
     },
   },
+}
+
+return {
+  "akinsho/org-bullets.nvim",
+  ft = { "org" },
+  opts = opts,
 }

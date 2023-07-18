@@ -1,12 +1,6 @@
-local ok, lilypond = pcall(require, "nvls")
-if not ok then
-  vim.notify "Could not load nvim-lilypond-suite"
-  return
-end
-
 local custom = require "custom"
 
-lilypond.setup {
+local opts = {
   lilypond = {
     mappings = {
       player = "<F3>",
@@ -63,4 +57,11 @@ lilypond.setup {
       winhighlight = "Normal:Normal,FloatBorder:Normal",
     },
   },
+}
+
+return {
+  "martineausimon/nvim-lilypond-suite",
+  dependencies = { "MunifTanjim/nui.nvim" },
+  opts = opts,
+  ft = { "lilypond" },
 }

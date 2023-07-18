@@ -1,7 +1,9 @@
-local ok, fundo = pcall(require, "fundo")
-if not ok then
-  vim.notify "Could not load fundo"
-  return
-end
-
-fundo.setup()
+return {
+  "kevinhwang91/nvim-fundo",
+  requires = "kevinhwang91/promise-async",
+  run = function()
+    require("fundo").install()
+  end,
+  opts = true,
+  enabled = false,
+}
