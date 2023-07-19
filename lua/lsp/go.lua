@@ -112,5 +112,8 @@ return {
   dependencies = {
     "ray-x/guihua.lua",
   },
+  after = {
+    "mason-lspconfig.nvim",
+  },
   opts = opts,
 }
