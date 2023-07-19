@@ -101,11 +101,6 @@ local opts = {
   highlight_overrides = {},
 }
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "catppuccin.lua",
-  command = "source <afile> | CatppuccinCompile",
-})
-
 vim.g.catppuccin_flavour = "mocha"
 
 return {
