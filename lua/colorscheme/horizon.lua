@@ -19,5 +19,6 @@ local opts = {
 
 return {
   "akinsho/horizon.nvim",
+  lazy = true,
   opts = opts,
 }

@@ -35,5 +35,6 @@ local opts = {
 
 return {
   "EdenEast/nightfox.nvim",
+  lazy = true,
   opts = opts,
 }

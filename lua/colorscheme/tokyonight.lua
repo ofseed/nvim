@@ -33,5 +33,6 @@ local opts = {
 
 return {
   "folke/tokyonight.nvim",
+  lazy = true,
   opts = opts,
 }

@@ -111,6 +111,7 @@ vim.g.catppuccin_flavour = "mocha"
 return {
   "catppuccin/nvim",
   name = "catppuccin",
+  lazy = true,
   opts = opts,
   build = ":CatppuccinCompile",
 }
