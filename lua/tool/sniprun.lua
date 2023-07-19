@@ -1,12 +1,6 @@
-local ok, sniprun = pcall(require, "sniprun")
-if not ok then
-  vim.notify "Could not load sniprun"
-  return
-end
-
 local custom = require "custom"
 
-sniprun.setup {
+local opts = {
   selected_interpreters = {}, --# use those instead of the default for the current filetype
   repl_enable = {}, --# enable REPL-like behavior for the given interpreters
   repl_disable = {}, --# disable REPL-like behavior for the given interpreters
@@ -61,4 +55,11 @@ sniprun.setup {
   live_mode_toggle = "off", --# live mode toggle, see Usage - Running for more info
 }
 
-vim.keymap.set("v", "<leader>r", "<Plug>SnipRun", { desc = "Run" })
+return {
+  "michaelb/sniprun",
+  event = "VeryLazy",
+  build = "bash install.sh",
+  keys = {
+    { "<leader>r", "<Plug>SnipRun", mode = "v", desc = "Run" },
+  },
+}

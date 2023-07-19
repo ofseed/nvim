@@ -1,10 +1,4 @@
-local ok, text = pcall(require, "nvim-dap-virtual-text")
-if not ok then
-  vim.notify "Could not load dap virtual text"
-  return
-end
-
-text.setup {
+local opts = {
   enabled = true, -- enable this plugin (the default)
   enabled_commands = true, -- create commands DapVirtualTextEnable, DapVirtualTextDisable, DapVirtualTextToggle, (DapVirtualTextForceRefresh for refreshing when debug adapter did not notify its termination)
   highlight_changed_variables = true, -- highlight changed values with NvimDapVirtualTextChanged, else always NvimDapVirtualText
@@ -36,4 +30,10 @@ text.setup {
   virt_lines = false, -- show virtual lines instead of virtual text (will flicker!)
   virt_text_win_col = nil, -- position the virtual text at a fixed window column (starting from the first text column) ,
   -- e.g. 80 to position at column 80, see `:h nvim_buf_set_extmark()`
+}
+
+return {
+  "theHamsta/nvim-dap-virtual-text",
+  event = "VeryLazy",
+  opts = opts,
 }

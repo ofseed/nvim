@@ -1,12 +1,6 @@
-local ok, dapui = pcall(require, "dapui")
-if not ok then
-  vim.notify "Could not load dap ui"
-  return
-end
-
 local custom = require "custom"
 
-dapui.setup {
+local opts = {
   controls = {
     element = "repl",
     enabled = true,
@@ -87,4 +81,19 @@ dapui.setup {
   },
 }
 
-vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "Toggle UI" })
+return {
+  "rcarriga/nvim-dap-ui",
+  requires = {
+    "mfussenegger/nvim-dap",
+  },
+  opts = opts,
+  keys = {
+    {
+      "<leader>du",
+      function()
+        require("dapui").toggle()
+      end,
+      desc = "Toggle UI",
+    },
+  },
+}
