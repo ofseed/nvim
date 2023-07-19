@@ -1,19 +1,13 @@
-local ok, jdtls = pcall(require, "jdtls")
-if not ok then
-  vim.notify "Could not load jdtls"
-  return
-end
+local config = function()
 
-local ok, mason = pcall(require, "mason-registry")
-if not ok then
-  vim.notify "Could not load mason-registry"
-  return
-end
+local jdtls = require "jdtls"
 
-local default = require "language.default"
+local mason = require "mason-registry"
+
+local default = require "default"
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
-local config = {
+local opts = {
   -- The command that starts the language server
   -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
   cmd = { mason.get_package("jdtls"):get_install_path() .. "/bin/jdtls" },
@@ -71,7 +65,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     -- This starts a new client & server,
     -- or attaches to an existing client & server depending on the `root_dir`.
-    jdtls.start_or_attach(config)
+    jdtls.start_or_attach(opts)
     vim.bo.tabstop = 4
   end,
 })
+
+end
+
+return {
+  "mfussenegger/nvim-jdtls",
+  config = config,
+}

@@ -1,15 +1,8 @@
-local ok, tools = pcall(require, "flutter-tools")
-
-if not ok then
-  vim.notify "Could not load flutter-tools"
-  return
-end
-
-local default = require "language.default"
+local default = require "default"
 
 local custom = require "custom"
 
-tools.setup {
+local opts = {
   ui = {
     -- the border type to use for all floating windows, the same options/formats
     -- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}
@@ -77,24 +70,9 @@ tools.setup {
     on_attach = function(client, bufnr)
       default.on_attach(client, bufnr)
 
-      vim.keymap.set(
-        "n",
-        "<localleader>o",
-        "<Cmd>FlutterOutlineOpen<CR>",
-        { buffer = bufnr, desc = "Flutter Outline" }
-      )
-      vim.keymap.set(
-        "n",
-        "<localleader>r",
-        "<Cmd>FlutterRun<CR>",
-        { buffer = bufnr, desc = "Run" }
-      )
-      vim.keymap.set(
-        "n",
-        "<localleader>q",
-        "<Cmd>FlutterQuit<CR>",
-        { buffer = bufnr, desc = "Quit" }
-      )
+      vim.keymap.set("n", "<localleader>o", "<Cmd>FlutterOutlineOpen<CR>", { buffer = bufnr, desc = "Flutter Outline" })
+      vim.keymap.set("n", "<localleader>r", "<Cmd>FlutterRun<CR>", { buffer = bufnr, desc = "Run" })
+      vim.keymap.set("n", "<localleader>q", "<Cmd>FlutterQuit<CR>", { buffer = bufnr, desc = "Quit" })
     end,
     capabilities = default.capabilities, -- e.g. lsp_status capabilities
     --- OR you can specify a function to deactivate or change or control how the config is created
@@ -112,4 +90,12 @@ tools.setup {
     --   enableSnippets = true,
     -- },
   },
+}
+
+return {
+  "akinsho/flutter-tools.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
+  opts = opts,
 }

@@ -1,10 +1,4 @@
-local ok, extensions = pcall(require, "clangd_extensions")
-if not ok then
-  vim.notify "Could not load clangd_extensions"
-  return
-end
-
-local default = require "language.default"
+local default = require "default"
 
 local custom = require "custom"
 
@@ -12,7 +6,7 @@ local capabilities = vim.tbl_extend("force", default.capabilities, {
   offsetEncoding = "utf-8",
 })
 
-extensions.setup {
+local opts = {
   server = {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
@@ -108,4 +102,9 @@ extensions.setup {
       border = custom.border,
     },
   },
+}
+
+return {
+  "p00f/clangd_extensions.nvim",
+  opts = opts,
 }

@@ -1,22 +1,12 @@
-local ok, tools = pcall(require, "rust-tools")
-if not ok then
-  vim.notify "Could not load rust-tools"
-  return
-end
+local config = function()
 
-local ok, key = pcall(require, "which-key")
-if not ok then
-  vim.notify "Could not load which-key"
-  return
-end
+local tools = require "rust-tools"
 
-local ok, mason = pcall(require, "mason-registry")
-if not ok then
-  vim.notify "Could not load mason-registry"
-  return
-end
+local key = require "which-key"
 
-local default = require "language.default"
+local mason = require "mason-registry"
+
+local default = require "default"
 
 local custom = require "custom"
 
@@ -220,4 +210,11 @@ tools.setup {
   dap = {
     adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
   },
+}
+
+end
+
+return {
+  "simrat39/rust-tools.nvim",
+  config = config,
 }

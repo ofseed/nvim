@@ -42,7 +42,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-local default = require "language.default"
+local default = require "default"
 
 local opts = {
   handlers = {
@@ -55,7 +55,6 @@ local opts = {
     gopls = function(server) end,
     jdtls = function(server) end,
     tsserver = function(server) end,
-    jsonls = function(server) end,
 
     lua_ls = function()
       lspconfig.lua_ls.setup {
@@ -119,12 +118,31 @@ local opts = {
         },
       }
     end,
+
+    jsonls = function()
+      lspconfig.jsonls.setup {
+        settings = {
+          json = {
+            schemas = require("schemastore").json.schemas(),
+            validate = { enable = true },
+          },
+        },
+        on_attach = function(client, bufnr)
+          default.on_attach(client, bufnr)
+          client.server_capabilities.documentFormattingProvider = false
+        end,
+        capabilities = default.capabilities,
+      }
+    end,
   },
 }
 
 return {
   "williamboman/mason-lspconfig.nvim",
-  dependencies = { "neovim/nvim-lspconfig" },
+  dependencies = {
+    "neovim/nvim-lspconfig",
+    "b0o/SchemaStore.nvim",
+  },
   after = "mason.nvim",
   opts = opts,
 }

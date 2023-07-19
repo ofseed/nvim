@@ -1,3 +1,5 @@
+local config = function()
+
 vim.g.vimtex_mappings_prefix = "<localleader>"
 vim.g.tex_flavor = "latex"
 vim.g.vimtex_quickfix_mode = 0
@@ -11,4 +13,12 @@ vim.g.vimtex_toc_config = {
   todo_sorted = 0,
   show_help = 1,
   show_numbers = 1,
+}
+
+end
+
+return {
+  "lervag/vimtex",
+  ft = { "tex" },
+  config = config,
 }

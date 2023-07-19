@@ -1,12 +1,6 @@
-local ok, go = pcall(require, "go")
-if not ok then
-  vim.notify "Could not load go"
-  return
-end
+local default = require "default"
 
-local default = require "language.default"
-
-go.setup {
+local opts = {
   disable_defaults = false, -- true|false when true set false to all boolean settings and replace all table
   -- settings with {}
   go = "go", -- go command, can be go[default] or go1.18beta1
@@ -111,4 +105,12 @@ go.setup {
   test_efm = false, -- errorfomat for quickfix, default mix mode, set to true will be efm only
   luasnip = false, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
   --  Do not enable this if you already added the path, that will duplicate the entries
+}
+
+return {
+  "ray-x/go.nvim",
+  dependencies = {
+    "ray-x/guihua.lua",
+  },
+  opts = opts,
 }
