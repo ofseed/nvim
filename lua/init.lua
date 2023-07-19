@@ -21,6 +21,7 @@ lazy.setup({
   { import = "colorscheme" },
   { import = "edit" },
   { import = "efficiency" },
+  { import = "git" },
   { import = "interface" },
   { import = "lsp" },
   { import = "mason" },
