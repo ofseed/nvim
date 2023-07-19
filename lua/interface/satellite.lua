@@ -36,5 +36,6 @@ return {
   -- which support search resultsuse lsp diagnostics and git hunks
   -- Disable because it's work in progress
   "lewis6991/satellite.nvim",
+  event = "VeryLazy",
   opts = opts,
 }
