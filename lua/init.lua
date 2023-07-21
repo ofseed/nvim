@@ -25,7 +25,6 @@ lazy.setup({
   { import = "git" },
   { import = "interface" },
   { import = "lsp" },
-  { import = "mason" },
   { import = "tool" },
 }, {
   root = vim.fn.stdpath "data" .. "/lazy", -- directory where plugins will be installed
