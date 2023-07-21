@@ -19,6 +19,7 @@ local custom = require "custom"
 
 lazy.setup({
   { import = "colorscheme" },
+  { import = "dap" },
   { import = "edit" },
   { import = "efficiency" },
   { import = "git" },

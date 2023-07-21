@@ -1,22 +1,18 @@
-local opts = {
-  handlers = {
-    python = function(config) end,
-  },
-}
-
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError" })
 vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticInfo" })
 vim.fn.sign_define("DapStopped", { text = "", texthl = "Constant" })
 vim.fn.sign_define("DapBreakpointRejected", { text = "" })
 
 return {
-  "jay-babu/mason-nvim-dap.nvim",
+  "mfussenegger/nvim-dap",
   event = "VeryLazy",
-  dependencies = {
-    "mfussenegger/nvim-dap",
-  },
-  after = "mason.nvim",
-  opts = opts,
+  config = function()
+    local dap = require "dap"
+    dap.defaults.fallback.external_terminal = {
+      command = "/usr/bin/kitty",
+      args = { "--class", "kitty-dap", "--hold", "--detach", "nvim-dap", "-c", "DAP" },
+    }
+  end,
   keys = {
     {
       "<F5>",
