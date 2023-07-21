@@ -244,7 +244,7 @@ local opts = {
 return {
   "nvim-tree/nvim-tree.lua",
   enabled = false,
-  dependencies = { "kyazdani42/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = opts,
   keys = {
     { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" },

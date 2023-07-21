@@ -63,7 +63,7 @@ local opts = {
 return {
   "simrat39/symbols-outline.nvim",
   opts = opts,
-  dependencies = { "kyazdani42/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   cmd = { "SymbolsOutline" },
   enabled = false,
   -- Subtitute for aerial.nvim

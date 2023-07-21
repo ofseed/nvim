@@ -108,7 +108,7 @@ local opts = {
 return {
   "akinsho/nvim-bufferline.lua",
   version = "*",
-  dependencies = { "kyazdani42/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     require("bufferline").setup(opts)
     vim.keymap.set("n", "<M-1>", "<Cmd>BufferLineGoToBuffer 1<CR>", { desc = "Go to buffer 1" })
