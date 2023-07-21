@@ -187,11 +187,12 @@ tools.setup {
       vim.keymap.set("n", "<localleader>ei", "<cmd>RustEmitIr<CR>", { buffer = bufnr, desc = "IR" })
       vim.keymap.set("n", "<localleader>ea", "<cmd>RustEmitAsm<CR>", { buffer = bufnr, desc = "ASM" })
 
-      key.register({
-        ["<localleader>m"] = { name = "+move" },
-        ["<localleader>o"] = { name = "+open" },
-        ["<localleader>e"] = { name = "+emit" },
-      }, { buffer = bufnr })
+      -- Cause Error
+      -- key.register({
+      --   ["<localleader>m"] = { name = "+move" },
+      --   ["<localleader>o"] = { name = "+open" },
+      --   ["<localleader>e"] = { name = "+emit" },
+      -- }, { buffer = bufnr })
     end,
     settings = {
       ["rust-analyzer"] = {
