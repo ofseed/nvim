@@ -109,6 +109,9 @@ local opts = {
 
 return {
   "ray-x/go.nvim",
+  event = {
+    "BufRead *.go,*.mod,*.sum",
+  },
   dependencies = {
     "ray-x/guihua.lua",
   },

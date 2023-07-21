@@ -74,5 +74,6 @@ end
 
 return {
   "mfussenegger/nvim-jdtls",
+  event = "BufRead *.java",
   config = config,
 }

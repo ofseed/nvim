@@ -106,5 +106,6 @@ local opts = {
 
 return {
   "p00f/clangd_extensions.nvim",
+  event = "BufReadPre *.c,*cpp,*cc,*cxx,*h,*hh,*hpp,*hxx",
   opts = opts,
 }

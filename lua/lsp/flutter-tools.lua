@@ -94,6 +94,7 @@ local opts = {
 
 return {
   "akinsho/flutter-tools.nvim",
+  event = "BufRead *.dart",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },

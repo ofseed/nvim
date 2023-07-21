@@ -51,5 +51,6 @@ local opts = {
 
 return {
   "jose-elias-alvarez/typescript.nvim",
+  event = "BufRead *.js,*jsx,*ts,*tsx",
   opts = opts,
 }
