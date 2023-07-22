@@ -65,7 +65,7 @@ return {
       function()
         require("nvim-navbuddy").open()
       end,
-      { desc = "Navigator" },
+      desc = "Navigator",
     },
   },
 }
