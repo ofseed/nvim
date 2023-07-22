@@ -84,7 +84,7 @@ local opts = {
   gopls_remote_auto = true, -- add -remote=auto to gopls
   gocoverage_sign = "█",
   sign_priority = 5, -- change to a higher number to override other signs
-  dap_debug = true, -- set to false to disable dap
+  dap_debug = false, -- set to false to disable dap
   dap_debug_keymap = false, -- true: use keymap for debugger defined in go/dap.lua
   -- false: do not use keymap in go/dap.lua.  you must define your own.
   -- windows: use visual studio keymap
