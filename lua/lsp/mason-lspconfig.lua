@@ -68,7 +68,6 @@ local opts = {
             hint = {
               enable = true,
               setType = true,
-              arrayIndex = "Disable",
             },
             codelens = {
               enable = true,
