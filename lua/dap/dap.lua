@@ -19,35 +19,35 @@ return {
       function()
         require("dap").continue()
       end,
-      { desc = "Debug: Continue" },
+      desc = "Debug: Continue",
     },
     {
       "<F10>",
       function()
         require("dap").step_over()
       end,
-      { desc = "Debug: Step over" },
+      desc = "Debug: Step over",
     },
     {
       "<F11>",
       function()
         require("dap").step_into()
       end,
-      { desc = "Debug: Step into" },
+      desc = "Debug: Step into",
     },
     {
       "<F12>",
       function()
         require("dap").step_out()
       end,
-      { desc = "Debug: Step out" },
+      desc = "Debug: Step out",
     },
     {
       "<F9>",
       function()
         require("dap").toggle_breakpoint()
       end,
-      { desc = "Debug: Toggle breakpoint" },
+      desc = "Debug: Toggle breakpoint",
     },
 
     {
@@ -55,28 +55,28 @@ return {
       function()
         require("dap").set_breakpoint(vim.fn.input "Breakpoint condition: ")
       end,
-      { desc = "Set breakpoint" },
+      desc = "Set breakpoint",
     },
     {
-      "<leader>lp",
+      "<leader>dp",
       function()
         require("dap").set_breakpoint(nil, nil, vim.fn.input "Log point message: ")
       end,
-      { desc = "Set log point" },
+      desc = "Set log point",
     },
     {
       "<leader>dr",
       function()
         require("dap").repl.toggle()
       end,
-      { desc = "Toggle REPL" },
+      desc = "Toggle REPL",
     },
     {
       "<leader>dl",
       function()
         require("dap").run_last()
       end,
-      { desc = "Run last" },
+      desc = "Run last",
     },
   },
 }
