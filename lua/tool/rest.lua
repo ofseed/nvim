@@ -38,8 +38,8 @@ return {
   ft = { "http" },
   opts = opts,
   config = function()
-    vim.keymap.set { "<localleader>r", "<Plug>RestNvim<CR>", { silent = true, desc = "Rest" } }
-    vim.keymap.set { "<localleader>p", "<Plug>RestNvimPreview<CR>", { silent = true, desc = "Rest preview" } }
-    vim.keymap.set { "<localleader>l", "<Plug>RestNvimLast<CR>", { silent = true, desc = "Rest last" } }
+    vim.keymap.set("n", "<localleader>r", "<Plug>RestNvim<CR>", { silent = true, desc = "Rest" })
+    vim.keymap.set("n", "<localleader>p", "<Plug>RestNvimPreview<CR>", { silent = true, desc = "Rest preview" })
+    vim.keymap.set("n", "<localleader>l", "<Plug>RestNvimLast<CR>", { silent = true, desc = "Rest last" })
   end,
 }
