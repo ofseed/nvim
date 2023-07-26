@@ -1,3 +1,5 @@
+local custom = require "custom"
+
 function _G.qftf(info)
   local items
   local ret = {}
@@ -50,12 +52,13 @@ end
 
 vim.o.qftf = "{info -> v:lua._G.qftf(info)}"
 
-local opts = {
-  auto_resize_height = true,
-}
-
 return {
   "kevinhwang91/nvim-bqf",
   ft = "qf",
-  opts = opts,
+  opts = {
+    auto_resize_height = true,
+    preview = {
+      border = custom.border,
+    },
+  },
 }
