@@ -11,6 +11,16 @@ return {
     "rcarriga/nvim-notify",
   },
   opts = {
+    cmdline = {
+      format = {
+        search_down = {
+          view = "cmdline",
+        },
+        search_up = {
+          view = "cmdline",
+        },
+      },
+    },
     lsp = {
       progress = {
         enabled = false,
