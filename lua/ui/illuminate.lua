@@ -62,8 +62,8 @@ return {
     illuminate.configure(opts)
     -- Highlight on yank
     -- conflict with vim-illuminate
-    vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-      pattern = { "*" },
+    vim.api.nvim_create_autocmd("TextYankPost", {
+      desc = "Briefly highlight yanked text",
       callback = function()
         illuminate.pause()
         vim.highlight.on_yank()

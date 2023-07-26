@@ -59,7 +59,7 @@ return {
     }
 
     vim.api.nvim_create_autocmd("ColorScheme", {
-      pattern = "*",
+      desc = "Set gitsigns highlights",
       callback = function()
         vim.api.nvim_set_hl(0, "GitSignsChangeLn", { link = "DiffText" })
         vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { link = "DiffDelete" })

@@ -27,6 +27,7 @@ manager.setup {
 
 vim.api.nvim_create_autocmd("User", {
   pattern = "SessionSavePre",
+  desc = "Save overseer tasks",
   callback = function()
     local task_name = get_cwd_as_name()
 
@@ -47,6 +48,7 @@ vim.api.nvim_create_autocmd("User", {
 
 vim.api.nvim_create_autocmd("User", {
   pattern = "SessionLoadPost",
+  desc = "Load overseer tasks",
   callback = function()
     overseer.load_task_bundle(get_cwd_as_name(), { ignore_missing = true })
   end,

@@ -33,8 +33,9 @@ vim.keymap.set("c", "<C-p>", "<Up>")
 vim.keymap.set("c", "<C-n>", "<Down>")
 
 -- Filetype specific
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "go" },
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  desc = "Set indent for go",
   callback = function()
     vim.bo.tabstop = 4
     vim.bo.shiftwidth = 4

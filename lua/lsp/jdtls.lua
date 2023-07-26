@@ -60,8 +60,9 @@ local opts = {
   },
 }
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
+vim.api.nvim_create_autocmd("FileType", {
   pattern = "java",
+  desc = "Attach jdtls",
   callback = function()
     -- This starts a new client & server,
     -- or attaches to an existing client & server depending on the `root_dir`.
