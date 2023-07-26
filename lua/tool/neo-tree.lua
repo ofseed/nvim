@@ -54,6 +54,9 @@ return {
     },
     filesystem = {
       group_empty_dirs = true,
+      follow_current_file = {
+        enabled = true,
+      },
     },
   },
   keys = {
