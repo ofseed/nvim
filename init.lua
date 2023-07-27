@@ -32,6 +32,15 @@ vim.g.maplocalleader = "  "
 vim.keymap.set("c", "<C-p>", "<Up>")
 vim.keymap.set("c", "<C-n>", "<Down>")
 
+-- Auto commands
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("highlight_on_yank", {}),
+  desc = "Briefly highlight yanked text",
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 -- Filetype specific
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "go",
