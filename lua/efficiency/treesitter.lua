@@ -90,7 +90,6 @@ return {
     { "JoosepAlviste/nvim-ts-context-commentstring" },
   },
   build = ":TSUpdate",
-  opts = opts,
   config = function()
     require("nvim-treesitter.configs").setup(opts)
   end,
