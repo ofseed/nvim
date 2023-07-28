@@ -25,6 +25,7 @@ vim.o.scrolloff = 2
 vim.o.sidescrolloff = 5
 vim.o.pumblend = 12
 vim.o.fillchars = "foldopen:,foldclose:,foldsep: ,diff:╱"
+vim.o.textwidth = 80
 
 -- Keymapping
 vim.g.mapleader = " "
@@ -38,6 +39,26 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Briefly highlight yanked text",
   callback = function()
     vim.highlight.on_yank()
+  end,
+})
+local set_colorcolumn_for_file = vim.api.nvim_create_augroup("set_colorcolumn_for_file", {
+  clear = false,
+})
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group = set_colorcolumn_for_file,
+  callback = function()
+    if vim.bo.buftype == "" then
+      vim.wo.colorcolumn = "+1"
+    end
+  end,
+})
+vim.api.nvim_create_autocmd("OptionSet", {
+  group = set_colorcolumn_for_file,
+  pattern = "buftype",
+  callback = function()
+    if vim.bo.buftype ~= "" then
+      vim.wo.colorcolumn = ""
+    end
   end,
 })
 
