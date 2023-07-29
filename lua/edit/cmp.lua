@@ -145,7 +145,10 @@ end
 
 return {
   "hrsh7th/nvim-cmp",
-  event = "VeryLazy",
+  event = {
+    "InsertEnter",
+    "CmdlineEnter",
+  },
   dependencies = {
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-nvim-lsp" },
