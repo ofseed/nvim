@@ -47,6 +47,6 @@ local opts = {
 return {
   "j-hui/fidget.nvim",
   branch = "legacy",
-  event = "VeryLazy",
+  event = "LspAttach",
   opts = opts,
 }
