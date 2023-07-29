@@ -135,6 +135,10 @@ local opts = {
 
 return {
   "utilyre/barbecue.nvim",
+  init = function()
+    vim.wo.winbar = " "
+  end,
+  event = "VeryLazy",
   dependencies = {
     "neovim/nvim-lspconfig",
     "SmiteshP/nvim-navic",
