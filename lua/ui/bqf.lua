@@ -55,6 +55,15 @@ vim.o.qftf = "{info -> v:lua._G.qftf(info)}"
 return {
   "kevinhwang91/nvim-bqf",
   ft = "qf",
+  dependencies = {
+    {
+      "junegunn/fzf",
+      build = function()
+        vim.fn["fzf#install"]()
+      end,
+      event = "VeryLazy",
+    },
+  },
   opts = {
     auto_resize_height = true,
     preview = {
