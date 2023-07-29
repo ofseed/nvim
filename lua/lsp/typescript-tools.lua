@@ -2,7 +2,7 @@ local default = require "default"
 
 return {
   "pmizio/typescript-tools.nvim",
-  event = "BufRead,BufNewFile *.js,*.jsx,*.mjs,*.cjs,*ts,*tsx",
+  event = "BufRead *.js,*.jsx,*.mjs,*.cjs,*ts,*tsx",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "neovim/nvim-lspconfig",
