@@ -76,6 +76,10 @@ local opts = {
 
 return {
   "nvim-lualine/lualine.nvim",
+  init = function()
+    vim.o.laststatus = 0
+  end,
+  event = "VeryLazy",
   dependencies = {
     { "nvim-tree/nvim-web-devicons" },
     { "ofseed/lualine-copilot" },
