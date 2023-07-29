@@ -1,4 +1,9 @@
 return {
   "Rawnly/gist.nvim",
-  event = "VeryLazy",
+  cmd = {
+    "GistCreate",
+    "GistCreateFromFile",
+    "GistsList",
+  },
+  opts = {},
 }
