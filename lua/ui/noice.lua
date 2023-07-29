@@ -2,6 +2,10 @@ local custom = require "custom"
 
 return {
   "folke/noice.nvim",
+  event = "VeryLazy",
+  init = function ()
+    vim.o.cmdheight = 0
+  end,
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     "MunifTanjim/nui.nvim",
