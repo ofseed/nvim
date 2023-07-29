@@ -1,9 +1,3 @@
-local ok, lspconfig = pcall(require, "lspconfig")
-if not ok then
-  vim.notify "Could not load lspconfig"
-  return
-end
-
 local custom = require "custom"
 
 -- Set diagnostic options
@@ -30,10 +24,6 @@ for type, icon in pairs(custom.icons.diagnostic) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- TODO: Use lsp_signature instead
-vim.cmd [[autocmd ColorScheme * highlight NormalFloat guibg=#1f2335]]
-vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
-
 -- To instead override globally
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -42,106 +32,113 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-local default = require "default"
-
-local opts = {
-  handlers = {
-    function(server)
-      lspconfig[server].setup(default)
-    end,
-
-    clangd = function(server) end,
-    rust_analyzer = function(server) end,
-    gopls = function(server) end,
-    jdtls = function(server) end,
-    tsserver = function(server) end,
-
-    lua_ls = function()
-      lspconfig.lua_ls.setup {
-        on_attach = function(client, bufnr)
-          default.on_attach(client, bufnr)
-          client.server_capabilities.documentFormattingProvider = false
-        end,
-        capabilities = default.capabilities,
-        settings = {
-          Lua = {
-            hint = {
-              enable = true,
-              setType = true,
-            },
-            codelens = {
-              enable = true,
-            },
-            completion = {
-              postfix = ".",
-              showWord = "Disable",
-              workspaceWord = false,
-            },
-          },
-        },
-      }
-    end,
-
-    volar = function()
-      lspconfig.volar.setup {
-        on_attach = function(client, bufnr)
-          default.on_attach(client, bufnr)
-          client.server_capabilities.documentFormattingProvider = false
-        end,
-        capabilities = default.capabilities,
-      }
-    end,
-
-    pyright = function()
-      lspconfig.pyright.setup {
-        on_attach = default.on_attach,
-        capabilities = default.capabilities,
-        settings = {
-          python = {
-            analysis = {
-              typeCheckingMode = "off",
-            },
-          },
-        },
-      }
-    end,
-
-    yamlls = function()
-      lspconfig.yamlls.setup {
-        on_attach = default.on_attach,
-        capabilities = default.capabilities,
-        settings = {
-          yaml = {
-            keyOrdering = false,
-          },
-        },
-      }
-    end,
-
-    jsonls = function()
-      lspconfig.jsonls.setup {
-        settings = {
-          json = {
-            schemas = require("schemastore").json.schemas(),
-            validate = { enable = true },
-          },
-        },
-        on_attach = function(client, bufnr)
-          default.on_attach(client, bufnr)
-          client.server_capabilities.documentFormattingProvider = false
-        end,
-        capabilities = default.capabilities,
-      }
-    end,
-  },
-}
-
 return {
   "williamboman/mason-lspconfig.nvim",
   dependencies = {
+    "mason.nvim",
     "neovim/nvim-lspconfig",
     "b0o/SchemaStore.nvim",
   },
-  after = "mason.nvim",
-  opts = opts,
+  config = function()
+    local lspconfig = require "lspconfig"
+
+    local default = require "default"
+
+    require("mason-lspconfig").setup {
+      handlers = {
+        function(server)
+          lspconfig[server].setup(default)
+        end,
+
+        clangd = function() end,
+        rust_analyzer = function() end,
+        gopls = function() end,
+        jdtls = function() end,
+        tsserver = function() end,
+
+        lua_ls = function()
+          lspconfig.lua_ls.setup {
+            on_attach = function(client, bufnr)
+              default.on_attach(client, bufnr)
+              client.server_capabilities.documentFormattingProvider = false
+            end,
+            capabilities = default.capabilities,
+            settings = {
+              Lua = {
+                hint = {
+                  enable = true,
+                  setType = true,
+                },
+                codelens = {
+                  enable = true,
+                },
+                completion = {
+                  postfix = ".",
+                  showWord = "Disable",
+                  workspaceWord = false,
+                },
+              },
+            },
+          }
+        end,
+
+        volar = function()
+          lspconfig.volar.setup {
+            on_attach = function(client, bufnr)
+              default.on_attach(client, bufnr)
+              client.server_capabilities.documentFormattingProvider = false
+            end,
+            capabilities = default.capabilities,
+          }
+        end,
+
+        pyright = function()
+          lspconfig.pyright.setup {
+            on_attach = default.on_attach,
+            capabilities = default.capabilities,
+            settings = {
+              python = {
+                analysis = {
+                  typeCheckingMode = "off",
+                },
+              },
+            },
+          }
+        end,
+
+        jsonls = function()
+          lspconfig.jsonls.setup {
+            settings = {
+              json = {
+                schemas = require("schemastore").json.schemas(),
+                validate = { enable = true },
+              },
+            },
+            on_attach = function(client, bufnr)
+              default.on_attach(client, bufnr)
+              client.server_capabilities.documentFormattingProvider = false
+            end,
+            capabilities = default.capabilities,
+          }
+        end,
+
+        yamlls = function()
+          lspconfig.yamlls.setup {
+            on_attach = default.on_attach,
+            capabilities = default.capabilities,
+            settings = {
+              yaml = {
+                keyOrdering = false,
+                schemaStore = {
+                  enable = false,
+                  url = "",
+                },
+                schemas = require("schemastore").yaml.schemas(),
+              },
+            },
+          }
+        end,
+      },
+    }
+  end,
 }
