@@ -217,6 +217,9 @@ end
 
 return {
   "simrat39/rust-tools.nvim",
-  event = "BufRead *.rs",
+  event = {
+    "BufRead *.rs",
+    "BufNewFile *.rs",
+  },
   config = config,
 }
