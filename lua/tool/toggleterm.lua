@@ -53,9 +53,9 @@ local opts = {
 return {
   "akinsho/nvim-toggleterm.lua",
   version = "*",
-  event = "VeryLazy",
   opts = opts,
   keys = {
+    { "<C-\\>" },
     { "<Esc>", "<C-\\><C-N>", mode = "t" },
     { "<leader>tt", "<Cmd>ToggleTermToggleAll<CR>", mode = "n", desc = "All Terminal" },
   },
