@@ -6,6 +6,7 @@ return {
   },
   opts = {
     disable_commit_confirmation = true,
+    disable_builtin_notifications = true,
     kind = "replace",
     integrations = {
       diffview = true,
