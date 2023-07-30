@@ -32,6 +32,7 @@ return {
       width = custom.width,
       mappings = {
         ["<Space>"] = "none",
+        ["o"] = "system_open",
         ["h"] = function(state)
           local node = state.tree:get_node()
           if node.type == "directory" and node:is_expanded() then
@@ -51,6 +52,16 @@ return {
           end
         end,
       },
+    },
+    commands = {
+      system_open = function(state)
+        local node = state.tree:get_node()
+        local path = node:get_id()
+        path = vim.fn.shellescape(path)
+        if vim.uv.os_uname().sysname == "Linux" then
+          vim.cmd("silent !xdg-open " .. path)
+        end
+      end,
     },
     filesystem = {
       group_empty_dirs = true,
