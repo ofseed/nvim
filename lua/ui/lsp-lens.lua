@@ -1,16 +1,8 @@
-local opts = {
-  enable = true,
-  include_declaration = false, -- Reference include declaration
-  sections = { -- Enable / Disable specific request
-    definition = false,
-    references = true,
-    implementation = true,
-  },
-}
-
 return {
   "VidocqH/lsp-lens.nvim",
-  -- Not stable
-  enabled = false,
-  opts = opts,
+  event = "LspAttach",
+  config = function()
+    require("lsp-lens").setup {}
+    vim.api.nvim_set_hl(0, "LspLens", { link = "LspCodeLens" })
+  end,
 }
