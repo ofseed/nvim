@@ -1,3 +1,5 @@
+vim.o.exrc = true
+
 -- Edit
 vim.o.expandtab = true
 vim.o.softtabstop = 2
