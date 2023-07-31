@@ -12,8 +12,6 @@ return {
       autoload_mode = config.AutoloadMode.Disabled,
     }
 
-    local overseer = require "overseer"
-
     -- Convert the cwd to a simple file name
     local function get_cwd_as_name()
       local dir = vim.fn.getcwd(0)
@@ -24,6 +22,7 @@ return {
       pattern = "SessionSavePre",
       desc = "Save overseer tasks",
       callback = function()
+        local overseer = require "overseer"
         local task_name = get_cwd_as_name()
 
         -- Remove the task if it exists
@@ -39,6 +38,8 @@ return {
       pattern = "SessionLoadPost",
       desc = "Load overseer tasks",
       callback = function()
+        local overseer = require "overseer"
+
         overseer.load_task_bundle(get_cwd_as_name(), { ignore_missing = true })
       end,
     })
