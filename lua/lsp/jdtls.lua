@@ -11,6 +11,9 @@ return {
 
     local opts = {
       cmd = { mason.get_package("jdtls"):get_install_path() .. "/bin/jdtls" },
+      handlers = {
+        ["language/status"] = function() end,
+      },
       settings = {
         java = {
           inlayHints = {
