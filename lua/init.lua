@@ -14,16 +14,7 @@ vim.opt.runtimepath:prepend(lazypath)
 
 local custom = require "custom"
 
-require("lazy").setup({
-  { import = "colorscheme" },
-  { import = "ui" },
-  { import = "dap" },
-  { import = "edit" },
-  { import = "efficiency" },
-  { import = "git" },
-  { import = "lsp" },
-  { import = "tool" },
-}, {
+require("lazy").setup("plugins", {
   root = root,
   dev = {
     path = "~/Documents/code/nvim",
