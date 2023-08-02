@@ -13,6 +13,8 @@ vim.o.includeexpr = "substitute(v:fname,'\\.','/','g')"
 
 -- Interface
 vim.o.splitkeep = "screen"
+vim.o.splitbelow = true
+vim.o.splitright = true
 vim.o.number = true
 vim.o.wrap = false
 vim.o.linebreak = true
