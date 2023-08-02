@@ -8,10 +8,10 @@ if not ok then
 end
 
 -- Add additional capabilities supported by nvim-cmp
-M.capabilities = cmp_nvim_lsp.default_capabilities()
+M = cmp_nvim_lsp.default_capabilities()
 
 -- Enable LSP folddingRange capability
-M.capabilities.textDocument.foldingRange = {
+M.textDocument.foldingRange = {
   dynamicRegistration = false,
   lineFoldingOnly = true,
 }

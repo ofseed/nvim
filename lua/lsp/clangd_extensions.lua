@@ -1,8 +1,8 @@
-local default = require "default"
+local capabilities = require "capabilities"
 
 local custom = require "custom"
 
-local capabilities = vim.tbl_extend("force", default.capabilities, {
+capabilities = vim.tbl_extend("force", capabilities, {
   offsetEncoding = "utf-8",
 })
 

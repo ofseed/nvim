@@ -7,7 +7,7 @@ return {
   config = function()
     local jdtls = require "jdtls"
     local mason = require "mason-registry"
-    local default = require "default"
+    local capabilities = require "capabilities"
 
     local opts = {
       cmd = { mason.get_package("jdtls"):get_install_path() .. "/bin/jdtls" },
@@ -23,7 +23,7 @@ return {
           },
         },
       },
-      capabilities = default.capabilities,
+      capabilities = capabilities,
       on_attach = function(client, bufnr)
         jdtls.setup_dap { hotcodereplace = "auto" }
         require("jdtls.setup").add_commands()

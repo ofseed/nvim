@@ -92,12 +92,12 @@ return {
   config = function()
     local lspconfig = require "lspconfig"
 
-    local default = require "default"
+    local capabilities = require "capabilities"
 
     require("mason-lspconfig").setup {
       handlers = {
         function(server)
-          lspconfig[server].setup(default)
+          lspconfig[server].setup { capabilities = capabilities }
         end,
 
         clangd = function() end,
@@ -111,7 +111,7 @@ return {
             on_attach = function(client, bufnr)
               client.server_capabilities.documentFormattingProvider = false
             end,
-            capabilities = default.capabilities,
+            capabilities = capabilities,
             settings = {
               Lua = {
                 hint = {
@@ -136,7 +136,7 @@ return {
             on_attach = function(client, bufnr)
               client.server_capabilities.documentFormattingProvider = false
             end,
-            capabilities = default.capabilities,
+            capabilities = capabilities,
           }
         end,
 
@@ -163,13 +163,13 @@ return {
             on_attach = function(client, bufnr)
               client.server_capabilities.documentFormattingProvider = false
             end,
-            capabilities = default.capabilities,
+            capabilities = capabilities,
           }
         end,
 
         yamlls = function()
           lspconfig.yamlls.setup {
-            capabilities = default.capabilities,
+            capabilities = capabilities.capabilities,
             settings = {
               yaml = {
                 keyOrdering = false,
