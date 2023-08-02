@@ -1,10 +1,4 @@
-local default = require "default"
-
 local custom = require "custom"
-
-local capabilities = vim.tbl_extend("force", default.capabilities, {
-  offsetEncoding = "utf-8",
-})
 
 return {
   "p00f/clangd_extensions.nvim",
@@ -14,7 +8,6 @@ return {
   },
   opts = {
     server = {
-      capabilities = capabilities,
       on_attach = function(client, bufnr)
         vim.keymap.set("n", "<localleader>t", "<cmd>ClangdAST<CR>", { buffer = bufnr, desc = "Show AST" })
         vim.keymap.set(
