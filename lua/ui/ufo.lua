@@ -29,8 +29,8 @@ return {
             },
           },
         }
-        local original_capabilities = client.capabilities or {}
-        client.capabilities = vim.tbl_deep_extend("force", original_capabilities, ufo_capabilities)
+        local original_capabilities = client.server_capabilities or {}
+        client.server_capabilities = vim.tbl_deep_extend("force", original_capabilities, ufo_capabilities)
 
         -- Set alter keymap for `K` to use both LSP hover and Ufo peek
         vim.keymap.set("n", "K", function()

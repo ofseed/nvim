@@ -156,7 +156,10 @@ return {
           callback = function(args)
             local client = vim.lsp.get_client_by_id(args.data.client_id)
 
-            require("cmp_nvim_lsp").default_capabilities(client.capabilities)
+            local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local original_capabilities = client.server_capabilities
+
+            client.server_capabilities = vim.tbl_deep_extend("force", original_capabilities, cmp_capabilities)
           end,
         })
       end,
