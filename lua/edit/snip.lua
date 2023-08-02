@@ -4,9 +4,6 @@ return {
     "InsertEnter",
     "CmdlineEnter",
   },
-  dependencies = {
-    "rafamadriz/friendly-snippets",
-  },
   config = function()
     local snip = require "luasnip"
     local types = require "luasnip.util.types"
@@ -35,7 +32,5 @@ return {
         },
       },
     }
-
-    require("luasnip/loaders/from_vscode").lazy_load()
   end,
 }
