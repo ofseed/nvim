@@ -158,7 +158,6 @@ tools.setup {
   server = {
     capabilities = default.capabilities,
     on_attach = function(client, bufnr)
-      default.on_attach(client, bufnr)
       vim.keymap.set("n", "J", "<cmd>RustJoinLines<CR>", { buffer = bufnr, desc = "Rust: Join lines" })
       vim.keymap.set("n", "K", "<cmd>RustHoverActions<CR>", { buffer = bufnr, desc = "Rust: Hover" })
       vim.keymap.set("n", "<leader>la", "<cmd>RustCodeAction<CR>", { buffer = bufnr, desc = "Code action" })

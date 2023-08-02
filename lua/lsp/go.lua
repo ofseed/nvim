@@ -36,7 +36,7 @@ local opts = {
   lsp_on_attach = nil, -- nil: use on_attach function defined in go/lsp.lua,
   --      when lsp_cfg is true
   -- if lsp_on_attach is a function: use this function as on_attach function for gopls
-  lsp_keymaps = default.set_keymap, -- set to false to disable gopls/lsp keymap
+  lsp_keymaps = true, -- set to false to disable gopls/lsp keymap
   lsp_codelens = true, -- set to false to disable codelens, true by default, you can use a function
   -- function(bufnr)
   --    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap=true, silent=true})

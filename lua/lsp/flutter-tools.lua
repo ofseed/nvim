@@ -68,8 +68,6 @@ local opts = {
       virtual_text_str = "■", -- the virtual text character to highlight
     },
     on_attach = function(client, bufnr)
-      default.on_attach(client, bufnr)
-
       vim.keymap.set("n", "<localleader>o", "<Cmd>FlutterOutlineOpen<CR>", { buffer = bufnr, desc = "Flutter Outline" })
       vim.keymap.set("n", "<localleader>r", "<Cmd>FlutterRun<CR>", { buffer = bufnr, desc = "Run" })
       vim.keymap.set("n", "<localleader>q", "<Cmd>FlutterQuit<CR>", { buffer = bufnr, desc = "Quit" })

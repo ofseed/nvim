@@ -19,5 +19,4 @@ return {
   "github/copilot.vim",
   event = "VeryLazy",
   config = config,
-  enabled = false,
 }

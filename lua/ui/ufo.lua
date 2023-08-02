@@ -12,5 +12,19 @@ return {
     require("ufo").setup {
       close_fold_kinds = { "imports" },
     }
+
+    vim.api.nvim_create_autocmd("LspAttach", {
+      desc = "Setup Ufo `K` with LSP hover",
+      callback = function(args)
+        local bufnr = args.buf
+
+        vim.keymap.set("n", "K", function()
+          local winid = require("ufo").peekFoldedLinesUnderCursor()
+          if not winid then
+            vim.lsp.buf.hover()
+          end
+        end, { buffer = bufnr, desc = "LSP: Signature help" })
+      end,
+    })
   end,
 }

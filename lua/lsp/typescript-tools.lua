@@ -15,7 +15,6 @@ return {
       client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
 
-      default.on_attach(client, bufnr)
       vim.keymap.set("n", "gD", "<Cmd>TSToolsGoToSourceDefinition<CR>", { buffer = bufnr, desc = "Source Definition" })
 
       vim.keymap.set(

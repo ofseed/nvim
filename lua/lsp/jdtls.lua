@@ -25,7 +25,6 @@ return {
       },
       capabilities = default.capabilities,
       on_attach = function(client, bufnr)
-        default.on_attach(client, bufnr)
         jdtls.setup_dap { hotcodereplace = "auto" }
         require("jdtls.setup").add_commands()
       end,
