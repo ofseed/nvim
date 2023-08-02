@@ -32,10 +32,6 @@ return {
       width = custom.width,
       mappings = {
         ["<Space>"] = "none",
-        ["[g"] = "none",
-        ["]g"] = "none",
-        ["[c]"] = "prev_git_modified",
-        ["]c"] = "next_git_modified",
         ["o"] = "system_open",
         ["h"] = function(state)
           local node = state.tree:get_node()
@@ -71,6 +67,12 @@ return {
       group_empty_dirs = true,
       follow_current_file = {
         enabled = true,
+      },
+      mappings = {
+        ["[g"] = "none",
+        ["]g"] = "none",
+        ["[c]"] = "prev_git_modified",
+        ["]c"] = "next_git_modified",
       },
     },
   },
