@@ -148,22 +148,8 @@ return {
     "CmdlineEnter",
   },
   dependencies = {
-    {
-      "hrsh7th/cmp-nvim-lsp",
-      config = function()
-        vim.api.nvim_create_autocmd("LspAttach", {
-          desc = "Enable cmp capabilities",
-          callback = function(args)
-            local client = vim.lsp.get_client_by_id(args.data.client_id)
-
-            local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local original_capabilities = client.server_capabilities
-
-            client.server_capabilities = vim.tbl_deep_extend("force", original_capabilities, cmp_capabilities)
-          end,
-        })
-      end,
-    },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-nvim-lsp-signature-help" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },

@@ -1,3 +1,5 @@
+local default = require "default"
+
 local custom = require "custom"
 
 local opts = {
@@ -70,6 +72,7 @@ local opts = {
       vim.keymap.set("n", "<localleader>r", "<Cmd>FlutterRun<CR>", { buffer = bufnr, desc = "Run" })
       vim.keymap.set("n", "<localleader>q", "<Cmd>FlutterQuit<CR>", { buffer = bufnr, desc = "Quit" })
     end,
+    capabilities = default.capabilities, -- e.g. lsp_status capabilities
     --- OR you can specify a function to deactivate or change or control how the config is created
     -- capabilities = function(config)
     --   config.specificThingIDontWant = false

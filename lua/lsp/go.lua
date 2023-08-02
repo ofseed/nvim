@@ -1,3 +1,5 @@
+local default = require "default"
+
 local opts = {
   disable_defaults = false, -- true|false when true set false to all boolean settings and replace all table
   -- settings with {}

@@ -1,3 +1,5 @@
+local default = require "default"
+
 return {
   "pmizio/typescript-tools.nvim",
   event = {

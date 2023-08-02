@@ -156,6 +156,7 @@ tools.setup {
   -- these override the defaults set by rust-tools.nvim
   -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
   server = {
+    capabilities = default.capabilities,
     on_attach = function(client, bufnr)
       vim.keymap.set("n", "J", "<cmd>RustJoinLines<CR>", { buffer = bufnr, desc = "Rust: Join lines" })
       vim.keymap.set("n", "K", "<cmd>RustHoverActions<CR>", { buffer = bufnr, desc = "Rust: Hover" })
