@@ -142,7 +142,6 @@ return {
 
         pyright = function()
           lspconfig.pyright.setup {
-            on_attach = default.on_attach,
             settings = {
               python = {
                 analysis = {
