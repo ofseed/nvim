@@ -68,6 +68,8 @@ return {
     snip.filetype_extend("typescript", { "javascript" })
     snip.filetype_extend("typescriptreact", { "javascript" })
 
+    snip.filetype_extend("typescriptreact", { "javascriptreact" })
+
     require("luasnip.loaders.from_lua").lazy_load {
       paths = vim.fn.stdpath "config" .. "/lua/snippets",
     }
