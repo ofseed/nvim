@@ -47,6 +47,18 @@ return {
             i(1, args[1][1]),
           })
         end,
+
+        -- Same with text node but append text, used for function nodes
+        text_same_with_and_append = function(args, _, user_arg1)
+          return args[1][1] .. user_arg1
+        end,
+
+        -- Same with text node but append text, used for dynamic nodes
+        insert_same_with_and_append = function(args, _, _, user_arg1)
+          return sn(nil, {
+            i(1, args[1][1] .. user_arg1),
+          })
+        end,
       },
     }
 

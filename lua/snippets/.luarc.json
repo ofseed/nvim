@@ -33,6 +33,8 @@
     "parse",
     "ms",
     "text_same_with",
-    "insert_same_with"
+    "insert_same_with",
+    "text_same_with_and_append",
+    "insert_same_with_and_append"
   ]
 }
