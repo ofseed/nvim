@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "runtime": {
+    "version": "LuaJIT"
+  },
+  "hint": {
+    "arrayIndex": "Disable"
+  },
+  "diagnostics.globals": [
+    "s",
+    "sn",
+    "isn",
+    "t",
+    "i",
+    "f",
+    "c",
+    "d",
+    "r",
+    "events",
+    "ai",
+    "extras",
+    "l",
+    "rep",
+    "p",
+    "m",
+    "n",
+    "dl",
+    "fmt",
+    "fmta",
+    "conds",
+    "postfix",
+    "types",
+    "parse",
+    "ms"
+  ]
+}
