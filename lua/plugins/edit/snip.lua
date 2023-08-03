@@ -62,6 +62,8 @@ return {
       },
     }
 
+    snip.filetype_extend("cpp", { "c" })
+
     snip.filetype_extend("javascriptreact", { "javascript" })
     snip.filetype_extend("typescript", { "javascript" })
     snip.filetype_extend("typescriptreact", { "javascript" })
