@@ -31,6 +31,8 @@
     "postfix",
     "types",
     "parse",
-    "ms"
+    "ms",
+    "text_same_with",
+    "insert_same_with"
   ]
 }
