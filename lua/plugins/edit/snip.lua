@@ -38,13 +38,13 @@ return {
       snip_env = {
         -- Same with text node, used for function nodes
         text_same_with = function(args)
-          return args[1]
+          return args[1][1]
         end,
 
         -- Same with text node, used for dynamic nodes
         insert_same_with = function(args)
           return sn(nil, {
-            i(1, args[1]),
+            i(1, args[1][1]),
           })
         end,
       },
