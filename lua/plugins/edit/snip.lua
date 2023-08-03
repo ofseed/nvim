@@ -16,7 +16,7 @@ return {
       ext_opts = {
         [types.choiceNode] = {
           active = {
-            virt_text = { { "●", "Keyword" } },
+            virt_text = { { "●", "Operator" } },
             virt_text_pos = "inline",
           },
           unvisited = {
