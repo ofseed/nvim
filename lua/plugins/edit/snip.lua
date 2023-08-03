@@ -8,7 +8,8 @@ return {
     local snip = require "luasnip"
     local types = require "luasnip.util.types"
 
-    snip.config.setup {
+    snip.setup {
+      update_events = {"TextChanged", "TextChangedI"},
       ext_opts = {
         [types.choiceNode] = {
           active = {
