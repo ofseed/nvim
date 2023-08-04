@@ -5,9 +5,10 @@ return {
     "sindrets/diffview.nvim",
   },
   opts = {
+    disable_insert_on_commit = false,
     disable_commit_confirmation = true,
     disable_builtin_notifications = true,
-    kind = "replace",
+    kind = "split",
     integrations = {
       diffview = true,
     },
