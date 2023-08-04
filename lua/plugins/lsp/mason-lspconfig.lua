@@ -82,6 +82,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+-- Disable treesitter highlight after semantic tokens are applied
+--[[
+_G.semantic_highlight_inited = {}
+
+vim.api.nvim_create_autocmd("LspTokenUpdate", {
+  callback = function(args)
+    local buf = args.buf
+    if _G.semantic_highlight_inited[buf] then
+      vim.treesitter.stop(buf)
+      return
+    end
+    _G.semantic_highlight_inited[buf] = true
+  end,
+})
+--]]
+
 return {
   "williamboman/mason-lspconfig.nvim",
   dependencies = {
