@@ -9,6 +9,9 @@
   "workspace": {
     "library": [
       "$HOME/.local/share/nvim/lazy/emmylua-nvim"
+    ],
+    "ignoreDir": [
+      "lua/snippets"
     ]
   }
 }
