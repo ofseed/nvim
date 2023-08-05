@@ -24,6 +24,13 @@ return {
       return " " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " "
     end
 
+    local buf_modified = function(buf)
+      if vim.bo[buf.id].modified then
+        return "●"
+      end
+      return ""
+    end
+
     require("tabby.tabline").set(function(line)
       return {
         -- Head
@@ -56,6 +63,7 @@ return {
             line.sep("", theme.win, theme.fill),
             win.is_current() and "" or "",
             win.buf_name(),
+            buf_modified(win.buf()),
             line.sep("", theme.win, theme.fill),
             hl = theme.win,
             margin = " ",
