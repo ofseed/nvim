@@ -8,6 +8,39 @@ return {
     { "nvim-telescope/telescope-dap.nvim" },
     { "benfowler/telescope-luasnip.nvim" },
   },
+  config = function()
+    local telescope = require "telescope"
+
+    telescope.setup {
+      pickers = {
+        find_files = {
+          theme = "ivy",
+        },
+        oldfiles = {
+          theme = "ivy",
+        },
+      },
+      extensions = {
+        live_grep_args = {
+          theme = "dropdown",
+        },
+      },
+    }
+
+    local extensions = {
+      "dap",
+      "notify",
+      "live_grep_args",
+      "luasnip",
+    }
+
+    for _, ext in ipairs(extensions) do
+      local ok = pcall(telescope.load_extension, ext)
+      if not ok then
+        vim.print("Failed to load telescope extension: " .. ext)
+      end
+    end
+  end,
   keys = {
     {
       "<leader>ff",
