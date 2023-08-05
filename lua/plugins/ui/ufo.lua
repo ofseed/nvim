@@ -3,7 +3,14 @@ return {
   event = "VeryLazy",
   dependencies = "kevinhwang91/promise-async",
   init = function()
-    vim.o.foldcolumn = "1"
+    vim.api.nvim_create_autocmd("BufWinEnter", {
+      desc = "Set foldcolumn when current is a file",
+      callback = function()
+        if vim.bo.buftype == "" then
+          vim.wo.foldcolumn = "1"
+        end
+      end,
+    })
     vim.o.foldlevel = 99
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true
