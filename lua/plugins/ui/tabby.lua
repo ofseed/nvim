@@ -51,10 +51,26 @@ return {
 
         -- Tabs
         line.tabs().foreach(function(tab)
-          local hl = tab.is_current() and theme.current_tab or theme.inactive_tab
+          local hl = theme.inactive_tab
+
+          if tab.is_current() then
+            hl = theme.current_tab
+            return {
+              line.sep("", hl, theme.fill),
+              "",
+              tab.number(),
+              tab.name(),
+              buf_modified(tab.current_win().buf()),
+              tab.close_btn "",
+              line.sep("", hl, theme.fill),
+              hl = hl,
+              margin = " ",
+            }
+          end
+
           return {
             line.sep("", hl, theme.fill),
-            tab.is_current() and "" or "󰆣",
+            "󰆣",
             tab.number(),
             tab.name(),
             tab_modified(tab),
