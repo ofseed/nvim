@@ -24,6 +24,16 @@ return {
       return " " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " "
     end
 
+    local tab_modified = function(tab)
+      local wins = tab.wins().wins
+      for _, win in pairs(wins) do
+        if vim.bo[win.buf().id].modified then
+          return "●"
+        end
+      end
+      return ""
+    end
+
     local buf_modified = function(buf)
       if vim.bo[buf.id].modified then
         return "●"
@@ -47,6 +57,7 @@ return {
             tab.is_current() and "" or "󰆣",
             tab.number(),
             tab.name(),
+            tab_modified(tab),
             tab.close_btn "",
             line.sep("", hl, theme.fill),
             hl = hl,
