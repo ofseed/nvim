@@ -4,6 +4,7 @@ return {
   dependencies = {
     { "nvim-lua/popup.nvim" },
     { "nvim-lua/plenary.nvim" },
+    { "nvim-telescope/telescope-fzy-native.nvim" },
     { "nvim-telescope/telescope-live-grep-args.nvim" },
     { "nvim-telescope/telescope-dap.nvim" },
     { "benfowler/telescope-luasnip.nvim" },
@@ -29,6 +30,7 @@ return {
 
     local extensions = {
       "dap",
+      "fzy_native",
       "notify",
       "live_grep_args",
       "luasnip",
