@@ -3,11 +3,7 @@ local config = function()
 local telescope = require "telescope"
 
 local extensions = {
-  "fzf",
   "live_grep_args",
-  "hop",
-  "project",
-  "media_files",
   "notify",
   "dap",
   "luasnip",
@@ -147,15 +143,10 @@ return {
   dependencies = {
     { "nvim-lua/popup.nvim" },
     { "nvim-lua/plenary.nvim" },
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     { "nvim-telescope/telescope-live-grep-args.nvim" },
-    { "nvim-telescope/telescope-hop.nvim" },
-    { "nvim-telescope/telescope-project.nvim" },
-    { "nvim-telescope/telescope-media-files.nvim" },
     { "nvim-telescope/telescope-dap.nvim" },
     { "benfowler/telescope-luasnip.nvim" },
   },
-  config = config,
   keys = {
     { "<leader>ff", function () require("telescope.builtin").find_files() end, desc = "Find files" },
     { "<leader>f?", function () require("telescope.builtin").help_tags() end, desc = "Help tags" },
@@ -165,8 +156,6 @@ return {
     { "<leader>fS", function () require("telescope.builtin").lsp_workspace_symbols() end, desc = "Symbols" },
     { "<leader>fc", function () require("telescope.builtin").colorscheme() end, desc = "Colorscheme" },
     { "<leader>fg", function () require("telescope").extensions.live_grep_args.live_grep_args() end, desc = "Live grep" },
-    { "<leader>fp", function () require("telescope").extensions.project.project() end, desc = "Project" },
-    { "<leader>fm", function () require("telescope").extensions.media_files.media_files() end, desc = "Media files" },
     { "<leader>fn", function () require("telescope").extensions.notify.notify() end, desc = "Notify" },
     { "<leader>fde", function () require("telescope").extensions.dap.commands() end, desc = "Commands" },
     { "<leader>fdc", function () require("telescope").extensions.dap.configurations() end, desc = "Configurations" },
