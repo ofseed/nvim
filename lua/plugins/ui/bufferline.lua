@@ -1,3 +1,5 @@
+local custom = require "custom"
+
 local opts = {
   options = {
     mode = "buffers", -- set to "tabs" to only show tabpages instead
@@ -107,6 +109,7 @@ local opts = {
 
 return {
   "akinsho/nvim-bufferline.lua",
+  cond = not custom.prefer_tabpage,
   version = "*",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
