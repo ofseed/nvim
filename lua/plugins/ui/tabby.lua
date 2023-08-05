@@ -8,7 +8,7 @@ return {
   end,
   config = function()
     local theme = {
-      head = "TabLine",
+      head = "TabLineFill",
 
       current_tab = "TabLineSel",
       inactive_tab = "TabLine",
@@ -17,7 +17,7 @@ return {
 
       win = "TabLine",
 
-      tail = "TabLine",
+      tail = "TabLineFill",
     }
 
     require("tabby.tabline").set(function(line)
