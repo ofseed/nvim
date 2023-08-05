@@ -24,7 +24,7 @@ return {
       return {
         -- Head
         {
-          { "  ", hl = theme.head },
+          { " Neovim ", hl = theme.head },
           line.sep("", theme.head, theme.fill),
         },
 
