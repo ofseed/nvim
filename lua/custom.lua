@@ -1,5 +1,8 @@
 local M = {}
 
+-- Colorscheme
+M.theme = "catppuccin"
+
 -- Border style of floating windows
 M.border = "rounded"
 
