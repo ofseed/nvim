@@ -24,6 +24,7 @@ return {
       neogit = true,
       noice = true,
       notify = true,
+      treesitter_context = true,
       octo = true,
       overseer = true,
       symbols_outline = true,
