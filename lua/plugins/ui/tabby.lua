@@ -20,11 +20,15 @@ return {
       tail = "TabLineFill",
     }
 
+    local cwd = function()
+      return " " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " "
+    end
+
     require("tabby.tabline").set(function(line)
       return {
         -- Head
         {
-          { " NeoVim ", hl = theme.head },
+          { cwd(), hl = theme.head },
           line.sep("", theme.head, theme.fill),
         },
 
