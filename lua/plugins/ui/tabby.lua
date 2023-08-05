@@ -86,6 +86,10 @@ return {
 
         -- Windows
         line.wins_in_tab(line.api.get_current_tab()).foreach(function(win)
+          if win.buf().type() ~= "" then
+            return
+          end
+
           return {
             line.sep("", theme.win, theme.fill),
             win.is_current() and "" or "",
