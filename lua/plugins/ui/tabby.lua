@@ -119,5 +119,8 @@ return {
     vim.keymap.set("n", "<M-7>", "<Cmd>7tabnext<CR>", { desc = "Go to tabpage 7" })
     vim.keymap.set("n", "<M-8>", "<Cmd>8tabnext<CR>", { desc = "Go to tabpage 8" })
     vim.keymap.set("n", "<M-9>", "<Cmd>9tabnext<CR>", { desc = "Go to tabpage 9" })
+
+    vim.keymap.set("n", "<M-S-Right>", "<Cmd>+tabmove<CR>", { desc = "Go to next tabpage" })
+    vim.keymap.set("n", "<M-S-Left>", "<Cmd>-tabmove<CR>", { desc = "Go to next tabpage" })
   end,
 }
