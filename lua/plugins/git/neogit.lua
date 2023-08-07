@@ -1,3 +1,5 @@
+local custom = require "custom"
+
 return {
   "NeogitOrg/neogit",
   dependencies = {
@@ -8,7 +10,7 @@ return {
     disable_insert_on_commit = false,
     disable_commit_confirmation = true,
     disable_builtin_notifications = true,
-    kind = "split",
+    kind = custom.prefer_tabpage and "tab" or "split",
     integrations = {
       diffview = true,
     },
