@@ -26,6 +26,7 @@ end
 
 -- To instead override globally
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+---@diagnostic disable-next-line: duplicate-set-field
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = opts or {}
   opts.border = opts.border or custom.border
@@ -78,7 +79,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, { buffer = bufnr, desc = "List workspace folders" })
     -- Enable inlay hints
-    if client.server_capabilities.inlayHintProvider then
+    if client and client.server_capabilities.inlayHintProvider then
       vim.lsp.inlay_hint(bufnr, true)
     end
   end,
