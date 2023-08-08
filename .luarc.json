@@ -3,15 +3,16 @@
   "runtime": {
     "version": "LuaJIT"
   },
-  "diagnostics": {
-    "globals": [ "vim" ]
-  },
   "workspace": {
     "library": [
-      "$HOME/.local/share/nvim/lazy/emmylua-nvim"
+      "$VIMRUNTIME",
+      "${3rd}/luv/library"
     ],
     "ignoreDir": [
       "lua/snippets"
     ]
-  }
+  },
+  "diagnostics.disable": [
+    "missing-fields"
+  ]
 }
