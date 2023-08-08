@@ -1,7 +1,7 @@
 local opts = {
   options = {
     -- Compiled file's destination location
-    compile_path = vim.fn.stdpath "cache" .. "/github-theme",
+    compile_path = vim.fs.joinpath(vim.fn.stdpath "cache", "github-theme"),
     compile_file_suffix = "_compiled", -- Compiled file suffix
     hide_end_of_buffer = true, -- Hide the '~' character at the end of the buffer for a cleaner look
     hide_nc_statusline = true, -- Override the underline style for non-active statuslines

@@ -2,7 +2,7 @@ local custom = require "custom"
 
 local opts = {
   debug = false, -- set to true to enable debug logging
-  log_path = vim.fn.stdpath "cache" .. "/lsp_signature.log", -- log dir when debug is on
+  log_path = vim.fs.joinpath(vim.fn.stdpath "cache", "lsp_signature.log"), -- log dir when debug is on
   -- default is  ~/.cache/nvim/lsp_signature.log
   verbose = false, -- show debug line number
 

@@ -10,7 +10,7 @@ return {
     local capabilities = require "capabilities"
 
     local opts = {
-      cmd = { mason.get_package("jdtls"):get_install_path() .. "/bin/jdtls" },
+      cmd = { vim.fs.joinpath(mason.get_package("jdtls"):get_install_path(), "/bin/jdtls") },
       handlers = {
         ["language/status"] = function() end,
       },
@@ -31,8 +31,10 @@ return {
       init_options = {
         bundles = {
           vim.fn.glob(
-            mason.get_package("java-debug-adapter"):get_install_path()
-              .. "/extension/server/com.microsoft.java.debug.plugin-*.jar",
+            vim.fs.joinpath(
+              mason.get_package("java-debug-adapter"):get_install_path(),
+              "extension/server/com.microsoft.java.debug.plugin-*.jar"
+            ),
             1
           ),
         },

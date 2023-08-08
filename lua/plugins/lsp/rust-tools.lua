@@ -10,9 +10,9 @@ local capabilities = require "capabilities"
 
 local custom = require "custom"
 
-local extension_path = mason.get_package("codelldb"):get_install_path() .. "/extension/"
-local codelldb_path = extension_path .. "adapter/codelldb"
-local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
+local extension_path = vim.fs.joinpath(mason.get_package("codelldb"):get_install_path(), "/extension/")
+local codelldb_path = vim.fs.joinpath(extension_path, "adapter/codelldb")
+local liblldb_path = vim.fs.joinpath(extension_path, "lldb/lib/liblldb.so")
 
 tools.setup {
   tools = { -- rust-tools options

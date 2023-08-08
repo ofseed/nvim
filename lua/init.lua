@@ -1,5 +1,5 @@
-local root = vim.fn.stdpath "data" .. "/lazy"
-local lazypath = root .. "/lazy.nvim"
+local root = vim.fs.joinpath(vim.fn.stdpath "data", "/lazy")
+local lazypath = vim.fs.joinpath(root, "lazy.nvim")
 if not vim.uv.fs_stat(lazypath) then
   vim.fn.system {
     "git",

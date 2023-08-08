@@ -59,7 +59,7 @@ return {
         local path = node:get_id()
         path = vim.fn.shellescape(path)
         if vim.uv.os_uname().sysname == "Linux" then
-          vim.cmd("silent !xdg-open " .. path)
+          vim.cmd(vim.fs.joinpath("silent !xdg-open ", path))
         end
       end,
     },
