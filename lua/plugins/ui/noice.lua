@@ -3,7 +3,7 @@ local custom = require "custom"
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
-  init = function ()
+  init = function()
     vim.o.cmdheight = 0
   end,
   dependencies = {
@@ -29,8 +29,10 @@ return {
       progress = {
         enabled = false,
       },
-      hover = {
-        enabled = false,
+      override = {
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        ["vim.lsp.util.stylize_markdown"] = true,
+        ["cmp.entry.get_documentation"] = true,
       },
       signature = {
         enabled = false,
@@ -38,14 +40,17 @@ return {
       message = {
         enabled = false,
       },
-      documentation = {
-        enabled = false,
-      },
     },
     views = {
       cmdline_popup = {
         border = {
           style = custom.border,
+        },
+      },
+      hover = {
+        border = {
+          style = custom.border,
+          padding = { 0, custom.border == "none" and 2 or 0 },
         },
       },
     },

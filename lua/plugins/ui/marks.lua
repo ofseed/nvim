@@ -26,6 +26,7 @@ local opts = {
     "NvimTree",
     "Outline",
     "notify",
+    "noice",
     "neo-tree",
     "neo-tree-popup",
     "DressingInput",
