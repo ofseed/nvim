@@ -38,6 +38,9 @@ vim.g.maplocalleader = "  "
 vim.keymap.set("c", "<C-p>", "<Up>")
 vim.keymap.set("c", "<C-n>", "<Down>")
 
+-- Environment variables
+vim.env.LAZYROOT = vim.fs.joinpath(vim.fn.stdpath "data", "lazy")
+
 -- Auto commands
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("highlight_on_yank", {}),
