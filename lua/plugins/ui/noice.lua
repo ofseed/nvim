@@ -52,6 +52,9 @@ return {
           style = custom.border,
           padding = { 0, custom.border == "none" and 2 or 0 },
         },
+        position = {
+          row = custom.border == "none" and 1 or 2,
+        },
       },
     },
   },
