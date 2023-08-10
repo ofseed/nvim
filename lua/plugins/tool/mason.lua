@@ -10,6 +10,6 @@ return {
   "williamboman/mason.nvim",
   opts = opts,
   keys = {
-    { "<leader>mm", "Packages" },
+    { "<leader>mm", "<Cmd>Mason<CR>", desc = "Packages" },
   },
 }
