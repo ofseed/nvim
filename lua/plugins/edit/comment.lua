@@ -44,6 +44,9 @@ local opts = {
 
 return {
   "numToStr/Comment.nvim",
-  event = "VeryLazy",
   opts = opts,
+  keys = {
+    { "gc", mode = { "n", "v" } },
+    { "gb", mode = { "n", "v" } },
+  },
 }
