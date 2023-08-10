@@ -99,6 +99,7 @@ return {
           name = "+lsp",
           ["w"] = { name = "+workspace" },
         },
+        ["i"] = { name = "+insert" },
         ["r"] = { name = "+tasks" },
         ["d"] = { name = "+debug" },
         ["t"] = { name = "+toggle" },
