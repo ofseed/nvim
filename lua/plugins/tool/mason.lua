@@ -9,4 +9,7 @@ local opts = {
 return {
   "williamboman/mason.nvim",
   opts = opts,
+  keys = {
+    { "<leader>mm", "Packages" },
+  },
 }

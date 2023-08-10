@@ -100,6 +100,7 @@ return {
           ["w"] = { name = "+workspace" },
         },
         ["i"] = { name = "+insert" },
+        ["m"] = { name = "+manage" },
         ["r"] = { name = "+tasks" },
         ["d"] = { name = "+debug" },
         ["t"] = { name = "+toggle" },

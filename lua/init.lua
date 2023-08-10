@@ -45,4 +45,6 @@ require("lazy").setup("plugins", {
   },
 })
 
+vim.keymap.set("n", "<leader>mp", "<Cmd>Lazy<CR>", { desc = "Plugins" })
+
 vim.cmd.colorscheme(custom.theme)
