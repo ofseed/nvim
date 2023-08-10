@@ -8,36 +8,12 @@ capabilities = vim.tbl_extend("force", capabilities, {
 
 return {
   "p00f/clangd_extensions.nvim",
-  event = {
-    "BufRead *.c,*cpp,*cc,*cxx,*h,*hh,*hpp,*hxx",
-    "BufNewFile *.c,*cpp,*cc,*cxx,*h,*hh,*hpp,*hxx",
+  ft = {
+    "c",
+    "cpp",
   },
   config = function()
     require("clangd_extensions").setup {
-      server = {
-        capabilities = capabilities,
-        on_attach = function(client, bufnr)
-          vim.keymap.set("n", "<localleader>t", "<cmd>ClangdAST<CR>", { buffer = bufnr, desc = "Show AST" })
-          vim.keymap.set(
-            "n",
-            "<localleader><leader>",
-            "<cmd>ClangdSwitchSourceHeader<CR>",
-            { buffer = bufnr, desc = "Switch between source and header" }
-          )
-          vim.keymap.set(
-            "n",
-            "<localleader>h",
-            "<cmd>ClangdTypeHierarchy<CR>",
-            { buffer = bufnr, desc = "Show type hierarchy" }
-          )
-          vim.keymap.set(
-            "n",
-            "<localleader>m",
-            "<cmd>ClangdMemoryUsage<CR>",
-            { buffer = bufnr, desc = "Clangd memory usage" }
-          )
-        end,
-      },
       memory_usage = {
         border = custom.border,
       },
@@ -46,8 +22,13 @@ return {
       },
     }
 
+    local group = vim.api.nvim_create_augroup("clangd_extesnion", {
+      clear = true,
+    })
+
     vim.api.nvim_create_autocmd("Filetype", {
-      desc = "Setup cmp scores for cmp",
+      group = group,
+      desc = "Setup clangd_extension scores for cmp",
       pattern = "c,cpp",
       callback = function()
         local cmp = require "cmp"
@@ -65,6 +46,37 @@ return {
             },
           },
         }
+      end,
+    })
+
+    vim.api.nvim_create_autocmd("LspAttach", {
+      group = group,
+      desc = "Setup clangd_extesnion keymap for cmp",
+      callback = function(args)
+        local bufnr = args.buf
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client == nil or client.name ~= "clangd" then
+          return
+        end
+        vim.keymap.set("n", "<localleader>t", "<cmd>ClangdAST<CR>", { buffer = bufnr, desc = "Show AST" })
+        vim.keymap.set(
+          "n",
+          "<localleader><leader>",
+          "<cmd>ClangdSwitchSourceHeader<CR>",
+          { buffer = bufnr, desc = "Switch between source and header" }
+        )
+        vim.keymap.set(
+          "n",
+          "<localleader>h",
+          "<cmd>ClangdTypeHierarchy<CR>",
+          { buffer = bufnr, desc = "Show type hierarchy" }
+        )
+        vim.keymap.set(
+          "n",
+          "<localleader>m",
+          "<cmd>ClangdMemoryUsage<CR>",
+          { buffer = bufnr, desc = "Clangd memory usage" }
+        )
       end,
     })
   end,
