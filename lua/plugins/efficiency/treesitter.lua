@@ -5,7 +5,6 @@ return {
     { "nvim-treesitter/nvim-treesitter-textobjects" },
     { "windwp/nvim-ts-autotag" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
-    { "mrjones2014/nvim-ts-rainbow", enabled = false },
     { "RRethy/nvim-treesitter-endwise", enabled = false },
     { "RRethy/nvim-treesitter-textsubjects", enabled = false },
   },
