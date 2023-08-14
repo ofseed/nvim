@@ -24,5 +24,18 @@ return {
     { "<C-\\>" },
     { "<Esc>", "<C-\\><C-N>", mode = "t" },
     { "<leader>tt", "<Cmd>ToggleTermToggleAll<CR>", mode = "n", desc = "All Terminal" },
+    {
+      "<leader>gl",
+      function()
+        require("toggleterm.terminal").Terminal
+          :new({
+            cmd = "lazygit",
+            hidden = true,
+            direction = "float",
+          })
+          :toggle()
+      end,
+      desc = "LazyGit",
+    },
   },
 }
