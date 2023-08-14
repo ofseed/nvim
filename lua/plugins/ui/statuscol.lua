@@ -5,7 +5,7 @@ local statuscol = require "statuscol"
 local builtin = require "statuscol.builtin"
 
 statuscol.setup {
-  bt_ignore = { "nofile" },
+  bt_ignore = { "nofile", "terminal" },
   segments = {
     {
       sign = { name = { ".*" } },
