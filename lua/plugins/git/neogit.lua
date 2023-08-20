@@ -18,9 +18,6 @@ return {
       stashes = {
         folded = false,
       },
-      unpulled = {
-        folded = false,
-      },
       recent = {
         folded = false,
       },
