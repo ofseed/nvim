@@ -23,14 +23,8 @@ return {
       desc = "Save overseer tasks",
       callback = function()
         local overseer = require "overseer"
-        local task_name = get_cwd_as_name()
 
-        -- Remove the task if it exists
-        if vim.tbl_contains(overseer.list_task_bundles(), task_name) then
-          overseer.delete_task_bundle(task_name)
-        end
-
-        overseer.save_task_bundle(task_name, nil, { on_conflict = "overwrite" })
+        overseer.save_task_bundle(get_cwd_as_name(), nil, { on_conflict = "overwrite" })
       end,
     })
 
