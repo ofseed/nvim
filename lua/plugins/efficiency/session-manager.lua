@@ -30,7 +30,13 @@ return {
           overseer.delete_task_bundle(task_name)
         end
 
-        overseer.save_task_bundle(task_name, nil, { on_conflict = "overwrite" })
+        overseer.save_task_bundle(
+          get_cwd_as_name(),
+          overseer.list_tasks {
+            status = "RUNNING",
+          },
+          { on_conflict = "overwrite" }
+        )
       end,
     })
 
