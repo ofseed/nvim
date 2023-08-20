@@ -5,7 +5,10 @@ return {
     local custom = require "custom"
 
     overseer.setup {
-      strategy = "toggleterm",
+      strategy = {
+        "toggleterm",
+        quit_on_exit = "success",
+      },
       form = {
         border = custom.border,
       },
