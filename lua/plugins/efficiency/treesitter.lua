@@ -2,7 +2,6 @@ return {
   "nvim-treesitter/nvim-treesitter",
   event = "VeryLazy",
   dependencies = {
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
     { "windwp/nvim-ts-autotag" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "RRethy/nvim-treesitter-endwise", enabled = false },
