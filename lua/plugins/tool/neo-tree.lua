@@ -11,6 +11,13 @@ return {
   },
   opts = {
     popup_border_style = custom.border,
+    default_component_configs = {
+      icon = {
+        folder_closed = "",
+        folder_open = "",
+        folder_empty = "",
+      },
+    },
     source_selector = {
       winbar = true,
       sources = {
