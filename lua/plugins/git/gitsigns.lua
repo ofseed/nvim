@@ -12,25 +12,25 @@ return {
       },
       on_attach = function(bufnr)
         -- Navigation
-        vim.keymap.set("n", "]c", function()
+        vim.keymap.set("n", "]h", function()
           if vim.wo.diff then
-            return "]c"
+            return "]h"
           end
           vim.schedule(function()
             gitsigns.next_hunk()
           end)
           return "<Ignore>"
-        end, { buffer = bufnr, expr = true, desc = "Change" })
+        end, { buffer = bufnr, expr = true, desc = "Next hunk" })
 
-        vim.keymap.set("n", "[c", function()
+        vim.keymap.set("n", "[h", function()
           if vim.wo.diff then
-            return "[c"
+            return "[h"
           end
           vim.schedule(function()
             gitsigns.prev_hunk()
           end)
           return "<Ignore>"
-        end, { buffer = bufnr, expr = true, desc = "Change" })
+        end, { buffer = bufnr, expr = true, desc = "Previous hunk" })
 
         -- Actions
         vim.keymap.set("n", "<leader>gs", gitsigns.stage_hunk, { buffer = bufnr, desc = "Stage hunk" })
