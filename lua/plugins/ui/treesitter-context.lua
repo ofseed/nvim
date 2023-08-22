@@ -4,4 +4,7 @@ return {
   opts = {
     mode = "topline",
   },
+  keys = {
+    { "<leader>tc", "<Cmd>TSContextToggle<CR>", desc = "Treesitter Context" },
+  },
 }
