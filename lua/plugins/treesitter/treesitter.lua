@@ -4,7 +4,7 @@ return {
   dependencies = {
     { "windwp/nvim-ts-autotag" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
-    { "RRethy/nvim-treesitter-endwise", enabled = false },
+    { "RRethy/nvim-treesitter-endwise" },
     { "RRethy/nvim-treesitter-textsubjects", enabled = false },
   },
   build = ":TSUpdate",
@@ -22,6 +22,9 @@ return {
         enable = true,
       },
       autotag = {
+        enable = true,
+      },
+      endwise = {
         enable = true,
       },
       context_commentstring = {
