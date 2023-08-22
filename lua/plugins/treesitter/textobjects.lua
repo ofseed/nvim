@@ -11,8 +11,8 @@ return {
           enable = true,
           lookahead = true,
           keymaps = {
-            ["af"] = { "@function.outer", desc = "a function region" },
-            ["if"] = { "@function.inner", desc = "inner part of a function region" },
+            ["af"] = { query = "@function.outer", desc = "a function region" },
+            ["if"] = { query = "@function.inner", desc = "inner part of a function region" },
             ["ac"] = { query = "@class.outer", desc = "a of a class" },
             ["ic"] = { query = "@class.inner", desc = "inner part of a class region" },
           },
