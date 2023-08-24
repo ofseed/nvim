@@ -53,4 +53,5 @@ local function toggle_quickfix()
   end
 end
 
+vim.keymap.set("n", "<leader>q", toggle_quickfix, { desc = "Quickfix" })
 vim.keymap.set("n", "<leader>tq", toggle_quickfix, { desc = "Quickfix" })
