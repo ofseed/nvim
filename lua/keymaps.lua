@@ -37,3 +37,20 @@ which_key.register {
     ["h"] = { name = "+hop" },
   },
 }
+
+local function toggle_quickfix()
+  local wins = vim.fn.getwininfo()
+  local qf_win = vim
+    .iter(wins)
+    :filter(function(win)
+      return win.quickfix == 1
+    end)
+    :totable()
+  if #qf_win == 0 then
+    vim.cmd.copen()
+  else
+    vim.cmd.cclose()
+  end
+end
+
+vim.keymap.set("n", "<leader>tq", toggle_quickfix, { desc = "Quickfix" })
