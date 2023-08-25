@@ -56,3 +56,13 @@ end
 
 vim.keymap.set("n", "<leader>q", toggle_quickfix, { desc = "Quickfix" })
 vim.keymap.set("n", "<leader>tq", toggle_quickfix, { desc = "Quickfix" })
+
+local filetype_keymaps = vim.api.nvim_create_augroup("ofseed_filetype_keymaps", {})
+vim.api.nvim_create_autocmd("Filetype", {
+  group = filetype_keymaps,
+  pattern = "qf",
+  callback = function(args)
+    local bufnr = args.buf
+    vim.keymap.set("n", "q", "<Cmd>cclose<CR>", { buffer = bufnr })
+  end,
+})
