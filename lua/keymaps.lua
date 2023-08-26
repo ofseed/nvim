@@ -34,7 +34,7 @@ if which_key_available then
       ["d"] = { name = "+debug" },
       ["t"] = { name = "+toggle" },
       ["o"] = { name = "+org" },
-      ["h"] = { name = "+hop" },
+      ["h"] = { name = "+helper" },
     },
   }
 end
