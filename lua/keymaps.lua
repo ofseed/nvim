@@ -56,6 +56,15 @@ end
 
 vim.keymap.set("n", "<leader>q", toggle_quickfix, { desc = "Quickfix" })
 vim.keymap.set("n", "<leader>tq", toggle_quickfix, { desc = "Quickfix" })
+vim.keymap.set("n", "<leader>hi", function()
+  vim.show_pos()
+end, { desc = "Inspect" })
+vim.keymap.set("n", "<leader>ht", function()
+  vim.treesitter.inspect_tree()
+end, { desc = "Treesitter Tree" })
+vim.keymap.set("n", "<leader>hq", function()
+  vim.treesitter.preview_query()
+end, { desc = "Treesitter Query" })
 
 local filetype_keymaps = vim.api.nvim_create_augroup("ofseed_filetype_keymaps", {})
 vim.api.nvim_create_autocmd("Filetype", {
