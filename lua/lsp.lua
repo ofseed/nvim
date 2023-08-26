@@ -59,9 +59,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>ll", vim.diagnostic.setloclist, { buffer = bufnr, desc = "Diagnostic list" })
     vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { buffer = bufnr, desc = "Diagnostic float" })
 
-    vim.keymap.set("n", "<leader>F", function()
-      vim.lsp.buf.format { async = true }
-    end, { buffer = bufnr, desc = "Format document" })
+    -- Use conform instead
+    -- vim.keymap.set("n", "<leader>F", function()
+    --   vim.lsp.buf.format { async = true }
+    -- end, { buffer = bufnr, desc = "Format document" })
 
     vim.keymap.set(
       "n",
