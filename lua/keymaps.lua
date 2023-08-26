@@ -1,5 +1,5 @@
-local has_which_key, which_key = pcall(require, "which-key")
-if has_which_key then
+local which_key_available, which_key = pcall(require, "which-key")
+if which_key_available then
   which_key.register {
     ["s"] = { name = "+hop" },
     ["["] = { name = "+prev" },
