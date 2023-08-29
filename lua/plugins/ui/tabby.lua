@@ -1,8 +1,6 @@
-local custom = require "custom"
-
 return {
   "nanozuki/tabby.nvim",
-  cond = custom.prefer_tabpage,
+  enabled = false,
   init = function()
     vim.o.showtabline = 2
   end,
