@@ -1,4 +1,5 @@
 local custom = require "custom"
+local utils = require "utils"
 
 -- Set diagnostic options
 vim.diagnostic.config {
@@ -14,13 +15,9 @@ vim.diagnostic.config {
   severity_sort = true,
 }
 
-local function firstToUpper(str)
-  return (str:gsub("^%l", string.upper))
-end
-
 -- Set diagnostic icons
 for type, icon in pairs(custom.icons.diagnostic) do
-  local hl = "DiagnosticSign" .. firstToUpper(type)
+  local hl = "DiagnosticSign" .. utils.firstToUpper(type)
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
