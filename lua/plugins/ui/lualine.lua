@@ -9,22 +9,25 @@ local function indent()
 end
 
 local function lsp()
-  local clients = vim.lsp.buf_get_clients()
-  if #clients == 0 then
-    return ""
-  end
-  local names = {}
-  local ignored = { "null-ls", "copilot" }
-  for _, client in ipairs(clients) do
-    if not vim.tbl_contains(ignored, client.name) then
-      table.insert(names, client.name)
-    end
-  end
-  local msg = table.concat(names, ", ")
-  if msg == "" then
-    return ""
+  local clients = vim.lsp.get_clients()
+  local buf = vim.api.nvim_get_current_buf()
+  clients = vim
+    .iter(clients)
+    :filter(function(client)
+      return client.attached_buffers[buf]
+    end)
+    :filter(function(client)
+      return client.name ~= "copilot"
+    end)
+    :map(function(client)
+      return client.name
+    end)
+    :totable()
+  local info = table.concat(clients, ", ")
+  if info == "" then
+    return "No attached LSP server"
   else
-    return " " .. msg
+    return info
   end
 end
 
