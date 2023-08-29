@@ -1,3 +1,5 @@
+local custom = require "custom"
+
 local which_key_available, which_key = pcall(require, "which-key")
 if which_key_available then
   which_key.register {
