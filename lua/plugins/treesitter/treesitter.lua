@@ -5,7 +5,6 @@ return {
     { "windwp/nvim-ts-autotag" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "RRethy/nvim-treesitter-endwise" },
-    { "RRethy/nvim-treesitter-textsubjects", enabled = false },
   },
   build = ":TSUpdate",
   config = function()
