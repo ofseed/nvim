@@ -21,7 +21,7 @@ if which_key_available then
         ["c"] = { name = "+current" },
       },
       ["b"] = {
-        name = "+buffer",
+        name = custom.prefer_tabpage and "+tab" or "+buffer",
         ["s"] = { name = "+sort" },
       },
       ["l"] = {
