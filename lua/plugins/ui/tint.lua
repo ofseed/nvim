@@ -3,7 +3,6 @@ return {
   event = "VeryLazy",
   config = function()
     require("tint").setup {
-      tint = -60,
       highlight_ignore_patterns = {
         "WinSeparator",
         "EndOfBuffer",
