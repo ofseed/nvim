@@ -31,6 +31,7 @@ vim.o.sidescrolloff = 5
 vim.o.pumblend = 12
 vim.o.fillchars = "foldopen:,foldclose:,foldsep: ,diff:╱"
 vim.o.textwidth = 80
+vim.o.guifont = "Cascadia Code PL:h14"
 
 -- Keymapping
 vim.g.mapleader = " "
