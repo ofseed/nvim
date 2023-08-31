@@ -91,7 +91,7 @@ return {
       desc = "Old files",
     },
     {
-      "<leader>fb",
+      "<leader>fm",
       function()
         require("telescope.builtin").marks()
       end,
