@@ -417,6 +417,7 @@ local wrt = s(
     dsrc = "write! to buffer",
   },
   fmta([[write!(<buffer>, "<ends>")]], {
+    buffer = i(1),
     ends = i(0),
   })
 )
@@ -427,6 +428,7 @@ local wrtn = s(
     dsrc = "writeln! to buffer",
   },
   fmta([[writeln!(<buffer>, "<ends>")]], {
+    buffer = i(1),
     ends = i(0),
   })
 )
