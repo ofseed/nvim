@@ -1,4 +1,8 @@
 local custom = require "custom"
+local kinds = vim.iter(custom.icons.kind):fold({}, function(t, k, v)
+  t[k] = { icon = v }
+  return t
+end)
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
@@ -88,6 +92,9 @@ return {
           ["]h"] = "next_git_modified",
         },
       },
+    },
+    document_symbols = {
+      kinds = kinds,
     },
   },
   keys = {
