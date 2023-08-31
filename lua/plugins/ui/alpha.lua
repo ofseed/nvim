@@ -3,9 +3,9 @@ return {
   config = function()
     local alpha = require "alpha"
 
-    local theta = require "alpha.themes.theta"
+    local dashboard = require "alpha.themes.dashboard"
 
-    theta.header.val = {
+    dashboard.section.header.val = {
       [[                                                     ]],
       [[ ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗  ]],
       [[ ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║  ]],
@@ -16,6 +16,6 @@ return {
       [[                                                     ]],
     }
 
-    alpha.setup(theta.config)
+    alpha.setup(dashboard.config)
   end,
 }
