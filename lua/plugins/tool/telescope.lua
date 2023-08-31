@@ -68,6 +68,9 @@ return {
       end
     end
   end,
+  cmd = {
+    "Telescope",
+  },
   keys = {
     {
       "<leader>ff",
