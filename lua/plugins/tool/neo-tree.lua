@@ -2,7 +2,7 @@ local custom = require "custom"
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
+  branch = "main",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -10,6 +10,7 @@ return {
     "s1n7ax/nvim-window-picker",
   },
   opts = {
+    default_source = "last",
     popup_border_style = custom.border,
     default_component_configs = {
       icon = {
