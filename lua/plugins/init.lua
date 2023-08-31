@@ -7,6 +7,7 @@ return {
   { import = "plugins.filetype" },
   { import = "plugins.git" },
   { import = "plugins.lsp" },
+  { import = "plugins.mini" },
   { import = "plugins.treesitter" },
   { import = "plugins.tool" },
 }
