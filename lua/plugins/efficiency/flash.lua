@@ -17,7 +17,7 @@ return {
       function()
         require("flash").treesitter()
       end,
-      desc = "Flash Treesitter",
+      desc = "Select Treesitter Node",
     },
     {
       "S",
@@ -25,7 +25,7 @@ return {
       function()
         require("flash").treesitter_search()
       end,
-      desc = "Treesitter Search",
+      desc = "Search Treesitter Node",
     },
   },
 }
