@@ -59,6 +59,10 @@ return {
             end
           end
         end,
+
+        -- Swap default split behavior
+        ["S"] = "open_vsplit",
+        ["s"] = "open_split",
       },
     },
     commands = {
