@@ -1,6 +1,14 @@
 return {
   "folke/flash.nvim",
-  opts = true,
+  opts = {
+    modes = {
+      treesitter = {
+        highlight = {
+          backdrop = true,
+        },
+      },
+    },
+  },
   event = "VeryLazy",
   keys = {
     {
