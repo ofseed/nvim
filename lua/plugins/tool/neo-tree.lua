@@ -80,11 +80,13 @@ return {
       follow_current_file = {
         enabled = true,
       },
-      mappings = {
-        ["[g"] = "none",
-        ["]g"] = "none",
-        ["[c]"] = "prev_git_modified",
-        ["]c"] = "next_git_modified",
+      window = {
+        mappings = {
+          ["[g"] = "none",
+          ["]g"] = "none",
+          ["[h"] = "prev_git_modified",
+          ["]h"] = "next_git_modified",
+        },
       },
     },
   },
