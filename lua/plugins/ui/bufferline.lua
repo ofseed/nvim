@@ -13,7 +13,7 @@ return {
       options = {
         mode = custom.prefer_tabpage and "tabs" or "buffers",
         numbers = custom.prefer_tabpage and "ordinal" or "none",
-        show_close_icons = false,
+        show_close_icon = false,
         offsets = {
           { filetype = "neo-tree", text = "Explorer", text_align = "center", saperator = true },
           { filetype = "aerial", text = "Outline", text_align = "center", saperator = true },
