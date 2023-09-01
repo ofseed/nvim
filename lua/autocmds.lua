@@ -8,6 +8,8 @@ vim.api.nvim_create_autocmd({
   group = group,
   desc = "Reload buffer on focus",
   callback = function()
-    vim.cmd.checktime()
+    if vim.fn.getcmdwintype() == "" then
+      vim.cmd "checktime"
+    end
   end,
 })
