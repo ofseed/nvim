@@ -16,10 +16,10 @@ vim.diagnostic.config {
 }
 
 -- Set diagnostic icons
-for type, icon in pairs(custom.icons.diagnostic) do
+vim.iter(custom.icons.diagnostic):each(function(type, icon)
   local hl = "DiagnosticSign" .. utils.firstToUpper(type)
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
+end)
 
 -- To instead override globally
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
