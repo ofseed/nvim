@@ -2,6 +2,11 @@ return {
   "folke/flash.nvim",
   opts = {
     modes = {
+      search = {
+        highlight = {
+          backdrop = true,
+        },
+      },
       treesitter = {
         highlight = {
           backdrop = true,
