@@ -9,6 +9,8 @@ return {
         TabLine = { bg = color.surface0, fg = color.subtext0 },
         TabLineFill = { fg = color.subtext0, bg = color.mantle },
         TabLineSel = { fg = color.base, bg = color.overlay1 },
+
+        MatchParen = { fg = "NONE", bg = color.surface1, style = { "bold" } },
       }
     end,
     integrations = {
