@@ -37,6 +37,7 @@ return {
       overseer = true,
       symbols_outline = true,
       illuminate = true,
+      ufo = false,
       which_key = true,
     },
   },
