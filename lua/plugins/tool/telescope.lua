@@ -37,6 +37,8 @@ return {
           n = { s = flash },
           i = { ["<c-s>"] = flash },
         },
+        prompt_prefix = " ",
+        selection_caret = " ",
       },
       pickers = {
         find_files = {
