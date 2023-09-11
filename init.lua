@@ -5,6 +5,7 @@ vim.o.expandtab = true
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.undofile = true
+vim.o.swapfile = false
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.list = true
