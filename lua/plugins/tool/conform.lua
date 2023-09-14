@@ -3,14 +3,8 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
-      python = {
-        formatters = { "isort", "black" },
-        run_all_formatters = true,
-      },
-      go = {
-        formatters = { "gofumpt", "goimports" },
-        run_all_formatters = true,
-      },
+      python = { "isort", "black" },
+      go = { "gofumpt", "goimports" },
 
       html = { "prettier" },
       css = { "prettier" },
