@@ -59,6 +59,7 @@ local opts = {
 
 return {
   "ray-x/lsp_signature.nvim",
+  enabled = false,
   event = "LspAttach",
   opts = opts,
 }
