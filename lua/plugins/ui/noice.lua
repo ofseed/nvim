@@ -48,6 +48,9 @@ return {
         },
       },
       hover = {
+        size = {
+          max_width = 80,
+        },
         border = {
           style = custom.border,
           padding = { 0, custom.border == "none" and 2 or 0 },
