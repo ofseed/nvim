@@ -22,5 +22,9 @@ return {
     progress = {
       border = custom.border,
     },
+    keymaps = {
+      ["<C-s>"] = "actions.select_split",
+      ["<C-v>"] = "actions.select_vsplit",
+    },
   },
 }
