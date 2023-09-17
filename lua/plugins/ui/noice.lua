@@ -31,9 +31,6 @@ return {
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true,
       },
-      signature = {
-        enabled = false,
-      },
       message = {
         enabled = false,
       },
