@@ -1,8 +1,8 @@
 #+title: Nvim
 #+author: Yi Ming
 
-NOTE: This `README` is outdated, the project structure has been fully changed.
-The profile requires Neovim nightly now.
+/NOTE: This ~README~ is outdated, the project structure has been fully changed./
+/The profile requires Neovim nightly now./
 
 My personal Neovim configuration, which keeps the structure simple and
 straightforward by logically distributing the configuration into various
