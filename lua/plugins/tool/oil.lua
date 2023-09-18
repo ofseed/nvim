@@ -13,6 +13,7 @@ return {
     },
   },
   opts = {
+    skip_confirm_for_simple_edits = true,
     float = {
       border = custom.border,
     },
