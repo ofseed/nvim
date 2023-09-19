@@ -5,9 +5,13 @@ local mode = custom.prefer_tabpage and "tab" or "buffer"
 
 return {
   "akinsho/nvim-bufferline.lua",
-  lazy = false,
+  event = "VeryLazy",
   version = "*",
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  init = function()
+    vim.o.showtabline = 2
+    vim.o.tabline = " "
+  end,
   config = function()
     require("bufferline").setup {
       options = {
