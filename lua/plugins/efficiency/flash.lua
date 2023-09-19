@@ -7,6 +7,9 @@ return {
           backdrop = true,
         },
       },
+      char = {
+        enabled = false,
+      },
       treesitter = {
         highlight = {
           backdrop = true,
