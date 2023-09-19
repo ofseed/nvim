@@ -15,7 +15,7 @@ return {
   branch = "v3",
   opts = {
     scope = {
-      enabled = true,
+      enabled = false,
       highlight = highlight,
     },
   },
