@@ -65,7 +65,7 @@ vim.keymap.set("n", "<leader>ht", function()
   vim.treesitter.inspect_tree()
 end, { desc = "Treesitter Tree" })
 vim.keymap.set("n", "<leader>hq", function()
-  vim.treesitter.preview_query()
+  vim.treesitter.query.edit()
 end, { desc = "Treesitter Query" })
 
 vim.keymap.set("n", "[q", "<Cmd>cprevious<CR>", {})
