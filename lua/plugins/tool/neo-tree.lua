@@ -77,10 +77,7 @@ return {
       system_open = function(state)
         local node = state.tree:get_node()
         local path = node:get_id()
-        path = vim.fn.shellescape(path)
-        if vim.uv.os_uname().sysname == "Linux" then
-          vim.cmd(vim.fs.joinpath("silent !xdg-open ", path))
-        end
+        vim.ui.open(path)
       end,
     },
     filesystem = {
