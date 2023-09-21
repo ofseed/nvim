@@ -11,12 +11,14 @@ vim.keymap.set(
   { silent = true, script = true, expr = true, replace_keycodes = false }
 )
 vim.keymap.set("i", "<M-NL>", "<Cmd>Copilot<CR>")
-vim.g.copilot_no_tab_map = true
 
 end
 
 return {
   "github/copilot.vim",
   event = "VeryLazy",
+  init = function ()
+    vim.g.copilot_no_tab_map = true
+  end,
   config = config,
 }
