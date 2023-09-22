@@ -1,4 +1,4 @@
-opts = {
+local opts = {
   -- Open request results in a horizontal split
   result_split_horizontal = false,
   -- Keep the http file buffer above|left when split horizontal|vertical
