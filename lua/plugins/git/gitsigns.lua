@@ -1,5 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
+  event = "VeryLazy",
   dependencies = "nvim-lua/plenary.nvim",
   config = function()
     local gitsigns = require "gitsigns"
@@ -71,6 +72,8 @@ return {
       vim.api.nvim_set_hl(0, "GitSignsDeleteInline", { link = "GitSignsDeleteLn" })
       vim.api.nvim_set_hl(0, "GitSignsChangeInline", { link = "GitSignsChangeLn" })
     end
+
+    set_hl()
 
     vim.api.nvim_create_autocmd("ColorScheme", {
       desc = "Set gitsigns highlights",
