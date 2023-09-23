@@ -63,16 +63,18 @@ return {
       end,
     }
 
+    local function set_hl()
+      vim.api.nvim_set_hl(0, "GitSignsChangeLn", { link = "DiffText" })
+      vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { link = "DiffDelete" })
+
+      vim.api.nvim_set_hl(0, "GitSignsAddInline", { link = "GitSignsAddLn" })
+      vim.api.nvim_set_hl(0, "GitSignsDeleteInline", { link = "GitSignsDeleteLn" })
+      vim.api.nvim_set_hl(0, "GitSignsChangeInline", { link = "GitSignsChangeLn" })
+    end
+
     vim.api.nvim_create_autocmd("ColorScheme", {
       desc = "Set gitsigns highlights",
-      callback = function()
-        vim.api.nvim_set_hl(0, "GitSignsChangeLn", { link = "DiffText" })
-        vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { link = "DiffDelete" })
-
-        vim.api.nvim_set_hl(0, "GitSignsAddInline", { link = "GitSignsAddLn" })
-        vim.api.nvim_set_hl(0, "GitSignsDeleteInline", { link = "GitSignsDeleteLn" })
-        vim.api.nvim_set_hl(0, "GitSignsChangeInline", { link = "GitSignsChangeLn" })
-      end,
+      callback = set_hl,
     })
   end,
 }
