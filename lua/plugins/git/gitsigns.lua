@@ -11,13 +11,18 @@ return {
         border = custom.border,
       },
       on_attach = function(bufnr)
+        -- HACK: Add `table.unpack` manually
+        table.unpack = unpack
+        local next_integrations = require "nvim-next.integrations"
+        local ngs = next_integrations.gitsigns(gitsigns)
+
         -- Navigation
         vim.keymap.set("n", "]h", function()
           if vim.wo.diff then
             return "]h"
           end
           vim.schedule(function()
-            gitsigns.next_hunk()
+            ngs.next_hunk()
           end)
           return "<Ignore>"
         end, { buffer = bufnr, expr = true, desc = "Next hunk" })
@@ -27,7 +32,7 @@ return {
             return "[h"
           end
           vim.schedule(function()
-            gitsigns.prev_hunk()
+            ngs.prev_hunk()
           end)
           return "<Ignore>"
         end, { buffer = bufnr, expr = true, desc = "Previous hunk" })
