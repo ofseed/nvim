@@ -12,8 +12,6 @@ return {
         border = custom.border,
       },
       on_attach = function(bufnr)
-        -- HACK: Add `table.unpack` manually
-        table.unpack = unpack
         local next_integrations = require "nvim-next.integrations"
         local ngs = next_integrations.gitsigns(gitsigns)
 
