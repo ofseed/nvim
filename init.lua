@@ -11,6 +11,7 @@ vim.o.smartcase = true
 vim.o.list = true
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.includeexpr = "substitute(v:fname,'\\.','/','g')"
+vim.o.jumpoptions = "stack"
 
 -- Interface
 vim.o.splitkeep = "screen"
