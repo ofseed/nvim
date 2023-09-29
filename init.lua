@@ -44,6 +44,7 @@ vim.keymap.set("c", "<C-p>", "<Up>")
 vim.keymap.set("c", "<C-n>", "<Down>")
 
 -- Environment variables
+---@diagnostic disable-next-line: param-type-mismatch
 vim.env.LAZYROOT = vim.fs.joinpath(vim.fn.stdpath "data", "lazy")
 
 -- Auto commands
