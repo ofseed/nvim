@@ -12,7 +12,6 @@ local highlight = {
 return {
   "lukas-reineke/indent-blankline.nvim",
   event = "VeryLazy",
-  branch = "v3",
   opts = {
     scope = {
       enabled = true,
