@@ -14,6 +14,7 @@ vim.o.includeexpr = "substitute(v:fname,'\\.','/','g')"
 vim.o.jumpoptions = "stack"
 
 -- Interface
+vim.o.confirm = true
 vim.o.splitkeep = "screen"
 vim.o.splitbelow = true
 vim.o.splitright = true
