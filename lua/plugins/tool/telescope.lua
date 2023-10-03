@@ -79,7 +79,14 @@ return {
       function()
         require("telescope.builtin").find_files()
       end,
-      desc = "Find files",
+      desc = "Files",
+    },
+    {
+      "<leader>fb",
+      function()
+        require("telescope.builtin").buffers()
+      end,
+      desc = "Buffers",
     },
     {
       "<leader>f?",
