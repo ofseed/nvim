@@ -31,12 +31,26 @@ local function lsp()
   end
 end
 
+local function recording()
+  local reg = vim.fn.reg_recording()
+  if reg ~= "" then
+    return "recording @" .. reg
+  end
+  reg = vim.fn.reg_recorded()
+  if reg ~= "" then
+    return "recorded @" .. reg
+  end
+
+  return ""
+end
+
 local opts = {
   sections = {
     lualine_c = {
       lsp,
     },
     lualine_x = {
+      recording,
       {
         lazy_status.updates,
         cond = lazy_status.has_updates,
