@@ -1,4 +1,4 @@
 return {
   "fladson/vim-kitty",
-  event = { "BufRead kitty.conf" },
+  event = { "BufReadPre kitty.conf" },
 }
