@@ -83,7 +83,7 @@ local opts = {
 
 return {
   "rcarriga/nvim-dap-ui",
-  requires = {
+  dependencies = {
     "mfussenegger/nvim-dap",
   },
   opts = opts,
