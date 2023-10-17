@@ -77,6 +77,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>lwl", function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, { buffer = bufnr, desc = "List workspace folders" })
+
     -- Enable inlay hints
     if client and client.server_capabilities.inlayHintProvider then
       vim.lsp.inlay_hint(bufnr, true)
