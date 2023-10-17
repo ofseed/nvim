@@ -13,7 +13,9 @@ return {
       },
       window_ignore_function = function(win)
         local buf = vim.api.nvim_win_get_buf(win)
-        local buftype = vim.api.nvim_buf_get_option(buf, "buftype")
+        local buftype = vim.api.nvim_get_option_value("buftype", {
+          buf = buf,
+        })
         return buftype ~= "" and buftype ~= "acwrite"
       end,
     }
