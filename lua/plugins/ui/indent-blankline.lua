@@ -14,7 +14,8 @@ return {
   event = "VeryLazy",
   opts = {
     scope = {
-      enabled = true,
+      -- Rely on treesitter, bad performance
+      enabled = false,
       highlight = highlight,
     },
   },
