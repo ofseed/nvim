@@ -30,7 +30,7 @@ return {
         diagnostics_indicator = function(count)
           return "(" .. count .. ")"
         end,
-        ort_by = custom.prefer_tabpage and "tabs" or "insert_after_current",
+        sort_by = custom.prefer_tabpage and "tabs" or "insert_after_current",
       },
     }
   end,
