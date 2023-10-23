@@ -1,6 +1,6 @@
 return {
   "j-hui/fidget.nvim",
-  enabled = false,
+  branch = "legacy",
   event = "LspAttach",
   opts = {},
 }
