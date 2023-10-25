@@ -37,5 +37,6 @@ return {
   -- Disable because it's work in progress
   "lewis6991/satellite.nvim",
   event = "VeryLazy",
+  enabled = false,
   opts = opts,
 }
