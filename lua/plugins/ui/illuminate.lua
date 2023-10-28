@@ -3,7 +3,11 @@ return {
   event = "VeryLazy",
   config = function()
     local illuminate = require "illuminate"
-    illuminate.configure {}
+    illuminate.configure {
+      filetypes_denylist = {
+        "xxd",
+      },
+    }
 
     -- Highlight on yank
     -- conflict with vim-illuminate
