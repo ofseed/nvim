@@ -1,20 +1,27 @@
 return {
   "dstein64/nvim-scrollview",
   event = "VeryLazy",
-  opts = {
-    winblend = 50,
-    signs_on_startup = {
-      "conflicts",
-      -- "cursor",
-      "diagnostics",
-      "folds",
-      "loclist",
-      "marks",
-      "quickfix",
-      "search",
-      "spell",
-      -- "textwidth",
-      -- "trail",
-    },
-  },
+  config = function()
+    local scrollview = require "scrollview"
+    local scrollview_gitsigns = require "scrollview.contrib.gitsigns"
+
+    scrollview.setup {
+      winblend = 50,
+      signs_on_startup = {
+        "conflicts",
+        -- "cursor",
+        "diagnostics",
+        "folds",
+        "loclist",
+        "marks",
+        "quickfix",
+        "search",
+        "spell",
+        -- "textwidth",
+        -- "trail",
+      },
+    }
+
+    scrollview_gitsigns.setup {}
+  end,
 }
