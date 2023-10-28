@@ -14,6 +14,7 @@ return {
   },
   opts = {
     skip_confirm_for_simple_edits = true,
+    cleanup_delay_ms = false,
     float = {
       border = custom.border,
     },
