@@ -20,7 +20,14 @@ return {
           click = "v:lua.ScSa",
         },
         {
-          text = { builtin.foldfunc },
+          text = {
+            function(args)
+              args.fold.close = ""
+              args.fold.open = ""
+              args.fold.sep = " "
+              return builtin.foldfunc(args)
+            end,
+          },
           click = "v:lua.ScFa",
         },
       },
