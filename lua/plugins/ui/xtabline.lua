@@ -4,6 +4,10 @@ return {
   init = function()
     vim.o.showtabline = 2
   end,
-  main = "tabline.setup",
-  opts = {},
+  config = function()
+    local tabline = require "tabline.setup"
+
+    tabline.setup()
+    tabline.mappings(true)
+  end,
 }
