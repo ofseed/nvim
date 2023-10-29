@@ -2,8 +2,6 @@ return {
   "nvim-treesitter/nvim-treesitter",
   event = "VeryLazy",
   dependencies = {
-    { "windwp/nvim-ts-autotag" },
-    { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "RRethy/nvim-treesitter-endwise" },
   },
   build = ":TSUpdate",
@@ -20,13 +18,7 @@ return {
       indent = {
         enable = true,
       },
-      autotag = {
-        enable = true,
-      },
       endwise = {
-        enable = true,
-      },
-      context_commentstring = {
         enable = true,
       },
     }
