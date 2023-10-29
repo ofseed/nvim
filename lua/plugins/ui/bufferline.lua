@@ -16,7 +16,7 @@ return {
     require("bufferline").setup {
       options = {
         mode = custom.prefer_tabpage and "tabs" or "buffers",
-        numbers = custom.prefer_tabpage and "ordinal" or "none",
+        -- numbers = custom.prefer_tabpage and "ordinal" or "none",
         show_close_icon = false,
         offsets = {
           { filetype = "neo-tree", text = "Explorer", text_align = "center", saperator = true },
