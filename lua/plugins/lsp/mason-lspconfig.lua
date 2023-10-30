@@ -33,7 +33,7 @@ return {
                   enable = true,
                   setType = true,
                 },
-                codelens = {
+                codeLens = {
                   enable = true,
                 },
                 completion = {
