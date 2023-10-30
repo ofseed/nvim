@@ -5,6 +5,7 @@ local opts = {
 
 return {
   "nvim-orgmode/orgmode",
+  enabled = false,
   event = "VeryLazy",
   opts = opts,
   config = function()
