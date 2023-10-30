@@ -1,6 +1,5 @@
 return {
   "VidocqH/lsp-lens.nvim",
-  enabled = false,
   event = "LspAttach",
   config = function()
     require("lsp-lens").setup {}
