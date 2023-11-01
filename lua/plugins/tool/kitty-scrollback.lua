@@ -4,5 +4,6 @@ return {
     "KittyScrollbackGenerateKittens",
     "KittyScrollbackCheckHealth",
   },
+  event = { "User KittyScrollbackLaunch" },
   opts = {},
 }
