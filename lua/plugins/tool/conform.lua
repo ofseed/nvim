@@ -17,7 +17,6 @@ return {
       vue = { "prettier" },
       json = { "prettier" },
       yaml = { "prettier" },
-      markdown = { "prettier" },
     },
   },
   keys = {
