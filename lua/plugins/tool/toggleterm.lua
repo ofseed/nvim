@@ -12,7 +12,7 @@ return {
       end
     end,
     open_mapping = [[<c-\>]],
-    shell = vim.uv.os_uname().sysname == "Windows" and "pwsh" or "fish",
+    shell = vim.uv.os_uname().sysname == "Windows_NT" and "pwsh" or "fish",
     float_opts = {
       border = custom.border,
     },

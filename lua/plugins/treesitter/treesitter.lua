@@ -6,7 +6,7 @@ return {
   },
   build = ":TSUpdate",
   config = function()
-    if vim.uv.os_uname().sysname == "Windows" then
+    if vim.uv.os_uname().sysname == "Windows_NT" then
       require("nvim-treesitter.install").prefer_git = false
     end
 
