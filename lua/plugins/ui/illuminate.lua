@@ -36,5 +36,12 @@ return {
       end,
       { desc = "Prev reference" },
     },
+    {
+      "<M-k>",
+      function()
+        require("illuminate").toggle_freeze_buf()
+      end,
+      { desc = "Toggle Freeze reference" },
+    },
   },
 }
