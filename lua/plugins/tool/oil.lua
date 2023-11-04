@@ -27,12 +27,6 @@ return {
     keymaps = {
       ["<C-s>"] = "actions.select_split",
       ["<C-v>"] = "actions.select_vsplit",
-      ["gx"] = function()
-        local cwd = require("oil").get_current_dir()
-        local entry = require("oil").get_cursor_entry()
-        vim.ui.open(vim.fs.joinpath(cwd, entry.name))
-        vim.print(vim.fs.joinpath(cwd, entry.name))
-      end,
     },
   },
 }
