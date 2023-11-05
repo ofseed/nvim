@@ -22,6 +22,8 @@ return {
       },
     }
 
-    scrollview_gitsigns.setup {}
+    scrollview_gitsigns.setup {
+      priority = 100,
+    }
   end,
 }
