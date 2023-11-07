@@ -49,7 +49,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Declaration" })
     vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { buffer = bufnr, desc = "Implementation" })
     vim.keymap.set("n", "gr", function()
-      vim.lsp.buf.references { include_declaration = false }
+      vim.lsp.buf.references { includeDeclaration = false }
     end, { buffer = bufnr, desc = "References" })
 
     vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, { buffer = bufnr, desc = "Rename" })
