@@ -1,6 +1,5 @@
 return {
   "mbbill/undotree",
-  enabled = vim.fn.has "python3" == 0,
   config = function()
     local custom = require "custom"
     local width = custom.width()
