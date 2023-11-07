@@ -215,7 +215,8 @@ tools.setup {
 end
 
 return {
-  "simrat39/rust-tools.nvim",
+  -- "simrat39/rust-tools.nvim",
+  "Ciel-MC/rust-tools.nvim", -- maintained fork
   event = {
     "BufRead *.rs",
     "BufNewFile *.rs",
