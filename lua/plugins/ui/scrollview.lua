@@ -23,7 +23,9 @@ return {
     }
 
     scrollview_gitsigns.setup {
-      priority = 100,
+      add_priority = 100,
+      change_priority = 100,
+      delete_priority = 100,
     }
   end,
 }
