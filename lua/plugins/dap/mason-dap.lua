@@ -5,9 +5,11 @@ return {
     "mason.nvim",
     "mfussenegger/nvim-dap",
   },
-  opts = {
-    handlers = {
-      python = function() end,
-    },
-  },
+  opts = function()
+    return {
+      handlers = {
+        python = function() end,
+      },
+    }
+  end,
 }
