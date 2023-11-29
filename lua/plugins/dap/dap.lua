@@ -5,7 +5,10 @@ vim.fn.sign_define("DapBreakpointRejected", { text = "" })
 
 return {
   "mfussenegger/nvim-dap",
-  event = "VeryLazy",
+  dependencies = {
+    "jay-babu/mason-nvim-dap.nvim",
+    "theHamsta/nvim-dap-virtual-text",
+  },
   config = function()
     local dap = require "dap"
     dap.defaults.fallback.external_terminal = {

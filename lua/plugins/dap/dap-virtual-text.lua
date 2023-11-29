@@ -34,9 +34,7 @@ local opts = {
 
 return {
   "theHamsta/nvim-dap-virtual-text",
-  dependencies = {
-    "mfussenegger/nvim-dap",
-  },
-  event = "VeryLazy",
+  -- Only loads when nvim-dap is loaded
+  lazy = true,
   opts = opts,
 }
