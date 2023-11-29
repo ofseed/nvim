@@ -8,6 +8,7 @@ return {
   dependencies = {
     "jay-babu/mason-nvim-dap.nvim",
     "theHamsta/nvim-dap-virtual-text",
+    "rcarriga/nvim-dap-ui",
   },
   config = function()
     local dap = require "dap"
