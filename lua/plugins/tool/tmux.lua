@@ -54,6 +54,7 @@ local opts = {
 
 return {
   "aserowy/tmux.nvim",
+  cond = vim.env.TMUX ~= nil,
   opts = opts,
   event = "VeryLazy",
 }
