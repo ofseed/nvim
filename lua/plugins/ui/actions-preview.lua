@@ -1,9 +1,7 @@
 return {
   "aznhe21/actions-preview.nvim",
-  event = "VeryLazy",
-  config = function()
-    require("actions-preview").setup {}
-
+  lazy = true,
+  init = function()
     vim.api.nvim_create_autocmd("LspAttach", {
       desc = "Setup code action preview",
       callback = function(args)
@@ -14,5 +12,8 @@ return {
         end, { buffer = bufnr, desc = "LSP: Code action" })
       end,
     })
+  end,
+  config = function()
+    require("actions-preview").setup {}
   end,
 }
