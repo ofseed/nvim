@@ -293,8 +293,10 @@ end
 
 return {
   "sindrets/diffview.nvim",
-  event = "VeryLazy",
   config = config,
+  cmd = {
+    "DiffviewOpen",
+  },
   keys = {
     { "<leader>gdo", "<Cmd>DiffviewOpen<CR>", desc = "Open" },
     { "<leader>gdc", "<Cmd>DiffviewClose<CR>", desc = "Close" },
