@@ -6,6 +6,7 @@ local signs = vim.tbl_extend("keep", {
 
 return {
   "yorickpeterse/nvim-pqf",
+  event = "VeryLazy",
   opts = {
     signs = signs,
   },
