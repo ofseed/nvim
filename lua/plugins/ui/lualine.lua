@@ -56,7 +56,12 @@ local opts = {
         cond = lazy_status.has_updates,
         color = { fg = "#ff9e64" },
       },
-      "overseer",
+      {
+        name = "overseer-placeholder",
+        function()
+          return ""
+        end,
+      },
       "copilot",
       indent,
       "encoding",
