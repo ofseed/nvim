@@ -41,7 +41,7 @@ return {
       desc = "Debug: Step into",
     },
     {
-      "<F12>",
+      "<F23>", -- Shift + <F11>
       function()
         require("dap").step_out()
       end,
