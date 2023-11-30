@@ -35,6 +35,6 @@ vim.api.nvim_create_autocmd("Filetype", {
   pattern = "qf",
   callback = function(args)
     local bufnr = args.buf
-    vim.keymap.set("n", "q", "<Cmd>cclose<CR>", { buffer = bufnr })
+    vim.keymap.set("n", "q", "<Cmd>close<CR>", { buffer = bufnr })
   end,
 })
