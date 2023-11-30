@@ -9,13 +9,20 @@ return {
     return {
       handlers = {
         codelldb = function(config)
-          config.configurations = {
-            vim.tbl_extend("force", config.configurations[1], {
-              program = function()
-                return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-              end,
-              showDisassembly = "never",
-            }),
+          config.adapters = {
+            type = "server",
+            port = "${port}",
+            executable = {
+              command = vim.fn.exepath "codelldb",
+              args = {
+                "--port",
+                "${port}",
+                "--settings",
+                vim.json.encode {
+                  showDisassembly = "never",
+                },
+              },
+            },
           }
           require("mason-nvim-dap").default_setup(config)
         end,
