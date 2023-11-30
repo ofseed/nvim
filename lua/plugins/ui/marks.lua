@@ -38,6 +38,12 @@ local opts = {
     "toggleterm",
     "OverseerForm",
     "oil_preview",
+    "dap_rapl",
+    "dapui_scopes",
+    "dapui_breakpoints",
+    "dapui_stacks",
+    "dapui_watches",
+    "dapui_console",
   },
   -- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
   -- sign/virttext. Bookmarks can be used to group together positions and quickly move
