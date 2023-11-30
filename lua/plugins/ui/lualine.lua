@@ -31,6 +31,23 @@ local function lsp()
   end
 end
 
+local function dap()
+  ---@diagnostic disable-next-line: redefined-local
+  local dap = package.loaded["dap"]
+  if dap then
+    return dap.status()
+  end
+  return ""
+end
+
+local function dap_or_lsp()
+  if dap() ~= "" then
+    return dap()
+  else
+    return lsp()
+  end
+end
+
 local function recording()
   local reg = vim.fn.reg_recording()
   if reg ~= "" then
@@ -47,7 +64,7 @@ end
 local opts = {
   sections = {
     lualine_c = {
-      lsp,
+      dap_or_lsp,
     },
     lualine_x = {
       recording,
