@@ -11,16 +11,16 @@ return {
     {
       "<leader>du",
       function()
-        require("dapui").toggle { layout = 2 }
+        require("dapui").toggle { layout = 1 }
       end,
-      desc = "Toggle UI side",
+      desc = "Toggle UI sidebar",
     },
     {
       "<leader>dU",
       function()
-        require("dapui").toggle { layout = 1 }
+        require("dapui").toggle {}
       end,
-      desc = "Toggle UI below",
+      desc = "Toggle UI",
     },
     {
       "<leader>de",
