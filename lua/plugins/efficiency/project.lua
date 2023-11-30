@@ -1,5 +1,5 @@
 return {
-  "ahmedkhalf/project.nvim",
+  "jay-babu/project.nvim", -- maintained fork
   event = "VeryLazy",
   config = function()
     require("project_nvim").setup {}
