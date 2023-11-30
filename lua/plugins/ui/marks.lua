@@ -38,7 +38,7 @@ local opts = {
     "toggleterm",
     "OverseerForm",
     "oil_preview",
-    "dap_rapl",
+    "dap-repl",
     "dapui_scopes",
     "dapui_breakpoints",
     "dapui_stacks",
