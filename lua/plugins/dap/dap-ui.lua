@@ -31,17 +31,18 @@ return {
       },
       {
         elements = {
-          {
-            id = "repl",
-            size = 0.5,
-          },
+          -- dap-repl is managed by nvim-dap
+          -- {
+          --   id = "repl",
+          --   size = 0.5,
+          -- },
           {
             id = "console",
             size = 0.5,
           },
         },
         position = "bottom",
-        size = 10,
+        size = 15,
       },
     },
   },
@@ -59,6 +60,13 @@ return {
         require("dapui").toggle {}
       end,
       desc = "Toggle UI",
+    },
+    {
+      "<leader>dc",
+      function()
+        require("dapui").toggle { layout = 2 }
+      end,
+      desc = "Toggle console",
     },
     {
       "<leader>de",
