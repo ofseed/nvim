@@ -69,7 +69,7 @@ return {
       desc = "Toggle console",
     },
     {
-      "<leader>de",
+      "<M-k>",
       function()
         require("dapui").eval()
       end,

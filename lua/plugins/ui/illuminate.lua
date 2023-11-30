@@ -37,7 +37,7 @@ return {
       { desc = "Prev reference" },
     },
     {
-      "<M-k>",
+      "<M-l>",
       function()
         require("illuminate").toggle_freeze_buf()
       end,
