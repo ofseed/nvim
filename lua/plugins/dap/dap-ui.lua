@@ -22,5 +22,13 @@ return {
       end,
       desc = "Toggle UI",
     },
+    {
+      "<leader>de",
+      function()
+        require("dapui").eval()
+      end,
+      desc = "Evaluate expression",
+      mode = { "n", "v" },
+    },
   },
 }
