@@ -23,6 +23,9 @@ require("lazy").setup("plugins", {
     },
     fallback = true,
   },
+  install = {
+    colorscheme = { "default" },
+  },
   ui = {
     border = custom.border,
   },

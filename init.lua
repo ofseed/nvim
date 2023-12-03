@@ -68,7 +68,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.cmd [[colorscheme habamax]]
 vim.cmd [[aunmenu PopUp.How-to\ disable\ mouse]]
 vim.cmd [[aunmenu PopUp.-1-]]
 require "init"
