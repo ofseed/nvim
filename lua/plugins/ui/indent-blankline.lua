@@ -19,7 +19,7 @@ return {
     scope = {
       -- Rely on treesitter, bad performance
       enabled = false,
-      highlight = highlight,
+      -- highlight = highlight,
     },
   },
   config = function(_, opts)
