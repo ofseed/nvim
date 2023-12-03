@@ -11,6 +11,7 @@ return {
   },
   config = function()
     local telescope = require "telescope"
+    local lga_actions = require "telescope-live-grep-args.actions"
 
     local function flash(prompt_bufnr)
       require("flash").jump {
@@ -51,6 +52,11 @@ return {
       extensions = {
         live_grep_args = {
           theme = "dropdown",
+          mappings = {
+            i = {
+              ["<C-k>"] = lga_actions.quote_prompt(),
+            },
+          },
         },
       },
     }
