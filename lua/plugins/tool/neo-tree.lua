@@ -65,6 +65,8 @@ return {
             elseif node:has_children() then
               require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
             end
+          elseif node.type == "file" then
+            require("neo-tree.sources.filesystem.commands").open(state)
           end
         end,
 
