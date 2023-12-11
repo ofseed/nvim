@@ -48,6 +48,9 @@ return {
         oldfiles = {
           theme = "ivy",
         },
+        jumplist = {
+          theme = "dropdown",
+        }
       },
       extensions = {
         live_grep_args = {
@@ -135,6 +138,13 @@ return {
         require("telescope.builtin").colorscheme()
       end,
       desc = "Colorscheme",
+    },
+    {
+      "<leader>fj",
+      function()
+        require("telescope.builtin").jumplist()
+      end,
+      desc = "Jumplist",
     },
     {
       "<leader>fg",
