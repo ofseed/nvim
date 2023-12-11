@@ -9,7 +9,7 @@ return {
         "WinSeparator",
         "EndOfBuffer",
         "LineNr",
-        "Ibl*",
+        "IblWhitespace",
       },
       window_ignore_function = function(win)
         local buf = vim.api.nvim_win_get_buf(win)
