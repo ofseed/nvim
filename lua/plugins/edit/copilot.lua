@@ -2,6 +2,7 @@ local config = function()
 
 vim.g.copilot_filetypes = {
   registers = 0,
+  markdown = 1,
 }
 
 vim.keymap.set(
