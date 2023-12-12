@@ -4,6 +4,7 @@ local kinds = vim.iter(custom.icons.kind):fold({}, function(t, k, v)
   return t
 end)
 
+---@type LazyPluginSpec
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "main",
@@ -15,6 +16,8 @@ return {
   },
   init = function()
     vim.api.nvim_create_autocmd("BufEnter", {
+      group = vim.api.nvim_create_augroup("load_neo_tree", {}),
+      desc = "Loads neo-tree when openning a directory",
       callback = function(args)
         local stats = vim.uv.fs_stat(args.file)
 
@@ -120,6 +123,10 @@ return {
       kinds = kinds,
     },
   },
+  config = function(_, opts)
+    require("neo-tree").setup(opts)
+    vim.api.nvim_create_augroup("load_neo_tree", {})
+  end,
   keys = {
     { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File Explorer" },
   },
