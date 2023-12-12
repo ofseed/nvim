@@ -6,6 +6,7 @@
   "workspace": {
     "library": [
       "$VIMRUNTIME",
+      "$LAZYROOT/lazy.nvim",
       "${3rd}/luv/library"
     ],
     "ignoreDir": [
