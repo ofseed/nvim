@@ -2,6 +2,7 @@ local custom = require "custom"
 
 return {
   "stevearc/oil.nvim",
+  enabled = false,
   lazy = false,
   keys = {
     {
