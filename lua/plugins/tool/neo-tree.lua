@@ -64,26 +64,9 @@ return {
       mappings = {
         ["<Space>"] = "none",
         ["o"] = "system_open",
-        ["h"] = function(state)
-          local node = state.tree:get_node()
-          if node.type == "directory" and node:is_expanded() then
-            require("neo-tree.sources.filesystem").toggle_directory(state, node)
-          else
-            require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
-          end
-        end,
-        ["l"] = function(state)
-          local node = state.tree:get_node()
-          if node.type == "directory" then
-            if not node:is_expanded() then
-              require("neo-tree.sources.filesystem").toggle_directory(state, node)
-            elseif node:has_children() then
-              require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
-            end
-          elseif node.type == "file" then
-            require("neo-tree.sources.filesystem.commands").open(state)
-          end
-        end,
+
+        ["h"] = "smart_h",
+        ["l"] = "smart_l",
 
         -- Swap default split behavior
         ["S"] = "open_vsplit",
@@ -95,6 +78,28 @@ return {
         local node = state.tree:get_node()
         local path = node:get_id()
         vim.ui.open(path)
+      end,
+
+      smart_h = function(state)
+        local node = state.tree:get_node()
+        if node.type == "directory" and node:is_expanded() then
+          require("neo-tree.sources.filesystem").toggle_directory(state, node)
+        else
+          require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
+        end
+      end,
+
+      smart_l = function(state)
+        local node = state.tree:get_node()
+        if node.type == "directory" then
+          if not node:is_expanded() then
+            require("neo-tree.sources.filesystem").toggle_directory(state, node)
+          elseif node:has_children() then
+            require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
+          end
+        elseif node.type == "file" then
+          require("neo-tree.sources.filesystem.commands").open(state)
+        end
       end,
     },
     filesystem = {
