@@ -83,7 +83,7 @@ return {
       smart_h = function(state)
         local node = state.tree:get_node()
         if node.type == "directory" and node:is_expanded() then
-          require("neo-tree.sources.filesystem").toggle_directory(state, node)
+          require("neo-tree.sources.common.commands").toggle_node(state)
         else
           require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
         end
@@ -93,12 +93,12 @@ return {
         local node = state.tree:get_node()
         if node.type == "directory" then
           if not node:is_expanded() then
-            require("neo-tree.sources.filesystem").toggle_directory(state, node)
+            require("neo-tree.sources.common.commands").toggle_node(state)
           elseif node:has_children() then
             require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
           end
         elseif node.type == "file" then
-          require("neo-tree.sources.filesystem.commands").open(state)
+          require("neo-tree.sources.common.commands").open(state)
         end
       end,
     },
