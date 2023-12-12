@@ -13,6 +13,21 @@ return {
     "MunifTanjim/nui.nvim",
     "s1n7ax/nvim-window-picker",
   },
+  init = function()
+    vim.api.nvim_create_autocmd("BufEnter", {
+      callback = function(args)
+        local stats = vim.uv.fs_stat(args.file)
+
+        if not stats or stats.type ~= "directory" then
+          return
+        end
+
+        require "neo-tree"
+
+        return true
+      end,
+    })
+  end,
   opts = {
     default_source = "last",
     popup_border_style = custom.border,
