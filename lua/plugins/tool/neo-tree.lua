@@ -66,7 +66,7 @@ return {
       width = custom.width,
       mappings = {
         ["<Space>"] = "none",
-        ["o"] = "system_open",
+        ["gx"] = "system_open",
 
         ["h"] = "smart_h",
         ["l"] = "smart_l",
