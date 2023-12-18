@@ -13,14 +13,13 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 local custom = require "custom"
+local locals = require "locals"
 
 require("lazy").setup("plugins", {
   root = root,
   dev = {
     path = "~/Documents/code/nvim",
-    patterns = {
-      "ofseed",
-    },
+    patterns = locals.under_development,
     fallback = true,
   },
   install = {
