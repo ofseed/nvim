@@ -1,6 +1,9 @@
+local locals = require "locals"
+
 return {
   "github/copilot.vim",
   event = "VeryLazy",
+  cond = not locals.disable_copilot,
   init = function()
     vim.g.copilot_no_tab_map = true
   end,
