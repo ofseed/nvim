@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "stevearc/conform.nvim",
   opts = {
@@ -26,6 +27,7 @@ return {
         require("conform").format { lsp_fallback = true }
       end,
       desc = "Format Document",
+      mode = { "n", "v" }
     },
   },
 }
