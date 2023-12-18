@@ -1,5 +1,8 @@
+local locals = require "locals"
+
 return {
   "RRethy/vim-illuminate",
+  cond = not locals.treesitter_dev,
   event = "VeryLazy",
   config = function()
     local illuminate = require "illuminate"

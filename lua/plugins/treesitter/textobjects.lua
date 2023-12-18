@@ -1,5 +1,8 @@
+local locals = require "locals"
+
 return {
   "nvim-treesitter/nvim-treesitter-textobjects",
+  cond = not locals.treesitter_dev,
   event = "VeryLazy",
   dependencies = {
     { "nvim-treesitter/nvim-treesitter" },
