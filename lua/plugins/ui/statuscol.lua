@@ -9,7 +9,10 @@ return {
       bt_ignore = { "nofile", "terminal" },
       segments = {
         {
-          sign = { name = { ".*" } },
+          sign = {
+            name = { ".*" },
+            text = { ".*" },
+          },
           click = "v:lua.ScSa",
         },
         {
