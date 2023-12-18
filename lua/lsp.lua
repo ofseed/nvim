@@ -13,13 +13,15 @@ vim.diagnostic.config {
     source = "if_many",
   },
   severity_sort = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = custom.icons.diagnostic.error,
+      [vim.diagnostic.severity.WARN] = custom.icons.diagnostic.warn,
+      [vim.diagnostic.severity.HINT] = custom.icons.diagnostic.hint,
+      [vim.diagnostic.severity.INFO] = custom.icons.diagnostic.info,
+    },
+  },
 }
-
--- Set diagnostic icons
-vim.iter(custom.icons.diagnostic):each(function(type, icon)
-  local hl = "DiagnosticSign" .. utils.firstToUpper(type)
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end)
 
 -- To instead override globally
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
