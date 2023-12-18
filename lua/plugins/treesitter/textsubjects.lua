@@ -1,5 +1,7 @@
 return {
   "RRethy/nvim-treesitter-textsubjects",
+  -- Use flash instead
+  enabled = false,
   event = "VeryLazy",
   config = function()
     require("nvim-treesitter.configs").setup {
