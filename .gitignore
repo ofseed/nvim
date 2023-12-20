@@ -1,4 +1,4 @@
 lua/packer_compiled.lua
 lazy-lock.json
 
-lua/locals.lua
+lua/defined-locals.lua
