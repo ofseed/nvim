@@ -23,6 +23,11 @@ return {
         search_up = {
           view = "cmdline",
         },
+        substitute = {
+          pattern = "^:%s*%%s/",
+          icon = " /",
+          view = "cmdline",
+        },
       },
     },
     lsp = {
