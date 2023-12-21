@@ -3,6 +3,20 @@ return {
   version = "*",
   opts = {
     show_prompt = false,
+    filter_func = function(window_ids)
+      return vim.tbl_filter(function(window_id)
+
+        if window_id == vim.api.nvim_get_current_win() then
+          return false
+        end
+
+        if vim.api.nvim_win_get_config(window_id).relative ~= "" then
+          return false
+        end
+
+        return true
+      end, window_ids)
+    end,
   },
   keys = {
     {
