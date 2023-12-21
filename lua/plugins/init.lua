@@ -6,6 +6,7 @@ return {
   { import = "plugins.efficiency" },
   { import = "plugins.filetype" },
   { import = "plugins.git" },
+  { import = "plugins.lib" },
   { import = "plugins.lsp" },
   { import = "plugins.mini" },
   { import = "plugins.treesitter" },

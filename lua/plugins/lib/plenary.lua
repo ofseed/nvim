@@ -1,5 +1,6 @@
 return {
   "nvim-lua/plenary.nvim",
+  lazy = true,
   keys = {
     {
       "<leader>hpb",
