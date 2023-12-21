@@ -39,6 +39,7 @@ return {
       illuminate = true,
       ufo = false,
       which_key = true,
+      window_picker = true,
     },
   },
 }
