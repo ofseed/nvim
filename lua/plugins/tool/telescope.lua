@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
@@ -9,8 +10,7 @@ return {
     { "nvim-telescope/telescope-dap.nvim" },
     { "benfowler/telescope-luasnip.nvim" },
   },
-  config = function()
-    local telescope = require "telescope"
+  opts = function()
     local lga_actions = require "telescope-live-grep-args.actions"
 
     local function flash(prompt_bufnr)
@@ -32,7 +32,7 @@ return {
       }
     end
 
-    telescope.setup {
+    return {
       defaults = {
         mappings = {
           n = { s = flash },
@@ -50,7 +50,7 @@ return {
         },
         jumplist = {
           theme = "dropdown",
-        }
+        },
       },
       extensions = {
         live_grep_args = {
@@ -63,6 +63,11 @@ return {
         },
       },
     }
+  end,
+  config = function(_, opts)
+    local telescope = require "telescope"
+
+    telescope.setup(opts)
 
     local extensions = {
       "dap",
