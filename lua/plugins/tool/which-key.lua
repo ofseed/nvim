@@ -107,6 +107,7 @@ return {
         ["d"] = { name = "+debug" },
         ["D"] = { name = "+debuggee" },
         ["t"] = { name = "+toggle" },
+        ["T"] = { name = "+test" },
         ["o"] = { name = "+org" },
         ["h"] = { name = "+helper" },
         ["p"] = { name = "+programs" },

@@ -1,7 +1,6 @@
 ---@type LazyPluginSpec
 return {
   "rcarriga/neotest",
-  lazy = true,
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
@@ -12,4 +11,13 @@ return {
   config = function(_, opts)
     require("neotest").setup(opts)
   end,
+  keys = {
+    {
+      "<leader>Tr",
+      function()
+        require("neotest").run.run()
+      end,
+      desc = "Run",
+    },
+  },
 }
