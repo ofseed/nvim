@@ -4,9 +4,16 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
+
+    -- Adapters
+    "nvim-neotest/neotest-jest",
   },
   opts = function()
-    return {}
+    return {
+      adapters = {
+        require "neotest-jest",
+      },
+    }
   end,
   config = function(_, opts)
     require("neotest").setup(opts)
