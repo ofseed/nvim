@@ -9,6 +9,7 @@ return {
         "toggleterm",
         quit_on_exit = "success",
       },
+      dap = false,
       form = {
         border = custom.border,
       },
