@@ -24,6 +24,8 @@ return {
     { "<C-\\>" },
     { "<Esc>", "<C-\\><C-N>", mode = "t" },
     { "<leader>tt", "<Cmd>ToggleTermToggleAll<CR>", mode = "n", desc = "All Terminal" },
+
+    -- External programs
     {
       "<leader>gl",
       function()
@@ -49,6 +51,21 @@ return {
           :toggle()
       end,
       desc = "Lazy Docker",
+    },
+    {
+      "<leader>pg",
+      function()
+        require("toggleterm.terminal").Terminal
+          :new({
+            -- https://github.com/dlvhdr/gh-dash/issues/316
+            env = { LANG = "en_US.UTF-8" },
+            cmd = "gh-dash",
+            hidden = true,
+            direction = "float",
+          })
+          :toggle()
+      end,
+      desc = "GitHub Dash",
     },
   },
 }
