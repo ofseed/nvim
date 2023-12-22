@@ -38,3 +38,9 @@ vim.api.nvim_create_autocmd("Filetype", {
     vim.keymap.set("n", "q", "<Cmd>close<CR>", { buffer = bufnr })
   end,
 })
+
+-- Provided by nvim-next
+-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Diagnostic" })
+-- vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Diagnostic" })
+vim.keymap.set("n", "<leader>ll", vim.diagnostic.setloclist, { desc = "Diagnostic list" })
+vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Diagnostic float" })

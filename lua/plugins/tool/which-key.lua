@@ -98,7 +98,7 @@ return {
           ["s"] = { name = "+sort" },
         },
         ["l"] = {
-          name = "+lsp",
+          name = "+lsp/diagnostic",
           ["w"] = { name = "+workspace" },
         },
         ["i"] = { name = "+insert" },
