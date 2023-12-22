@@ -105,6 +105,7 @@ return {
         ["m"] = { name = "+manage" },
         ["r"] = { name = "+tasks" },
         ["d"] = { name = "+debug" },
+        ["D"] = { name = "+debuggee" },
         ["t"] = { name = "+toggle" },
         ["o"] = { name = "+org" },
         ["h"] = { name = "+helper" },
