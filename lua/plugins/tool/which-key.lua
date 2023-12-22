@@ -108,6 +108,7 @@ return {
         ["t"] = { name = "+toggle" },
         ["o"] = { name = "+org" },
         ["h"] = { name = "+helper" },
+        ["p"] = { name = "+programs" },
       },
     }
   end,

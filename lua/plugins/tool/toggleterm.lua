@@ -37,5 +37,18 @@ return {
       end,
       desc = "LazyGit",
     },
+    {
+      "<leader>pd",
+      function()
+        require("toggleterm.terminal").Terminal
+          :new({
+            cmd = "lazydocker",
+            hidden = true,
+            direction = "float",
+          })
+          :toggle()
+      end,
+      desc = "Lazy Docker",
+    },
   },
 }
