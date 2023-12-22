@@ -27,7 +27,7 @@ return {
           },
         },
         position = "left",
-        size = 40,
+        size = 30,
       },
       {
         elements = {
