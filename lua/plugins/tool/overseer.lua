@@ -1,10 +1,10 @@
+local custom = require "custom"
+
+---@type LazyPluginSpec
 return {
   "stevearc/overseer.nvim",
-  config = function()
-    local overseer = require "overseer"
-    local custom = require "custom"
-
-    overseer.setup {
+  opts = function()
+    return {
       strategy = {
         "toggleterm",
         quit_on_exit = "success",
@@ -29,6 +29,11 @@ return {
         },
       },
     }
+  end,
+  config = function(_, opts)
+    local overseer = require "overseer"
+
+    overseer.setup(opts)
 
     local lualine = require "lualine"
     local lualine_cfg = lualine.get_config()
