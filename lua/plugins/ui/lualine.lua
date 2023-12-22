@@ -40,8 +40,19 @@ local function dap()
   return ""
 end
 
+local function osv()
+---@diagnostic disable-next-line: redefined-local
+  local osv = package.loaded["osv"]
+  if osv and osv.is_running() then
+    return "Running as debuggee"
+  end
+  return ""
+end
+
 local function dap_or_lsp()
-  if dap() ~= "" then
+  if osv() ~= "" then
+    return osv()
+  elseif dap() ~= "" then
     return dap()
   else
     return lsp()
