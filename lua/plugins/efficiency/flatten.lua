@@ -1,4 +1,6 @@
 return {
   "willothy/flatten.nvim",
-  opts = true,
+  opts = {
+    nest_if_no_args = true,
+  },
 }
