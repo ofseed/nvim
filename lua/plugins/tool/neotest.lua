@@ -26,5 +26,19 @@ return {
       end,
       desc = "Run",
     },
+    {
+      "<leader>Ts",
+      function()
+        require("neotest").run.stop()
+      end,
+      desc = "Stop",
+    },
+    {
+      "<leader>Ta",
+      function()
+        require("neotest").run.attach()
+      end,
+      desc = "Attach",
+    },
   },
 }
