@@ -11,6 +11,12 @@ return {
         TabLineSel = { fg = color.base, bg = color.overlay1 },
 
         MatchParen = { fg = "NONE", bg = color.surface1, style = { "bold" } },
+
+        -- window_picker overrides
+        WindowPickerStatusLine = { fg = color.surface0, bg = color.red, style = { "bold" } },
+        WindowPickerStatusLineNC = { fg = color.surface0, bg = color.red, style = { "bold" } },
+        WindowPickerWinBar = { fg = color.surface0, bg = color.red, style = { "bold" } },
+        WindowPickerWinBarNC = { fg = color.surface0, bg = color.red, style = { "bold" } },
       }
     end,
     integrations = {
