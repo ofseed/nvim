@@ -3,11 +3,11 @@ return {
   "jbyuki/one-small-step-for-vimkind",
   keys = {
     {
-      "<leader>Dl",
+      "<leader>Dr",
       function()
         require("osv").launch { port = 8086 }
       end,
-      desc = "Launch",
+      desc = "Run",
     },
     {
       "<leader>Ds",
