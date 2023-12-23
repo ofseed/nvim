@@ -1,5 +1,5 @@
 -- Default LSP server settigns
-local M = {}
+local M = vim.lsp.protocol.make_client_capabilities()
 
 local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not ok then
@@ -8,7 +8,7 @@ if not ok then
 end
 
 -- Add additional capabilities supported by nvim-cmp
-M = cmp_nvim_lsp.default_capabilities()
+M = cmp_nvim_lsp.default_capabilities(M)
 
 -- Enable LSP folddingRange capability
 M.textDocument.foldingRange = {
