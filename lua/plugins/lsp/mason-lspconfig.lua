@@ -85,7 +85,7 @@ return {
 
         yamlls = function()
           lspconfig.yamlls.setup {
-            capabilities = capabilities.capabilities,
+            capabilities = capabilities,
             settings = {
               yaml = {
                 keyOrdering = false,
