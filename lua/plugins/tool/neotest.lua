@@ -13,6 +13,9 @@ return {
       adapters = {
         require "neotest-jest",
       },
+      consumers = {
+        overseer = require "neotest.consumers.overseer",
+      },
     }
   end,
   config = function(_, opts)
