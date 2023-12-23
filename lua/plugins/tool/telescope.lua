@@ -35,8 +35,14 @@ return {
     return {
       defaults = {
         mappings = {
-          n = { s = flash },
-          i = { ["<c-s>"] = flash },
+          n = {
+            s = flash,
+            f = require("telescope.actions").to_fuzzy_refine,
+          },
+          i = {
+            ["<c-s>"] = flash,
+            ["<c-f>"] = require("telescope.actions").to_fuzzy_refine,
+          },
         },
         prompt_prefix = " ",
         selection_caret = " ",
