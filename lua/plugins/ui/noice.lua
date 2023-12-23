@@ -24,9 +24,14 @@ return {
           view = "cmdline",
         },
         substitute = {
-          pattern = "^:%s*%%s/",
+          pattern = {
+            "^:%s*%%s/",
+            "^:'<,'>%s*s/",
+            "^:%d+,%d+%s*s/",
+          },
           icon = " /",
           view = "cmdline",
+          lang = "regex",
         },
       },
     },
