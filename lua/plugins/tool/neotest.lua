@@ -43,5 +43,27 @@ return {
       end,
       desc = "Attach",
     },
+
+    {
+      "<leader>Tm",
+      function()
+        require("neotest").summary.toggle()
+      end,
+      desc = "Summary",
+    },
+    {
+      "<leader>Tw",
+      function()
+        require("neotest").watch.toggle()
+      end,
+      desc = "Watch",
+    },
+    {
+      "<leader>To",
+      function()
+        require("neotest").output_panel.toggle()
+      end,
+      desc = "Output panel",
+    },
   },
 }
