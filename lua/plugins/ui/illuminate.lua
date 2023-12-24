@@ -4,13 +4,16 @@ return {
   "RRethy/vim-illuminate",
   cond = not locals.treesitter_dev,
   event = "VeryLazy",
-  config = function()
-    local illuminate = require "illuminate"
-    illuminate.configure {
+  opts = function()
+    return {
       filetypes_denylist = {
         "xxd",
       },
     }
+  end,
+  config = function(_, opts)
+    local illuminate = require "illuminate"
+    illuminate.configure(opts)
 
     -- Highlight on yank
     -- conflict with vim-illuminate
