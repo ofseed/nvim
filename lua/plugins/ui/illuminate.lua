@@ -9,6 +9,7 @@ return {
       filetypes_denylist = {
         "xxd",
       },
+      large_file_cutoff = 10000,
     }
   end,
   config = function(_, opts)
