@@ -1,10 +1,4 @@
-local capabilities = require "capabilities"
-
 local custom = require "custom"
-
-capabilities = vim.tbl_extend("force", capabilities, {
-  offsetEncoding = "utf-8",
-})
 
 return {
   "p00f/clangd_extensions.nvim",
