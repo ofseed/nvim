@@ -68,6 +68,7 @@ return {
 
         pyright = function()
           lspconfig.pyright.setup {
+            cmd = { "delance-langserver", "--stdio" },
             settings = {
               python = {
                 analysis = {
