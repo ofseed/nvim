@@ -2,6 +2,7 @@ return {
   -- When switching between colorschemes,
   -- this plugin cause many highlight groups can not be applied.
   "levouh/tint.nvim",
+  enabled = false,
   event = "VeryLazy",
   config = function()
     require("tint").setup {
