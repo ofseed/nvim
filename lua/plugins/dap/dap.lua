@@ -50,6 +50,7 @@ return {
 
     ---@diagnostic disable-next-line: undefined-field
     require("overseer").patch_dap(true)
+    require("dap.ext.vscode").json_decode = require("overseer.json").decode
   end,
   keys = {
     {
