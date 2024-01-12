@@ -50,6 +50,9 @@ return {
       message = {
         enabled = false,
       },
+      hover = {
+        silent = true,
+      }
     },
     views = {
       cmdline_popup = {
