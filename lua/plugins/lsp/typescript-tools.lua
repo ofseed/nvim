@@ -33,7 +33,15 @@ return {
         "<Cmd>TSToolsRemoveUnused<CR>",
         { buffer = bufnr, desc = "Remove unused variables" }
       )
-      vim.keymap.set("n", "<localleader>f", "<Cmd>TSToolsFixAll<CR>", { buffer = bufnr, desc = "Fix all" })
+      vim.keymap.set("n", "<localleader>F", "<Cmd>TSToolsFixAll<CR>", { buffer = bufnr, desc = "Fix all" })
+
+      vim.keymap.set(
+        "n",
+        "<localleader>fr",
+        "<Cmd>TSToolsFileReferences<CR>",
+        { buffer = bufnr, desc = "File references" }
+      )
+      vim.keymap.set("n", "<localleader>fn", "<Cmd>TSToolsRenameFile<CR>", { buffer = bufnr, desc = "File rename" })
     end,
     settings = {
       tsserver_file_preferences = {
