@@ -18,7 +18,7 @@ local locals = require "locals"
 require("lazy").setup("plugins", {
   root = root,
   dev = {
-    path = "~/Documents/code/nvim",
+    path = "~/neovim/dev",
     patterns = locals.under_development,
     fallback = true,
   },
