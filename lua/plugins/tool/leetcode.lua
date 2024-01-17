@@ -8,5 +8,6 @@ return {
     cn = {
       enabled = true,
     },
+    image_support = true,
   },
 }
