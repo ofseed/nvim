@@ -31,6 +31,7 @@ vim.o.cursorlineopt = "number"
 vim.o.conceallevel = 2
 vim.o.scrolloff = 2
 vim.o.sidescrolloff = 5
+vim.o.smoothscroll = true
 vim.o.pumblend = 12
 vim.o.pumheight = 12
 vim.o.fillchars = "diff:╱"
