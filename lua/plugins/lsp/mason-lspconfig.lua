@@ -21,16 +21,6 @@ return {
         jdtls = function() end,
         tsserver = function() end,
 
-        clangd = function()
-          ---@diagnostic disable-next-line: redefined-local
-          local capabilities = vim.tbl_extend("force", capabilities, {
-            offsetEncoding = "utf-16",
-          })
-          lspconfig.clangd.setup {
-            capabilities = capabilities,
-          }
-        end,
-
         lua_ls = function()
           lspconfig.lua_ls.setup {
             on_attach = function(client, bufnr)

@@ -5,6 +5,17 @@ return {
   lazy = false,
   config = function()
     require("lspconfig.ui.windows").default_options.border = custom.border
+    local lspconfig = require "lspconfig"
+    local capabilities = require "capabilities"
+
+    -- Needed by clangd
+    capabilities = vim.tbl_extend("force", capabilities, {
+      offsetEncoding = "utf-16",
+    })
+
+    lspconfig.clangd.setup {
+      capabilities = capabilities,
+    }
   end,
   keys = {
     {
