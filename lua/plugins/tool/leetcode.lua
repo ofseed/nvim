@@ -8,6 +8,9 @@ return {
     cn = {
       enabled = true,
     },
+    description = {
+      position = "top",
+    },
     image_support = true,
   },
 }
