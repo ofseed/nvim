@@ -30,6 +30,7 @@ return {
         diagnostics_indicator = function(count)
           return "(" .. count .. ")"
         end,
+        show_duplicate_prefix = false,
         sort_by = custom.prefer_tabpage and "tabs" or "insert_after_current",
       },
     }
