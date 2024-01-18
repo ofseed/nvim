@@ -8,6 +8,11 @@ return {
     cn = {
       enabled = true,
     },
+    injector = {
+      ["cpp"] = {
+        before = { "#include <bits/stdc++.h>", "using namespace std;" },
+      },
+    },
     description = {
       position = "top",
     },
