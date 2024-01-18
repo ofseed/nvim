@@ -19,6 +19,29 @@ return {
     console = {
       dir = "col",
     },
+    hooks = {
+      LeetQuestionNew = {
+        -- For question
+        function(q)
+          local bufnr = q.bufnr;
+
+          vim.keymap.set("n", "<localleader>r", "<Cmd>Leet run<CR>", { buffer = bufnr, desc = "LeetCode run" })
+          vim.keymap.set("n", "<localleader>s", "<Cmd>Leet submit<CR>", { buffer = bufnr, desc = "LeetCode submit" })
+          vim.keymap.set(
+            "n",
+            "<localleader>i",
+            "<Cmd>Leet info<CR>",
+            { buffer = bufnr, desc = "LeetCode information" }
+          )
+          vim.keymap.set(
+            "n",
+            "<localleader>d",
+            "<Cmd>Leet desc<CR>",
+            { buffer = bufnr, desc = "LeetCode description" }
+          )
+        end,
+      },
+    },
     image_support = true,
   },
 }
