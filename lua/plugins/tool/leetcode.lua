@@ -16,6 +16,9 @@ return {
     description = {
       position = "top",
     },
+    console = {
+      dir = "col",
+    },
     image_support = true,
   },
 }
