@@ -43,6 +43,15 @@ return {
             { buffer = bufnr, desc = "LeetCode description" }
           )
         end,
+        -- For question description
+        function(q)
+          local winid = q.description.winid
+
+          vim.wo[winid].wrap = true
+          vim.wo[winid].showbreak = "NONE"
+          vim.wo[winid].smoothscroll = true
+          vim.wo[winid].foldcolumn = "0"
+        end
       },
     },
     image_support = true,
