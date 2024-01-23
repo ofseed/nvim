@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "kevinhwang91/nvim-ufo",
   event = "VeryLazy",
@@ -31,10 +32,12 @@ return {
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true
   end,
-  config = function()
-    require("ufo").setup {
-      close_fold_kinds = { "imports" },
-    }
+  opts = {
+    close_fold_kinds = { "imports" },
+  },
+  config = function(_, opts)
+    local ufo = require "ufo"
+    ufo.setup(opts)
 
     vim.api.nvim_create_autocmd("LspAttach", {
       desc = "Setup Ufo `K` with LSP hover",
@@ -42,7 +45,7 @@ return {
         local bufnr = args.buf
 
         vim.keymap.set("n", "K", function()
-          local winid = require("ufo").peekFoldedLinesUnderCursor()
+          local winid = ufo.peekFoldedLinesUnderCursor()
           if not winid then
             vim.lsp.buf.hover()
           end
