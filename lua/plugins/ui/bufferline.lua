@@ -21,6 +21,7 @@ return {
         offsets = {
           { filetype = "neo-tree", text = "Explorer", text_align = "center", saperator = true },
           { filetype = "aerial", text = "Outline", text_align = "center", saperator = true },
+          { filetype = "Outline", text = "Outline", text_align = "center", saperator = true },
           { filetype = "dbui", text = "Database Manager", text_align = "center", saperator = true },
           { filetype = "httpResult", text = "Http Result", text_align = "center", saperator = true },
           { filetype = "OverseerList", text = "Tasks", text_align = "center", saperator = true },

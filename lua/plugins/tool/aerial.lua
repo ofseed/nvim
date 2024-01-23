@@ -232,6 +232,7 @@ local opts = {
 
 return {
   "stevearc/aerial.nvim",
+  enabled = false,
   opts = opts,
   keys = {
     { "<leader>a", "<Cmd>AerialToggle<CR>", desc = "Outline" },
