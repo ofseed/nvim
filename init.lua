@@ -23,6 +23,7 @@ vim.o.wrap = false
 vim.o.linebreak = true
 vim.o.showbreak = ">>"
 vim.o.mouse = "a"
+vim.o.mousemoveevent = true
 vim.o.termguicolors = true
 vim.o.title = true
 vim.o.signcolumn = "yes"
