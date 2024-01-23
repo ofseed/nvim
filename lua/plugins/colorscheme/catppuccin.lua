@@ -6,6 +6,8 @@ return {
     term_colors = true,
     custom_highlights = function(color)
       return {
+        MsgSeparator = { bg = color.mantle },
+
         TabLine = { bg = color.surface0, fg = color.subtext0 },
         TabLineFill = { fg = color.subtext0, bg = color.mantle },
         TabLineSel = { fg = color.base, bg = color.overlay1 },
