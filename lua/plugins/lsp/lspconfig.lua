@@ -8,6 +8,23 @@ return {
     local lspconfig = require "lspconfig"
     local capabilities = require "capabilities"
 
+    lspconfig.pyright.setup {
+      cmd = { "delance-langserver", "--stdio" },
+      settings = {
+        python = {
+          analysis = {
+            typeCheckingMode = "off",
+            inlayHints = {
+              callArgumentNames = "partial",
+              functionReturnTypes = true,
+              pytestParameters = true,
+              variableTypes = true,
+            },
+          },
+        },
+      },
+    }
+
     -- Needed by clangd
     capabilities = vim.tbl_extend("force", capabilities, {
       offsetEncoding = "utf-16",
