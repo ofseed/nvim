@@ -63,6 +63,12 @@ return {
               python = {
                 analysis = {
                   typeCheckingMode = "off",
+                  inlayHints = {
+                    callArgumentNames = "partial",
+                    functionReturnTypes = true,
+                    pytestParameters = true,
+                    variableTypes = true,
+                  },
                 },
               },
             },
