@@ -22,11 +22,11 @@ return {
   },
   keys = {
     {
-      "<leader>n",
+      "<leader>N",
       function()
         require("nvim-navbuddy").open()
       end,
-      desc = "Navigator",
+      desc = "Symbol Navigator",
     },
   },
 }

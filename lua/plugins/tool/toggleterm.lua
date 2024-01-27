@@ -45,6 +45,12 @@ return {
       direction = "float",
       float_opts = float_opts,
     }
+    local lf = require("toggleterm.terminal").Terminal:new {
+      cmd = "lf",
+      hidden = true,
+      direction = "float",
+      float_opts = float_opts,
+    }
 
     return {
       { "<C-\\>" },
@@ -72,6 +78,13 @@ return {
           gh_dash:toggle()
         end,
         desc = "GitHub Dash",
+      },
+      {
+        "<leader>n",
+        function()
+          lf:toggle()
+        end,
+        desc = "File Navigator",
       },
     }
   end,
