@@ -17,7 +17,6 @@ return {
         end,
 
         rust_analyzer = function() end,
-        gopls = function() end,
         jdtls = function() end,
         tsserver = function() end,
 
