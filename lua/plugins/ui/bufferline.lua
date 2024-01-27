@@ -4,7 +4,7 @@ local utils = require "utils"
 local mode = custom.prefer_tabpage and "tab" or "buffer"
 
 return {
-  "akinsho/nvim-bufferline.lua",
+  "akinsho/bufferline.nvim",
   event = "VeryLazy",
   version = "*",
   dependencies = { "nvim-tree/nvim-web-devicons" },

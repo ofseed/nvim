@@ -1,7 +1,7 @@
 local custom = require "custom"
 
 return {
-  "akinsho/nvim-toggleterm.lua",
+  "akinsho/toggleterm.nvim",
   version = "*",
   opts = {
     size = function(term)
