@@ -33,6 +33,8 @@ require("lazy").setup("plugins", {
   },
   performance = {
     rtp = {
+      -- Required in NixOS
+      reset = false,
       disabled_plugins = {
         "gzip",
         -- "matchit",
