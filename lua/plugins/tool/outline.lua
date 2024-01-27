@@ -4,7 +4,7 @@ local custom = require "custom"
 return {
   "hedyhli/outline.nvim",
   keys = {
-    { "<leader>a", "<Cmd>Outline<CR>" },
+    { "<leader>a", "<Cmd>Outline<CR>", desc = "Outline" },
   },
   opts = {
     preview_window = {
