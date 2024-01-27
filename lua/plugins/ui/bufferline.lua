@@ -15,6 +15,11 @@ return {
   config = function()
     require("bufferline").setup {
       options = {
+        hover = {
+          enabled = true,
+          delay = 0,
+          reveal = { "close" },
+        },
         mode = custom.prefer_tabpage and "tabs" or "buffers",
         -- numbers = custom.prefer_tabpage and "ordinal" or "none",
         show_close_icon = false,
