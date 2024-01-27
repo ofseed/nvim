@@ -21,21 +21,21 @@ return {
     },
   },
   keys = function()
+    local float_opts = {
+      border = custom.border,
+    }
+
     local lazygit = require("toggleterm.terminal").Terminal:new {
       cmd = "lazygit",
       hidden = true,
       direction = "float",
-      float_opts = {
-        border = custom.border,
-      },
+      float_opts = float_opts,
     }
     local lazydocker = require("toggleterm.terminal").Terminal:new {
       cmd = "lazydocker",
       hidden = true,
       direction = "float",
-      float_opts = {
-        border = custom.border,
-      },
+      float_opts = float_opts,
     }
     local gh_dash = require("toggleterm.terminal").Terminal:new {
       -- https://github.com/dlvhdr/gh-dash/issues/316
@@ -43,9 +43,7 @@ return {
       cmd = "gh-dash",
       hidden = true,
       direction = "float",
-      float_opts = {
-        border = custom.border,
-      },
+      float_opts = float_opts,
     }
 
     return {
