@@ -27,5 +27,7 @@ return {
       change_priority = 100,
       delete_priority = 100,
     }
+
+    vim.api.nvim_set_hl(0, "ScrollViewHover", { link = "Search" })
   end,
 }
