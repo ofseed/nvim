@@ -9,12 +9,14 @@ local highlight = {
   "RainbowDelimiterCyan",
 }
 
+---@type LazyPluginSpec
 return {
   "lukas-reineke/indent-blankline.nvim",
   event = "VeryLazy",
   opts = {
     indent = {
-      char = "▏" -- Thiner, not suitable when enable scope
+      char = "▏", -- Thiner, not suitable when enable scope
+      tab_char = "▏",
     },
     scope = {
       -- Rely on treesitter, bad performance
@@ -23,9 +25,10 @@ return {
     },
   },
   config = function(_, opts)
-    require("ibl").setup(opts)
-
+    local ibl = require "ibl"
     local hooks = require "ibl.hooks"
+
+    ibl.setup(opts)
     hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
   end,
 }
