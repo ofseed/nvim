@@ -12,6 +12,10 @@ return {
       end
     end,
     open_mapping = [[<c-\>]],
+    on_create = function(t)
+      local bufnr = t.bufnr
+      vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", { buffer = bufnr })
+    end,
     shell = vim.uv.os_uname().sysname == "Windows_NT" and "pwsh" or "fish",
     float_opts = {
       border = custom.border,
@@ -54,7 +58,6 @@ return {
 
     return {
       { "<C-\\>" },
-      { "<Esc>", "<C-\\><C-N>", mode = "t" },
       { "<leader>tt", "<Cmd>ToggleTermToggleAll<CR>", mode = "n", desc = "All Terminal" },
 
       -- External programs
