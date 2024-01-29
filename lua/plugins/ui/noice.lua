@@ -28,9 +28,9 @@ return {
         },
         substitute = {
           pattern = {
-            "^:%s*%%s/",
-            "^:'<,'>%s*s/",
-            "^:%d+,%d+%s*s/",
+            "^:%s*%%s?n?o?m?/",
+            "^:'<,'>%s*s?n?m?/",
+            "^:%d+,%d+%s*s?n?m?/",
           },
           icon = " /",
           view = "cmdline",
