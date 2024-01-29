@@ -27,7 +27,6 @@ vim.o.termguicolors = true
 vim.o.title = true
 vim.o.signcolumn = "yes"
 vim.o.cursorline = true
-vim.o.cursorlineopt = "number"
 vim.o.conceallevel = 2
 vim.o.scrolloff = 2
 vim.o.sidescrolloff = 5
