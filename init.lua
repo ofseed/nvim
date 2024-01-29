@@ -37,7 +37,6 @@ vim.o.pumheight = 12
 vim.o.fillchars = "diff:╱,foldopen:,foldclose:"
 vim.o.textwidth = 80
 vim.o.colorcolumn = "+1"
-vim.o.inccommand = "split"
 vim.o.guifont = "Cascadia Code PL:h14"
 
 -- Keymapping
