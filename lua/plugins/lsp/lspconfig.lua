@@ -43,11 +43,11 @@ return {
       desc = "Reload",
     },
     {
-      "<leader>li",
+      "<leader>lI",
       function()
         vim.cmd.LspInfo()
       end,
-      desc = "Reload",
+      desc = "Info",
     },
   },
 }
