@@ -34,8 +34,7 @@ vim.o.smoothscroll = true
 vim.o.pumblend = 12
 vim.o.pumheight = 12
 vim.o.fillchars = "diff:╱,foldopen:,foldclose:"
-vim.o.textwidth = 80
-vim.o.colorcolumn = "+1"
+vim.o.colorcolumn = "81"
 vim.o.guifont = "Cascadia Code PL:h14"
 
 -- Keymapping
