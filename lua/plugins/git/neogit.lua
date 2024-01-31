@@ -7,9 +7,10 @@ return {
     "sindrets/diffview.nvim",
   },
   opts = {
-    disable_insert_on_commit = false,
+    disable_insert_on_commit = "auto",
     disable_commit_confirmation = true,
     disable_builtin_notifications = true,
+    graph_style = "unicode",
     kind = custom.prefer_tabpage and "tab" or "split",
     integrations = {
       diffview = true,
