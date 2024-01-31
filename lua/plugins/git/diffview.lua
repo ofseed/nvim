@@ -21,6 +21,11 @@ return {
           width = math.floor(vim.go.columns * 0.2) > 25 and math.floor(vim.go.columns * 0.2) or 25,
         },
       },
+      hooks = {
+        diff_buf_win_enter = function(_, winid)
+          vim.wo[winid].wrap = false
+        end,
+      },
       keymaps = {
         view = {
           { "n", "q", actions.close, { desc = "Close diffview" } },
