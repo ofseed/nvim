@@ -28,6 +28,7 @@ return {
           { filetype = "aerial", text = "Outline", text_align = "center", saperator = true },
           { filetype = "Outline", text = "Outline", text_align = "center", saperator = true },
           { filetype = "dbui", text = "Database Manager", text_align = "center", saperator = true },
+          { filetype = "DiffviewFiles", text = "Source Control", text_align = "center", separator = true },
           { filetype = "httpResult", text = "Http Result", text_align = "center", saperator = true },
           { filetype = "OverseerList", text = "Tasks", text_align = "center", saperator = true },
           { filetype = "flutterToolsOutline", text = "Flutter Outline", text_align = "center", saperator = true },
