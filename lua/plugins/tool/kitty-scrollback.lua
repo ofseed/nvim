@@ -5,5 +5,36 @@ return {
     "KittyScrollbackCheckHealth",
   },
   event = { "User KittyScrollbackLaunch" },
-  opts = {},
+  opts = {
+    {
+      paste_window = {
+        winopts_overrides = function(winopts)
+          winopts.border = {
+            "╭",
+            "─",
+            "╮",
+            "│",
+            "┤",
+            "─",
+            "├",
+            "│",
+          }
+          return winopts
+        end,
+        footer_winopts_overrides = function(winopts)
+          winopts.border = {
+            "│",
+            " ",
+            "│",
+            "│",
+            "╯",
+            "─",
+            "╰",
+            "│",
+          }
+          return winopts
+        end,
+      },
+    },
+  },
 }
