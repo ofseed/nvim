@@ -1,12 +1,7 @@
 return {
   "ldelossa/litee-calltree.nvim",
-  enabled = false,
   event = { "LspAttach" },
-  dependencies = {
-    "ldelossa/litee.nvim",
-    main = "litee.lib",
-    opts = {},
-  },
+  dependencies = { "ldelossa/litee.nvim" },
   main = "litee.calltree",
   opts = {},
 }
