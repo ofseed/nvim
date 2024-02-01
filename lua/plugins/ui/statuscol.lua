@@ -29,7 +29,7 @@ return {
             function(args)
               args.fold.close = ""
               args.fold.open = ""
-              args.fold.sep = " "
+              args.fold.sep = "▕"
               return builtin.foldfunc(args)
             end,
           },
