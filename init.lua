@@ -33,7 +33,7 @@ vim.o.sidescrolloff = 5
 vim.o.smoothscroll = true
 vim.o.pumblend = 12
 vim.o.pumheight = 12
-vim.o.fillchars = "diff:╱,foldopen:,foldclose:"
+vim.o.fillchars = "diff:╱,foldopen:,foldclose:,foldsep:▕"
 vim.o.colorcolumn = "81"
 vim.o.guifont = "Cascadia Code PL:h14"
 
