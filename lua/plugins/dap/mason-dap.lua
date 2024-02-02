@@ -27,6 +27,7 @@ return {
           require("mason-nvim-dap").default_setup(config)
         end,
         python = function() end,
+        delve = function() end,
       },
     }
   end,
