@@ -7,11 +7,13 @@ return {
 
     -- Adapters
     "nvim-neotest/neotest-jest",
+    "nvim-neotest/neotest-go",
   },
   opts = function()
     return {
       adapters = {
         require "neotest-jest",
+        require "neotest-go",
       },
       consumers = {
         overseer = require "neotest.consumers.overseer",
