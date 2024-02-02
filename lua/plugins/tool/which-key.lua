@@ -78,6 +78,7 @@ return {
       ["["] = { name = "+prev" },
       ["]"] = { name = "+next" },
       ["g"] = { name = "+goto" },
+      ["<C-g>"] = { name = "+gpt" },
       ["<leader>"] = {
         name = "+<leader>",
         ["<leader>"] = { name = "+<localleader>" },
