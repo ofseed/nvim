@@ -32,8 +32,8 @@ return {
     hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 
     -- Hide first level indent, using `foldsep` to show it
-    hooks.register(hooks.type.VIRTUAL_TEXT, function(_, _, _, virt_text)
-      if virt_text[1] and virt_text[1][1] == opts.indent.char then
+    hooks.register(hooks.type.VIRTUAL_TEXT, function(_, _, row, virt_text)
+      if virt_text[1] and virt_text[1][1] == opts.indent.char and vim.fn.foldlevel(row) ~= 0 then
         virt_text[1] = { " ", { "@ibl.whitespace.char.1" } }
       end
       return virt_text
