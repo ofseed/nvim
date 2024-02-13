@@ -36,6 +36,7 @@ vim.opt.pumheight = 12
 vim.opt.fillchars = { diff = "╱", foldopen = "", foldclose = "", foldsep = "▕" }
 vim.opt.colorcolumn = "81"
 vim.opt.guifont = "Cascadia Code PL:h14"
+vim.opt.shortmess:append "I"
 
 -- Keymapping
 vim.g.mapleader = " "
