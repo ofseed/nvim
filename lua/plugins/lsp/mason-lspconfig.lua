@@ -46,6 +46,28 @@ return {
           }
         end,
 
+        gopls = function()
+          lspconfig.gopls.setup {
+            on_attach = function(client, bufnr)
+              client.server_capabilities.documentFormattingProvider = false
+            end,
+            capabilities = capabilities,
+            settings = {
+              gopls = {
+                hints = {
+                  assignVariableTypes = true,
+                  compositeLiteralFields = true,
+                  compositeLiteralTypes = true,
+                  constantValues = true,
+                  functionTypeParameters = true,
+                  parameterNames = true,
+                  rangeVariableTypes = true,
+                },
+              },
+            },
+          }
+        end,
+
         volar = function()
           lspconfig.volar.setup {
             on_attach = function(client, bufnr)
