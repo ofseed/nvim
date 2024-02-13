@@ -8,6 +8,7 @@ return {
 
     gitsigns.setup {
       word_diff = true,
+      attach_to_untracked = true,
       preview_config = {
         border = custom.border,
       },
