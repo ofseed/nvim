@@ -38,6 +38,7 @@ return {
           return "(" .. count .. ")"
         end,
         show_duplicate_prefix = false,
+        always_show_bufferline = vim.o.showtabline == 2,
         sort_by = custom.prefer_tabpage and "tabs" or "insert_after_current",
       },
     }
