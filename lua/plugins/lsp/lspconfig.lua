@@ -1,8 +1,12 @@
 local custom = require "custom"
 
+---@type LazyPluginSpec
 return {
   "neovim/nvim-lspconfig",
   lazy = false,
+  dependencies = {
+    "folke/neoconf.nvim",
+  },
   config = function()
     require("lspconfig.ui.windows").default_options.border = custom.border
     local lspconfig = require "lspconfig"
