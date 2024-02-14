@@ -26,6 +26,9 @@ return {
               client.server_capabilities.documentFormattingProvider = false
             end,
             capabilities = capabilities,
+            before_init = function(...)
+              require("neodev.lsp").before_init(...)
+            end,
             settings = {
               Lua = {
                 runtime = {
