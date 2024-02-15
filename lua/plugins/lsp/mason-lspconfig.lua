@@ -2,7 +2,7 @@
 return {
   "williamboman/mason-lspconfig.nvim",
   event = {
-    "User FiletypePre",
+    "Filetype",
   },
   dependencies = {
     "williamboman/mason.nvim",
