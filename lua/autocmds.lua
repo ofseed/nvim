@@ -28,6 +28,27 @@ vim.api.nvim_create_autocmd({
   end,
 })
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+  --- A specific group easy to override
+  group = vim.api.nvim_create_augroup("highlight_on_yank", {}),
+  desc = "Briefly highlight yanked text",
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
+-- Filetype specific
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
+  pattern = "go",
+  desc = "Set indent for go",
+  callback = function()
+    vim.bo.tabstop = 4
+    vim.bo.shiftwidth = 4
+    vim.bo.expandtab = false
+  end,
+})
+
 if locals.treesitter_dev then
   vim.api.nvim_create_autocmd("FileType", {
     group = group,

@@ -48,26 +48,6 @@ vim.keymap.set("c", "<C-n>", "<Down>")
 ---@diagnostic disable-next-line: param-type-mismatch
 vim.env.LAZYROOT = vim.fs.joinpath(vim.fn.stdpath "data", "lazy")
 
--- Auto commands
-vim.api.nvim_create_autocmd("TextYankPost", {
-  group = vim.api.nvim_create_augroup("highlight_on_yank", {}),
-  desc = "Briefly highlight yanked text",
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
--- Filetype specific
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "go",
-  desc = "Set indent for go",
-  callback = function()
-    vim.bo.tabstop = 4
-    vim.bo.shiftwidth = 4
-    vim.bo.expandtab = false
-  end,
-})
-
 vim.cmd [[aunmenu PopUp.How-to\ disable\ mouse]]
 vim.cmd [[aunmenu PopUp.-1-]]
 
