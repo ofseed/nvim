@@ -1,5 +1,4 @@
 local custom = require "custom"
-local utils = require "utils"
 
 -- Set diagnostic options
 vim.diagnostic.config {
