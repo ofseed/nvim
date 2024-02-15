@@ -70,4 +70,6 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.cmd [[aunmenu PopUp.How-to\ disable\ mouse]]
 vim.cmd [[aunmenu PopUp.-1-]]
+
+vim.loader.enable()
 require "init"
