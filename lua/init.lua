@@ -1,5 +1,6 @@
 local custom = require "custom"
 
+require "options"
 require "lsp"
 require "keymaps"
 require "autocmds"
