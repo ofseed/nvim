@@ -2,6 +2,10 @@ local custom = require "custom"
 
 return {
   "Bekaboo/dropbar.nvim",
+  event = {
+    "BufRead",
+    "BufNewFile",
+  },
   opts = {
     icons = {
       kinds = {
