@@ -2,6 +2,18 @@ local locals = require "locals"
 
 local group = vim.api.nvim_create_augroup("ofseed", {})
 
+-- High-level user events defined for lazy-loading events
+vim.api.nvim_create_autocmd({
+  "BufRead",
+  "BufNewFile",
+  "StdinReadPost",
+}, {
+  group = group,
+  callback = function()
+    vim.cmd.doautocmd "User FiletypePre"
+  end,
+})
+
 vim.api.nvim_create_autocmd({
   "FocusGained",
   "BufEnter",

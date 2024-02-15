@@ -3,7 +3,9 @@ local custom = require "custom"
 ---@type LazyPluginSpec
 return {
   "neovim/nvim-lspconfig",
-  lazy = false,
+  event = {
+    "User FiletypePre",
+  },
   dependencies = {
     "folke/neoconf.nvim",
   },

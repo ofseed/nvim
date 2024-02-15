@@ -1,5 +1,9 @@
+---@type LazyPluginSpec
 return {
   "williamboman/mason-lspconfig.nvim",
+  event = {
+    "User FiletypePre",
+  },
   dependencies = {
     "williamboman/mason.nvim",
     "neovim/nvim-lspconfig",
