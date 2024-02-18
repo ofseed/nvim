@@ -7,6 +7,7 @@ return {
 
     return {
       bt_ignore = { "nofile", "terminal" },
+      ft_ignore = { "NeogitStatus" },
       segments = {
         {
           sign = {
