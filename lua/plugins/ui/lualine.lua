@@ -20,10 +20,10 @@ local function lsp()
       return client.name ~= "copilot"
     end)
     :map(function(client)
-      return client.name
+      return " " .. client.name
     end)
     :totable()
-  local info = table.concat(clients, ", ")
+  local info = table.concat(clients, " ")
   if info == "" then
     return "No attached LSP server"
   else
