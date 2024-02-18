@@ -86,6 +86,9 @@ local opts = {
           modified = " ",
           removed = " ",
         },
+        source = function()
+          return vim.b.gitsigns_status_dict
+        end,
       },
       "diagnostics",
     },
