@@ -5,6 +5,12 @@ return {
   event = "VeryLazy",
   init = function()
     vim.o.cmdheight = 0
+
+    -- Make sure to load noice when notify is called
+    ---@diagnostic disable-next-line: duplicate-set-field
+    vim.notify = function(...)
+      require("noice").notify(...)
+    end
   end,
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
