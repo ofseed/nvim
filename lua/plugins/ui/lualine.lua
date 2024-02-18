@@ -41,7 +41,7 @@ local function dap()
 end
 
 local function osv()
----@diagnostic disable-next-line: redefined-local
+  ---@diagnostic disable-next-line: redefined-local
   local osv = package.loaded["osv"]
   if osv and osv.is_running() then
     return "Running as debuggee"
@@ -74,6 +74,21 @@ end
 
 local opts = {
   sections = {
+    lualine_b = {
+      {
+        "branch",
+        icon = "",
+      },
+      {
+        "diff",
+        symbols = {
+          added = " ",
+          modified = " ",
+          removed = " ",
+        },
+      },
+      "diagnostics",
+    },
     lualine_c = {
       dap_or_lsp,
     },
