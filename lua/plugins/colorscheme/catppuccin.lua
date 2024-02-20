@@ -14,6 +14,12 @@ return {
 
         MatchParen = { fg = "NONE", bg = color.surface1, style = { "bold" } },
 
+        -- telescope overrides
+        TelescopeTitle = { fg = color.base, bg = color.blue },
+        TelescopePreviewTitle = { fg = color.base, bg = color.green },
+        TelescopePromptTitle = { fg = color.base, bg = color.red },
+        TelescopeResultsTitle = { fg = color.mantle, bg = color.lavender },
+
         -- window_picker overrides
         WindowPickerStatusLine = { fg = color.surface0, bg = color.red, style = { "bold" } },
         WindowPickerStatusLineNC = { fg = color.surface0, bg = color.red, style = { "bold" } },
