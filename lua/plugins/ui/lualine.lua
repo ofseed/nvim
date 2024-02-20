@@ -90,7 +90,6 @@ local opts = {
           return vim.b.gitsigns_status_dict
         end,
       },
-      "diagnostics",
     },
     lualine_c = {
       dap_or_lsp,
@@ -112,6 +111,9 @@ local opts = {
       indent,
       "encoding",
       "fileformat",
+    },
+    lualine_y = {
+      "diagnostics",
     },
   },
   options = {
