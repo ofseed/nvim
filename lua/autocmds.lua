@@ -2,6 +2,24 @@ local locals = require "locals"
 
 local group = vim.api.nvim_create_augroup("ofseed", {})
 
+---@param scope "global" | "local"
+local function set_breakindentopt(scope)
+  local indent = vim.o.tabstop
+  if vim.o.expandtab then
+    indent = vim.o.shiftwidth
+  end
+  vim.api.nvim_set_option_value("breakindentopt", "shift:" .. indent, { scope = scope })
+end
+set_breakindentopt "global"
+vim.api.nvim_create_autocmd({ "OptionSet" }, {
+  group = group,
+  pattern = { "shiftwidth", "tabstop" },
+  desc = "Set 'breakindentopt' based on indent settings",
+  callback = function()
+    set_breakindentopt(vim.v.option_type)
+  end,
+})
+
 vim.api.nvim_create_autocmd({
   "FocusGained",
   "BufEnter",
