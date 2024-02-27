@@ -31,11 +31,10 @@ return {
       },
       {
         elements = {
-          -- dap-repl is managed by nvim-dap
-          -- {
-          --   id = "repl",
-          --   size = 0.5,
-          -- },
+          {
+            id = "repl",
+            size = 0.5,
+          },
           {
             id = "console",
             size = 0.5,
