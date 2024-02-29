@@ -84,6 +84,7 @@ return {
         ["<leader>"] = { name = "+<localleader>" },
         ["f"] = {
           name = "+find",
+          ["g"] = { name = "+git" },
           ["d"] = { name = "+debug" },
         },
         ["g"] = {

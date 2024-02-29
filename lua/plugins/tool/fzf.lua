@@ -79,7 +79,7 @@ return {
       desc = "Jumplist",
     },
     {
-      "<leader>fg",
+      "<leader>fw",
       function()
         require("fzf-lua").live_grep_native()
       end,
@@ -92,6 +92,31 @@ return {
       end,
       desc = "Notify",
     },
+
+    -- git
+    {
+      "<leader>fgc",
+      function()
+        require("fzf-lua").git_commits()
+      end,
+      desc = "Commits",
+    },
+    {
+      "<leader>fgb",
+      function()
+        require("fzf-lua").git_branchs()
+      end,
+      desc = "Branchs",
+    },
+    {
+      "<leader>fgb",
+      function()
+        require("fzf-lua").git_tags()
+      end,
+      desc = "Tags",
+    },
+
+    -- dap
     {
       "<leader>fde",
       function()

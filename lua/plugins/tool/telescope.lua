@@ -159,7 +159,7 @@ return {
       desc = "Jumplist",
     },
     {
-      "<leader>fg",
+      "<leader>fw",
       function()
         require("telescope").extensions.live_grep_args.live_grep_args()
       end,
