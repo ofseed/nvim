@@ -9,7 +9,9 @@ return {
       border = custom.border,
     },
     lsp = {
-      symbols = custom.icons.kind,
+      symbols = {
+        symbol_icons = custom.icons.kind,
+      },
     },
   },
   keys = {
