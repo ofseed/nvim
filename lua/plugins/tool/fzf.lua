@@ -5,11 +5,19 @@ return {
   "ibhagwan/fzf-lua",
   cmd = { "FzfLua" },
   opts = {
+    hls = {
+      normal = "NormalFloat",
+      border = "FloatBorder",
+      title = "FloatTitle",
+      preview_normal = "NormalFloat",
+      preview_border = "FloatBorder",
+      preview_title = "FloatTitle",
+    },
     fzf_colors = {
       ["fg"] = { "fg", "CursorLine" },
-      ["bg"] = { "bg", "Normal" },
+      ["bg"] = { "bg", "NormalFloat" },
       ["hl"] = { "fg", "Statement" },
-      ["fg+"] = { "fg", "Normal" },
+      ["fg+"] = { "fg", "NormalFloat" },
       ["bg+"] = { "bg", "CursorLine" },
       ["hl+"] = { "fg", "Statement" },
       ["info"] = { "fg", "PreProc" },
@@ -18,7 +26,7 @@ return {
       ["marker"] = { "fg", "Keyword" },
       ["spinner"] = { "fg", "Label" },
       ["header"] = { "fg", "Comment" },
-      ["gutter"] = { "bg", "Normal" },
+      ["gutter"] = { "bg", "NormalFloat" },
     },
     winopts = {
       border = custom.border,
