@@ -3,7 +3,6 @@ local custom = require "custom"
 ---@type LazyPluginSpec
 return {
   "ibhagwan/fzf-lua",
-  enabled = false,
   cmd = { "FzfLua" },
   opts = {
     winopts = {
