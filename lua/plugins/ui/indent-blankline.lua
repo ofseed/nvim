@@ -1,3 +1,5 @@
+local utils = require "utils"
+
 -- Highlight group from rainbow-delimiters
 local highlight = {
   "RainbowDelimiterRed",
@@ -32,10 +34,14 @@ return {
     hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 
     -- Hide first level indent, using `foldsep` to show it
-    hooks.register(hooks.type.VIRTUAL_TEXT, function(_, _, row, virt_text)
-      if virt_text[1] and virt_text[1][1] == opts.indent.char and vim.fn.foldlevel(row) ~= 0 then
+    hooks.register(hooks.type.VIRTUAL_TEXT, function(_, bufnr, row, virt_text)
+      local win = vim.fn.bufwinid(bufnr)
+      local foldinfo = utils.fold_info(win, row)
+
+      if virt_text[1] and virt_text[1][1] == opts.indent.char and foldinfo and foldinfo.level ~= 0 then
         virt_text[1] = { " ", { "@ibl.whitespace.char.1" } }
       end
+
       return virt_text
     end)
   end,
