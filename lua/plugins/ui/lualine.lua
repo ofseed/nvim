@@ -114,6 +114,7 @@ local opts = {
     },
     lualine_y = {
       "diagnostics",
+      "progress",
     },
   },
   options = {
