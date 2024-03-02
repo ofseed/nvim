@@ -11,6 +11,11 @@ return {
       builtin = {
         border = custom.border,
       },
+      fzf_lua = {
+        winopts = {
+          height = 0.4,
+        },
+      },
     },
   },
 }
