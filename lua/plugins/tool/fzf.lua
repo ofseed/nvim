@@ -132,7 +132,7 @@ return {
       desc = "Branchs",
     },
     {
-      "<leader>fgb",
+      "<leader>fgt",
       function()
         require("fzf-lua").git_tags()
       end,
