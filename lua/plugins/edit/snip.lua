@@ -48,6 +48,14 @@ return {
           })
         end,
 
+        insert_same_with_last_path = function(args)
+          local text = args[1][1]
+          text = text:match "([^/]+)$"
+          return sn(nil, {
+            i(1, text),
+          })
+        end,
+
         -- Same with text node but append text, used for function nodes
         text_same_with_and_append = function(args, _, user_arg1)
           return args[1][1] .. user_arg1

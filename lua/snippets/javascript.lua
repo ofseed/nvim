@@ -175,7 +175,7 @@ local importdefault = s(
     <ends>
     ]],
     {
-      item = d(2, insert_same_with, 1),
+      item = d(2, insert_same_with_last_path, 1),
       module = i(1),
       ends = i(0),
     }

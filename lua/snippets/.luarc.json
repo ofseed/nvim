@@ -34,6 +34,7 @@
     "ms",
     "text_same_with",
     "insert_same_with",
+    "insert_same_with_last_path",
     "text_same_with_and_append",
     "insert_same_with_and_append"
   ]
