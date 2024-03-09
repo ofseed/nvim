@@ -1,5 +1,15 @@
 return {
   "chrishrb/gx.nvim",
-  keys = { "gx" },
+  keys = {
+    {
+      "gx",
+      function()
+        vim.cmd.Browse()
+      end,
+    },
+  },
+  cmd = {
+    "Browse",
+  },
   opts = {},
 }
