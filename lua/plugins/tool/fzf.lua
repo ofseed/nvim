@@ -95,6 +95,13 @@ return {
       desc = "Colorscheme",
     },
     {
+      "<leader>fH",
+      function()
+        require("fzf-lua").highlights()
+      end,
+      desc = "Highlights",
+    },
+    {
       "<leader>fj",
       function()
         require("fzf-lua").jump()
