@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "ojroques/nvim-osc52",
-  lazy = true,
+  enabled = false,
   init = function()
     local function copy(lines, _)
       require("osc52").copy(table.concat(lines, "\n"))
