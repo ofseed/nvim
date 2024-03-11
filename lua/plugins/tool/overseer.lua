@@ -8,6 +8,7 @@ return {
       strategy = {
         "toggleterm",
         quit_on_exit = "success",
+        open_on_start = false,
       },
       dap = false,
       form = {
