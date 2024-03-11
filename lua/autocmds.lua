@@ -46,6 +46,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Filetype specific
 vim.api.nvim_create_autocmd("FileType", {
   group = group,
+  pattern = "qf",
+  desc = "Disallow change buf for quickfix",
+  callback = function()
+    vim.wo.winfixbuf = true
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
   pattern = "go",
   desc = "Set indent for go",
   callback = function()
