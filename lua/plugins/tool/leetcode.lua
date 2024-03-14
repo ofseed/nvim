@@ -20,7 +20,7 @@ return {
       dir = "col",
     },
     hooks = {
-      LeetQuestionNew = {
+      ["question_enter"] = {
         -- For question
         function(q)
           local bufnr = q.bufnr
