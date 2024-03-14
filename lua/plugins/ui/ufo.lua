@@ -33,7 +33,9 @@ return {
     vim.o.foldenable = true
   end,
   opts = {
-    close_fold_kinds = { "imports" },
+    close_fold_kinds_for_ft = {
+      default = { "imports" },
+    },
   },
   config = function(_, opts)
     local ufo = require "ufo"
