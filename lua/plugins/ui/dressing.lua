@@ -8,6 +8,7 @@ return {
       border = custom.border,
     },
     select = {
+      backend = { "fzf_lua", "telescope", "fzf", "builtin", "nui" },
       builtin = {
         border = custom.border,
       },
