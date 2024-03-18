@@ -12,10 +12,6 @@ return {
       end
     end,
     open_mapping = [[<c-\>]],
-    on_create = function(t)
-      local bufnr = t.bufnr
-      vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", { buffer = bufnr })
-    end,
     shell = vim.uv.os_uname().sysname == "Windows_NT" and "pwsh" or "fish",
     float_opts = {
       border = custom.border,
@@ -28,18 +24,24 @@ return {
     local float_opts = {
       border = custom.border,
     }
+    local on_create = function(t)
+      local bufnr = t.bufnr
+      vim.keymap.set("t", "<Esc>", "<Nop>", { buffer = bufnr })
+    end
 
     local lazygit = require("toggleterm.terminal").Terminal:new {
       cmd = "lazygit",
       hidden = true,
       direction = "float",
       float_opts = float_opts,
+      on_create = on_create,
     }
     local lazydocker = require("toggleterm.terminal").Terminal:new {
       cmd = "lazydocker",
       hidden = true,
       direction = "float",
       float_opts = float_opts,
+      on_create = on_create,
     }
     local gh_dash = require("toggleterm.terminal").Terminal:new {
       -- https://github.com/dlvhdr/gh-dash/issues/316
@@ -48,12 +50,14 @@ return {
       hidden = true,
       direction = "float",
       float_opts = float_opts,
+      on_create = on_create,
     }
     local lf = require("toggleterm.terminal").Terminal:new {
       cmd = "lf",
       hidden = true,
       direction = "float",
       float_opts = float_opts,
+      on_create = on_create,
     }
 
     return {
