@@ -11,10 +11,6 @@ return {
       },
     }
   end,
-  init = function()
-    package.path = package.path .. ";" .. vim.fn.expand "$HOME" .. "/.nix-profile/share/lua/5.1/?/init.lua;"
-    package.path = package.path .. ";" .. vim.fn.expand "$HOME" .. "/.nix-profile/share/lua/5.1/?.lua;"
-  end,
   opts = {
     hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp" },
   },
