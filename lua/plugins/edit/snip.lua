@@ -1,8 +1,18 @@
+---@type LazyPluginSpec
 return {
   "L3MON4D3/LuaSnip",
   event = {
     "InsertEnter",
     "CmdlineEnter",
+  },
+  keys = {
+    {
+      "<C-l>",
+      function()
+        require("luasnip").expand()
+      end,
+      mode = "i",
+    },
   },
   config = function()
     local snip = require "luasnip"

@@ -58,7 +58,7 @@ return {
           if cmp.visible() then
             cmp.select_next_item()
           elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
+            luasnip.jump(1)
           -- elseif has_words_before() then
           --   cmp.complete()
           else
