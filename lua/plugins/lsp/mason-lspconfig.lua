@@ -7,7 +7,9 @@ return {
   dependencies = {
     "williamboman/mason.nvim",
     "neovim/nvim-lspconfig",
+
     "b0o/SchemaStore.nvim",
+    "nanotee/sqls.nvim",
   },
   config = function()
     local lspconfig = require "lspconfig"
@@ -115,6 +117,14 @@ return {
                 schemas = require("schemastore").yaml.schemas(),
               },
             },
+          }
+        end,
+
+        sqls = function()
+          lspconfig.sqls.setup {
+            on_attach = function(client, bufnr)
+              require("sqls").on_attach(client, bufnr)
+            end,
           }
         end,
       },
