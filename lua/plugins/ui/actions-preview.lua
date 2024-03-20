@@ -7,7 +7,7 @@ return {
       callback = function(args)
         local bufnr = args.buf
 
-        vim.keymap.set("n", "<leader>la", function()
+        vim.keymap.set({ "n", "v" }, "<leader>la", function()
           require("actions-preview").code_actions()
         end, { buffer = bufnr, desc = "LSP: Code action" })
       end,
