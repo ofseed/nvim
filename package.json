@@ -1,0 +1,11 @@
+{
+  "name": "@ofseed/nvim",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "go",
+        "path": "./snippets/go.jsonc"
+      }
+    ]
+  }
+}
