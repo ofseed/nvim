@@ -37,7 +37,7 @@ return {
 
     overseer.setup(opts)
 
-    do
+    do -- For lazy loading lualine component
       local success, lualine = pcall(require, "lualine")
       if not success then
         return
@@ -49,6 +49,29 @@ return {
         end
       end
       lualine.setup(lualine_cfg)
+    end
+
+    local templates = {
+      {
+        name = "C++ build single file",
+        builder = function()
+          return {
+            cmd = { "c++" },
+            args = {
+              "-g",
+              vim.fn.expand "%:p",
+              "-o",
+              vim.fn.expand "%:p:t:r",
+            },
+          }
+        end,
+        condition = {
+          filetype = { "cpp" },
+        },
+      },
+    }
+    for _, template in ipairs(templates) do
+      overseer.register_template(template)
     end
   end,
   keys = {
