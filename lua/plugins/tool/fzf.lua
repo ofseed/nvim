@@ -115,13 +115,13 @@ return {
       end,
       desc = "Live grep",
     },
-    {
-      "<leader>fn",
-      function()
-        -- To be implement
-      end,
-      desc = "Notify",
-    },
+    -- {
+    --   "<leader>fn",
+    --   function()
+    --     -- To be implement
+    --   end,
+    --   desc = "Notify",
+    -- },
 
     -- git
     {

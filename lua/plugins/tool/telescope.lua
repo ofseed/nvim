@@ -1,19 +1,13 @@
 ---@type LazyPluginSpec
 return {
   "nvim-telescope/telescope.nvim",
-  enabled = false,
   branch = "0.1.x",
   dependencies = {
     { "nvim-lua/popup.nvim" },
     { "nvim-lua/plenary.nvim" },
     { "nvim-telescope/telescope-fzy-native.nvim" },
-    { "nvim-telescope/telescope-live-grep-args.nvim" },
-    { "nvim-telescope/telescope-dap.nvim" },
-    { "benfowler/telescope-luasnip.nvim" },
   },
   opts = function()
-    local lga_actions = require "telescope-live-grep-args.actions"
-
     local function flash(prompt_bufnr)
       require("flash").jump {
         pattern = "^",
@@ -62,11 +56,6 @@ return {
       extensions = {
         live_grep_args = {
           theme = "dropdown",
-          mappings = {
-            i = {
-              ["<C-k>"] = lga_actions.quote_prompt(),
-            },
-          },
         },
       },
     }
@@ -77,11 +66,8 @@ return {
     telescope.setup(opts)
 
     local extensions = {
-      "dap",
       "fzy_native",
       "notify",
-      "live_grep_args",
-      "luasnip",
     }
 
     for _, ext in ipairs(extensions) do
@@ -96,116 +82,11 @@ return {
   },
   keys = {
     {
-      "<leader>ff",
-      function()
-        require("telescope.builtin").find_files()
-      end,
-      desc = "Files",
-    },
-    {
-      "<leader>fb",
-      function()
-        require("telescope.builtin").buffers()
-      end,
-      desc = "Buffers",
-    },
-    {
-      "<leader>f?",
-      function()
-        require("telescope.builtin").help_tags()
-      end,
-      desc = "Help tags",
-    },
-    {
-      "<leader>fh",
-      function()
-        require("telescope.builtin").oldfiles()
-      end,
-      desc = "Old files",
-    },
-    {
-      "<leader>fm",
-      function()
-        require("telescope.builtin").marks()
-      end,
-      desc = "Marks",
-    },
-    {
-      "<leader>fs",
-      function()
-        require("telescope.builtin").lsp_document_symbols()
-      end,
-      desc = "Symbols",
-    },
-    {
-      "<leader>fS",
-      function()
-        require("telescope.builtin").lsp_workspace_symbols()
-      end,
-      desc = "Symbols",
-    },
-    {
-      "<leader>fc",
-      function()
-        require("telescope.builtin").colorscheme()
-      end,
-      desc = "Colorscheme",
-    },
-    {
-      "<leader>fj",
-      function()
-        require("telescope.builtin").jumplist()
-      end,
-      desc = "Jumplist",
-    },
-    {
-      "<leader>fw",
-      function()
-        require("telescope").extensions.live_grep_args.live_grep_args()
-      end,
-      desc = "Live grep",
-    },
-    {
       "<leader>fn",
       function()
         require("telescope").extensions.notify.notify()
       end,
       desc = "Notify",
-    },
-    {
-      "<leader>fde",
-      function()
-        require("telescope").extensions.dap.commands()
-      end,
-      desc = "Commands",
-    },
-    {
-      "<leader>fdc",
-      function()
-        require("telescope").extensions.dap.configurations()
-      end,
-      desc = "Configurations",
-    },
-    {
-      "<leader>fdb",
-      function()
-        require("telescope").extensions.dap.list_breakpoints()
-      end,
-      desc = "Breakpoints",
-    },
-    {
-      "<leader>fdv",
-      function()
-        require("telescope").extensions.dap.variables()
-      end,
-      desc = "Variables",
-    },
-    {
-      "<leader>fdf",
-      function()
-        require("telescope").extensions.dap.frames()
-      end,
-      desc = "Frames",
     },
   },
 }
