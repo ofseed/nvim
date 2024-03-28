@@ -6,6 +6,11 @@ return {
     floating = {
       border = custom.border,
     },
+    icons = {
+      collapsed = "",
+      current_frame = "",
+      expanded = "",
+    },
     layouts = {
       {
         elements = {
@@ -43,6 +48,14 @@ return {
         position = "bottom",
         size = 10,
       },
+    },
+    mappings = {
+      edit = "i",
+      expand = { "o", "<LeftMouse>" },
+      open = { "<CR>", "<2-LeftMouse>" },
+      remove = "d",
+      repl = "r",
+      toggle = "t",
     },
   },
   keys = {
