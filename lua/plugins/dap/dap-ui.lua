@@ -41,7 +41,7 @@ return {
           },
         },
         position = "bottom",
-        size = 15,
+        size = 10,
       },
     },
   },
@@ -49,23 +49,9 @@ return {
     {
       "<leader>du",
       function()
-        require("dapui").toggle { layout = 1 }
+        require("dapui").toggle()
       end,
-      desc = "Toggle UI sidebar",
-    },
-    {
-      "<leader>dU",
-      function()
-        require("dapui").toggle {}
-      end,
-      desc = "Toggle UI",
-    },
-    {
-      "<leader>dc",
-      function()
-        require("dapui").toggle { layout = 2 }
-      end,
-      desc = "Toggle console",
+      desc = "Toggle full UI",
     },
     {
       "<M-k>",
