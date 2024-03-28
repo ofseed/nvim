@@ -33,6 +33,23 @@ return {
       },
     }
 
+    dap.adapters.gdb = {
+      type = "executable",
+      command = "gdb",
+      args = { "-i", "dap" },
+    }
+    -- dap.configurations.cpp = {
+    --   {
+    --     name = "Launch",
+    --     type = "gdb",
+    --     request = "launch",
+    --     program = "${fileBasenameNoExtension}",
+    --     cwd = "${workspaceFolder}",
+    --     stopAtBeginningOfMainSubprogram = false,
+    --     preLaunchTask = "C++ build single file",
+    --   },
+    -- }
+
     ---@diagnostic disable-next-line: undefined-field
     require("overseer").patch_dap(true)
     require("dap.ext.vscode").json_decode = require("overseer.json").decode
