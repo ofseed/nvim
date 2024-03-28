@@ -61,5 +61,54 @@ return {
       desc = "Evaluate expression",
       mode = { "n", "v" },
     },
+
+    {
+      "<leader>ds",
+      function()
+        require("dapui").float_element("stacks", {
+          width = 60,
+          height = 20,
+          enter = true,
+          position = "center",
+        })
+      end,
+      desc = "Open stacks",
+    },
+    {
+      "<leader>dw",
+      function()
+        require("dapui").float_element("watches", {
+          width = 60,
+          height = 20,
+          enter = true,
+          position = "center",
+        })
+      end,
+      desc = "Open watches",
+    },
+    {
+      "<leader>dv",
+      function()
+        require("dapui").float_element("scopes", {
+          width = 60,
+          height = 20,
+          enter = true,
+          position = "center",
+        })
+      end,
+      desc = "Open scopes",
+    },
+    {
+      "<leader>db",
+      function()
+        require("dapui").float_element("breakpoints", {
+          width = 60,
+          height = 20,
+          enter = true,
+          position = "center",
+        })
+      end,
+      desc = "Open scopes",
+    },
   },
 }

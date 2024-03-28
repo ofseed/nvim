@@ -92,14 +92,14 @@ return {
     },
 
     {
-      "<leader>db",
+      "<leader>dp",
       function()
         require("dap").set_breakpoint(vim.fn.input "Breakpoint condition: ")
       end,
       desc = "Set breakpoint",
     },
     {
-      "<leader>dp",
+      "<leader>dP",
       function()
         require("dap").set_breakpoint(nil, nil, vim.fn.input "Log point message: ")
       end,
