@@ -18,16 +18,20 @@ return {
       args = { "--class", "kitty-dap", "--hold", "--detach", "nvim-dap", "-c", "DAP" },
     }
 
+    dap.adapters["nvim-lua"] = function(callback, config)
+      callback {
+        type = "server",
+        host = config.host or "127.0.0.1",
+        port = config.port or 8086,
+      }
+    end
     dap.configurations.lua = {
       {
-        type = "nlua",
+        type = "nvim-lua",
         request = "attach",
         name = "Attach to running Neovim instance",
       },
     }
-    dap.adapters.nlua = function(callback, config)
-      callback { type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 }
-    end
 
     dap.adapters["pwa-node"] = {
       type = "server",
@@ -38,7 +42,7 @@ return {
         args = { "${port}" },
       },
     }
-    require("dap").configurations.javascript = {
+    dap.configurations.javascript = {
       {
         type = "pwa-node",
         request = "launch",
