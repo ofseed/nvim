@@ -39,6 +39,31 @@ return {
           }
           require("mason-nvim-dap").default_setup(config)
         end,
+        js = function(config)
+          config.name = "pwa-node"
+          config.adapters = {
+            type = "server",
+            host = "localhost",
+            port = "${port}",
+            executable = {
+              command = vim.fn.exepath "js-debug-adapter",
+              args = { "${port}" },
+            },
+          }
+          config.configurations = {
+            {
+              type = "pwa-node",
+              request = "launch",
+              name = "Launch file",
+              program = "${file}",
+              cwd = "${workspaceFolder}",
+            },
+          }
+          config.filetypes = { "javascript" }
+          require("mason-nvim-dap").default_setup(config)
+        end,
+
+        -- Ignored adapters
         python = function() end,
         delve = function() end,
       },

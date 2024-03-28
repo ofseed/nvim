@@ -33,25 +33,6 @@ return {
       },
     }
 
-    dap.adapters["pwa-node"] = {
-      type = "server",
-      host = "localhost",
-      port = "${port}",
-      executable = {
-        command = vim.fn.exepath "js-debug-adapter",
-        args = { "${port}" },
-      },
-    }
-    dap.configurations.javascript = {
-      {
-        type = "pwa-node",
-        request = "launch",
-        name = "Launch file",
-        program = "${file}",
-        cwd = "${workspaceFolder}",
-      },
-    }
-
     ---@diagnostic disable-next-line: undefined-field
     require("overseer").patch_dap(true)
     require("dap.ext.vscode").json_decode = require("overseer.json").decode
