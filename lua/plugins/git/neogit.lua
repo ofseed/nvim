@@ -3,6 +3,7 @@ local custom = require "custom"
 ---@type LazyPluginSpec
 return {
   "NeogitOrg/neogit",
+  branch = "nightly",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "sindrets/diffview.nvim",
@@ -14,9 +15,7 @@ return {
     { "<leader>gg", "<Cmd>Neogit<CR>", desc = "Open Neogit" },
   },
   opts = {
-    disable_insert_on_commit = "auto",
-    disable_commit_confirmation = true,
-    disable_builtin_notifications = true,
+    disable_hint = true,
     graph_style = "unicode",
     kind = custom.prefer_tabpage and "tab" or "split",
     integrations = {
