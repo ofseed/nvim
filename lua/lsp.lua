@@ -39,7 +39,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local client = vim.lsp.get_client_by_id(args.data.client_id)
 
     -- Setup keymaps
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, desc = "LSP: Hover" })
     vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { buffer = bufnr, desc = "LSP: Signature help" })
 
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Definition" })
@@ -93,19 +92,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- end
   end,
 })
-
--- Disable treesitter highlight after semantic tokens are applied
---[[
-_G.semantic_highlight_inited = {}
-
-vim.api.nvim_create_autocmd("LspTokenUpdate", {
-  callback = function(args)
-    local buf = args.buf
-    if _G.semantic_highlight_inited[buf] then
-      vim.treesitter.stop(buf)
-      return
-    end
-    _G.semantic_highlight_inited[buf] = true
-  end,
-})
---]]
