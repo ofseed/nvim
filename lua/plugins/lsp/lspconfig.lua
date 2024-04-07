@@ -42,7 +42,7 @@ return {
   end,
   keys = {
     {
-      "<leader>lr",
+      "<leader>lR",
       function()
         vim.cmd.LspRestart()
       end,
