@@ -10,6 +10,14 @@ return {
         "xxd",
       },
       large_file_cutoff = 10000,
+      should_enable = function(bufnr)
+        local win = vim.fn.bufwinid(bufnr)
+        -- Very bad performance in diff-mode
+        if vim.wo[win].diff then
+          return false
+        end
+        return true
+      end,
     }
   end,
   config = function(_, opts)
