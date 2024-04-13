@@ -17,7 +17,7 @@ local function lsp()
       return client.attached_buffers[buf]
     end)
     :filter(function(client)
-      return client.name ~= "copilot"
+      return client.name ~= "GitHub Copilot"
     end)
     :map(function(client)
       return " " .. client.name
