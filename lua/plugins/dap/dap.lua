@@ -64,6 +64,13 @@ return {
       desc = "Debug: Continue",
     },
     {
+      "<F17>",
+      function()
+        require("dap").terminate()
+      end,
+      desc = "Debug: Terminate",
+    },
+    {
       "<F10>",
       function()
         require("dap").step_over()
