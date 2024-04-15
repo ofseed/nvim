@@ -123,5 +123,29 @@ return {
       end,
       desc = "Open scopes",
     },
+    {
+      "<leader>dc",
+      function()
+        require("dapui").float_element("console", {
+          width = 60,
+          height = 20,
+          enter = true,
+          position = "center",
+        })
+      end,
+      desc = "Open scopes",
+    },
+    {
+      "<leader>dc",
+      function()
+        require("dapui").float_element("repl", {
+          width = 60,
+          height = 20,
+          enter = true,
+          position = "center",
+        })
+      end,
+      desc = "Open scopes",
+    },
   },
 }

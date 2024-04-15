@@ -107,7 +107,7 @@ return {
       desc = "Set log point",
     },
     {
-      "<leader>dr",
+      "<leader>dR",
       function()
         require("dap").repl.toggle()
       end,
