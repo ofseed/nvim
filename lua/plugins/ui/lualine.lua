@@ -59,19 +59,6 @@ local function dap_or_lsp()
   end
 end
 
-local function recording()
-  local reg = vim.fn.reg_recording()
-  if reg ~= "" then
-    return "recording @" .. reg
-  end
-  reg = vim.fn.reg_recorded()
-  if reg ~= "" then
-    return "recorded @" .. reg
-  end
-
-  return ""
-end
-
 local opts = {
   sections = {
     lualine_b = {
@@ -95,7 +82,6 @@ local opts = {
       dap_or_lsp,
     },
     lualine_x = {
-      recording,
       {
         lazy_status.updates,
         cond = lazy_status.has_updates,
