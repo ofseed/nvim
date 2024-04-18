@@ -21,6 +21,8 @@ return {
       ensure_installed = "all",
       highlight = {
         enable = true,
+        -- Should be controlled by vimtex
+        disable = { "latex" },
       },
       indent = {
         enable = true,
