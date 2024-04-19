@@ -79,7 +79,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     -- Enable inlay hints
     if client and client.server_capabilities.inlayHintProvider then
-      vim.lsp.inlay_hint.enable(bufnr, true)
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end
 
     -- Enable code lens
