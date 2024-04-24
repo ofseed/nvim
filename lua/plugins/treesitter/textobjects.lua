@@ -3,7 +3,7 @@ local locals = require "locals"
 ---@type LazyPluginSpec
 return {
   "nvim-treesitter/nvim-treesitter-textobjects",
-  cond = not locals.treesitter_dev,
+  branch = locals.treesitter_dev and "main" or "master",
   event = "VeryLazy",
   dependencies = {
     { "nvim-treesitter/nvim-treesitter" },
@@ -67,17 +67,22 @@ return {
     },
   },
   config = function(_, opts)
-    require("nvim-next.integrations").treesitter_textobjects()
-    require("nvim-treesitter.configs").setup {
-      textobjects = {
-        select = opts.select,
-      },
-      nvim_next = {
-        enable = true,
+    if not locals.treesitter_dev then
+      require("nvim-next.integrations").treesitter_textobjects()
+      require("nvim-treesitter.configs").setup {
         textobjects = {
-          move = opts.move,
+          select = opts.select,
         },
-      },
-    }
+        nvim_next = {
+          enable = true,
+          textobjects = {
+            move = opts.move,
+          },
+        },
+      }
+      return
+    end
+
+    require("nvim-treesitter-textobjects").setup(opts)
   end,
 }
