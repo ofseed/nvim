@@ -29,6 +29,7 @@ return {
             ["al"] = { query = "@loop.outer", desc = "a loop" },
             ["il"] = { query = "@loop.inner", desc = "inner part of a loop" },
           },
+          include_surrounding_whitespace = true,
         },
       },
       nvim_next = {
