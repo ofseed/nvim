@@ -102,14 +102,22 @@ return {
     {
       "<leader>dp",
       function()
-        require("dap").set_breakpoint(vim.fn.input "Breakpoint condition: ")
+        local condition = vim.fn.input "Breakpoint condition: "
+        if condition == "" then
+          return
+        end
+        require("dap").set_breakpoint(condition)
       end,
       desc = "Set condition breakpoint",
     },
     {
       "<leader>dP",
       function()
-        require("dap").set_breakpoint(nil, nil, vim.fn.input "Log point message: ")
+        local message = vim.fn.input "Log point message: "
+        if message == "" then
+          return
+        end
+        require("dap").set_breakpoint(nil, nil, message)
       end,
       desc = "Set log point",
     },
