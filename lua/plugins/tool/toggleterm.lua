@@ -87,7 +87,7 @@ return {
         desc = "GitHub Dash",
       },
       {
-        "<leader>n",
+        "<leader>N",
         function()
           lf:toggle()
         end,
