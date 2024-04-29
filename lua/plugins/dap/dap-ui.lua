@@ -136,7 +136,7 @@ return {
       desc = "Open scopes",
     },
     {
-      "<leader>dc",
+      "<leader>dr",
       function()
         require("dapui").float_element("repl", {
           width = 60,
