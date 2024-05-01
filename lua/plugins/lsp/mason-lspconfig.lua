@@ -114,7 +114,12 @@ return {
                   enable = false,
                   url = "",
                 },
-                schemas = require("schemastore").yaml.schemas(),
+                schemas = require("schemastore").yaml.schemas {
+                  ignore = {
+                    -- Very easy to conflict with other `deploy.yaml`
+                    "Deployer Recipe",
+                  },
+                },
               },
             },
           }
