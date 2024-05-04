@@ -31,6 +31,8 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
+vim.lsp.inlay_hint.enable()
+
 -- LspAttach events
 vim.api.nvim_create_autocmd("LspAttach", {
   desc = "General LSP Attach",
@@ -69,11 +71,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>lwl", function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, { buffer = bufnr, desc = "List workspace folders" })
-
-    -- Enable inlay hints
-    if client and client.server_capabilities.inlayHintProvider then
-      vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
-    end
 
     -- Enable code lens
     -- if client and client.server_capabilities.codeLensProvider then
