@@ -28,6 +28,9 @@ return {
       ["header"] = { "fg", "Comment" },
       ["gutter"] = { "bg", "NormalFloat" },
     },
+    files = {
+      formatter = "path.filename_first",
+    },
     winopts = {
       border = custom.border,
     },
