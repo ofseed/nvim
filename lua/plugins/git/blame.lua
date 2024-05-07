@@ -2,7 +2,7 @@
 return {
   "FabijanZulj/blame.nvim",
   keys = {
-    { "<leader>gB", "<Cmd>BlameToggle window<CR>" },
+    { "<leader>gB", "<Cmd>BlameToggle window<CR>", "Blame Window" },
   },
   opts = {},
 }
