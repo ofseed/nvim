@@ -58,6 +58,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>li", vim.lsp.buf.incoming_calls, { buffer = bufnr, desc = "Incoming calls" })
     vim.keymap.set("n", "<leader>lo", vim.lsp.buf.outgoing_calls, { buffer = bufnr, desc = "Outgoing calls" })
 
+    vim.keymap.set("n", "<leader>lh", function()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = bufnr }, { bufnr = bufnr })
+    end, { buffer = bufnr, desc = "Toggle inlay hints" })
+
     -- Use conform instead
     -- vim.keymap.set("n", "<leader>F", function()
     --   vim.lsp.buf.format { async = true }
