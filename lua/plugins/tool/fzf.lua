@@ -14,7 +14,7 @@ return {
       preview_title = "FloatTitle",
     },
     fzf_colors = {
-      ["fg"] = { "fg", "CursorLine" },
+      ["fg"] = { "fg", "NormalFloat" },
       ["bg"] = { "bg", "NormalFloat" },
       ["hl"] = { "fg", "Statement" },
       ["fg+"] = { "fg", "NormalFloat" },
