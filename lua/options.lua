@@ -42,3 +42,8 @@ vim.opt.fillchars = {
   foldclose = "",
   foldsep = "▕",
 }
+vim.opt.guicursor = {
+  "n-v-c-sm:block-Cursor/lCursor",
+  "i-ci-ve:ver25-Cursor/lCursor",
+  "r-cr-o:hor20-Cursor/lCursor",
+}
