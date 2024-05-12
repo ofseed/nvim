@@ -15,8 +15,10 @@ vim.opt.runtimepath:prepend(lazypath)
 local custom = require "custom"
 local locals = require "locals"
 
-require("lazy").setup("plugins", {
+---@type LazyConfig
+require("lazy").setup {
   root = root,
+  spec = "plugins",
   dev = {
     path = "~/neovim/dev",
     patterns = locals.under_development,
@@ -47,6 +49,6 @@ require("lazy").setup("plugins", {
       },
     },
   },
-})
+}
 
 vim.keymap.set("n", "<leader>mp", "<Cmd>Lazy<CR>", { desc = "Plugins" })
