@@ -8,6 +8,5 @@ return {
       stages = "static",
       top_down = false,
     }
-    vim.notify = notify
   end,
 }
