@@ -21,8 +21,11 @@ return {
     "rcarriga/nvim-notify",
   },
   opts = {
-    presets = {
-      long_message_to_split = true,
+    routes = {
+      {
+        filter = { event = "msg_show", min_height = 20 },
+        view = "cmdline_output",
+      },
     },
     cmdline = {
       format = {
@@ -58,7 +61,7 @@ return {
       },
       hover = {
         silent = true,
-      }
+      },
     },
     views = {
       cmdline_popup = {
