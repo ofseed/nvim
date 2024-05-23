@@ -33,7 +33,7 @@ vim.opt.smoothscroll = true
 vim.opt.pumblend = 12
 vim.opt.pumheight = 12
 vim.opt.colorcolumn = "81"
-vim.opt.guifont = "Cascadia Code PL:h14"
+vim.opt.guifont = "Cascadia Code NF:h12"
 vim.opt.shortmess:append "I"
 vim.opt.fillchars = {
   eob = " ",
