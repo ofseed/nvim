@@ -1,15 +1,16 @@
+---@type LazyPluginSpec
 return {
   "mfussenegger/nvim-jdtls",
   event = {
     "BufRead *.java",
     "BufNewFile *.java",
   },
-  config = function()
+  opts = function()
     local jdtls = require "jdtls"
     local mason = require "mason-registry"
     local capabilities = require "capabilities"
 
-    local opts = {
+    return {
       cmd = { vim.fs.joinpath(mason.get_package("jdtls"):get_install_path(), "/bin/jdtls") },
       handlers = {
         ["language/status"] = function() end,
@@ -24,10 +25,6 @@ return {
         },
       },
       capabilities = capabilities,
-      on_attach = function(client, bufnr)
-        jdtls.setup_dap { hotcodereplace = "auto" }
-        require("jdtls.setup").add_commands()
-      end,
       init_options = {
         bundles = {
           vim.fn.glob(
@@ -35,17 +32,20 @@ return {
               mason.get_package("java-debug-adapter"):get_install_path(),
               "extension/server/com.microsoft.java.debug.plugin-*.jar"
             ),
-            1
+            true
           ),
         },
       },
     }
+  end,
+  config = function(_, opts)
+    local jdtls = require "jdtls"
 
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "java",
       desc = "Attach jdtls",
       callback = function()
-        jdtls.start_or_attach(opts)
+        jdtls.start_or_attach(opts, { dap = { hotcodereplace = "auto" } })
         vim.bo.tabstop = 4
       end,
     })
