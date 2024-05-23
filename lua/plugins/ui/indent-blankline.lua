@@ -39,7 +39,7 @@ return {
       local lnum = row + 1
       local foldinfo = utils.fold_info(win, lnum)
 
-      if virt_text[1] and virt_text[1][1] == opts.indent.char and foldinfo and foldinfo.level ~= 0 then
+      if virt_text[1] and virt_text[1][1] == opts.indent.char and foldinfo and foldinfo.start == lnum then
         virt_text[1] = { " ", { "@ibl.whitespace.char.1" } }
       end
 
