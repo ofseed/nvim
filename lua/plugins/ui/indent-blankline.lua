@@ -36,7 +36,8 @@ return {
     -- Hide first level indent, using `foldsep` to show it
     hooks.register(hooks.type.VIRTUAL_TEXT, function(_, bufnr, row, virt_text)
       local win = vim.fn.bufwinid(bufnr)
-      local foldinfo = utils.fold_info(win, row)
+      local lnum = row + 1
+      local foldinfo = utils.fold_info(win, lnum)
 
       if virt_text[1] and virt_text[1][1] == opts.indent.char and foldinfo and foldinfo.level ~= 0 then
         virt_text[1] = { " ", { "@ibl.whitespace.char.1" } }
