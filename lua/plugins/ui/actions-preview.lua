@@ -1,5 +1,8 @@
+---@type LazyPluginSpec
 return {
   "aznhe21/actions-preview.nvim",
+  -- Could be replaced by fzf-lua
+  enabled = false,
   lazy = true,
   init = function()
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -13,7 +16,5 @@ return {
       end,
     })
   end,
-  config = function()
-    require("actions-preview").setup {}
-  end,
+  opts = {},
 }
