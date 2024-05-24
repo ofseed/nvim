@@ -1,7 +1,9 @@
+---@type LazyPluginSpec
 return {
   "jay-babu/project.nvim", -- maintained fork
   event = "VeryLazy",
-  config = function()
-    require("project_nvim").setup {}
-  end,
+  main = "project_nvim",
+  opts = {
+    ignore_lsp = { "jsonls", "yamlls", "taplo" },
+  },
 }
