@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-  "jay-babu/project.nvim", -- maintained fork
+  "ofseed/project.nvim", -- maintained fork
   event = "VeryLazy",
   main = "project_nvim",
   opts = {
