@@ -139,7 +139,7 @@ return {
   event = "VeryLazy",
   dependencies = {
     { "nvim-tree/nvim-web-devicons" },
-    { "ofseed/lualine-copilot" },
+    { "ofseed/copilot-status.nvim" },
   },
   opts = opts,
 }
