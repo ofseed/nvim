@@ -3,7 +3,7 @@ return {
   ft = "lua",
   opts = {
     library = {
-      vim.fs.joinpath(vim.env.LAZY, "luvit-meta/library"),
+      "luvit-meta/library",
     },
   },
 }
