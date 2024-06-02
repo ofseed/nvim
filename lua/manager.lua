@@ -1,5 +1,4 @@
-local root = vim.env.LAZYROOT
-local lazypath = vim.fs.joinpath(root, "lazy.nvim")
+local lazypath = vim.fs.joinpath(vim.fn.stdpath "data", "lazy", "lazy.nvim")
 if not vim.uv.fs_stat(lazypath) then
   vim.fn.system {
     "git",
@@ -17,7 +16,6 @@ local locals = require "locals"
 
 ---@type LazyConfig
 require("lazy").setup {
-  root = root,
   spec = "plugins",
   dev = {
     path = "~/neovim/dev",
