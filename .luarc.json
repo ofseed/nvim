@@ -4,11 +4,6 @@
     "version": "LuaJIT"
   },
   "workspace": {
-    "library": [
-      "$VIMRUNTIME",
-      "$LAZY/lazy.nvim",
-      "${3rd}/luv/library"
-    ],
     "ignoreDir": [
       "lua/snippets"
     ]
