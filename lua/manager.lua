@@ -17,6 +17,7 @@ local locals = require "locals"
 
 require("lazy").setup {
   spec = "plugins",
+  ---@diagnostic disable-next-line: assign-type-mismatch
   dev = {
     path = "~/neovim/dev",
     patterns = locals.under_development,
