@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "Wansmer/treesj",
   keys = {

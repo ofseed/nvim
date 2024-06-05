@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "mbbill/undotree",
   config = function()

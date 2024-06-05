@@ -90,6 +90,7 @@ local opts = {
   },
 }
 
+---@type LazyPluginSpec
 return {
   "akinsho/flutter-tools.nvim",
   event = {

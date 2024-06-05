@@ -3,6 +3,7 @@ local utils = require "utils"
 
 local mode = custom.prefer_tabpage and "tab" or "buffer"
 
+---@type LazyPluginSpec
 return {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",

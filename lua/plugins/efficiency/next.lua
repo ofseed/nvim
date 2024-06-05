@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "ghostbuster91/nvim-next",
   event = "VeryLazy",

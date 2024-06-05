@@ -1,5 +1,6 @@
 local locals = require "locals"
 
+---@type LazyPluginSpec
 return {
   "github/copilot.vim",
   event = "VeryLazy",

@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "luukvbaal/statuscol.nvim",
   branch = "0.10",

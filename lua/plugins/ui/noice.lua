@@ -1,5 +1,6 @@
 local custom = require "custom"
 
+---@type LazyPluginSpec
 return {
   "folke/noice.nvim",
   event = "VeryLazy",

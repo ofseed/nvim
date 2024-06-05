@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "pmizio/typescript-tools.nvim",
   event = {

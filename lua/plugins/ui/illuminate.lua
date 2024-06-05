@@ -1,5 +1,6 @@
 local locals = require "locals"
 
+---@type LazyPluginSpec
 return {
   "RRethy/vim-illuminate",
   cond = not locals.treesitter_dev,

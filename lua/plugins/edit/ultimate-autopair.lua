@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "altermo/ultimate-autopair.nvim",
   event = { "InsertEnter", "CmdlineEnter" },

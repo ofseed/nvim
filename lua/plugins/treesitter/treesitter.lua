@@ -1,5 +1,6 @@
 local locals = require "locals"
 
+---@type LazyPluginSpec
 return {
   "nvim-treesitter/nvim-treesitter",
   branch = locals.treesitter_dev and "main" or "master",

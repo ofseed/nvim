@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "rbong/vim-flog",
   dependencies = {

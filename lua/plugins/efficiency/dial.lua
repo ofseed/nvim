@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "monaqa/dial.nvim",
   keys = {

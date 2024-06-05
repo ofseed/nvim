@@ -230,6 +230,7 @@ local opts = {
   },
 }
 
+---@type LazyPluginSpec
 return {
   "stevearc/aerial.nvim",
   enabled = false,

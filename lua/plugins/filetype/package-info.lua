@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "vuki656/package-info.nvim",
   event = {

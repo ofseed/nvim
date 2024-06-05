@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "mikesmithgh/kitty-scrollback.nvim",
   cmd = {

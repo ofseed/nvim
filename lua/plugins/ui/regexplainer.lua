@@ -1,5 +1,6 @@
 local custom = require "custom"
 
+---@type LazyPluginSpec
 return {
   "bennypowers/nvim-regexplainer",
   -- Not very useful now

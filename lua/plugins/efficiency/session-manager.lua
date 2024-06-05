@@ -1,16 +1,21 @@
+---@type LazyPluginSpec
 return {
   "Shatur/neovim-session-manager",
   event = "VeryLazy",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  config = function()
-    local manager = require "session_manager"
+  opts = function()
     local config = require "session_manager.config"
 
-    manager.setup {
+    return {
       autoload_mode = config.AutoloadMode.Disabled,
     }
+  end,
+  config = function(_, opts)
+    local manager = require "session_manager"
+
+    manager.setup(opts)
 
     -- Convert the cwd to a simple file name
     local function get_cwd_as_name()

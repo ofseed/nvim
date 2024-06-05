@@ -26,6 +26,7 @@ local opts = {
   buftypes = {},
 }
 
+---@type LazyPluginSpec
 return {
   "NvChad/nvim-colorizer.lua",
   event = "VeryLazy",

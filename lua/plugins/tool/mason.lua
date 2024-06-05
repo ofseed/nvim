@@ -6,6 +6,7 @@ local opts = {
   },
 }
 
+---@type LazyPluginSpec
 return {
   "williamboman/mason.nvim",
   opts = opts,

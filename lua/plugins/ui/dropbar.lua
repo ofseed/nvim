@@ -1,5 +1,6 @@
 local custom = require "custom"
 
+---@type LazyPluginSpec
 return {
   "Bekaboo/dropbar.nvim",
   event = {

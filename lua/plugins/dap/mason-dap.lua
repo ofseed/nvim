@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "jay-babu/mason-nvim-dap.nvim",
   -- Only load when nvim-dap loads

@@ -1,5 +1,6 @@
 local custom = require "custom"
 
+---@type LazyPluginSpec
 return {
   "martineausimon/nvim-lilypond-suite",
   ft = { "lilypond" },

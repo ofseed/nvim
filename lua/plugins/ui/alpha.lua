@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "goolord/alpha-nvim",
   config = function()

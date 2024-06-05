@@ -1,5 +1,6 @@
 local arg = "leetcode"
 
+---@type LazyPluginSpec
 return {
   "kawre/leetcode.nvim",
   lazy = vim.fn.argv()[1] ~= arg,

@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "olrtg/nvim-emmet",
   lazy = true,

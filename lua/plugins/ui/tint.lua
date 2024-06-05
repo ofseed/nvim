@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   -- When switching between colorschemes,
   -- this plugin cause many highlight groups can not be applied.

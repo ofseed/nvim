@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "ldelossa/litee.nvim",
   lazy = true,

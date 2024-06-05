@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "chrishrb/gx.nvim",
   keys = {

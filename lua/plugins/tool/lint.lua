@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "mfussenegger/nvim-lint",
   enabled = false,

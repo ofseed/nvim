@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "folke/zen-mode.nvim",
   opts = {},

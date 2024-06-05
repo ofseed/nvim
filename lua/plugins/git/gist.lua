@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "Rawnly/gist.nvim",
   cmd = {

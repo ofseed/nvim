@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "ThePrimeagen/refactoring.nvim",
   -- Plugin surpporting refactorings
@@ -7,7 +8,7 @@ return {
     { "nvim-lua/plenary.nvim" },
     { "nvim-treesitter/nvim-treesitter" },
   },
-  opts = true,
+  opts = {},
   keys = {
     -- Remaps for the refactoring operations currently offered by the plugin
     { "v", "<leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]] },
