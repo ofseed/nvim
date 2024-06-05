@@ -15,7 +15,6 @@ vim.opt.runtimepath:prepend(lazypath)
 local custom = require "custom"
 local locals = require "locals"
 
----@type LazyConfig
 require("lazy").setup {
   spec = "plugins",
   dev = {
