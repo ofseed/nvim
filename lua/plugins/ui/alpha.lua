@@ -1,9 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "goolord/alpha-nvim",
-  config = function()
-    local alpha = require "alpha"
-
+  opts = function()
     local dashboard = require "alpha.themes.dashboard"
     local theta = require "alpha.themes.theta"
 
@@ -29,6 +27,6 @@ return {
       dashboard.button("q", "󰅚  Quit", "<Cmd>qa<CR>"),
     }
 
-    alpha.setup(theta.config)
+    return theta.config
   end,
 }

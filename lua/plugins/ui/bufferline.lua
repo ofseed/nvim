@@ -12,38 +12,36 @@ return {
     vim.o.showtabline = 2
     vim.o.tabline = " "
   end,
-  config = function()
-    require("bufferline").setup {
-      options = {
-        hover = {
-          enabled = true,
-          delay = 0,
-          reveal = { "close" },
-        },
-        mode = custom.prefer_tabpage and "tabs" or "buffers",
-        -- numbers = custom.prefer_tabpage and "ordinal" or "none",
-        show_close_icon = false,
-        buffer_close_icon = "🗙",
-        offsets = {
-          { filetype = "neo-tree", text = "Explorer", text_align = "center", saperator = true },
-          { filetype = "aerial", text = "Outline", text_align = "center", saperator = true },
-          { filetype = "Outline", text = "Outline", text_align = "center", saperator = true },
-          { filetype = "dbui", text = "Database Manager", text_align = "center", saperator = true },
-          { filetype = "DiffviewFiles", text = "Source Control", text_align = "center", separator = true },
-          { filetype = "httpResult", text = "Http Result", text_align = "center", saperator = true },
-          { filetype = "OverseerList", text = "Tasks", text_align = "center", saperator = true },
-          { filetype = "flutterToolsOutline", text = "Flutter Outline", text_align = "center", saperator = true },
-        },
-        diagnostics = "nvim_lsp",
-        diagnostics_indicator = function(count)
-          return "(" .. count .. ")"
-        end,
-        show_duplicate_prefix = false,
-        always_show_bufferline = vim.o.showtabline == 2,
-        sort_by = custom.prefer_tabpage and "tabs" or "insert_after_current",
+  opts = {
+    options = {
+      hover = {
+        enabled = true,
+        delay = 0,
+        reveal = { "close" },
       },
-    }
-  end,
+      mode = custom.prefer_tabpage and "tabs" or "buffers",
+      -- numbers = custom.prefer_tabpage and "ordinal" or "none",
+      show_close_icon = false,
+      buffer_close_icon = "🗙",
+      offsets = {
+        { filetype = "neo-tree", text = "Explorer", text_align = "center", saperator = true },
+        { filetype = "aerial", text = "Outline", text_align = "center", saperator = true },
+        { filetype = "Outline", text = "Outline", text_align = "center", saperator = true },
+        { filetype = "dbui", text = "Database Manager", text_align = "center", saperator = true },
+        { filetype = "DiffviewFiles", text = "Source Control", text_align = "center", separator = true },
+        { filetype = "httpResult", text = "Http Result", text_align = "center", saperator = true },
+        { filetype = "OverseerList", text = "Tasks", text_align = "center", saperator = true },
+        { filetype = "flutterToolsOutline", text = "Flutter Outline", text_align = "center", saperator = true },
+      },
+      diagnostics = "nvim_lsp",
+      diagnostics_indicator = function(count)
+        return "(" .. count .. ")"
+      end,
+      show_duplicate_prefix = false,
+      always_show_bufferline = true,
+      sort_by = custom.prefer_tabpage and "tabs" or "insert_after_current",
+    },
+  },
   keys = {
     { "<M-1>", "<Cmd>BufferLineGoToBuffer 1<CR>", desc = "Go to " .. mode .. " 1" },
     { "<M-2>", "<Cmd>BufferLineGoToBuffer 2<CR>", desc = "Go to " .. mode .. " 2" },

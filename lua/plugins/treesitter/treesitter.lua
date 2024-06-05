@@ -9,7 +9,21 @@ return {
     { "RRethy/nvim-treesitter-endwise", cond = not locals.treesitter_dev },
   },
   build = ":TSUpdate",
-  config = function()
+  opts = {
+    ensure_installed = "all",
+    highlight = {
+      enable = true,
+      -- Should be controlled by vimtex
+      disable = { "latex" },
+    },
+    indent = {
+      enable = true,
+    },
+    endwise = {
+      enable = true,
+    },
+  },
+  config = function(_, opts)
     -- if vim.uv.os_uname().sysname == "Windows_NT" then
     --   require("nvim-treesitter.install").prefer_git = false
     -- end
@@ -18,19 +32,6 @@ return {
       return
     end
 
-    require("nvim-treesitter.configs").setup {
-      ensure_installed = "all",
-      highlight = {
-        enable = true,
-        -- Should be controlled by vimtex
-        disable = { "latex" },
-      },
-      indent = {
-        enable = true,
-      },
-      endwise = {
-        enable = true,
-      },
-    }
+    require("nvim-treesitter.configs").setup(opts)
   end,
 }

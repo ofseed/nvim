@@ -14,14 +14,13 @@ return {
       mode = "i",
     },
   },
-  config = function()
+  opts = function()
     local snip = require "luasnip"
     local types = require "luasnip.util.types"
-
     local i = snip.insert_node
     local sn = snip.snippet_node
 
-    snip.setup {
+    return {
       update_events = { "TextChanged", "TextChangedI" },
       ext_opts = {
         [types.choiceNode] = {
@@ -79,6 +78,10 @@ return {
         end,
       },
     }
+  end,
+  config = function(_, opts)
+    local snip = require "luasnip"
+    snip.setup(opts)
 
     snip.filetype_extend("cpp", { "c" })
 

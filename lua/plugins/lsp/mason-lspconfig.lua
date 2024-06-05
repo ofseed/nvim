@@ -1,3 +1,5 @@
+local capabilities = require "capabilities"
+
 ---@type LazyPluginSpec
 return {
   "williamboman/mason-lspconfig.nvim",
@@ -11,12 +13,10 @@ return {
     "b0o/SchemaStore.nvim",
     "nanotee/sqls.nvim",
   },
-  config = function()
+  opts = function()
     local lspconfig = require "lspconfig"
 
-    local capabilities = require "capabilities"
-
-    require("mason-lspconfig").setup {
+    return {
       handlers = {
         function(server)
           lspconfig[server].setup { capabilities = capabilities }

@@ -59,78 +59,6 @@ local function dap_or_lsp()
   end
 end
 
-local opts = {
-  sections = {
-    lualine_b = {
-      {
-        "branch",
-        icon = "",
-      },
-      {
-        "diff",
-        symbols = {
-          added = " ",
-          modified = " ",
-          removed = " ",
-        },
-        source = function()
-          return vim.b.gitsigns_status_dict
-        end,
-      },
-    },
-    lualine_c = {
-      dap_or_lsp,
-    },
-    lualine_x = {
-      {
-        lazy_status.updates,
-        cond = lazy_status.has_updates,
-        color = { fg = "#ff9e64" },
-      },
-      {
-        name = "overseer-placeholder",
-        function()
-          return ""
-        end,
-      },
-      "copilot",
-      indent,
-      "encoding",
-      "fileformat",
-    },
-    lualine_y = {
-      "diagnostics",
-      "progress",
-    },
-  },
-  options = {
-    icons_enabled = true,
-    theme = "auto",
-    disabled_filetypes = {
-      statusline = {
-        "alpha",
-      },
-    },
-    always_divide_middle = true,
-    globalstatus = false,
-    section_separators = { left = "", right = "" },
-    component_separators = { left = "", right = "" },
-  },
-  extensions = {
-    "man",
-    "quickfix",
-    "nvim-tree",
-    "neo-tree",
-    "toggleterm",
-    "symbols-outline",
-    "aerial",
-    "fugitive",
-    "nvim-dap-ui",
-    "mundo",
-    "lazy",
-  },
-}
-
 ---@type LazyPluginSpec
 return {
   "nvim-lualine/lualine.nvim",
@@ -142,5 +70,75 @@ return {
     { "nvim-tree/nvim-web-devicons" },
     { "ofseed/copilot-status.nvim" },
   },
-  opts = opts,
+  opts = {
+    sections = {
+      lualine_b = {
+        {
+          "branch",
+          icon = "",
+        },
+        {
+          "diff",
+          symbols = {
+            added = " ",
+            modified = " ",
+            removed = " ",
+          },
+          source = function()
+            return vim.b.gitsigns_status_dict
+          end,
+        },
+      },
+      lualine_c = {
+        dap_or_lsp,
+      },
+      lualine_x = {
+        {
+          lazy_status.updates,
+          cond = lazy_status.has_updates,
+          color = { fg = "#ff9e64" },
+        },
+        {
+          name = "overseer-placeholder",
+          function()
+            return ""
+          end,
+        },
+        "copilot",
+        indent,
+        "encoding",
+        "fileformat",
+      },
+      lualine_y = {
+        "diagnostics",
+        "progress",
+      },
+    },
+    options = {
+      icons_enabled = true,
+      theme = "auto",
+      disabled_filetypes = {
+        statusline = {
+          "alpha",
+        },
+      },
+      always_divide_middle = true,
+      globalstatus = false,
+      section_separators = { left = "", right = "" },
+      component_separators = { left = "", right = "" },
+    },
+    extensions = {
+      "man",
+      "quickfix",
+      "nvim-tree",
+      "neo-tree",
+      "toggleterm",
+      "symbols-outline",
+      "aerial",
+      "fugitive",
+      "nvim-dap-ui",
+      "mundo",
+      "lazy",
+    },
+  },
 }

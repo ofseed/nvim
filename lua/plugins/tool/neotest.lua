@@ -20,9 +20,6 @@ return {
       },
     }
   end,
-  config = function(_, opts)
-    require("neotest").setup(opts)
-  end,
   keys = {
     {
       "<leader>Tr",

@@ -2,10 +2,11 @@
 return {
   "mfussenegger/nvim-lint",
   enabled = false,
-  config = function()
-    require("lint").linters_by_ft = {
-      python = { "pylint" },
-    }
+  opts = {
+    python = { "pylint" },
+  },
+  config = function(_, opts)
+    require("lint").linters_by_ft = opts
 
     vim.api.nvim_create_autocmd({
       "BufReadPost",

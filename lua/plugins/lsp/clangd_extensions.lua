@@ -7,15 +7,16 @@ return {
     "c",
     "cpp",
   },
-  config = function()
-    require("clangd_extensions").setup {
-      memory_usage = {
-        border = custom.border,
-      },
-      symbol_info = {
-        border = custom.border,
-      },
-    }
+  opts = {
+    memory_usage = {
+      border = custom.border,
+    },
+    symbol_info = {
+      border = custom.border,
+    },
+  },
+  config = function(_, opts)
+    require("clangd_extensions").setup(opts)
 
     local group = vim.api.nvim_create_augroup("clangd_extesnion", {
       clear = true,

@@ -2,10 +2,11 @@
 return {
   "mfussenegger/nvim-dap-python",
   ft = { "python" },
-  config = function()
+  opts = {},
+  config = function(_, opts)
     require("dap-python").setup(
       vim.fs.joinpath(require("mason-registry").get_package("debugpy"):get_install_path(), "venv/bin/python")
-    )
+    , opts)
   end,
   keys = {
     {

@@ -6,10 +6,11 @@ return {
     "BufRead package-lock.json",
   },
   dependencies = "MunifTanjim/nui.nvim",
-  config = function()
-    require("package-info").setup {
-      package_manager = "pnpm",
-    }
+  opts = {
+    package_manager = "pnpm",
+  },
+  config = function(_, opts)
+    require("package-info").setup(opts)
 
     vim.keymap.set("n", "<localleader>s", function()
       require("package-info").show()

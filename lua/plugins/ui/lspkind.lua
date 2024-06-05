@@ -4,9 +4,10 @@ local custom = require "custom"
 return {
   "onsails/lspkind.nvim",
   lazy = true,
-  config = function()
-    require("lspkind").init {
-      symbol_map = custom.icons.kind,
-    }
+  opts = {
+    symbol_map = custom.icons.kind,
+  },
+  config = function(_, opts)
+    require("lspkind").init(opts)
   end,
 }
