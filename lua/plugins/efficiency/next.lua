@@ -1,7 +1,6 @@
 ---@type LazyPluginSpec
 return {
   "ghostbuster91/nvim-next",
-  event = "VeryLazy",
   opts = function()
     local builtins = require "nvim-next.builtins"
 
@@ -15,20 +14,19 @@ return {
       },
     }
   end,
-  config = function(_, opts)
-    local next = require "nvim-next"
+  keys = function()
     local integrations = require "nvim-next.integrations"
-
-    next.setup(opts)
-
-    -- Diagnostic
     local diag = integrations.diagnostic()
-    vim.keymap.set("n", "[d", diag.goto_prev(), { desc = "Previous diagnostic" })
-    vim.keymap.set("n", "]d", diag.goto_next(), { desc = "Next diagnostic" })
+    local qf = integrations.quickfix()
 
-    -- Quickfix
-    local nqf = integrations.quickfix()
-    vim.keymap.set("n", "[q", nqf.cprevious, { desc = "Previous quickfix item" })
-    vim.keymap.set("n", "]q", nqf.cnext, { desc = "Next quickfix item" })
+    return {
+      -- Diagnostic
+      { "[d", diag.goto_prev(), desc = "Previous diagnostic" },
+      { "]d", diag.goto_next(), desc = "Next diagnostic" },
+
+      -- Quickfix
+      { "[q", qf.cprevious, desc = "Previous quickfix item" },
+      { "]q", qf.cnext, desc = "Next quickfix item" },
+    }
   end,
 }

@@ -2,11 +2,28 @@
 return {
   "rest-nvim/rest.nvim",
   ft = { "http" },
-  opts = {},
-  config = function(_, opts)
-    require("rest-nvim").setup(opts)
+  init = function()
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "http",
+      callback = function(args)
+        local bufnr = args.buf
+        require "rest-nvim"
 
-    vim.keymap.set("n", "<localleader>r", "<Cmd>Rest run<CR>", { silent = true, desc = "Run request under the cursor" })
-    vim.keymap.set("n", "<localleader>l", "<Cmd>Rest run last<CR>", { silent = true, desc = "Re-run latest request" })
+        vim.keymap.set(
+          "n",
+          "<localleader>r",
+          "<Cmd>Rest run<CR>",
+          { buffer = bufnr, silent = true, desc = "Run request under the cursor" }
+        )
+        vim.keymap.set(
+          "n",
+          "<localleader>l",
+          "<Cmd>Rest run last<CR>",
+          { buffer = bufnr, silent = true, desc = "Re-run latest request" }
+        )
+      end,
+    })
   end,
+  main = "rest-nvim",
+  opts = {},
 }
