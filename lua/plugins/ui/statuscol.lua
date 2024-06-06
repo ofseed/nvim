@@ -19,7 +19,6 @@ return {
         },
         {
           text = { builtin.lnumfunc },
-          condition = { builtin.not_empty },
           click = "v:lua.ScLa",
         },
         {
@@ -33,11 +32,6 @@ return {
               args.fold.open = ""
               args.fold.sep = " "
               return builtin.foldfunc(args)
-            end,
-          },
-          condition = {
-            function()
-              return vim.o.foldcolumn ~= "0"
             end,
           },
           click = "v:lua.ScFa",
