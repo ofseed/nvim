@@ -1,6 +1,14 @@
 ---@type LazyPluginSpec
 return {
   "vhyrro/luarocks.nvim",
+  lazy = true,
   priority = 999,
-  opts = {}
+  opts = {
+    rocks = {
+      -- Needed by rest.nvim
+      "lua-curl",
+      "mimetypes",
+      "xml2lua",
+    },
+  },
 }
