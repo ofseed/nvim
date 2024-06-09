@@ -10,6 +10,7 @@ return {
       bt_ignore = { "nofile", "terminal" },
       ft_ignore = { "NeogitStatus" },
       segments = {
+        -- Simulate the sign column while not showing the gitsigns
         {
           sign = {
             name = { ".*" },
@@ -17,10 +18,12 @@ return {
           },
           click = "v:lua.ScSa",
         },
+        -- Simulate the line number column without the right padding
         {
           text = { builtin.lnumfunc },
           click = "v:lua.ScLa",
         },
+        -- Show gitsigns at the position of line numbers' right padding
         {
           sign = {
             namespace = { "gitsigns" },
@@ -35,6 +38,7 @@ return {
           },
           click = "v:lua.ScSa",
         },
+        -- Show the fold column with custom icons
         {
           text = {
             function(args)
