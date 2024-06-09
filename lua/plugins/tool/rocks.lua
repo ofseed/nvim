@@ -5,6 +5,9 @@ return {
   priority = 999,
   opts = {
     rocks = {
+      -- Needed by image.nvim
+      "magick",
+
       -- Needed by rest.nvim
       "lua-curl",
       "mimetypes",

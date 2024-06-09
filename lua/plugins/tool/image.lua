@@ -3,6 +3,9 @@ return {
   "3rd/image.nvim",
   enabled = vim.uv.os_uname().sysname ~= "Windows_NT",
   ft = { "markdown", "org", "norg" },
+  dependencies = {
+    "vhyrro/luarocks.nvim",
+  },
   event = function(plugin)
     return {
       {
