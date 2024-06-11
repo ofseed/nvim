@@ -76,6 +76,17 @@ return {
         -- Swap default split behavior
         ["S"] = "open_vsplit",
         ["s"] = "open_split",
+
+        -- Modify default behavior of preview.
+        -- Using floating window causes strange behavior,
+        -- such as statuscolumn not being applied
+        ["P"] = {
+          "toggle_preview",
+          config = {
+            use_float = false,
+            use_image_nvim = true,
+          },
+        },
       },
     },
     commands = {
