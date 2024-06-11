@@ -35,7 +35,8 @@ end, { desc = "Treesitter Query" })
 -- vim.keymap.set("n", "[q", "<Cmd>cprevious<CR>", {})
 -- vim.keymap.set("n", "]q", "<Cmd>cnext<CR>", {})
 
-local filetype_keymaps = vim.api.nvim_create_augroup("ofseed_filetype_keymaps", {})
+local filetype_keymaps =
+  vim.api.nvim_create_augroup("ofseed_filetype_keymaps", {})
 vim.api.nvim_create_autocmd("Filetype", {
   group = filetype_keymaps,
   pattern = "qf",
@@ -45,4 +46,9 @@ vim.api.nvim_create_autocmd("Filetype", {
   end,
 })
 
-vim.keymap.set("n", "<leader>ll", vim.diagnostic.setloclist, { desc = "Diagnostic list" })
+vim.keymap.set(
+  "n",
+  "<leader>ll",
+  vim.diagnostic.setloclist,
+  { desc = "Diagnostic list" }
+)

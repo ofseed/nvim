@@ -242,7 +242,12 @@ local itar = s(
       index = i(2, "i"),
       array = i(3, "array"),
       indexf = f(text_same_with, 2),
-      element = d(5, insert_same_with_and_append, 3, { user_args = { "Element" } }),
+      element = d(
+        5,
+        insert_same_with_and_append,
+        3,
+        { user_args = { "Element" } }
+      ),
       arrayf = f(text_same_with, 3),
       varkind2 = c(4, {
         t { "const" },
@@ -384,7 +389,12 @@ local ritar = s(
       index = i(2, "i"),
       array = i(3, "array"),
       indexf = f(text_same_with, 2),
-      element = d(5, insert_same_with_and_append, 3, { user_args = { "Element" } }),
+      element = d(
+        5,
+        insert_same_with_and_append,
+        3,
+        { user_args = { "Element" } }
+      ),
       arrayf = f(text_same_with, 3),
       varkind2 = c(4, {
         t { "const" },

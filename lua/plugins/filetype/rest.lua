@@ -12,12 +12,11 @@ return {
         local bufnr = args.buf
         require "rest-nvim"
 
-        vim.keymap.set(
-          "n",
-          "<localleader>r",
-          "<Cmd>Rest run<CR>",
-          { buffer = bufnr, silent = true, desc = "Run request under the cursor" }
-        )
+        vim.keymap.set("n", "<localleader>r", "<Cmd>Rest run<CR>", {
+          buffer = bufnr,
+          silent = true,
+          desc = "Run request under the cursor",
+        })
         vim.keymap.set(
           "n",
           "<localleader>l",

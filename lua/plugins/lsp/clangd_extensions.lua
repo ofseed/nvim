@@ -54,7 +54,12 @@ return {
         if client == nil or client.name ~= "clangd" then
           return
         end
-        vim.keymap.set("n", "<localleader>t", "<cmd>ClangdAST<CR>", { buffer = bufnr, desc = "Show AST" })
+        vim.keymap.set(
+          "n",
+          "<localleader>t",
+          "<cmd>ClangdAST<CR>",
+          { buffer = bufnr, desc = "Show AST" }
+        )
         vim.keymap.set(
           "n",
           "<localleader><leader>",

@@ -28,7 +28,10 @@ return {
         end, { desc = "Install a new package", buffer = bufnr })
         vim.keymap.set("n", "<localleader>p", function()
           require("package-info").change_version()
-        end, { desc = "Install a different package version", buffer = bufnr })
+        end, {
+          desc = "Install a different package version",
+          buffer = bufnr,
+        })
       end,
     })
   end,

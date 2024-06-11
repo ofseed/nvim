@@ -29,7 +29,10 @@ return {
     local hooks = require "ibl.hooks"
 
     ibl.setup(opts)
-    hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+    hooks.register(
+      hooks.type.SCOPE_HIGHLIGHT,
+      hooks.builtin.scope_highlight_from_extmark
+    )
 
     -- Hide first level indent, using `foldsep` to show it
     hooks.register(hooks.type.VIRTUAL_TEXT, function(_, bufnr, row, virt_text)
@@ -37,7 +40,12 @@ return {
       local lnum = row + 1
       local foldinfo = utils.fold_info(win, lnum)
 
-      if virt_text[1] and virt_text[1][1] == opts.indent.char and foldinfo and foldinfo.start == lnum then
+      if
+        virt_text[1]
+        and virt_text[1][1] == opts.indent.char
+        and foldinfo
+        and foldinfo.start == lnum
+      then
         virt_text[1] = { " ", { "@ibl.whitespace.char.1" } }
       end
 

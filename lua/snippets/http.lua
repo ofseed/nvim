@@ -279,8 +279,14 @@ local wsr = s(
       host = i(2, "localhost:80"),
       url_path = i(3, "/websocket"),
       text_1 = i(4, "Send when the WebSocket connection is opened"),
-      text_2 = i(5, "Wait for the server message and send the current message as response"),
-      text_3 = i(6, "Send after previous message without waiting for the server message"),
+      text_2 = i(
+        5,
+        "Wait for the server message and send the current message as response"
+      ),
+      text_3 = i(
+        6,
+        "Send after previous message without waiting for the server message"
+      ),
     }
   )
 )

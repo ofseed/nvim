@@ -105,7 +105,10 @@ return {
             require("neo-tree.sources.common.commands").toggle_node(state)
           end
         else
-          require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
+          require("neo-tree.ui.renderer").focus_node(
+            state,
+            node:get_parent_id()
+          )
         end
       end,
 
@@ -119,7 +122,10 @@ return {
               require("neo-tree.sources.common.commands").toggle_node(state)
             end
           elseif node:has_children() then
-            require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
+            require("neo-tree.ui.renderer").focus_node(
+              state,
+              node:get_child_ids()[1]
+            )
           end
         elseif node.type == "file" then
           require("neo-tree.sources.common.commands").open(state)

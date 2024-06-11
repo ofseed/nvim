@@ -27,7 +27,7 @@ return {
         require("conform").format { lsp_fallback = true }
       end,
       desc = "Format Document",
-      mode = { "n", "v" }
+      mode = { "n", "v" },
     },
   },
 }

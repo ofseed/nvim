@@ -7,14 +7,14 @@ return {
       function()
         require("treesj").join()
       end,
-      desc = "Join lines"
+      desc = "Join lines",
     },
     {
       "gS",
       function()
         require("treesj").split()
       end,
-      desc = "Split lines"
+      desc = "Split lines",
     },
   },
   opts = {

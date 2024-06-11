@@ -9,7 +9,18 @@ return {
     window = {
       border = custom.border,
     },
-    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ ", "<Plug>", "require" }, -- hide mapping boilerplate
+    hidden = {
+      "<silent>",
+      "<cmd>",
+      "<Cmd>",
+      "<CR>",
+      "call",
+      "lua",
+      "^:",
+      "^ ",
+      "<Plug>",
+      "require",
+    }, -- hide mapping boilerplate
   },
   config = function(_, opts)
     local which_key = require "which-key"

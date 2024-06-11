@@ -22,10 +22,26 @@ return {
         TelescopeResultsTitle = { fg = color.mantle, bg = color.lavender },
 
         -- window_picker overrides
-        WindowPickerStatusLine = { fg = color.surface0, bg = color.red, style = { "bold" } },
-        WindowPickerStatusLineNC = { fg = color.surface0, bg = color.red, style = { "bold" } },
-        WindowPickerWinBar = { fg = color.surface0, bg = color.red, style = { "bold" } },
-        WindowPickerWinBarNC = { fg = color.surface0, bg = color.red, style = { "bold" } },
+        WindowPickerStatusLine = {
+          fg = color.surface0,
+          bg = color.red,
+          style = { "bold" },
+        },
+        WindowPickerStatusLineNC = {
+          fg = color.surface0,
+          bg = color.red,
+          style = { "bold" },
+        },
+        WindowPickerWinBar = {
+          fg = color.surface0,
+          bg = color.red,
+          style = { "bold" },
+        },
+        WindowPickerWinBarNC = {
+          fg = color.surface0,
+          bg = color.red,
+          style = { "bold" },
+        },
       }
     end,
     integrations = {

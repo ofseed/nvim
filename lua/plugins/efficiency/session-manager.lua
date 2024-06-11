@@ -58,11 +58,23 @@ return {
     })
   end,
   keys = {
-    { "<leader>ss", "<cmd>SessionManager load_session<CR>", desc = "Load selected" },
-    { "<leader>sl", "<cmd>SessionManager load_last_session<CR>", desc = "Load last" },
+    {
+      "<leader>ss",
+      "<cmd>SessionManager load_session<CR>",
+      desc = "Load selected",
+    },
+    {
+      "<leader>sl",
+      "<cmd>SessionManager load_last_session<CR>",
+      desc = "Load last",
+    },
     { "<leader>sd", "<cmd>SessionManager delete_session<CR>", desc = "Delete" },
     -- { "<leader>scs", "<cmd>SessionManager save_current_session<CR>", desc = "Save" },
     -- { "<leader>scl", "<cmd>SessionManager load_current_dir_session<CR>", desc = "Load" },
-    { "<leader>sc", "<cmd>SessionManager load_current_dir_session<CR>", desc = "Load Current" },
+    {
+      "<leader>sc",
+      "<cmd>SessionManager load_current_dir_session<CR>",
+      desc = "Load Current",
+    },
   },
 }

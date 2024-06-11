@@ -23,8 +23,18 @@ return {
           "<Cmd>FlutterOutlineOpen<CR>",
           { buffer = bufnr, desc = "Flutter Outline" }
         )
-        vim.keymap.set("n", "<localleader>r", "<Cmd>FlutterRun<CR>", { buffer = bufnr, desc = "Run" })
-        vim.keymap.set("n", "<localleader>q", "<Cmd>FlutterQuit<CR>", { buffer = bufnr, desc = "Quit" })
+        vim.keymap.set(
+          "n",
+          "<localleader>r",
+          "<Cmd>FlutterRun<CR>",
+          { buffer = bufnr, desc = "Run" }
+        )
+        vim.keymap.set(
+          "n",
+          "<localleader>q",
+          "<Cmd>FlutterQuit<CR>",
+          { buffer = bufnr, desc = "Quit" }
+        )
       end,
       capabilities = capabilities, -- e.g. lsp_status capabilities
     },

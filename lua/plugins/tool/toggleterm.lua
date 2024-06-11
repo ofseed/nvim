@@ -63,7 +63,12 @@ return {
 
     return {
       { "<C-\\>" },
-      { "<leader>tt", "<Cmd>ToggleTermToggleAll<CR>", mode = "n", desc = "All Terminal" },
+      {
+        "<leader>tt",
+        "<Cmd>ToggleTermToggleAll<CR>",
+        mode = "n",
+        desc = "All Terminal",
+      },
 
       -- External programs
       {

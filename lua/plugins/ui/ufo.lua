@@ -4,9 +4,10 @@ return {
   event = "VeryLazy",
   dependencies = "kevinhwang91/promise-async",
   init = function()
-    local set_foldcolumn_for_file = vim.api.nvim_create_augroup("set_foldcolumn_for_file", {
-      clear = true,
-    })
+    local set_foldcolumn_for_file =
+      vim.api.nvim_create_augroup("set_foldcolumn_for_file", {
+        clear = true,
+      })
     vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
       group = set_foldcolumn_for_file,
       callback = function()

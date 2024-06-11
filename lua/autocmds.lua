@@ -8,7 +8,11 @@ local function set_breakindentopt(scope)
   if vim.o.expandtab then
     indent = vim.o.shiftwidth
   end
-  vim.api.nvim_set_option_value("breakindentopt", "shift:" .. indent, { scope = scope })
+  vim.api.nvim_set_option_value(
+    "breakindentopt",
+    "shift:" .. indent,
+    { scope = scope }
+  )
 end
 set_breakindentopt "global"
 vim.api.nvim_create_autocmd({ "OptionSet" }, {

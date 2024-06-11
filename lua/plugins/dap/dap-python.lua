@@ -5,8 +5,12 @@ return {
   opts = {},
   config = function(_, opts)
     require("dap-python").setup(
-      vim.fs.joinpath(require("mason-registry").get_package("debugpy"):get_install_path(), "venv/bin/python")
-    , opts)
+      vim.fs.joinpath(
+        require("mason-registry").get_package("debugpy"):get_install_path(),
+        "venv/bin/python"
+      ),
+      opts
+    )
   end,
   keys = {
     {

@@ -1,4 +1,4 @@
-local locals = require("locals")
+local locals = require "locals"
 
 ---@type LazyPluginSpec
 return {

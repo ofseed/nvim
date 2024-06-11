@@ -17,11 +17,41 @@ return {
   },
   keys = {
     -- Chat
-    { "<C-g>c", "<Cmd>GpChatNew split<CR>", mode = { "n", "i" }, desc = "New Chat" },
-    { "<C-g>c", ":<C-u>'<,'>GpChatNew split<CR>", mode = { "v" }, desc = "New Chat" },
-    { "<C-g>t", "<Cmd>GpChatToggle split<CR>", mode = { "n", "i" }, desc = "Toggle Chat" },
-    { "<C-g>t", ":<C-u>'<,'>GpChatToggle split<CR>", mode = { "v" }, desc = "Toggle Chat" },
-    { "<C-g>f", "<Cmd>GpChatFinder<CR>", mode = { "n", "i" }, desc = "Find Chat" },
-    { "<C-g>p", ":<C-u>'<,'>GpChatPaste<CR>", mode = { "v" }, desc = "Chat Paste" },
+    {
+      "<C-g>c",
+      "<Cmd>GpChatNew split<CR>",
+      mode = { "n", "i" },
+      desc = "New Chat",
+    },
+    {
+      "<C-g>c",
+      ":<C-u>'<,'>GpChatNew split<CR>",
+      mode = { "v" },
+      desc = "New Chat",
+    },
+    {
+      "<C-g>t",
+      "<Cmd>GpChatToggle split<CR>",
+      mode = { "n", "i" },
+      desc = "Toggle Chat",
+    },
+    {
+      "<C-g>t",
+      ":<C-u>'<,'>GpChatToggle split<CR>",
+      mode = { "v" },
+      desc = "Toggle Chat",
+    },
+    {
+      "<C-g>f",
+      "<Cmd>GpChatFinder<CR>",
+      mode = { "n", "i" },
+      desc = "Find Chat",
+    },
+    {
+      "<C-g>p",
+      ":<C-u>'<,'>GpChatPaste<CR>",
+      mode = { "v" },
+      desc = "Chat Paste",
+    },
   },
 }

@@ -11,7 +11,12 @@ return {
     local capabilities = require "capabilities"
 
     return {
-      cmd = { vim.fs.joinpath(mason.get_package("jdtls"):get_install_path(), "/bin/jdtls") },
+      cmd = {
+        vim.fs.joinpath(
+          mason.get_package("jdtls"):get_install_path(),
+          "/bin/jdtls"
+        ),
+      },
       handlers = {
         ["language/status"] = function() end,
       },

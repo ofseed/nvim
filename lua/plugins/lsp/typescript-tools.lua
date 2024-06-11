@@ -14,7 +14,12 @@ return {
       client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
 
-      vim.keymap.set("n", "gD", "<Cmd>TSToolsGoToSourceDefinition<CR>", { buffer = bufnr, desc = "Source Definition" })
+      vim.keymap.set(
+        "n",
+        "gD",
+        "<Cmd>TSToolsGoToSourceDefinition<CR>",
+        { buffer = bufnr, desc = "Source Definition" }
+      )
 
       vim.keymap.set(
         "n",
@@ -34,7 +39,12 @@ return {
         "<Cmd>TSToolsRemoveUnused<CR>",
         { buffer = bufnr, desc = "Remove unused variables" }
       )
-      vim.keymap.set("n", "<localleader>F", "<Cmd>TSToolsFixAll<CR>", { buffer = bufnr, desc = "Fix all" })
+      vim.keymap.set(
+        "n",
+        "<localleader>F",
+        "<Cmd>TSToolsFixAll<CR>",
+        { buffer = bufnr, desc = "Fix all" }
+      )
 
       vim.keymap.set(
         "n",
@@ -42,7 +52,12 @@ return {
         "<Cmd>TSToolsFileReferences<CR>",
         { buffer = bufnr, desc = "File references" }
       )
-      vim.keymap.set("n", "<localleader>fn", "<Cmd>TSToolsRenameFile<CR>", { buffer = bufnr, desc = "File rename" })
+      vim.keymap.set(
+        "n",
+        "<localleader>fn",
+        "<Cmd>TSToolsRenameFile<CR>",
+        { buffer = bufnr, desc = "File rename" }
+      )
     end,
     settings = {
       tsserver_file_preferences = {
