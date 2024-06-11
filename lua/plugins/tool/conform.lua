@@ -17,6 +17,7 @@ return {
       typescriptreact = { "prettier" },
       vue = { "prettier" },
       json = { "prettier" },
+      jsonc = { "prettier" },
       yaml = { "prettier" },
     },
   },
