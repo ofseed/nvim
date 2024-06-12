@@ -83,17 +83,8 @@ return {
   },
   config = function(_, opts)
     if not locals.treesitter_dev then
-      require("nvim-next.integrations").treesitter_textobjects()
       require("nvim-treesitter.configs").setup {
-        textobjects = {
-          select = opts.select,
-        },
-        nvim_next = {
-          enable = true,
-          textobjects = {
-            move = opts.move,
-          },
-        },
+        textobjects = opts,
       }
       return
     end

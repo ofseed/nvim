@@ -13,29 +13,23 @@ return {
     },
     on_attach = function(bufnr)
       local gitsigns = require "gitsigns"
-      local next_integrations = require "nvim-next.integrations"
-      local ngs = next_integrations.gitsigns(gitsigns)
 
       -- Navigation
       vim.keymap.set("n", "]h", function()
         if vim.wo.diff then
-          return "]h"
+          vim.cmd.normal { "]h", bang = true }
+        else
+          gitsigns.nav_hunk "next"
         end
-        vim.schedule(function()
-          ngs.next_hunk()
-        end)
-        return "<Ignore>"
-      end, { buffer = bufnr, expr = true, desc = "Next hunk" })
+      end, { buffer = bufnr, desc = "Next hunk" })
 
       vim.keymap.set("n", "[h", function()
         if vim.wo.diff then
-          return "[h"
+          vim.cmd.normal { "[h", bang = true }
+        else
+          gitsigns.nav_hunk "prev"
         end
-        vim.schedule(function()
-          ngs.prev_hunk()
-        end)
-        return "<Ignore>"
-      end, { buffer = bufnr, expr = true, desc = "Previous hunk" })
+      end, { buffer = bufnr, desc = "Previous hunk" })
 
       -- Actions
       vim.keymap.set(

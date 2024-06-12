@@ -30,6 +30,7 @@ return {
     -- end
 
     return {
+      ---@type cmp.ConfigSchema
       global = {
         window = {
           completion = {

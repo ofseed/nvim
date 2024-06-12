@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "ghostbuster91/nvim-next",
+  enabled = false,
   opts = function()
     local builtins = require "nvim-next.builtins"
 
