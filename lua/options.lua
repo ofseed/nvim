@@ -8,9 +8,9 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.list = true
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.includeexpr = "substitute(v:fname,'\\.','/','g')"
 vim.opt.jumpoptions = "stack"
+vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 
 -- Interface
 vim.opt.confirm = true

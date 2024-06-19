@@ -32,6 +32,9 @@ return {
     return {
       ---@type cmp.ConfigSchema
       global = {
+        completion = {
+          completeopt = vim.o.completeopt,
+        },
         window = {
           completion = {
             winblend = 0,
@@ -57,7 +60,7 @@ return {
             i = cmp.mapping.close(),
             c = cmp.mapping.close(),
           },
-          ["<CR>"] = cmp.mapping.confirm { select = true },
+          ["<CR>"] = cmp.mapping.confirm(),
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
@@ -132,6 +135,9 @@ return {
       },
       cmdline = {
         [":"] = {
+          completion = {
+            completeopt = "menu,menuone,noselect",
+          },
           sources = cmp.config.sources({
             { name = "path" },
           }, {
@@ -139,6 +145,9 @@ return {
           }),
         },
         ["/"] = {
+          completion = {
+            completeopt = "menu,menuone,noselect",
+          },
           sources = {
             { name = "buffer" },
           },
