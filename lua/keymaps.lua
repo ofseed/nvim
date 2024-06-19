@@ -31,9 +31,8 @@ vim.keymap.set("n", "<leader>hq", function()
   vim.treesitter.query.edit()
 end, { desc = "Treesitter Query" })
 
--- Provided by nvim-next
--- vim.keymap.set("n", "[q", "<Cmd>cprevious<CR>", {})
--- vim.keymap.set("n", "]q", "<Cmd>cnext<CR>", {})
+vim.keymap.set("n", "[q", vim.cmd.cprevious, {})
+vim.keymap.set("n", "]q", vim.cmd.cnext, {})
 
 local filetype_keymaps =
   vim.api.nvim_create_augroup("ofseed_filetype_keymaps", {})
