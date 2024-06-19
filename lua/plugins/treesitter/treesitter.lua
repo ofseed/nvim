@@ -5,9 +5,6 @@ return {
   "nvim-treesitter/nvim-treesitter",
   branch = locals.treesitter_dev and "main" or "master",
   event = "VeryLazy",
-  dependencies = {
-    { "RRethy/nvim-treesitter-endwise", cond = not locals.treesitter_dev },
-  },
   build = ":TSUpdate",
   opts = {
     ensure_installed = "all",
@@ -17,9 +14,6 @@ return {
       disable = { "latex" },
     },
     indent = {
-      enable = true,
-    },
-    endwise = {
       enable = true,
     },
   },
