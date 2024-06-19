@@ -3,6 +3,8 @@ return {
   "NvChad/nvim-colorizer.lua",
   event = "VeryLazy",
   opts = {
-    names = false,
+    user_default_options = {
+      names = false,
+    },
   },
 }
