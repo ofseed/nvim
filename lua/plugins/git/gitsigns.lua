@@ -5,6 +5,14 @@ return {
   "lewis6991/gitsigns.nvim",
   event = "VeryLazy",
   dependencies = "nvim-lua/plenary.nvim",
+  keys = {
+    {
+      "<leader>gB",
+      function()
+        require("gitsigns").blame()
+      end,
+    },
+  },
   opts = {
     word_diff = true,
     attach_to_untracked = true,
