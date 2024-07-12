@@ -69,6 +69,9 @@ return {
         includeInlayFunctionLikeReturnTypeHints = true,
         includeInlayEnumMemberValueHints = true,
       },
+      tsserver_plugins = {
+        "@vue/typescript-plugin",
+      },
     },
     code_lens = "all",
   },
