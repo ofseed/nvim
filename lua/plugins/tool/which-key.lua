@@ -7,8 +7,14 @@ return {
   event = "VeryLazy",
   ---@type wk.Opts
   opts = {
+    preset = "modern",
     win = {
       border = custom.border,
+    },
+    icons = {
+      breadcrumb = "",
+      separator = "",
+      rules = false,
     },
 
     spec = {
