@@ -10,7 +10,11 @@ return {
   opts = {
     icons = {
       kinds = {
-        symbols = custom.icons.kind_with_space,
+        symbols = vim.tbl_extend(
+          "keep",
+          { Folder = " " },
+          custom.icons.kind_with_space
+        ),
       },
     },
     sources = {
