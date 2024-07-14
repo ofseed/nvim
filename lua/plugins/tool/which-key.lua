@@ -22,7 +22,6 @@ return {
       { "<leader>m", group = "manage" },
       { "<leader>r", group = "tasks" },
       { "<leader>d", group = "debug" },
-      { "<leader>D", group = "debuggee" },
       { "<leader>t", group = "toggle" },
       { "<leader>T", group = "test" },
       { "<leader>o", group = "org" },
