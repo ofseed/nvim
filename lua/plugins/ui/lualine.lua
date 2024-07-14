@@ -72,6 +72,12 @@ return {
   },
   opts = {
     sections = {
+      lualine_a = {
+        {
+          "mode",
+          icon = "",
+        },
+      },
       lualine_b = {
         {
           "branch",
@@ -111,7 +117,16 @@ return {
       },
       lualine_y = {
         "diagnostics",
-        "progress",
+        {
+          "progress",
+          icon = "",
+        },
+      },
+      lualine_z = {
+        {
+          "location",
+          icon = "",
+        },
       },
     },
     options = {
