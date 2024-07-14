@@ -1,8 +1,12 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "  "
+vim.keymap.set("", "j", "gj")
+vim.keymap.set("", "k", "gk")
+vim.keymap.set("", "gj", "j")
+vim.keymap.set("", "gk", "k")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-N>")
 vim.keymap.set("c", "<C-p>", "<Up>")
 vim.keymap.set("c", "<C-n>", "<Down>")
+vim.g.mapleader = " "
+vim.g.maplocalleader = "  "
 
 local function toggle_quickfix()
   local wins = vim.fn.getwininfo()
