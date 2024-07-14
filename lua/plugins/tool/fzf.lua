@@ -81,14 +81,14 @@ return {
       function()
         require("fzf-lua").lsp_document_symbols()
       end,
-      desc = "Symbols",
+      desc = "Document Symbols",
     },
     {
       "<leader>fS",
       function()
         require("fzf-lua").lsp_workspace_symbols()
       end,
-      desc = "Symbols",
+      desc = "Workspace Symbols",
     },
     {
       "<leader>fc",

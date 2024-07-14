@@ -11,6 +11,7 @@ return {
       function()
         require("gitsigns").blame()
       end,
+      desc = "Blame",
     },
   },
   opts = {
