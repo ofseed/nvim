@@ -112,7 +112,10 @@ return {
         },
         "copilot",
         indent,
-        "encoding",
+        {
+          "encoding",
+          show_bomb = true,
+        },
         "fileformat",
       },
       lualine_y = {
