@@ -98,7 +98,7 @@ return {
       { "<leader>s", group = "session" },
       { "<leader>sc", group = "current" },
 
-      { "<leader>b", group = custom.prefer_tabpage and "tab" or "buffer" },
+      { "<leader>b", group = "tab" },
       { "<leader>bs", group = "sort" },
       { "<leader>l", group = "lsp" },
       { "<leader>lw", group = "workspace" },

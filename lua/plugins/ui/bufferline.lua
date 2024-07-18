@@ -1,8 +1,3 @@
-local custom = require "custom"
-local utils = require "utils"
-
-local mode = custom.prefer_tabpage and "tab" or "buffer"
-
 ---@type LazyPluginSpec
 return {
   "akinsho/bufferline.nvim",
@@ -19,8 +14,7 @@ return {
         delay = 0,
         reveal = { "close" },
       },
-      mode = custom.prefer_tabpage and "tabs" or "buffers",
-      -- numbers = custom.prefer_tabpage and "ordinal" or "none",
+      mode = "tabs",
       show_close_icon = false,
       buffer_close_icon = "🗙",
       offsets = {
@@ -79,73 +73,58 @@ return {
       end,
       show_duplicate_prefix = false,
       always_show_bufferline = true,
-      sort_by = custom.prefer_tabpage and "tabs" or "insert_after_current",
+      sort_by = "tabs",
     },
   },
   keys = {
     {
       "<M-1>",
       "<Cmd>BufferLineGoToBuffer 1<CR>",
-      desc = "Go to " .. mode .. " 1",
+      desc = "Go to tab 1",
     },
     {
       "<M-2>",
       "<Cmd>BufferLineGoToBuffer 2<CR>",
-      desc = "Go to " .. mode .. " 2",
+      desc = "Go to tab 2",
     },
     {
       "<M-3>",
       "<Cmd>BufferLineGoToBuffer 3<CR>",
-      desc = "Go to " .. mode .. " 3",
+      desc = "Go to tab 3",
     },
     {
       "<M-4>",
       "<Cmd>BufferLineGoToBuffer 4<CR>",
-      desc = "Go to " .. mode .. " 4",
+      desc = "Go to tab 4",
     },
     {
       "<M-5>",
       "<Cmd>BufferLineGoToBuffer 5<CR>",
-      desc = "Go to " .. mode .. " 5",
+      desc = "Go to tab 5",
     },
     {
       "<M-6>",
       "<Cmd>BufferLineGoToBuffer 6<CR>",
-      desc = "Go to " .. mode .. " 6",
+      desc = "Go to tab 6",
     },
     {
       "<M-7>",
       "<Cmd>BufferLineGoToBuffer 7<CR>",
-      desc = "Go to " .. mode .. " 7",
+      desc = "Go to tab 7",
     },
     {
       "<M-8>",
       "<Cmd>BufferLineGoToBuffer 8<CR>",
-      desc = "Go to " .. mode .. " 8",
+      desc = "Go to tab 8",
     },
     {
       "<M-9>",
       "<Cmd>BufferLineGoToBuffer 9<CR>",
-      desc = "Go to " .. mode .. " 9",
+      desc = "Go to tab 9",
     },
 
-    custom.prefer_tabpage
-        and { "<M-S-Right>", "<Cmd>+tabmove<CR>", desc = "Move tab to next" }
-      or {
-        "<M-S-Right>",
-        "<Cmd>BufferLineMoveNext<CR>",
-        desc = "Move buffer to next",
-      },
-    custom.prefer_tabpage
-        and { "<M-S-Left>", "<Cmd>-tabmove<CR>", desc = "Move tab to previous" }
-      or {
-        "<M-S-Right>",
-        "<Cmd>BufferLineMovePrev<CR>",
-        desc = "Move buffer to previous",
-      },
-
-    { "]b", "<cmd>BufferLineCycleNext<CR>", desc = utils.firstToUpper(mode) },
-    { "[b", "<cmd>BufferLineCyclePrev<CR>", desc = utils.firstToUpper(mode) },
+    { "<M-S-Right>", "<Cmd>+tabmove<CR>", desc = "Move tab to next" },
+    { "<M-S-Left>", "<Cmd>-tabmove<CR>", desc = "Move tab to previous" },
 
     { "<leader>bc", "<cmd>BufferLinePickClose<CR>", desc = "Close" },
     {

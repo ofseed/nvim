@@ -16,7 +16,6 @@ return {
   opts = {
     disable_hint = true,
     graph_style = "unicode",
-    kind = custom.prefer_tabpage and "tab" or "split",
     integrations = {
       diffview = true,
     },

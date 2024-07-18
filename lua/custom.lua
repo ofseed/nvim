@@ -3,9 +3,6 @@ local M = {}
 -- Colorscheme
 M.theme = "catppuccin"
 
--- Where a tab is a tabpage rather than a buffer
-M.prefer_tabpage = true
-
 -- Border style of floating windows
 M.border = "rounded"
 
