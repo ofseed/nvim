@@ -74,6 +74,7 @@ M.cmp_format = {
   mode = "symbol",
   maxwidth = 50,
   menu = {
+    lazydev = "[DEV]",
     luasnip = "[SNP]",
     nvim_lsp = "[LSP]",
     nvim_lua = "[VIM]",
