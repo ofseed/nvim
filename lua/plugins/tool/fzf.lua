@@ -118,6 +118,13 @@ return {
       end,
       desc = "Live grep",
     },
+    {
+      "<leader>fr",
+      function ()
+        require("fzf-lua").registers()
+      end,
+      desc = "Registers",
+    },
     -- {
     --   "<leader>fn",
     --   function()
