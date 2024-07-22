@@ -9,6 +9,7 @@ return {
   opts = {
     preset = "modern",
     win = {
+      no_overlap = false,
       border = custom.border,
     },
     icons = {

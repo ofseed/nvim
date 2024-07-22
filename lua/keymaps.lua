@@ -1,3 +1,5 @@
+local utils = require "utils"
+
 vim.keymap.set("", "j", "gj")
 vim.keymap.set("", "k", "gk")
 vim.keymap.set("", "gj", "j")
@@ -7,6 +9,27 @@ vim.keymap.set("c", "<C-p>", "<Up>")
 vim.keymap.set("c", "<C-n>", "<Down>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "  "
+
+local next_diagnostic, prev_diagnostic = utils.make_repeatable_move_pair(
+  function()
+    vim.diagnostic.jump { count = vim.v.count1 }
+  end,
+  function()
+    vim.diagnostic.jump { count = -vim.v.count1 }
+  end
+)
+vim.keymap.set(
+  "n",
+  "]d",
+  next_diagnostic,
+  { desc = "Jump to the next diagnostic in the current buffer" }
+)
+vim.keymap.set(
+  "n",
+  "[d",
+  prev_diagnostic,
+  { desc = "Jump to the previous diagnostic in the current buffer" }
+)
 
 local function toggle_quickfix()
   local wins = vim.fn.getwininfo()
@@ -35,8 +58,17 @@ vim.keymap.set("n", "<leader>hq", function()
   vim.treesitter.query.edit()
 end, { desc = "Treesitter Query" })
 
-vim.keymap.set("n", "[q", vim.cmd.cprevious, {})
-vim.keymap.set("n", "]q", vim.cmd.cnext, {})
+local cnext, cprevious = utils.make_repeatable_move_pair(function()
+  return pcall(function()
+    vim.cmd.cnext { count = vim.v.count1 }
+  end)
+end, function()
+  return pcall(function()
+    vim.cmd.cprevious { count = vim.v.count1 }
+  end)
+end)
+vim.keymap.set("n", "]q", cnext, { desc = "Next quickfix" })
+vim.keymap.set("n", "[q", cprevious, { desc = "Prev quickfix" })
 
 local filetype_keymaps =
   vim.api.nvim_create_augroup("ofseed_filetype_keymaps", {})

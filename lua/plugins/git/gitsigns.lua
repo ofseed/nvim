@@ -1,4 +1,5 @@
 local custom = require "custom"
+local utils = require "utils"
 
 ---@type LazyPluginSpec
 return {
@@ -22,13 +23,18 @@ return {
     },
     on_attach = function(bufnr)
       local gitsigns = require "gitsigns"
+      local next_hunk, prev_hunk = utils.make_repeatable_move_pair(function()
+        gitsigns.nav_hunk "next"
+      end, function()
+        gitsigns.nav_hunk "prev"
+      end)
 
       -- Navigation
       vim.keymap.set("n", "]h", function()
         if vim.wo.diff then
           vim.cmd.normal { "]h", bang = true }
         else
-          gitsigns.nav_hunk "next"
+          next_hunk()
         end
       end, { buffer = bufnr, desc = "Next hunk" })
 
@@ -36,7 +42,7 @@ return {
         if vim.wo.diff then
           vim.cmd.normal { "[h", bang = true }
         else
-          gitsigns.nav_hunk "prev"
+          prev_hunk()
         end
       end, { buffer = bufnr, desc = "Previous hunk" })
 

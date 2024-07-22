@@ -16,10 +16,66 @@ return {
     },
   },
   keys = function()
+    local repeatable = require "nvim-treesitter-textobjects.repeatable_move"
     local select = require "nvim-treesitter-textobjects.select"
     local move = require "nvim-treesitter-textobjects.move"
 
     return {
+      ---
+      --- Repeatable
+      ---
+      {
+        ";",
+        function()
+          repeatable.repeat_last_move()
+        end,
+        mode = { "n", "x", "o" },
+        desc = "Next last move",
+      },
+      {
+        ",",
+        function()
+          repeatable.repeat_last_move_opposite()
+        end,
+        mode = { "n", "x", "o" },
+        desc = "Prev last move",
+      },
+      {
+        "f",
+        function()
+          return repeatable.builtin_f_expr()
+        end,
+        expr = true,
+        mode = { "n", "x", "o" },
+        desc = "Move to next char",
+      },
+      {
+        "F",
+        function()
+          return repeatable.builtin_F_expr()
+        end,
+        expr = true,
+        mode = { "n", "x", "o" },
+        desc = "Move to prev char",
+      },
+      {
+        "t",
+        function()
+          return repeatable.builtin_t_expr()
+        end,
+        expr = true,
+        mode = { "n", "x", "o" },
+        desc = "Move before next char",
+      },
+      {
+        "T",
+        function()
+          return repeatable.builtin_T_expr()
+        end,
+        expr = true,
+        mode = { "n", "x", "o" },
+        desc = "Move before prev char",
+      },
       --
       -- Select
       --
