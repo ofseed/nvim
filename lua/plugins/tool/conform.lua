@@ -4,6 +4,7 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
+      nix = { "nixfmt" },
       python = { "isort", "black" },
       go = { "gofumpt", "goimports" },
 
