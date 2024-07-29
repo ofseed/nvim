@@ -14,6 +14,21 @@ return {
     local lspconfig = require "lspconfig"
     local capabilities = require "capabilities"
 
+    lspconfig.nixd.setup {
+      settings = {
+        nixd = {
+          nixpkgs = {
+            expr = 'import (builtins.getFlake "/home/ofseed/.config/home-manager").inputs.nixpkgs {  }',
+          },
+          options = {
+            home_manager = {
+              expr = '(builtins.getFlake "/home/ofseed/.config/home-manager").homeConfigurations.ofseed.options',
+            },
+          },
+        },
+      },
+    }
+
     lspconfig.pyright.setup {
       cmd = { "delance-langserver", "--stdio" },
       settings = {
