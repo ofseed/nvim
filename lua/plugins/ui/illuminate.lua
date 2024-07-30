@@ -53,7 +53,7 @@ return {
       { desc = "Prev reference" },
     },
     {
-      "<M-l>",
+      "<leader>ti",
       function()
         require("illuminate").toggle_freeze_buf()
       end,
