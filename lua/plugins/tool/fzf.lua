@@ -125,6 +125,13 @@ return {
       end,
       desc = "Registers",
     },
+    {
+      "<leader>fk",
+      function ()
+        require("fzf-lua").keymaps()
+      end,
+      desc = "Keymaps",
+    },
     -- {
     --   "<leader>fn",
     --   function()
