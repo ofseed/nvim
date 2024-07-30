@@ -2,5 +2,10 @@
 return {
   "kylechui/nvim-surround",
   event = "VeryLazy",
-  opts = {},
+  opts = {
+    keymaps = {
+      insert = false,
+      insert_line = false,
+    },
+  },
 }
