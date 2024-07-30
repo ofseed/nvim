@@ -86,10 +86,11 @@ return {
         },
         sources = {
           { name = "lazydev", group_index = 0 },
-          { name = "nvim_lsp" },
+          { name = "nvim_lsp", group_index = 1 },
           -- { name = "luasnip" },
           {
             name = "buffer",
+            group_index = 2,
             option = {
               get_bufnrs = function()
                 return vim
