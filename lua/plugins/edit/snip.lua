@@ -13,11 +13,16 @@ return {
       end,
       mode = "i",
     },
+    {
+      "<Tab>",
+      mode = "x",
+    },
   },
   opts = function()
     local types = require "luasnip.util.types"
 
     return {
+      store_selection_keys = "<Tab>",
       update_events = { "TextChanged", "TextChangedI" },
       ext_opts = {
         [types.choiceNode] = {
