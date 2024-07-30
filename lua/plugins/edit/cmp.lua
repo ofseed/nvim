@@ -15,7 +15,7 @@ return {
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
     { "hrsh7th/cmp-calc" },
-    { "saadparwaiz1/cmp_luasnip" },
+    -- { "saadparwaiz1/cmp_luasnip" },
     { "kristijanhusak/vim-dadbod-completion" },
     { "lukas-reineke/cmp-under-comparator" },
   },
@@ -93,7 +93,7 @@ return {
         sources = {
           { name = "lazydev", group_index = 0 },
           { name = "nvim_lsp" },
-          { name = "luasnip" },
+          -- { name = "luasnip" },
           {
             name = "buffer",
             option = {
