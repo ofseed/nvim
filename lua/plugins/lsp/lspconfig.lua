@@ -52,6 +52,7 @@ return {
     })
 
     lspconfig.clangd.setup {
+      cmd = { "clangd", "--header-insertion-decorators=0" },
       capabilities = capabilities,
     }
   end,
