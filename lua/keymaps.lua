@@ -1,14 +1,14 @@
 local utils = require "utils"
 
-vim.keymap.set("", "j", "gj")
-vim.keymap.set("", "k", "gk")
-vim.keymap.set("", "gj", "j")
-vim.keymap.set("", "gk", "k")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-N>")
 vim.keymap.set("c", "<C-p>", "<Up>")
 vim.keymap.set("c", "<C-n>", "<Down>")
 vim.keymap.set("s", "<BS>", "<BS><Cmd>startinsert<CR>")
 vim.keymap.set("s", "<C-h>", "<C-h><Cmd>startinsert<CR>")
+vim.keymap.set({ "n", "x", "o" }, "j", "gj")
+vim.keymap.set({ "n", "x", "o" }, "k", "gk")
+vim.keymap.set({ "n", "x", "o" }, "gj", "j")
+vim.keymap.set({ "n", "x", "o" }, "gk", "k")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "  "
 
