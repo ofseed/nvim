@@ -68,7 +68,7 @@ return {
       desc = "Toggle full UI",
     },
     {
-      "<M-k>",
+      "<C-k>",
       function()
         require("dapui").eval()
       end,
