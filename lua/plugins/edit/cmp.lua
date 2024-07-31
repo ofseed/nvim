@@ -16,8 +16,8 @@ return {
     { "hrsh7th/cmp-cmdline" },
     { "hrsh7th/cmp-calc" },
     -- { "saadparwaiz1/cmp_luasnip" },
-    { "kristijanhusak/vim-dadbod-completion" },
     { "lukas-reineke/cmp-under-comparator" },
+    { "kristijanhusak/vim-dadbod-completion", enabled = false },
   },
   opts = function()
     local cmp = require "cmp"
@@ -174,16 +174,16 @@ return {
         }
       end,
     })
-    vim.api.nvim_create_autocmd("Filetype", {
-      desc = "Setup cmp buffer sql source",
-      pattern = "sql",
-      callback = function()
-        cmp.setup.buffer {
-          sources = {
-            { name = "vim-dadbod-completion" },
-          },
-        }
-      end,
-    })
+    -- vim.api.nvim_create_autocmd("Filetype", {
+    --   desc = "Setup cmp buffer sql source",
+    --   pattern = "sql",
+    --   callback = function()
+    --     cmp.setup.buffer {
+    --       sources = {
+    --         { name = "vim-dadbod-completion" },
+    --       },
+    --     }
+    --   end,
+    -- })
   end,
 }
