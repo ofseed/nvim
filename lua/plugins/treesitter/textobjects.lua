@@ -175,6 +175,22 @@ return {
         mode = { "x", "o" },
         desc = "inner part of a loop",
       },
+      {
+        "an",
+        function()
+          select.select_textobject "@number.outer"
+        end,
+        mode = { "x", "o" },
+        desc = "a loop",
+      },
+      {
+        "in",
+        function()
+          select.select_textobject "@number.inner"
+        end,
+        mode = { "x", "o" },
+        desc = "inner part of a number",
+      },
       --
       -- Move
       --
@@ -369,6 +385,38 @@ return {
         end,
         mode = { "n", "x", "o" },
         desc = "Previous loop end",
+      },
+      {
+        "[n",
+        function()
+          move.goto_previous_start "@number.inner"
+        end,
+        mode = { "n", "x", "o" },
+        desc = "Previous number",
+      },
+      {
+        "]n",
+        function()
+          move.goto_next_start "@number.inner"
+        end,
+        mode = { "n", "x", "o" },
+        desc = "Next number",
+      },
+      {
+        "[N",
+        function()
+          move.goto_previous_end "@number.inner"
+        end,
+        mode = { "n", "x", "o" },
+        desc = "Previous number",
+      },
+      {
+        "]N",
+        function()
+          move.goto_next_end "@number.inner"
+        end,
+        mode = { "n", "x", "o" },
+        desc = "Next number",
       },
     }
   end,
