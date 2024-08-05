@@ -38,7 +38,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
   desc = "General LSP Attach",
   callback = function(args)
     local bufnr = args.buf
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
 
     -- Always override the default to add context
     vim.keymap.set("n", "grr", function()

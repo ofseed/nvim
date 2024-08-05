@@ -28,7 +28,7 @@ return {
 
         lua_ls = function()
           lspconfig.lua_ls.setup {
-            on_attach = function(client, bufnr)
+            on_attach = function(client)
               client.server_capabilities.documentFormattingProvider = false
             end,
             capabilities = capabilities,
@@ -57,7 +57,7 @@ return {
 
         gopls = function()
           lspconfig.gopls.setup {
-            on_attach = function(client, bufnr)
+            on_attach = function(client)
               client.server_capabilities.documentFormattingProvider = false
             end,
             capabilities = capabilities,
@@ -79,7 +79,7 @@ return {
 
         volar = function()
           lspconfig.volar.setup {
-            on_attach = function(client, bufnr)
+            on_attach = function(client)
               client.server_capabilities.documentFormattingProvider = false
             end,
             capabilities = capabilities,
@@ -94,7 +94,7 @@ return {
                 validate = { enable = true },
               },
             },
-            on_attach = function(client, bufnr)
+            on_attach = function(client)
               client.server_capabilities.documentFormattingProvider = false
             end,
             capabilities = capabilities,
