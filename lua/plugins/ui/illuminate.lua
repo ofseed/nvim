@@ -9,6 +9,7 @@ return {
     return {
       filetypes_denylist = {
         "xxd",
+        "floggraph",
       },
       large_file_cutoff = 10000,
       should_enable = function(bufnr)
