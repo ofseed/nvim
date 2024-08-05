@@ -84,28 +84,33 @@ return {
             "c",
           }),
         },
-        sources = {
-          { name = "lazydev", group_index = 0 },
-          { name = "nvim_lsp", group_index = 1 },
-          -- { name = "luasnip" },
+        sources = cmp.config.sources(
+          -- Group sources
           {
-            name = "buffer",
-            group_index = 2,
-            option = {
-              get_bufnrs = function()
-                return vim
-                  .iter(vim.api.nvim_list_bufs())
-                  :filter(function(buf)
-                    return vim.bo[buf].buftype == ""
-                  end)
-                  :totable()
-              end,
-            },
+            { name = "lazydev" },
           },
-          { name = "path" },
-          { name = "calc" },
-          { name = "orgmode" },
-        },
+          {
+            { name = "nvim_lsp" },
+          },
+          {
+            {
+              name = "buffer",
+              option = {
+                get_bufnrs = function()
+                  return vim
+                    .iter(vim.api.nvim_list_bufs())
+                    :filter(function(buf)
+                      return vim.bo[buf].buftype == ""
+                    end)
+                    :totable()
+                end,
+              },
+            },
+            { name = "path" },
+            { name = "calc" },
+            { name = "orgmode" },
+          }
+        ),
         formatting = {
           format = lspkind.cmp_format(custom.cmp_format),
           fields = {
