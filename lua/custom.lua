@@ -83,6 +83,7 @@ M.cmp_format = {
     calc = "[CLC]",
     latex_symbols = "[TEX]",
     orgmode = "[ORG]",
+    cmdline = "[CMD]",
   },
 }
 
