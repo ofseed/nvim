@@ -11,6 +11,7 @@ vim.opt.list = true
 vim.opt.includeexpr = "substitute(v:fname,'\\.','/','g')"
 vim.opt.jumpoptions = "stack"
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
+vim.opt.swapfile = false
 
 -- Interface
 vim.opt.confirm = true
