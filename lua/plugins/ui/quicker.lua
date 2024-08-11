@@ -35,13 +35,4 @@ return {
       return math.floor(math.min(60, vim.o.columns / 4))
     end,
   },
-  keys = {
-    {
-      "<leader>q",
-      function()
-        require("quicker").toggle()
-      end,
-      desc = "Toggle quickfix",
-    },
-  },
 }
