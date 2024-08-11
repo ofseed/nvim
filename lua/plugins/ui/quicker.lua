@@ -25,11 +25,14 @@ return {
         desc = "Collapse quickfix context",
       },
     },
+    opts = {
+      number = true,
+    },
     highlight = {
       lsp = false,
     },
     max_filename_width = function()
-      return math.floor(math.max(80, vim.o.columns / 3))
+      return math.floor(math.min(60, vim.o.columns / 4))
     end,
   },
   keys = {
