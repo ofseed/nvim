@@ -143,6 +143,8 @@ return {
             completeopt = "menu,menuone,noselect",
           },
           sources = cmp.config.sources({
+            { name = "lazydev" },
+          }, {
             { name = "path" },
           }, {
             { name = "cmdline" },
