@@ -14,7 +14,6 @@ return {
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
-    { "hrsh7th/cmp-calc" },
     -- { "saadparwaiz1/cmp_luasnip" },
     { "lukas-reineke/cmp-under-comparator" },
     { "kristijanhusak/vim-dadbod-completion", enabled = false },
@@ -107,7 +106,6 @@ return {
               },
             },
             { name = "path" },
-            { name = "calc" },
             { name = "orgmode" },
           }
         ),
