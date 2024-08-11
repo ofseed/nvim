@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "stevearc/quicker.nvim",
-  lazy = false,
+  ft = "qf",
   ---@module "quicker"
   ---@type quicker.SetupOptions
   opts = {
