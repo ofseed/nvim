@@ -40,6 +40,9 @@ return {
         folder_open = "",
         folder_empty = "",
       },
+      symlink_target = {
+        enabled = true,
+      },
     },
     source_selector = {
       winbar = true,
