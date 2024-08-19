@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
-  "akinsho/bufferline.nvim",
+  "ofseed/bufferline.nvim",
+  -- https://github.com/akinsho/bufferline.nvim/pull/944
   event = "VeryLazy",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   init = function()
@@ -15,6 +16,32 @@ return {
         reveal = { "close" },
       },
       mode = "tabs",
+      name_formatter = function(args)
+        if vim.bo[args.bufnr].buftype ~= "" then
+          for _, bufnr in ipairs(args.buffers) do
+            if vim.bo[bufnr].buftype == "" then
+              return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(bufnr), ":t")
+            end
+          end
+        end
+      end,
+      get_element_icon = function(args)
+        local loaded, devicons = pcall(require, "nvim-web-devicons")
+        if not loaded then
+          return ""
+        end
+        if vim.bo[args.bufnr].buftype ~= "" then
+          for _, bufnr in ipairs(args.buffers) do
+            if vim.bo[bufnr].buftype == "" then
+              return devicons.get_icon(
+                vim.fn.fnamemodify(vim.api.nvim_buf_get_name(bufnr), ":t"),
+                nil,
+                { default = true }
+              )
+            end
+          end
+        end
+      end,
       show_close_icon = false,
       buffer_close_icon = "🗙",
       offsets = {
