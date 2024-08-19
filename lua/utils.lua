@@ -5,33 +5,33 @@ local M = {}
 ---@param forward_move_fn function
 ---@param backward_move_fn function
 function M.make_repeatable_move_pair(forward_move_fn, backward_move_fn)
+  local function move_fn(opts)
+    if opts.forward then
+      return forward_move_fn()
+    else
+      return backward_move_fn()
+    end
+  end
+
   local loaded_ts, ts_repeatable
   return function()
     if not loaded_ts then
       loaded_ts, ts_repeatable =
         pcall(require, "nvim-treesitter-textobjects.repeatable_move")
       if loaded_ts then
-        forward_move_fn, backward_move_fn =
-          ts_repeatable.make_repeatable_move_pair(
-            forward_move_fn,
-            backward_move_fn
-          )
+        move_fn = ts_repeatable.make_repeatable_move(move_fn)
       end
     end
-    return forward_move_fn()
+    return move_fn { forward = true }
   end, function()
     if not loaded_ts then
       loaded_ts, ts_repeatable =
         pcall(require, "nvim-treesitter-textobjects.repeatable_move")
       if loaded_ts then
-        forward_move_fn, backward_move_fn =
-          ts_repeatable.make_repeatable_move_pair(
-            forward_move_fn,
-            backward_move_fn
-          )
+        move_fn = ts_repeatable.make_repeatable_move(move_fn)
       end
     end
-    return backward_move_fn()
+    return move_fn { forward = false }
   end
 end
 
