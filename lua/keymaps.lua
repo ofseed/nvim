@@ -12,14 +12,21 @@ vim.keymap.set({ "n", "x", "o" }, "gk", "k")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "  "
 
-local next_diagnostic, prev_diagnostic = utils.make_repeatable_move_pair(
-  function()
+local next_diagnostic, prev_diagnostic
+if vim.fn.has "nvim-0.11" == 1 then
+  next_diagnostic, prev_diagnostic = utils.make_repeatable_move_pair(function()
     vim.diagnostic.jump { count = vim.v.count1 }
-  end,
-  function()
+  end, function()
     vim.diagnostic.jump { count = -vim.v.count1 }
-  end
-)
+  end)
+else
+  next_diagnostic, prev_diagnostic = utils.make_repeatable_move_pair(function()
+    vim.diagnostic.goto_next { float = false }
+  end, function()
+    vim.diagnostic.goto_prev { float = false }
+  end)
+end
+
 vim.keymap.set(
   "n",
   "]d",
