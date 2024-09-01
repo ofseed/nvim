@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "grr", function()
       vim.lsp.buf.references { includeDeclaration = false }
     end, { buffer = bufnr, desc = "References" })
-    if not vim.fn.has "nvim-0.11" then
+    if vim.fn.has "nvim-0.11" ~= 1 then
       vim.keymap.set("n", "grn", function()
         vim.lsp.buf.rename()
       end, { buffer = bufnr, desc = "Rename" })
