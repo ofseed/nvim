@@ -68,6 +68,8 @@ return {
     end,
     settings = {
       tsserver_file_preferences = {
+        importModuleSpecifierPreference = "non-relative",
+
         includeInlayParameterNameHints = "all",
         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
         includeInlayFunctionParameterTypeHints = true,
