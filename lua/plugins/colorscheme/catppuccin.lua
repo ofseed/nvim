@@ -42,6 +42,8 @@ return {
           bg = color.red,
           style = { "bold" },
         },
+
+        QuickFixLineNr = { fg = color.overlay0 },
       }
     end,
     integrations = {
