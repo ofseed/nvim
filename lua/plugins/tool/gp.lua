@@ -3,8 +3,13 @@ local custom = require "custom"
 ---@type LazyPluginSpec
 return {
   "https://github.com/Robitx/gp.nvim",
-  cond = vim.env.OPENAI_API_KEY ~= nil,
   opts = {
+    providers = {
+      openai = {
+        endpoint = "https://models.inference.ai.azure.com/chat/completions",
+        secret = vim.env.GITHUB_TOKEN,
+      },
+    },
     toggle_target = "split",
     style_chat_finder_border = custom.border,
     style_popup_border = custom.border,
