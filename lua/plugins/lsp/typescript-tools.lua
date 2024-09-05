@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "pmizio/typescript-tools.nvim",
+  enabled = false,
   event = {
     "BufRead *.js,*.jsx,*.mjs,*.cjs,*.ts,*.tsx,*.vue",
     "BufNewFile *.js,*.jsx,*.mjs,*.cjs,*.ts,*.tsx,*.vue",
