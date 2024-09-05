@@ -3,7 +3,7 @@ return {
   "3rd/image.nvim",
   enabled = vim.uv.os_uname().sysname ~= "Windows_NT",
   dependencies = {
-    { "leafo/magick", lazy = true },
+    { "leafo/magick" },
   },
   ft = { "markdown", "org", "norg" },
   event = function(plugin)
