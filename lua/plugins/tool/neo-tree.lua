@@ -13,6 +13,7 @@ return {
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
     "s1n7ax/nvim-window-picker",
+    "ofseed/nvim-lsp-file-operations",
   },
   init = function()
     vim.api.nvim_create_autocmd("BufEnter", {
@@ -155,6 +156,7 @@ return {
   },
   config = function(_, opts)
     require("neo-tree").setup(opts)
+    require("lsp-file-operations").setup {}
     vim.api.nvim_create_augroup("load_neo_tree", {})
   end,
   keys = {

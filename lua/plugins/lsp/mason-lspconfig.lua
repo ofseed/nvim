@@ -78,6 +78,10 @@ return {
         end,
 
         vtsls = function()
+          local loaded, vtsls = pcall(require, "vtsls")
+          if loaded then
+            require("lspconfig.configs").vtsls = vtsls.lspconfig
+          end
           lspconfig.vtsls.setup {
             on_attach = function(client)
               client.server_capabilities.documentFormattingProvider = false
