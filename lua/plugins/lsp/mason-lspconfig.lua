@@ -24,7 +24,6 @@ return {
 
         rust_analyzer = function() end,
         jdtls = function() end,
-        tsserver = function() end,
 
         lua_ls = function()
           lspconfig.lua_ls.setup {
