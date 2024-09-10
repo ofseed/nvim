@@ -19,7 +19,7 @@ local function set_breakindentopt(scope)
     { scope = scope }
   )
 end
-set_breakindentopt()
+-- This autocmd implicitly rely on `vim-sleuth` to trigger
 vim.api.nvim_create_autocmd({ "OptionSet" }, {
   group = group,
   pattern = { "expandtab", "shiftwidth", "tabstop" },
@@ -37,13 +37,6 @@ vim.api.nvim_create_autocmd({ "OptionSet" }, {
     else
       set_breakindentopt(scope)
     end
-  end,
-})
-vim.api.nvim_create_autocmd("FileType", {
-  group = group,
-  pattern = ignored_filetypes,
-  callback = function()
-    vim.opt_local.breakindentopt = {}
   end,
 })
 
