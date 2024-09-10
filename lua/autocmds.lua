@@ -4,30 +4,43 @@ local group = vim.api.nvim_create_augroup("ofseed", {})
 
 -- Indent wrapped lines based on indent settings except for ignored filetypes
 local ignored_filetypes = { "text", "markdown", "org" }
----@param scope "global" | "local"
+---@alias option_scope "global" | "local" | nil
+---@param scope option_scope
 local function set_breakindentopt(scope)
+  local indent
+  if vim.api.nvim_get_option_value("expandtab", { scope = scope }) then
+    indent = vim.api.nvim_get_option_value("shiftwidth", { scope = scope })
+  else
+    indent = vim.api.nvim_get_option_value("tabstop", { scope = scope })
+  end
   vim.api.nvim_set_option_value(
     "breakindentopt",
-    "shift:" .. (vim.o.expandtab and vim.o.shiftwidth or vim.o.tabstop),
+    "shift:" .. indent,
     { scope = scope }
   )
 end
-set_breakindentopt "global"
+set_breakindentopt()
 vim.api.nvim_create_autocmd({ "OptionSet" }, {
   group = group,
-  pattern = { "shiftwidth", "tabstop" },
+  pattern = { "expandtab", "shiftwidth", "tabstop" },
   desc = "Set 'breakindentopt' based on indent settings",
   callback = function(args)
-    if
-      vim.v.option_type == "local"
-      and vim.tbl_contains(ignored_filetypes, vim.bo[args.buf].filetype)
-    then
+    local is_ignored_filetype =
+      vim.tbl_contains(ignored_filetypes, vim.bo[args.buf].filetype)
+    ---@type option_scope
+    local scope = vim.v.option_type
+    if vim.v.option_command == "set" and not is_ignored_filetype then
+      scope = nil
+    end
+
+    if scope == "local" and is_ignored_filetype then
     else
-      set_breakindentopt(vim.v.option_type)
+      set_breakindentopt(scope)
     end
   end,
 })
 vim.api.nvim_create_autocmd("FileType", {
+  group = group,
   pattern = ignored_filetypes,
   callback = function()
     vim.opt_local.breakindentopt = {}
