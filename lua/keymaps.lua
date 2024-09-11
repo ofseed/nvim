@@ -21,8 +21,10 @@ if vim.fn.has "nvim-0.11" == 1 then
   end)
 else
   next_diagnostic, prev_diagnostic = utils.make_repeatable_move_pair(function()
+    ---@diagnostic disable-next-line: deprecated
     vim.diagnostic.goto_next { float = false }
   end, function()
+    ---@diagnostic disable-next-line: deprecated
     vim.diagnostic.goto_prev { float = false }
   end)
 end
