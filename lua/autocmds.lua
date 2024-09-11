@@ -84,11 +84,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-if locals.treesitter_dev then
-  vim.api.nvim_create_autocmd("FileType", {
-    group = group,
-    callback = function(args)
-      pcall(vim.treesitter.start, args.buf, args.match)
-    end,
-  })
-end
+--[[
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
+  callback = function()
+    pcall(vim.treesitter.start)
+  end,
+})
+]]
