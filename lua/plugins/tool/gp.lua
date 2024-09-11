@@ -2,7 +2,9 @@ local custom = require "custom"
 
 ---@type LazyPluginSpec
 return {
+  ---@module "gp"
   "https://github.com/Robitx/gp.nvim",
+  ---@type GpConfig
   opts = {
     providers = {
       openai = {
