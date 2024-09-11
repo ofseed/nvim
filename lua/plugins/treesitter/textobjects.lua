@@ -15,9 +15,11 @@ return {
     },
   },
   keys = function()
-    local repeatable = require "nvim-treesitter-textobjects.repeatable_move"
-    local select = require "nvim-treesitter-textobjects.select"
-    local move = require "nvim-treesitter-textobjects.move"
+    local ts = vim._defer_require("nvim-treesitter-textobjects", {
+      repeatable_move = {}, ---@module "nvim-treesitter-textobjects.repeatable_move"
+      select = {}, ---@module "nvim-treesitter-textobjects.select"
+      move = {}, ---@module "nvim-treesitter-textobjects.move"
+    })
 
     return {
       ---
@@ -26,7 +28,7 @@ return {
       {
         ";",
         function()
-          repeatable.repeat_last_move()
+          ts.repeatable_move.repeat_last_move()
         end,
         mode = { "n", "x", "o" },
         desc = "Next last move",
@@ -34,7 +36,7 @@ return {
       {
         ",",
         function()
-          repeatable.repeat_last_move_opposite()
+          ts.repeatable_move.repeat_last_move_opposite()
         end,
         mode = { "n", "x", "o" },
         desc = "Prev last move",
@@ -42,7 +44,7 @@ return {
       {
         "f",
         function()
-          return repeatable.builtin_f_expr()
+          return ts.repeatable_move.builtin_f_expr()
         end,
         expr = true,
         mode = { "n", "x", "o" },
@@ -51,7 +53,7 @@ return {
       {
         "F",
         function()
-          return repeatable.builtin_F_expr()
+          return ts.repeatable_move.builtin_F_expr()
         end,
         expr = true,
         mode = { "n", "x", "o" },
@@ -60,7 +62,7 @@ return {
       {
         "t",
         function()
-          return repeatable.builtin_t_expr()
+          return ts.repeatable_move.builtin_t_expr()
         end,
         expr = true,
         mode = { "n", "x", "o" },
@@ -69,7 +71,7 @@ return {
       {
         "T",
         function()
-          return repeatable.builtin_T_expr()
+          return ts.repeatable_move.builtin_T_expr()
         end,
         expr = true,
         mode = { "n", "x", "o" },
@@ -81,7 +83,7 @@ return {
       {
         "aa",
         function()
-          select.select_textobject "@parameter.outer"
+          ts.select.select_textobject "@parameter.outer"
         end,
         mode = { "x", "o" },
         desc = "a argument",
@@ -89,7 +91,7 @@ return {
       {
         "ia",
         function()
-          select.select_textobject "@parameter.inner"
+          ts.select.select_textobject "@parameter.inner"
         end,
         mode = { "x", "o" },
         desc = "inner part of a argument",
@@ -97,7 +99,7 @@ return {
       {
         "af",
         function()
-          select.select_textobject "@function.outer"
+          ts.select.select_textobject "@function.outer"
         end,
         mode = { "x", "o" },
         desc = "a function region",
@@ -105,7 +107,7 @@ return {
       {
         "if",
         function()
-          select.select_textobject "@function.inner"
+          ts.select.select_textobject "@function.inner"
         end,
         mode = { "x", "o" },
         desc = "inner part of a function region",
@@ -113,7 +115,7 @@ return {
       {
         "ar",
         function()
-          select.select_textobject "@return.outer"
+          ts.select.select_textobject "@return.outer"
         end,
         mode = { "x", "o" },
         desc = "a return",
@@ -121,7 +123,7 @@ return {
       {
         "ir",
         function()
-          select.select_textobject "@return.outer"
+          ts.select.select_textobject "@return.outer"
         end,
         mode = { "x", "o" },
         desc = "inner return",
@@ -129,7 +131,7 @@ return {
       {
         "ac",
         function()
-          select.select_textobject "@class.outer"
+          ts.select.select_textobject "@class.outer"
         end,
         mode = { "x", "o" },
         desc = "a of a class",
@@ -137,7 +139,7 @@ return {
       {
         "ic",
         function()
-          select.select_textobject "@class.inner"
+          ts.select.select_textobject "@class.inner"
         end,
         mode = { "x", "o" },
         desc = "inner part of a class region",
@@ -145,7 +147,7 @@ return {
       {
         "aj",
         function()
-          select.select_textobject "@conditional.outer"
+          ts.select.select_textobject "@conditional.outer"
         end,
         mode = { "x", "o" },
         desc = "a judge",
@@ -153,7 +155,7 @@ return {
       {
         "ij",
         function()
-          select.select_textobject "@conditional.inner"
+          ts.select.select_textobject "@conditional.inner"
         end,
         mode = { "x", "o" },
         desc = "inner part of a judge region",
@@ -161,7 +163,7 @@ return {
       {
         "al",
         function()
-          select.select_textobject "@loop.outer"
+          ts.select.select_textobject "@loop.outer"
         end,
         mode = { "x", "o" },
         desc = "a loop",
@@ -169,7 +171,7 @@ return {
       {
         "il",
         function()
-          select.select_textobject "@loop.inner"
+          ts.select.select_textobject "@loop.inner"
         end,
         mode = { "x", "o" },
         desc = "inner part of a loop",
@@ -177,7 +179,7 @@ return {
       {
         "an",
         function()
-          select.select_textobject "@number.outer"
+          ts.select.select_textobject "@number.outer"
         end,
         mode = { "x", "o" },
         desc = "a loop",
@@ -185,7 +187,7 @@ return {
       {
         "in",
         function()
-          select.select_textobject "@number.inner"
+          ts.select.select_textobject "@number.inner"
         end,
         mode = { "x", "o" },
         desc = "inner part of a number",
@@ -196,7 +198,7 @@ return {
       {
         "]a",
         function()
-          move.goto_next_start "@parameter.outer"
+          ts.move.goto_next_start "@parameter.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next argument start",
@@ -204,7 +206,7 @@ return {
       {
         "]A",
         function()
-          move.goto_next_end "@parameter.outer"
+          ts.move.goto_next_end "@parameter.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next argument end",
@@ -212,7 +214,7 @@ return {
       {
         "[a",
         function()
-          move.goto_previous_start "@parameter.outer"
+          ts.move.goto_previous_start "@parameter.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous argument start",
@@ -220,7 +222,7 @@ return {
       {
         "[A",
         function()
-          move.goto_previous_end "@parameter.outer"
+          ts.move.goto_previous_end "@parameter.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous argument end",
@@ -228,7 +230,7 @@ return {
       {
         "]f",
         function()
-          move.goto_next_start "@function.outer"
+          ts.move.goto_next_start "@function.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next function start",
@@ -236,7 +238,7 @@ return {
       {
         "]F",
         function()
-          move.goto_next_end "@function.outer"
+          ts.move.goto_next_end "@function.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next function end",
@@ -244,7 +246,7 @@ return {
       {
         "[f",
         function()
-          move.goto_previous_start "@function.outer"
+          ts.move.goto_previous_start "@function.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous function start",
@@ -252,7 +254,7 @@ return {
       {
         "[F",
         function()
-          move.goto_previous_end "@function.outer"
+          ts.move.goto_previous_end "@function.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous function end",
@@ -260,7 +262,7 @@ return {
       {
         "]r",
         function()
-          move.goto_next_start "@return.outer"
+          ts.move.goto_next_start "@return.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next return start",
@@ -268,7 +270,7 @@ return {
       {
         "]R",
         function()
-          move.goto_next_end "@return.outer"
+          ts.move.goto_next_end "@return.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next return end",
@@ -276,7 +278,7 @@ return {
       {
         "[r",
         function()
-          move.goto_previous_start "@return.outer"
+          ts.move.goto_previous_start "@return.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous return start",
@@ -284,7 +286,7 @@ return {
       {
         "[R",
         function()
-          move.goto_previous_end "@return.outer"
+          ts.move.goto_previous_end "@return.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous return end",
@@ -292,7 +294,7 @@ return {
       {
         "]c",
         function()
-          move.goto_next_start "@class.outer"
+          ts.move.goto_next_start "@class.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next class start",
@@ -300,7 +302,7 @@ return {
       {
         "]C",
         function()
-          move.goto_next_end "@class.outer"
+          ts.move.goto_next_end "@class.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next class end",
@@ -308,7 +310,7 @@ return {
       {
         "[c",
         function()
-          move.goto_previous_start "@class.outer"
+          ts.move.goto_previous_start "@class.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous class start",
@@ -316,7 +318,7 @@ return {
       {
         "[C",
         function()
-          move.goto_previous_end "@class.outer"
+          ts.move.goto_previous_end "@class.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous class end",
@@ -324,7 +326,7 @@ return {
       {
         "]j",
         function()
-          move.goto_next_start "@conditional.outer"
+          ts.move.goto_next_start "@conditional.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next judge start",
@@ -332,7 +334,7 @@ return {
       {
         "]J",
         function()
-          move.goto_next_end "@conditional.outer"
+          ts.move.goto_next_end "@conditional.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next judge end",
@@ -340,7 +342,7 @@ return {
       {
         "[j",
         function()
-          move.goto_previous_start "@conditional.outer"
+          ts.move.goto_previous_start "@conditional.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous judge start",
@@ -348,7 +350,7 @@ return {
       {
         "[J",
         function()
-          move.goto_previous_end "@conditional.outer"
+          ts.move.goto_previous_end "@conditional.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous judge end",
@@ -356,7 +358,7 @@ return {
       {
         "]l",
         function()
-          move.goto_next_start "@loop.outer"
+          ts.move.goto_next_start "@loop.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next loop start",
@@ -364,7 +366,7 @@ return {
       {
         "]L",
         function()
-          move.goto_next_end "@loop.outer"
+          ts.move.goto_next_end "@loop.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Next loop end",
@@ -372,7 +374,7 @@ return {
       {
         "[l",
         function()
-          move.goto_previous_start "@loop.outer"
+          ts.move.goto_previous_start "@loop.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous loop start",
@@ -380,7 +382,7 @@ return {
       {
         "[L",
         function()
-          move.goto_previous_end "@loop.outer"
+          ts.move.goto_previous_end "@loop.outer"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous loop end",
@@ -388,7 +390,7 @@ return {
       {
         "[n",
         function()
-          move.goto_previous_start "@number.inner"
+          ts.move.goto_previous_start "@number.inner"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous number",
@@ -396,7 +398,7 @@ return {
       {
         "]n",
         function()
-          move.goto_next_start "@number.inner"
+          ts.move.goto_next_start "@number.inner"
         end,
         mode = { "n", "x", "o" },
         desc = "Next number",
@@ -404,7 +406,7 @@ return {
       {
         "[N",
         function()
-          move.goto_previous_end "@number.inner"
+          ts.move.goto_previous_end "@number.inner"
         end,
         mode = { "n", "x", "o" },
         desc = "Previous number",
@@ -412,7 +414,7 @@ return {
       {
         "]N",
         function()
-          move.goto_next_end "@number.inner"
+          ts.move.goto_next_end "@number.inner"
         end,
         mode = { "n", "x", "o" },
         desc = "Next number",
