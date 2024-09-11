@@ -14,6 +14,7 @@ return {
     local lspconfig = require "lspconfig"
     local capabilities = require "capabilities"
 
+    --[[
     lspconfig.nixd.setup {
       settings = {
         nixd = {
@@ -31,6 +32,7 @@ return {
         },
       },
     }
+    --]]
 
     lspconfig.pyright.setup {
       cmd = { "delance-langserver", "--stdio" },
