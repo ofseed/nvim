@@ -1,6 +1,31 @@
-local locals = require "locals"
-
 local group = vim.api.nvim_create_augroup("ofseed", {})
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
+  desc = "Load corresponding treesitter parser for filetype",
+  callback = function(args)
+    local filetype = args.match
+    local lang = vim.treesitter.language.get_lang(filetype)
+    pcall(
+      vim.treesitter.language.add,
+      lang or filetype,
+      { filetype = filetype }
+    )
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
+  desc = "Enable treesitter highlight for supported filetypes",
+  callback = function(args)
+    local bufnr = args.buf
+    local filetype = args.match
+    local lang = vim.treesitter.language.get_lang(filetype)
+    if lang then
+      vim.treesitter.start(bufnr, lang)
+    end
+  end,
+})
 
 -- Indent wrapped lines based on indent settings except for ignored filetypes
 local ignored_filetypes = { "text", "markdown", "org" }
@@ -83,12 +108,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.expandtab = false
   end,
 })
-
---[[
-vim.api.nvim_create_autocmd("FileType", {
-  group = group,
-  callback = function()
-    pcall(vim.treesitter.start)
-  end,
-})
-]]
