@@ -48,3 +48,6 @@ vim.opt.guicursor = {
   "i-ci-ve:ver25-Cursor/lCursor",
   "r-cr-o:hor20-Cursor/lCursor",
 }
+
+---@diagnostic disable-next-line: param-type-mismatch
+vim.opt.runtimepath:append(vim.fs.joinpath(vim.fn.stdpath "data", "site"))

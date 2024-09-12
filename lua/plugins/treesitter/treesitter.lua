@@ -7,6 +7,8 @@ return {
   event = "VeryLazy",
   build = ":TSUpdate",
   opts = {
+    ---@diagnostic disable-next-line: param-type-mismatch
+    parser_install_dir = vim.fs.joinpath(vim.fn.stdpath "data", "site"),
     ensure_installed = "all",
     highlight = {
       enable = true,
