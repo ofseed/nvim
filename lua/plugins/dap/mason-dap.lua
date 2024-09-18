@@ -25,19 +25,7 @@ return {
               },
             },
           }
-          config.configurations = {
-            {
-              name = "Launch active file",
-              type = "codelldb",
-              request = "launch",
-              program = "${fileBasenameNoExtension}",
-              cwd = "${workspaceFolder}",
-              stopOnEntry = false,
-              args = {},
-              console = "integratedTerminal",
-              preLaunchTask = "C++ build single file",
-            },
-          }
+          config.configurations = {}
           require("mason-nvim-dap").default_setup(config)
         end,
         js = function(config)

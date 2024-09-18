@@ -57,17 +57,28 @@ return {
       command = "gdb",
       args = { "-i", "dap" },
     }
-    -- dap.configurations.cpp = {
-    --   {
-    --     name = "Launch",
-    --     type = "gdb",
-    --     request = "launch",
-    --     program = "${fileBasenameNoExtension}",
-    --     cwd = "${workspaceFolder}",
-    --     stopAtBeginningOfMainSubprogram = false,
-    --     preLaunchTask = "C++ build single file",
-    --   },
-    -- }
+    dap.configurations.cpp = {
+      --   {
+      --     name = "Launch",
+      --     type = "gdb",
+      --     request = "launch",
+      --     program = "${fileBasenameNoExtension}",
+      --     cwd = "${workspaceFolder}",
+      --     stopAtBeginningOfMainSubprogram = false,
+      --     preLaunchTask = "C++ build single file",
+      --   },
+      {
+        name = "Launch active file",
+        type = "codelldb",
+        request = "launch",
+        program = "${fileBasenameNoExtension}",
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+        args = {},
+        console = "integratedTerminal",
+        preLaunchTask = "C++ build single file",
+      },
+    }
 
     ---@diagnostic disable-next-line: undefined-field
     require("overseer").enable_dap(true)
