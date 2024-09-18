@@ -26,13 +26,13 @@ return {
   keys = {
     -- Chat
     {
-      "<C-g>c",
+      "<C-g>n",
       "<Cmd>GpChatNew split<CR>",
       mode = { "n", "i" },
       desc = "New Chat",
     },
     {
-      "<C-g>c",
+      "<C-g>n",
       ":<C-u>'<,'>GpChatNew split<CR>",
       mode = { "v" },
       desc = "New Chat",
