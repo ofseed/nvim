@@ -79,6 +79,19 @@ return {
         preLaunchTask = "C++ build single file",
       },
     }
+    dap.configurations.zig = {
+      {
+        name = "Launch zig project",
+        type = "codelldb",
+        request = "launch",
+        program = "${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}",
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+        args = {},
+        console = "integratedTerminal",
+        preLaunchTask = "zig build",
+      },
+    }
 
     ---@diagnostic disable-next-line: undefined-field
     require("overseer").enable_dap(true)

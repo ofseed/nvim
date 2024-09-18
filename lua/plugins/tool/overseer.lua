@@ -64,6 +64,20 @@ return {
           filetype = { "cpp" },
         },
       },
+      {
+        name = "zig build",
+        builder = function()
+          return {
+            cmd = { "zig" },
+            args = {
+              "build",
+            },
+          }
+        end,
+        condition = {
+          filetype = { "zig" },
+        },
+      },
     }
     for _, template in ipairs(templates) do
       overseer.register_template(template)
