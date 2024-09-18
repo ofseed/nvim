@@ -21,6 +21,12 @@ return {
           if not next_row then
             return nil
           end
+
+          -- Avoid overlapping with the statusline
+          if vim.tbl_isempty(state.open_windows) then
+            next_row = next_row - 1
+          end
+
           return {
             relative = "editor",
             anchor = "NE",
