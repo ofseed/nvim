@@ -4,6 +4,7 @@ return {
   event = "VeryLazy",
   opts = {
     winblend = 50,
+    winblend_gui = 50,
     signs_on_startup = {
       "conflicts",
       -- "cursor",
