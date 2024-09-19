@@ -105,47 +105,47 @@ return {
   },
   keys = {
     {
-      "<M-1>",
+      "<leader>1",
       "<Cmd>BufferLineGoToBuffer 1<CR>",
       desc = "Go to tab 1",
     },
     {
-      "<M-2>",
+      "<leader>2",
       "<Cmd>BufferLineGoToBuffer 2<CR>",
       desc = "Go to tab 2",
     },
     {
-      "<M-3>",
+      "<leader>3",
       "<Cmd>BufferLineGoToBuffer 3<CR>",
       desc = "Go to tab 3",
     },
     {
-      "<M-4>",
+      "<leader>4",
       "<Cmd>BufferLineGoToBuffer 4<CR>",
       desc = "Go to tab 4",
     },
     {
-      "<M-5>",
+      "<leader>5",
       "<Cmd>BufferLineGoToBuffer 5<CR>",
       desc = "Go to tab 5",
     },
     {
-      "<M-6>",
+      "<leader>6",
       "<Cmd>BufferLineGoToBuffer 6<CR>",
       desc = "Go to tab 6",
     },
     {
-      "<M-7>",
+      "<leader>7",
       "<Cmd>BufferLineGoToBuffer 7<CR>",
       desc = "Go to tab 7",
     },
     {
-      "<M-8>",
+      "<leader>8",
       "<Cmd>BufferLineGoToBuffer 8<CR>",
       desc = "Go to tab 8",
     },
     {
-      "<M-9>",
+      "<leader>9",
       "<Cmd>BufferLineGoToBuffer 9<CR>",
       desc = "Go to tab 9",
     },
