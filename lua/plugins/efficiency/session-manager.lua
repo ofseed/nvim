@@ -23,39 +23,43 @@ return {
       return dir:gsub("[^A-Za-z0-9]", "_")
     end
 
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "SessionSavePre",
-      desc = "Save overseer tasks",
-      callback = function()
-        local overseer = require "overseer"
-        local task_name = get_cwd_as_name()
+    do -- Custom logic to save and load overseer tasks
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "SessionSavePre",
+        desc = "Save overseer tasks",
+        callback = function()
+          local overseer = require "overseer"
+          local task_name = get_cwd_as_name()
 
-        -- Remove the task if it exists
-        if vim.tbl_contains(overseer.list_task_bundles(), task_name) then
-          overseer.delete_task_bundle(task_name)
-        end
+          -- Remove the task if it exists
+          if vim.tbl_contains(overseer.list_task_bundles(), task_name) then
+            overseer.delete_task_bundle(task_name)
+          end
 
-        overseer.save_task_bundle(
-          get_cwd_as_name(),
-          overseer.list_tasks {
-            status = "RUNNING",
-          },
-          { on_conflict = "overwrite" }
-        )
-      end,
-    })
+          overseer.save_task_bundle(
+            get_cwd_as_name(),
+            overseer.list_tasks {
+              status = "RUNNING",
+            },
+            { on_conflict = "overwrite" }
+          )
+        end,
+      })
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "SessionLoadPost",
+        desc = "Load overseer tasks",
+        callback = function()
+          local overseer = require "overseer"
+          local gitsigns = require "gitsigns"
 
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "SessionLoadPost",
-      desc = "Load overseer tasks",
-      callback = function()
-        local overseer = require "overseer"
-        local gitsigns = require "gitsigns"
-
-        overseer.load_task_bundle(get_cwd_as_name(), { ignore_missing = true })
-        gitsigns.refresh()
-      end,
-    })
+          overseer.load_task_bundle(
+            get_cwd_as_name(),
+            { ignore_missing = true }
+          )
+          gitsigns.refresh()
+        end,
+      })
+    end
   end,
   keys = {
     {
