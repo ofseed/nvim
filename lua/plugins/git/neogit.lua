@@ -1,5 +1,3 @@
-local custom = require "custom"
-
 ---@type LazyPluginSpec
 return {
   "NeogitOrg/neogit",

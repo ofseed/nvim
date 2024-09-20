@@ -81,6 +81,18 @@ end)
 vim.keymap.set("n", "]q", cnext, { desc = "Next quickfix" })
 vim.keymap.set("n", "[q", cprevious, { desc = "Prev quickfix" })
 
+local bnext, bprevious = utils.make_repeatable_move_pair(function()
+  return pcall(function()
+    vim.cmd.bnext { count = vim.v.count1 }
+  end)
+end, function()
+  return pcall(function()
+    vim.cmd.bprevious { count = vim.v.count1 }
+  end)
+end)
+vim.keymap.set("n", "]b", bnext, { desc = "Next buffer" })
+vim.keymap.set("n", "[b", bprevious, { desc = "Prev buffer" })
+
 local filetype_keymaps =
   vim.api.nvim_create_augroup("ofseed_filetype_keymaps", {})
 vim.api.nvim_create_autocmd("Filetype", {
