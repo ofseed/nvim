@@ -26,7 +26,7 @@ return {
     {
       "<leader>F",
       function()
-        require("conform").format { lsp_fallback = true }
+        require("conform").format { lsp_fallback = true, async = true }
       end,
       desc = "Format Document",
       mode = { "n", "v" },
