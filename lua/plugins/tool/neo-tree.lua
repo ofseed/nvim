@@ -35,6 +35,19 @@ return {
   opts = {
     default_source = "last",
     popup_border_style = custom.border,
+    event_handlers = {
+      {
+        event = "neo_tree_popup_input_ready",
+        handler = function(args)
+          vim.keymap.set(
+            "i",
+            "<Esc>",
+            vim.cmd.stopinsert,
+            { noremap = true, buffer = args.bufnr }
+          )
+        end,
+      },
+    },
     default_component_configs = {
       icon = {
         folder_closed = "",
