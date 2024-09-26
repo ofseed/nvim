@@ -10,11 +10,10 @@ return {
         if client and client.name == "vtsls" then
           vim.keymap.set(
             "n",
-            "g_d",
+            "<localleader>d",
             "<Cmd>VtsExec go_to_source_definition<CR>",
             { buffer = bufnr, desc = "Source Definition" }
           )
-
           vim.keymap.set(
             "n",
             "<localleader>i",
