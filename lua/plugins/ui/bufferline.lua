@@ -9,11 +9,6 @@ return {
   end,
   opts = {
     options = {
-      hover = {
-        enabled = true,
-        delay = 0,
-        reveal = { "close" },
-      },
       show_close_icon = false,
       buffer_close_icon = "🗙",
       offsets = {
