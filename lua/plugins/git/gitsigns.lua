@@ -90,7 +90,10 @@ return {
         { buffer = bufnr, desc = "Preview hunk" }
       )
       vim.keymap.set("n", "<leader>gb", function()
-        gitsigns.blame_line { full = true }
+        gitsigns.blame_line {
+          full = true,
+          ignore_whitespace = true,
+        }
       end, { buffer = bufnr, desc = "Blame line" })
 
       vim.keymap.set(
