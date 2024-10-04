@@ -25,7 +25,15 @@ return {
               },
             },
           }
-          config.configurations = {}
+          config.configurations = {
+            {
+              name = "LLDB: Attach to a running process",
+              type = "codelldb",
+              request = "attach",
+              pid = "${command:pickProcess}",
+              stopOnEntry = true,
+            },
+          }
           require("mason-nvim-dap").default_setup(config)
         end,
         js = function(config)

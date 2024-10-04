@@ -57,41 +57,43 @@ return {
       command = "gdb",
       args = { "-i", "dap" },
     }
-    dap.configurations.cpp = {
-      --   {
-      --     name = "Launch",
-      --     type = "gdb",
-      --     request = "launch",
-      --     program = "${fileBasenameNoExtension}",
-      --     cwd = "${workspaceFolder}",
-      --     stopAtBeginningOfMainSubprogram = false,
-      --     preLaunchTask = "C++ build single file",
-      --   },
-      {
-        name = "Launch active file",
-        type = "codelldb",
-        request = "launch",
-        program = "${fileBasenameNoExtension}",
-        cwd = "${workspaceFolder}",
-        stopOnEntry = false,
-        args = {},
-        console = "integratedTerminal",
-        preLaunchTask = "C++ build single file",
-      },
-    }
-    dap.configurations.zig = {
-      {
-        name = "Launch zig project",
-        type = "codelldb",
-        request = "launch",
-        program = "${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}",
-        cwd = "${workspaceFolder}",
-        stopOnEntry = false,
-        args = {},
-        console = "integratedTerminal",
-        preLaunchTask = "zig build",
-      },
-    }
+
+    vim
+      .iter({
+        {
+          name = "LLDB: Launch active file",
+          type = "codelldb",
+          request = "launch",
+          program = "${fileBasenameNoExtension}",
+          cwd = "${workspaceFolder}",
+          stopOnEntry = false,
+          args = {},
+          console = "integratedTerminal",
+          preLaunchTask = "C++ build single file",
+        },
+      })
+      :map(function(configuration)
+        dap.configurations.cpp = dap.configurations.cpp or {}
+        table.insert(dap.configurations.cpp, configuration)
+      end)
+    vim
+      .iter({
+        {
+          name = "LLDB: Launch a new process",
+          type = "codelldb",
+          request = "launch",
+          program = "${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}",
+          cwd = "${workspaceFolder}",
+          stopOnEntry = false,
+          args = {},
+          console = "integratedTerminal",
+          preLaunchTask = "zig build",
+        },
+      })
+      :map(function(configuration)
+        dap.configurations.zig = dap.configurations.zig or {}
+        table.insert(dap.configurations.zig, configuration)
+      end)
 
     ---@diagnostic disable-next-line: undefined-field
     require("overseer").enable_dap(true)
