@@ -14,6 +14,7 @@ return {
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
+    { "rcarriga/cmp-dap" },
     -- { "saadparwaiz1/cmp_luasnip" },
     { "lukas-reineke/cmp-under-comparator" },
     { "kristijanhusak/vim-dadbod-completion", enabled = false },
@@ -31,6 +32,11 @@ return {
     return {
       ---@type cmp.ConfigSchema
       global = {
+        enabled = function()
+          -- cmp-dap will be available in prompt buffer
+          return vim.bo[0].buftype ~= "prompt"
+            or require("cmp_dap").is_dap_buffer()
+        end,
         completion = {
           completeopt = vim.o.completeopt,
         },
@@ -168,6 +174,11 @@ return {
     for type, cmdlineopts in pairs(opts.cmdline) do
       cmp.setup.cmdline(type, cmdlineopts)
     end
+    cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+      sources = {
+        { name = "dap" },
+      },
+    })
 
     vim.api.nvim_create_autocmd("BufRead", {
       desc = "Setup cmp buffer crates source",

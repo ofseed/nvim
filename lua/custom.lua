@@ -78,6 +78,7 @@ M.cmp_format = {
     luasnip = "[SNP]",
     nvim_lsp = "[LSP]",
     nvim_lua = "[VIM]",
+    dap = "[DAP]",
     buffer = "[BUF]",
     path = "[PTH]",
     calc = "[CLC]",
