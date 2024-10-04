@@ -13,6 +13,7 @@ return {
     auto_resize_height = true,
     preview = {
       border = custom.border,
+      show_scroll_bar = false,
     },
   },
 }

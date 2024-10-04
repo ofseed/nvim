@@ -5,6 +5,13 @@ return {
   opts = {
     winblend = 50,
     winblend_gui = 50,
+    floating_windows = true,
+    excluded_filetypes = {
+      "dropbar_menu",
+      "cmp_docs",
+      "cmp_menu",
+      "noice",
+    },
     signs_on_startup = {
       "conflicts",
       -- "cursor",
