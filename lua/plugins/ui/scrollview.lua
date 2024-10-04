@@ -37,6 +37,7 @@ return {
       delete_priority = 100,
     }
 
-    vim.api.nvim_set_hl(0, "ScrollViewHover", { link = "Search" })
+    vim.api.nvim_set_hl(0, "ScrollView", { link = "PmenuThumb" })
+    vim.api.nvim_set_hl(0, "ScrollViewHover", { link = "PmenuSbar" })
   end,
 }
