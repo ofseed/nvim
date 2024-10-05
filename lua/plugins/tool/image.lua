@@ -3,13 +3,18 @@ return {
   "3rd/image.nvim",
   enabled = vim.uv.os_uname().sysname ~= "Windows_NT",
   init = function()
-    local hostname = vim.uv.os_gethostname()
-    if hostname == "nixos" then
-      package.path = table.concat({
-        package.path,
-        vim.env.HOME .. "/.nix-profile/share/lua/5.1/?/init.lua",
-        vim.env.HOME .. "/.nix-profile/share/lua/5.1/?.lua",
-      }, ";")
+    if vim.uv.os_uname().sysname == "Linux" then
+      vim.uv.fs_stat("/etc/NIXOS", function(_, stat)
+        if stat then
+          ---@diagnostic disable-next-line: missing-parameter
+          local home = vim.uv.os_getenv "HOME"
+          package.path = table.concat({
+            home .. "/.nix-profile/share/lua/5.1/?/init.lua",
+            home .. "/.nix-profile/share/lua/5.1/?.lua",
+            package.path,
+          }, ";")
+        end
+      end)
     end
   end,
   dependencies = {
