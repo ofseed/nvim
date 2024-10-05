@@ -63,15 +63,15 @@ return {
       sources = {
         {
           source = "filesystem",
-          display_name = "  Files ",
+          display_name = "  Files",
         },
         {
           source = "buffers",
-          display_name = "  Buffers ",
+          display_name = "  Bufs",
         },
         {
           source = "git_status",
-          display_name = "  Git ",
+          display_name = "  Git",
         },
         {
           source = "document_symbols",

@@ -8,8 +8,7 @@ M.border = "rounded"
 
 -- Width of side windows
 M.width = function()
-  local columns = vim.go.columns
-  return math.floor(columns * 0.2) > 25 and math.floor(columns * 0.2) or 25
+  return math.max(math.floor(vim.go.columns * 0.2), 30)
 end
 
 local append_space = function(icons)
