@@ -7,6 +7,21 @@ return {
     "InsertEnter",
     "CmdlineEnter",
   },
+  init = function()
+    local filetype = { "dap-repl", "dapui_watches", "dapui_hover" }
+    vim.api.nvim_create_autocmd("FileType", {
+      desc = "Setup cmp dap sources",
+      pattern = filetype,
+      callback = function()
+        local cmp = require "cmp"
+        cmp.setup.filetype(filetype, {
+          sources = {
+            { name = "dap" },
+          },
+        })
+      end,
+    })
+  end,
   dependencies = {
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-nvim-lsp" },
@@ -29,13 +44,24 @@ return {
     --   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
     -- end
 
+    local function is_dap_buffer(bufnr)
+      local filetype = vim.bo[bufnr or 0].filetype
+      if vim.startswith(filetype, "dapui_") then
+        return true
+      end
+      if filetype == "dap-repl" then
+        return true
+      end
+
+      return false
+    end
+
     return {
       ---@type cmp.ConfigSchema
       global = {
         enabled = function()
           -- cmp-dap will be available in prompt buffer
-          return vim.bo[0].buftype ~= "prompt"
-            or require("cmp_dap").is_dap_buffer()
+          return vim.bo[0].buftype ~= "prompt" or is_dap_buffer()
         end,
         completion = {
           completeopt = vim.o.completeopt,
@@ -174,11 +200,6 @@ return {
     for type, cmdlineopts in pairs(opts.cmdline) do
       cmp.setup.cmdline(type, cmdlineopts)
     end
-    cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
-      sources = {
-        { name = "dap" },
-      },
-    })
 
     vim.api.nvim_create_autocmd("BufRead", {
       desc = "Setup cmp buffer crates source",
