@@ -85,7 +85,7 @@ return {
           position = "center",
         })
       end,
-      desc = "Open scopes",
+      desc = "Open breakpoints",
     },
     {
       "<leader>dc",
@@ -97,7 +97,7 @@ return {
           position = "center",
         })
       end,
-      desc = "Open scopes",
+      desc = "Open console",
     },
     {
       "<leader>dr",
@@ -109,7 +109,7 @@ return {
           position = "center",
         })
       end,
-      desc = "Open scopes",
+      desc = "Open repl",
     },
   },
 }
