@@ -13,14 +13,6 @@ return {
       current_frame = "",
       expanded = "",
     },
-    mappings = {
-      edit = "i",
-      expand = { "o", "<LeftMouse>" },
-      open = { "<CR>", "<2-LeftMouse>" },
-      remove = "d",
-      repl = "r",
-      toggle = "t",
-    },
   },
   keys = {
     {
