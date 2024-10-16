@@ -6,6 +6,7 @@ return {
     winblend = 50,
     winblend_gui = 50,
     floating_windows = true,
+    consider_border = true,
     excluded_filetypes = {
       "dropbar_menu",
       "cmp_docs",
