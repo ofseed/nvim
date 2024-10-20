@@ -113,22 +113,6 @@ return {
         desc = "inner part of a function region",
       },
       {
-        "ar",
-        function()
-          ts.select.select_textobject "@return.outer"
-        end,
-        mode = { "x", "o" },
-        desc = "a return",
-      },
-      {
-        "ir",
-        function()
-          ts.select.select_textobject "@return.outer"
-        end,
-        mode = { "x", "o" },
-        desc = "inner return",
-      },
-      {
         "ac",
         function()
           ts.select.select_textobject "@class.outer"
@@ -258,38 +242,6 @@ return {
         end,
         mode = { "n", "x", "o" },
         desc = "Previous function end",
-      },
-      {
-        "]r",
-        function()
-          ts.move.goto_next_start "@return.outer"
-        end,
-        mode = { "n", "x", "o" },
-        desc = "Next return start",
-      },
-      {
-        "]R",
-        function()
-          ts.move.goto_next_end "@return.outer"
-        end,
-        mode = { "n", "x", "o" },
-        desc = "Next return end",
-      },
-      {
-        "[r",
-        function()
-          ts.move.goto_previous_start "@return.outer"
-        end,
-        mode = { "n", "x", "o" },
-        desc = "Previous return start",
-      },
-      {
-        "[R",
-        function()
-          ts.move.goto_previous_end "@return.outer"
-        end,
-        mode = { "n", "x", "o" },
-        desc = "Previous return end",
       },
       {
         "]c",
