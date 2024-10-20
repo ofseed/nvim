@@ -2,7 +2,7 @@ local custom = require "custom"
 
 ---@type LazyPluginSpec
 return {
-  "ofseed/nvim-cmp",
+  "hrsh7th/nvim-cmp",
   event = {
     "InsertEnter",
     "CmdlineEnter",
