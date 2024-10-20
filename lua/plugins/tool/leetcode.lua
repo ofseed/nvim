@@ -2,8 +2,10 @@ local arg = "leetcode"
 
 ---@type LazyPluginSpec
 return {
+  ---@module "leetcode"
   "kawre/leetcode.nvim",
   lazy = vim.fn.argv()[1] ~= arg,
+  ---@type lc.UserConfig
   opts = {
     arg = arg,
     cn = {
@@ -11,7 +13,16 @@ return {
     },
     injector = {
       ["cpp"] = {
-        before = { "#include <bits/stdc++.h>", "using namespace std;" },
+        before = {
+          "#include <bits/stdc++.h>",
+          "using namespace std;",
+        },
+        after = {
+          "int main() {",
+          "    Solution solution;",
+          "    return 0;",
+          "}",
+        },
       },
     },
     description = {
