@@ -38,14 +38,14 @@ return {
   end,
   keys = {
     {
-      "<M-n>",
+      "]r",
       function()
         require("illuminate").goto_next_reference()
       end,
       desc = "Next reference",
     },
     {
-      "<M-p>",
+      "[r",
       function()
         require("illuminate").goto_prev_reference()
       end,

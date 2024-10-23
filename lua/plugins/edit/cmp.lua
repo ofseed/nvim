@@ -122,8 +122,6 @@ return {
           },
           {
             { name = "nvim_lsp" },
-          },
-          {
             {
               name = "buffer",
               option = {
