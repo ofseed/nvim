@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "ofseed/vim-illuminate",
+  cond = vim.lsp.document_highlight == nil,
   event = "VeryLazy",
   opts = function()
     return {

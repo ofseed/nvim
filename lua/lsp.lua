@@ -32,12 +32,30 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 vim.lsp.inlay_hint.enable()
+if vim.lsp.document_highlight then
+  vim.lsp.document_highlight.enable()
+end
 
 -- LspAttach events
 vim.api.nvim_create_autocmd("LspAttach", {
   desc = "General LSP Attach",
   callback = function(args)
     local bufnr = args.buf
+
+    if vim.lsp.document_highlight then
+      vim.keymap.set("n", "<leader>ld", function()
+        vim.lsp.document_highlight.enable(
+          not vim.lsp.document_highlight.is_enabled { bufnr = 0 },
+          { bufnr = bufnr }
+        )
+      end, { buffer = bufnr, desc = "Toggle document highlight" })
+      vim.keymap.set("n", "]r", function()
+        vim.lsp.document_highlight.jump { count = vim.v.count1, refresh = true }
+      end, { buffer = bufnr, desc = "Next reference" })
+      vim.keymap.set("n", "[r", function()
+        vim.lsp.document_highlight.jump { count = -vim.v.count1, refresh = true }
+      end, { buffer = bufnr, desc = "Previous reference" })
+    end
 
     -- Always override the default to add context
     vim.keymap.set("n", "grr", function()
