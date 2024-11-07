@@ -23,6 +23,7 @@ return {
     },
   },
   config = function(_, opts)
+    ---@module "rustaceanvim"
     vim.g.rustaceanvim = opts
   end,
 }
