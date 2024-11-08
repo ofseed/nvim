@@ -13,7 +13,7 @@ return {
   },
   opts = {
     disable_hint = true,
-    graph_style = "unicode",
+    graph_style = "kitty",
     integrations = {
       diffview = true,
     },
