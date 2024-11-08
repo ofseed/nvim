@@ -93,6 +93,26 @@ return {
           console = "integratedTerminal",
           preLaunchTask = "zig build",
         },
+        {
+          name = "LLDB: Launch a new process with arguments",
+          type = "codelldb",
+          request = "launch",
+          program = "${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}",
+          cwd = "${workspaceFolder}",
+          stopOnEntry = false,
+          args = function()
+            local args = {}
+            local input = vim.fn.input "Enter program arguments: "
+            if input ~= "" then
+              for arg in vim.gsplit(input, " ") do
+                table.insert(args, arg)
+              end
+            end
+            return args
+          end,
+          console = "integratedTerminal",
+          preLaunchTask = "zig build",
+        },
       })
       :map(function(configuration)
         dap.configurations.zig = dap.configurations.zig or {}
