@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "L3MON4D3/LuaSnip",
+  enabled = false,
   event = {
     "InsertEnter",
     "CmdlineEnter",
