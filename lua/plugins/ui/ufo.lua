@@ -1,6 +1,25 @@
 ---@type LazyPluginSpec
 return {
   "kevinhwang91/nvim-ufo",
+  cond = function()
+    if vim.lsp._folding_range then
+      vim.o.foldmethod = "expr"
+      vim.o.foldexpr = "v:lua.vim.lsp.foldexpr()"
+      vim.o.foldtext = "v:lua.vim.lsp.foldtext()"
+      vim.o.foldcolumn = "1"
+      vim.o.foldlevel = 99
+
+      vim.api.nvim_create_autocmd("LspNotify", {
+        callback = function(args)
+          if args.data.method == "textDocument/didOpen" then
+            vim.lsp.foldclose("imports", vim.fn.bufwinid(args.buf))
+          end
+        end,
+      })
+      return false
+    end
+    return true
+  end,
   event = "VeryLazy",
   dependencies = "kevinhwang91/promise-async",
   init = function()
