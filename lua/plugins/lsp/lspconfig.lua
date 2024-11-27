@@ -51,11 +51,6 @@ return {
       },
     }
 
-    -- Needed by clangd
-    capabilities = vim.tbl_extend("force", capabilities, {
-      offsetEncoding = "utf-16",
-    })
-
     lspconfig.clangd.setup {
       cmd = { "clangd", "--header-insertion-decorators=0" },
       capabilities = capabilities,
