@@ -7,7 +7,7 @@ return {
   build = "cargo build --release",
   ---@type blink.cmp.Config
   opts = {
-    keymap = "enter",
+    keymap = { preset = "enter" },
     sources = {
       completion = {
         enabled_providers = {
@@ -31,8 +31,8 @@ return {
         },
       },
     },
-    windows = {
-      autocomplete = {
+    completion = {
+      menu = {
         scrollbar = false,
         border = "rounded",
         -- Minimum width should be controlled by components
@@ -56,12 +56,16 @@ return {
         auto_show = true,
         auto_show_delay_ms = 0,
         update_delay_ms = 0,
-        scrollbar = false,
-        border = "rounded",
-        winblend = vim.o.pumblend,
+        window = {
+          border = "rounded",
+          winblend = vim.o.pumblend,
+          scrollbar = false,
+        },
       },
     },
-    nerd_font_variant = "mono",
-    kind_icons = custom.icons.kind,
+    appearance = {
+      nerd_font_variant = "mono",
+      kind_icons = custom.icons.kind,
+    },
   },
 }
