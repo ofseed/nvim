@@ -44,7 +44,6 @@ return {
                   enable = true,
                 },
                 completion = {
-                  callSnippet = "Replace",
                   postfix = ".",
                   showWord = "Disable",
                   workspaceWord = false,
