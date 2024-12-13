@@ -31,7 +31,6 @@ return {
     },
     completion = {
       menu = {
-        scrollbar = false,
         border = "rounded",
         -- Minimum width should be controlled by components
         min_width = 1,
@@ -57,7 +56,6 @@ return {
         window = {
           border = "rounded",
           winblend = vim.o.pumblend,
-          scrollbar = false,
         },
       },
     },
