@@ -16,6 +16,8 @@ return {
         "buffer",
         "lazydev",
       },
+      -- Not very mature
+      cmdline = {},
       providers = {
         lsp = {
           name = "LSP",
