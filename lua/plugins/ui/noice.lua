@@ -93,6 +93,11 @@ return {
   },
   keys = {
     {
+      "<leader>fn",
+      "<Cmd>Noice fzf<CR>",
+      desc = "Noitification",
+    },
+    {
       "<C-F>",
       function()
         if not require("noice.lsp").scroll(4) then
