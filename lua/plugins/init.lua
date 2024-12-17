@@ -1,4 +1,4 @@
----@type LazySpec
+---@type LazySpecImport
 return {
   { import = "plugins.colorscheme" },
   { import = "plugins.ui" },

@@ -10,7 +10,7 @@ return {
       },
       {
         path = "lazy.nvim",
-        words = { "LazyPluginSpec" },
+        words = { "Lazy.*Spec" },
       },
     },
     enabled = function(root_dir)
