@@ -41,6 +41,9 @@ vim.keymap.set(
   prev_diagnostic,
   { desc = "Jump to the previous diagnostic in the current buffer" }
 )
+vim.keymap.set("n", "<leader>td", function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = "Diagnostic" })
 
 local function toggle_quickfix()
   local wins = vim.fn.getwininfo()

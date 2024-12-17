@@ -98,15 +98,15 @@ return {
 
       vim.keymap.set(
         "n",
-        "<leader>td",
+        "<leader>tD",
         gitsigns.toggle_deleted,
-        { buffer = bufnr, desc = "Deleted" }
+        { buffer = bufnr, desc = "GIt deleted" }
       )
       vim.keymap.set(
         "n",
         "<leader>tb",
         gitsigns.toggle_current_line_blame,
-        { buffer = bufnr, desc = "Line Blame" }
+        { buffer = bufnr, desc = "Line blame" }
       )
 
       -- Text object
