@@ -16,8 +16,6 @@ return {
         "buffer",
         "lazydev",
       },
-      -- Not very mature
-      cmdline = {},
       providers = {
         lsp = {
           name = "LSP",
@@ -32,6 +30,11 @@ return {
       },
     },
     completion = {
+      list = {
+        selection = function(ctx)
+          return ctx.mode == "cmdline" and "auto_insert" or "preselect"
+        end,
+      },
       menu = {
         border = "rounded",
         -- Minimum width should be controlled by components
