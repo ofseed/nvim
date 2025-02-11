@@ -70,6 +70,9 @@ return {
       hover = {
         silent = true,
       },
+      signature = {
+        enabled = false,
+      },
     },
     views = {
       cmdline_popup = {

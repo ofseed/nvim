@@ -74,6 +74,14 @@ return {
         },
       },
     },
+    signature = {
+      enabled = true,
+      window = {
+        show_documentation = true,
+        border = "rounded",
+        winblend = vim.o.pumblend,
+      },
+    },
     appearance = {
       nerd_font_variant = "mono",
       kind_icons = custom.icons.kind,
