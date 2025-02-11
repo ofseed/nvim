@@ -7,7 +7,13 @@ return {
   build = "cargo build --release",
   ---@type blink.cmp.Config
   opts = {
-    keymap = { preset = "enter" },
+    keymap = {
+      preset = "enter",
+      cmdline = {
+        preset = "enter",
+        ["<CR>"] = {},
+      },
+    },
     sources = {
       default = {
         "lsp",
