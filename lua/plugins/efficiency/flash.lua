@@ -2,6 +2,21 @@
 return {
   "folke/flash.nvim",
   opts = {
+    search = {
+      exclude = {
+        "blink-cmp-menu",
+
+        -- Default
+        "notify",
+        "cmp_menu",
+        "noice",
+        "flash_prompt",
+        function(win)
+          -- exclude non-focusable windows
+          return not vim.api.nvim_win_get_config(win).focusable
+        end,
+      },
+    },
     modes = {
       search = {
         enabled = true,
