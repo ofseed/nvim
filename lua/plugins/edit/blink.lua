@@ -4,7 +4,8 @@ local custom = require "custom"
 return {
   ---@module 'blink.cmp'
   "Saghen/blink.cmp",
-  build = "cargo build --release",
+  version = "*",
+  -- build = "cargo build --release",
   ---@type blink.cmp.Config
   opts = {
     keymap = {
