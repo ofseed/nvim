@@ -190,6 +190,13 @@ return {
       desc = "Set log point",
     },
     {
+      "<leader>db",
+      function()
+        require("dap").list_breakpoints(true)
+      end,
+      desc = "Open breakpoints",
+    },
+    {
       "<leader>dR",
       function()
         require("dap").repl.toggle()

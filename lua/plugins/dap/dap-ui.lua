@@ -68,18 +68,6 @@ return {
       desc = "Open scopes",
     },
     {
-      "<leader>db",
-      function()
-        require("dapui").float_element("breakpoints", {
-          width = 60,
-          height = 20,
-          enter = true,
-          position = "center",
-        })
-      end,
-      desc = "Open breakpoints",
-    },
-    {
       "<leader>dc",
       function()
         require("dapui").float_element("console", {
