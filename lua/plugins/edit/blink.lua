@@ -10,10 +10,6 @@ return {
   opts = {
     keymap = {
       preset = "enter",
-      cmdline = {
-        preset = "enter",
-        ["<CR>"] = {},
-      },
     },
     sources = {
       default = {
@@ -72,6 +68,12 @@ return {
           border = "rounded",
           winblend = vim.o.pumblend,
         },
+      },
+    },
+    cmdline = {
+      keymap = {
+        preset = "enter",
+        ["<CR>"] = { "accept_and_enter", "fallback" },
       },
     },
     signature = {
