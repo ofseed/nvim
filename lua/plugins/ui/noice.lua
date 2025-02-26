@@ -68,7 +68,7 @@ return {
         enabled = false,
       },
       hover = {
-        silent = true,
+        enabled = false,
       },
       signature = {
         enabled = false,
