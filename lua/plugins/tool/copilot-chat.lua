@@ -2,6 +2,7 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
   branch = "canary",
+  enabled = false,
   cmd = {
     "CopilotChat",
     "CopilotChatOpen",
