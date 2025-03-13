@@ -13,7 +13,7 @@ return {
       should_enable = function(bufnr)
         local win = vim.fn.bufwinid(bufnr)
         -- Very bad performance in diff-mode
-        if vim.wo[win].diff then
+        if vim.api.nvim_win_is_valid(win) and vim.wo[win].diff then
           return false
         end
         return true
