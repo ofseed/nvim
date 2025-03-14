@@ -14,6 +14,7 @@ return {
   event = "VeryLazy",
   opts = {
     query = {
+      [""] = "rainbow-delimiters",
       latex = "rainbow-blocks",
       lua = "rainbow-blocks",
       query = "rainbow-blocks",
