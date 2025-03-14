@@ -28,16 +28,18 @@ return {
       {
         ";",
         function()
-          ts.repeatable_move.repeat_last_move()
+          return ts.repeatable_move.repeat_last_move()
         end,
+        expr = true;
         mode = { "n", "x", "o" },
         desc = "Next last move",
       },
       {
         ",",
         function()
-          ts.repeatable_move.repeat_last_move_opposite()
+          return ts.repeatable_move.repeat_last_move_opposite()
         end,
+        expr = true;
         mode = { "n", "x", "o" },
         desc = "Prev last move",
       },
