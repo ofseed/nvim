@@ -70,12 +70,6 @@ return {
         },
       },
     },
-    cmdline = {
-      keymap = {
-        preset = "enter",
-        ["<CR>"] = { "accept_and_enter", "fallback" },
-      },
-    },
     signature = {
       enabled = true,
       window = {
