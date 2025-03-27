@@ -13,21 +13,11 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "  "
 
 local next_diagnostic, prev_diagnostic
-if vim.fn.has "nvim-0.11" == 1 then
-  next_diagnostic, prev_diagnostic = utils.make_repeatable_move_pair(function()
-    vim.diagnostic.jump { count = vim.v.count1 }
-  end, function()
-    vim.diagnostic.jump { count = -vim.v.count1 }
-  end)
-else
-  next_diagnostic, prev_diagnostic = utils.make_repeatable_move_pair(function()
-    ---@diagnostic disable-next-line: deprecated
-    vim.diagnostic.goto_next { float = false }
-  end, function()
-    ---@diagnostic disable-next-line: deprecated
-    vim.diagnostic.goto_prev { float = false }
-  end)
-end
+next_diagnostic, prev_diagnostic = utils.make_repeatable_move_pair(function()
+  vim.diagnostic.jump { count = vim.v.count1 }
+end, function()
+  vim.diagnostic.jump { count = -vim.v.count1 }
+end)
 
 vim.keymap.set(
   "n",

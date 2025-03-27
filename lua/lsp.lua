@@ -61,17 +61,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "grr", function()
       vim.lsp.buf.references { includeDeclaration = false }
     end, { buffer = bufnr, desc = "References" })
-    if vim.fn.has "nvim-0.11" ~= 1 then
-      vim.keymap.set("n", "grn", function()
-        vim.lsp.buf.rename()
-      end, { buffer = bufnr, desc = "Rename" })
-      vim.keymap.set({ "n", "v" }, "gra", function()
-        vim.lsp.buf.code_action()
-      end, { buffer = bufnr, desc = "Code action" })
-      vim.keymap.set({ "n", "i" }, "<C-s>", function()
-        vim.lsp.buf.signature_help()
-      end, { buffer = bufnr, desc = "LSP: Signature help" })
-    end
 
     -- Setup keymaps
     vim.keymap.set(
