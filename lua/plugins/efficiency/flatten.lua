@@ -9,9 +9,6 @@ return {
       window = {
         open = "alternate",
       },
-      integrations = {
-        kitty = true,
-      },
       hooks = {
         should_nest = function(host)
           return flatten.hooks.should_nest(host) or vim.env.HEADLESS_OSV
