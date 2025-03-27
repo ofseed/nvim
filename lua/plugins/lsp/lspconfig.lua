@@ -12,7 +12,6 @@ return {
   config = function()
     require("lspconfig.ui.windows").default_options.border = custom.border
     local lspconfig = require "lspconfig"
-    local capabilities = require "capabilities"
 
     --[[
     lspconfig.nixd.setup {
@@ -53,7 +52,6 @@ return {
 
     lspconfig.clangd.setup {
       cmd = { "clangd", "--header-insertion-decorators=0" },
-      capabilities = capabilities,
     }
   end,
   keys = {

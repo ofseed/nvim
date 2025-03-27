@@ -1,4 +1,3 @@
-local capabilities = require "capabilities"
 local custom = require "custom"
 
 ---@type LazyPluginSpec
@@ -36,7 +35,6 @@ return {
           { buffer = bufnr, desc = "Quit" }
         )
       end,
-      capabilities = capabilities, -- e.g. lsp_status capabilities
     },
   },
 }

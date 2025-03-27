@@ -1,5 +1,3 @@
-local capabilities = require "capabilities"
-
 ---@type LazyPluginSpec
 return {
   "williamboman/mason-lspconfig.nvim",
@@ -19,7 +17,7 @@ return {
     return {
       handlers = {
         function(server)
-          lspconfig[server].setup { capabilities = capabilities }
+          lspconfig[server].setup {}
         end,
 
         rust_analyzer = function() end,
@@ -30,7 +28,6 @@ return {
             on_attach = function(client)
               client.server_capabilities.documentFormattingProvider = false
             end,
-            capabilities = capabilities,
             settings = {
               Lua = {
                 runtime = {
@@ -58,7 +55,6 @@ return {
             on_attach = function(client)
               client.server_capabilities.documentFormattingProvider = false
             end,
-            capabilities = capabilities,
             settings = {
               gopls = {
                 hints = {
@@ -77,7 +73,6 @@ return {
 
         zls = function()
           lspconfig.zls.setup {
-            capabilities = capabilities,
             settings = {
               zls = {
                 inlay_hints_hide_redundant_param_names = true,
@@ -98,7 +93,6 @@ return {
             on_attach = function(client)
               client.server_capabilities.documentFormattingProvider = false
             end,
-            capabilities = capabilities,
             settings = {
               vtsls = {
                 autoUseWorkspaceTsdk = true,
@@ -139,7 +133,6 @@ return {
             on_attach = function(client)
               client.server_capabilities.documentFormattingProvider = false
             end,
-            capabilities = capabilities,
           }
         end,
 
@@ -154,13 +147,11 @@ return {
             on_attach = function(client)
               client.server_capabilities.documentFormattingProvider = false
             end,
-            capabilities = capabilities,
           }
         end,
 
         yamlls = function()
           lspconfig.yamlls.setup {
-            capabilities = capabilities,
             settings = {
               yaml = {
                 keyOrdering = false,
