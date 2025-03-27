@@ -69,6 +69,9 @@ return {
       treesitter_context = true,
       octo = true,
       overseer = true,
+      snacks = {
+        enabled = true,
+      },
       symbols_outline = true,
       illuminate = true,
       ufo = false,
