@@ -45,6 +45,12 @@ return {
                   showWord = "Disable",
                   workspaceWord = false,
                 },
+                diagnostics = {
+                  disable = {
+                    "unused-function",
+                    "empty-block",
+                  },
+                },
               },
             },
           }
