@@ -22,11 +22,17 @@ vim.diagnostic.config {
   },
 }
 
+---@type vim.lsp.util.open_floating_preview.Opts
+local preview_opts = {
+  border = custom.border,
+  title_pos = "center",
+}
+
 -- To instead override globally
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 ---@diagnostic disable-next-line: duplicate-set-field
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
+  opts = vim.tbl_deep_extend("keep", opts, preview_opts)
   opts.border = opts.border or custom.border
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
@@ -57,9 +63,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
       end, { buffer = bufnr, desc = "Previous reference" })
     end
 
-    -- Always override the default to add context
+    -- Override default keymap for additional options
     vim.keymap.set("n", "grr", function()
       vim.lsp.buf.references { includeDeclaration = false }
+    end, { buffer = bufnr, desc = "References" })
+    vim.keymap.set({ "i", "s" }, "<C-S>", function()
+      ---@type vim.lsp.buf.signature_help.Opts
+      local config = {}
+      vim.lsp.buf.signature_help(
+        vim.tbl_deep_extend("keep", config, preview_opts)
+      )
     end, { buffer = bufnr, desc = "References" })
 
     -- Setup keymaps
