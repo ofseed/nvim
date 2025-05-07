@@ -49,6 +49,17 @@ vim.api.nvim_create_autocmd({ "OptionSet" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufRead", {
+  group = group,
+  desc = "Restore last cursor position",
+  callback = function(args)
+    local bufnr = args.buf
+    local pos = vim.api.nvim_buf_get_mark(bufnr, '"')
+    local winid = vim.api.nvim_get_current_win()
+    vim.api.nvim_win_set_cursor(winid, pos)
+  end,
+})
+
 vim.api.nvim_create_autocmd({
   "FocusGained",
   "BufEnter",
