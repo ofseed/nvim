@@ -54,9 +54,15 @@ vim.api.nvim_create_autocmd("BufRead", {
   desc = "Restore last cursor position",
   callback = function(args)
     local bufnr = args.buf
-    local pos = vim.api.nvim_buf_get_mark(bufnr, '"')
+    local line, col = unpack(vim.api.nvim_buf_get_mark(bufnr, '"'))
     local winid = vim.api.nvim_get_current_win()
-    vim.api.nvim_win_set_cursor(winid, pos)
+
+    local end_line = vim.api.nvim_buf_line_count(bufnr)
+    local end_col =
+      #vim.api.nvim_buf_get_lines(bufnr, end_line - 1, end_line, true)[1]
+    if line < end_line or (line == end_line and col <= end_col) then
+      vim.api.nvim_win_set_cursor(winid, { line, col })
+    end
   end,
 })
 
