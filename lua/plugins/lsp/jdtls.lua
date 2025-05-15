@@ -6,17 +6,8 @@ return {
     "BufNewFile *.java",
   },
   opts = function()
-    local jdtls = require "jdtls"
-    local mason = require "mason-registry"
-    local capabilities = require "capabilities"
-
     return {
-      cmd = {
-        vim.fs.joinpath(
-          mason.get_package("jdtls"):get_install_path(),
-          "/bin/jdtls"
-        ),
-      },
+      cmd = { "jdtls" },
       handlers = {
         ["language/status"] = function() end,
       },
@@ -27,18 +18,6 @@ return {
               enabled = "all",
             },
           },
-        },
-      },
-      capabilities = capabilities,
-      init_options = {
-        bundles = {
-          vim.fn.glob(
-            vim.fs.joinpath(
-              mason.get_package("java-debug-adapter"):get_install_path(),
-              "extension/server/com.microsoft.java.debug.plugin-*.jar"
-            ),
-            true
-          ),
         },
       },
     }
