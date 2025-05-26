@@ -160,7 +160,7 @@ vim.lsp.enable {
   "lua_ls",
   "pyright",
   "gopls",
-  "volar",
+  "vue_ls",
   "vtsls",
   "zls",
 }
