@@ -11,9 +11,9 @@ return {
       "dropbar_menu",
       "cmp_docs",
       "cmp_menu",
-      'blink-cmp-menu',
-      'blink-cmp-documentation',
-      'blink-cmp-signature',
+      "blink-cmp-menu",
+      "blink-cmp-documentation",
+      "blink-cmp-signature",
       "noice",
     },
     signs_on_startup = {
@@ -36,9 +36,12 @@ return {
 
     scrollview.setup(opts)
     scrollview_gitsigns.setup {
+      add_highlight = "GitSignsAdd",
       add_priority = 100,
       change_priority = 100,
+      change_highlight = "GitSignsChange",
       delete_priority = 100,
+      delete_highlight = "GitSignsDelete",
     }
 
     vim.api.nvim_set_hl(0, "ScrollView", { link = "PmenuThumb" })
