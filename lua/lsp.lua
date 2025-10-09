@@ -38,6 +38,9 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 vim.lsp.inlay_hint.enable()
+if vim.lsp.inline_completion then
+  vim.lsp.inline_completion.enable()
+end
 if vim.lsp.document_highlight then
   vim.lsp.document_highlight.enable()
 end
@@ -122,6 +125,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
         { bufnr = bufnr }
       )
     end, { buffer = bufnr, desc = "Toggle inlay hints" })
+
+    vim.keymap.set("i", "<C-J>", function()
+      if not vim.lsp.inline_completion.get() then
+        return "<C-J>"
+      end
+    end, {
+      expr = true,
+      desc = "Accept the current inline completion",
+      buffer = bufnr,
+    })
 
     -- Use conform instead
     -- vim.keymap.set("n", "<leader>F", function()
