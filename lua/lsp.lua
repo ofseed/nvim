@@ -158,6 +158,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.lsp.enable {
   "clangd",
   "lua_ls",
+  "copilot",
   "pyright",
   "gopls",
   "vue_ls",
