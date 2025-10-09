@@ -88,7 +88,7 @@ vim.keymap.set("n", "[b", bprevious, { desc = "Prev buffer" })
 
 local filetype_keymaps =
   vim.api.nvim_create_augroup("ofseed_filetype_keymaps", {})
-vim.api.nvim_create_autocmd("Filetype", {
+vim.api.nvim_create_autocmd("FileType", {
   group = filetype_keymaps,
   pattern = "qf",
   callback = function(args)
