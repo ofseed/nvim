@@ -46,6 +46,14 @@ return {
         QuickFixLineNr = { fg = color.overlay0 },
       }
     end,
+    lsp_styles = {
+      underlines = {
+        errors = { "undercurl" },
+        hints = { "undercurl" },
+        warnings = { "undercurl" },
+        information = { "undercurl" },
+      },
+    },
     integrations = {
       aerial = true,
       blink_cmp = true,
@@ -53,14 +61,6 @@ return {
       markdown = true,
       mason = true,
       neotree = true,
-      native_lsp = {
-        underlines = {
-          errors = { "undercurl" },
-          hints = { "undercurl" },
-          warnings = { "undercurl" },
-          information = { "undercurl" },
-        },
-      },
       navic = {
         enabled = true,
       },
