@@ -68,7 +68,6 @@ return {
   event = 'VeryLazy',
   dependencies = {
     { 'nvim-tree/nvim-web-devicons' },
-    { 'ofseed/copilot-status.nvim', enabled = false },
   },
   opts = {
     sections = {
