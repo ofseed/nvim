@@ -1,4 +1,6 @@
 local api = vim.api
+local keymap = vim.keymap
+local lsp = vim.lsp
 
 local augroup = api.nvim_create_augroup('ofseed', {})
 
@@ -17,6 +19,82 @@ api.nvim_create_autocmd('FileType', {
       -- Indentation
       vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
     end
+  end,
+  group = augroup,
+})
+
+api.nvim_create_autocmd('LspAttach', {
+  desc = 'LSP Attach',
+  callback = function(args)
+    local bufnr = args.buf
+
+    -- Not be merged to upstream yet.
+    if lsp.document_highlight then
+      keymap.set('n', '<leader>ld', function()
+        lsp.document_highlight.enable(
+          not lsp.document_highlight.is_enabled { bufnr = 0 },
+          { bufnr = bufnr }
+        )
+      end, { buffer = bufnr, desc = 'Toggle document highlight' })
+      keymap.set('n', ']r', function()
+        lsp.document_highlight.jump { count = vim.v.count1, refresh = true }
+      end, { buffer = bufnr, desc = 'Next reference' })
+      keymap.set('n', '[r', function()
+        lsp.document_highlight.jump { count = -vim.v.count1, refresh = true }
+      end, { buffer = bufnr, desc = 'Previous reference' })
+    end
+
+    -- Override default keymap for additional options
+    keymap.set('n', 'grr', function()
+      lsp.buf.references { includeDeclaration = false }
+    end, { buffer = bufnr, desc = 'References' })
+
+    -- Setup additional keymaps
+    keymap.set('n', 'gd', lsp.buf.definition, { buffer = bufnr, desc = 'Definition' })
+    keymap.set('n', 'gD', lsp.buf.type_definition, { buffer = bufnr, desc = 'Type definition' })
+    keymap.set('n', 'gI', lsp.buf.implementation, { buffer = bufnr, desc = 'Implementation' })
+    keymap.set(
+      { 'i', 's' },
+      '<C-S>',
+      lsp.buf.signature_help,
+      { buffer = bufnr, desc = 'Signature help' }
+    )
+    keymap.set('i', '<C-J>', function()
+      if not lsp.inline_completion.get() then
+        return '<C-J>'
+      end
+    end, { expr = true, desc = 'Accept the current inline completion', buffer = bufnr })
+    keymap.set(
+      'n',
+      '<leader>li',
+      lsp.buf.incoming_calls,
+      { buffer = bufnr, desc = 'Incoming calls' }
+    )
+    keymap.set(
+      'n',
+      '<leader>lo',
+      lsp.buf.outgoing_calls,
+      { buffer = bufnr, desc = 'Outgoing calls' }
+    )
+    keymap.set('n', '<leader>lh', function()
+      lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled { bufnr = bufnr }, { bufnr = bufnr })
+    end, { buffer = bufnr, desc = 'Toggle inlay hints' })
+    keymap.set('n', '<leader>lr', lsp.codelens.run, { buffer = bufnr, desc = 'Run lens' })
+    keymap.set(
+      'n',
+      '<leader>lwa',
+      lsp.buf.add_workspace_folder,
+      { buffer = bufnr, desc = 'Add workspace folder' }
+    )
+    keymap.set(
+      'n',
+      '<leader>lwr',
+      lsp.buf.remove_workspace_folder,
+      { buffer = bufnr, desc = 'Remove workspace folder' }
+    )
+    keymap.set('n', '<leader>lwl', function()
+      print(vim.inspect(lsp.buf.list_workspace_folders()))
+    end, { buffer = bufnr, desc = 'List workspace folders' })
   end,
   group = augroup,
 })
