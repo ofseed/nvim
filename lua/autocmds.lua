@@ -27,6 +27,14 @@ api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP Attach',
   callback = function(args)
     local bufnr = args.buf
+    local client = assert(lsp.get_client_by_id(args.data.client_id))
+
+    -- Enable LSP-based folding if supported.
+    if client:supports_method('textDocument/foldingRange', bufnr) then
+      vim.o.foldmethod = 'expr'
+      vim.o.foldexpr = 'v:lua.vim.lsp.foldexpr()'
+      vim.o.foldtext = 'v:lua.vim.lsp.foldtext()'
+    end
 
     -- Not be merged to upstream yet.
     if lsp.document_highlight then
@@ -99,6 +107,16 @@ api.nvim_create_autocmd('LspAttach', {
   group = augroup,
 })
 
+api.nvim_create_autocmd('LspNotify', {
+  desc = 'Auto close imports',
+  callback = function(args)
+    if args.data.method == 'textDocument/didOpen' then
+      lsp.foldclose('imports', vim.fn.bufwinid(args.buf))
+    end
+  end,
+  group = augroup,
+})
+
 api.nvim_create_autocmd('BufRead', {
   desc = 'Restore last cursor position',
   callback = function(args)
@@ -132,6 +150,31 @@ api.nvim_create_autocmd('TextYankPost', {
   desc = 'Briefly highlight yanked text',
   callback = function()
     vim.highlight.on_yank()
+  end,
+  group = augroup,
+})
+
+api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  desc = 'Enable foldcolumn for normal files',
+  callback = function()
+    if vim.bo.buftype == '' then
+      vim.wo.foldcolumn = '1'
+    else
+      vim.wo.foldcolumn = '0'
+    end
+  end,
+  group = augroup,
+})
+
+api.nvim_create_autocmd('OptionSet', {
+  desc = 'Enable foldcolumn for normal files',
+  pattern = 'buftype',
+  callback = function()
+    if vim.bo.buftype == '' then
+      vim.wo.foldcolumn = '1'
+    else
+      vim.wo.foldcolumn = '0'
+    end
   end,
   group = augroup,
 })
