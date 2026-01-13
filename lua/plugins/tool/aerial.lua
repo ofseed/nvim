@@ -1,16 +1,16 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "stevearc/aerial.nvim",
+  'stevearc/aerial.nvim',
   enabled = false,
   opts = {
-    backends = { "lsp", "treesitter", "markdown" },
+    backends = { 'lsp', 'treesitter', 'markdown' },
     float = {
       border = custom.border,
     },
   },
   keys = {
-    { "<leader>a", "<Cmd>AerialToggle<CR>", desc = "Outline" },
+    { '<leader>a', '<Cmd>AerialToggle<CR>', desc = 'Outline' },
   },
 }

@@ -1,11 +1,11 @@
 ---@type LazyPluginSpec
 return {
-  "rose-pine/neovim",
+  'rose-pine/neovim',
   lazy = true,
-  name = "rose-pine",
+  name = 'rose-pine',
   opts = {
     highlight_groups = {
-      EndOfBuffer = { fg = "base" },
+      EndOfBuffer = { fg = 'base' },
     },
   },
 }

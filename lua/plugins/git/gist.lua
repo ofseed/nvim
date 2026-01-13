@@ -1,10 +1,10 @@
 ---@type LazyPluginSpec
 return {
-  "Rawnly/gist.nvim",
+  'Rawnly/gist.nvim',
   cmd = {
-    "GistCreate",
-    "GistCreateFromFile",
-    "GistsList",
+    'GistCreate',
+    'GistCreateFromFile',
+    'GistsList',
   },
   opts = {},
 }

@@ -1,8 +1,8 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "williamboman/mason.nvim",
+  'williamboman/mason.nvim',
   lazy = false,
   opts = {
     ui = {
@@ -10,6 +10,6 @@ return {
     },
   },
   keys = {
-    { "<leader>mm", "<Cmd>Mason<CR>", desc = "Packages" },
+    { '<leader>mm', '<Cmd>Mason<CR>', desc = 'Packages' },
   },
 }

@@ -1,31 +1,31 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "neovim/nvim-lspconfig",
+  'neovim/nvim-lspconfig',
   event = {
-    "Filetype",
+    'Filetype',
   },
   dependencies = {
-    "folke/neoconf.nvim",
+    'folke/neoconf.nvim',
   },
   config = function()
-    require("lspconfig.ui.windows").default_options.border = custom.border
+    require('lspconfig.ui.windows').default_options.border = custom.border
   end,
   keys = {
     {
-      "<leader>lR",
+      '<leader>lR',
       function()
         vim.cmd.LspRestart()
       end,
-      desc = "Reload",
+      desc = 'Reload',
     },
     {
-      "<leader>lI",
+      '<leader>lI',
       function()
         vim.cmd.LspInfo()
       end,
-      desc = "Info",
+      desc = 'Info',
     },
   },
 }

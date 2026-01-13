@@ -1,21 +1,21 @@
 ---@type LazyPluginSpec
 return {
-  "mrcjkb/rustaceanvim",
-  ft = { "rust" },
+  'mrcjkb/rustaceanvim',
+  ft = { 'rust' },
   opts = {
     dap = {
       adapter = {
-        type = "server",
-        port = "${port}",
-        host = "127.0.0.1",
+        type = 'server',
+        port = '${port}',
+        host = '127.0.0.1',
         executable = {
-          command = "codelldb",
+          command = 'codelldb',
           args = {
-            "--port",
-            "${port}",
-            "--settings",
+            '--port',
+            '${port}',
+            '--settings',
             vim.json.encode {
-              showDisassembly = "never",
+              showDisassembly = 'never',
             },
           },
         },

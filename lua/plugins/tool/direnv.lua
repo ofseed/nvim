@@ -1,5 +1,5 @@
 ---@type LazyPluginSpec
 return {
-  "direnv/direnv.vim",
+  'direnv/direnv.vim',
   config = function() end,
 }

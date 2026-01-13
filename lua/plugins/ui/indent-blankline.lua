@@ -1,18 +1,18 @@
-local utils = require "utils"
+local utils = require 'utils'
 
 ---@type LazyPluginSpec
 return {
-  "lukas-reineke/indent-blankline.nvim",
-  event = "VeryLazy",
+  'lukas-reineke/indent-blankline.nvim',
+  event = 'VeryLazy',
   opts = {
     indent = {
-      char = "▏", -- Thiner, not suitable when enable scope
-      tab_char = "▏",
+      char = '▏', -- Thiner, not suitable when enable scope
+      tab_char = '▏',
     },
   },
   config = function(_, opts)
-    local ibl = require "ibl"
-    local hooks = require "ibl.hooks"
+    local ibl = require 'ibl'
+    local hooks = require 'ibl.hooks'
 
     ibl.setup(opts)
 
@@ -28,7 +28,7 @@ return {
         and foldinfo
         and foldinfo.start == lnum
       then
-        virt_text[1] = { " ", { "@ibl.whitespace.char.1" } }
+        virt_text[1] = { ' ', { '@ibl.whitespace.char.1' } }
       end
 
       return virt_text

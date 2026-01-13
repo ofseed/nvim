@@ -1,5 +1,5 @@
 ---@type LazyPluginSpec
 return {
-  "lambdalisue/suda.vim",
-  cmd = { "SudaRead", "SudaWrite" },
+  'lambdalisue/suda.vim',
+  cmd = { 'SudaRead', 'SudaWrite' },
 }

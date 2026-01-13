@@ -1,10 +1,10 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "nvim-tree/nvim-tree.lua",
+  'nvim-tree/nvim-tree.lua',
   enabled = false,
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
     view = {
       width = custom.width,
@@ -16,6 +16,6 @@ return {
     },
   },
   keys = {
-    { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" },
+    { '<leader>e', '<cmd>NvimTreeToggle<CR>', desc = 'File Explorer' },
   },
 }

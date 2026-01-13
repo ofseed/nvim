@@ -1,4 +1,4 @@
-local custom = require "custom"
+local custom = require 'custom'
 local kinds = vim.iter(custom.icons.kind):fold({}, function(t, k, v)
   t[k] = { icon = v }
   return t
@@ -6,52 +6,47 @@ end)
 
 ---@type LazyPluginSpec
 return {
-  "nvim-neo-tree/neo-tree.nvim",
-  branch = "main",
+  'nvim-neo-tree/neo-tree.nvim',
+  branch = 'main',
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-    "MunifTanjim/nui.nvim",
-    "s1n7ax/nvim-window-picker",
+    'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+    'MunifTanjim/nui.nvim',
+    's1n7ax/nvim-window-picker',
   },
   init = function()
-    vim.api.nvim_create_autocmd("BufEnter", {
-      group = vim.api.nvim_create_augroup("load_neo_tree", {}),
-      desc = "Loads neo-tree when openning a directory",
+    vim.api.nvim_create_autocmd('BufEnter', {
+      group = vim.api.nvim_create_augroup('load_neo_tree', {}),
+      desc = 'Loads neo-tree when openning a directory',
       callback = function(args)
         local stats = vim.uv.fs_stat(args.file)
 
-        if not stats or stats.type ~= "directory" then
+        if not stats or stats.type ~= 'directory' then
           return
         end
 
-        require "neo-tree"
+        require 'neo-tree'
 
         return true
       end,
     })
   end,
   opts = {
-    default_source = "last",
+    default_source = 'last',
     popup_border_style = custom.border,
     event_handlers = {
       {
-        event = "neo_tree_popup_input_ready",
+        event = 'neo_tree_popup_input_ready',
         handler = function(args)
-          vim.keymap.set(
-            "i",
-            "<Esc>",
-            vim.cmd.stopinsert,
-            { noremap = true, buffer = args.bufnr }
-          )
+          vim.keymap.set('i', '<Esc>', vim.cmd.stopinsert, { noremap = true, buffer = args.bufnr })
         end,
       },
     },
     default_component_configs = {
       icon = {
-        folder_closed = "",
-        folder_open = "",
-        folder_empty = "",
+        folder_closed = '',
+        folder_open = '',
+        folder_empty = '',
       },
       symlink_target = {
         enabled = true,
@@ -61,43 +56,43 @@ return {
       winbar = true,
       sources = {
         {
-          source = "filesystem",
-          display_name = "  Files",
+          source = 'filesystem',
+          display_name = '  Files',
         },
         {
-          source = "buffers",
-          display_name = "  Bufs",
+          source = 'buffers',
+          display_name = '  Bufs',
         },
         {
-          source = "git_status",
-          display_name = "  Git",
+          source = 'git_status',
+          display_name = '  Git',
         },
         {
-          source = "document_symbols",
-          display_name = "  Symbols",
+          source = 'document_symbols',
+          display_name = '  Symbols',
         },
       },
     },
     window = {
       width = custom.width,
       mappings = {
-        ["<Space>"] = "none",
-        ["/"] = "none",
+        ['<Space>'] = 'none',
+        ['/'] = 'none',
 
-        ["gx"] = "system_open",
+        ['gx'] = 'system_open',
 
-        ["h"] = "smart_h",
-        ["l"] = "smart_l",
+        ['h'] = 'smart_h',
+        ['l'] = 'smart_l',
 
         -- Swap default split behavior
-        ["S"] = "open_vsplit",
-        ["s"] = "open_split",
+        ['S'] = 'open_vsplit',
+        ['s'] = 'open_split',
 
         -- Modify default behavior of preview.
         -- Using floating window causes strange behavior,
         -- such as statuscolumn not being applied
-        ["P"] = {
-          "toggle_preview",
+        ['P'] = {
+          'toggle_preview',
           config = {
             use_float = false,
             use_image_nvim = true,
@@ -114,37 +109,31 @@ return {
 
       smart_h = function(state)
         local node = state.tree:get_node()
-        if node.type == "directory" and node:is_expanded() then
-          if state.name == "filesystem" then
-            require("neo-tree.sources.filesystem.commands").toggle_node(state)
+        if node.type == 'directory' and node:is_expanded() then
+          if state.name == 'filesystem' then
+            require('neo-tree.sources.filesystem.commands').toggle_node(state)
           else
-            require("neo-tree.sources.common.commands").toggle_node(state)
+            require('neo-tree.sources.common.commands').toggle_node(state)
           end
         else
-          require("neo-tree.ui.renderer").focus_node(
-            state,
-            node:get_parent_id()
-          )
+          require('neo-tree.ui.renderer').focus_node(state, node:get_parent_id())
         end
       end,
 
       smart_l = function(state)
         local node = state.tree:get_node()
-        if node.type == "directory" then
+        if node.type == 'directory' then
           if not node:is_expanded() then
-            if state.name == "filesystem" then
-              require("neo-tree.sources.filesystem.commands").toggle_node(state)
+            if state.name == 'filesystem' then
+              require('neo-tree.sources.filesystem.commands').toggle_node(state)
             else
-              require("neo-tree.sources.common.commands").toggle_node(state)
+              require('neo-tree.sources.common.commands').toggle_node(state)
             end
           elseif node:has_children() then
-            require("neo-tree.ui.renderer").focus_node(
-              state,
-              node:get_child_ids()[1]
-            )
+            require('neo-tree.ui.renderer').focus_node(state, node:get_child_ids()[1])
           end
-        elseif node.type == "file" then
-          require("neo-tree.sources.common.commands").open(state)
+        elseif node.type == 'file' then
+          require('neo-tree.sources.common.commands').open(state)
         end
       end,
     },
@@ -155,10 +144,10 @@ return {
       },
       window = {
         mappings = {
-          ["[g"] = "none",
-          ["]g"] = "none",
-          ["[h"] = "prev_git_modified",
-          ["]h"] = "next_git_modified",
+          ['[g'] = 'none',
+          [']g'] = 'none',
+          ['[h'] = 'prev_git_modified',
+          [']h'] = 'next_git_modified',
         },
       },
     },
@@ -168,18 +157,18 @@ return {
   },
   config = function(_, opts)
     local function on_move(data)
-      require("snacks").rename.on_rename_file(data.source, data.destination)
+      require('snacks').rename.on_rename_file(data.source, data.destination)
     end
-    local events = require "neo-tree.events"
+    local events = require 'neo-tree.events'
     opts.event_handlers = opts.event_handlers or {}
     vim.list_extend(opts.event_handlers, {
       { event = events.FILE_MOVED, handler = on_move },
       { event = events.FILE_RENAMED, handler = on_move },
     })
-    require("neo-tree").setup(opts)
-    vim.api.nvim_create_augroup("load_neo_tree", {})
+    require('neo-tree').setup(opts)
+    vim.api.nvim_create_augroup('load_neo_tree', {})
   end,
   keys = {
-    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File Explorer" },
+    { '<leader>e', '<cmd>Neotree toggle<cr>', desc = 'File Explorer' },
   },
 }

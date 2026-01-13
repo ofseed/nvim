@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
 return {
-  "mbbill/undotree",
+  'mbbill/undotree',
   config = function()
-    local custom = require "custom"
+    local custom = require 'custom'
     local width = custom.width()
 
     vim.g.undotree_SplitWidth = width
@@ -13,6 +13,6 @@ return {
     vim.g.undotree_HelpLine = 0
   end,
   keys = {
-    { "<leader>u", "<Cmd>UndotreeToggle<CR>", desc = "Undo Tree" },
+    { '<leader>u', '<Cmd>UndotreeToggle<CR>', desc = 'Undo Tree' },
   },
 }

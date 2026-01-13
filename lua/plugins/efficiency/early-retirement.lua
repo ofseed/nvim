@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
-  "chrisgrieser/nvim-early-retirement",
+  'chrisgrieser/nvim-early-retirement',
   -- Use it with tabline only
-  event = "VeryLazy",
+  event = 'VeryLazy',
   opts = {},
 }

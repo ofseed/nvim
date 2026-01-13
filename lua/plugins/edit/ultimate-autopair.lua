@@ -1,12 +1,12 @@
 ---@type LazyPluginSpec
 return {
-  "altermo/ultimate-autopair.nvim",
+  'altermo/ultimate-autopair.nvim',
   enabled = false,
-  event = { "InsertEnter", "CmdlineEnter" },
+  event = { 'InsertEnter', 'CmdlineEnter' },
   opts = {
     tabout = {
       enable = true,
-      map = "<Tab>",
+      map = '<Tab>',
       hopout = true,
       do_nothing_if_fail = false,
     },

@@ -1,16 +1,16 @@
 ---@type LazyPluginSpec
 return {
-  "folke/snacks.nvim",
+  'folke/snacks.nvim',
   ---@module "snacks"
   ---@type snacks.Config
   opts = {
     input = {
-      icon = " ",
+      icon = ' ',
     },
     styles = {
       input = {
-        title_pos = "left",
-        relative = "cursor",
+        title_pos = 'left',
+        relative = 'cursor',
         row = 1,
         col = 0,
         width = 30,

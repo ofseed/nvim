@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
 return {
-  "nvim-treesitter/nvim-treesitter",
-  branch = "main",
-  event = "VeryLazy",
-  build = ":TSUpdate",
+  'nvim-treesitter/nvim-treesitter',
+  branch = 'main',
+  event = 'VeryLazy',
+  build = ':TSUpdate',
   opts = {},
 }

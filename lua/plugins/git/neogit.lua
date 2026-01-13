@@ -1,19 +1,19 @@
 ---@type LazyPluginSpec
 return {
-  "NeogitOrg/neogit",
+  'NeogitOrg/neogit',
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "sindrets/diffview.nvim",
+    'nvim-lua/plenary.nvim',
+    'sindrets/diffview.nvim',
   },
   cmd = {
-    "Neogit",
+    'Neogit',
   },
   keys = {
-    { "<leader>gg", "<Cmd>Neogit<CR>", desc = "Open Neogit" },
+    { '<leader>gg', '<Cmd>Neogit<CR>', desc = 'Open Neogit' },
   },
   opts = {
     disable_hint = true,
-    graph_style = "kitty",
+    graph_style = 'kitty',
     integrations = {
       diffview = true,
     },

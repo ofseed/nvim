@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
-  "lukas-reineke/virt-column.nvim",
+  'lukas-reineke/virt-column.nvim',
   opts = {
-    char = "▏",
+    char = '▏',
   },
 }

@@ -1,20 +1,20 @@
 ---@type LazyPluginSpec
 return {
-  "jbyuki/one-small-step-for-vimkind",
+  'jbyuki/one-small-step-for-vimkind',
   keys = {
     {
-      "<leader>hd",
+      '<leader>hd',
       function()
-        require("osv").launch { port = 8086 }
+        require('osv').launch { port = 8086 }
       end,
-      desc = "Launch adapter",
+      desc = 'Launch adapter',
     },
     {
-      "<leader>hs",
+      '<leader>hs',
       function()
-        require("osv").stop()
+        require('osv').stop()
       end,
-      desc = "Stop adapter",
+      desc = 'Stop adapter',
     },
   },
 }

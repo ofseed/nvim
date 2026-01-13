@@ -1,21 +1,21 @@
 ---@type LazyPluginSpec
 return {
-  "mfussenegger/nvim-jdtls",
+  'mfussenegger/nvim-jdtls',
   event = {
-    "BufRead *.java",
-    "BufNewFile *.java",
+    'BufRead *.java',
+    'BufNewFile *.java',
   },
   opts = function()
     return {
-      cmd = { "jdtls" },
+      cmd = { 'jdtls' },
       handlers = {
-        ["language/status"] = function() end,
+        ['language/status'] = function() end,
       },
       settings = {
         java = {
           inlayHints = {
             parameterNames = {
-              enabled = "all",
+              enabled = 'all',
             },
           },
         },
@@ -23,13 +23,13 @@ return {
     }
   end,
   config = function(_, opts)
-    local jdtls = require "jdtls"
+    local jdtls = require 'jdtls'
 
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = "java",
-      desc = "Attach jdtls",
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'java',
+      desc = 'Attach jdtls',
       callback = function()
-        jdtls.start_or_attach(opts, { dap = { hotcodereplace = "auto" } })
+        jdtls.start_or_attach(opts, { dap = { hotcodereplace = 'auto' } })
         vim.bo.tabstop = 4
       end,
     })

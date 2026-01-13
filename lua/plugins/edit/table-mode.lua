@@ -1,5 +1,5 @@
 ---@type LazyPluginSpec
 return {
-  "dhruvasagar/vim-table-mode",
-  ft = { "markdown", "org" },
+  'dhruvasagar/vim-table-mode',
+  ft = { 'markdown', 'org' },
 }

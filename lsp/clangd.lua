@@ -1,4 +1,4 @@
 ---@type vim.lsp.Config
 return {
-  cmd = { "clangd", "--header-insertion-decorators=0" },
+  cmd = { 'clangd', '--header-insertion-decorators=0' },
 }

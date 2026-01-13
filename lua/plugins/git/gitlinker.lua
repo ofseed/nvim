@@ -1,25 +1,25 @@
 ---@type LazyPluginSpec
 return {
-  "ruifm/gitlinker.nvim",
-  dependencies = "nvim-lua/plenary.nvim",
+  'ruifm/gitlinker.nvim',
+  dependencies = 'nvim-lua/plenary.nvim',
   opts = {
     mappings = nil,
   },
   keys = {
     {
-      "<leader>gy",
+      '<leader>gy',
       function()
-        require("gitlinker").get_buf_range_url "n"
+        require('gitlinker').get_buf_range_url 'n'
       end,
-      desc = "Create link",
+      desc = 'Create link',
     },
     {
-      "<leader>gy",
+      '<leader>gy',
       function()
-        require("gitlinker").get_buf_range_url "v"
+        require('gitlinker').get_buf_range_url 'v'
       end,
-      mode = "v",
-      desc = "Create link",
+      mode = 'v',
+      desc = 'Create link',
     },
   },
 }

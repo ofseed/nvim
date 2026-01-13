@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
-  "s1n7ax/nvim-window-picker",
-  version = "*",
+  's1n7ax/nvim-window-picker',
+  version = '*',
   opts = {
     show_prompt = false,
     filter_func = function(window_ids)
@@ -10,7 +10,7 @@ return {
           return false
         end
 
-        if vim.api.nvim_win_get_config(window_id).relative ~= "" then
+        if vim.api.nvim_win_get_config(window_id).relative ~= '' then
           return false
         end
 
@@ -20,22 +20,20 @@ return {
   },
   keys = {
     {
-      "<C-W>w",
+      '<C-W>w',
       function()
-        local window_id = require("window-picker").pick_window()
-          or vim.api.nvim_get_current_win()
+        local window_id = require('window-picker').pick_window() or vim.api.nvim_get_current_win()
         vim.api.nvim_set_current_win(window_id)
       end,
-      desc = "Pick a window",
+      desc = 'Pick a window',
     },
     {
-      "<C-W><C-W>",
+      '<C-W><C-W>',
       function()
-        local window_id = require("window-picker").pick_window()
-          or vim.api.nvim_get_current_win()
+        local window_id = require('window-picker').pick_window() or vim.api.nvim_get_current_win()
         vim.api.nvim_set_current_win(window_id)
       end,
-      desc = "Pick a window",
+      desc = 'Pick a window',
     },
   },
 }

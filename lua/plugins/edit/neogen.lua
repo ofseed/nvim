@@ -1,16 +1,16 @@
 ---@type LazyPluginSpec
 return {
-  "danymat/neogen",
+  'danymat/neogen',
   opts = {
-    snippet_engine = "luasnip",
+    snippet_engine = 'luasnip',
   },
   keys = {
     {
-      "<leader>ia",
+      '<leader>ia',
       function()
-        require("neogen").generate()
+        require('neogen').generate()
       end,
-      desc = "Annotations",
+      desc = 'Annotations',
     },
   },
 }

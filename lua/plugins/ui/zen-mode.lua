@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
 return {
-  "folke/zen-mode.nvim",
+  'folke/zen-mode.nvim',
   opts = {},
   keys = {
-    { "<leader>tz", "<Cmd>ZenMode<CR>", desc = "Zen Mode" },
+    { '<leader>tz', '<Cmd>ZenMode<CR>', desc = 'Zen Mode' },
   },
 }

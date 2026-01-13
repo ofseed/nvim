@@ -1,18 +1,18 @@
-local custom = require "custom"
-local utils = require "utils"
+local custom = require 'custom'
+local utils = require 'utils'
 
 ---@type LazyPluginSpec
 return {
-  "lewis6991/gitsigns.nvim",
-  event = "VeryLazy",
-  dependencies = "nvim-lua/plenary.nvim",
+  'lewis6991/gitsigns.nvim',
+  event = 'VeryLazy',
+  dependencies = 'nvim-lua/plenary.nvim',
   keys = {
     {
-      "<leader>gB",
+      '<leader>gB',
       function()
-        require("gitsigns").blame()
+        require('gitsigns').blame()
       end,
-      desc = "Blame",
+      desc = 'Blame',
     },
   },
   opts = {
@@ -22,130 +22,112 @@ return {
       border = custom.border,
     },
     on_attach = function(bufnr)
-      local gitsigns = require "gitsigns"
+      local gitsigns = require 'gitsigns'
       local next_hunk, prev_hunk = utils.make_repeatable_move_pair(function()
-        gitsigns.nav_hunk "next"
+        gitsigns.nav_hunk 'next'
       end, function()
-        gitsigns.nav_hunk "prev"
+        gitsigns.nav_hunk 'prev'
       end)
 
       -- Navigation
-      vim.keymap.set("n", "]h", function()
+      vim.keymap.set('n', ']h', function()
         if vim.wo.diff then
-          vim.cmd.normal { "]h", bang = true }
+          vim.cmd.normal { ']h', bang = true }
         else
           next_hunk()
         end
-      end, { buffer = bufnr, desc = "Next hunk" })
+      end, { buffer = bufnr, desc = 'Next hunk' })
 
-      vim.keymap.set("n", "[h", function()
+      vim.keymap.set('n', '[h', function()
         if vim.wo.diff then
-          vim.cmd.normal { "[h", bang = true }
+          vim.cmd.normal { '[h', bang = true }
         else
           prev_hunk()
         end
-      end, { buffer = bufnr, desc = "Previous hunk" })
+      end, { buffer = bufnr, desc = 'Previous hunk' })
 
       -- Actions
       vim.keymap.set(
-        "n",
-        "<leader>gs",
+        'n',
+        '<leader>gs',
         gitsigns.stage_hunk,
-        { buffer = bufnr, desc = "Stage hunk" }
+        { buffer = bufnr, desc = 'Stage hunk' }
       )
-      vim.keymap.set("v", "<leader>gs", function()
-        gitsigns.stage_hunk { vim.fn.line ".", vim.fn.line "v" }
-      end, { buffer = bufnr, desc = "Stage hunk" })
+      vim.keymap.set('v', '<leader>gs', function()
+        gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
+      end, { buffer = bufnr, desc = 'Stage hunk' })
       vim.keymap.set(
-        "n",
-        "<leader>gr",
+        'n',
+        '<leader>gr',
         gitsigns.reset_hunk,
-        { buffer = bufnr, desc = "Reset hunk" }
+        { buffer = bufnr, desc = 'Reset hunk' }
       )
-      vim.keymap.set("v", "<leader>gr", function()
-        gitsigns.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
-      end, { buffer = bufnr, desc = "Reset hunk" })
+      vim.keymap.set('v', '<leader>gr', function()
+        gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
+      end, { buffer = bufnr, desc = 'Reset hunk' })
       vim.keymap.set(
-        "n",
-        "<leader>gu",
+        'n',
+        '<leader>gu',
         gitsigns.undo_stage_hunk,
-        { buffer = bufnr, desc = "Undo stage hunk" }
+        { buffer = bufnr, desc = 'Undo stage hunk' }
       )
       vim.keymap.set(
-        "n",
-        "<leader>gS",
+        'n',
+        '<leader>gS',
         gitsigns.stage_buffer,
-        { buffer = bufnr, desc = "Stage buffer" }
+        { buffer = bufnr, desc = 'Stage buffer' }
       )
       vim.keymap.set(
-        "n",
-        "<leader>gR",
+        'n',
+        '<leader>gR',
         gitsigns.reset_buffer,
-        { buffer = bufnr, desc = "Reset buffer" }
+        { buffer = bufnr, desc = 'Reset buffer' }
       )
       vim.keymap.set(
-        "n",
-        "<leader>gp",
+        'n',
+        '<leader>gp',
         gitsigns.preview_hunk,
-        { buffer = bufnr, desc = "Preview hunk" }
+        { buffer = bufnr, desc = 'Preview hunk' }
       )
-      vim.keymap.set("n", "<leader>gb", function()
+      vim.keymap.set('n', '<leader>gb', function()
         gitsigns.blame_line {
           full = true,
           ignore_whitespace = true,
         }
-      end, { buffer = bufnr, desc = "Blame line" })
+      end, { buffer = bufnr, desc = 'Blame line' })
 
       vim.keymap.set(
-        "n",
-        "<leader>tD",
+        'n',
+        '<leader>tD',
         gitsigns.toggle_deleted,
-        { buffer = bufnr, desc = "GIt deleted" }
+        { buffer = bufnr, desc = 'GIt deleted' }
       )
       vim.keymap.set(
-        "n",
-        "<leader>tb",
+        'n',
+        '<leader>tb',
         gitsigns.toggle_current_line_blame,
-        { buffer = bufnr, desc = "Line blame" }
+        { buffer = bufnr, desc = 'Line blame' }
       )
 
       -- Text object
-      vim.keymap.set(
-        { "o", "x" },
-        "ih",
-        ":<C-U>Gitsigns select_hunk<CR>",
-        { desc = "a git hunk" }
-      )
-      vim.keymap.set(
-        { "o", "x" },
-        "ah",
-        ":<C-U>Gitsigns select_hunk<CR>",
-        { desc = "a git hunk" }
-      )
+      vim.keymap.set({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'a git hunk' })
+      vim.keymap.set({ 'o', 'x' }, 'ah', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'a git hunk' })
     end,
   },
   config = function(_, opts)
-    require("gitsigns").setup(opts)
+    require('gitsigns').setup(opts)
 
     local function set_hl()
-      vim.api.nvim_set_hl(0, "GitSignsChangeLn", { link = "DiffText" })
-      vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { link = "DiffDelete" })
+      vim.api.nvim_set_hl(0, 'GitSignsChangeLn', { link = 'DiffText' })
+      vim.api.nvim_set_hl(0, 'GitSignsDeleteLn', { link = 'DiffDelete' })
 
-      vim.api.nvim_set_hl(0, "GitSignsAddInline", { link = "GitSignsAddLn" })
-      vim.api.nvim_set_hl(
-        0,
-        "GitSignsDeleteInline",
-        { link = "GitSignsDeleteLn" }
-      )
-      vim.api.nvim_set_hl(
-        0,
-        "GitSignsChangeInline",
-        { link = "GitSignsChangeLn" }
-      )
+      vim.api.nvim_set_hl(0, 'GitSignsAddInline', { link = 'GitSignsAddLn' })
+      vim.api.nvim_set_hl(0, 'GitSignsDeleteInline', { link = 'GitSignsDeleteLn' })
+      vim.api.nvim_set_hl(0, 'GitSignsChangeInline', { link = 'GitSignsChangeLn' })
     end
     set_hl()
-    vim.api.nvim_create_autocmd("ColorScheme", {
-      desc = "Set gitsigns highlights",
+    vim.api.nvim_create_autocmd('ColorScheme', {
+      desc = 'Set gitsigns highlights',
       callback = set_hl,
     })
   end,

@@ -1,95 +1,95 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "rcarriga/nvim-dap-ui",
+  'rcarriga/nvim-dap-ui',
   ---@type dapui.Config
   opts = {
     floating = {
       border = custom.border,
     },
     icons = {
-      collapsed = "",
-      current_frame = "",
-      expanded = "",
+      collapsed = '',
+      current_frame = '',
+      expanded = '',
     },
   },
   keys = {
     {
-      "<leader>du",
+      '<leader>du',
       function()
-        require("dapui").toggle()
+        require('dapui').toggle()
       end,
-      desc = "Toggle full UI",
+      desc = 'Toggle full UI',
     },
     {
-      "<C-k>",
+      '<C-k>',
       function()
-        require("dapui").eval()
+        require('dapui').eval()
       end,
-      desc = "Evaluate expression",
-      mode = { "n", "v" },
+      desc = 'Evaluate expression',
+      mode = { 'n', 'v' },
     },
 
     {
-      "<leader>ds",
+      '<leader>ds',
       function()
-        require("dapui").float_element("stacks", {
+        require('dapui').float_element('stacks', {
           width = 60,
           height = 20,
           enter = true,
-          position = "center",
+          position = 'center',
         })
       end,
-      desc = "Open stacks",
+      desc = 'Open stacks',
     },
     {
-      "<leader>dw",
+      '<leader>dw',
       function()
-        require("dapui").float_element("watches", {
+        require('dapui').float_element('watches', {
           width = 60,
           height = 20,
           enter = true,
-          position = "center",
+          position = 'center',
         })
       end,
-      desc = "Open watches",
+      desc = 'Open watches',
     },
     {
-      "<leader>dv",
+      '<leader>dv',
       function()
-        require("dapui").float_element("scopes", {
+        require('dapui').float_element('scopes', {
           width = 60,
           height = 20,
           enter = true,
-          position = "center",
+          position = 'center',
         })
       end,
-      desc = "Open scopes",
+      desc = 'Open scopes',
     },
     {
-      "<leader>dc",
+      '<leader>dc',
       function()
-        require("dapui").float_element("console", {
+        require('dapui').float_element('console', {
           width = 60,
           height = 20,
           enter = true,
-          position = "center",
+          position = 'center',
         })
       end,
-      desc = "Open console",
+      desc = 'Open console',
     },
     {
-      "<leader>dr",
+      '<leader>dr',
       function()
-        require("dapui").float_element("repl", {
+        require('dapui').float_element('repl', {
           width = 60,
           height = 20,
           enter = true,
-          position = "center",
+          position = 'center',
         })
       end,
-      desc = "Open repl",
+      desc = 'Open repl',
     },
   },
 }

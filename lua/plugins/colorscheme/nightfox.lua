@@ -1,12 +1,12 @@
 ---@type LazyPluginSpec
 return {
-  "EdenEast/nightfox.nvim",
+  'EdenEast/nightfox.nvim',
   lazy = true,
   opts = {
     options = {},
     groups = {
       all = {
-        MatchParen = { fg = "NONE" },
+        MatchParen = { fg = 'NONE' },
       },
     },
   },

@@ -1,19 +1,19 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "akinsho/toggleterm.nvim",
-  version = "*",
+  'akinsho/toggleterm.nvim',
+  version = '*',
   opts = {
     size = function(term)
-      if term.direction == "horizontal" then
+      if term.direction == 'horizontal' then
         return 15
-      elseif term.direction == "vertical" then
+      elseif term.direction == 'vertical' then
         return vim.o.columns * 0.4
       end
     end,
     open_mapping = [[<c-\>]],
-    shell = vim.uv.os_uname().sysname == "Windows_NT" and "pwsh" or "fish",
+    shell = vim.uv.os_uname().sysname == 'Windows_NT' and 'pwsh' or 'fish',
     float_opts = {
       border = custom.border,
     },
@@ -27,7 +27,7 @@ return {
     }
     local on_create = function(t)
       local bufnr = t.bufnr
-      vim.keymap.set("t", "<Esc>", "<Nop>", { buffer = bufnr })
+      vim.keymap.set('t', '<Esc>', '<Nop>', { buffer = bufnr })
     end
 
     local lazygit
@@ -36,80 +36,80 @@ return {
     local lf
 
     return {
-      { "<C-\\>" },
+      { '<C-\\>' },
       {
-        "<leader>tt",
-        "<Cmd>ToggleTermToggleAll<CR>",
-        mode = "n",
-        desc = "All Terminal",
+        '<leader>tt',
+        '<Cmd>ToggleTermToggleAll<CR>',
+        mode = 'n',
+        desc = 'All Terminal',
       },
 
       -- External programs
       {
-        "<leader>gl",
+        '<leader>gl',
         function()
           if not lazygit then
-            lazygit = require("toggleterm.terminal").Terminal:new {
-              cmd = "lazygit",
+            lazygit = require('toggleterm.terminal').Terminal:new {
+              cmd = 'lazygit',
               hidden = true,
-              direction = "float",
+              direction = 'float',
               float_opts = float_opts,
               on_create = on_create,
             }
           end
           lazygit:toggle()
         end,
-        desc = "LazyGit",
+        desc = 'LazyGit',
       },
       {
-        "<leader>pd",
+        '<leader>pd',
         function()
           if not lazydocker then
-            lazydocker = require("toggleterm.terminal").Terminal:new {
-              cmd = "lazydocker",
+            lazydocker = require('toggleterm.terminal').Terminal:new {
+              cmd = 'lazydocker',
               hidden = true,
-              direction = "float",
+              direction = 'float',
               float_opts = float_opts,
               on_create = on_create,
             }
           end
           lazydocker:toggle()
         end,
-        desc = "Lazy Docker",
+        desc = 'Lazy Docker',
       },
       {
-        "<leader>pg",
+        '<leader>pg',
         function()
           if not gh_dash then
-            gh_dash = require("toggleterm.terminal").Terminal:new {
+            gh_dash = require('toggleterm.terminal').Terminal:new {
               -- https://github.com/dlvhdr/gh-dash/issues/316
-              env = { LANG = "en_US.UTF-8" },
-              cmd = "gh-dash",
+              env = { LANG = 'en_US.UTF-8' },
+              cmd = 'gh-dash',
               hidden = true,
-              direction = "float",
+              direction = 'float',
               float_opts = float_opts,
               on_create = on_create,
             }
           end
           gh_dash:toggle()
         end,
-        desc = "GitHub Dash",
+        desc = 'GitHub Dash',
       },
       {
-        "<leader>N",
+        '<leader>N',
         function()
           if not lf then
-            lf = require("toggleterm.terminal").Terminal:new {
-              cmd = "lf",
+            lf = require('toggleterm.terminal').Terminal:new {
+              cmd = 'lf',
               hidden = true,
-              direction = "float",
+              direction = 'float',
               float_opts = float_opts,
               on_create = on_create,
             }
           end
           lf:toggle()
         end,
-        desc = "File Navigator",
+        desc = 'File Navigator',
       },
     }
   end,

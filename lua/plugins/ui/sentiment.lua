@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-  "utilyre/sentiment.nvim",
-  event = "VeryLazy",
+  'utilyre/sentiment.nvim',
+  event = 'VeryLazy',
   opts = {},
 }

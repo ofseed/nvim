@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-  "ellisonleao/gruvbox.nvim",
+  'ellisonleao/gruvbox.nvim',
   lazy = true,
   opts = {},
 }

@@ -1,21 +1,21 @@
 ---@type LazyPluginSpec
 return {
-  "nvim-lua/plenary.nvim",
+  'nvim-lua/plenary.nvim',
   lazy = true,
   keys = {
     {
-      "<leader>hpb",
+      '<leader>hpb',
       function()
-        require("plenary.profile").start("profile.log", { flame = true })
+        require('plenary.profile').start('profile.log', { flame = true })
       end,
-      desc = "Begin profiling",
+      desc = 'Begin profiling',
     },
     {
-      "<leader>hpe",
+      '<leader>hpe',
       function()
-        require("plenary.profile").stop()
+        require('plenary.profile').stop()
       end,
-      desc = "End profiling",
+      desc = 'End profiling',
     },
   },
 }

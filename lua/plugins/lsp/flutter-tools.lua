@@ -1,14 +1,14 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "akinsho/flutter-tools.nvim",
+  'akinsho/flutter-tools.nvim',
   event = {
-    "BufRead *.dart",
-    "BufNewFile *.dart",
+    'BufRead *.dart',
+    'BufNewFile *.dart',
   },
   dependencies = {
-    "nvim-lua/plenary.nvim",
+    'nvim-lua/plenary.nvim',
   },
   opts = {
     ui = {
@@ -17,22 +17,22 @@ return {
     lsp = {
       on_attach = function(client, bufnr)
         vim.keymap.set(
-          "n",
-          "<localleader>o",
-          "<Cmd>FlutterOutlineOpen<CR>",
-          { buffer = bufnr, desc = "Flutter Outline" }
+          'n',
+          '<localleader>o',
+          '<Cmd>FlutterOutlineOpen<CR>',
+          { buffer = bufnr, desc = 'Flutter Outline' }
         )
         vim.keymap.set(
-          "n",
-          "<localleader>r",
-          "<Cmd>FlutterRun<CR>",
-          { buffer = bufnr, desc = "Run" }
+          'n',
+          '<localleader>r',
+          '<Cmd>FlutterRun<CR>',
+          { buffer = bufnr, desc = 'Run' }
         )
         vim.keymap.set(
-          "n",
-          "<localleader>q",
-          "<Cmd>FlutterQuit<CR>",
-          { buffer = bufnr, desc = "Quit" }
+          'n',
+          '<localleader>q',
+          '<Cmd>FlutterQuit<CR>',
+          { buffer = bufnr, desc = 'Quit' }
         )
       end,
     },

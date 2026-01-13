@@ -1,10 +1,10 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "hedyhli/outline.nvim",
+  'hedyhli/outline.nvim',
   keys = {
-    { "<leader>a", "<Cmd>Outline<CR>", desc = "Outline" },
+    { '<leader>a', '<Cmd>Outline<CR>', desc = 'Outline' },
   },
   opts = {
     preview_window = {
@@ -12,7 +12,7 @@ return {
       live = true,
     },
     symbols = {
-      icon_source = "lspkind",
+      icon_source = 'lspkind',
     },
   },
 }

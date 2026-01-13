@@ -1,9 +1,9 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "martineausimon/nvim-lilypond-suite",
-  ft = { "lilypond" },
+  'martineausimon/nvim-lilypond-suite',
+  ft = { 'lilypond' },
   opts = {
     options = {
       border_style = custom.border,

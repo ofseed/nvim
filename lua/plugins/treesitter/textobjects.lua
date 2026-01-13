@@ -1,9 +1,9 @@
 ---@type LazyPluginSpec
 return {
-  "nvim-treesitter/nvim-treesitter-textobjects",
-  branch = "main",
+  'nvim-treesitter/nvim-treesitter-textobjects',
+  branch = 'main',
   dependencies = {
-    { "ghostbuster91/nvim-next" },
+    { 'ghostbuster91/nvim-next' },
   },
   opts = {
     select = {
@@ -15,7 +15,7 @@ return {
     },
   },
   keys = function()
-    local ts = vim._defer_require("nvim-treesitter-textobjects", {
+    local ts = vim._defer_require('nvim-treesitter-textobjects', {
       repeatable_move = {}, ---@module "nvim-treesitter-textobjects.repeatable_move"
       select = {}, ---@module "nvim-treesitter-textobjects.select"
       move = {}, ---@module "nvim-treesitter-textobjects.move"
@@ -26,350 +26,350 @@ return {
       --- Repeatable
       ---
       {
-        ";",
+        ';',
         function()
           ts.repeatable_move.repeat_last_move()
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next last move",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next last move',
       },
       {
-        ",",
+        ',',
         function()
           ts.repeatable_move.repeat_last_move_opposite()
         end,
-        mode = { "n", "x", "o" },
-        desc = "Prev last move",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Prev last move',
       },
       {
-        "f",
+        'f',
         function()
           return ts.repeatable_move.builtin_f_expr()
         end,
         expr = true,
-        mode = { "n", "x", "o" },
-        desc = "Move to next char",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Move to next char',
       },
       {
-        "F",
+        'F',
         function()
           return ts.repeatable_move.builtin_F_expr()
         end,
         expr = true,
-        mode = { "n", "x", "o" },
-        desc = "Move to prev char",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Move to prev char',
       },
       {
-        "t",
+        't',
         function()
           return ts.repeatable_move.builtin_t_expr()
         end,
         expr = true,
-        mode = { "n", "x", "o" },
-        desc = "Move before next char",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Move before next char',
       },
       {
-        "T",
+        'T',
         function()
           return ts.repeatable_move.builtin_T_expr()
         end,
         expr = true,
-        mode = { "n", "x", "o" },
-        desc = "Move before prev char",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Move before prev char',
       },
       --
       -- Select
       --
       {
-        "aa",
+        'aa',
         function()
-          ts.select.select_textobject "@parameter.outer"
+          ts.select.select_textobject '@parameter.outer'
         end,
-        mode = { "x", "o" },
-        desc = "a argument",
+        mode = { 'x', 'o' },
+        desc = 'a argument',
       },
       {
-        "ia",
+        'ia',
         function()
-          ts.select.select_textobject "@parameter.inner"
+          ts.select.select_textobject '@parameter.inner'
         end,
-        mode = { "x", "o" },
-        desc = "inner part of a argument",
+        mode = { 'x', 'o' },
+        desc = 'inner part of a argument',
       },
       {
-        "af",
+        'af',
         function()
-          ts.select.select_textobject "@function.outer"
+          ts.select.select_textobject '@function.outer'
         end,
-        mode = { "x", "o" },
-        desc = "a function region",
+        mode = { 'x', 'o' },
+        desc = 'a function region',
       },
       {
-        "if",
+        'if',
         function()
-          ts.select.select_textobject "@function.inner"
+          ts.select.select_textobject '@function.inner'
         end,
-        mode = { "x", "o" },
-        desc = "inner part of a function region",
+        mode = { 'x', 'o' },
+        desc = 'inner part of a function region',
       },
       {
-        "ac",
+        'ac',
         function()
-          ts.select.select_textobject "@class.outer"
+          ts.select.select_textobject '@class.outer'
         end,
-        mode = { "x", "o" },
-        desc = "a of a class",
+        mode = { 'x', 'o' },
+        desc = 'a of a class',
       },
       {
-        "ic",
+        'ic',
         function()
-          ts.select.select_textobject "@class.inner"
+          ts.select.select_textobject '@class.inner'
         end,
-        mode = { "x", "o" },
-        desc = "inner part of a class region",
+        mode = { 'x', 'o' },
+        desc = 'inner part of a class region',
       },
       {
-        "aj",
+        'aj',
         function()
-          ts.select.select_textobject "@conditional.outer"
+          ts.select.select_textobject '@conditional.outer'
         end,
-        mode = { "x", "o" },
-        desc = "a judge",
+        mode = { 'x', 'o' },
+        desc = 'a judge',
       },
       {
-        "ij",
+        'ij',
         function()
-          ts.select.select_textobject "@conditional.inner"
+          ts.select.select_textobject '@conditional.inner'
         end,
-        mode = { "x", "o" },
-        desc = "inner part of a judge region",
+        mode = { 'x', 'o' },
+        desc = 'inner part of a judge region',
       },
       {
-        "al",
+        'al',
         function()
-          ts.select.select_textobject "@loop.outer"
+          ts.select.select_textobject '@loop.outer'
         end,
-        mode = { "x", "o" },
-        desc = "a loop",
+        mode = { 'x', 'o' },
+        desc = 'a loop',
       },
       {
-        "il",
+        'il',
         function()
-          ts.select.select_textobject "@loop.inner"
+          ts.select.select_textobject '@loop.inner'
         end,
-        mode = { "x", "o" },
-        desc = "inner part of a loop",
+        mode = { 'x', 'o' },
+        desc = 'inner part of a loop',
       },
       {
-        "an",
+        'an',
         function()
-          ts.select.select_textobject "@number.outer"
+          ts.select.select_textobject '@number.outer'
         end,
-        mode = { "x", "o" },
-        desc = "a loop",
+        mode = { 'x', 'o' },
+        desc = 'a loop',
       },
       {
-        "in",
+        'in',
         function()
-          ts.select.select_textobject "@number.inner"
+          ts.select.select_textobject '@number.inner'
         end,
-        mode = { "x", "o" },
-        desc = "inner part of a number",
+        mode = { 'x', 'o' },
+        desc = 'inner part of a number',
       },
       --
       -- Move
       --
       {
-        "]a",
+        ']a',
         function()
-          ts.move.goto_next_start "@parameter.outer"
+          ts.move.goto_next_start '@parameter.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next argument start",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next argument start',
       },
       {
-        "]A",
+        ']A',
         function()
-          ts.move.goto_next_end "@parameter.outer"
+          ts.move.goto_next_end '@parameter.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next argument end",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next argument end',
       },
       {
-        "[a",
+        '[a',
         function()
-          ts.move.goto_previous_start "@parameter.outer"
+          ts.move.goto_previous_start '@parameter.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous argument start",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous argument start',
       },
       {
-        "[A",
+        '[A',
         function()
-          ts.move.goto_previous_end "@parameter.outer"
+          ts.move.goto_previous_end '@parameter.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous argument end",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous argument end',
       },
       {
-        "]f",
+        ']f',
         function()
-          ts.move.goto_next_start "@function.outer"
+          ts.move.goto_next_start '@function.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next function start",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next function start',
       },
       {
-        "]F",
+        ']F',
         function()
-          ts.move.goto_next_end "@function.outer"
+          ts.move.goto_next_end '@function.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next function end",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next function end',
       },
       {
-        "[f",
+        '[f',
         function()
-          ts.move.goto_previous_start "@function.outer"
+          ts.move.goto_previous_start '@function.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous function start",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous function start',
       },
       {
-        "[F",
+        '[F',
         function()
-          ts.move.goto_previous_end "@function.outer"
+          ts.move.goto_previous_end '@function.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous function end",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous function end',
       },
       {
-        "]c",
+        ']c',
         function()
-          ts.move.goto_next_start "@class.outer"
+          ts.move.goto_next_start '@class.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next class start",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next class start',
       },
       {
-        "]C",
+        ']C',
         function()
-          ts.move.goto_next_end "@class.outer"
+          ts.move.goto_next_end '@class.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next class end",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next class end',
       },
       {
-        "[c",
+        '[c',
         function()
-          ts.move.goto_previous_start "@class.outer"
+          ts.move.goto_previous_start '@class.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous class start",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous class start',
       },
       {
-        "[C",
+        '[C',
         function()
-          ts.move.goto_previous_end "@class.outer"
+          ts.move.goto_previous_end '@class.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous class end",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous class end',
       },
       {
-        "]j",
+        ']j',
         function()
-          ts.move.goto_next_start "@conditional.outer"
+          ts.move.goto_next_start '@conditional.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next judge start",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next judge start',
       },
       {
-        "]J",
+        ']J',
         function()
-          ts.move.goto_next_end "@conditional.outer"
+          ts.move.goto_next_end '@conditional.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next judge end",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next judge end',
       },
       {
-        "[j",
+        '[j',
         function()
-          ts.move.goto_previous_start "@conditional.outer"
+          ts.move.goto_previous_start '@conditional.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous judge start",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous judge start',
       },
       {
-        "[J",
+        '[J',
         function()
-          ts.move.goto_previous_end "@conditional.outer"
+          ts.move.goto_previous_end '@conditional.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous judge end",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous judge end',
       },
       {
-        "]l",
+        ']l',
         function()
-          ts.move.goto_next_start "@loop.outer"
+          ts.move.goto_next_start '@loop.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next loop start",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next loop start',
       },
       {
-        "]L",
+        ']L',
         function()
-          ts.move.goto_next_end "@loop.outer"
+          ts.move.goto_next_end '@loop.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next loop end",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next loop end',
       },
       {
-        "[l",
+        '[l',
         function()
-          ts.move.goto_previous_start "@loop.outer"
+          ts.move.goto_previous_start '@loop.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous loop start",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous loop start',
       },
       {
-        "[L",
+        '[L',
         function()
-          ts.move.goto_previous_end "@loop.outer"
+          ts.move.goto_previous_end '@loop.outer'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous loop end",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous loop end',
       },
       {
-        "[n",
+        '[n',
         function()
-          ts.move.goto_previous_start "@number.inner"
+          ts.move.goto_previous_start '@number.inner'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous number",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous number',
       },
       {
-        "]n",
+        ']n',
         function()
-          ts.move.goto_next_start "@number.inner"
+          ts.move.goto_next_start '@number.inner'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next number",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next number',
       },
       {
-        "[N",
+        '[N',
         function()
-          ts.move.goto_previous_end "@number.inner"
+          ts.move.goto_previous_end '@number.inner'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Previous number",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Previous number',
       },
       {
-        "]N",
+        ']N',
         function()
-          ts.move.goto_next_end "@number.inner"
+          ts.move.goto_next_end '@number.inner'
         end,
-        mode = { "n", "x", "o" },
-        desc = "Next number",
+        mode = { 'n', 'x', 'o' },
+        desc = 'Next number',
       },
     }
   end,

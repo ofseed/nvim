@@ -1,5 +1,5 @@
 ---@type LazyPluginSpec
 return {
-  "sindrets/winshift.nvim",
+  'sindrets/winshift.nvim',
   enabled = false,
 }

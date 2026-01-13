@@ -1,9 +1,9 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
   ---@module "scissors"
-  "chrisgrieser/nvim-scissors",
+  'chrisgrieser/nvim-scissors',
   ---@type pluginConfig
   opts = {
     editSnippetPopup = {
@@ -12,23 +12,23 @@ return {
     backdrop = {
       blend = 60,
     },
-    jsonFormatter = "jq",
+    jsonFormatter = 'jq',
   },
   keys = {
     {
-      "<leader>in",
+      '<leader>in',
       function()
-        require("scissors").addNewSnippet()
+        require('scissors').addNewSnippet()
       end,
-      mode = { "n", "x" },
-      desc = "New snippet",
+      mode = { 'n', 'x' },
+      desc = 'New snippet',
     },
     {
-      "<leader>ie",
+      '<leader>ie',
       function()
-        require("scissors").editSnippet()
+        require('scissors').editSnippet()
       end,
-      desc = "Edit snippet",
+      desc = 'Edit snippet',
     },
   },
 }

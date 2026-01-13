@@ -1,5 +1,5 @@
 ---@type LazyPluginSpec
 return {
-  "tpope/vim-dadbod",
+  'tpope/vim-dadbod',
   enabled = false,
 }

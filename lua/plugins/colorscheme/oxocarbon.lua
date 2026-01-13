@@ -1,5 +1,5 @@
 ---@type LazyPluginSpec
 return {
-  "nyoom-engineering/oxocarbon.nvim",
+  'nyoom-engineering/oxocarbon.nvim',
   lazy = true,
 }

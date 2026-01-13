@@ -1,12 +1,12 @@
 ---@type vim.lsp.Config
 return {
-  cmd = { "delance-langserver", "--stdio" },
+  cmd = { 'delance-langserver', '--stdio' },
   settings = {
     python = {
       analysis = {
-        typeCheckingMode = "off",
+        typeCheckingMode = 'off',
         inlayHints = {
-          callArgumentNames = "partial",
+          callArgumentNames = 'partial',
           functionReturnTypes = true,
           pytestParameters = true,
           variableTypes = true,

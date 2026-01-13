@@ -1,5 +1,5 @@
 return {
-  "kristijanhusak/vim-dadbod-ui",
+  'kristijanhusak/vim-dadbod-ui',
   enabled = false,
-  cmd = { "DBUIToggle" },
+  cmd = { 'DBUIToggle' },
 }

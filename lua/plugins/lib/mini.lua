@@ -1,5 +1,5 @@
 ---@type LazyPluginSpec
 return {
-  "echasnovski/mini.nvim",
+  'echasnovski/mini.nvim',
   enabled = false,
 }

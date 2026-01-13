@@ -1,37 +1,37 @@
 ---@type LazyPluginSpec
 return {
-  "mikesmithgh/kitty-scrollback.nvim",
+  'mikesmithgh/kitty-scrollback.nvim',
   cmd = {
-    "KittyScrollbackGenerateKittens",
-    "KittyScrollbackCheckHealth",
+    'KittyScrollbackGenerateKittens',
+    'KittyScrollbackCheckHealth',
   },
-  event = { "User KittyScrollbackLaunch" },
+  event = { 'User KittyScrollbackLaunch' },
   opts = {
     {
       paste_window = {
         winopts_overrides = function(winopts)
           winopts.border = {
-            "╭",
-            "─",
-            "╮",
-            "│",
-            "┤",
-            "─",
-            "├",
-            "│",
+            '╭',
+            '─',
+            '╮',
+            '│',
+            '┤',
+            '─',
+            '├',
+            '│',
           }
           return winopts
         end,
         footer_winopts_overrides = function(winopts)
           winopts.border = {
-            "│",
-            " ",
-            "│",
-            "│",
-            "╯",
-            "─",
-            "╰",
-            "│",
+            '│',
+            ' ',
+            '│',
+            '│',
+            '╯',
+            '─',
+            '╰',
+            '│',
           }
           return winopts
         end,
@@ -39,7 +39,7 @@ return {
       callbacks = {
         after_paste_window_ready = function(pastewin_data)
           local winid = pastewin_data.paste_window.winid
-          vim.wo[winid].statuscolumn = ""
+          vim.wo[winid].statuscolumn = ''
         end,
       },
     },

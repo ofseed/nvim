@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
 return {
-  "smjonas/inc-rename.nvim",
+  'smjonas/inc-rename.nvim',
   opts = {},
   cmd = {
-    "IncRename",
+    'IncRename',
   },
 }

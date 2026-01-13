@@ -1,19 +1,19 @@
 ---@type LazyPluginSpec
 return {
-  "epwalsh/obsidian.nvim",
+  'epwalsh/obsidian.nvim',
   event = {
-    "BufReadPre " .. vim.fn.expand "~/Documents/Obsidian/*.md",
-    "BufNewFile " .. vim.fn.expand "~/Documents/Obsidian/*.md",
+    'BufReadPre ' .. vim.fn.expand '~/Documents/Obsidian/*.md',
+    'BufNewFile ' .. vim.fn.expand '~/Documents/Obsidian/*.md',
   },
   opts = {
     workspaces = {
       {
-        name = "Obsidian",
-        path = "~/Documents/Obsidian",
+        name = 'Obsidian',
+        path = '~/Documents/Obsidian',
       },
     },
     picker = {
-      name = "fzf-lua",
+      name = 'fzf-lua',
     },
   },
 }

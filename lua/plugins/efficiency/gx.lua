@@ -1,16 +1,16 @@
 ---@type LazyPluginSpec
 return {
-  "chrishrb/gx.nvim",
+  'chrishrb/gx.nvim',
   keys = {
     {
-      "gx",
+      'gx',
       function()
         vim.cmd.Browse()
       end,
     },
   },
   cmd = {
-    "Browse",
+    'Browse',
   },
   opts = {},
 }

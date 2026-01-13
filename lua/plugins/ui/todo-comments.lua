@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
-  "folke/todo-comments.nvim",
+  'folke/todo-comments.nvim',
   enabled = false,
-  event = "VeryLazy",
+  event = 'VeryLazy',
   opts = {},
 }

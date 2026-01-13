@@ -1,20 +1,20 @@
 ---@type LazyPluginSpec
 return {
-  "Wansmer/treesj",
+  'Wansmer/treesj',
   keys = {
     {
-      "gJ",
+      'gJ',
       function()
-        require("treesj").join()
+        require('treesj').join()
       end,
-      desc = "Join lines",
+      desc = 'Join lines',
     },
     {
-      "gS",
+      'gS',
       function()
-        require("treesj").split()
+        require('treesj').split()
       end,
-      desc = "Split lines",
+      desc = 'Split lines',
     },
   },
   opts = {

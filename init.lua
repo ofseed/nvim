@@ -1,2 +1,2 @@
 vim.loader.enable()
-require "init"
+require 'init'

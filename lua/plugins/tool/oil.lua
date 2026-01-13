@@ -1,17 +1,17 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "stevearc/oil.nvim",
+  'stevearc/oil.nvim',
   enabled = false,
   lazy = false,
   keys = {
     {
-      "-",
+      '-',
       function()
-        require("oil").open()
+        require('oil').open()
       end,
-      desc = "Open parent directory",
+      desc = 'Open parent directory',
     },
   },
   opts = {
@@ -27,8 +27,8 @@ return {
       border = custom.border,
     },
     keymaps = {
-      ["<C-s>"] = "actions.select_split",
-      ["<C-v>"] = "actions.select_vsplit",
+      ['<C-s>'] = 'actions.select_split',
+      ['<C-v>'] = 'actions.select_vsplit',
     },
   },
 }

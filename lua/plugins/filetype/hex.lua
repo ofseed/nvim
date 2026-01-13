@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
 return {
-  "RaafatTurki/hex.nvim",
+  'RaafatTurki/hex.nvim',
   event = {
-    "BufReadPre",
+    'BufReadPre',
   },
   opts = {},
 }

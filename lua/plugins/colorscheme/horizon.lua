@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-  "akinsho/horizon.nvim",
+  'akinsho/horizon.nvim',
   lazy = true,
   opts = {},
 }

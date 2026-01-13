@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
-  "catppuccin/nvim",
-  name = "catppuccin",
+  'catppuccin/nvim',
+  name = 'catppuccin',
   lazy = true,
   opts = {
     term_colors = true,
@@ -13,7 +13,7 @@ return {
         TabLineFill = { fg = color.subtext0, bg = color.mantle },
         TabLineSel = { fg = color.base, bg = color.overlay1 },
 
-        MatchParen = { fg = "NONE", bg = color.surface1, style = { "bold" } },
+        MatchParen = { fg = 'NONE', bg = color.surface1, style = { 'bold' } },
 
         -- telescope overrides
         TelescopeTitle = { fg = color.base, bg = color.blue },
@@ -25,22 +25,22 @@ return {
         WindowPickerStatusLine = {
           fg = color.surface0,
           bg = color.red,
-          style = { "bold" },
+          style = { 'bold' },
         },
         WindowPickerStatusLineNC = {
           fg = color.surface0,
           bg = color.red,
-          style = { "bold" },
+          style = { 'bold' },
         },
         WindowPickerWinBar = {
           fg = color.surface0,
           bg = color.red,
-          style = { "bold" },
+          style = { 'bold' },
         },
         WindowPickerWinBarNC = {
           fg = color.surface0,
           bg = color.red,
-          style = { "bold" },
+          style = { 'bold' },
         },
 
         QuickFixLineNr = { fg = color.overlay0 },
@@ -48,10 +48,10 @@ return {
     end,
     lsp_styles = {
       underlines = {
-        errors = { "undercurl" },
-        hints = { "undercurl" },
-        warnings = { "undercurl" },
-        information = { "undercurl" },
+        errors = { 'undercurl' },
+        hints = { 'undercurl' },
+        warnings = { 'undercurl' },
+        information = { 'undercurl' },
       },
     },
     integrations = {

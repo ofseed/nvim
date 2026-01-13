@@ -9,7 +9,7 @@ return {
     },
     typescript = {
       preferences = {
-        importModuleSpecifier = "non-relative",
+        importModuleSpecifier = 'non-relative',
       },
       inlayHints = {
         enumMemberValues = {
@@ -19,7 +19,7 @@ return {
           enabled = true,
         },
         parameterNames = {
-          enabled = "all",
+          enabled = 'all',
           suppressWhenArgumentMatchesName = true,
         },
         parameterTypes = {

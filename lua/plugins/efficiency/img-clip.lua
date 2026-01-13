@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
 return {
-  "HakonHarnes/img-clip.nvim",
+  'HakonHarnes/img-clip.nvim',
   cmd = {
-    "PasteImage",
+    'PasteImage',
   },
   opts = {},
 }

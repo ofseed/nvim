@@ -1,13 +1,13 @@
 ---@type LazyPluginSpec
 return {
-  "RRethy/vim-illuminate",
+  'RRethy/vim-illuminate',
   cond = vim.lsp.document_highlight == nil,
-  event = "VeryLazy",
+  event = 'VeryLazy',
   opts = function()
     return {
       filetypes_denylist = {
-        "xxd",
-        "floggraph",
+        'xxd',
+        'floggraph',
       },
       large_file_cutoff = 10000,
       should_enable = function(bufnr)
@@ -21,14 +21,14 @@ return {
     }
   end,
   config = function(_, opts)
-    local illuminate = require "illuminate"
+    local illuminate = require 'illuminate'
     illuminate.configure(opts)
 
     -- Highlight on yank
     -- conflict with vim-illuminate
-    vim.api.nvim_create_autocmd("TextYankPost", {
-      group = vim.api.nvim_create_augroup("highlight_on_yank", {}),
-      desc = "Briefly highlight yanked text",
+    vim.api.nvim_create_autocmd('TextYankPost', {
+      group = vim.api.nvim_create_augroup('highlight_on_yank', {}),
+      desc = 'Briefly highlight yanked text',
       callback = function()
         illuminate.pause()
         vim.highlight.on_yank()
@@ -38,25 +38,25 @@ return {
   end,
   keys = {
     {
-      "]r",
+      ']r',
       function()
-        require("illuminate").goto_next_reference()
+        require('illuminate').goto_next_reference()
       end,
-      desc = "Next reference",
+      desc = 'Next reference',
     },
     {
-      "[r",
+      '[r',
       function()
-        require("illuminate").goto_prev_reference()
+        require('illuminate').goto_prev_reference()
       end,
-      desc = "Prev reference",
+      desc = 'Prev reference',
     },
     {
-      "<leader>ti",
+      '<leader>ti',
       function()
-        require("illuminate").toggle_freeze_buf()
+        require('illuminate').toggle_freeze_buf()
       end,
-      desc = "Toggle Freeze reference",
+      desc = 'Toggle Freeze reference',
     },
   },
 }

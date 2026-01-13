@@ -1,19 +1,19 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "SmiteshP/nvim-navbuddy",
+  'SmiteshP/nvim-navbuddy',
   dependencies = {
-    "neovim/nvim-lspconfig",
-    "SmiteshP/nvim-navic",
-    "MunifTanjim/nui.nvim",
+    'neovim/nvim-lspconfig',
+    'SmiteshP/nvim-navic',
+    'MunifTanjim/nui.nvim',
   },
   opts = {
     window = {
       border = custom.border,
       size = {
-        height = "60%",
-        width = "80%",
+        height = '60%',
+        width = '80%',
       },
     },
     icons = custom.icons.kind_with_space,
@@ -23,11 +23,11 @@ return {
   },
   keys = {
     {
-      "<leader>n",
+      '<leader>n',
       function()
-        require("nvim-navbuddy").open()
+        require('nvim-navbuddy').open()
       end,
-      desc = "Symbol Navigator",
+      desc = 'Symbol Navigator',
     },
   },
 }

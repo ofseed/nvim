@@ -1,5 +1,5 @@
 ---@type LazyPluginSpec
 return {
-  "ofseed/guideline.nvim",
+  'ofseed/guideline.nvim',
   opts = {},
 }

@@ -1,5 +1,5 @@
 ---@type LazyPluginSpec
 return {
-  "fladson/vim-kitty",
-  event = { "BufReadPre kitty.conf" },
+  'fladson/vim-kitty',
+  event = { 'BufReadPre kitty.conf' },
 }

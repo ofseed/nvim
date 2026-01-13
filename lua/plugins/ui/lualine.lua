@@ -1,10 +1,10 @@
-local lazy_status = require "lazy.status"
+local lazy_status = require 'lazy.status'
 
 local function indent()
   if vim.o.expandtab then
-    return "SW:" .. vim.o.shiftwidth
+    return 'SW:' .. vim.o.shiftwidth
   else
-    return "TS:" .. vim.o.tabstop
+    return 'TS:' .. vim.o.tabstop
   end
 end
 
@@ -17,15 +17,15 @@ local function lsp()
       return client.attached_buffers[buf]
     end)
     :filter(function(client)
-      return client.name ~= "GitHub Copilot"
+      return client.name ~= 'GitHub Copilot'
     end)
     :map(function(client)
-      return " " .. client.name
+      return ' ' .. client.name
     end)
     :totable()
-  local info = table.concat(clients, " ")
-  if info == "" then
-    return "No attached LSP server"
+  local info = table.concat(clients, ' ')
+  if info == '' then
+    return 'No attached LSP server'
   else
     return info
   end
@@ -33,26 +33,26 @@ end
 
 local function dap()
   ---@diagnostic disable-next-line: redefined-local
-  local dap = package.loaded["dap"]
+  local dap = package.loaded['dap']
   if dap then
     return dap.status()
   end
-  return ""
+  return ''
 end
 
 local function osv()
   ---@diagnostic disable-next-line: redefined-local
-  local osv = package.loaded["osv"]
+  local osv = package.loaded['osv']
   if osv and osv.is_running() then
-    return "Running as debuggee"
+    return 'Running as debuggee'
   end
-  return ""
+  return ''
 end
 
 local function dap_or_lsp()
-  if osv() ~= "" then
+  if osv() ~= '' then
     return osv()
-  elseif dap() ~= "" then
+  elseif dap() ~= '' then
     return dap()
   else
     return lsp()
@@ -61,34 +61,34 @@ end
 
 ---@type LazyPluginSpec
 return {
-  "nvim-lualine/lualine.nvim",
+  'nvim-lualine/lualine.nvim',
   init = function()
     vim.o.laststatus = 0
   end,
-  event = "VeryLazy",
+  event = 'VeryLazy',
   dependencies = {
-    { "nvim-tree/nvim-web-devicons" },
-    { "ofseed/copilot-status.nvim", enabled = false },
+    { 'nvim-tree/nvim-web-devicons' },
+    { 'ofseed/copilot-status.nvim', enabled = false },
   },
   opts = {
     sections = {
       lualine_a = {
         {
-          "mode",
-          icon = "",
+          'mode',
+          icon = '',
         },
       },
       lualine_b = {
         {
-          "branch",
-          icon = "",
+          'branch',
+          icon = '',
         },
         {
-          "diff",
+          'diff',
           symbols = {
-            added = " ",
-            modified = " ",
-            removed = " ",
+            added = ' ',
+            modified = ' ',
+            removed = ' ',
           },
           source = function()
             return vim.b.gitsigns_status_dict
@@ -102,61 +102,61 @@ return {
         {
           lazy_status.updates,
           cond = lazy_status.has_updates,
-          color = { fg = "#ff9e64" },
+          color = { fg = '#ff9e64' },
         },
         {
-          name = "overseer-placeholder",
+          name = 'overseer-placeholder',
           function()
-            return ""
+            return ''
           end,
         },
-        "copilot",
+        'copilot',
         indent,
         {
-          "encoding",
+          'encoding',
           show_bomb = true,
         },
-        "fileformat",
+        'fileformat',
       },
       lualine_y = {
-        "diagnostics",
+        'diagnostics',
         {
-          "progress",
-          icon = "",
+          'progress',
+          icon = '',
         },
       },
       lualine_z = {
         {
-          "location",
-          icon = "",
+          'location',
+          icon = '',
         },
       },
     },
     options = {
       icons_enabled = true,
-      theme = "auto",
+      theme = 'auto',
       disabled_filetypes = {
         statusline = {
-          "alpha",
+          'alpha',
         },
       },
       always_divide_middle = true,
       globalstatus = false,
-      section_separators = { left = "", right = "" },
-      component_separators = { left = "", right = "" },
+      section_separators = { left = '', right = '' },
+      component_separators = { left = '', right = '' },
     },
     extensions = {
-      "man",
-      "quickfix",
-      "nvim-tree",
-      "neo-tree",
-      "toggleterm",
-      "symbols-outline",
-      "aerial",
-      "fugitive",
-      "nvim-dap-ui",
-      "mundo",
-      "lazy",
+      'man',
+      'quickfix',
+      'nvim-tree',
+      'neo-tree',
+      'toggleterm',
+      'symbols-outline',
+      'aerial',
+      'fugitive',
+      'nvim-dap-ui',
+      'mundo',
+      'lazy',
     },
   },
 }

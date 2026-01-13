@@ -1,44 +1,44 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "hrsh7th/nvim-cmp",
+  'hrsh7th/nvim-cmp',
   enabled = false,
   event = {
-    "InsertEnter",
-    "CmdlineEnter",
+    'InsertEnter',
+    'CmdlineEnter',
   },
   init = function()
-    local filetype = { "dap-repl", "dapui_watches", "dapui_hover" }
-    vim.api.nvim_create_autocmd("FileType", {
-      desc = "Setup cmp dap sources",
+    local filetype = { 'dap-repl', 'dapui_watches', 'dapui_hover' }
+    vim.api.nvim_create_autocmd('FileType', {
+      desc = 'Setup cmp dap sources',
       pattern = filetype,
       callback = function()
-        local cmp = require "cmp"
+        local cmp = require 'cmp'
         cmp.setup.filetype(filetype, {
           sources = {
-            { name = "dap" },
+            { name = 'dap' },
           },
         })
       end,
     })
   end,
   dependencies = {
-    { "hrsh7th/cmp-buffer" },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-nvim-lsp-signature-help" },
-    { "hrsh7th/cmp-buffer" },
-    { "hrsh7th/cmp-path" },
-    { "hrsh7th/cmp-cmdline" },
-    { "rcarriga/cmp-dap" },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+    { 'hrsh7th/cmp-cmdline' },
+    { 'rcarriga/cmp-dap' },
     -- { "saadparwaiz1/cmp_luasnip" },
-    { "lukas-reineke/cmp-under-comparator" },
-    { "kristijanhusak/vim-dadbod-completion", enabled = false },
+    { 'lukas-reineke/cmp-under-comparator' },
+    { 'kristijanhusak/vim-dadbod-completion', enabled = false },
   },
   opts = function()
-    local cmp = require "cmp"
-    local luasnip = require "luasnip"
-    local lspkind = require "lspkind"
+    local cmp = require 'cmp'
+    local luasnip = require 'luasnip'
+    local lspkind = require 'lspkind'
 
     -- local has_words_before = function()
     --   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -47,10 +47,10 @@ return {
 
     local function is_dap_buffer(bufnr)
       local filetype = vim.bo[bufnr or 0].filetype
-      if vim.startswith(filetype, "dapui_") then
+      if vim.startswith(filetype, 'dapui_') then
         return true
       end
-      if filetype == "dap-repl" then
+      if filetype == 'dap-repl' then
         return true
       end
 
@@ -62,7 +62,7 @@ return {
       global = {
         enabled = function()
           -- cmp-dap will be available in prompt buffer
-          return vim.bo[0].buftype ~= "prompt" or is_dap_buffer()
+          return vim.bo[0].buftype ~= 'prompt' or is_dap_buffer()
         end,
         completion = {
           completeopt = vim.o.completeopt,
@@ -83,15 +83,15 @@ return {
           end,
         },
         mapping = {
-          ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-          ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
-          ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-          ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-          ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-          ["<C-e>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
-          ["<C-g>"] = cmp.mapping(cmp.mapping.close_docs(), { "i", "c" }),
-          ["<CR>"] = cmp.mapping.confirm(),
-          ["<Tab>"] = cmp.mapping(function(fallback)
+          ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+          ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+          ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+          ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+          ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+          ['<C-e>'] = cmp.mapping(cmp.mapping.close(), { 'i', 'c' }),
+          ['<C-g>'] = cmp.mapping(cmp.mapping.close_docs(), { 'i', 'c' }),
+          ['<CR>'] = cmp.mapping.confirm(),
+          ['<Tab>'] = cmp.mapping(function(fallback)
             if luasnip.expand_or_locally_jumpable() then
               luasnip.jump(1)
             -- elseif has_words_before() then
@@ -100,65 +100,65 @@ return {
               fallback() --Fallback to tabout of `ultimate-autopair` as expected
             end
           end, {
-            "i",
-            "s",
-            "c",
+            'i',
+            's',
+            'c',
           }),
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
             if luasnip.jumpable(-1) then
               luasnip.jump(-1)
             else
               fallback()
             end
           end, {
-            "i",
-            "s",
-            "c",
+            'i',
+            's',
+            'c',
           }),
         },
         sources = cmp.config.sources(
           -- Group sources
           {
-            { name = "lazydev" },
+            { name = 'lazydev' },
           },
           {
-            { name = "nvim_lsp" },
+            { name = 'nvim_lsp' },
             {
-              name = "buffer",
+              name = 'buffer',
               option = {
                 get_bufnrs = function()
                   return vim
                     .iter(vim.api.nvim_list_bufs())
                     :filter(function(buf)
-                      return vim.bo[buf].buftype == ""
+                      return vim.bo[buf].buftype == ''
                     end)
                     :totable()
                 end,
               },
             },
-            { name = "path" },
-            { name = "orgmode" },
+            { name = 'path' },
+            { name = 'orgmode' },
           }
         ),
         formatting = {
           format = lspkind.cmp_format(custom.cmp_format),
           fields = {
-            "kind",
-            "abbr",
-            "menu",
+            'kind',
+            'abbr',
+            'menu',
           },
         },
         sorting = {
           priority_weight = 2,
           comparators = {
             function(...)
-              return require("cmp_buffer"):compare_locality(...)
+              return require('cmp_buffer'):compare_locality(...)
             end,
             cmp.config.compare.offset,
             cmp.config.compare.exact,
             -- cmp.config.compare.scopes,
             cmp.config.compare.score,
-            require("cmp-under-comparator").under,
+            require('cmp-under-comparator').under,
             cmp.config.compare.recently_used,
             cmp.config.compare.locality,
             cmp.config.compare.kind,
@@ -169,44 +169,44 @@ return {
         },
       },
       cmdline = {
-        [":"] = {
+        [':'] = {
           completion = {
-            completeopt = "menu,menuone,noselect",
+            completeopt = 'menu,menuone,noselect',
           },
           sources = cmp.config.sources({
-            { name = "lazydev" },
+            { name = 'lazydev' },
           }, {
-            { name = "path" },
+            { name = 'path' },
           }, {
-            { name = "cmdline" },
+            { name = 'cmdline' },
           }),
         },
-        ["/"] = {
+        ['/'] = {
           completion = {
-            completeopt = "menu,menuone,noselect",
+            completeopt = 'menu,menuone,noselect',
           },
           sources = {
-            { name = "buffer" },
+            { name = 'buffer' },
           },
         },
       },
     }
   end,
   config = function(_, opts)
-    local cmp = require "cmp"
+    local cmp = require 'cmp'
 
     cmp.setup.global(opts.global)
     for type, cmdlineopts in pairs(opts.cmdline) do
       cmp.setup.cmdline(type, cmdlineopts)
     end
 
-    vim.api.nvim_create_autocmd("BufRead", {
-      desc = "Setup cmp buffer crates source",
-      pattern = "Cargo.toml",
+    vim.api.nvim_create_autocmd('BufRead', {
+      desc = 'Setup cmp buffer crates source',
+      pattern = 'Cargo.toml',
       callback = function()
         cmp.setup.buffer {
           sources = {
-            { name = "crates" },
+            { name = 'crates' },
           },
         }
       end,

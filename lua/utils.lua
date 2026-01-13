@@ -16,8 +16,7 @@ function M.make_repeatable_move_pair(forward_move_fn, backward_move_fn)
   local loaded_ts, ts_repeatable
   return function()
     if not loaded_ts then
-      loaded_ts, ts_repeatable =
-        pcall(require, "nvim-treesitter-textobjects.repeatable_move")
+      loaded_ts, ts_repeatable = pcall(require, 'nvim-treesitter-textobjects.repeatable_move')
       if loaded_ts then
         move_fn = ts_repeatable.make_repeatable_move(move_fn)
       end
@@ -25,8 +24,7 @@ function M.make_repeatable_move_pair(forward_move_fn, backward_move_fn)
     return move_fn { forward = true }
   end, function()
     if not loaded_ts then
-      loaded_ts, ts_repeatable =
-        pcall(require, "nvim-treesitter-textobjects.repeatable_move")
+      loaded_ts, ts_repeatable = pcall(require, 'nvim-treesitter-textobjects.repeatable_move')
       if loaded_ts then
         move_fn = ts_repeatable.make_repeatable_move(move_fn)
       end
@@ -39,12 +37,12 @@ end
 ---@param str string
 ---@return string uppercased
 function M.firstToUpper(str)
-  return (str:gsub("^%l", string.upper))
+  return (str:gsub('^%l', string.upper))
 end
 
 -- FFI
-local ffi = require "ffidef"
-local error = ffi.new "Error"
+local ffi = require 'ffidef'
+local error = ffi.new 'Error'
 
 ---@param winid number
 ---@param lnum number

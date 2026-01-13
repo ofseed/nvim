@@ -1,32 +1,32 @@
 ---@type LazyPluginSpec
 return {
-  "mfussenegger/nvim-dap-python",
-  ft = { "python" },
+  'mfussenegger/nvim-dap-python',
+  ft = { 'python' },
   config = function()
-    require("dap-python").setup "debugpy-adapter"
+    require('dap-python').setup 'debugpy-adapter'
   end,
   keys = {
     {
-      "<leader>dn",
+      '<leader>dn',
       function()
-        require("dap-python").test_method()
+        require('dap-python').test_method()
       end,
-      desc = "Test method",
+      desc = 'Test method',
     },
     {
-      "<leader>df",
+      '<leader>df',
       function()
-        require("dap-python").test_class()
+        require('dap-python').test_class()
       end,
-      desc = "Test class",
+      desc = 'Test class',
     },
     {
-      "<leader>ds",
+      '<leader>ds',
       function()
-        require("dap-python").debug_selection()
+        require('dap-python').debug_selection()
       end,
-      mode = "v",
-      desc = "Debug selection",
+      mode = 'v',
+      desc = 'Debug selection',
     },
   },
 }

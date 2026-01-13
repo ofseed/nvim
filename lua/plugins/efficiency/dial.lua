@@ -1,58 +1,58 @@
 ---@type LazyPluginSpec
 return {
-  "monaqa/dial.nvim",
+  'monaqa/dial.nvim',
   keys = {
     {
-      "<C-a>",
+      '<C-a>',
       function()
-        require("dial.map").manipulate("increment", "normal")
+        require('dial.map').manipulate('increment', 'normal')
       end,
     },
     {
-      "<C-x>",
+      '<C-x>',
       function()
-        require("dial.map").manipulate("decrement", "normal")
+        require('dial.map').manipulate('decrement', 'normal')
       end,
     },
     {
-      "g<C-a>",
+      'g<C-a>',
       function()
-        require("dial.map").manipulate("increment", "gnormal")
+        require('dial.map').manipulate('increment', 'gnormal')
       end,
     },
     {
-      "g<C-x>",
+      'g<C-x>',
       function()
-        require("dial.map").manipulate("decrement", "gnormal")
+        require('dial.map').manipulate('decrement', 'gnormal')
       end,
     },
     {
-      "<C-a>",
+      '<C-a>',
       function()
-        require("dial.map").manipulate("increment", "visual")
+        require('dial.map').manipulate('increment', 'visual')
       end,
-      mode = "v",
+      mode = 'v',
     },
     {
-      "<C-x>",
+      '<C-x>',
       function()
-        require("dial.map").manipulate("decrement", "visual")
+        require('dial.map').manipulate('decrement', 'visual')
       end,
-      mode = "v",
+      mode = 'v',
     },
     {
-      "g<C-a>",
+      'g<C-a>',
       function()
-        require("dial.map").manipulate("increment", "gvisual")
+        require('dial.map').manipulate('increment', 'gvisual')
       end,
-      mode = "v",
+      mode = 'v',
     },
     {
-      "g<C-x>",
+      'g<C-x>',
       function()
-        require("dial.map").manipulate("decrement", "gvisual")
+        require('dial.map').manipulate('decrement', 'gvisual')
       end,
-      mode = "v",
+      mode = 'v',
     },
   },
 }

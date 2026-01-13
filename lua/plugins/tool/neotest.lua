@@ -1,68 +1,68 @@
 ---@type LazyPluginSpec
 return {
-  "rcarriga/neotest",
+  'rcarriga/neotest',
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
+    'nvim-lua/plenary.nvim',
+    'nvim-treesitter/nvim-treesitter',
 
     -- Adapters
-    "nvim-neotest/neotest-jest",
-    "nvim-neotest/neotest-go",
+    'nvim-neotest/neotest-jest',
+    'nvim-neotest/neotest-go',
   },
   opts = function()
     return {
       adapters = {
-        require "neotest-jest",
-        require "neotest-go",
+        require 'neotest-jest',
+        require 'neotest-go',
       },
       consumers = {
-        overseer = require "neotest.consumers.overseer",
+        overseer = require 'neotest.consumers.overseer',
       },
     }
   end,
   keys = {
     {
-      "<leader>Tr",
+      '<leader>Tr',
       function()
-        require("neotest").run.run()
+        require('neotest').run.run()
       end,
-      desc = "Run",
+      desc = 'Run',
     },
     {
-      "<leader>Ts",
+      '<leader>Ts',
       function()
-        require("neotest").run.stop()
+        require('neotest').run.stop()
       end,
-      desc = "Stop",
+      desc = 'Stop',
     },
     {
-      "<leader>Ta",
+      '<leader>Ta',
       function()
-        require("neotest").run.attach()
+        require('neotest').run.attach()
       end,
-      desc = "Attach",
+      desc = 'Attach',
     },
 
     {
-      "<leader>Tm",
+      '<leader>Tm',
       function()
-        require("neotest").summary.toggle()
+        require('neotest').summary.toggle()
       end,
-      desc = "Summary",
+      desc = 'Summary',
     },
     {
-      "<leader>Tw",
+      '<leader>Tw',
       function()
-        require("neotest").watch.toggle()
+        require('neotest').watch.toggle()
       end,
-      desc = "Watch",
+      desc = 'Watch',
     },
     {
-      "<leader>To",
+      '<leader>To',
       function()
-        require("neotest").output_panel.toggle()
+        require('neotest').output_panel.toggle()
       end,
-      desc = "Output panel",
+      desc = 'Output panel',
     },
   },
 }

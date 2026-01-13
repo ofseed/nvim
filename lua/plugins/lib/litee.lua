@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
-  "ldelossa/litee.nvim",
+  'ldelossa/litee.nvim',
   lazy = true,
-  main = "litee.lib",
+  main = 'litee.lib',
   opts = {},
 }

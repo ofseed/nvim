@@ -1,12 +1,12 @@
 ---@type LazyPluginSpec
 return {
-  "windwp/nvim-ts-autotag",
+  'windwp/nvim-ts-autotag',
   ft = {
-    "html",
-    "javascriptreact",
-    "typescriptreact",
-    "vue",
-    "svelte",
+    'html',
+    'javascriptreact',
+    'typescriptreact',
+    'vue',
+    'svelte',
   },
   opts = {},
 }

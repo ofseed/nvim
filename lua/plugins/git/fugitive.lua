@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
 return {
-  "tpope/vim-fugitive",
+  'tpope/vim-fugitive',
   cmd = {
-    "G",
-    "Git",
+    'G',
+    'Git',
   },
 }

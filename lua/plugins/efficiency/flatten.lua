@@ -1,13 +1,13 @@
 ---@type LazyPluginSpec
 return {
-  "willothy/flatten.nvim",
+  'willothy/flatten.nvim',
   opts = function()
-    local flatten = require "flatten"
+    local flatten = require 'flatten'
 
     ---@type Flatten.PartialConfig
     return {
       window = {
-        open = "alternate",
+        open = 'alternate',
       },
       hooks = {
         should_nest = function(host)

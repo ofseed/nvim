@@ -1,12 +1,12 @@
 ---@type LazyPluginSpec
 return {
-  "nvim-treesitter/nvim-treesitter-context",
-  event = "VeryLazy",
+  'nvim-treesitter/nvim-treesitter-context',
+  event = 'VeryLazy',
   opts = {
     max_lines = 5,
-    mode = "topline",
+    mode = 'topline',
   },
   keys = {
-    { "<leader>tc", "<Cmd>TSContextToggle<CR>", desc = "Treesitter Context" },
+    { '<leader>tc', '<Cmd>TSContextToggle<CR>', desc = 'Treesitter Context' },
   },
 }

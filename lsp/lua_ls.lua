@@ -2,13 +2,13 @@
 return {
   on_attach = function(client)
     -- `foldexpr` is `vim.treesitter.foldexpr` by default
-    vim.wo[0][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+    vim.wo[0][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
     client.server_capabilities.documentFormattingProvider = false
   end,
   settings = {
     Lua = {
       runtime = {
-        version = "LuaJIT",
+        version = 'LuaJIT',
       },
       hint = {
         enable = true,
@@ -18,14 +18,14 @@ return {
         enable = true,
       },
       completion = {
-        postfix = ".",
-        showWord = "Disable",
+        postfix = '.',
+        showWord = 'Disable',
         workspaceWord = false,
       },
       diagnostics = {
         disable = {
-          "unused-function",
-          "empty-block",
+          'unused-function',
+          'empty-block',
         },
       },
     },

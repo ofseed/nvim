@@ -1,12 +1,12 @@
 ---@type LazyPluginSpec
 return {
-  "kevinhwang91/nvim-fundo",
+  'kevinhwang91/nvim-fundo',
   event = {
-    "BufReadPre",
+    'BufReadPre',
   },
-  dependencies = "kevinhwang91/promise-async",
+  dependencies = 'kevinhwang91/promise-async',
   build = function()
-    require("fundo").install()
+    require('fundo').install()
   end,
   opts = {},
 }

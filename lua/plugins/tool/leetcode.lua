@@ -1,9 +1,9 @@
-local arg = "leetcode"
+local arg = 'leetcode'
 
 ---@type LazyPluginSpec
 return {
   ---@module "leetcode"
-  "kawre/leetcode.nvim",
+  'kawre/leetcode.nvim',
   lazy = vim.fn.argv()[1] ~= arg,
   ---@type lc.UserConfig
   opts = {
@@ -12,27 +12,27 @@ return {
       enabled = true,
     },
     injector = {
-      ["cpp"] = {
+      ['cpp'] = {
         before = {
-          "#include <bits/stdc++.h>",
-          "using namespace std;",
+          '#include <bits/stdc++.h>',
+          'using namespace std;',
         },
         after = {
-          "int main() {",
-          "    Solution solution;",
-          "    return 0;",
-          "}",
+          'int main() {',
+          '    Solution solution;',
+          '    return 0;',
+          '}',
         },
       },
     },
     description = {
-      position = "top",
+      position = 'top',
     },
     console = {
-      dir = "col",
+      dir = 'col',
     },
     hooks = {
-      ["question_enter"] = {
+      ['question_enter'] = {
         -- For question
         function(q)
           local bufnr = q.bufnr
@@ -40,34 +40,34 @@ return {
           vim.b[bufnr].copilot_enabled = false
 
           vim.keymap.set(
-            "n",
-            "<localleader>l",
-            "<Cmd>Leet list<CR>",
-            { buffer = bufnr, desc = "LeetCode list" }
+            'n',
+            '<localleader>l',
+            '<Cmd>Leet list<CR>',
+            { buffer = bufnr, desc = 'LeetCode list' }
           )
           vim.keymap.set(
-            "n",
-            "<localleader>r",
-            "<Cmd>Leet run<CR>",
-            { buffer = bufnr, desc = "LeetCode run" }
+            'n',
+            '<localleader>r',
+            '<Cmd>Leet run<CR>',
+            { buffer = bufnr, desc = 'LeetCode run' }
           )
           vim.keymap.set(
-            "n",
-            "<localleader>s",
-            "<Cmd>Leet submit<CR>",
-            { buffer = bufnr, desc = "LeetCode submit" }
+            'n',
+            '<localleader>s',
+            '<Cmd>Leet submit<CR>',
+            { buffer = bufnr, desc = 'LeetCode submit' }
           )
           vim.keymap.set(
-            "n",
-            "<localleader>i",
-            "<Cmd>Leet info<CR>",
-            { buffer = bufnr, desc = "LeetCode information" }
+            'n',
+            '<localleader>i',
+            '<Cmd>Leet info<CR>',
+            { buffer = bufnr, desc = 'LeetCode information' }
           )
           vim.keymap.set(
-            "n",
-            "<localleader>d",
-            "<Cmd>Leet desc<CR>",
-            { buffer = bufnr, desc = "LeetCode description" }
+            'n',
+            '<localleader>d',
+            '<Cmd>Leet desc<CR>',
+            { buffer = bufnr, desc = 'LeetCode description' }
           )
         end,
         -- For question description
@@ -75,9 +75,9 @@ return {
           local winid = q.description.winid
 
           vim.wo[winid].wrap = true
-          vim.wo[winid].showbreak = "NONE"
+          vim.wo[winid].showbreak = 'NONE'
           vim.wo[winid].smoothscroll = true
-          vim.wo[winid].foldcolumn = "0"
+          vim.wo[winid].foldcolumn = '0'
         end,
       },
     },

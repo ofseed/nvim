@@ -1,28 +1,24 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "Bekaboo/dropbar.nvim",
+  'Bekaboo/dropbar.nvim',
   event = {
-    "BufRead",
-    "BufNewFile",
+    'BufRead',
+    'BufNewFile',
   },
   opts = {
     icons = {
       kinds = {
-        symbols = vim.tbl_extend(
-          "keep",
-          { Folder = " " },
-          custom.icons.kind_with_space
-        ),
+        symbols = vim.tbl_extend('keep', { Folder = ' ' }, custom.icons.kind_with_space),
       },
     },
     sources = {
       path = {
         modified = function(sym)
           return sym:merge {
-            name = sym.name .. " [+]",
-            name_hl = "DiffAdded",
+            name = sym.name .. ' [+]',
+            name_hl = 'DiffAdded',
           }
         end,
       },

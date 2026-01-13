@@ -1,12 +1,12 @@
-local custom = require "custom"
+local custom = require 'custom'
 
 ---@type LazyPluginSpec
 return {
-  "kevinhwang91/nvim-bqf",
-  ft = "qf",
+  'kevinhwang91/nvim-bqf',
+  ft = 'qf',
   dependencies = {
     {
-      "junegunn/fzf",
+      'junegunn/fzf',
     },
   },
   opts = {

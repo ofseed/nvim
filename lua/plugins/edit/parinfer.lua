@@ -1,11 +1,11 @@
 ---@type LazyPluginSpec
 return {
-  "gpanders/nvim-parinfer",
+  'gpanders/nvim-parinfer',
   ft = {
-    "clojure",
-    "lisp",
-    "scheme",
-    "racket",
-    "fennel",
+    'clojure',
+    'lisp',
+    'scheme',
+    'racket',
+    'fennel',
   },
 }
