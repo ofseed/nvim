@@ -87,3 +87,5 @@ vim.keymap.set('n', ']b', bnext, { desc = 'Next buffer' })
 vim.keymap.set('n', '[b', bprevious, { desc = 'Prev buffer' })
 
 vim.keymap.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Diagnostic list' })
+
+vim.keymap.set('n', '<leader>u', '<Cmd>Undotree<CR>', { desc = 'Undo Tree' })

@@ -1,5 +1,8 @@
 local custom = require 'custom'
 
+-- Enable the build-in undotree plugin.
+vim.cmd.packadd 'nvim.undotree'
+
 -- Remove help information from the popup menu.
 vim.cmd.aunmenu [[PopUp.How-to\ disable\ mouse]]
 vim.cmd.aunmenu [[PopUp.-1-]]
