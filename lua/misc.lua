@@ -44,9 +44,11 @@ vim.lsp.enable {
   'clangd',
   'lua_ls',
   'copilot',
+  'jsonls',
   'pyright',
   'gopls',
   'vue_ls',
   'vtsls',
+  'yamlls',
   'zls',
 }
