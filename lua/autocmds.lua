@@ -100,14 +100,3 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.wo.winfixbuf = true
   end,
 })
-
-vim.api.nvim_create_autocmd('FileType', {
-  group = group,
-  pattern = 'go',
-  desc = 'Set indent for go',
-  callback = function()
-    vim.bo.tabstop = 4
-    vim.bo.shiftwidth = 4
-    vim.bo.expandtab = false
-  end,
-})
