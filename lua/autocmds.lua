@@ -90,13 +90,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
--- Filetype specific
-vim.api.nvim_create_autocmd('FileType', {
-  group = group,
-  pattern = 'qf',
-  desc = 'Disallow change buf for quickfix',
-  callback = function()
-    vim.wo.winfixbuf = true
-  end,
-})

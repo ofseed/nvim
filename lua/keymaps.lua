@@ -86,14 +86,4 @@ end)
 vim.keymap.set('n', ']b', bnext, { desc = 'Next buffer' })
 vim.keymap.set('n', '[b', bprevious, { desc = 'Prev buffer' })
 
-local filetype_keymaps = vim.api.nvim_create_augroup('ofseed_filetype_keymaps', {})
-vim.api.nvim_create_autocmd('FileType', {
-  group = filetype_keymaps,
-  pattern = 'qf',
-  callback = function(args)
-    local bufnr = args.buf
-    vim.keymap.set('n', 'q', '<Cmd>close<CR>', { buffer = bufnr })
-  end,
-})
-
 vim.keymap.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Diagnostic list' })
