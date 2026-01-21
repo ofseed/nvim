@@ -2,9 +2,6 @@
 return {
   'nvim-treesitter/nvim-treesitter-textobjects',
   branch = 'main',
-  dependencies = {
-    { 'ghostbuster91/nvim-next' },
-  },
   opts = {
     select = {
       lookahead = true,
