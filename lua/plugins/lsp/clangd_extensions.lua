@@ -17,38 +17,8 @@ return {
   },
   config = function(_, opts)
     require('clangd_extensions').setup(opts)
-
-    local group = vim.api.nvim_create_augroup('clangd_extesnion', {
-      clear = true,
-    })
-
-    local has_cmp, cmp = pcall(require, 'cmp')
-    if has_cmp then
-      vim.api.nvim_create_autocmd('Filetype', {
-        group = group,
-        desc = 'Setup clangd_extension scores for cmp',
-        pattern = 'c,cpp',
-        callback = function()
-          cmp.setup.buffer {
-            sorting = {
-              comparators = {
-                cmp.config.compare.offset,
-                cmp.config.compare.exact,
-                cmp.config.compare.recently_used,
-                require 'clangd_extensions.cmp_scores',
-                cmp.config.compare.kind,
-                cmp.config.compare.sort_text,
-                cmp.config.compare.length,
-                cmp.config.compare.order,
-              },
-            },
-          }
-        end,
-      })
-    end
-
     vim.api.nvim_create_autocmd('LspAttach', {
-      group = group,
+      group = vim.api.nvim_create_augroup('clangd_extesnion', {}),
       desc = 'Setup clangd_extesnion keymap for cmp',
       callback = function(args)
         local bufnr = args.buf
