@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-  'ofseed/lazydev.nvim',
+  'folke/lazydev.nvim',
   ft = 'lua',
   opts = {
     library = {
