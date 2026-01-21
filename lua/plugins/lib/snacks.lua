@@ -4,6 +4,7 @@ return {
   ---@module "snacks"
   ---@type snacks.Config
   opts = {
+    dashboard = {},
     input = {
       icon = ' ',
     },
