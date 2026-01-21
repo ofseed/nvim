@@ -42,11 +42,12 @@ vim.lsp.inlay_hint.enable()
 vim.lsp.inline_completion.enable()
 vim.lsp.enable {
   'clangd',
-  'lua_ls',
   'copilot',
-  'jsonls',
-  'pyright',
   'gopls',
+  'jsonls',
+  'lua_ls',
+  'pyright',
+  'ts_query_ls',
   'vue_ls',
   'vtsls',
   'yamlls',
