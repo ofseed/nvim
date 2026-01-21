@@ -1,5 +1,6 @@
 ---@type vim.lsp.Config
 return {
+  -- https://www.npmjs.com/package/@delance/runtime
   cmd = { 'delance-langserver', '--stdio' },
   settings = {
     python = {
