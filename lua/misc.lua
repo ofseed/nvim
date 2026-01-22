@@ -39,7 +39,7 @@ vim.lsp.enable {
   'pyright',
   'ts_query_ls',
   'vue_ls',
-  'vtsls',
+  'tsgo',
   'yamlls',
   'zls',
 }
