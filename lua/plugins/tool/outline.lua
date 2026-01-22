@@ -1,5 +1,3 @@
-local custom = require 'custom'
-
 ---@type LazyPluginSpec
 return {
   'hedyhli/outline.nvim',
@@ -8,7 +6,6 @@ return {
   },
   opts = {
     preview_window = {
-      border = custom.border,
       live = true,
     },
     symbols = {

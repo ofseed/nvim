@@ -1,13 +1,8 @@
-local custom = require 'custom'
-
 ---@type LazyPluginSpec
 return {
   'rcarriga/nvim-dap-ui',
   ---@type dapui.Config
   opts = {
-    floating = {
-      border = custom.border,
-    },
     icons = {
       collapsed = '',
       current_frame = '',

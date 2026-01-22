@@ -1,5 +1,3 @@
-local custom = require 'custom'
-
 ---@type LazyPluginSpec
 return {
   ---@module "gp"
@@ -14,8 +12,6 @@ return {
     },
     toggle_target = 'split',
     chat_free_cursor = true,
-    style_chat_finder_border = custom.border,
-    style_popup_border = custom.border,
   },
   cmd = {
     -- Chat

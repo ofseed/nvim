@@ -1,5 +1,3 @@
-local custom = require 'custom'
-
 ---@type LazyPluginSpec
 return {
   ---@module "which-key"
@@ -10,7 +8,6 @@ return {
     preset = 'modern',
     win = {
       no_overlap = false,
-      border = custom.border,
     },
     icons = {
       breadcrumb = '',

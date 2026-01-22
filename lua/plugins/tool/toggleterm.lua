@@ -1,5 +1,3 @@
-local custom = require 'custom'
-
 ---@type LazyPluginSpec
 return {
   'akinsho/toggleterm.nvim',
@@ -14,17 +12,11 @@ return {
     end,
     open_mapping = [[<c-\>]],
     shell = vim.uv.os_uname().sysname == 'Windows_NT' and 'pwsh' or 'fish',
-    float_opts = {
-      border = custom.border,
-    },
     winbar = {
       enabled = true,
     },
   },
   keys = function()
-    local float_opts = {
-      border = custom.border,
-    }
     local on_create = function(t)
       local bufnr = t.bufnr
       vim.keymap.set('t', '<Esc>', '<Nop>', { buffer = bufnr })
@@ -53,7 +45,6 @@ return {
               cmd = 'lazygit',
               hidden = true,
               direction = 'float',
-              float_opts = float_opts,
               on_create = on_create,
             }
           end
@@ -69,7 +60,6 @@ return {
               cmd = 'lazydocker',
               hidden = true,
               direction = 'float',
-              float_opts = float_opts,
               on_create = on_create,
             }
           end
@@ -87,7 +77,6 @@ return {
               cmd = 'gh-dash',
               hidden = true,
               direction = 'float',
-              float_opts = float_opts,
               on_create = on_create,
             }
           end
@@ -103,7 +92,6 @@ return {
               cmd = 'lf',
               hidden = true,
               direction = 'float',
-              float_opts = float_opts,
               on_create = on_create,
             }
           end

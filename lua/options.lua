@@ -33,6 +33,7 @@ vim.o.sidescrolloff = 5
 vim.o.smoothscroll = true
 vim.o.pumblend = 12
 vim.o.pumheight = 12
+vim.o.winborder = 'rounded'
 vim.o.colorcolumn = '81'
 vim.o.guifont = 'Cascadia Code NF:h12'
 vim.o.foldenable = true

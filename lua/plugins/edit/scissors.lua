@@ -1,14 +1,9 @@
-local custom = require 'custom'
-
 ---@type LazyPluginSpec
 return {
   ---@module "scissors"
   'chrisgrieser/nvim-scissors',
   ---@type pluginConfig
   opts = {
-    editSnippetPopup = {
-      border = custom.border,
-    },
     backdrop = {
       blend = 60,
     },

@@ -1,5 +1,3 @@
-local custom = require 'custom'
-
 ---@type LazyPluginSpec
 return {
   'kevinhwang91/nvim-bqf',
@@ -12,7 +10,6 @@ return {
   opts = {
     auto_resize_height = true,
     preview = {
-      border = custom.border,
       show_scroll_bar = false,
     },
   },

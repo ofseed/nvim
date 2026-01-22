@@ -1,20 +1,9 @@
-local custom = require 'custom'
-
 ---@type LazyPluginSpec
 return {
   'stevearc/overseer.nvim',
   opts = function()
     return {
       dap = false,
-      form = {
-        border = custom.border,
-      },
-      confirm = {
-        border = custom.border,
-      },
-      task_win = {
-        border = custom.border,
-      },
       component_aliases = {
         default = {
           { 'display_duration', detail_level = 2 },

@@ -33,7 +33,7 @@ return {
   end,
   opts = {
     default_source = 'last',
-    popup_border_style = custom.border,
+    popup_border_style = vim.o.winborder,
     event_handlers = {
       {
         event = 'neo_tree_popup_input_ready',

@@ -12,7 +12,6 @@ if not vim.uv.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-local custom = require 'custom'
 local locals = require 'locals'
 
 require('lazy').setup {
@@ -27,7 +26,9 @@ require('lazy').setup {
     colorscheme = { 'default' },
   },
   ui = {
-    border = custom.border,
+    -- https://github.com/folke/lazy.nvim/pull/2072
+    backdrop = 100,
+    border = vim.o.winborder,
   },
   diff = {
     cmd = 'diffview.nvim',

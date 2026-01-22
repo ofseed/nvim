@@ -1,5 +1,3 @@
-local custom = require 'custom'
-
 ---@type LazyPluginSpec
 return {
   'SmiteshP/nvim-navbuddy',
@@ -10,13 +8,11 @@ return {
   },
   opts = {
     window = {
-      border = custom.border,
       size = {
         height = '60%',
         width = '80%',
       },
     },
-    icons = custom.icons.kind_with_space,
     lsp = {
       auto_attach = true,
     },

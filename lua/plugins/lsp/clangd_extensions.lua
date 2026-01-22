@@ -1,5 +1,3 @@
-local custom = require 'custom'
-
 ---@type LazyPluginSpec
 return {
   'p00f/clangd_extensions.nvim',
@@ -7,14 +5,7 @@ return {
     'c',
     'cpp',
   },
-  opts = {
-    memory_usage = {
-      border = custom.border,
-    },
-    symbol_info = {
-      border = custom.border,
-    },
-  },
+  opts = {},
   config = function(_, opts)
     require('clangd_extensions').setup(opts)
     vim.api.nvim_create_autocmd('LspAttach', {

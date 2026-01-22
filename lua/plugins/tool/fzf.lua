@@ -38,9 +38,6 @@ return {
     files = {
       formatter = 'path.filename_first',
     },
-    winopts = {
-      border = custom.border,
-    },
     lsp = {
       symbols = {
         symbol_icons = custom.icons.kind,

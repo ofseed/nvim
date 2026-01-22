@@ -70,11 +70,7 @@ return {
         window = {
           completion = {
             winblend = 0,
-            border = custom.border,
             col_offset = -3,
-          },
-          documentation = {
-            border = custom.border,
           },
         },
         snippet = {

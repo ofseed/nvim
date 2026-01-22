@@ -7,16 +7,6 @@ vim.cmd.packadd 'nvim.undotree'
 vim.cmd.aunmenu [[PopUp.How-to\ disable\ mouse]]
 vim.cmd.aunmenu [[PopUp.-1-]]
 
--- Override LSP floating preview to have rounded borders.
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
----@diagnostic disable-next-line: duplicate-set-field
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  ---@type vim.lsp.util.open_floating_preview.Opts
-  local preview_opts = { border = custom.border, title_pos = 'center' }
-  opts = vim.tbl_deep_extend('keep', opts, preview_opts)
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
-
 vim.diagnostic.config {
   virtual_text = {
     spacing = 4,
