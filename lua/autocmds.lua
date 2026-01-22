@@ -130,6 +130,72 @@ api.nvim_create_autocmd('LspNotify', {
   group = augroup,
 })
 
+api.nvim_create_autocmd('LspAttach', {
+  desc = 'Sync working directory with LSP root',
+  callback = function(args)
+    local bufnr = args.buf
+    local clients = lsp.get_clients({ bufnr = bufnr })
+
+    -- Collect unique root dirs from all attached LSP clients.
+    local root_dirs = {} ---@type table<string, true?>
+    for _, client in ipairs(clients) do
+      local root_dir = client.config.root_dir
+      if root_dir then
+        root_dirs[root_dir] = true
+      end
+    end
+    local paths = vim.tbl_keys(root_dirs) ---@type string[]
+    if #paths == 0 then
+      return
+    end
+
+    -- Find the longest common prefix of all root dirs.
+    local path = paths[1]
+    local len = #path
+    for i = 2, #paths do
+      local current_path = paths[i]
+      local current_len = #current_path
+      if current_len < len then
+        len = current_len
+      end
+      for j = 1, len do
+        if path:byte(j) ~= current_path:byte(j) then
+          len = j - 1
+          break
+        end
+      end
+    end
+    path = path:sub(1, len)
+
+    -- Avoid trigger `DirChanged` if the path is unchanged.
+    if path == vim.fn.getcwd() then
+      return
+    end
+
+    -- Set the working directory with appropriate scope.
+    local tabpage = api.nvim_get_current_tabpage()
+    local tabpages = api.nvim_list_tabpages()
+    local winids = api.nvim_tabpage_list_wins(tabpage)
+    winids = vim --- @type integer[]
+      .iter(winids)
+      ---@param winid integer
+      :filter(function(winid)
+        local buf = api.nvim_win_get_buf(winid)
+        return vim.bo[buf].buftype == ''
+      end)
+      :totable()
+    if #winids == 1 then
+      if #tabpages == 1 then
+        vim.cmd.cd(path)
+      else
+        vim.cmd.tcd(path)
+      end
+    elseif #winids > 1 then
+      vim.cmd.lcd(path)
+    end
+  end,
+})
+
 api.nvim_create_autocmd('BufRead', {
   desc = 'Restore last cursor position',
   callback = function(args)
