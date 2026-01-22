@@ -24,7 +24,7 @@ api.nvim_create_autocmd('FileType', {
 })
 
 api.nvim_create_autocmd('LspAttach', {
-  desc = 'LSP Attach',
+  desc = 'Enable LSP-based folding if supported',
   callback = function(args)
     local bufnr = args.buf
     local client = assert(lsp.get_client_by_id(args.data.client_id))
@@ -35,6 +35,14 @@ api.nvim_create_autocmd('LspAttach', {
       vim.o.foldexpr = 'v:lua.vim.lsp.foldexpr()'
       vim.o.foldtext = 'v:lua.vim.lsp.foldtext()'
     end
+  end,
+  group = augroup,
+})
+
+api.nvim_create_autocmd('LspAttach', {
+  desc = 'Setup LSP keymaps',
+  callback = function(args)
+    local bufnr = args.buf
 
     -- Not be merged to upstream yet.
     if lsp.document_highlight then
@@ -87,7 +95,12 @@ api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', '<leader>lh', function()
       lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled { bufnr = bufnr }, { bufnr = bufnr })
     end, { buffer = bufnr, desc = 'Toggle inlay hints' })
-    keymap.set('n', '<leader>lr', lsp.codelens.run, { buffer = bufnr, desc = 'Run lens' })
+    keymap.set('n', '<leader>lR', function()
+      vim.cmd.lsp('restart')
+    end, { buffer = bufnr, desc = 'Reload LSP' })
+    keymap.set('n', '<leader>lI', function()
+      vim.cmd.checkhealth('lsp')
+    end, { buffer = bufnr, desc = 'LSP info' })
     keymap.set(
       'n',
       '<leader>lwa',
