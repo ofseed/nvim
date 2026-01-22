@@ -66,22 +66,4 @@ M.icons = {
   kind_with_space = append_space(kind_icons),
 }
 
-M.cmp_format = {
-  mode = 'symbol',
-  maxwidth = 50,
-  menu = {
-    lazydev = '[DEV]',
-    luasnip = '[SNP]',
-    nvim_lsp = '[LSP]',
-    nvim_lua = '[VIM]',
-    dap = '[DAP]',
-    buffer = '[BUF]',
-    path = '[PTH]',
-    calc = '[CLC]',
-    latex_symbols = '[TEX]',
-    orgmode = '[ORG]',
-    cmdline = '[CMD]',
-  },
-}
-
 return M
