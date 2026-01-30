@@ -2,7 +2,6 @@
 return {
   'catppuccin/nvim',
   name = 'catppuccin',
-  lazy = true,
   opts = {
     term_colors = true,
     custom_highlights = function(color)
