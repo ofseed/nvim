@@ -1,13 +1,5 @@
 local M = {}
 
--- Colorscheme
-M.theme = 'catppuccin'
-
--- Width of side windows
-M.width = function()
-  return math.max(math.floor(vim.go.columns * 0.2), 30)
-end
-
 local append_space = function(icons)
   local result = {}
   for k, v in pairs(icons) do

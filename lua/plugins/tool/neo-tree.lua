@@ -74,7 +74,7 @@ return {
       },
     },
     window = {
-      width = custom.width,
+      width = math.max(math.floor(vim.go.columns * 0.2), 30),
       mappings = {
         ['<Space>'] = 'none',
         ['/'] = 'none',

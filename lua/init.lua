@@ -1,9 +1,7 @@
-local custom = require 'custom'
-
 require 'options'
 require 'misc'
 require 'keymaps'
 require 'autocmds'
 require 'manager'
 
-vim.cmd.colorscheme(custom.theme)
+vim.cmd.colorscheme('catppuccin')
