@@ -2,6 +2,9 @@
 return {
   settings = {
     gopls = {
+      codelenses = {
+        test = true,
+      },
       hints = {
         assignVariableTypes = true,
         compositeLiteralFields = true,
