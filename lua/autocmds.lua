@@ -206,7 +206,7 @@ api.nvim_create_autocmd('BufRead', {
     -- Avoid setting cursor outside of the buffer.
     local end_line = api.nvim_buf_line_count(bufnr)
     local end_col = #api.nvim_buf_get_lines(bufnr, end_line - 1, end_line, true)[1]
-    if line < end_line or (line == end_line and col <= end_col) then
+    if line > end_line or (line == end_line and col <= end_col) then
       return
     end
 
