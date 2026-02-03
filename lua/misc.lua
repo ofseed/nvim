@@ -28,6 +28,7 @@ vim.diagnostic.config {
   },
 }
 
+vim.lsp.codelens.enable()
 vim.lsp.inlay_hint.enable()
 vim.lsp.inline_completion.enable()
 vim.lsp.enable {
