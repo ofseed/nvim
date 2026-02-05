@@ -35,6 +35,7 @@ vim.lsp.enable {
   'clangd',
   'copilot',
   'gopls',
+  'gh_actions_ls',
   'jsonls',
   'lua_ls',
   'pyright',
