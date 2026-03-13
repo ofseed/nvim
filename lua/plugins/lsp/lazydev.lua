@@ -7,6 +7,10 @@ return {
   opts = {
     library = {
       {
+        path = 'nvim-lspconfig',
+        words = { 'lspconfig' },
+      },
+      {
         path = 'lazy.nvim',
         words = { 'Lazy.*Spec' },
       },
