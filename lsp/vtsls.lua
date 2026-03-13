@@ -1,5 +1,6 @@
 ---@type vim.lsp.Config
 return {
+  ---@type lspconfig.settings.vtsls
   settings = {
     vtsls = {
       autoUseWorkspaceTsdk = true,
