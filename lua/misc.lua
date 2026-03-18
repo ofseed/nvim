@@ -48,3 +48,5 @@ vim.lsp.enable {
   'yamlls',
   'zls',
 }
+
+require('vim._core.ui2').enable({})
