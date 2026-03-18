@@ -157,22 +157,6 @@ return {
         mode = { 'x', 'o' },
         desc = 'inner part of a loop',
       },
-      {
-        'an',
-        function()
-          ts.select.select_textobject '@number.outer'
-        end,
-        mode = { 'x', 'o' },
-        desc = 'a loop',
-      },
-      {
-        'in',
-        function()
-          ts.select.select_textobject '@number.inner'
-        end,
-        mode = { 'x', 'o' },
-        desc = 'inner part of a number',
-      },
       --
       -- Move
       --
