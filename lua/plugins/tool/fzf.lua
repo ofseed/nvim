@@ -204,16 +204,4 @@ return {
       desc = 'Frames',
     },
   },
-  config = function(_, opts)
-    local actions = require 'fzf-lua.actions'
-
-    -- https://github.com/tiagovla/scope.nvim/issues/35
-    ---@diagnostic disable-next-line: duplicate-set-field
-    actions.file_tabedit = function(selected, action_opts)
-      local vimcmd = 'tabedit | <auto>'
-      actions.vimcmd_entry(vimcmd, selected, action_opts)
-    end
-
-    require('fzf-lua').setup(opts)
-  end,
 }
