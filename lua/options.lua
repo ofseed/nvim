@@ -10,6 +10,7 @@ vim.o.smartcase = true
 vim.o.list = true
 vim.o.includeexpr = "substitute(v:fname,'\\.','/','g')"
 vim.o.jumpoptions = 'stack'
+vim.o.switchbuf = 'usetab,newtab'
 vim.o.completeopt = 'menu,menuone,noinsert'
 vim.o.swapfile = false
 
