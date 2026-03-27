@@ -1,6 +1,7 @@
 local api = vim.api
 local keymap = vim.keymap
 local lsp = vim.lsp
+local uv = vim.uv
 
 local augroup = api.nvim_create_augroup('ofseed', {})
 
@@ -197,6 +198,22 @@ api.nvim_create_autocmd('LspAttach', {
       vim.cmd.lcd(path)
     end
   end,
+  group = augroup,
+})
+
+api.nvim_create_autocmd('TermRequest', {
+  desc = 'Handle OSC sequences in terminal buffers',
+  callback = function(args)
+    local sequence = args.data.sequence ---@type string
+    local code, message = sequence:match('^\27%]([^;]+);(.*)$')
+
+    if code == nil then
+      return
+    elseif code == '9' then
+      vim.notify(message)
+    end
+  end,
+  group = augroup,
 })
 
 api.nvim_create_autocmd('BufRead', {
