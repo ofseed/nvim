@@ -1,6 +1,6 @@
 local utils = require 'utils'
 
-vim.keymap.set('t', '<Esc>', '<C-\\><C-N>')
+vim.keymap.set('t', '<C-[>', '<C-\\><C-N>')
 vim.keymap.set('c', '<C-p>', '<Up>')
 vim.keymap.set('c', '<C-n>', '<Down>')
 vim.keymap.set('s', '<BS>', '<BS><Cmd>startinsert<CR>')
