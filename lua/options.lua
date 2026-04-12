@@ -42,6 +42,7 @@ vim.o.foldenable = true
 vim.o.foldcolumn = '1'
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
+vim.o.foldtext = ''
 vim.o.shortmess = 'ltToOCFI'
 vim.o.fillchars = 'eob: ,diff:╱,foldopen:,foldclose:,foldsep:▕,foldinner:▕,'
 vim.o.guicursor = 'n-v-c-sm:block-Cursor/lCursor,'
