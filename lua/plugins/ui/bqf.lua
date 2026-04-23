@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
 return {
-  'kevinhwang91/nvim-bqf',
+  'ofseed/nvim-bqf',
+  branch = 'native-open',
   -- https://github.com/kevinhwang91/nvim-bqf/issues/177
-  enabled = false,
   ft = 'qf',
   dependencies = {
     {
