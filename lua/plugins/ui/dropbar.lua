@@ -11,7 +11,6 @@ return {
     bar = {
       update_events = {
         buf = {
-          'BufModifiedSet',
           'FileChangedShellPost',
           'TextChanged',
           'ModeChanged',
