@@ -15,11 +15,11 @@ vim.o.completeopt = 'menu,menuone,noinsert'
 vim.o.swapfile = false
 
 -- Interface
-vim.o.cmdheight = 0
 vim.o.confirm = true
 vim.o.splitkeep = 'screen'
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.showcmd = false
 vim.o.number = true
 vim.o.breakindent = true
 vim.o.linebreak = true
