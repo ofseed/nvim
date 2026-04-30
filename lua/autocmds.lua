@@ -201,6 +201,46 @@ api.nvim_create_autocmd('LspAttach', {
   group = augroup,
 })
 
+api.nvim_create_autocmd('LspProgress', {
+  desc = 'Display LSP progress in the terminal',
+  callback = function(ev)
+    ---@type
+    ---| lsp.WorkDoneProgressBegin
+    ---| lsp.WorkDoneProgressReport
+    ---| lsp.WorkDoneProgressEnd
+    local value = ev.data.params.value
+
+    local name = 'ofseed_lsp_progress_clear:' .. ev.data.params.token
+    if value.kind == 'begin' then
+      api.nvim_create_autocmd('VimLeave', {
+        desc = 'Clear LSP progress on exit',
+        group = api.nvim_create_augroup(name, { clear = true }),
+        callback = function()
+          api.nvim_echo({}, false, {
+            id = 'lsp.' .. ev.data.params.token,
+            kind = 'progress',
+            source = 'vim.lsp',
+            title = value.title,
+            status = 'cancel',
+          })
+        end,
+      })
+    elseif value.kind == 'end' then
+      api.nvim_del_augroup_by_name(name)
+    end
+
+    api.nvim_echo({ { value.message or 'done' } }, false, {
+      id = 'lsp.' .. ev.data.params.token,
+      kind = 'progress',
+      source = 'vim.lsp',
+      title = value.title,
+      status = value.kind ~= 'end' and 'running' or 'success',
+      percent = value.percentage,
+    })
+  end,
+  group = augroup,
+})
+
 api.nvim_create_autocmd('TermRequest', {
   desc = 'Handle OSC sequences in terminal buffers',
   callback = function(args)
