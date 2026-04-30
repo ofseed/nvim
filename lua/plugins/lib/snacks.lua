@@ -5,6 +5,7 @@ return {
   ---@type snacks.Config
   opts = {
     dashboard = {},
+    image = {},
     input = {
       icon = ' ',
     },
