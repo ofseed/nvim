@@ -9,8 +9,6 @@ return {
     vim.fn.sign_define('DapBreakpointRejected', { text = '' })
   end,
   dependencies = {
-    'jay-babu/mason-nvim-dap.nvim',
-    'LiadOz/nvim-dap-repl-highlights',
     'igorlfs/nvim-dap-view',
   },
   config = function()
