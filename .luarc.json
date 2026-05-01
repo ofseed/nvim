@@ -10,5 +10,6 @@
   },
   "diagnostics.disable": [
     "missing-fields"
-  ]
+  ],
+  "codeLens.enable": false
 }
