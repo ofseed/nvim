@@ -1,11 +1,9 @@
-local custom = require 'custom'
 local utils = require 'utils'
 
 ---@type LazyPluginSpec
 return {
   'lewis6991/gitsigns.nvim',
   event = 'VeryLazy',
-  dependencies = 'nvim-lua/plenary.nvim',
   keys = {
     {
       '<leader>gB',
@@ -64,12 +62,6 @@ return {
       end, { buffer = bufnr, desc = 'Reset hunk' })
       vim.keymap.set(
         'n',
-        '<leader>gu',
-        gitsigns.undo_stage_hunk,
-        { buffer = bufnr, desc = 'Undo stage hunk' }
-      )
-      vim.keymap.set(
-        'n',
         '<leader>gS',
         gitsigns.stage_buffer,
         { buffer = bufnr, desc = 'Stage buffer' }
@@ -93,12 +85,6 @@ return {
         }
       end, { buffer = bufnr, desc = 'Blame line' })
 
-      vim.keymap.set(
-        'n',
-        '<leader>tD',
-        gitsigns.toggle_deleted,
-        { buffer = bufnr, desc = 'GIt deleted' }
-      )
       vim.keymap.set(
         'n',
         '<leader>tb',
