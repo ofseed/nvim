@@ -18,8 +18,8 @@ return {
     vim.api.nvim_create_autocmd('BufEnter', {
       group = vim.api.nvim_create_augroup('load_neo_tree', {}),
       desc = 'Loads neo-tree when openning a directory',
-      callback = function(args)
-        local stats = vim.uv.fs_stat(args.file)
+      callback = function(ev)
+        local stats = vim.uv.fs_stat(ev.file)
 
         if not stats or stats.type ~= 'directory' then
           return

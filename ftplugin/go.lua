@@ -12,8 +12,8 @@ vim.bo[bufnr].expandtab = false
 api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP Attach for Go',
   buffer = bufnr,
-  callback = function(args)
-    local client = assert(lsp.get_client_by_id(args.data.client_id))
+  callback = function(ev)
+    local client = assert(lsp.get_client_by_id(ev.data.client_id))
     if client.name == 'gopls' then
       -- Since `keywordprg` is customized for Go,
       -- the default `K` mapping won't work, so we set it up here.

@@ -8,8 +8,8 @@ return {
   init = function()
     vim.api.nvim_create_autocmd('BufRead', {
       pattern = { 'package.json', 'package-lock.json' },
-      callback = function(args)
-        local bufnr = args.buf
+      callback = function(ev)
+        local bufnr = ev.buf
 
         vim.keymap.set('n', '<localleader>s', function()
           require('package-info').show()

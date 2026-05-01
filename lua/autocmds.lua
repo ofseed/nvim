@@ -1,15 +1,14 @@
 local api = vim.api
 local keymap = vim.keymap
 local lsp = vim.lsp
-local uv = vim.uv
 
 local augroup = api.nvim_create_augroup('ofseed', {})
 
 api.nvim_create_autocmd('FileType', {
   desc = 'Enable treesitter-based features for supported filetypes',
-  callback = function(args)
-    local bufnr = args.buf
-    local filetype = args.match
+  callback = function(ev)
+    local bufnr = ev.buf
+    local filetype = ev.match
     local lang = vim.treesitter.language.get_lang(filetype)
     if lang and vim.treesitter.language.add(lang) then
       -- Highlighting
@@ -26,9 +25,9 @@ api.nvim_create_autocmd('FileType', {
 
 api.nvim_create_autocmd('LspAttach', {
   desc = 'Enable LSP-based folding if supported',
-  callback = function(args)
-    local bufnr = args.buf
-    local client = assert(lsp.get_client_by_id(args.data.client_id))
+  callback = function(ev)
+    local bufnr = ev.buf
+    local client = assert(lsp.get_client_by_id(ev.data.client_id))
 
     -- Enable LSP-based folding if supported.
     if client:supports_method('textDocument/foldingRange', bufnr) then
@@ -42,8 +41,8 @@ api.nvim_create_autocmd('LspAttach', {
 
 api.nvim_create_autocmd('LspAttach', {
   desc = 'Setup LSP keymaps',
-  callback = function(args)
-    local bufnr = args.buf
+  callback = function(ev)
+    local bufnr = ev.buf
 
     -- Not be merged to upstream yet.
     if lsp.document_highlight then
@@ -126,9 +125,9 @@ api.nvim_create_autocmd('LspAttach', {
 
 api.nvim_create_autocmd('LspNotify', {
   desc = 'Auto close imports',
-  callback = function(args)
-    if args.data.method == 'textDocument/didOpen' then
-      lsp.foldclose('imports', vim.fn.bufwinid(args.buf))
+  callback = function(ev)
+    if ev.data.method == 'textDocument/didOpen' then
+      lsp.foldclose('imports', vim.fn.bufwinid(ev.buf))
     end
   end,
   group = augroup,
@@ -136,8 +135,8 @@ api.nvim_create_autocmd('LspNotify', {
 
 api.nvim_create_autocmd('LspAttach', {
   desc = 'Sync working directory with LSP root',
-  callback = function(args)
-    local bufnr = args.buf
+  callback = function(ev)
+    local bufnr = ev.buf
     local clients = lsp.get_clients({ bufnr = bufnr })
 
     -- Collect unique root dirs from all attached LSP clients.
@@ -243,8 +242,8 @@ api.nvim_create_autocmd('LspProgress', {
 
 api.nvim_create_autocmd('TermRequest', {
   desc = 'Handle OSC sequences in terminal buffers',
-  callback = function(args)
-    local sequence = args.data.sequence ---@type string
+  callback = function(ev)
+    local sequence = ev.data.sequence ---@type string
     local code, message = sequence:match('^\27%]([^;]+);(.*)$')
 
     if code == nil then
@@ -258,8 +257,8 @@ api.nvim_create_autocmd('TermRequest', {
 
 api.nvim_create_autocmd('BufRead', {
   desc = 'Restore last cursor position',
-  callback = function(args)
-    local bufnr = args.buf
+  callback = function(ev)
+    local bufnr = ev.buf
     local winid = api.nvim_get_current_win()
     local line, col = unpack(api.nvim_buf_get_mark(bufnr, '"'))
 
@@ -321,8 +320,8 @@ api.nvim_create_autocmd('OptionSet', {
 api.nvim_create_autocmd({ 'OptionSet' }, {
   desc = "Set 'breakindentopt' based on indent settings",
   pattern = { 'expandtab', 'shiftwidth', 'tabstop' },
-  callback = function(args)
-    if vim.tbl_contains({ 'text', 'markdown', 'org' }, vim.bo[args.buf].filetype) then
+  callback = function(ev)
+    if vim.tbl_contains({ 'text', 'markdown', 'org' }, vim.bo[ev.buf].filetype) then
       return
     end
 

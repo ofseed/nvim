@@ -5,8 +5,8 @@ return {
   init = function()
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'http',
-      callback = function(args)
-        local bufnr = args.buf
+      callback = function(ev)
+        local bufnr = ev.buf
         require 'rest-nvim'
 
         vim.keymap.set('n', '<localleader>r', '<Cmd>Rest run<CR>', {

@@ -11,9 +11,9 @@ return {
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('clangd_extesnion', {}),
       desc = 'Setup clangd_extesnion keymap for cmp',
-      callback = function(args)
-        local bufnr = args.buf
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
+      callback = function(ev)
+        local bufnr = ev.buf
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
         if client == nil or client.name ~= 'clangd' then
           return
         end
