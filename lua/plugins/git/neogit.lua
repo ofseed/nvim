@@ -3,6 +3,7 @@ return {
   'NeogitOrg/neogit',
   dependencies = {
     'sindrets/diffview.nvim',
+    'barrettruth/diffs.nvim',
   },
   cmd = {
     'Neogit',

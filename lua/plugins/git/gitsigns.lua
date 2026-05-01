@@ -3,6 +3,9 @@ local utils = require 'utils'
 ---@type LazyPluginSpec
 return {
   'lewis6991/gitsigns.nvim',
+  dependencies = {
+    'barrettruth/diffs.nvim',
+  },
   event = 'VeryLazy',
   keys = {
     {
