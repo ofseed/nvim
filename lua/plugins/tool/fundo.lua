@@ -1,6 +1,8 @@
 ---@type LazyPluginSpec
 return {
-  'ofseed/nvim-fundo',
-  branch = 'nvim-plugin',
+  'kevinhwang91/nvim-fundo',
+  dependencies = {
+    'kevinhwang91/promise-async',
+  },
   opts = {},
 }
