@@ -9,6 +9,7 @@ return {
     input = {
       icon = ' ',
     },
+    notifier = {},
     styles = {
       input = {
         title_pos = 'left',
