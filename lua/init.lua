@@ -4,4 +4,4 @@ require 'keymaps'
 require 'autocmds'
 require 'manager'
 
-vim.cmd.colorscheme('catppuccin')
+vim.cmd.colorscheme('catppuccin-nvim')
