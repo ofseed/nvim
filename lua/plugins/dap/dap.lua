@@ -11,8 +11,7 @@ return {
   dependencies = {
     'jay-babu/mason-nvim-dap.nvim',
     'LiadOz/nvim-dap-repl-highlights',
-    'theHamsta/nvim-dap-virtual-text',
-    'rcarriga/nvim-dap-ui',
+    'igorlfs/nvim-dap-view',
   },
   config = function()
     local dap = require 'dap'
