@@ -4,6 +4,7 @@ local custom = require 'custom'
 return {
   ---@module 'blink.cmp'
   'Saghen/blink.cmp',
+  event = { 'InsertEnter', 'CmdlineEnter' },
   version = '*',
   -- build = "cargo build --release",
   ---@type blink.cmp.Config
