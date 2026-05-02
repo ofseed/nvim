@@ -5,6 +5,7 @@ return {
   ---@module 'blink.cmp'
   'Saghen/blink.cmp',
   event = { 'InsertEnter', 'CmdlineEnter' },
+  dependencies = { 'mayromr/blink-cmp-dap' },
   version = '*',
   -- build = "cargo build --release",
   ---@type blink.cmp.Config
@@ -15,6 +16,7 @@ return {
     sources = {
       default = {
         'lsp',
+        'dap',
         'omni',
         'path',
         'snippets',
@@ -32,10 +34,15 @@ return {
           name = 'Development',
           module = 'lazydev.integrations.blink',
         },
+        dap = {
+          name = 'dap',
+          module = 'blink-cmp-dap',
+        },
         omni = {
           enabled = function()
             return vim.bo.omnifunc ~= 'v:lua.vim.lsp.omnifunc'
               and vim.bo.omnifunc ~= 'v:lua.vim.lua_omnifunc'
+              and vim.bo.omnifunc ~= "v:lua.require'dap.repl'.omnifunc"
           end,
         },
       },
