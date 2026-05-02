@@ -15,6 +15,7 @@ return {
     sources = {
       default = {
         'lsp',
+        'omni',
         'path',
         'snippets',
         'buffer',
@@ -30,6 +31,12 @@ return {
         lazydev = {
           name = 'Development',
           module = 'lazydev.integrations.blink',
+        },
+        omni = {
+          enabled = function()
+            return vim.bo.omnifunc ~= 'v:lua.vim.lsp.omnifunc'
+              and vim.bo.omnifunc ~= 'v:lua.vim.lua_omnifunc'
+          end,
         },
       },
     },
