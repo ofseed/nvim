@@ -2,6 +2,7 @@
 return {
   ---@module 'lazydev'
   'folke/lazydev.nvim',
+  enable = false,
   ft = 'lua',
   ---@type lazydev.Config
   opts = {
