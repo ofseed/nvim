@@ -260,12 +260,15 @@ api.nvim_create_autocmd('BufRead', {
   callback = function(ev)
     local bufnr = ev.buf
     local winid = api.nvim_get_current_win()
+    if api.nvim_win_get_buf(winid) ~= bufnr then
+      return
+    end
+
     local line, col = unpack(api.nvim_buf_get_mark(bufnr, '"'))
 
     -- Avoid setting cursor outside of the buffer.
     local end_line = api.nvim_buf_line_count(bufnr)
-    local end_col = #api.nvim_buf_get_lines(bufnr, end_line - 1, end_line, true)[1]
-    if line > end_line or (line == end_line and col <= end_col) then
+    if line < 1 or line > end_line then
       return
     end
 
