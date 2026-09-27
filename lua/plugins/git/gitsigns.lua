@@ -4,7 +4,7 @@ local utils = require 'utils'
 return {
   'lewis6991/gitsigns.nvim',
   dependencies = {
-    'barrettruth/diffs.nvim',
+    'diffs.nvim',
   },
   event = 'VeryLazy',
   keys = {
